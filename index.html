@@ -9,6 +9,7 @@
     :root{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#162b46;background:#f4f7fb}
     *{box-sizing:border-box}[hidden]{display:none!important}body{margin:0}a{color:inherit}
     header{background:linear-gradient(125deg,#102f59,#1762a0);color:#fff;padding:40px 24px 56px}
+    .header-top{display:flex;justify-content:space-between;align-items:center;gap:16px}.admin-link{color:#fff;text-decoration:none;border:1px solid #b8dcfa;background:#ffffff1c;border-radius:10px;padding:10px 16px;font-weight:700;white-space:nowrap}.admin-link:hover,.admin-link:focus-visible{background:#ffffff38;outline-color:#ffbb59}
     .wrap{max-width:1080px;margin:auto}.brand{font-size:.87rem;font-weight:750;letter-spacing:.09em;text-transform:uppercase;color:#c7e4ff}
     h1{font-size:clamp(2rem,5vw,3.6rem);margin:14px 0 6px;line-height:1.12}header p{font-size:clamp(1.13rem,2.4vw,1.45rem);margin:0;color:#dcecff}
     main{max-width:1080px;margin:-27px auto 60px;padding:0 24px}
@@ -26,11 +27,11 @@
     .card a:hover,.card a:focus-visible{background:#0d426f}.empty{padding:20px;color:#536782}footer{text-align:center;color:#5c6d80;padding:18px 24px 38px}
     @media(max-width:820px){.categories{grid-template-columns:1fr;gap:0}}
     @media(max-width:600px){.open-grid,.grades{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:520px){header{padding-bottom:50px}.intro{padding:21px}.tools input{width:100%}}
+    @media(max-width:520px){header{padding-bottom:50px}.intro{padding:21px}.tools input{width:100%}.header-top{align-items:flex-start}.admin-link{font-size:.85rem;padding:9px}}
   </style>
 </head>
 <body>
-  <header><div class="wrap"><div class="brand">Matemática · Elaborado por: Carlos Madrigal Gutiérrez</div><h1>Exámenes en línea</h1><p>Educación Secundaria</p></div></header>
+  <header><div class="wrap"><div class="header-top"><div class="brand">Matemática · Elaborado por: Carlos Madrigal Gutiérrez</div><a class="admin-link" href="./resultados/">Administrador</a></div><h1>Exámenes en línea</h1><p>Educación Secundaria</p></div></header>
   <main>
     <section class="intro"><p>En este sitio encontrarás las pruebas aplicadas en los diferentes sistemas de educación pública de Costa Rica.</p><p>Si tienes alguna prueba que aún no está en el sitio, puedes enviarla a nuestro contacto: <a href="mailto:carlos.madrigal.gutierrez@mep.go.cr">carlos.madrigal.gutierrez@mep.go.cr</a>. Luego la publicaremos aquí.</p><p>El sitio se actualiza constantemente con las nuevas pruebas que se van aplicando.</p></section>
     <div class="tools"><h2>Pruebas disponibles</h2><input id="buscar" type="search" aria-label="Buscar examen" placeholder="Buscar examen…"></div>
