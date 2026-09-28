@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Matemáticas · Prueba Nacional Estandarizada 2025-D01</title>
+<link rel="stylesheet" href="style.css"></head><body>
+<header><div class="bar"><strong>Matemáticas · 2025-D01</strong><div class="bar-right"><span id="counter">0 / 40 respondidas</span><span id="clock">03:00:00</span></div></div></header>
+<main>
+<section id="welcome" class="card"><div class="eyebrow">Prueba Nacional Estandarizada · Secundaria</div><h1>Matemáticas 2025-D01</h1><p>Versión interactiva de los 40 ítems de la prueba diurna ordinaria. Las preguntas, opciones, símbolos y figuras se muestran directamente desde el PDF original.</p>
+<div class="welcome-grid"><div><b>40</b><span>ítems</span></div><div><b>A, B, C</b><span>opciones por ítem</span></div><div><b>3 h</b><span>tiempo máximo</span></div></div>
+<div class="identity"><label>Nombre<input id="firstName" autocomplete="given-name" required placeholder="Tu nombre"></label><label>Apellidos<input id="lastName" autocomplete="family-name" required placeholder="Tus apellidos"></label></div>
+<p class="muted">Puedes usar calculadora. Tus respuestas se guardan durante el intento. Al terminar verás el resultado y el desglose por área.</p><p id="availability" role="status">Consultando disponibilidad de la prueba…</p>
+<div class="actions"><button id="start" class="primary" disabled>Iniciar prueba</button><button id="retry" hidden>Volver a consultar</button></div></section>
+<section id="exam" hidden><div class="layout"><div class="card question"><div class="question-heading"><div><div id="area" class="eyebrow"></div><h2 id="qtitle">Ítem 1 de 40</h2></div><span id="qstatus" class="status">Sin responder</span></div>
+<div id="context" hidden><p class="context-title">Información para este grupo de ítems</p><img id="contextImage" alt="Información original compartida por los ítems"></div>
+<div class="source"><img id="questionImage" alt="Ítem original y sus opciones A, B y C"><button id="zoom" class="zoom" type="button">Ampliar ítem ↗</button></div>
+<fieldset class="answers"><legend>Selecciona tu respuesta</legend><label><input type="radio" name="answer" value="A"><span>A</span></label><label><input type="radio" name="answer" value="B"><span>B</span></label><label><input type="radio" name="answer" value="C"><span>C</span></label></fieldset>
+<div class="nav"><button id="prev">← Anterior</button><button id="next" class="primary">Siguiente →</button></div></div>
+<aside class="card sidebar"><h3>Ítems</h3><p class="muted">Verde: respondido · azul: actual</p><div id="grid" class="grid"></div><button id="finish" class="finish">Finalizar prueba</button></aside></div></section>
+<section id="results" class="card" hidden><div class="eyebrow">Resultados</div><h1>Tu resultado</h1><div class="score" id="score"></div><p id="scorePercent"></p><div class="totals"><div><b id="correct">0</b><span>Correctas</span></div><div><b id="wrong">0</b><span>Incorrectas</span></div><div><b id="blank">0</b><span>Sin responder</span></div></div><h2>Resultados por área</h2><p>El porcentaje indica las preguntas correctas de cada área.</p><div id="areaCharts" class="charts"></div><p id="delivery" role="status"></p><button id="retryDelivery" hidden>Reintentar envío</button><h2>Revisión de respuestas</h2><div id="review" class="review"></div><button id="restart">Hacer otro intento</button></section>
+</main><dialog id="imageDialog"><button id="closeZoom" type="button">Cerrar ✕</button><div id="zoomContent"></div></dialog><dialog id="finishDialog"><h2>¿Finalizar la prueba?</h2><p id="finishMessage"></p><div class="actions"><button id="cancelFinish">Seguir respondiendo</button><button id="confirmFinish" class="finish">Sí, finalizar</button></div></dialog>
+<script src="app.js"></script></body></html>
