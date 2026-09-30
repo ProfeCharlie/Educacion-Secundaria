@@ -23,3 +23,13 @@
 #zoomContent .manual-item{min-width:720px;padding:20px}
 #context .manual-item{font-size:16px}
 @media(max-width:650px){.manual-item{font-size:16px;padding:8px 4px}.question-table td,.question-table th{padding:5px 6px;font-size:.82rem}.printed-options [data-fig]{width:100%}}
+
+/* Opciones seleccionables directamente en cada pregunta. */
+.choice-list{display:grid;gap:8px;margin:18px 0 12px}
+.choice{display:flex;align-items:flex-start;gap:12px;width:100%;text-align:left;background:#f7f9fc;border:1.5px solid #cfdae7;border-radius:9px;padding:11px 14px;color:#101820;font:inherit;font-weight:400;line-height:1.5}
+.choice:hover{background:#eaf3ff;border-color:#7ba8d9}
+.choice:focus-visible{outline:3px solid #164b91;outline-offset:2px}
+.choice.selected{background:#e4f0ff;border:2px solid #18549a;padding:10.5px 13.5px}
+.choice-letter{flex:none;font-weight:750}.choice-content{flex:1;min-width:0}
+.choice-content [data-fig]{display:block;width:min(100%,540px);margin:8px 0}
+.choice-content .hand-figure{margin:0;max-width:540px}
