@@ -9,7 +9,7 @@ const P=(x,y)=>`<circle cx="${x}" cy="${y}" r="4.2" fill="${ink}"/>`;
 const O=(x,y)=>`<circle cx="${x}" cy="${y}" r="4.2" fill="white"/>`;
 const A=(x=70,y=290,xmax=550,ymin=28,xx='x',yy='y')=>L(30,y,xmax,y)+L(x,y+27,x,ymin)+`<path d="M${xmax-10} ${y-5}l10 5-10 5M${x-5} ${ymin+10}l5-10 5 10" fill="${ink}"/>`+T(xmax+8,y+6,xx,'start')+T(x,ymin-7,yy);
 function circlePlot({cx=210,cy=145,r=55,xlab='12',ylab='18',cLabel='Q',origin='P',xName='x (este)',yName='y (norte)',extra=''}) {
- return S(A(70,275,525,25,xName,yName)+`<circle cx="${cx}" cy="${cy}" r="${r}"/>`+L(70,cy,cx,cy,true)+L(cx,cy,cx,275,true)+P(70,275)+P(cx,cy)+T(65,298,origin,'end')+T(cx,299,xlab)+T(57,cy+5,ylab,'end')+T(cx+12,cy-10,cLabel,'start')+extra,560,365);
+ return S(A(70,275,525,25,xName,yName)+`<circle cx="${cx}" cy="${cy}" r="${r}"/>`+L(70,cy,cx,cy,true)+L(cx,cy,cx,275,true)+P(70,275)+P(cx,cy)+T(65,298,origin,'end')+T(cx,299,xlab)+T(57,cy+5,ylab,'end')+T(cx+12,cy-10,cLabel,'start')+extra,620,365);
 }
 function table(headers,rows){return `<table class="question-table"><thead><tr>${headers.map(v=>`<th>${v}</th>`).join('')}</tr></thead><tbody>${rows.map(row=>`<tr>${row.map(v=>`<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table>`}
 const FIGURES={
