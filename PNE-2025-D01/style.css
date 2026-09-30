@@ -68,3 +68,11 @@
 .sidebar-count{font-size:.86rem;color:#566b82;margin:10px 0 16px}
 @media(max-width:800px){.sidebar .grid{grid-template-columns:repeat(10,minmax(0,1fr))}}
 @media(max-width:500px){.sidebar .grid{grid-template-columns:repeat(8,minmax(0,1fr))}.qmeta{min-width:0}}
+
+/* Revisión individual de respuestas al finalizar. */
+.review{max-height:610px;overflow-y:auto;padding-right:5px}
+.review .review-row{border:1px solid var(--line);border-radius:8px;padding:9px;background:#fff}
+.review-top{display:grid;grid-template-columns:90px minmax(120px,1fr) minmax(100px,1fr);gap:8px;align-items:center}
+.review-solution{background:#f4f7fa;border-left:3px solid var(--blue);margin-top:8px;padding:9px 12px}
+.review-solution b{display:block;margin-bottom:3px}
+@media(max-width:550px){.review-top{grid-template-columns:1fr 1fr}.review-top b{grid-column:1/-1}}
