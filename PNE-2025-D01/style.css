@@ -88,3 +88,5 @@
 .review-solution{background:#f4f7fa;border-left:3px solid var(--blue);margin-top:8px;padding:9px 12px}
 .review-solution b{display:block;margin-bottom:3px}
 @media(max-width:550px){.review-top{grid-template-columns:1fr 1fr}.review-top b{grid-column:1/-1}}
+
+.grade-status{font-size:1.15rem;font-weight:700;margin:6px 0 18px}
