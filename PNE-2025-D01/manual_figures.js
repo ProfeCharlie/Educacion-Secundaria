@@ -9,8 +9,8 @@ const V=(x,y,s)=>`<text x="${x}" y="${y}" transform="rotate(-90 ${x} ${y})" text
 const P=(x,y)=>`<circle cx="${x}" cy="${y}" r="4.2" fill="${ink}"/>`;
 const O=(x,y)=>`<circle cx="${x}" cy="${y}" r="4.2" fill="white"/>`;
 const A=(x=70,y=290,xmax=550,ymin=28,xx='x',yy='y')=>L(30,y,xmax,y)+L(x,y+27,x,ymin)+`<path d="M${xmax-10} ${y-5}l10 5-10 5M${x-5} ${ymin+10}l5-10 5 10" fill="${ink}"/>`+T(xmax+8,y+6,xx,'start')+T(x-5,ymin-7,yy,'start',21);
-function circlePlot({cx=210,cy=145,r=55,xlab='12',ylab='18',cLabel='Q',origin='P',xName='x (este)',yName='y (norte)',extra=''}) {
- return S(A(70,275,525,25,xName,yName)+`<circle cx="${cx}" cy="${cy}" r="${r}"/>`+(cy===275?'':L(70,cy,cx,cy,true)+L(cx,cy,cx,275,true))+P(70,275)+P(cx,cy)+T(65,298,origin,'end')+T(cx,299,xlab)+(ylab?T(57,cy+5,ylab,'end'):'')+T(cx+8,cy+5,cLabel,'start')+extra,620,365);
+function circlePlot({cx=210,cy=145,r=55,xlab='12',ylab='18',cLabel='Q',origin='P',xName='x (este)',yName='y (norte)',extra='',labelDy=5}) {
+ return S(A(70,275,525,25,xName,yName)+`<circle cx="${cx}" cy="${cy}" r="${r}"/>`+(cy===275?'':L(70,cy,cx,cy,true)+L(cx,cy,cx,275,true))+P(70,275)+P(cx,cy)+T(65,298,origin,'end')+T(cx,299,xlab)+(ylab?T(57,cy+5,ylab,'end'):'')+T(cx+8,cy+labelDy,cLabel,'start')+extra,620,365);
 }
 function table(headers,rows,style='grid'){
  return `<table class="question-table ${style}"><thead><tr>${headers.map(v=>`<th scope="col">${v}</th>`).join('')}</tr></thead><tbody>${rows.map((row,i)=>`<tr${style==='frequency'&&i===rows.length-1?' class="total"':''}>${row.map(v=>`<td>${v}</td>`).join('')}</tr>`).join('')}</tbody></table>`;
@@ -20,9 +20,9 @@ const FIGURES={
  '2A':()=>circlePlot({cx:155,cy:130,r:78,xlab:'5',ylab:'10',cLabel:'D',origin:'E',extra:P(233,130)+L(233,130,233,275,true)+T(233,298,'13')}),
  '2B':()=>circlePlot({cx:190,cy:170,r:50,xlab:'10',ylab:'5',cLabel:'D',origin:'E',extra:P(190,120)+L(70,120,190,120,true)+T(58,125,'9','end')}),
  '2C':()=>circlePlot({cx:150,cy:145,r:50,xlab:'5',ylab:'10',cLabel:'D',origin:'E',extra:P(200,145)+L(200,145,200,275,true)+T(200,298,'9')}),
- '3':()=>circlePlot({cx:270,cy:155,r:55,xlab:'20',ylab:'5',cLabel:'R',origin:'S',extra:P(270,100)+P(270,210)+L(70,100,270,100,true)+T(57,104,'10','end')+T(340,135,'C')}),
+ '3':()=>circlePlot({cx:270,cy:155,r:55,xlab:'20',ylab:'5',cLabel:'R',origin:'S',extra:P(270,100)+P(270,210)+L(70,100,270,100,true)+T(57,104,'10','end')+T(333,135,'C')}),
  '3A':()=>circlePlot({cx:220,cy:155,r:55,xlab:'15',ylab:'5',cLabel:'W',origin:'S',extra:P(220,100)+P(220,210)+L(70,100,220,100,true)+T(57,104,'10','end')}),
- '3B':()=>circlePlot({cx:270,cy:275,r:55,xlab:'20',ylab:'',cLabel:'W',origin:'S',extra:P(270,220)+L(70,220,270,220,true)+T(57,225,'5','end')}),
+ '3B':()=>circlePlot({cx:270,cy:275,r:55,xlab:'20',ylab:'',cLabel:'W',origin:'S',labelDy:-8,extra:P(270,220)+L(70,220,270,220,true)+T(57,225,'5','end')}),
  '3C':()=>circlePlot({cx:270,cy:155,r:55,xlab:'20',ylab:'10',cLabel:'W',origin:'S',extra:P(270,210)+L(70,210,270,210,true)+T(57,215,'5','end')}),
  '4':()=>S(A(90,330,520,25)+`<circle cx="220" cy="200" r="130"/>`+L(90,200,350,200,true)+L(220,70,220,330,true)+L(90,70,220,70,true)+L(350,200,350,330,true)+[P(90,200),P(220,330),P(350,200),P(220,70)].join('')+T(78,75,'122','end')+T(350,355,'122'),560,375),
  '5':()=>S(A(90,295,540,22)+L(50,105,500,105)+`<path d="M50 105l12-7v14ZM500 105l-12-7v14Z" fill="${ink}"/><circle cx="235" cy="155" r="50"/><path d="M90 91h14v14"/>`+L(90,155,235,155,true)+L(235,105,235,295,true)+L(355,105,355,295,true)+P(90,105)+P(235,105)+P(235,155)+P(355,105)+T(82,95,'30','end')+T(76,160,'20','end')+T(235,320,'24')+T(355,320,'48')+T(235,92,'Q')+T(355,92,'P')+T(299,160,'C')+T(508,112,'n','start'),570,335),

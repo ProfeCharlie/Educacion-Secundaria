@@ -27,6 +27,7 @@
 .question-table.frequency thead,.question-table.frequency .total{border-bottom:2px solid #101820}
 .question-table.frequency .total{border-top:2px solid #101820;border-bottom:0}
 .manual-item math,.choice-content math,.review math{font-family:CambriaMath,"STIX Two Math",serif;font-size:1.08em}
+.choice-content math.q22-root{font-size:1.4em;vertical-align:middle}
 #welcome .identity select{display:block;width:100%;padding:12px;border:1px solid #abc1d6;border-radius:9px;margin-top:6px;font:inherit;background:white}
 .frac{display:inline-flex;vertical-align:middle;flex-direction:column;line-height:1.15;text-align:center;font-size:.95em}
 .frac>span:first-child{padding:0 .18em .08em;border-bottom:1.5px solid currentColor}
