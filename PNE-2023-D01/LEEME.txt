@@ -1,0 +1,11 @@
+DIURNA SUMATIVA 01-2023
+
+35 preguntas de selección única, tres opciones, gráficas SVG redibujadas y 35 soluciones.
+Mantiene el formato, temporizador de 3 horas, áreas y resultados de la plantilla actual.
+
+ESTADO: preparada; no publicada. GitHub rechazó la escritura (403).
+Debe incorporarse d01_2023 al receptor y al administrador de Google Apps Script, con la clave y áreas de exam-config.json, y las secciones 11-1/11-2 inicialmente desactivadas.
+Después de integrar el receptor, cambiar BACKEND_READY a true en app.js, publicar la carpeta y agregarla al menú con ?nuevo=1.
+
+VERIFICACIÓN: se cotejaron preguntas y figuras con el PDF; las pruebas locales de DOM comprobaron 35 preguntas con 3 opciones, inicio, navegación, contador, formato de tiempo, confirmación de finalizar, resultados 35/35 y 0/35, tres áreas, revisión y reinicio.
+PENDIENTE: revisión completa en navegador y confirmación de envío real al receptor.
