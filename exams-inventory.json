@@ -5,15 +5,15 @@
     {
       "path": "PNE-2023-D01",
       "title": "Diurna ordinaria 01-2023",
-      "status": "programada",
+      "status": "publicada",
       "source": {
         "id": "1j9uN8aZSgTIO76lDSJT-XR9leGXhCJaC",
         "url": "https://drive.google.com/file/d/1j9uN8aZSgTIO76lDSJT-XR9leGXhCJaC/view?usp=drivesdk",
         "filename": "2023-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas.pdf"
       },
       "items": 35,
-      "backend": "pendiente de incorporar en Apps Script",
-      "publication": "Código completo publicado en GitHub por navegador. No habilitado ni añadido al menú; pendiente integrar receptor y administrador de Apps Script.",
+      "backend": "integrado, secciones 11-1 y 11-2 desactivadas",
+      "publication": "Publicado en GitHub; receptor versión 9 y administrador versión 18 integrados; añadido al menú.",
       "validation": "35 ítems y 3 opciones; figuras SVG cotejadas; inicio/navegación/temporizador/confirmación/resultados/reinicio comprobados con DOM local. Falta prueba en navegador y envío real."
     },
     {
