@@ -1,6 +1,6 @@
 const TOTAL=35,SECONDS=3*60*60,EXAM='d01_2023';
 const KEY=ANSWER_KEY;
-const BACKEND_READY=false;
+const BACKEND_READY=true;
 const API='https://script.google.com/macros/s/AKfycbzTbcCEbXGaZgIHfiBo8MExOJ5o8wpPSTuvLgdaGHhRNzuwRCwPeyJy5xHXhy2P518HJQ/exec';
 const LEGACY_API='https://script.google.com/macros/s/AKfycbwtRGWJPNc8n413pPLvQE5ntBUFfJeG2qKJVxhhNG9CM8tlxqXb-j07anfudEV7Zz0y/exec';
 const STORE='pne_2023_d01_attempt_v1',$=id=>document.getElementById(id);
