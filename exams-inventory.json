@@ -45,14 +45,14 @@
     {
       "path": "PNE-2024-D01",
       "title": "Diurna sumativa 01-2024",
-      "status": "programada",
+      "status": "publicada",
       "source": {
         "id": "1O7FSVnry6_Tv13r8OIq3RkLBhEPLY2c-",
         "url": "https://drive.google.com/file/d/1O7FSVnry6_Tv13r8OIq3RkLBhEPLY2c-/view?usp=drivesdk",
         "filename": "2024-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas.pdf"
       },
       "items": 35,
-      "publication": "pendiente",
+      "publication": "Publicada en GitHub Pages; integrada en el receptor y administrador de Apps Script; desactivada por sección.",
       "backend": "reconocido, desactivado"
     },
     {
@@ -78,27 +78,27 @@
     {
       "path": "PNE-2024-N03",
       "title": "Nocturna sumativa 03-2024",
-      "status": "programada",
+      "status": "publicada",
       "source": {
         "id": "1-MTutSFC5WNndG2_gQd6DwKg8wBoM8Wg",
         "url": "https://drive.google.com/file/d/1-MTutSFC5WNndG2_gQd6DwKg8wBoM8Wg/view?usp=drivesdk",
         "filename": "2024-D03 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas.pdf"
       },
       "items": 35,
-      "publication": "pendiente",
+      "publication": "Publicada en GitHub Pages; integrada en el receptor y administrador de Apps Script; desactivada por sección.",
       "backend": "pendiente de incorporar en Apps Script"
     },
     {
       "path": "PNE-2024-T01",
       "title": "Técnica sumativa 01-2024",
-      "status": "programada",
+      "status": "publicada",
       "source": {
         "id": "1WEQ6NmnCR7FTbjkDxrSeI8huIQnw4crX",
         "url": "https://drive.google.com/file/d/1WEQ6NmnCR7FTbjkDxrSeI8huIQnw4crX/view?usp=drivesdk",
         "filename": "2024-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.pdf"
       },
       "items": 35,
-      "publication": "pendiente",
+      "publication": "Publicada en GitHub Pages; integrada en el receptor y administrador de Apps Script; desactivada por sección.",
       "backend": "pendiente de incorporar en Apps Script"
     },
     {
