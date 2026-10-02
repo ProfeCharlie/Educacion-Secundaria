@@ -1,0 +1,241 @@
+{
+  "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
+  "updatedAt": "2026-10-02",
+  "exams": [
+    {
+      "path": "PNE-2023-D01",
+      "title": "Diurna ordinaria 01-2023",
+      "status": "pendiente",
+      "source": {
+        "id": "1j9uN8aZSgTIO76lDSJT-XR9leGXhCJaC",
+        "url": "https://drive.google.com/file/d/1j9uN8aZSgTIO76lDSJT-XR9leGXhCJaC/view?usp=drivesdk",
+        "filename": "2023-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas.pdf"
+      }
+    },
+    {
+      "path": "PNE-2023-D03",
+      "title": "Diurna ordinaria 03-2023",
+      "status": "pendiente",
+      "source": {
+        "id": "1jl-oGb2WQvZVaGMjvT18wTXtFQPh5MeQ",
+        "url": "https://drive.google.com/file/d/1jl-oGb2WQvZVaGMjvT18wTXtFQPh5MeQ/view?usp=drivesdk",
+        "filename": "2023-D03 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas escaneado DO3.pdf"
+      }
+    },
+    {
+      "path": "PNE-2023-N01",
+      "title": "Nocturna ordinaria 01-2023",
+      "status": "pendiente",
+      "source": {
+        "id": "1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk",
+        "url": "https://drive.google.com/file/d/1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk/view?usp=drivesdk",
+        "filename": "2023-N01 Prueba Nacional Estandarizada_Nocturnos_Ordinaria_Matemáticas.pdf"
+      }
+    },
+    {
+      "path": "PNE-2023-T01",
+      "title": "Técnica ordinaria 01-2023",
+      "status": "pendiente",
+      "source": {
+        "id": "1CpWYfKVM2NeQJNH1NO1R5YLbnsgysrE7",
+        "url": "https://drive.google.com/file/d/1CpWYfKVM2NeQJNH1NO1R5YLbnsgysrE7/view?usp=drivesdk",
+        "filename": "2023-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.pdf"
+      }
+    },
+    {
+      "path": "PNE-2024-D01",
+      "title": "Diurna sumativa 01-2024",
+      "status": "programada",
+      "source": {
+        "id": "1O7FSVnry6_Tv13r8OIq3RkLBhEPLY2c-",
+        "url": "https://drive.google.com/file/d/1O7FSVnry6_Tv13r8OIq3RkLBhEPLY2c-/view?usp=drivesdk",
+        "filename": "2024-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas.pdf"
+      },
+      "items": 35,
+      "publication": "pendiente",
+      "backend": "reconocido, desactivado"
+    },
+    {
+      "path": "PNE-2024-Diagnostica-D01",
+      "title": "Diurna diagnóstica 01-2024",
+      "status": "pendiente",
+      "source": {
+        "id": "1L6qu-gCExRs1wUrXtIsaem_Fq5cSQEEw",
+        "url": "https://drive.google.com/file/d/1L6qu-gCExRs1wUrXtIsaem_Fq5cSQEEw/view?usp=drivesdk",
+        "filename": "2024 D01Estandarizada diagnóstica Escaneado.pdf"
+      }
+    },
+    {
+      "path": "PNE-2024-N01",
+      "title": "Nocturna ordinaria 01-2024",
+      "status": "pendiente",
+      "source": {
+        "id": "1NNNFCMuk4egGeMGLWVRkhI6-vuII_erE",
+        "url": "https://docs.google.com/document/d/1NNNFCMuk4egGeMGLWVRkhI6-vuII_erE/edit?usp=drivesdk&ouid=115905229313042507911&rtpof=true&sd=true",
+        "filename": "2024-N01 Prueba Nacional Estandarizada_Nocturnos_Ordinaria_Matemáticas.docx"
+      }
+    },
+    {
+      "path": "PNE-2024-N03",
+      "title": "Nocturna sumativa 03-2024",
+      "status": "programada",
+      "source": {
+        "id": "1-MTutSFC5WNndG2_gQd6DwKg8wBoM8Wg",
+        "url": "https://drive.google.com/file/d/1-MTutSFC5WNndG2_gQd6DwKg8wBoM8Wg/view?usp=drivesdk",
+        "filename": "2024-D03 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas.pdf"
+      },
+      "items": 35,
+      "publication": "pendiente",
+      "backend": "pendiente de incorporar en Apps Script"
+    },
+    {
+      "path": "PNE-2024-T01",
+      "title": "Técnica sumativa 01-2024",
+      "status": "programada",
+      "source": {
+        "id": "1WEQ6NmnCR7FTbjkDxrSeI8huIQnw4crX",
+        "url": "https://drive.google.com/file/d/1WEQ6NmnCR7FTbjkDxrSeI8huIQnw4crX/view?usp=drivesdk",
+        "filename": "2024-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.pdf"
+      },
+      "items": 35,
+      "publication": "pendiente",
+      "backend": "pendiente de incorporar en Apps Script"
+    },
+    {
+      "path": "PNE-2025-D01",
+      "title": "Diurna ordinaria 01-2025",
+      "status": "publicada",
+      "source": {
+        "id": "1kjBJDGe0ywfDpuhh3GQxBooLfvQKJKW5",
+        "url": "https://drive.google.com/file/d/1kjBJDGe0ywfDpuhh3GQxBooLfvQKJKW5/view?usp=drivesdk",
+        "filename": "2025-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas.pdf"
+      }
+    },
+    {
+      "path": "PNE-2025-Diagnostica-D01",
+      "title": "Diurna diagnóstica 01-2025",
+      "status": "pendiente",
+      "source": {
+        "id": "1xdTxuhxQlvukbRHOW60l0NMQuiAonw1s",
+        "url": "https://drive.google.com/file/d/1xdTxuhxQlvukbRHOW60l0NMQuiAonw1s/view?usp=drivesdk",
+        "filename": "2024-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas escaneado DO1 diagnostico.pdf"
+      }
+    },
+    {
+      "path": "PNE-2025-N00",
+      "title": "CINDEA ordinaria 00-2025",
+      "status": "pendiente",
+      "source": {
+        "id": "1mpiplNVNfVemjHB6V--ejenLrPo6HTax",
+        "url": "https://drive.google.com/file/d/1mpiplNVNfVemjHB6V--ejenLrPo6HTax/view?usp=drivesdk",
+        "filename": "2025-N00 Prueba Nacional Estandarizada_CINDEA_Ordinaria_Matemáticas Original.pdf"
+      }
+    },
+    {
+      "path": "PNE-2025-N01-CINDEA",
+      "title": "CINDEA ordinaria 01-2025",
+      "status": "publicada",
+      "source": {
+        "id": "1HwaQoVyrRHRPAUGlx-D9a3h2e_LthqSL",
+        "url": "https://drive.google.com/file/d/1HwaQoVyrRHRPAUGlx-D9a3h2e_LthqSL/view?usp=drivesdk",
+        "filename": "2025-N01 Prueba Nacional Estandarizada_CINDEA_Ordinaria_Matemáticas.pdf"
+      }
+    },
+    {
+      "path": "PNE-2025-N06",
+      "title": "Nocturna ordinaria 06-2025",
+      "status": "publicada",
+      "source": {
+        "id": "17nwF0peY0lJQkYA6XFxkwACgMvF9ducl",
+        "url": "https://drive.google.com/file/d/17nwF0peY0lJQkYA6XFxkwACgMvF9ducl/view?usp=drivesdk",
+        "filename": "2025-N06 Prueba Nacional Estandarizada_Nocturnos_Ordinaria_Matemáticas.pdf"
+      }
+    },
+    {
+      "path": "PNE-2025-T01",
+      "title": "Técnica ordinaria 01-2025",
+      "status": "publicada",
+      "source": {
+        "id": "1_4n8ru_Q1-fvLoq76tgkaxSMz20i7Dym",
+        "url": "https://drive.google.com/file/d/1_4n8ru_Q1-fvLoq76tgkaxSMz20i7Dym/view?usp=drivesdk",
+        "filename": "2025-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.pdf"
+      }
+    },
+    {
+      "path": "PNE-2025-Ampliacion",
+      "title": "Ampliación 2025",
+      "status": "publicada",
+      "source": {
+        "id": "1pM4uP3DZ0nvWZL2E8nVW1Mv0R-FnWKVS",
+        "url": "https://drive.google.com/file/d/1pM4uP3DZ0nvWZL2E8nVW1Mv0R-FnWKVS/view?usp=drivesdk",
+        "filename": "Ampliación Mate Prueba Estandarizada 2025.pdf"
+      }
+    },
+    {
+      "path": "PNE-2026-Diagnostica-D01",
+      "title": "Diurna diagnóstica 01-2026",
+      "status": "pendiente",
+      "source": {
+        "id": "1HgklX-EwcjyiBdYycJUxcUoFV7xLnriJ",
+        "url": "https://drive.google.com/file/d/1HgklX-EwcjyiBdYycJUxcUoFV7xLnriJ/view?usp=drivesdk",
+        "filename": "2026-D01 Prueba Nacional Estandarizada_Diurnos_Diagnostica_Matemáticas final.pdf"
+      }
+    },
+    {
+      "path": "PNE-2026-T01",
+      "title": "Técnica 01-2026",
+      "status": "pendiente",
+      "source": {
+        "id": "1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb",
+        "url": "https://docs.google.com/document/d/1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb/edit?usp=drivesdk&ouid=115905229313042507911&rtpof=true&sd=true",
+        "filename": "2026-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.docx"
+      }
+    },
+    {
+      "path": "PNE-2026-Sumativa-Nocturna-I-Semestre",
+      "title": "Sumativa nocturna I semestre 2026",
+      "status": "pendiente",
+      "source": {
+        "id": "1ARph9RHZ3tVV4XohnVsxa8ZIPPk33YZg",
+        "url": "https://drive.google.com/file/d/1ARph9RHZ3tVV4XohnVsxa8ZIPPk33YZg/view?usp=drivesdk",
+        "filename": "MATEMÁTICAS_SUMATIVA-ORDINARIA NOCTURNA IPEC-CINDEA-CONED-I SEMESTRE.pdf"
+      }
+    },
+    {
+      "path": "PNE-2026-Reprogramacion-Diurna",
+      "title": "Reprogramación diurna 2026",
+      "status": "pendiente",
+      "source": {
+        "id": "1Uq8JmEKcx9aZE47Gbq6jlxwaXKSj0Hug",
+        "url": "https://drive.google.com/file/d/1Uq8JmEKcx9aZE47Gbq6jlxwaXKSj0Hug/view?usp=drivesdk",
+        "filename": "MATEMÁTICAS_SUMATIVA-REPROGRAMACIÓN-DIURNA-IPEC-CINDEA-CONED.pdf"
+      }
+    },
+    {
+      "path": "PNE-2026-Reprogramacion-Nocturna",
+      "title": "Reprogramación nocturna 2026",
+      "status": "pendiente",
+      "source": {
+        "id": "1q3HzxYer-QFnOoAKIdiU1XFdr4lyBuxG",
+        "url": "https://drive.google.com/file/d/1q3HzxYer-QFnOoAKIdiU1XFdr4lyBuxG/view?usp=drivesdk",
+        "filename": "MATEMÁTICAS_SUMATIVA-REPROGRAMACIÓN-NOCTURNA-IPEC-CINDEA-CONED.pdf"
+      }
+    },
+    {
+      "path": "PNE-2026-Simulacro",
+      "title": "Simulacro 2026",
+      "status": "pendiente",
+      "source": {
+        "id": "1oP9v3FYuqiGGBMaryaP2jGcazunD2pBX",
+        "url": "https://drive.google.com/file/d/1oP9v3FYuqiGGBMaryaP2jGcazunD2pBX/view?usp=drivesdk",
+        "filename": "Simulacro_PNE_2026_Matemática_con_Videos_QR_profe_danny_CINDEA_May26.pdf"
+      }
+    }
+  ],
+  "notes": [
+    "Las variantes DOCX/PDF, compactas y los solucionarios se conservan como fuentes; no se publican automáticamente como exámenes distintos.",
+    "El PDF llamado 2024-D03 identifica Sumativa 2024-N03 en su portada.",
+    "El PDF llamado 2024-D01 … escaneado DO1 diagnostico identifica Diagnóstica 2025-D01 en su portada.",
+    "La agrupación 2026-T01 debe compararse con su variante mejorado antes de transcribir."
+  ]
+}
