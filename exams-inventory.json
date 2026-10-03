@@ -19,12 +19,16 @@
     {
       "path": "PNE-2023-D03",
       "title": "Diurna ordinaria 03-2023",
-      "status": "pendiente",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1jl-oGb2WQvZVaGMjvT18wTXtFQPh5MeQ",
         "url": "https://drive.google.com/file/d/1jl-oGb2WQvZVaGMjvT18wTXtFQPh5MeQ/view?usp=drivesdk",
         "filename": "2023-D03 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas escaneado DO3.pdf"
-      }
+      },
+      "items": 35,
+      "backend": "pendiente, inicio desactivado",
+      "validation": "35 ítems, 3 opciones, figuras SVG, solucionario y flujo verificados localmente.",
+      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración."
     },
     {
       "path": "PNE-2023-N01",
@@ -80,12 +84,16 @@
     {
       "path": "PNE-2024-N01",
       "title": "Nocturna ordinaria 01-2024",
-      "status": "pendiente",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1NNNFCMuk4egGeMGLWVRkhI6-vuII_erE",
         "url": "https://docs.google.com/document/d/1NNNFCMuk4egGeMGLWVRkhI6-vuII_erE/edit?usp=drivesdk&ouid=115905229313042507911&rtpof=true&sd=true",
         "filename": "2024-N01 Prueba Nacional Estandarizada_Nocturnos_Ordinaria_Matemáticas.docx"
-      }
+      },
+      "items": 35,
+      "backend": "pendiente, inicio desactivado",
+      "validation": "35 ítems, 3 opciones, figuras SVG, solucionario y flujo verificados localmente.",
+      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración."
     },
     {
       "path": "PNE-2024-N03",
