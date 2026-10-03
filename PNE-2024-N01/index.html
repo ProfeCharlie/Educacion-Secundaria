@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Prueba Nacional Estandarizada · Nocturna 01-2024 · Matemática</title>
+<link rel="stylesheet" href="style.css?v=1"></head><body>
+<header><div class="bar"><strong>Prueba Nacional Estandarizada · Nocturna 01-2024</strong><div class="bar-right"><span class="mode">Modo examen</span><span id="counter">0 / 35 respondidas</span><span id="clock">03:00:00</span></div></div></header>
+<main>
+<section id="welcome" class="card"><h1>Prueba Nacional Estandarizada · Nocturna 01-2024</h1>
+<div class="identity"><label>Nombre<input id="firstName" autocomplete="given-name" required></label><label>Apellidos<input id="lastName" autocomplete="family-name" required></label><label>Sección<select id="section" required><option value="">Selecciona tu sección</option><option value="11-1">11-1</option><option value="11-2">11-2</option></select></label><p id="availability" role="status">Consultando disponibilidad de la prueba…</p></div>
+<div class="actions"><button id="start" class="primary" disabled>Iniciar prueba</button><button id="retry" hidden>Volver a consultar</button></div>
+<p class="author">Elaborado por: Carlos Madrigal Gutiérrez</p>
+<div class="instructions"><b>Instrucciones:</b><ul>
+<li>Versión interactiva con los 35 ítems de la prueba de Matemática.</li>
+<li>Las representaciones gráficas aparecen directamente dentro de cada pregunta.</li>
+<li>La prueba contiene preguntas de selección única con tres opciones de respuesta.</li>
+<li>El área de cada pregunta aparece junto al número del ítem: Geometría, Relaciones y Álgebra, o Estadística y Probabilidad.</li>
+<li>Puedes avanzar, devolverte y responder en el momento que consideres necesario. Al agotarse el tiempo, la prueba se cierra.</li>
+<li>Ten a mano papel y lápiz para resolver los ejercicios.</li>
+<li>Dispones de 3 horas para responder la prueba.</li>
+<li>Puedes utilizar calculadora científica no programable para esta prueba.</li>
+</ul></div></section>
+<section id="exam" hidden><div class="layout"><div class="card question"><div class="question-heading"><h2 id="qtitle">Ítem 1 de 35</h2><div class="qmeta"><div id="area" class="area-label">Área: Geometría</div><span id="qstatus" class="status">Sin responder</span></div></div>
+<div id="context" hidden><p class="context-title">Información para este grupo de ítems</p><div id="contextVector" class="vector"></div></div>
+<div class="source"><div id="questionVector" class="vector"></div></div>
+
+<div class="nav"><button id="prev">← Anterior</button><button id="next" class="primary">Siguiente →</button></div></div>
+<aside class="card sidebar"><h3>Navegación</h3><div id="grid" class="grid"></div><p class="sidebar-count" id="sidebarCount">0 de 35 respondidos</p><button id="finish" class="finish">Finalizar prueba</button></aside></div></section>
+<section id="results" class="card" hidden><div class="eyebrow">Resultados</div><h1>Tu resultado</h1><div class="score" id="score"></div><p id="scorePercent"></p><p id="gradeStatus" class="grade-status" aria-live="polite"></p><div class="totals"><div><b id="correct">0</b><span>Correctas</span></div><div><b id="wrong">0</b><span>Incorrectas</span></div><div><b id="blank">0</b><span>Sin responder</span></div></div><h2>Resultados por área</h2><p>El porcentaje indica las preguntas correctas de cada área.</p><div id="areaCharts" class="charts"></div><p id="delivery" role="status"></p><button id="retryDelivery" hidden>Reintentar envío</button><button type="button" id="reviewBtn" aria-controls="review" aria-expanded="false">Revisar respuestas</button><div id="review" class="review" hidden></div><button id="restart">Hacer otro intento</button> <button type="button" id="menuBtn">Regresar al menú de exámenes</button></section>
+</main><dialog id="finishDialog"><h2>¿Finalizar la prueba?</h2><p id="finishMessage"></p><div class="actions"><button id="cancelFinish">Seguir respondiendo</button><button id="confirmFinish" class="finish">Sí, finalizar</button></div></dialog>
+<script src="manual_figures.js?v=1"></script><script src="manual_questions.js?v=1"></script><script src="manual_solutions.js?v=1"></script><script src="app.js?v=1"></script></body></html>
+
