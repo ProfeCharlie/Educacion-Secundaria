@@ -1,0 +1,7 @@
+Sumativa nocturna · I semestre 2026 · S-MAT-44
+60 ítems, cuatro opciones originales y tres horas.
+Figuras SVG redibujadas y solucionario cotejado con el original.
+Corrección de la transcripción preliminar: t(24) = 0 en ítem 24.
+Ambigüedades del cuadernillo conservadas: se aceptan C/D en 58 y B/C en 60; explicación en la revisión.
+Inicio desactivado hasta integrar el receptor y administrador de Apps Script.
+Secciones 11-1 y 11-2.
