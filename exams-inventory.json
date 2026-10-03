@@ -74,12 +74,17 @@
     {
       "path": "PNE-2024-Diagnostica-D01",
       "title": "Diurna diagnóstica 01-2024",
-      "status": "pendiente",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1L6qu-gCExRs1wUrXtIsaem_Fq5cSQEEw",
         "url": "https://drive.google.com/file/d/1L6qu-gCExRs1wUrXtIsaem_Fq5cSQEEw/view?usp=drivesdk",
         "filename": "2024 D01Estandarizada diagnóstica Escaneado.pdf"
-      }
+      },
+      "items": 35,
+      "backend": "pendiente, inicio desactivado",
+      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "validation": "Preguntas y opciones cotejadas con el escaneo; figuras SVG redibujadas y revisadas; navegación, temporizador, confirmación, calificación, resultados por área y reinicio comprobados con DOM local.",
+      "notes": "Ítem 31 admite A/B/C por insuficiencia de datos del original."
     },
     {
       "path": "PNE-2024-N01",
@@ -134,12 +139,17 @@
     {
       "path": "PNE-2025-Diagnostica-D01",
       "title": "Diurna diagnóstica 01-2025",
-      "status": "pendiente",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1xdTxuhxQlvukbRHOW60l0NMQuiAonw1s",
         "url": "https://drive.google.com/file/d/1xdTxuhxQlvukbRHOW60l0NMQuiAonw1s/view?usp=drivesdk",
         "filename": "2024-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas escaneado DO1 diagnostico.pdf"
-      }
+      },
+      "items": 40,
+      "backend": "pendiente, inicio desactivado",
+      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "validation": "Preguntas y opciones cotejadas con el escaneo; figuras SVG redibujadas y revisadas; navegación, temporizador, confirmación, calificación, resultados por área y reinicio comprobados con DOM local.",
+      "notes": "Portada y contenido identifican 2025 aunque el nombre del archivo dice 2024. Ítem 37 admite B/C por «al menos la mitad»."
     },
     {
       "path": "PNE-2025-N00",
