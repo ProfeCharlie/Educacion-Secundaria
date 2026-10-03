@@ -1,0 +1,119 @@
+{
+  "id": "diag_d01_2025",
+  "title": "Prueba Nacional Estandarizada · Diagnóstica diurna 01-2025",
+  "total": 40,
+  "durationSeconds": 10800,
+  "key": [
+    "A",
+    "C",
+    "A",
+    "C",
+    "A",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "A",
+    "A",
+    "C",
+    "B",
+    "B",
+    "A",
+    "C",
+    "C",
+    "B",
+    "C",
+    "B",
+    "B",
+    "A",
+    "C",
+    "B"
+  ],
+  "areas": [
+    {
+      "name": "Geometría",
+      "items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "name": "Relaciones y Álgebra",
+      "items": [
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "name": "Estadística y Probabilidad",
+      "items": [
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    }
+  ],
+  "sections": [
+    "11-1",
+    "11-2"
+  ],
+  "active": false,
+  "source": {
+    "driveFileId": "1xdTxuhxQlvukbRHOW60l0NMQuiAonw1s",
+    "title": "2024-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas escaneado DO1 diagnostico.pdf",
+    "coverYear": 2025
+  },
+  "backendStatus": "pendiente de incorporar en Apps Script",
+  "accepted": {
+    "37": "BC"
+  }
+}
