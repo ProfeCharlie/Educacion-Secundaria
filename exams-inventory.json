@@ -238,22 +238,32 @@
     {
       "path": "PNE-2026-Reprogramacion-Diurna",
       "title": "Reprogramación diurna 2026",
-      "status": "pendiente",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1Uq8JmEKcx9aZE47Gbq6jlxwaXKSj0Hug",
         "url": "https://drive.google.com/file/d/1Uq8JmEKcx9aZE47Gbq6jlxwaXKSj0Hug/view?usp=drivesdk",
         "filename": "MATEMÁTICAS_SUMATIVA-REPROGRAMACIÓN-DIURNA-IPEC-CINDEA-CONED.pdf"
-      }
+      },
+      "items": 60,
+      "backend": "pendiente, inicio desactivado",
+      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "validation": "60 ítems, cuatro opciones, figuras SVG y soluciones cotejados con el PDF de esta variante. Flujo y tres áreas verificados localmente.",
+      "notes": "Se conservaron las diferencias de datos, criterios, gráficas y respuestas entre las variantes diurna S-MAT-42 y nocturna S-MAT-45."
     },
     {
       "path": "PNE-2026-Reprogramacion-Nocturna",
       "title": "Reprogramación nocturna 2026",
-      "status": "pendiente",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1q3HzxYer-QFnOoAKIdiU1XFdr4lyBuxG",
         "url": "https://drive.google.com/file/d/1q3HzxYer-QFnOoAKIdiU1XFdr4lyBuxG/view?usp=drivesdk",
         "filename": "MATEMÁTICAS_SUMATIVA-REPROGRAMACIÓN-NOCTURNA-IPEC-CINDEA-CONED.pdf"
-      }
+      },
+      "items": 60,
+      "backend": "pendiente, inicio desactivado",
+      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "validation": "60 ítems, cuatro opciones, figuras SVG y soluciones cotejados con el PDF de esta variante. Flujo y tres áreas verificados localmente.",
+      "notes": "Se conservaron las diferencias de datos, criterios, gráficas y respuestas entre las variantes diurna S-MAT-42 y nocturna S-MAT-45."
     },
     {
       "path": "PNE-2026-Simulacro",
