@@ -1,0 +1,7 @@
+Prueba Nacional Estandarizada · CINDEA 00-2025
+40 ítems. Texto y figuras cotejados con el cuadernillo original.
+Figuras SVG redibujadas; sin recortes del PDF.
+Solucionario de 40 ítems, temporizador de tres horas y resultados por área.
+Áreas: Geometría 1–11 y 36; Álgebra 12–31 y 37–39; Estadística 32–35 y 40.
+Inicio desactivado hasta integrar el receptor y administrador de Apps Script.
+Secciones 11-1 y 11-2.
