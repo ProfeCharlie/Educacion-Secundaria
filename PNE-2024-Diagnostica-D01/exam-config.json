@@ -1,0 +1,108 @@
+{
+  "id": "diag_d01_2024",
+  "title": "Prueba Nacional Estandarizada · Diagnóstica diurna 01-2024",
+  "total": 35,
+  "durationSeconds": 10800,
+  "key": [
+    "A",
+    "B",
+    "A",
+    "C",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "C",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "C",
+    "C",
+    "C",
+    "B",
+    "A",
+    "A",
+    "C"
+  ],
+  "areas": [
+    {
+      "name": "Geometría",
+      "items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "name": "Relaciones y Álgebra",
+      "items": [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    },
+    {
+      "name": "Estadística y Probabilidad",
+      "items": [
+        31,
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "sections": [
+    "11-1",
+    "11-2"
+  ],
+  "active": false,
+  "source": {
+    "driveFileId": "1L6qu-gCExRs1wUrXtIsaem_Fq5cSQEEw",
+    "title": "2024 D01Estandarizada diagnóstica Escaneado.pdf"
+  },
+  "backendStatus": "pendiente de incorporar en Apps Script",
+  "accepted": {
+    "31": "ABC"
+  }
+}
