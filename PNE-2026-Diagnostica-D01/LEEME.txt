@@ -1,0 +1,7 @@
+Diagnóstica diurna 01-2026
+44 preguntas, cuatro opciones originales y tres horas.
+El original omite el número 20; se conserva sourceNumber en cada pregunta y se numeran 1–44 en el sitio.
+Correcciones respecto a la versión preliminar: ítem del sitio 19 (fuente 19) = C; ítem 20 (fuente 21) = A.
+Ítem 41 del sitio (fuente 42) admite C y D por la redacción «al menos el 50 %».
+Figuras SVG redibujadas; solucionario cotejado.
+Inicio desactivado hasta integrar Google; secciones 11-1 y 11-2.
