@@ -8,7 +8,7 @@ const SOLUTIONS=[
   "El cuadrado tiene área 10×10=100 m². La altura del triángulo es 14−10=4 m; su área es 10×4/2=20 m². Total: 120 m².",
   "El diseño 1 tiene área 7×4−1×2=26. El diseño 2 tiene 6×4−1×2−1×1=21. El diseño 3 tiene 6×2+4×2=20. El mayor es el diseño 1.",
   "En un hexágono regular el lado es igual al radio. El perímetro es 6×10=60 cm.",
-  "W es un hexágono regular de lado 10: área 150√3≈259,8 m². R es un triángulo equilátero de lado 20: área 100√3≈173,2 m². T es un cuadrado de lado 15: área 225 m². W tiene la mayor área.",
+  "W es un hexágono regular de lado 10: área 150<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mn>3</mn></msqrt></math>≈259,8 m². R es un triángulo equilátero de lado 20: área 100<math xmlns=\"http://www.w3.org/1998/Math/MathML\"><msqrt><mn>3</mn></msqrt></math>≈173,2 m². T es un cuadrado de lado 15: área 225 m². W tiene la mayor área.",
   "Al contar cuadrados completos y agrupar las fracciones del borde se obtienen aproximadamente 14–16 cuadrados. Cada uno representa 10 000 km²: el área está entre 130 000 y 190 000 km².",
   "Un plano perpendicular a las bases y paralelo al eje del cilindro produce una sección rectangular.",
   "El radio del corte satisface r²+3²=5². Así, r²=16 y r=4 cm.",
