@@ -1,0 +1,6 @@
+Diagnóstica diurna 01-2025
+40 preguntas originales, tres opciones, tres horas.
+La portada y el contenido identifican 2025 aunque el archivo de Drive empieza por 2024.
+Fuente escaneada transcrita y cotejada; figuras SVG redibujadas.
+Ítem 37: se aceptan B y C, pues «al menos la mitad ≤900 000» implica también «al menos la mitad ≤915 000».
+Inicio pendiente de incorporación en Google Apps Script.
