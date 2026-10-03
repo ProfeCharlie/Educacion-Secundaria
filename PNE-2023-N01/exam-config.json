@@ -1,0 +1,105 @@
+{
+  "id": "n01_2023",
+  "title": "Prueba Nacional Estandarizada · Nocturna 01-2023",
+  "total": 35,
+  "durationSeconds": 10800,
+  "key": [
+    "C",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "A",
+    "A",
+    "A",
+    "B",
+    "C",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "A",
+    "A",
+    "B",
+    "B",
+    "A",
+    "A",
+    "B",
+    "B",
+    "C",
+    "C",
+    "C",
+    "B",
+    "A",
+    "C",
+    "C"
+  ],
+  "areas": [
+    {
+      "name": "Geometría",
+      "items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "name": "Relaciones y Álgebra",
+      "items": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "Estadística y Probabilidad",
+      "items": [
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "sections": [
+    "11-1",
+    "11-2"
+  ],
+  "active": false,
+  "source": {
+    "driveFileId": "1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk",
+    "title": "2023-N01 Prueba Nacional Estandarizada_Nocturnos_Ordinaria_Matemáticas.pdf"
+  },
+  "backendStatus": "pendiente de incorporar en Apps Script"
+}
