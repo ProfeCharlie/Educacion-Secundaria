@@ -1,0 +1,38 @@
+// Figuras vectoriales cotejadas con el cuadernillo sumativo 2025-N00.
+const ink='#101820';
+const L=(a,b,c,d,dash=false)=>`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" ${dash?'stroke-dasharray="3 3" stroke-width="1"':''}/>`;
+const T=(x,y,s,anchor='middle',size=18)=>`<text x="${x}" y="${y}" text-anchor="${anchor}" fill="${ink}" stroke="none" font-family="Arial,sans-serif" font-size="${size}">${s}</text>`;
+const P=(x,y)=>`<circle cx="${x}" cy="${y}" r="3.5" fill="${ink}" stroke="none"/>`;
+const O=(x,y)=>`<circle cx="${x}" cy="${y}" r="3.5" fill="white"/>`;
+const path=d=>`<path d="${d}"/>`,rect=(x,y,w,h)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}"/>`;
+function S(body,w=500,h=300,label='Representación gráfica'){return `<svg class="hand-figure" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="${label}"><g fill="none" stroke="${ink}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${body}</g></svg>`;}
+function axes(ox,oy,ex,ty,x='x',y='y'){return L(ox-30,oy,ex,oy)+L(ox,oy+22,ox,ty)+path(`M ${ex-6} ${oy-3} L ${ex} ${oy} L ${ex-6} ${oy+3} M ${ox-3} ${ty+6} L ${ox} ${ty} L ${ox+3} ${ty+6}`)+T(ex+8,oy+5,x,'start')+T(ox,ty-12,y,'start');}
+const FIGURES={};
+const C=(x,y,r)=>`<circle cx="${x}" cy="${y}" r="${r}"/>`;
+FIGURES['1']=S(axes(85,70,410,25)+L(85,70,85,280)+C(310,245,100)+L(85,245,310,245,true)+L(310,70,310,245,true)+P(85,70)+P(310,245)+T(70,95,'P')+T(310,60,'45')+T(76,250,'−35','end')+T(323,237,'A','start')+T(401,189,'C'),470,365,'Aspersor A(45,−35) y circunferencia C de radio 20 metros');
+function canopy(x,y,r,extra,horizontal){const ox=65,oy=265,k=14,cx=ox+x*k,cy=oy-y*k;return S(axes(ox,oy,355,30,'x (este)','y (norte)')+C(cx,cy,r*k)+L(ox,cy,cx,cy,true)+L(cx,cy,cx,oy,true)+P(ox,oy)+P(cx,cy)+T(55,288,'R')+T(cx+(horizontal?0:13),cy-12,'A')+T(55,cy+6,y,'end')+T(cx,288,x)+(horizontal?P(cx+r*k,cy)+L(cx+r*k,cy,cx+r*k,oy,true)+T(cx+r*k,288,extra):P(cx,cy-r*k)+L(ox,cy-r*k,cx,cy-r*k,true)+T(55,cy-r*k+6,extra,'end')),475,320,'Toldo circular, centro y radio según coordenadas señaladas');}
+FIGURES['2A']=canopy(8,12,3,11,true);FIGURES['2B']=canopy(12,8,3,11,false);FIGURES['2C']=canopy(12,8,6,18,true);
+FIGURES['3']=S(axes(75,260,345,25,'x (este)','y (norte)')+C(145,120,70)+L(75,120,145,120,true)+L(145,120,145,260,true)+P(75,260)+P(145,120)+T(63,283,'P')+T(156,109,'T','start')+T(66,125,'2','end')+T(145,283,'1')+T(198,77,'C'),465,320,'Torre T(1,2), radio un kilómetro');
+FIGURES['4']=S(axes(65,275,365,30)+C(245,95,60)+L(65,35,245,35,true)+L(65,155,245,155,true)+L(245,35,245,275,true)+P(245,35)+P(245,155)+T(55,41,'200','end')+T(55,161,'100','end')+T(245,298,'150'),430,330,'Tapa circular con extremos verticales (150,200) y (150,100)');
+FIGURES['5']=S(axes(65,265,365,30)+C(233,181,56)+L(65,125,121,125,true)+L(121,125,121,265,true)+L(65,181,289,181,true)+L(177,181,177,265,true)+L(289,181,289,265,true)+P(121,125)+P(177,181)+P(289,181)+T(55,130,'10','end')+T(55,186,'6','end')+T(121,288,'4')+T(177,288,'8')+T(289,288,'16')+T(121,110,'B')+T(165,196,'M')+T(272,130,'C'),430,320,'Banca B(4,10), mesa M(8,6) y zona circular de diámetro 8 metros');
+const hex=[[100,120],[140,50],[220,50],[260,120],[220,190],[140,190]];
+FIGURES['6']=S(path('M100 120 L140 50 L220 50 L260 120 L220 190 L140 190 Z M260 120 L330 160 L290 230 L220 190')+hex.concat([[330,160],[290,230]]).map(p=>P(...p)).join('')+T(180,39,'4 m'),430,275,'Hexágono regular y cuadrado unidos por un lado');
+let grid8='';for(let i=0;i<=9;i++)grid8+=L(65+i*32,50,65+i*32,274,true);for(let i=0;i<=7;i++)grid8+=L(65,274-i*32,353,274-i*32,true);
+FIGURES['8']=S(grid8+axes(65,274,372,27)+`<path d="M97 242 C125 140 177 134 321 114 L321 242 Z" fill="#e2e8ed"/>`+P(97,242)+P(321,114)+P(321,242)+rect(393,52,130,106)+T(405,74,'La medida del','start',16)+T(405,95,'lado de cada','start',16)+T(405,116,'cuadrado es','start',16)+T(405,140,'5 m.','start',16),550,325,'Pared curva en cuadrícula de cuadrados con lado 5 metros');
+const pts9=[[8,24],[20,24],[28,16],[16,16],[16,20],[4,20]],xy9=([x,y])=>[65+x*11,310-y*10];let b9=axes(65,310,408,40);
+for(const x of [4,8,16,20,28]){b9+=L(65+x*11,310,65+x*11,70,true)+T(65+x*11,335,x)}for(const y of [16,20,24])b9+=L(65,310-y*10,373,310-y*10,true)+T(55,315-y*10,y,'end');
+b9+=path('M'+pts9.map(p=>xy9(p).join(' ')).join(' L')+' Z');pts9.forEach((p,i)=>{let [x,y]=xy9(p);b9+=P(x,y)+T(x+([1,2,4].includes(i)?12:-12),y+([3,5].includes(i)?20:-10),'ABCDEF'[i])});b9+=path('M273 70 v12 h12 M241 110 h-12 v12 M229 150 v-12 h12');FIGURES['9']=S(b9,455,360,'Polígono ABCDEF con coordenadas del patio');
+FIGURES['11']=S(`<ellipse cx="240" cy="55" rx="100" ry="20"/><path d="M140 55 Q95 125 140 205 M340 55 Q385 125 340 205"/><ellipse cx="240" cy="205" rx="100" ry="20" fill="#e2e8ed"/>`+L(240,55,240,205,true)+P(240,55)+P(240,205),480,260,'Jarrón esférico con base y abertura paralelas del mismo tamaño');
+function graph(points,{xm=8,ym=8,w=460,h=300,x='x',y='y',xt=[],yt=[],open=[],label='Gráfica de una función',origin=false}={}){const ox=70,oy=h-65,kx=(w-150)/xm,ky=(h-115)/ym,X=n=>ox+n*kx,Y=n=>oy-n*ky;let b=axes(ox,oy,w-45,28,x,y);for(const n of xt)b+=T(X(n),oy+24,n);for(const n of yt)b+=T(60,Y(n)+6,n,'end');for(const [a,z]of points){if(a)b+=L(X(a),Y(z),X(a),oy,true);if(z)b+=L(ox,Y(z),X(a),Y(z),true)}b+=path('M'+points.map(([a,z])=>X(a)+' '+Y(z)).join(' L'));points.forEach(([a,z],i)=>b+=(open.includes(i)?O:P)(X(a),Y(z)));if(origin)b+=T(60,oy+23,'0');return S(b,w,h,label)}
+FIGURES['12']=graph([[0,45],[15,30],[30,60],[45,60],[60,15]],{xm:65,ym:70,w:510,h:325,y:'v(x)',xt:[15,30,45,60],yt:[15,30,45,60],open:[0],label:'Volumen del embalse desde más de cero hasta sesenta días'}).replace('</g>',T(267,313,'Tiempo')+`<text x="20" y="165" transform="rotate(-90 20 165)" stroke="none" fill="${ink}" font-family="Arial" font-size="16">Volumen</text></g>`);
+FIGURES['17']=graph([[1,2],[5,8]],{xm:6,ym:9,w:390,h:285,xt:[1,5],yt:[2,8],label:'Longitud del cabello, función f'}).replace('</g>',T(190,115,'f')+'</g>');
+FIGURES['17A']=graph([[1,2],[8,5]],{xm:9,ym:6,w:390,h:250,xt:[1,8],yt:[2,5]});
+FIGURES['17B']=graph([[2,1],[8,5]],{xm:9,ym:6,w:390,h:250,xt:[2,8],yt:[1,5]});
+FIGURES['17C']=graph([[2,1],[5,8]],{xm:6,ym:9,w:390,h:250,xt:[2,5],yt:[1,8]});
+FIGURES['18']=graph([[0,0],[3,50],[6,60],[9,30],[15,30]],{xm:16,ym:65,w:510,h:335,y:'v(x)',xt:[3,6,9,12,15],yt:[30,50,60],label:'Rapidez del ciclista durante quince minutos'}).replace('</g>',T(282,324,'Tiempo')+`<text x="21" y="162" transform="rotate(-90 21 162)" stroke="none" fill="${ink}" font-family="Arial" font-size="16">Rapidez</text></g>`);
+FIGURES['24A']=graph([[1,0],[7,3]],{xm:8,ym:8,w:350,h:245,y:'h(x)',xt:[1,7],yt:[3]});
+FIGURES['24B']=graph([[1,0],[3,7]],{xm:8,ym:8,w:350,h:245,y:'h(x)',xt:[1,3],yt:[7]});
+FIGURES['24C']=graph([[0,1],[3,7]],{xm:8,ym:8,w:350,h:245,y:'h(x)',xt:[3],yt:[1,7]});
+FIGURES['25']=S(axes(90,245,380,28,'x','k(x)')+L(90,75,225,75,true)+L(225,75,225,245,true)+L(90,217,360,217,true)+L(360,217,360,245,true)+path('M90 217 Q225 -67 360 217')+O(90,217)+P(225,75)+P(360,217)+T(80,81,'6','end')+T(80,223,'1','end')+T(225,268,'1')+T(360,268,'2')+T(235,302,'Tiempo')+`<text x="34" y="156" transform="rotate(-90 34 156)" stroke="none" fill="${ink}" font-family="Arial" font-size="16">Altura</text>`,445,325,'Altura de la pelota con máximo de seis metros al segundo uno');
+FIGURES['32']=S(L(55,240,445,240)+path('M439 237 L445 240 L439 243')+path('M80 240 C110 240 109 65 174 65 C247 65 233 240 395 240')+L(260,150,260,240,true)+T(260,265,'45 km'),480,295,'Distribución asimétrica con cola a la derecha y promedio de 45 kilómetros');
+function drawFigure(id){if(!FIGURES[id])throw new Error('Figura inexistente: '+id);return FIGURES[id]}

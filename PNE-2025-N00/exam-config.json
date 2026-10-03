@@ -1,0 +1,115 @@
+{
+  "id": "n00_2025",
+  "title": "Prueba Nacional Estandarizada · CINDEA 00-2025",
+  "total": 40,
+  "durationSeconds": 10800,
+  "key": [
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "A",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "B",
+    "C",
+    "B",
+    "B",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "A",
+    "B",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "C",
+    "C",
+    "B",
+    "B",
+    "A",
+    "C",
+    "A",
+    "B",
+    "C",
+    "A",
+    "A",
+    "A"
+  ],
+  "areas": [
+    {
+      "name": "Geometría",
+      "items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        36
+      ]
+    },
+    {
+      "name": "Relaciones y Álgebra",
+      "items": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "name": "Estadística y Probabilidad",
+      "items": [
+        32,
+        33,
+        34,
+        35,
+        40
+      ]
+    }
+  ],
+  "sections": [
+    "11-1",
+    "11-2"
+  ],
+  "active": false,
+  "source": {
+    "driveFileId": "1mpiplNVNfVemjHB6V--ejenLrPo6HTax",
+    "title": "2025-N00 Prueba Nacional Estandarizada_CINDEA_Ordinaria_Matemáticas Original.pdf"
+  },
+  "backendStatus": "pendiente de incorporar en Apps Script"
+}
