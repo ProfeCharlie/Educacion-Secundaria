@@ -33,7 +33,7 @@
     {
       "path": "PNE-2023-N01",
       "title": "Nocturna ordinaria 01-2023",
-      "status": "programada, pendiente de habilitación",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk",
         "url": "https://drive.google.com/file/d/1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk/view?usp=drivesdk",
@@ -47,7 +47,7 @@
     {
       "path": "PNE-2023-T01",
       "title": "Técnica ordinaria 01-2023",
-      "status": "programada, pendiente de habilitación",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1CpWYfKVM2NeQJNH1NO1R5YLbnsgysrE7",
         "url": "https://drive.google.com/file/d/1CpWYfKVM2NeQJNH1NO1R5YLbnsgysrE7/view?usp=drivesdk",
@@ -83,7 +83,7 @@
       "items": 35,
       "backend": "pendiente, inicio desactivado",
       "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
-      "validation": "Preguntas y opciones cotejadas con el escaneo; figuras SVG redibujadas y revisadas; navegación, temporizador, confirmación, calificación, resultados por área y reinicio comprobados con DOM local.",
+      "validation": "Preguntas y opciones cotejadas con el escaneo; figuras SVG redibujadas y revisadas; navegación, temporizador, confirmación, calificación, resultados por área y reinicio comprobados con DOM local. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Ítem 31 admite A/B/C por insuficiencia de datos del original."
     },
     {
@@ -148,7 +148,7 @@
       "items": 40,
       "backend": "pendiente, inicio desactivado",
       "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
-      "validation": "Preguntas y opciones cotejadas con el escaneo; figuras SVG redibujadas y revisadas; navegación, temporizador, confirmación, calificación, resultados por área y reinicio comprobados con DOM local.",
+      "validation": "Preguntas y opciones cotejadas con el escaneo; figuras SVG redibujadas y revisadas; navegación, temporizador, confirmación, calificación, resultados por área y reinicio comprobados con DOM local. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Portada y contenido identifican 2025 aunque el nombre del archivo dice 2024. Ítem 37 admite B/C por «al menos la mitad»."
     },
     {
@@ -217,7 +217,7 @@
       "items": 44,
       "backend": "pendiente, inicio desactivado",
       "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
-      "validation": "44 ítems de cuatro opciones, figuras SVG y solucionario cotejados; navegación y resultados por área verificados.",
+      "validation": "44 ítems de cuatro opciones, figuras SVG y solucionario cotejados; navegación y resultados por área verificados. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "El original omite el número 20. Ítem 19: C; ítem 20 del sitio (fuente 21): A. Ítem 41 admite C/D por ambigüedad del enunciado."
     },
     {
@@ -258,7 +258,7 @@
       "items": 60,
       "backend": "pendiente, inicio desactivado",
       "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
-      "validation": "60 ítems, cuatro opciones, figuras SVG y soluciones cotejados con el PDF de esta variante. Flujo y tres áreas verificados localmente.",
+      "validation": "60 ítems, cuatro opciones, figuras SVG y soluciones cotejados con el PDF de esta variante. Flujo y tres áreas verificados localmente. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Se conservaron las diferencias de datos, criterios, gráficas y respuestas entre las variantes diurna S-MAT-42 y nocturna S-MAT-45."
     },
     {
@@ -273,7 +273,7 @@
       "items": 60,
       "backend": "pendiente, inicio desactivado",
       "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
-      "validation": "60 ítems, cuatro opciones, figuras SVG y soluciones cotejados con el PDF de esta variante. Flujo y tres áreas verificados localmente.",
+      "validation": "60 ítems, cuatro opciones, figuras SVG y soluciones cotejados con el PDF de esta variante. Flujo y tres áreas verificados localmente. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Se conservaron las diferencias de datos, criterios, gráficas y respuestas entre las variantes diurna S-MAT-42 y nocturna S-MAT-45."
     },
     {
@@ -288,7 +288,7 @@
       "items": 60,
       "backend": "pendiente, inicio desactivado",
       "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
-      "validation": "60 preguntas, cuatro opciones originales, SVG y soluciones cotejados; resultados y variantes aceptadas verificados.",
+      "validation": "60 preguntas, cuatro opciones originales, SVG y soluciones cotejados; resultados y variantes aceptadas verificados. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Los enlaces originales de video se muestran en el solucionario. Se aceptan C/D en ítem 58 y B/C en ítem 60 por ambigüedad."
     }
   ],
