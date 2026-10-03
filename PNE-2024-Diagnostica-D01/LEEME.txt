@@ -1,0 +1,5 @@
+Diagnóstica diurna 01-2024
+35 preguntas originales, tres opciones, tres horas.
+Fuente escaneada transcrita y cotejada; figuras SVG redibujadas.
+Ítem 31: la condición «al menos la mitad ≥3,08 kg» no determina que la mediana sea exactamente 3,08. Se registra C como interpretación prevista y se aceptan A, B y C por insuficiencia de datos del original.
+Inicio pendiente de incorporación en Google Apps Script.
