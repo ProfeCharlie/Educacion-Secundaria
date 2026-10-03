@@ -1,0 +1,105 @@
+{
+  "id": "t01_2023",
+  "title": "Prueba Nacional Estandarizada · Técnica 01-2023",
+  "total": 35,
+  "durationSeconds": 10800,
+  "key": [
+    "B",
+    "B",
+    "C",
+    "B",
+    "C",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "B",
+    "C",
+    "B",
+    "B",
+    "A",
+    "A",
+    "A",
+    "C",
+    "A",
+    "B",
+    "A",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "B",
+    "A",
+    "C",
+    "C",
+    "B",
+    "A"
+  ],
+  "areas": [
+    {
+      "name": "Geometría",
+      "items": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "name": "Relaciones y Álgebra",
+      "items": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "name": "Estadística y Probabilidad",
+      "items": [
+        32,
+        33,
+        34,
+        35
+      ]
+    }
+  ],
+  "sections": [
+    "11-1",
+    "11-2"
+  ],
+  "active": false,
+  "source": {
+    "driveFileId": "1CpWYfKVM2NeQJNH1NO1R5YLbnsgysrE7",
+    "title": "2023-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.pdf"
+  },
+  "backendStatus": "pendiente de incorporar en Apps Script"
+}
