@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-10-03",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -29,12 +29,16 @@
     {
       "path": "PNE-2023-N01",
       "title": "Nocturna ordinaria 01-2023",
-      "status": "pendiente",
+      "status": "programada, pendiente de habilitación",
       "source": {
         "id": "1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk",
         "url": "https://drive.google.com/file/d/1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk/view?usp=drivesdk",
         "filename": "2023-N01 Prueba Nacional Estandarizada_Nocturnos_Ordinaria_Matemáticas.pdf"
-      }
+      },
+      "items": 35,
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Código publicado en GitHub y añadido al menú. Google devuelve 502 al iniciar sesión.",
+      "validation": "35 ítems, 3 opciones y 35 soluciones; SVG redibujados; pruebas locales de DOM satisfactorias, áreas 11/20/4."
     },
     {
       "path": "PNE-2023-T01",
