@@ -198,12 +198,17 @@
     {
       "path": "PNE-2026-Diagnostica-D01",
       "title": "Diurna diagnóstica 01-2026",
-      "status": "pendiente",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1HgklX-EwcjyiBdYycJUxcUoFV7xLnriJ",
         "url": "https://drive.google.com/file/d/1HgklX-EwcjyiBdYycJUxcUoFV7xLnriJ/view?usp=drivesdk",
         "filename": "2026-D01 Prueba Nacional Estandarizada_Diurnos_Diagnostica_Matemáticas final.pdf"
-      }
+      },
+      "items": 44,
+      "backend": "pendiente, inicio desactivado",
+      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "validation": "44 ítems de cuatro opciones, figuras SVG y solucionario cotejados; navegación y resultados por área verificados.",
+      "notes": "El original omite el número 20. Ítem 19: C; ítem 20 del sitio (fuente 21): A. Ítem 41 admite C/D por ambigüedad del enunciado."
     },
     {
       "path": "PNE-2026-T01",
