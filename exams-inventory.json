@@ -218,7 +218,8 @@
         "id": "1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb",
         "url": "https://docs.google.com/document/d/1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb/edit?usp=drivesdk&ouid=115905229313042507911&rtpof=true&sd=true",
         "filename": "2026-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.docx"
-      }
+      },
+      "notes": "Fuente original: capturas recortadas. Ítem 48 solo muestra opciones A/B/C; ítem 57 solo muestra opción A. La versión mejorado incluye reconstrucciones; se requiere confirmar las opciones faltantes antes de publicarla."
     },
     {
       "path": "PNE-2026-Sumativa-Nocturna-I-Semestre",
@@ -268,12 +269,17 @@
     {
       "path": "PNE-2026-Simulacro",
       "title": "Simulacro 2026",
-      "status": "pendiente",
+      "status": "publicada, pendiente de integración",
       "source": {
         "id": "1oP9v3FYuqiGGBMaryaP2jGcazunD2pBX",
         "url": "https://drive.google.com/file/d/1oP9v3FYuqiGGBMaryaP2jGcazunD2pBX/view?usp=drivesdk",
         "filename": "Simulacro_PNE_2026_Matemática_con_Videos_QR_profe_danny_CINDEA_May26.pdf"
-      }
+      },
+      "items": 60,
+      "backend": "pendiente, inicio desactivado",
+      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "validation": "60 preguntas, cuatro opciones originales, SVG y soluciones cotejados; resultados y variantes aceptadas verificados.",
+      "notes": "Los enlaces originales de video se muestran en el solucionario. Se aceptan C/D en ítem 58 y B/C en ítem 60 por ambigüedad."
     }
   ],
   "notes": [
