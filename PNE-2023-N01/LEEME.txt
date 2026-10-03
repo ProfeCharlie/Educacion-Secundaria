@@ -1,0 +1,6 @@
+NOCTURNA ORDINARIA 01-2023
+
+35 preguntas de selección única, tres opciones, figuras SVG redibujadas y 35 soluciones.
+Temporizador de 3 horas; áreas de 11, 20 y 4 ítems.
+Secciones: 11-1 y 11-2, inicialmente desactivadas.
+Estado: pendiente de publicar e integrar al receptor y administrador.
