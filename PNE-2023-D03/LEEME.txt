@@ -1,0 +1,7 @@
+DIURNA ORDINARIA 03-2023
+
+35 preguntas de selección única, tres opciones, figuras SVG redibujadas y 35 soluciones.
+Temporizador de 3 horas; áreas de 11, 20 y 4 ítems.
+Secciones: 11-1 y 11-2, inicialmente desactivadas.
+Estado: código publicado; integración al receptor y administrador pendiente por falta de acceso a Google. Inicio desactivado.
+Verificación local: 35 preguntas, opciones, navegación, temporizador, confirmación, calificación, tres áreas con 11/20/4 ítems y reinicio.
