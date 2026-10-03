@@ -1,0 +1,6 @@
+Simulacro 2026
+60 preguntas y cuatro opciones originales. Gráficas SVG redibujadas y 60 soluciones cotejadas.
+Se conservan las diferencias respecto a la sumativa nocturna: punto P, volumen del embalse, rapidez del ciclista, sistemas y tablas.
+Por ambigüedad de los enunciados, el ítem 58 admite C/D y el ítem 60 admite B/C.
+Los enlaces originales del PDF se muestran al revisar las soluciones.
+Inicio desactivado hasta integrar Google; secciones 11-1 y 11-2.
