@@ -1,6 +1,6 @@
 const TOTAL=40,SECONDS=3*60*60,EXAM='n00_2025';
 const KEY=ANSWER_KEY;
-const BACKEND_READY=false;
+const BACKEND_READY=true;
 const API='https://script.google.com/macros/s/AKfycbzTbcCEbXGaZgIHfiBo8MExOJ5o8wpPSTuvLgdaGHhRNzuwRCwPeyJy5xHXhy2P518HJQ/exec';
 const LEGACY_API='https://script.google.com/macros/s/AKfycbwtRGWJPNc8n413pPLvQE5ntBUFfJeG2qKJVxhhNG9CM8tlxqXb-j07anfudEV7Zz0y/exec';
 const STORE='pne_2025_n00_attempt_v1',$=id=>document.getElementById(id);
@@ -31,4 +31,3 @@ function send(){if(submitted||sending||!ticket)return;sending=true;$('delivery')
 function reset(){clearInterval(ticker);localStorage.removeItem(STORE);answers=Array(TOTAL).fill(null);index=0;attemptId='';ticket='';student=null;endsAt=0;finished=false;timedOut=false;submitted=false;$('review').hidden=true;$('reviewBtn').textContent='Revisar respuestas';$('reviewBtn').setAttribute('aria-expanded','false');$('results').hidden=true;$('exam').hidden=true;$('welcome').hidden=false;$('clock').textContent=format(SECONDS);$('firstName').value='';$('lastName').value='';$('section').value='';count();check()}
 $('section').addEventListener('change',check);$('start').onclick=start;$('retry').onclick=check;$('retryDelivery').onclick=send;$('menuBtn').onclick=()=>location.assign('https://profecharlie.github.io/Educacion-Secundaria/');$('reviewBtn').onclick=()=>{const open=$('review').hidden;$('review').hidden=!open;$('reviewBtn').textContent=open?'Ocultar revisión':'Revisar respuestas';$('reviewBtn').setAttribute('aria-expanded',String(open))};$('restart').onclick=reset;$('prev').onclick=()=>show(Math.max(0,index-1));$('next').onclick=()=>index<TOTAL-1?show(index+1):finish(false);$('finish').onclick=()=>finish(false);$('cancelFinish').onclick=()=>$('finishDialog').close();$('confirmFinish').onclick=()=>{finish(true)};
 if(new URLSearchParams(location.search).has('nuevo'))localStorage.removeItem(STORE);restore();count();if(finished){result();if(!submitted)$('retryDelivery').hidden=false}else if(attemptId&&ticket){if(endsAt<=Date.now())finish(true);else enter()}else check();
-
