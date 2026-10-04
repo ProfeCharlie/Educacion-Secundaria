@@ -19,43 +19,43 @@
     {
       "path": "PNE-2023-D03",
       "title": "Diurna ordinaria 03-2023",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1jl-oGb2WQvZVaGMjvT18wTXtFQPh5MeQ",
         "url": "https://drive.google.com/file/d/1jl-oGb2WQvZVaGMjvT18wTXtFQPh5MeQ/view?usp=drivesdk",
         "filename": "2023-D03 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas escaneado DO3.pdf"
       },
       "items": 35,
-      "backend": "pendiente, inicio desactivado",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
       "validation": "35 ítems, 3 opciones, figuras SVG, solucionario y flujo verificados localmente.",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración."
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente."
     },
     {
       "path": "PNE-2023-N01",
       "title": "Nocturna ordinaria 01-2023",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk",
         "url": "https://drive.google.com/file/d/1PXfwvGKspQ7OfW8sXRfvRS2nyJqRP4jk/view?usp=drivesdk",
         "filename": "2023-N01 Prueba Nacional Estandarizada_Nocturnos_Ordinaria_Matemáticas.pdf"
       },
       "items": 35,
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Código publicado en GitHub y añadido al menú. Google devuelve 502 al iniciar sesión.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "35 ítems, 3 opciones y 35 soluciones; SVG redibujados; pruebas locales de DOM satisfactorias, áreas 11/20/4."
     },
     {
       "path": "PNE-2023-T01",
       "title": "Técnica ordinaria 01-2023",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1CpWYfKVM2NeQJNH1NO1R5YLbnsgysrE7",
         "url": "https://drive.google.com/file/d/1CpWYfKVM2NeQJNH1NO1R5YLbnsgysrE7/view?usp=drivesdk",
         "filename": "2023-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.pdf"
       },
       "items": 35,
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Código publicado en GitHub y añadido al menú. Google devuelve 502 al iniciar sesión.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "35 ítems, 3 opciones y 35 soluciones; SVG redibujados; pruebas locales de DOM satisfactorias, áreas 11/20/4."
     },
     {
@@ -74,31 +74,31 @@
     {
       "path": "PNE-2024-Diagnostica-D01",
       "title": "Diurna diagnóstica 01-2024",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1L6qu-gCExRs1wUrXtIsaem_Fq5cSQEEw",
         "url": "https://drive.google.com/file/d/1L6qu-gCExRs1wUrXtIsaem_Fq5cSQEEw/view?usp=drivesdk",
         "filename": "2024 D01Estandarizada diagnóstica Escaneado.pdf"
       },
       "items": 35,
-      "backend": "pendiente, inicio desactivado",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "Preguntas y opciones cotejadas con el escaneo; figuras SVG redibujadas y revisadas; navegación, temporizador, confirmación, calificación, resultados por área y reinicio comprobados con DOM local. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Ítem 31 admite A/B/C por insuficiencia de datos del original."
     },
     {
       "path": "PNE-2024-N01",
       "title": "Nocturna ordinaria 01-2024",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1NNNFCMuk4egGeMGLWVRkhI6-vuII_erE",
         "url": "https://docs.google.com/document/d/1NNNFCMuk4egGeMGLWVRkhI6-vuII_erE/edit?usp=drivesdk&ouid=115905229313042507911&rtpof=true&sd=true",
         "filename": "2024-N01 Prueba Nacional Estandarizada_Nocturnos_Ordinaria_Matemáticas.docx"
       },
       "items": 35,
-      "backend": "pendiente, inicio desactivado",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
       "validation": "35 ítems, 3 opciones, figuras SVG, solucionario y flujo verificados localmente.",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración."
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente."
     },
     {
       "path": "PNE-2024-N03",
@@ -139,30 +139,30 @@
     {
       "path": "PNE-2025-Diagnostica-D01",
       "title": "Diurna diagnóstica 01-2025",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1xdTxuhxQlvukbRHOW60l0NMQuiAonw1s",
         "url": "https://drive.google.com/file/d/1xdTxuhxQlvukbRHOW60l0NMQuiAonw1s/view?usp=drivesdk",
         "filename": "2024-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas escaneado DO1 diagnostico.pdf"
       },
       "items": 40,
-      "backend": "pendiente, inicio desactivado",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "Preguntas y opciones cotejadas con el escaneo; figuras SVG redibujadas y revisadas; navegación, temporizador, confirmación, calificación, resultados por área y reinicio comprobados con DOM local. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Portada y contenido identifican 2025 aunque el nombre del archivo dice 2024. Ítem 37 admite B/C por «al menos la mitad»."
     },
     {
       "path": "PNE-2025-N00",
       "title": "CINDEA ordinaria 00-2025",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1mpiplNVNfVemjHB6V--ejenLrPo6HTax",
         "url": "https://drive.google.com/file/d/1mpiplNVNfVemjHB6V--ejenLrPo6HTax/view?usp=drivesdk",
         "filename": "2025-N00 Prueba Nacional Estandarizada_CINDEA_Ordinaria_Matemáticas Original.pdf"
       },
       "items": 40,
-      "backend": "pendiente, inicio desactivado",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "40 ítems, figuras SVG y solucionario cotejados; flujo y resultados por área verificados localmente."
     },
     {
@@ -208,15 +208,15 @@
     {
       "path": "PNE-2026-Diagnostica-D01",
       "title": "Diurna diagnóstica 01-2026",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1HgklX-EwcjyiBdYycJUxcUoFV7xLnriJ",
         "url": "https://drive.google.com/file/d/1HgklX-EwcjyiBdYycJUxcUoFV7xLnriJ/view?usp=drivesdk",
         "filename": "2026-D01 Prueba Nacional Estandarizada_Diurnos_Diagnostica_Matemáticas final.pdf"
       },
       "items": 44,
-      "backend": "pendiente, inicio desactivado",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "44 ítems de cuatro opciones, figuras SVG y solucionario cotejados; navegación y resultados por área verificados. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "El original omite el número 20. Ítem 19: C; ítem 20 del sitio (fuente 21): A. Ítem 41 admite C/D por ambigüedad del enunciado."
     },
@@ -234,60 +234,60 @@
     {
       "path": "PNE-2026-Sumativa-Nocturna-I-Semestre",
       "title": "Sumativa nocturna I semestre 2026",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1ARph9RHZ3tVV4XohnVsxa8ZIPPk33YZg",
         "url": "https://drive.google.com/file/d/1ARph9RHZ3tVV4XohnVsxa8ZIPPk33YZg/view?usp=drivesdk",
         "filename": "MATEMÁTICAS_SUMATIVA-ORDINARIA NOCTURNA IPEC-CINDEA-CONED-I SEMESTRE.pdf"
       },
       "items": 60,
-      "backend": "pendiente, inicio desactivado",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "60 ítems, figuras SVG y solucionario cotejados; flujo y resultados por área verificados localmente.",
       "notes": "Cuatro opciones originales. Ítem 24: 0 °C. Se aceptan C/D en ítem 58 y B/C en ítem 60 por ambigüedad del enunciado."
     },
     {
       "path": "PNE-2026-Reprogramacion-Diurna",
       "title": "Reprogramación diurna 2026",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1Uq8JmEKcx9aZE47Gbq6jlxwaXKSj0Hug",
         "url": "https://drive.google.com/file/d/1Uq8JmEKcx9aZE47Gbq6jlxwaXKSj0Hug/view?usp=drivesdk",
         "filename": "MATEMÁTICAS_SUMATIVA-REPROGRAMACIÓN-DIURNA-IPEC-CINDEA-CONED.pdf"
       },
       "items": 60,
-      "backend": "pendiente, inicio desactivado",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "60 ítems, cuatro opciones, figuras SVG y soluciones cotejados con el PDF de esta variante. Flujo y tres áreas verificados localmente. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Se conservaron las diferencias de datos, criterios, gráficas y respuestas entre las variantes diurna S-MAT-42 y nocturna S-MAT-45."
     },
     {
       "path": "PNE-2026-Reprogramacion-Nocturna",
       "title": "Reprogramación nocturna 2026",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1q3HzxYer-QFnOoAKIdiU1XFdr4lyBuxG",
         "url": "https://drive.google.com/file/d/1q3HzxYer-QFnOoAKIdiU1XFdr4lyBuxG/view?usp=drivesdk",
         "filename": "MATEMÁTICAS_SUMATIVA-REPROGRAMACIÓN-NOCTURNA-IPEC-CINDEA-CONED.pdf"
       },
       "items": 60,
-      "backend": "pendiente, inicio desactivado",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "60 ítems, cuatro opciones, figuras SVG y soluciones cotejados con el PDF de esta variante. Flujo y tres áreas verificados localmente. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Se conservaron las diferencias de datos, criterios, gráficas y respuestas entre las variantes diurna S-MAT-42 y nocturna S-MAT-45."
     },
     {
       "path": "PNE-2026-Simulacro",
       "title": "Simulacro 2026",
-      "status": "publicada, pendiente de integración",
+      "status": "publicada",
       "source": {
         "id": "1oP9v3FYuqiGGBMaryaP2jGcazunD2pBX",
         "url": "https://drive.google.com/file/d/1oP9v3FYuqiGGBMaryaP2jGcazunD2pBX/view?usp=drivesdk",
         "filename": "Simulacro_PNE_2026_Matemática_con_Videos_QR_profe_danny_CINDEA_May26.pdf"
       },
       "items": 60,
-      "backend": "pendiente, inicio desactivado",
-      "publication": "Código completo publicado en GitHub; añadido al menú; inicio desactivado hasta integración.",
+      "backend": "integrado; secciones 11-1 y 11-2 creadas desactivadas",
+      "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "60 preguntas, cuatro opciones originales, SVG y soluciones cotejados; resultados y variantes aceptadas verificados. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Los enlaces originales de video se muestran en el solucionario. Se aceptan C/D en ítem 58 y B/C en ítem 60 por ambigüedad."
     }
