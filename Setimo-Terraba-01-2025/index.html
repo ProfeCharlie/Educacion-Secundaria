@@ -1,0 +1,813 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Matemática Sétimo · Convocatoria 01-2025</title><style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#17202a;--muted:#65707d;--line:#dbe1e7;--accent:#1f5d99;--ok:#1f7a4d;--bad:#b23a3a}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.topbar{max-width:1100px;margin:auto;padding:10px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{font-weight:800}.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fafbfc;font-size:14px}.timer{font-variant-numeric:tabular-nums;font-weight:800}
+main{max-width:1100px;margin:22px auto;padding:0 16px 40px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 18px #0000000b;padding:18px}#startView{text-align:center;padding:42px 24px}.hero{font-size:34px;margin:0 0 10px}.sub{color:var(--muted);max-width:760px;margin:0 auto 22px;line-height:1.5}
+button{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer;background:#e9eef3;color:var(--ink)}button.primary{background:var(--accent);color:#fff}button.danger{background:#7b1f1f;color:#fff}button:disabled{opacity:.45;cursor:not-allowed}.exam-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:18px}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.qnum{font-size:20px;font-weight:800}.status{color:var(--muted);font-size:14px}.qtext{font-size:18px;line-height:1.55}.context{margin:12px 0 16px;padding:12px;background:#f8fafc;border:1px solid var(--line);border-radius:10px}.context p{margin:.4em 0}.visual-note{color:var(--muted);font-size:14px}table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px}th,td{border:1px solid #cfd7df;padding:7px;text-align:left}.original-centered th,.original-centered td{text-align:center}th{background:#eef3f7}.choices{display:grid;gap:10px;margin-top:16px}.choice{text-align:left;font-size:16px;padding:13px;background:#f7f9fb;border:2px solid var(--line)}.choice.selected{border-color:var(--accent);background:#eaf2fb}.choice.correct{border-color:var(--ok);background:#eaf7ef}.choice.wrong{border-color:var(--bad);background:#fdecec}.optletter{display:inline-block;width:28px;font-weight:900}.navbuttons{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.side h3{margin-top:0}.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.qjump{padding:7px 0;border-radius:7px;font-size:12px}.qjump.current{outline:2px solid var(--accent)}.qjump.answered{background:#dff0e7}.qjump.unanswered{background:#eef1f4}.small{font-size:13px;color:var(--muted);line-height:1.4}.qfigure{margin:18px 0;text-align:center;background:#fff;border:1.5px solid #000;padding:14px;box-sizing:border-box}.qfigure img{display:block;max-width:100%;max-height:560px;width:auto;height:auto;margin:0 auto;background:#fff;object-fit:contain}.original{margin-top:16px}.original summary{cursor:pointer;color:var(--accent);font-weight:700}.original img{display:block;max-width:100%;max-height:70vh;margin:10px auto 0;border:1px solid var(--line);border-radius:8px}.result{display:none}.score{font-size:42px;font-weight:900}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.stat{padding:14px;border:1px solid var(--line);border-radius:10px;text-align:center}.review-list{display:grid;gap:8px;max-height:430px;overflow:auto;margin-top:14px}.review-row{display:grid;grid-template-columns:72px 1fr 1fr;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px}.good{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}.review-solution{grid-column:1/-1;padding:10px 12px;background:#f8fafc;border-left:4px solid var(--accent);border-radius:6px;line-height:1.45}.review-solution b{display:block;margin-bottom:4px}
+@media(max-width:800px){.exam-layout{grid-template-columns:1fr}.side{order:-1}.grid{grid-template-columns:repeat(10,1fr)}.hero{font-size:27px}.review-row{grid-template-columns:55px 1fr 1fr}.qtext{font-size:17px}}
+.item1-original th{text-align:center}.item1-original td:first-child{text-align:left}.item1-original td:nth-child(2){text-align:center}
+.item2-original th,.item2-original td{text-align:center}
+.item4-original th,.item4-original td{text-align:center}
+.item56-original th,.item56-original td{text-align:center}
+.item1112-original th{text-align:center}
+.item1112-original td:first-child{text-align:left}
+.item1112-original td:not(:first-child){text-align:center}
+.item46-original th,.item46-original td{text-align:center}
+
+.exam-subtitle{
+  margin-top:6px;
+  font-size:14px;
+  font-weight:600;
+  color:#0057B8;
+}
+
+
+.exam-intro{
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.55;
+}
+.exam-intro ul{
+  margin:0;
+  padding-left:22px;
+}
+.exam-intro li{
+  margin:5px 0;
+}
+.exam-encouragement{
+  margin-top:10px;
+  font-weight:700;
+  color:#0057B8;
+}
+
+
+.exam-intro ul{
+  list-style-position:outside;
+  padding-left:18px !important;
+  margin-left:0 !important;
+}
+.exam-intro li{
+  padding-left:0 !important;
+  margin-left:0 !important;
+}
+.exam-intro li::marker{
+  font-size:0.9em;
+}
+
+
+.exam-intro{margin-top:14px;font-size:14px;line-height:1.55}
+.exam-intro .intro-line{display:flex;align-items:flex-start;gap:6px;margin:5px 0}
+.exam-intro .intro-bullet{display:inline-block;flex:0 0 auto;font-weight:700;line-height:1.55}
+.exam-encouragement{margin-top:10px;font-weight:700;color:#0057B8}
+
+
+.exam-encouragement{
+  margin-top:12px !important;
+  font-size:17px !important;
+  font-weight:700 !important;
+  color:#7B2CBF !important;
+}
+
+
+.instructions-title{
+  font-weight:700;
+  margin-bottom:7px;
+}
+.exam-intro .intro-line{
+  display:flex;
+  align-items:flex-start;
+  gap:5px;
+  margin:5px 0;
+}
+.exam-intro .intro-bullet{
+  flex:0 0 auto;
+  font-weight:700;
+}
+
+
+.exam-intro,
+.exam-intro .instructions-title,
+.exam-intro .intro-line,
+.exam-intro .intro-line span{
+  text-align:left !important;
+}
+.exam-intro{
+  width:100%;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+
+.choice:disabled{cursor:not-allowed!important;opacity:.72}
+
+.exam-encouragement{
+  text-align:center !important;
+  width:100% !important;
+  display:block !important;
+}
+
+
+.exam-intro .intro-line{display:flex !important;align-items:flex-start !important;gap:5px !important;text-align:left !important;}
+.exam-intro .intro-bullet{display:inline-block !important;flex:0 0 auto !important;font-weight:700 !important;}
+.exam-encouragement{text-align:center !important;width:100% !important;display:block !important;}
+
+.calculator-approved-image{
+  width:100%;
+  margin:14px 0 18px;
+  text-align:center;
+}
+.calculator-approved-image img{
+  display:block;
+  width:100%;
+  max-width:1100px;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto;
+}
+
+
+.calculator-brand-title{
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  margin:14px 0 6px;
+  color:#1f2937;
+}
+
+
+.calculator-approved-image img{
+  display:block !important;
+  width:100% !important;
+  max-width:1200px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  margin:0 auto !important;
+}
+
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+<style>
+.tabla-item2 th:nth-child(n+2):nth-child(-n+5),
+.tabla-item2 td:nth-child(n+2):nth-child(-n+5){
+    text-align:center !important;
+    vertical-align:middle !important;
+}
+</style>
+
+
+<style>
+.tabla-item11 th, .tabla-item11 td{
+    border:1px solid #000;
+    padding:6px 8px;
+}
+.tabla-item11{
+    border-collapse:collapse;
+    margin:8px 0;
+}
+.tabla-item11 th{
+    text-align:center;
+}
+.tabla-item11 td:first-child{
+    text-align:left;
+}
+.tabla-item11 td:nth-child(n+2){
+    text-align:center;
+}
+</style>
+
+
+<style>
+/* Uniformar el texto acentuado de las fórmulas del ítem 11 */
+.formulas-item11 mjx-mtext,
+.formulas-item11 mjx-mtext *{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+</style>
+
+
+<style>
+/* Fracciones del ítem 11 con la misma tipografía del texto normal */
+.formulas-item11 .html-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    font-family:inherit !important;
+    font-size:inherit !important;
+    line-height:1.15;
+    margin:0 .18em;
+}
+.formulas-item11 .html-frac .frac-top,
+.formulas-item11 .html-frac .frac-bottom{
+    font-family:inherit !important;
+    font-size:inherit !important;
+    font-weight:inherit !important;
+    font-style:normal !important;
+    white-space:nowrap;
+}
+.formulas-item11 .html-frac .frac-top{
+    border-bottom:1.3px solid currentColor;
+    padding:0 .22em .10em;
+}
+.formulas-item11 .html-frac .frac-bottom{
+    padding:.10em .22em 0;
+}
+</style>
+
+
+<style id="q26-formula-style">
+.q26-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  width:100%;
+}
+.q26-copy{flex:1;min-width:0;}
+.q26-formula-box{
+  flex:0 0 auto;
+  width:168px;
+  height:66px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  color:#111;
+  white-space:nowrap;
+}
+.q26-left{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+}
+.q26-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+  font-family:Arial,Helvetica,sans-serif;
+  font-style:normal;
+}
+.q26-num{
+  display:block;
+  padding:0 5px 4px 5px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.q26-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+@media (max-width:700px){
+  .q26-top{align-items:flex-start;gap:14px;}
+  .q26-formula-box{width:160px;height:64px;}
+}
+</style>
+
+
+<style id="q26-after-style">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:12px;
+  margin-bottom:4px;
+}
+</style>
+
+
+<style id="q26-order-final">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+</style>
+
+
+<style id="q26-angle-svg-style">
+.q26-left{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+.q26-angle-symbol{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.q26-angle-symbol svg{display:block;}
+</style>
+
+
+<style id="plain-formula-boxes-after-q26">
+.formula-after-stem{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+.plain-formula-box{
+  min-width:145px;
+  min-height:64px;
+  padding:8px 16px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+  color:#111;
+}
+.plain-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+}
+.plain-num{
+  display:block;
+  padding:0 5px 4px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.plain-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+</style>
+
+<style id="q1-table-pdf-style">
+.q1-pdf-table{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.4px solid #222 !important;
+  border-bottom:1.4px solid #222 !important;
+}
+.q1-pdf-table th,
+.q1-pdf-table td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 18px !important;
+  white-space:nowrap !important;
+}
+.q1-pdf-table th:first-child,
+.q1-pdf-table td:first-child{
+  text-align:left !important;
+}
+.q1-pdf-table th:not(:first-child),
+.q1-pdf-table td:not(:first-child){
+  text-align:center !important;
+}
+.q1-pdf-table tr:first-child th,
+.q1-pdf-table tr:first-child td{
+  border-bottom:1.4px solid #222 !important;
+}
+/* En el PDF de la pregunta 1 NO hay líneas verticales
+   ni líneas horizontales entre las filas de datos. */
+.q1-pdf-table th + th,
+.q1-pdf-table th + td,
+.q1-pdf-table td + th,
+.q1-pdf-table td + td{
+  border-left:none !important;
+}
+.q1-pdf-table tr:not(:first-child) th,
+.q1-pdf-table tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+</style>
+
+
+<style id="item1-original-pdf-style">
+.item1-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th,
+.item1-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:7px 14px !important;
+  white-space:nowrap !important;
+}
+.item1-original tr:first-child th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th:first-child,
+.item1-original td:first-child{
+  text-align:left !important;
+}
+.item1-original th:nth-child(2),
+.item1-original td:nth-child(2){
+  text-align:center !important;
+}
+/* Sin líneas verticales ni líneas entre filas de datos, como en el PDF. */
+.item1-original th + th,
+.item1-original td + td{
+  border-left:none !important;
+}
+.item1-original tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+</style>
+
+
+<style id="tablas-pdf-restantes">
+/* PREGUNTA 5: sin líneas verticales ni divisiones entre filas de datos */
+.item5-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th,
+.item5-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 14px !important;
+  white-space:nowrap !important;
+}
+.item5-original thead th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th:first-child,
+.item5-original td:first-child{
+  text-align:left !important;
+}
+.item5-original th:not(:first-child),
+.item5-original td:not(:first-child){
+  text-align:center !important;
+}
+
+/* PREGUNTAS 2, 4, 11 y 46: el PDF sí muestra cuadrícula completa */
+.tabla-item2,
+.item4-original,
+.tabla-item11,
+.item46-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border:1.4px solid #111 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+}
+.tabla-item2 th, .tabla-item2 td,
+.item4-original th, .item4-original td,
+.tabla-item11 th, .tabla-item11 td,
+.item46-original th, .item46-original td{
+  border:1.4px solid #111 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding:6px 12px !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+}
+
+/* Primera columna de 4 y 11 a la izquierda como en el original */
+.item4-original th:first-child,
+.item4-original td:first-child,
+.tabla-item11 th:first-child,
+.tabla-item11 td:first-child{
+  text-align:left !important;
+}
+
+/* Primera columna de 46 centrada, como en el PDF */
+.item46-original th:first-child,
+.item46-original td:first-child{
+  text-align:center !important;
+}
+</style>
+
+
+<style id="q2-first-column-left">
+.tabla-item2 th:first-child,
+.tabla-item2 td:first-child{
+  text-align:left !important;
+}
+</style>
+
+
+<style id="q36-option-graphs-style">
+.q36-option-graph{display:block;width:min(390px,100%);height:auto;margin:4px auto;}
+</style>
+
+
+<style id="q37-bullets-style">
+.q37-bullets{margin:14px 0 4px 24px;line-height:1.9;}
+</style>
+
+
+<style id="responsive-calculadoras">
+@media (max-width: 760px) {
+  /* CASIO: el contenedor exterior es el que se desplaza horizontalmente. */
+  #casio-mobile-scroll {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain;
+    padding-bottom: 14px !important;
+  }
+
+  /* El título permanece normal; solo la fila de calculadoras es ancha. */
+  #casio-mobile-scroll > .casio-mobile-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 390px) !important;
+    gap: 10px !important;
+    width: 1190px !important;
+    min-width: 1190px !important;
+    max-width: none !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div {
+    box-sizing: border-box !important;
+    width: 390px !important;
+    min-width: 390px !important;
+    max-width: 390px !important;
+    overflow: visible !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div > div:first-child {
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: 370px !important;
+    white-space: nowrap !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row img {
+    display: block !important;
+    width: auto !important;
+    max-width: 360px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* El desplazamiento usado en escritorio para la tercera imagen
+     se neutraliza en celular para que no invada otras zonas. */
+  #casio-mobile-scroll > .casio-mobile-row img[style*="translateY"] {
+    transform: none !important;
+  }
+
+  /* GENÉRICAS: se mantiene el desplazamiento horizontal aprobado. */
+  #calculadoras-genericas {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 12px !important;
+  }
+
+  #calculadoras-genericas > div:last-child {
+    justify-content: start !important;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Tercera Casio (NO RECOMENDADA): más grande y más arriba */
+  /* Tercera Casio en celular:
+     se sube el CONTENEDOR completo para evitar recortar la calculadora. */
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) > div:last-child {
+    margin-top: -78px !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) img {
+    width: 520px !important;
+    max-width: none !important;
+    height: auto !important;
+    position: relative !important;
+    left: 50% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Corrección óptica: centra el cuerpo de la calculadora, no el lienzo completo. */
+    transform: translateX(-36%) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+</style>
+
+<style>.seg{text-decoration:overline}.quad-symbol{display:inline-block;font-size:1.28em;line-height:.7;vertical-align:-.06em;margin-right:1px}.qfigure{width:100%!important;margin:18px auto!important;text-align:center!important}.qfigure img{display:block!important;max-width:100%!important;width:440px!important;height:auto!important;max-height:none!important;margin:0 auto!important;transform:none!important}.qtext{line-height:1.65}.choice{line-height:1.5}.context table{max-width:520px;margin:14px auto}.review-row{cursor:pointer}button:focus-visible{outline:3px solid #166cc0;outline-offset:3px}</style><style>.qmeta{text-align:right}.qarea{font-size:14px;font-weight:700;line-height:1.4;color:var(--ink)}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f5d99'/%3E%3Ctext x='7' y='24' font-size='24' fill='white'%3E7%3C/text%3E%3C/svg%3E"><style>.frac{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.15;font-size:.94em;white-space:nowrap;margin:0 .10em}.frac>span:first-child{border-bottom:1.4px solid currentColor;padding:0 .18em .05em}.frac>span:last-child{padding:.05em .18em 0}.inline-eq{display:inline-flex;align-items:center;gap:3px;white-space:nowrap;vertical-align:middle}.seg{text-decoration:overline;text-decoration-thickness:1.3px}.claims{margin:12px 0 14px 16px}.claims p{display:flex;gap:14px;align-items:start}.claims b{min-width:24px}.tiny-table{font-size:13px;width:auto;max-width:100%}.tiny-table th,.tiny-table td{padding:4px 7px;white-space:nowrap}.choice:has(table){overflow-x:auto}.tie-boxes{display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px;margin:20px 0}.tie-boxes>div{text-align:center;min-width:105px}.tie-boxes>div>div{border:1.5px solid #222;margin-top:8px;text-align:left;padding:12px;line-height:2.05}.qfigure{border:0;padding:5px}.qfigure img{max-height:560px}.context{line-height:1.55}.context table{max-width:480px}</style><style>
+.area-results{margin:28px auto;text-align:left;max-width:880px}
+.area-results h3{text-align:center;margin:0 0 5px}
+.area-results > p{text-align:center;margin:0 0 18px;color:#475569}
+.area-chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
+.area-chart-card{border:1px solid #dce4eb;border-radius:14px;padding:16px;text-align:center;background:#fff}
+.area-chart-card h4{margin:0 0 12px;min-height:2.6em;font-size:16px;line-height:1.3}
+.area-pie{width:146px;height:146px;margin:0 auto 12px;border-radius:50%;background:conic-gradient(#16a34a 0 var(--correct-end),#ef4444 var(--correct-end) var(--wrong-end),#cbd5e1 var(--wrong-end) 100%);box-shadow:inset 0 0 0 1px rgba(15,23,42,.08)}
+.grade-status{font-weight:700;font-size:1.1rem;margin:8px 0 16px;color:#183f71}
+.area-rate{font-weight:700;font-size:24px;color:#166534}
+.area-count{margin:4px 0 10px;color:#475569;font-size:14px}
+.area-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 11px;font-size:12px;color:#334155}
+.area-legend span{white-space:nowrap}
+.area-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;background:var(--legend-color)}
+</style></head><body>
+<header><div class="topbar"><div class="brand">Matemática Sétimo · Convocatoria 01-2025</div><div class="meta"><span class="pill">Modo examen</span><span class="pill">Respondidas: <b id="countTop">0/55</b></span><span class="pill timer" id="timerTop">03:00:00</span></div></div></header>
+<main><section id="startView" class="card"><h1 class="hero">Matemática Sétimo · Convocatoria 01-2025</h1>
+<div class="exam-registration" style="max-width:440px;margin:14px auto 18px;display:grid;gap:10px">
+  <label>Nombre <input id="studentFirstName" autocomplete="given-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <label>Apellidos <input id="studentLastName" autocomplete="family-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <p id="availabilityMessage" role="status" style="margin:0;text-align:center">Consultando disponibilidad de la prueba…</p>
+  <button id="retryAvailabilityBtn" type="button" style="display:none">Reintentar conexión</button>
+  <button class="primary" id="startBtn" disabled>Iniciar Prueba</button>
+</div>
+<div class="exam-subtitle">Elaborado por: Carlos Madrigal Gutiérrez</div>
+<div class="exam-intro">
+  <div class="instructions-title">Instrucciones:</div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Versión interactiva con las 55 preguntas.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Las representaciones gráficas necesarias aparecen directamente dentro de cada pregunta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>La prueba contiene 55 preguntas de selección única, cada una con tres opciones de respuesta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes moverte entre preguntas, devolverte o avanzar y responder en el momento que creas necesario, eso sí, si el tiempo se agota la prueba se cierra y no te dejará seguir respondiendo.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Es recomendable tener a la mano papel y lápiz para ir resolviendo los ejercicios de la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Dispones de 3 horas para responder la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes utilizar calculadora básica.</span></div>
+  
+
+<p class="sub"></p></div></section>
+<section id="examView" style="display:none"><div class="exam-layout"><div class="card"><div class="qhead"><div class="qnum" id="qnum"></div><div class="qmeta"><div class="qarea" id="qarea"></div><div class="status" id="qstatus"></div></div></div><div id="qcontext" class="context"></div><div id="qtext" class="qtext"></div><div id="qfigure" class="qfigure" style="display:none"><img id="qfigureimg" alt="Representación gráfica del ítem"></div><div id="qaftergraphic" class="qfigure" style="display:none"><img id="qaftergraphicimg" alt="Opciones gráficas del ítem"></div><div id="choices" class="choices"></div><div class="navbuttons"><button id="prevBtn">← Anterior</button><button id="nextBtn">Siguiente →</button></div></div><aside class="card side"><h3>Navegación</h3><div id="grid" class="grid"></div><p class="small" id="countSide">0 de 55 respondidos</p><button class="danger" id="finishBtn" style="width:100%;margin-top:8px">Finalizar examen</button></aside></div></section>
+<section id="resultView" class="card result"><h2>Resultado</h2><div class="score" id="scoreText">0/55</div><div id="percentText"></div><p id="gradeStatus" class="grade-status" aria-live="polite"></p><div class="result-grid"><div class="stat"><b id="correctStat">0</b><br>Correctas</div><div class="stat"><b id="wrongStat">0</b><br>Incorrectas</div><div class="stat"><b id="blankStat">0</b><br>Sin responder</div></div><section class="area-results" aria-labelledby="areaResultsTitle"><h3 id="areaResultsTitle">Resultados por área</h3><p>Porcentaje de respuestas correctas en cada área</p><div id="areaChartGrid" class="area-chart-grid"></div></section><p id="deliveryStatus" role="status"></p><button id="retryDeliveryBtn" style="display:none">Reintentar envío</button><button id="reviewBtn">Revisar respuestas</button> <button id="restartBtn">Hacer otro intento</button> <button type="button" id="menuBtn">Regresar al menú de exámenes</button><div id="review" class="review-list" style="display:none"></div></section><div id="finishConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px"><div role="alertdialog" aria-modal="true" aria-labelledby="finishTitle" aria-describedby="pendingMessage" style="width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;text-align:center"><h2 id="finishTitle">¿Finalizar el examen?</h2><p id="pendingMessage"></p><button type="button" id="cancelFinishBtn">Seguir respondiendo</button> <button type="button" class="danger" id="confirmFinishBtn">Sí, finalizar</button></div></div><div id="restartConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px;">
+<div role="alertdialog" aria-modal="true" aria-labelledby="restartConfirmTitle" aria-describedby="restartConfirmText" style="box-sizing:border-box;width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;box-shadow:0 18px 56px rgba(0,0,0,.28);text-align:center;">
+<h2 id="restartConfirmTitle" style="margin:0 0 12px;color:#173b70;">¿Reiniciar el examen?</h2>
+<p id="restartConfirmText" style="margin:0 0 22px;line-height:1.55;">Se borrarán tus respuestas y el tiempo transcurrido.</p>
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;"><button id="cancelRestartBtn" type="button">Cancelar</button><button id="confirmRestartBtn" class="danger" type="button">Sí, reiniciar</button></div>
+</div></div></main><script>
+const FIGURES={"11": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20440%20135%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2230%22%20y1%3D%2275%22%20x2%3D%22400%22%20y2%3D%2275%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2260%22%20y1%3D%2265%22%20x2%3D%2260%22%20y2%3D%2285%22%2F%3E%3Cline%20x1%3D%22104%22%20y1%3D%2265%22%20x2%3D%22104%22%20y2%3D%2285%22%2F%3E%3Cline%20x1%3D%22148%22%20y1%3D%2265%22%20x2%3D%22148%22%20y2%3D%2285%22%2F%3E%3Cline%20x1%3D%22192%22%20y1%3D%2265%22%20x2%3D%22192%22%20y2%3D%2285%22%2F%3E%3Cline%20x1%3D%22236%22%20y1%3D%2265%22%20x2%3D%22236%22%20y2%3D%2285%22%2F%3E%3Cline%20x1%3D%22280%22%20y1%3D%2265%22%20x2%3D%22280%22%20y2%3D%2285%22%2F%3E%3Cline%20x1%3D%22324%22%20y1%3D%2265%22%20x2%3D%22324%22%20y2%3D%2285%22%2F%3E%3Cline%20x1%3D%22368%22%20y1%3D%2265%22%20x2%3D%22368%22%20y2%3D%2285%22%2F%3E%3Ctext%20x%3D%2252%22%20y%3D%2252%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%22140%22%20y%3D%2252%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%22272%22%20y%3D%2252%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%2291%22%20y%3D%22112%22%3E%E2%88%923%3C%2Ftext%3E%3Ctext%20x%3D%22230%22%20y%3D%22112%22%3E0%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22112%22%3E3%3C%2Ftext%3E%3C%2Fsvg%3E", "21": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20520%20280%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2260%22%20y1%3D%2285%22%20x2%3D%22480%22%20y2%3D%2285%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2260%22%20y1%3D%22210%22%20x2%3D%22480%22%20y2%3D%22210%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22235%22%20y1%3D%2225%22%20x2%3D%22235%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22330%22%20y1%3D%2225%22%20x2%3D%22330%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22110%22%20y1%3D%2225%22%20x2%3D%22370%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M235%2085h15v15h-15%20M330%2085h15v15h-15%22%2F%3E%3Ctext%20x%3D%2235%22%20y%3D%2280%22%3E%E2%84%93%E2%82%81%3C%2Ftext%3E%3Ctext%20x%3D%2235%22%20y%3D%22205%22%3E%E2%84%93%E2%82%82%3C%2Ftext%3E%3Ctext%20x%3D%2298%22%20y%3D%2220%22%3E%E2%84%93%E2%82%83%3C%2Ftext%3E%3Ctext%20x%3D%22225%22%20y%3D%2220%22%3E%E2%84%93%E2%82%84%3C%2Ftext%3E%3Ctext%20x%3D%22320%22%20y%3D%2220%22%3E%E2%84%93%E2%82%85%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22178%22%20y%3D%2273%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22235%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22242%22%20y%3D%2273%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22330%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22308%22%20y%3D%2273%22%3EC%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22235%22%20cy%3D%22133%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22211%22%20y%3D%22145%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22330%22%20cy%3D%22210%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22338%22%20y%3D%22201%22%3EE%3C%2Ftext%3E%3C%2Fsvg%3E", "22": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20520%20280%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2260%22%20y1%3D%2285%22%20x2%3D%22480%22%20y2%3D%2285%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2260%22%20y1%3D%22210%22%20x2%3D%22480%22%20y2%3D%22210%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22235%22%20y1%3D%2225%22%20x2%3D%22235%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22330%22%20y1%3D%2225%22%20x2%3D%22330%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22110%22%20y1%3D%2225%22%20x2%3D%22370%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M235%2085h15v15h-15%20M330%2085h15v15h-15%22%2F%3E%3Ctext%20x%3D%2235%22%20y%3D%2280%22%3E%E2%84%93%E2%82%81%3C%2Ftext%3E%3Ctext%20x%3D%2235%22%20y%3D%22205%22%3E%E2%84%93%E2%82%82%3C%2Ftext%3E%3Ctext%20x%3D%2298%22%20y%3D%2220%22%3E%E2%84%93%E2%82%83%3C%2Ftext%3E%3Ctext%20x%3D%22225%22%20y%3D%2220%22%3E%E2%84%93%E2%82%84%3C%2Ftext%3E%3Ctext%20x%3D%22320%22%20y%3D%2220%22%3E%E2%84%93%E2%82%85%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22178%22%20y%3D%2273%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22235%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22242%22%20y%3D%2273%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22330%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22308%22%20y%3D%2273%22%3EC%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22235%22%20cy%3D%22133%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22211%22%20y%3D%22145%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22330%22%20cy%3D%22210%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22338%22%20y%3D%22201%22%3EE%3C%2Ftext%3E%3C%2Fsvg%3E", "23": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20520%20280%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2260%22%20y1%3D%2285%22%20x2%3D%22480%22%20y2%3D%2285%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2260%22%20y1%3D%22210%22%20x2%3D%22480%22%20y2%3D%22210%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22235%22%20y1%3D%2225%22%20x2%3D%22235%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22330%22%20y1%3D%2225%22%20x2%3D%22330%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22110%22%20y1%3D%2225%22%20x2%3D%22370%22%20y2%3D%22250%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M235%2085h15v15h-15%20M330%2085h15v15h-15%22%2F%3E%3Ctext%20x%3D%2235%22%20y%3D%2280%22%3E%E2%84%93%E2%82%81%3C%2Ftext%3E%3Ctext%20x%3D%2235%22%20y%3D%22205%22%3E%E2%84%93%E2%82%82%3C%2Ftext%3E%3Ctext%20x%3D%2298%22%20y%3D%2220%22%3E%E2%84%93%E2%82%83%3C%2Ftext%3E%3Ctext%20x%3D%22225%22%20y%3D%2220%22%3E%E2%84%93%E2%82%84%3C%2Ftext%3E%3Ctext%20x%3D%22320%22%20y%3D%2220%22%3E%E2%84%93%E2%82%85%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22180%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22178%22%20y%3D%2273%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22235%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22242%22%20y%3D%2273%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22330%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22308%22%20y%3D%2273%22%3EC%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22235%22%20cy%3D%22133%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22211%22%20y%3D%22145%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22330%22%20cy%3D%22210%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22338%22%20y%3D%22201%22%3EE%3C%2Ftext%3E%3C%2Fsvg%3E", "24": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20400%20400%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M100%2055L155%2010V195L100%20240Z%20M100%2055V355L120%20370V65L175%2020L155%2010%20M120%20240H270L315%20195H155%20M120%20260H270L315%20215V340L295%20355V230%20M270%20240V355H295%20M120%20260V370L155%20338V260%20M155%20195V10%22%2F%3E%3Cpath%20d%3D%22M120%2065L155%2038V195L120%20225Z%20M120%20270L155%20260V338L120%20365Z%20M295%20230L315%20215V340L295%20355Z%22%20style%3D%22fill%3A%23f0f0f0%22%2F%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22133%22%20cy%3D%2285%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22140%22%20y%3D%2280%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22140%22%20cy%3D%22145%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22116%22%20y%3D%22145%22%3EH%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22108%22%20cy%3D%22156%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22156%22%3EF%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%22221%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%22225%22%3EE%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22288%22%20cy%3D%22207%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22258%22%20y%3D%22207%22%3EG%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22307%22%20cy%3D%22283%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22302%22%20y%3D%22269%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22137%22%20cy%3D%22282%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22145%22%20y%3D%22285%22%3EI%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22130%22%20cy%3D%22333%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22138%22%20y%3D%22336%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22108%22%20cy%3D%22355%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2284%22%20y%3D%22358%22%3EC%3C%2Ftext%3E%3C%2Fsvg%3E", "25": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20480%20280%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M80%2090H370V230H80Z%20M80%2090L125%2045H415V185L370%20230%20M370%2090L415%2045%22%2F%3E%3Cline%20x1%3D%22125%22%20y1%3D%2245%22%20x2%3D%22125%22%20y2%3D%22185%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%22125%22%20y1%3D%22185%22%20x2%3D%22415%22%20y2%3D%22185%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%2280%22%20y1%3D%22230%22%20x2%3D%22125%22%20y2%3D%22185%22%20class%3D%22dash%22%2F%3E%3Ctext%20x%3D%2258%22%20y%3D%2290%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22122%22%20y%3D%2235%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%22415%22%20y%3D%2235%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%22357%22%20y%3D%2280%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%2275%22%20y%3D%22252%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%22130%22%20y%3D%22178%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%22423%22%20y%3D%22191%22%3EG%3C%2Ftext%3E%3Ctext%20x%3D%22367%22%20y%3D%22253%22%3EH%3C%2Ftext%3E%3C%2Fsvg%3E", "26": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20480%20280%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M80%2090H370V230H80Z%20M80%2090L125%2045H415V185L370%20230%20M370%2090L415%2045%22%2F%3E%3Cline%20x1%3D%22125%22%20y1%3D%2245%22%20x2%3D%22125%22%20y2%3D%22185%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%22125%22%20y1%3D%22185%22%20x2%3D%22415%22%20y2%3D%22185%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%2280%22%20y1%3D%22230%22%20x2%3D%22125%22%20y2%3D%22185%22%20class%3D%22dash%22%2F%3E%3Ctext%20x%3D%2258%22%20y%3D%2290%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22122%22%20y%3D%2235%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%22415%22%20y%3D%2235%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%22357%22%20y%3D%2280%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%2275%22%20y%3D%22252%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%22130%22%20y%3D%22178%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%22423%22%20y%3D%22191%22%3EG%3C%2Ftext%3E%3Ctext%20x%3D%22367%22%20y%3D%22253%22%3EH%3C%2Ftext%3E%3C%2Fsvg%3E", "27": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20540%20330%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2240%22%20y1%3D%22100%22%20x2%3D%22490%22%20y2%3D%22100%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2240%22%20y1%3D%22220%22%20x2%3D%22490%22%20y2%3D%22220%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22155%22%20y1%3D%2225%22%20x2%3D%22155%22%20y2%3D%22300%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2275%22%20y1%3D%2240%22%20x2%3D%22390%22%20y2%3D%22282%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M155%20100h14v-14h-14%20M155%20220h14v-14h-14%22%2F%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%2265%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2262%22%20y%3D%22124%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22108%22%20cy%3D%2265%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2291%22%20y%3D%2254%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%2242%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%2247%22%3EC%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22133%22%20y%3D%22124%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22425%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22421%22%20y%3D%22124%22%3EE%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%2265%22%20cy%3D%22220%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2262%22%20y%3D%22244%22%3EF%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%22220%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22132%22%20y%3D%22244%22%3EG%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%22277%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%22282%22%3EH%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22310%22%20cy%3D%22220%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22305%22%20y%3D%22244%22%3EI%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22425%22%20cy%3D%22220%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22421%22%20y%3D%22244%22%3EJ%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22365%22%20cy%3D%22262%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22351%22%20y%3D%22285%22%3EK%3C%2Ftext%3E%3C%2Fsvg%3E", "28": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20540%20330%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2240%22%20y1%3D%22100%22%20x2%3D%22490%22%20y2%3D%22100%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2240%22%20y1%3D%22220%22%20x2%3D%22490%22%20y2%3D%22220%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22155%22%20y1%3D%2225%22%20x2%3D%22155%22%20y2%3D%22300%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2275%22%20y1%3D%2240%22%20x2%3D%22390%22%20y2%3D%22282%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M155%20100h14v-14h-14%20M155%20220h14v-14h-14%22%2F%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%2265%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2262%22%20y%3D%22124%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22108%22%20cy%3D%2265%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2291%22%20y%3D%2254%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%2242%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%2247%22%3EC%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22133%22%20y%3D%22124%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22425%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22421%22%20y%3D%22124%22%3EE%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%2265%22%20cy%3D%22220%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2262%22%20y%3D%22244%22%3EF%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%22220%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22132%22%20y%3D%22244%22%3EG%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22155%22%20cy%3D%22277%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%22282%22%3EH%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22310%22%20cy%3D%22220%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22305%22%20y%3D%22244%22%3EI%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22425%22%20cy%3D%22220%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22421%22%20y%3D%22244%22%3EJ%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22365%22%20cy%3D%22262%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22351%22%20y%3D%22285%22%3EK%3C%2Ftext%3E%3C%2Fsvg%3E", "29": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20550%20325%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2235%22%20y1%3D%22100%22%20x2%3D%22340%22%20y2%3D%22100%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2235%22%20y1%3D%22225%22%20x2%3D%22340%22%20y2%3D%22225%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22145%22%20y1%3D%22300%22%20x2%3D%22250%22%20y2%3D%2225%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%2262%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2258%22%20y%3D%2288%22%3EM%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22221%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22198%22%20y%3D%2294%22%3EN%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22314%22%20cy%3D%22100%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22310%22%20y%3D%2288%22%3EO%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%2261%22%20cy%3D%22225%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2257%22%20y%3D%22213%22%3EP%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22173%22%20cy%3D%22225%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22150%22%20y%3D%22219%22%3EQ%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22311%22%20cy%3D%22225%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22307%22%20y%3D%22213%22%3ER%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22154%22%20cy%3D%22275%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22132%22%20y%3D%22275%22%3ES%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22240%22%20cy%3D%2252%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22218%22%20y%3D%2252%22%3ET%3C%2Ftext%3E%3Cpath%20d%3D%22M375%2090H515V230H375Z%22%2F%3E%3Ctext%20x%3D%22402%22%20y%3D%22117%22%3E%E2%84%93%E2%82%82%20%E2%88%A5%20%E2%84%93%E2%82%81%3C%2Ftext%3E%3Ctext%20x%3D%22395%22%20y%3D%22148%22%3EM%20%E2%80%93%20N%20%E2%80%93%20O%3C%2Ftext%3E%3Ctext%20x%3D%22395%22%20y%3D%22178%22%3EP%20%E2%80%93%20Q%20%E2%80%93%20R%3C%2Ftext%3E%3Ctext%20x%3D%22395%22%20y%3D%22208%22%3ES%20%E2%80%93%20Q%20%E2%80%93%20N%20%E2%80%93%20T%3C%2Ftext%3E%3C%2Fsvg%3E", "32": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20570%20290%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2235%22%20y1%3D%22160%22%20x2%3D%22360%22%20y2%3D%22160%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22220%22%20y1%3D%22250%22%20x2%3D%22220%22%20y2%3D%2235%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22220%22%20y1%3D%22160%22%20x2%3D%22100%22%20y2%3D%2284%22%2F%3E%3Cpath%20d%3D%22M220%20160h15v-15h-15%22%2F%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22110%22%20cy%3D%22160%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22107%22%20y%3D%22185%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22220%22%20cy%3D%2280%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22229%22%20y%3D%2280%22%3EE%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22220%22%20cy%3D%22213%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22229%22%20y%3D%22217%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22300%22%20cy%3D%22160%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22297%22%20y%3D%22185%22%3EC%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22150%22%20cy%3D%22116%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22145%22%20y%3D%22101%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22220%22%20cy%3D%22160%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22197%22%20y%3D%22186%22%3EF%3C%2Ftext%3E%3Cpath%20d%3D%22M405%2090H535V195H405Z%22%2F%3E%3Ctext%20x%3D%22420%22%20y%3D%22125%22%3EA%20%E2%80%93%20F%20%E2%80%93%20C%3C%2Ftext%3E%3Ctext%20x%3D%22420%22%20y%3D%22169%22%3EE%20%E2%80%93%20F%20%E2%80%93%20B%3C%2Ftext%3E%3C%2Fsvg%3E", "35": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20540%20260%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M70%20210L210%2060L385%20210%20M70%20210H490%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M199%2072l12%2011l11-12%20M95%20210A30%2030%200%200%200%2086%20190%20M357%20190A32%2032%200%200%200%20348%20210%20M407%20210A33%2033%200%200%200%20362%20185%22%2F%3E%3Ctext%20x%3D%22105%22%20y%3D%22200%22%3E%CE%BB%3C%2Ftext%3E%3Ctext%20x%3D%22360%22%20y%3D%22202%22%3E%CE%B1%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22196%22%3E%CE%B2%3C%2Ftext%3E%3C%2Fsvg%3E", "36": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20540%20260%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M70%20210L210%2060L385%20210%20M70%20210H490%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M199%2072l12%2011l11-12%20M95%20210A30%2030%200%200%200%2086%20190%20M357%20190A32%2032%200%200%200%20348%20210%20M407%20210A33%2033%200%200%200%20362%20185%22%2F%3E%3Ctext%20x%3D%22105%22%20y%3D%22200%22%3E%CE%BB%3C%2Ftext%3E%3Ctext%20x%3D%22360%22%20y%3D%22202%22%3E%CE%B1%3C%2Ftext%3E%3Ctext%20x%3D%22400%22%20y%3D%22196%22%3E%CE%B2%3C%2Ftext%3E%3C%2Fsvg%3E", "37": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20510%20410%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M170%2040L275%20200L170%20360L65%20200Z%20M170%2040V360%20M65%20200H275%20M102%20200A40%2040%200%200%200%2086%20168%22%2F%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22170%22%20cy%3D%2240%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%2228%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22275%22%20cy%3D%22200%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22283%22%20y%3D%22205%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22170%22%20cy%3D%22360%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%22384%22%3EC%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%2265%22%20cy%3D%22200%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2240%22%20y%3D%22205%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22170%22%20cy%3D%22200%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22177%22%20y%3D%22222%22%3EO%3C%2Ftext%3E%3Ctext%20x%3D%2290%22%20y%3D%22187%22%3E%CE%B1%3C%2Ftext%3E%3Cpath%20d%3D%22M335%2065H475V140H335Z%22%2F%3E%3Ctext%20x%3D%22351%22%20y%3D%2294%22%3EA%20%E2%80%93%20O%20%E2%80%93%20C%3C%2Ftext%3E%3Ctext%20x%3D%22351%22%20y%3D%22126%22%3ED%20%E2%80%93%20O%20%E2%80%93%20B%3C%2Ftext%3E%3C%2Fsvg%3E", "38": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20510%20410%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M170%2040L275%20200L170%20360L65%20200Z%20M170%2040V360%20M65%20200H275%20M102%20200A40%2040%200%200%200%2086%20168%22%2F%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22170%22%20cy%3D%2240%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%2228%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22275%22%20cy%3D%22200%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22283%22%20y%3D%22205%22%3EB%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22170%22%20cy%3D%22360%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22163%22%20y%3D%22384%22%3EC%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%2265%22%20cy%3D%22200%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2240%22%20y%3D%22205%22%3ED%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22170%22%20cy%3D%22200%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22177%22%20y%3D%22222%22%3EO%3C%2Ftext%3E%3Ctext%20x%3D%2290%22%20y%3D%22187%22%3E%CE%B1%3C%2Ftext%3E%3Cpath%20d%3D%22M335%2065H475V140H335Z%22%2F%3E%3Ctext%20x%3D%22351%22%20y%3D%2294%22%3EA%20%E2%80%93%20O%20%E2%80%93%20C%3C%2Ftext%3E%3Ctext%20x%3D%22351%22%20y%3D%22126%22%3ED%20%E2%80%93%20O%20%E2%80%93%20B%3C%2Ftext%3E%3C%2Fsvg%3E", "40": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20340%20325%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M150%20250V120H280V250Z%20M35%20250L150%20120%20M150%20120V40L280%20120%20M35%20250H280%22%2F%3E%3Cline%20x1%3D%2225%22%20y1%3D%22275%22%20x2%3D%22140%22%20y2%3D%22275%22%2F%3E%3Cline%20x1%3D%22160%22%20y1%3D%22275%22%20x2%3D%22270%22%20y2%3D%22275%22%2F%3E%3Cline%20x1%3D%22125%22%20y1%3D%2245%22%20x2%3D%22125%22%20y2%3D%22110%22%2F%3E%3Ctext%20x%3D%2277%22%20y%3D%22303%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22211%22%20y%3D%22303%22%3E7%3C%2Ftext%3E%3Ctext%20x%3D%22100%22%20y%3D%2286%22%3E4%3C%2Ftext%3E%3C%2Fsvg%3E", "41": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20410%20330%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2235%22%20y1%3D%22280%22%20x2%3D%22360%22%20y2%3D%22280%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2265%22%20y1%3D%22305%22%20x2%3D%2265%22%20y2%3D%2225%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Ctext%20x%3D%22366%22%20y%3D%22287%22%3Ex%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%2220%22%3Ey%3C%2Ftext%3E%3Cline%20x1%3D%22112%22%20y1%3D%22235%22%20x2%3D%22206%22%20y2%3D%2255%22%2F%3E%3Cline%20x1%3D%2265%22%20y1%3D%22235%22%20x2%3D%22112%22%20y2%3D%22235%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%22112%22%20y1%3D%22235%22%20x2%3D%22112%22%20y2%3D%22280%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%2265%22%20y1%3D%2255%22%20x2%3D%22206%22%20y2%3D%2255%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%22206%22%20y1%3D%2255%22%20x2%3D%22206%22%20y2%3D%22280%22%20class%3D%22dash%22%2F%3E%3Ctext%20x%3D%2242%22%20y%3D%22241%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%2242%22%20y%3D%2262%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22106%22%20y%3D%22302%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22201%22%20y%3D%22302%22%3E3%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22112%22%20cy%3D%22235%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%2288%22%20y%3D%22227%22%3EA%3C%2Ftext%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22206%22%20cy%3D%2255%22%20r%3D%223.5%22%2F%3E%3Ctext%20x%3D%22214%22%20y%3D%2247%22%3EB%3C%2Ftext%3E%3C%2Fsvg%3E", "42": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20410%20330%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2235%22%20y1%3D%22280%22%20x2%3D%22360%22%20y2%3D%22280%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2265%22%20y1%3D%22305%22%20x2%3D%2265%22%20y2%3D%2225%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Ctext%20x%3D%22366%22%20y%3D%22287%22%3Ex%3C%2Ftext%3E%3Ctext%20x%3D%2260%22%20y%3D%2220%22%3Ey%3C%2Ftext%3E%3Cpath%20d%3D%22M112%20235H300V55H112Z%22%2F%3E%3Cline%20x1%3D%2265%22%20y1%3D%2255%22%20x2%3D%22112%22%20y2%3D%2255%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%2265%22%20y1%3D%22235%22%20x2%3D%22112%22%20y2%3D%22235%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%22112%22%20y1%3D%22235%22%20x2%3D%22112%22%20y2%3D%22280%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%22300%22%20y1%3D%22235%22%20x2%3D%22300%22%20y2%3D%22280%22%20class%3D%22dash%22%2F%3E%3Ctext%20x%3D%2242%22%20y%3D%2262%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%2242%22%20y%3D%22241%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22106%22%20y%3D%22302%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%22294%22%20y%3D%22302%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%2294%22%20y%3D%22257%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22307%22%20y%3D%22241%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%22304%22%20y%3D%2248%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%2295%22%20y%3D%2248%22%3ED%3C%2Ftext%3E%3C%2Fsvg%3E"};
+const QUESTIONS=[{"n": 1, "stem": "¿Cuál de las siguientes afirmaciones es correcta?", "opts": ["\\(2^3=2\\cdot3=6\\)", "\\(2^3=3\\cdot3=9\\)", "\\(2^3=2\\cdot2\\cdot2=8\\)"], "answer": "C", "context": "", "explanation": "\\(2^3=2\\cdot2\\cdot2=8\\).", "area": "Números"}, {"n": 2, "stem": "El resultado de la operación \\(4^2-6\\div2\\) corresponde a", "opts": ["13", "5", "1"], "answer": "A", "context": "", "explanation": "\\(16-3=13\\).", "area": "Números"}, {"n": 3, "stem": "El resultado de la operación \\(2\\cdot(3-2)^2\\) corresponde a", "opts": ["10", "2", "4"], "answer": "B", "context": "", "explanation": "\\(2\\cdot1^2=2\\).", "area": "Números"}, {"n": 4, "stem": "Una pareja de números donde ambos son múltiplo de 6 corresponde a", "opts": ["1 y 6", "2 y 3", "6 y 12"], "answer": "C", "context": "", "explanation": "6 y 12 son los dos primeros múltiplos positivos de 6.", "area": "Números"}, {"n": 5, "stem": "Una pareja de números que al sumarlos se obtiene un número compuesto corresponde a", "opts": ["2 y 3", "2 y 7", "2 y 11"], "answer": "B", "context": "", "explanation": "2 + 7 = 9, que es compuesto.", "area": "Números"}, {"n": 6, "stem": "Un número divisible por 2, 3 y 7 a la vez corresponde al", "opts": ["42", "21", "14"], "answer": "A", "context": "", "explanation": "42 = 2 · 3 · 7.", "area": "Números"}, {"n": 7, "stem": "La descomposición de 36 en sus factores primos corresponde a", "opts": ["\\(2\\cdot2\\cdot9\\)", "\\(2\\cdot3\\cdot6\\)", "\\(2\\cdot2\\cdot3\\cdot3\\)"], "answer": "C", "context": "", "explanation": "36 = 2² · 3²; todos los factores son primos.", "area": "Números"}, {"n": 8, "stem": "Considere los números 18 y 12. El Máximo Común Divisor y el Mínimo Común Múltiplo de dichos números respectivamente corresponden a", "opts": ["36 y 6", "6 y 36", "5 y 10"], "answer": "B", "context": "", "explanation": "MCD(18, 12) = 6 y mcm(18, 12) = 36.", "area": "Números"}, {"n": 9, "stem": "Una empresa dona 72 cuadernos y 120 lapiceros a un grupo de estudiantes, de manera que se reparte la máxima cantidad de cuadernos y lapiceros entre esos estudiantes. Si todos llevan la misma cantidad de cuadernos y lápices y no sobra ningún artículo, entonces, ¿cuántos lapiceros lleva cada estudiante?", "opts": ["5", "8", "9"], "answer": "A", "context": "", "explanation": "MCD(72, 120) = 24 estudiantes; 120 ÷ 24 = 5 lapiceros.", "area": "Números"}, {"n": 10, "stem": "¿Cuál de las siguientes afirmaciones es correcta?", "opts": ["\\(|-3|=-3\\)", "\\(|-1|>-|-1|\\)", "\\(|-2|\\) es opuesto a 2."], "answer": "B", "context": "", "explanation": "\\(|-1|=1>-1=-|-1|\\).", "area": "Números"}, {"n": 11, "stem": "¿Cuál de las siguientes afirmaciones es correcta?", "opts": ["\\(D>F\\)", "\\(F-4=E\\)", "\\(D+3<0\\)"], "answer": "C", "context": "Considere la siguiente recta numérica de números enteros.", "explanation": "D = −4; E = −2; F = 1. Por tanto D + 3 = −1 < 0.", "area": "Números"}, {"n": 12, "stem": "La temperatura más baja registrada en la ciudad D fue de −8 °C mientras que ese mismo día, en la ciudad E la temperatura mínima registrada fue de −2 °C y en la ciudad F la temperatura más baja fue de −15 °C. ¿En cuál de las ciudades se registró la menor temperatura?", "opts": ["D", "E", "F"], "answer": "C", "context": "", "explanation": "−15 < −8 < −2; corresponde a F.", "area": "Números"}, {"n": 13, "stem": "¿Cuál de las siguientes situaciones se puede representar con un número entero negativo?", "opts": ["María tiene 25 años de edad.", "Un estanque de peces tiene 150 tilapias.", "El volcán Nieuwerkerk está a 2850 metros de profundidad bajo del nivel del mar."], "answer": "C", "context": "", "explanation": "Una profundidad bajo el nivel del mar se representa con un número negativo.", "area": "Números"}, {"n": 14, "stem": "El resultado de \\(\\sqrt[3]{-8}\\) corresponde a", "opts": ["2", "−2", "−5"], "answer": "B", "context": "", "explanation": "\\((-2)^3=-8\\).", "area": "Números"}, {"n": 15, "stem": "La expresión \\((2^4)^5\\cdot2^6\\div2^2\\) es equivalente a", "opts": ["\\(2^{24}\\)", "\\(2^{13}\\)", "\\(2^{27}\\)"], "answer": "A", "context": "", "explanation": "\\(2^{4\\cdot5+6-2}=2^{24}\\).", "area": "Números"}, {"n": 16, "stem": "El resultado de la operación \\((-2+4)^3\\div2^0\\) corresponde a", "opts": ["4", "8", "−8"], "answer": "B", "context": "", "explanation": "\\(2^3\\div1=8\\).", "area": "Números"}, {"n": 17, "stem": "¿Cuál es el resultado de \\(5\\cdot(27\\div(-3)^2-3)\\)?", "opts": ["−30", "5", "0"], "answer": "C", "context": "", "explanation": "\\(5(27\\div9-3)=5(3-3)=0\\).", "area": "Números"}, {"n": 18, "stem": "Si Fernanda compró una pantalla en ₡200 000 y debe pagarla en 5 cuotas iguales, entonces, ¿cuál es el monto que debe pagar en cada cuota?", "opts": ["40 000", "44 000", "50 000"], "answer": "A", "context": "", "explanation": "200 000 ÷ 5 = 40 000 colones.", "area": "Números"}, {"n": 19, "stem": "A las 10 a.m. del día de ayer un termómetro, en el Polo Norte, registró −37 °C. Si 3 horas después (1 p.m.) la temperatura había subido 5 °C, entonces, para la 1 p.m. de ayer se registró una temperatura de ____ °C.", "opts": ["−32", "−42", "−22"], "answer": "A", "context": "", "explanation": "−37 + 5 = −32 °C.", "area": "Números"}, {"n": 20, "stem": "Una fábrica productora de tornillos empaca sus productos en cajas con 2500 tornillos cada una. Si en la bodega principal mantienen un inventario de 400 cajas, entonces, ¿cuántos tornillos, en total, tienen empacados en la bodega principal?", "opts": ["10 000", "100 000", "1 000 000"], "answer": "C", "context": "", "explanation": "2500 · 400 = 1 000 000.", "area": "Números"}, {"n": 21, "stem": "Con certeza, una recta perpendicular con \\(\\ell_5\\) corresponde a", "opts": ["\\(\\ell_1\\)", "\\(\\ell_2\\)", "\\(\\ell_4\\)"], "answer": "A", "context": "Para responder los ítems 21, 22 y 23 considere la siguiente información:", "explanation": "La marca de ángulo recto en C indica que ℓ₁ es perpendicular a ℓ₅.", "area": "Geometría"}, {"n": 22, "stem": "La representación simbólica de una semirrecta contenida en la recta \\(\\ell_3\\) corresponde a", "opts": ["\\(\\overrightarrow{\\mathrm{AD}}\\)", "\\(\\overline{\\mathrm{AD}}\\)", "\\(\\overleftrightarrow{\\mathrm{AD}}\\)"], "answer": "A", "context": "Para responder los ítems 21, 22 y 23 considere la siguiente información:", "explanation": "La semirrecta tiene origen en A y pasa por D.", "area": "Geometría"}, {"n": 23, "stem": "La opción que contiene tres puntos colineales corresponde a", "opts": ["B, D, E", "A, D, E", "D, B, C"], "answer": "B", "context": "Para responder los ítems 21, 22 y 23 considere la siguiente información:", "explanation": "A, D y E pertenecen a ℓ₃.", "area": "Geometría"}, {"n": 24, "stem": "Tres puntos coplanares corresponden a", "opts": ["H, I, D", "C, D, I", "C, F, H"], "answer": "A", "context": "Considere la siguiente información que representa una silla con puntos dibujados en ella:", "explanation": "H, I y D se ubican en el mismo plano lateral de la silla.", "area": "Geometría"}, {"n": 25, "stem": "Una arista del prisma corresponde a", "opts": ["\\(\\overline{\\mathrm{EC}}\\)", "\\(\\overline{\\mathrm{FD}}\\)", "\\(\\overline{\\mathrm{EH}}\\)"], "answer": "C", "context": "Para responder los ítems 25 y 26 considere el siguiente prisma recto:", "explanation": "EH une dos vértices consecutivos del prisma.", "area": "Geometría"}, {"n": 26, "stem": "Una cara perpendicular con DHGC corresponde a", "opts": ["AEFB", "ADCB", "DHFB"], "answer": "B", "context": "Para responder los ítems 25 y 26 considere el siguiente prisma recto:", "explanation": "La cara superior ADCB es perpendicular a la cara lateral DHGC.", "area": "Geometría"}, {"n": 27, "stem": "Dos ángulos opuestos por el vértice son \\(\\angle\\mathrm{JIK}\\) y ____.", "opts": ["\\(\\angle\\mathrm{GID}\\)", "\\(\\angle\\mathrm{DIJ}\\)", "\\(\\angle\\mathrm{GIK}\\)"], "answer": "A", "context": "Para responder los ítems 27 y 28 considere la siguiente información:", "explanation": "IJ es opuesta a IG; IK es opuesta a ID.", "area": "Geometría"}, {"n": 28, "stem": "\\(\\angle\\mathrm{ADB}\\) y ____ son ángulos adyacentes.", "opts": ["\\(\\angle\\mathrm{GDE}\\)", "\\(\\angle\\mathrm{BDE}\\)", "\\(\\angle\\mathrm{EDI}\\)"], "answer": "B", "context": "Para responder los ítems 27 y 28 considere la siguiente información:", "explanation": "Comparten el lado DB; DA y DE son semirrectas opuestas.", "area": "Geometría"}, {"n": 29, "stem": "La medida del \\(\\angle\\mathrm{RQS}\\) corresponde a", "opts": ["29°", "61°", "151°"], "answer": "C", "context": "Considere la siguiente figura donde \\(m\\angle\\mathrm{TNO}=29^\\circ\\):", "explanation": "El ángulo correspondiente mide 29°; su suplemento es 180° − 29° = 151°.", "area": "Geometría"}, {"n": 30, "stem": "Los ángulos \\(\\Psi\\) y \\(\\lambda\\) son congruentes entre sí. Si \\(m\\angle\\lambda=40^\\circ\\), entonces, \\(m\\angle\\Psi\\) = ____.", "opts": ["40°", "50°", "60°"], "answer": "A", "context": "", "explanation": "Los ángulos congruentes tienen la misma medida.", "area": "Geometría"}, {"n": 31, "stem": "Los ángulos \\(\\beta\\) y \\(\\mu\\) son suplementarios entre sí. Si \\(m\\angle\\beta=30^\\circ\\), entonces, \\(m\\angle\\mu\\) = ____.", "opts": ["150°", "70°", "60°"], "answer": "A", "context": "", "explanation": "180° − 30° = 150°.", "area": "Geometría"}, {"n": 32, "stem": "Un ángulo complementario con el \\(\\angle\\mathrm{EFD}\\) corresponde al", "opts": ["\\(\\angle\\mathrm{DFB}\\)", "\\(\\angle\\mathrm{DFA}\\)", "\\(\\angle\\mathrm{DFC}\\)"], "answer": "B", "context": "Considere la siguiente información:", "explanation": "EFA mide 90°; EFD y DFA completan ese ángulo recto.", "area": "Geometría"}, {"n": 33, "stem": "Si las medidas de dos lados de un triángulo son 3 y 6, entonces, una posible medida del tercer lado corresponde a", "opts": ["2", "3", "4"], "answer": "C", "context": "", "explanation": "El tercer lado x cumple 6 − 3 < x < 6 + 3; es decir, 3 < x < 9.", "area": "Geometría"}, {"n": 34, "stem": "La suma de las medidas de dos ángulos internos de un triángulo es 150°. ¿Cuál es la medida del tercer ángulo interno?", "opts": ["30°", "50°", "75°"], "answer": "A", "context": "", "explanation": "180° − 150° = 30°.", "area": "Geometría"}, {"n": 35, "stem": "Si la medida de \\(\\angle\\lambda\\) es 43°, entonces, ¿cuál es la medida de \\(\\angle\\alpha\\)?", "opts": ["43°", "45°", "47°"], "answer": "C", "context": "Para responder los ítems 35 y 36 considere la siguiente figura:", "explanation": "180° − 90° − 43° = 47°.", "area": "Geometría"}, {"n": 36, "stem": "Si la medida de \\(\\angle\\alpha\\) es 46°, entonces, ¿cuál es la medida de \\(\\angle\\beta\\)?", "opts": ["138°", "134°", "136°"], "answer": "B", "context": "Para responder los ítems 35 y 36 considere la siguiente figura:", "explanation": "α y β forman un par lineal: 180° − 46° = 134°.", "area": "Geometría"}, {"n": 37, "stem": "Si \\(\\alpha=52^\\circ\\), entonces, la medida de \\(\\angle\\mathrm{BCD}\\) corresponde a", "opts": ["38°", "76°", "52°"], "answer": "B", "context": "Para responder los ítems 37 y 38 considere el siguiente rombo:", "explanation": "La diagonal biseca el ángulo D: mide 104°. El ángulo C es suplementario: 180° − 104° = 76°.", "area": "Geometría"}, {"n": 38, "stem": "Si AO = 8 y OB = 6, entonces, ¿cuál es el área del rombo?", "opts": ["96", "48", "40"], "answer": "A", "context": "Para responder los ítems 37 y 38 considere el siguiente rombo:", "explanation": "Las diagonales miden 16 y 12; área = 16 · 12 ÷ 2 = 96.", "area": "Geometría"}, {"n": 39, "stem": "Si un ángulo externo de un cuadrilátero convexo mide 37°, entonces, la suma de las medidas de los restantes ángulos externos corresponde a", "opts": ["143°", "217°", "323°"], "answer": "C", "context": "", "explanation": "360° − 37° = 323°.", "area": "Geometría"}, {"n": 40, "stem": "El área total de la figura corresponde a", "opts": ["17", "70", "84"], "answer": "C", "context": "Considere la siguiente figura formada por un cuadrado y dos triángulos rectángulos:", "explanation": "Área = 7² + 6 · 7 ÷ 2 + 7 · 4 ÷ 2 = 49 + 21 + 14 = 84.", "area": "Geometría"}, {"n": 41, "stem": "El punto medio del segmento AB corresponde a", "opts": ["(2, 3)", "(3, 2)", "(2, 2)"], "answer": "A", "context": "Considere la siguiente información:", "explanation": "A = (1, 1), B = (3, 5); punto medio = ((1 + 3)/2, (1 + 5)/2) = (2, 3).", "area": "Geometría"}, {"n": 42, "stem": "Un punto ubicado en el interior del cuadrado ABCD corresponde a", "opts": ["(2, 6)", "(3, 4)", "(4, 0)"], "answer": "B", "context": "Considere la siguiente información:", "explanation": "En el interior se cumple 1 < x < 5 y 1 < y < 5.", "area": "Geometría"}, {"n": 43, "stem": "Un tipo de serpiente mide 50 cm al nacer y su longitud aumenta 50 cm anualmente. Si se atrapa una de estas serpientes de 200 cm de longitud (suponga que siguió el patrón), entonces, ¿cuántos años tendría este ejemplar?", "opts": ["2", "3", "4"], "answer": "B", "context": "", "explanation": "50 + 50t = 200; t = 3.", "area": "Relaciones y Álgebra"}, {"n": 44, "stem": "Si se mantiene el patrón, entonces, ¿cuántos millones de esas bacterias habrá a las 4 horas?", "opts": ["16", "20", "24"], "answer": "A", "context": "El crecimiento de una población de bacterias (en millones) se comporta según se muestra en la siguiente tabla:<table class=\"original-centered\"><tr><th>Horas</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr><tr><th>Bacterias</th><td>1</td><td>2</td><td>4</td><td>8</td><td></td><td>32</td></tr></table>", "explanation": "La cantidad se duplica cada hora: 8 · 2 = 16.", "area": "Relaciones y Álgebra"}, {"n": 45, "stem": "Una situación donde se evidencia una relación inversamente proporcional corresponde a la cantidad de", "opts": ["barras de mantequilla utilizadas en relación con la cantidad de pasteles horneados.", "dinero recaudado en un concierto en relación con la cantidad de entradas vendidas.", "tiempo que dura en llenarse una piscina en relación con la cantidad de tomas de agua que se utilicen."], "answer": "C", "context": "", "explanation": "Al aumentar el número de tomas iguales, disminuye proporcionalmente el tiempo de llenado.", "area": "Relaciones y Álgebra"}, {"n": 46, "stem": "Si para cortar el césped en una finca 2 jardineros tardan 10 horas, entonces, ¿cuántas horas tardarían 4 jardineros en cortar ese mismo césped?", "opts": ["5", "15", "20"], "answer": "A", "context": "", "explanation": "2 · 10 = 4t; t = 5 horas.", "area": "Relaciones y Álgebra"}, {"n": 47, "stem": "Melina sabe que para elaborar 20 helados de un determinado sabor se debe invertir ₡3000 en la compra de ingredientes. ¿Cuántos colones debería invertir Melina para elaborar 50 helados de ese sabor?", "opts": ["12 000", "5000", "7500"], "answer": "C", "context": "", "explanation": "3000 ÷ 20 · 50 = 7500 colones.", "area": "Relaciones y Álgebra"}, {"n": 48, "stem": "Según la información dada la muestra del estudio está constituida por ____ trabajadores.", "opts": ["440", "220", "80"], "answer": "C", "context": "Para responder los ítems 48 y 49 considere la siguiente información:<p>En una empresa trabajan 200 hombres y 240 mujeres. Se eligen al azar 80 personas de ambos sexos para consultarles si están conformes con su horario de trabajo. A una trabajadora, llamada Ligia, se le consultó e indicó estar conforme con su horario laboral.</p>", "explanation": "La muestra son las 80 personas seleccionadas.", "area": "Estadística y Probabilidad"}, {"n": 49, "stem": "¿Cuál de las siguientes afirmaciones es verdadera?", "opts": ["La variable de estudio es de naturaleza cuantitativa.", "Ligia forma parte de la unidad estadística del estudio.", "La población de estudio está constituida por 520 trabajadores de la empresa."], "answer": "B", "context": "Para responder los ítems 48 y 49 considere la siguiente información:<p>En una empresa trabajan 200 hombres y 240 mujeres. Se eligen al azar 80 personas de ambos sexos para consultarles si están conformes con su horario de trabajo. A una trabajadora, llamada Ligia, se le consultó e indicó estar conforme con su horario laboral.</p>", "explanation": "Cada trabajador consultado es una unidad estadística. La población contiene 200 + 240 = 440 trabajadores.", "area": "Estadística y Probabilidad"}, {"n": 50, "stem": "De las siguientes opciones, ¿cuál corresponde a una variable cualitativa?", "opts": ["Color de un lápiz", "Nota en un examen", "Cantidad de lapiceros"], "answer": "A", "context": "", "explanation": "El color es una categoría.", "area": "Estadística y Probabilidad"}, {"n": 51, "stem": "De las siguientes opciones, ¿cuál corresponde a una variable cuantitativa?", "opts": ["El nombre de las mascotas de Pablo", "El número de hijos en una familia", "La asignatura preferida de Luisa"], "answer": "B", "context": "", "explanation": "El número de hijos es una cantidad.", "area": "Estadística y Probabilidad"}, {"n": 52, "stem": "El promedio de hermanos del grupo de personas es de", "opts": ["3", "4", "5"], "answer": "A", "context": "Para responder los ítems 52, 53, 54 y 55 considere la siguiente información:<p>A un grupo de 10 personas (sin parentescos entre ellos) se les consultó por la cantidad de hermanos que tienen. Los resultados de sus respuestas se muestran en la siguiente tabla:</p><table class=\"original-centered\"><tr><th colspan=\"10\">Cantidad de hermanos</th></tr><tr><td>3</td><td>2</td><td>2</td><td>4</td><td>2</td><td>0</td><td>4</td><td>2</td><td>6</td><td>5</td></tr></table>", "explanation": "(3 + 2 + 2 + 4 + 2 + 0 + 4 + 2 + 6 + 5) ÷ 10 = 30 ÷ 10 = 3.", "area": "Estadística y Probabilidad"}, {"n": 53, "stem": "La moda en el grupo de personas es tener ____ hermanos.", "opts": ["6", "3", "2"], "answer": "C", "context": "Para responder los ítems 52, 53, 54 y 55 considere la siguiente información:<p>A un grupo de 10 personas (sin parentescos entre ellos) se les consultó por la cantidad de hermanos que tienen. Los resultados de sus respuestas se muestran en la siguiente tabla:</p><table class=\"original-centered\"><tr><th colspan=\"10\">Cantidad de hermanos</th></tr><tr><td>3</td><td>2</td><td>2</td><td>4</td><td>2</td><td>0</td><td>4</td><td>2</td><td>6</td><td>5</td></tr></table>", "explanation": "El 2 aparece cuatro veces; es el dato más frecuente.", "area": "Estadística y Probabilidad"}, {"n": 54, "stem": "¿Cuál de las siguientes afirmaciones es correcta?", "opts": ["Hay una persona del grupo que es hijo único.", "La mayoría de las personas del grupo tienen 6 hermanos.", "Todas las personas del grupo tienen diferentes cantidades de hermanos."], "answer": "A", "context": "Para responder los ítems 52, 53, 54 y 55 considere la siguiente información:<p>A un grupo de 10 personas (sin parentescos entre ellos) se les consultó por la cantidad de hermanos que tienen. Los resultados de sus respuestas se muestran en la siguiente tabla:</p><table class=\"original-centered\"><tr><th colspan=\"10\">Cantidad de hermanos</th></tr><tr><td>3</td><td>2</td><td>2</td><td>4</td><td>2</td><td>0</td><td>4</td><td>2</td><td>6</td><td>5</td></tr></table>", "explanation": "Una persona tiene cero hermanos.", "area": "Estadística y Probabilidad"}, {"n": 55, "stem": "La mayor diferencia sobre la cantidad de hermanos entre dos personas del grupo corresponde a", "opts": ["2", "3", "6"], "answer": "C", "context": "Para responder los ítems 52, 53, 54 y 55 considere la siguiente información:<p>A un grupo de 10 personas (sin parentescos entre ellos) se les consultó por la cantidad de hermanos que tienen. Los resultados de sus respuestas se muestran en la siguiente tabla:</p><table class=\"original-centered\"><tr><th colspan=\"10\">Cantidad de hermanos</th></tr><tr><td>3</td><td>2</td><td>2</td><td>4</td><td>2</td><td>0</td><td>4</td><td>2</td><td>6</td><td>5</td></tr></table>", "explanation": "Máximo − mínimo = 6 − 0 = 6.", "area": "Estadística y Probabilidad"}];
+const TOTAL=QUESTIONS.length,LIMIT=3*60*60;
+const SOLUTIONS={"1": "\\(2^3=2\\cdot2\\cdot2=8\\).", "2": "\\(16-3=13\\).", "3": "\\(2\\cdot1^2=2\\).", "4": "6 y 12 son los dos primeros múltiplos positivos de 6.", "5": "2 + 7 = 9, que es compuesto.", "6": "42 = 2 · 3 · 7.", "7": "36 = 2² · 3²; todos los factores son primos.", "8": "MCD(18, 12) = 6 y mcm(18, 12) = 36.", "9": "MCD(72, 120) = 24 estudiantes; 120 ÷ 24 = 5 lapiceros.", "10": "\\(|-1|=1>-1=-|-1|\\).", "11": "D = −4; E = −2; F = 1. Por tanto D + 3 = −1 < 0.", "12": "−15 < −8 < −2; corresponde a F.", "13": "Una profundidad bajo el nivel del mar se representa con un número negativo.", "14": "\\((-2)^3=-8\\).", "15": "\\(2^{4\\cdot5+6-2}=2^{24}\\).", "16": "\\(2^3\\div1=8\\).", "17": "\\(5(27\\div9-3)=5(3-3)=0\\).", "18": "200 000 ÷ 5 = 40 000 colones.", "19": "−37 + 5 = −32 °C.", "20": "2500 · 400 = 1 000 000.", "21": "La marca de ángulo recto en C indica que ℓ₁ es perpendicular a ℓ₅.", "22": "La semirrecta tiene origen en A y pasa por D.", "23": "A, D y E pertenecen a ℓ₃.", "24": "H, I y D se ubican en el mismo plano lateral de la silla.", "25": "EH une dos vértices consecutivos del prisma.", "26": "La cara superior ADCB es perpendicular a la cara lateral DHGC.", "27": "IJ es opuesta a IG; IK es opuesta a ID.", "28": "Comparten el lado DB; DA y DE son semirrectas opuestas.", "29": "El ángulo correspondiente mide 29°; su suplemento es 180° − 29° = 151°.", "30": "Los ángulos congruentes tienen la misma medida.", "31": "180° − 30° = 150°.", "32": "EFA mide 90°; EFD y DFA completan ese ángulo recto.", "33": "El tercer lado x cumple 6 − 3 < x < 6 + 3; es decir, 3 < x < 9.", "34": "180° − 150° = 30°.", "35": "180° − 90° − 43° = 47°.", "36": "α y β forman un par lineal: 180° − 46° = 134°.", "37": "La diagonal biseca el ángulo D: mide 104°. El ángulo C es suplementario: 180° − 104° = 76°.", "38": "Las diagonales miden 16 y 12; área = 16 · 12 ÷ 2 = 96.", "39": "360° − 37° = 323°.", "40": "Área = 7² + 6 · 7 ÷ 2 + 7 · 4 ÷ 2 = 49 + 21 + 14 = 84.", "41": "A = (1, 1), B = (3, 5); punto medio = ((1 + 3)/2, (1 + 5)/2) = (2, 3).", "42": "En el interior se cumple 1 < x < 5 y 1 < y < 5.", "43": "50 + 50t = 200; t = 3.", "44": "La cantidad se duplica cada hora: 8 · 2 = 16.", "45": "Al aumentar el número de tomas iguales, disminuye proporcionalmente el tiempo de llenado.", "46": "2 · 10 = 4t; t = 5 horas.", "47": "3000 ÷ 20 · 50 = 7500 colones.", "48": "La muestra son las 80 personas seleccionadas.", "49": "Cada trabajador consultado es una unidad estadística. La población contiene 200 + 240 = 440 trabajadores.", "50": "El color es una categoría.", "51": "El número de hijos es una cantidad.", "52": "(3 + 2 + 2 + 4 + 2 + 0 + 4 + 2 + 6 + 5) ÷ 10 = 30 ÷ 10 = 3.", "53": "El 2 aparece cuatro veces; es el dato más frecuente.", "54": "Una persona tiene cero hermanos.", "55": "Máximo − mínimo = 6 − 0 = 6."};
+// Se configura después de desplegar el servicio privado de recepción.
+const BACKEND_READY=false;
+const EXAM_KEY='ea_setimo_01_2025';
+const EXAM_API_URL='https://script.google.com/macros/s/AKfycbwtRGWJPNc8n413pPLvQE5ntBUFfJeG2qKJVxhhNG9CM8tlxqXb-j07anfudEV7Zz0y/exec';
+const STORAGE_KEY='setimo012025_exam_v1';
+let current=0,answers=Array(TOTAL).fill(null),started=false,remaining=LIMIT,interval=null,reviewing=false,finished=false,timedOut=false;
+let student={firstName:'',lastName:''},attemptId='',ticket='',sessionId='',submitted=false,deliveryPending=false,examDeadline=0,availabilityOpen=false;
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify({answers,current,started,remaining,finished,timedOut,student,attemptId,ticket,sessionId,submitted,examDeadline,ts:Date.now()}));}
+function load(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(!x)return;answers=Array.isArray(x.answers)&&x.answers.length===TOTAL?x.answers:answers;current=Math.max(0,Math.min(TOTAL-1,Number(x.current)||0));started=!!x.started;finished=!!x.finished;timedOut=!!x.timedOut;remaining=typeof x.remaining==='number'?x.remaining:LIMIT;student=x.student||student;attemptId=x.attemptId||'';ticket=x.ticket||'';sessionId=x.sessionId||'';submitted=!!x.submitted;examDeadline=Number(x.examDeadline)||0;if(started&&!finished&&x.ts)remaining=Math.max(0,remaining-Math.floor((Date.now()-x.ts)/1000));if(examDeadline&&started&&!finished)remaining=Math.min(remaining,Math.max(0,Math.floor((examDeadline-Date.now())/1000)));}catch(e){}}
+function jsonp(op,extra={}){return new Promise((resolve,reject)=>{if(!EXAM_API_URL)return reject(new Error('La recepción de resultados no está configurada.'));const callback='examStatus_'+Math.random().toString(36).slice(2),script=document.createElement('script');let timer;const cleanup=()=>{clearTimeout(timer);delete window[callback];script.remove()};window[callback]=data=>{cleanup();resolve(data)};script.onerror=()=>{cleanup();reject(new Error('No se pudo consultar el horario.'))};timer=setTimeout(()=>{cleanup();reject(new Error('La consulta tardó demasiado.'))},12000);const u=new URL(EXAM_API_URL);u.searchParams.set('op',op);u.searchParams.set('exam',EXAM_KEY);u.searchParams.set('callback',callback);u.searchParams.set('_',Date.now());Object.entries(extra).forEach(([k,v])=>u.searchParams.set(k,v));script.src=u.toString();document.head.appendChild(script)})}
+let checkingAvailability=false;
+async function checkAvailability(){if(!BACKEND_READY){$('startBtn').disabled=true;$('availabilityMessage').textContent='Esta prueba aún no está habilitada.';$('retryAvailabilityBtn').style.display='none';return null}if(checkingAvailability)return null;checkingAvailability=true;availabilityOpen=false;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='none';try{for(let attempt=0;attempt<3;attempt++){try{$('availabilityMessage').textContent=attempt?`Reintentando conexión (${attempt+1}/3)…`:'Consultando disponibilidad de la prueba…';const status=await jsonp('status');availabilityOpen=!!status.open;$('availabilityMessage').textContent=status.open?`Prueba disponible. Horario de Costa Rica${status.endsAt?' · Cierra: '+status.endsAt:''}.`:(status.message||'La prueba está cerrada en este momento.');$('startBtn').disabled=!status.open;return status}catch(e){if(attempt===2)throw e;await new Promise(resolve=>setTimeout(resolve,800*(attempt+1)))}}}catch(e){availabilityOpen=false;$('availabilityMessage').textContent=e.message;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='inline-block';return null}finally{checkingAvailability=false}}
+function validName(s){return /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñÀ-ÿ' .-]{2,70}$/.test(s)}
+function uuid(){return crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>(Math.random()*16|0).toString(16))}
+function setDelivery(message,canRetry=false){$('deliveryStatus').textContent=message;$('deliveryStatus').hidden=!message;$('retryDeliveryBtn').style.display=canRetry?'inline-block':'none';$('retryDeliveryBtn').disabled=deliveryPending}
+function sendResults(){if(submitted||deliveryPending)return;deliveryPending=true;setDelivery('Enviando respuestas al registro privado…');if(!EXAM_API_URL||!ticket){deliveryPending=false;setDelivery('No se pudo enviar: falta configurar el registro privado.',false);return}const nonce=uuid(),frame=document.createElement('iframe'),form=document.createElement('form'),payload={attemptId,ticket,sessionId,firstName:student.firstName,lastName:student.lastName,answers,elapsedSeconds:LIMIT-remaining,timedOut};frame.name='exam_upload_'+nonce.replace(/-/g,'');frame.style.display='none';form.style.display='none';form.method='POST';form.action=EXAM_API_URL;form.target=frame.name;for(const [name,value] of Object.entries({exam:EXAM_KEY,nonce,payload:JSON.stringify(payload)})){const input=document.createElement('input');input.name=name;input.value=value;form.appendChild(input)}document.body.append(frame,form);let timer;const done=(message,retry)=>{clearTimeout(timer);window.removeEventListener('message',onMessage);form.remove();frame.remove();deliveryPending=false;if(!retry){submitted=true;save()}setDelivery(message,retry)};const onMessage=e=>{if(!/^https:\/\/(?:script\.google\.com|script\.googleusercontent\.com|[a-z0-9-]+[.-]script\.googleusercontent\.com)$/.test(e.origin)||e.data?.kind!=='educacion-abierta-exam-save'||e.data.nonce!==nonce)return;if(e.data.status==='ok'||e.data.status==='duplicate')done('',false);else if(e.data.message==='El intento caducó.'){jsonp('status').then(s=>{let c;try{c=JSON.parse(new TextDecoder('utf-8').decode(Uint8Array.from(atob(ticket.split('.')[0].replace(/-/g,'+').replace(/_/g,'/')),ch=>ch.charCodeAt(0))))}catch{}const reason=!c?'El comprobante no se pudo leer.':c.id!==attemptId?'El identificador del intento no coincide.':c.sesion!==s.sessionId?'Sesión del intento: '+String(c.sesion)+' · Sesión activa: '+String(s.sessionId)+'.':c.inicio<s.startsAtEpoch||c.inicio>s.endsAtEpoch?'El inicio del intento está fuera del horario.':s.serverNow-c.inicio>LIMIT*1000+120000?'Pasaron más de tres horas desde el inicio.':'El servidor rechazó un comprobante vigente; requiere revisar su implementación.';done(reason,true)}).catch(()=>done(e.data.message,true))}else done(e.data.message||'El registro no aceptó las respuestas.',true)};window.addEventListener('message',onMessage);timer=setTimeout(()=>done('No se pudo confirmar el envío. Pulsa «Reintentar envío».',true),20000);form.submit()}
+function fmt(s){s=Math.max(0,s);let h=Math.floor(s/3600),m=Math.floor(s%3600/60),ss=s%60;return[h,m,ss].map(v=>String(v).padStart(2,'0')).join(':')}
+function updateTimer(){$('timerTop').textContent=fmt(remaining);if(remaining<=0&&!finished){remaining=0;timedOut=true;clearInterval(interval);finish(true)}}
+function tick(){clearInterval(interval);if(finished)return;interval=setInterval(()=>{if(finished){clearInterval(interval);return}remaining=Math.max(0,Math.floor((examDeadline-Date.now())/1000));updateTimer();save()},1000)}
+function showExam(){started=true;$('startView').style.display='none';$('examView').style.display='block';render();updateTimer();if(!finished)tick();save()}
+async function start(){if(finished||started)return;const firstName=$('studentFirstName').value.trim().replace(/\s+/g,' '),lastName=$('studentLastName').value.trim().replace(/\s+/g,' ');if(!validName(firstName)||!validName(lastName)){$('availabilityMessage').textContent='Escribe tu nombre y tus apellidos antes de comenzar.';return}if(!availabilityOpen){await checkAvailability();if(!availabilityOpen)return}$('startBtn').disabled=true;$('availabilityMessage').textContent='Confirmando el horario…';try{const id=uuid(),response=await jsonp('start',{id});if(!response.open||!response.ticket)throw new Error(response.message||'La prueba ya no está disponible.');student={firstName,lastName};attemptId=id;ticket=response.ticket;sessionId=response.sessionId;examDeadline=Number(response.attemptEndsAtEpoch)||0;remaining=examDeadline?Math.max(0,Math.floor((examDeadline-Date.now())/1000)):LIMIT;if(remaining<=0)throw new Error('Terminó el horario de la prueba.');showExam()}catch(e){$('availabilityMessage').textContent=e.message;await checkAvailability()}}
+function showGrade(correct,total){const percent=100*correct/total;const passed=percent>=65;$('gradeStatus').textContent=`Nota: ${Math.round(percent)}/100 · ${passed?'Aprobado':'Reprobado'}`;$('gradeStatus').style.color=passed?'#166534':'#991b1b'}
+function renderAreaCharts(){
+  const groups=new Map();
+  QUESTIONS.forEach((q,i)=>{
+    // Los ítems sin clave de corrección no forman parte del porcentaje evaluable.
+    if(!q.answer)return;
+    const area=areaForItem(q.n);
+    if(!groups.has(area))groups.set(area,{correct:0,wrong:0,blank:0});
+    const group=groups.get(area);
+    if(q.answer==='*'||answers[i]===q.answer)group.correct++;
+    else if(!answers[i])group.blank++;
+    else group.wrong++;
+  });
+  const container=$('areaChartGrid');
+  container.replaceChildren();
+  for(const [area,{correct,wrong,blank}] of groups){
+    const total=correct+wrong+blank;
+    const percentage=100*correct/total;
+    const card=document.createElement('article');
+    card.className='area-chart-card';
+    const title=document.createElement('h4');title.textContent=area;
+    const pie=document.createElement('div');pie.className='area-pie';
+    pie.style.setProperty('--correct-end',percentage+'%');
+    pie.style.setProperty('--wrong-end',100*(correct+wrong)/total+'%');
+    pie.setAttribute('role','img');
+    pie.setAttribute('aria-label',`${area}: ${correct} correctas, ${wrong} incorrectas y ${blank} sin responder, de ${total} preguntas evaluables`);
+    const rate=document.createElement('div');rate.className='area-rate';rate.textContent=percentage.toFixed(0)+'% correctas';
+    const count=document.createElement('div');count.className='area-count';count.textContent=`${correct} de ${total} preguntas correctas`;
+    const legend=document.createElement('div');legend.className='area-legend';
+    for(const [label,value,color] of [['Correctas',correct,'#16a34a'],['Incorrectas',wrong,'#ef4444'],['Sin responder',blank,'#cbd5e1']]){
+      const item=document.createElement('span');
+      const swatch=document.createElement('i');swatch.style.setProperty('--legend-color',color);
+      item.append(swatch,`${label}: ${value}`);legend.append(item);
+    }
+    card.append(title,pie,rate,count,legend);container.append(card);
+  }
+}
+function areaForItem(n){return QUESTIONS[n-1].area}
+function render(){const q=QUESTIONS[current];$('qnum').textContent=`Ítem ${q.n} de ${TOTAL}`;$('qarea').textContent=`Área: ${areaForItem(q.n)}`;$('qstatus').textContent=answers[current]?`Respuesta: ${answers[current]}`:'Sin responder';$('qcontext').innerHTML=q.context||'';$('qcontext').style.display=q.context?'block':'none';const fig=FIGURES[q.n],fb=$('qfigure'),fi=$('qfigureimg');
+const figureBeforeStem=!!FIGURES[q.n];
+const afterFig=null;
+const afb=$('qaftergraphic'), afi=$('qaftergraphicimg');
+
+if(figureBeforeStem){
+  $('qtext').innerHTML='';
+}else{
+  $('qtext').innerHTML=q.stem;
+}
+if(fig){
+  fi.src=fig;
+  fb.style.display='block';
+}else{
+  fi.removeAttribute('src');
+  fb.style.display='none';
+}
+let afterText=document.getElementById('qafterfigure');
+if(!afterText){
+  afterText=document.createElement('div');
+  afterText.id='qafterfigure';
+  afterText.className='qtext';
+  fb.insertAdjacentElement('afterend',afterText);
+}
+if(figureBeforeStem){
+  afterText.innerHTML=q.stem;
+  afterText.style.display='block';
+}else{
+  afterText.innerHTML='';
+  afterText.style.display='none';
+}
+if(afterFig){
+  afi.src=afterFig;
+  afb.style.display='block';
+}else{
+  afi.removeAttribute('src');
+  afb.style.display='none';
+}
+const c=$('choices');c.innerHTML='';q.opts.forEach((txt,i)=>{const L='ABCD'[i],b=document.createElement('button');b.className='choice'+(answers[current]===L?' selected':'');b.innerHTML=`<span class="optletter">${L})</span>${txt}`;b.disabled=finished;if(finished){if(q.answer&&L===q.answer)b.classList.add('correct');else if(q.answer&&answers[current]===L)b.classList.add('wrong');}b.onclick=()=>{if(finished)return;answers[current]=L;save();render()};c.appendChild(b)});$('prevBtn').disabled=current===0;$('nextBtn').textContent=current===TOTAL-1?'Finalizar':'Siguiente →';$('finishBtn').textContent=finished?'Volver al resultado':'Finalizar examen';renderGrid();if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetClear&&MathJax.typesetClear([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);MathJax.typesetPromise([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);}}
+function renderGrid(){const g=$('grid');g.innerHTML='';let count=answers.filter(Boolean).length;QUESTIONS.forEach((q,i)=>{const b=document.createElement('button');b.className='qjump '+(answers[i]?'answered':'unanswered')+(i===current?' current':'');b.textContent=q.n;b.onclick=()=>{current=i;render();save()};g.appendChild(b)});$('countTop').textContent=`${count}/${TOTAL}`;$('countSide').textContent=`${count} de ${TOTAL} respondidos`}
+function finish(auto=false,confirmed=false){if(finished){$('examView').style.display='none';$('resultView').style.display='block';return}const pendientes=answers.filter(a=>!a).length;if(!auto&&!confirmed&&pendientes){$('pendingMessage').textContent=`Aún tienes ${pendientes} ítem(es) sin responder. ¿Deseas finalizar de todas formas?`;$('finishConfirm').style.display='flex';$('confirmFinishBtn').focus();return}$('finishConfirm').style.display='none';clearInterval(interval);if(auto)timedOut=true;remaining=Math.max(0,remaining);started=false;finished=true;save();$('examView').style.display='none';$('startView').style.display='none';$('resultView').style.display='block';showScore();sendResults();window.scrollTo({top:0,behavior:'smooth'})}
+function showScore(){let cor=0;answers.forEach((a,i)=>{if(QUESTIONS[i].answer&&a===QUESTIONS[i].answer)cor++});let graded=QUESTIONS.filter(q=>q.answer).length;let blank=answers.filter((x,i)=>!x&&QUESTIONS[i].answer).length,wrong=graded-cor-blank;$('scoreText').textContent=`${cor}/${graded}`;$('percentText').textContent=`${(cor/graded*100).toFixed(0)}% de respuestas correctas${timedOut?' · Tiempo agotado':''}`;showGrade(cor,graded);$('correctStat').textContent=cor;$('wrongStat').textContent=wrong;$('blankStat').textContent=blank;renderAreaCharts()}
+function review(){
+reviewing=!reviewing;
+const box=$('review');
+box.style.display=reviewing?'grid':'none';
+$('reviewBtn').textContent=reviewing?'Ocultar revisión':'Revisar respuestas';
+if(!reviewing)return;
+box.innerHTML='';
+QUESTIONS.forEach((q,i)=>{
+ const r=document.createElement('div');
+ r.className='review-row';
+ const ok=!!q.answer&&answers[i]===q.answer;
+ const sol=SOLUTIONS[String(q.n)]||'';
+ r.innerHTML=`<div><b>Ítem ${q.n}</b></div><div>Tu respuesta: <span class="${ok?'good':'bad'}">${answers[i]||'—'}</span></div><div>${q.answer?`Correcta: <span class="good">${q.answer}</span>`:"Sin opción correcta; no califica"}</div><div class="review-solution"><b>Solución:</b>${sol}</div>`;
+ r.onclick=()=>{current=i;$('resultView').style.display='none';$('examView').style.display='block';render()};
+ box.appendChild(r);
+});
+if(window.MathJax && MathJax.typesetPromise){
+  MathJax.typesetPromise([box]).catch(()=>{});
+}
+}
+function requestRestart(){$('restartConfirm').style.display='flex';$('cancelRestartBtn').focus()}
+function closeRestart(){$('restartConfirm').style.display='none';$('restartBtn').focus()}
+function restart(){clearInterval(interval);interval=null;localStorage.removeItem(STORAGE_KEY);answers=Array(TOTAL).fill(null);current=0;remaining=LIMIT;started=false;finished=false;timedOut=false;reviewing=false;student={firstName:'',lastName:''};attemptId='';ticket='';sessionId='';submitted=false;examDeadline=0;$('studentFirstName').value='';$('studentLastName').value='';$('finishConfirm').style.display='none';$('restartConfirm').style.display='none';$('review').style.display='none';$('reviewBtn').textContent='Revisar respuestas';$('examView').style.display='none';$('resultView').style.display='none';$('startView').style.display='block';renderGrid();updateTimer();checkAvailability()}
+if(new URLSearchParams(location.search).get('nuevo')==='1'){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}history.replaceState(null,'',location.pathname+location.hash)}
+$('startBtn').onclick=start;$('retryAvailabilityBtn').onclick=checkAvailability;$('finishBtn').onclick=()=>finish(false);$('cancelFinishBtn').onclick=()=>$('finishConfirm').style.display='none';$('confirmFinishBtn').onclick=()=>finish(false,true);$('finishConfirm').onclick=e=>{if(e.target===$('finishConfirm'))$('finishConfirm').style.display='none'};$('reviewBtn').onclick=review;$('retryDeliveryBtn').onclick=sendResults;$('menuBtn').onclick=()=>location.assign('https://profecharlie.github.io/Educacion-Secundaria/');$('restartBtn').onclick=requestRestart;$('cancelRestartBtn').onclick=closeRestart;$('confirmRestartBtn').onclick=restart;$('restartConfirm').onclick=e=>{if(e.target===$('restartConfirm'))closeRestart()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('finishConfirm').style.display==='flex')$('finishConfirm').style.display='none';if(e.key==='Escape'&&$('restartConfirm').style.display==='flex')closeRestart()});$('prevBtn').onclick=()=>{if(current>0){current--;render();save()}};$('nextBtn').onclick=()=>{if(current<TOTAL-1){current++;render();save()}else finish(false)};load();updateTimer();if(finished){$('startView').style.display='none';$('examView').style.display='none';$('resultView').style.display='block';showScore();setDelivery(submitted?'':'El envío quedó pendiente. Pulsa «Reintentar envío».',!submitted)}else if(started&&ticket&&attemptId){showExam()}else{started=false;checkAvailability()}
+if(document.modelContext?.registerTool){document.modelContext.registerTool({name:'read_exam_progress',description:'Consultar el progreso visible de la prueba sin revelar las respuestas correctas.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:()=>({total:TOTAL,current:current+1,answered:answers.filter(Boolean).length,remaining,finished})});}</script></body></html>
+
