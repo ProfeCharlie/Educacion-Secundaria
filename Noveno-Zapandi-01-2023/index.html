@@ -1,0 +1,813 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Matemática Noveno · Convocatoria 01-2023</title><style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#17202a;--muted:#65707d;--line:#dbe1e7;--accent:#1f5d99;--ok:#1f7a4d;--bad:#b23a3a}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.topbar{max-width:1100px;margin:auto;padding:10px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{font-weight:800}.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fafbfc;font-size:14px}.timer{font-variant-numeric:tabular-nums;font-weight:800}
+main{max-width:1100px;margin:22px auto;padding:0 16px 40px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 18px #0000000b;padding:18px}#startView{text-align:center;padding:42px 24px}.hero{font-size:34px;margin:0 0 10px}.sub{color:var(--muted);max-width:760px;margin:0 auto 22px;line-height:1.5}
+button{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer;background:#e9eef3;color:var(--ink)}button.primary{background:var(--accent);color:#fff}button.danger{background:#7b1f1f;color:#fff}button:disabled{opacity:.45;cursor:not-allowed}.exam-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:18px}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.qnum{font-size:20px;font-weight:800}.status{color:var(--muted);font-size:14px}.qtext{font-size:18px;line-height:1.55}.context{margin:12px 0 16px;padding:12px;background:#f8fafc;border:1px solid var(--line);border-radius:10px}.context p{margin:.4em 0}.visual-note{color:var(--muted);font-size:14px}table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px}th,td{border:1px solid #cfd7df;padding:7px;text-align:left}.original-centered th,.original-centered td{text-align:center}th{background:#eef3f7}.choices{display:grid;gap:10px;margin-top:16px}.choice{text-align:left;font-size:16px;padding:13px;background:#f7f9fb;border:2px solid var(--line)}.choice.selected{border-color:var(--accent);background:#eaf2fb}.choice.correct{border-color:var(--ok);background:#eaf7ef}.choice.wrong{border-color:var(--bad);background:#fdecec}.optletter{display:inline-block;width:28px;font-weight:900}.navbuttons{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.side h3{margin-top:0}.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.qjump{padding:7px 0;border-radius:7px;font-size:12px}.qjump.current{outline:2px solid var(--accent)}.qjump.answered{background:#dff0e7}.qjump.unanswered{background:#eef1f4}.small{font-size:13px;color:var(--muted);line-height:1.4}.qfigure{margin:18px 0;text-align:center;background:#fff;border:1.5px solid #000;padding:14px;box-sizing:border-box}.qfigure img{display:block;max-width:100%;max-height:560px;width:auto;height:auto;margin:0 auto;background:#fff;object-fit:contain}.original{margin-top:16px}.original summary{cursor:pointer;color:var(--accent);font-weight:700}.original img{display:block;max-width:100%;max-height:70vh;margin:10px auto 0;border:1px solid var(--line);border-radius:8px}.result{display:none}.score{font-size:42px;font-weight:900}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.stat{padding:14px;border:1px solid var(--line);border-radius:10px;text-align:center}.review-list{display:grid;gap:8px;max-height:430px;overflow:auto;margin-top:14px}.review-row{display:grid;grid-template-columns:72px 1fr 1fr;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px}.good{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}.review-solution{grid-column:1/-1;padding:10px 12px;background:#f8fafc;border-left:4px solid var(--accent);border-radius:6px;line-height:1.45}.review-solution b{display:block;margin-bottom:4px}
+@media(max-width:800px){.exam-layout{grid-template-columns:1fr}.side{order:-1}.grid{grid-template-columns:repeat(10,1fr)}.hero{font-size:27px}.review-row{grid-template-columns:55px 1fr 1fr}.qtext{font-size:17px}}
+.item1-original th{text-align:center}.item1-original td:first-child{text-align:left}.item1-original td:nth-child(2){text-align:center}
+.item2-original th,.item2-original td{text-align:center}
+.item4-original th,.item4-original td{text-align:center}
+.item56-original th,.item56-original td{text-align:center}
+.item1112-original th{text-align:center}
+.item1112-original td:first-child{text-align:left}
+.item1112-original td:not(:first-child){text-align:center}
+.item46-original th,.item46-original td{text-align:center}
+
+.exam-subtitle{
+  margin-top:6px;
+  font-size:14px;
+  font-weight:600;
+  color:#0057B8;
+}
+
+
+.exam-intro{
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.55;
+}
+.exam-intro ul{
+  margin:0;
+  padding-left:22px;
+}
+.exam-intro li{
+  margin:5px 0;
+}
+.exam-encouragement{
+  margin-top:10px;
+  font-weight:700;
+  color:#0057B8;
+}
+
+
+.exam-intro ul{
+  list-style-position:outside;
+  padding-left:18px !important;
+  margin-left:0 !important;
+}
+.exam-intro li{
+  padding-left:0 !important;
+  margin-left:0 !important;
+}
+.exam-intro li::marker{
+  font-size:0.9em;
+}
+
+
+.exam-intro{margin-top:14px;font-size:14px;line-height:1.55}
+.exam-intro .intro-line{display:flex;align-items:flex-start;gap:6px;margin:5px 0}
+.exam-intro .intro-bullet{display:inline-block;flex:0 0 auto;font-weight:700;line-height:1.55}
+.exam-encouragement{margin-top:10px;font-weight:700;color:#0057B8}
+
+
+.exam-encouragement{
+  margin-top:12px !important;
+  font-size:17px !important;
+  font-weight:700 !important;
+  color:#7B2CBF !important;
+}
+
+
+.instructions-title{
+  font-weight:700;
+  margin-bottom:7px;
+}
+.exam-intro .intro-line{
+  display:flex;
+  align-items:flex-start;
+  gap:5px;
+  margin:5px 0;
+}
+.exam-intro .intro-bullet{
+  flex:0 0 auto;
+  font-weight:700;
+}
+
+
+.exam-intro,
+.exam-intro .instructions-title,
+.exam-intro .intro-line,
+.exam-intro .intro-line span{
+  text-align:left !important;
+}
+.exam-intro{
+  width:100%;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+
+.choice:disabled{cursor:not-allowed!important;opacity:.72}
+
+.exam-encouragement{
+  text-align:center !important;
+  width:100% !important;
+  display:block !important;
+}
+
+
+.exam-intro .intro-line{display:flex !important;align-items:flex-start !important;gap:5px !important;text-align:left !important;}
+.exam-intro .intro-bullet{display:inline-block !important;flex:0 0 auto !important;font-weight:700 !important;}
+.exam-encouragement{text-align:center !important;width:100% !important;display:block !important;}
+
+.calculator-approved-image{
+  width:100%;
+  margin:14px 0 18px;
+  text-align:center;
+}
+.calculator-approved-image img{
+  display:block;
+  width:100%;
+  max-width:1100px;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto;
+}
+
+
+.calculator-brand-title{
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  margin:14px 0 6px;
+  color:#1f2937;
+}
+
+
+.calculator-approved-image img{
+  display:block !important;
+  width:100% !important;
+  max-width:1200px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  margin:0 auto !important;
+}
+
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+<style>
+.tabla-item2 th:nth-child(n+2):nth-child(-n+5),
+.tabla-item2 td:nth-child(n+2):nth-child(-n+5){
+    text-align:center !important;
+    vertical-align:middle !important;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style>
+.tabla-item11 th, .tabla-item11 td{
+    border:1px solid #000;
+    padding:6px 8px;
+}
+.tabla-item11{
+    border-collapse:collapse;
+    margin:8px 0;
+}
+.tabla-item11 th{
+    text-align:center;
+}
+.tabla-item11 td:first-child{
+    text-align:left;
+}
+.tabla-item11 td:nth-child(n+2){
+    text-align:center;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style>
+/* Uniformar el texto acentuado de las fórmulas del ítem 11 */
+.formulas-item11 mjx-mtext,
+.formulas-item11 mjx-mtext *{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style>
+/* Fracciones del ítem 11 con la misma tipografía del texto normal */
+.formulas-item11 .html-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    font-family:inherit !important;
+    font-size:inherit !important;
+    line-height:1.15;
+    margin:0 .18em;
+}
+.formulas-item11 .html-frac .frac-top,
+.formulas-item11 .html-frac .frac-bottom{
+    font-family:inherit !important;
+    font-size:inherit !important;
+    font-weight:inherit !important;
+    font-style:normal !important;
+    white-space:nowrap;
+}
+.formulas-item11 .html-frac .frac-top{
+    border-bottom:1.3px solid currentColor;
+    padding:0 .22em .10em;
+}
+.formulas-item11 .html-frac .frac-bottom{
+    padding:.10em .22em 0;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="q26-formula-style">
+.q26-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  width:100%;
+}
+.q26-copy{flex:1;min-width:0;}
+.q26-formula-box{
+  flex:0 0 auto;
+  width:168px;
+  height:66px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  color:#111;
+  white-space:nowrap;
+}
+.q26-left{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+}
+.q26-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+  font-family:Arial,Helvetica,sans-serif;
+  font-style:normal;
+}
+.q26-num{
+  display:block;
+  padding:0 5px 4px 5px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.q26-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+@media (max-width:700px){
+  .q26-top{align-items:flex-start;gap:14px;}
+  .q26-formula-box{width:160px;height:64px;}
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="q26-after-style">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:12px;
+  margin-bottom:4px;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="q26-order-final">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="q26-angle-svg-style">
+.q26-left{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+.q26-angle-symbol{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.q26-angle-symbol svg{display:block;}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="plain-formula-boxes-after-q26">
+.formula-after-stem{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+.plain-formula-box{
+  min-width:145px;
+  min-height:64px;
+  padding:8px 16px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+  color:#111;
+}
+.plain-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+}
+.plain-num{
+  display:block;
+  padding:0 5px 4px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.plain-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+<style id="q1-table-pdf-style">
+.q1-pdf-table{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.4px solid #222 !important;
+  border-bottom:1.4px solid #222 !important;
+}
+.q1-pdf-table th,
+.q1-pdf-table td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 18px !important;
+  white-space:nowrap !important;
+}
+.q1-pdf-table th:first-child,
+.q1-pdf-table td:first-child{
+  text-align:left !important;
+}
+.q1-pdf-table th:not(:first-child),
+.q1-pdf-table td:not(:first-child){
+  text-align:center !important;
+}
+.q1-pdf-table tr:first-child th,
+.q1-pdf-table tr:first-child td{
+  border-bottom:1.4px solid #222 !important;
+}
+/* En el PDF de la pregunta 1 NO hay líneas verticales
+   ni líneas horizontales entre las filas de datos. */
+.q1-pdf-table th + th,
+.q1-pdf-table th + td,
+.q1-pdf-table td + th,
+.q1-pdf-table td + td{
+  border-left:none !important;
+}
+.q1-pdf-table tr:not(:first-child) th,
+.q1-pdf-table tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="item1-original-pdf-style">
+.item1-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th,
+.item1-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:7px 14px !important;
+  white-space:nowrap !important;
+}
+.item1-original tr:first-child th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th:first-child,
+.item1-original td:first-child{
+  text-align:left !important;
+}
+.item1-original th:nth-child(2),
+.item1-original td:nth-child(2){
+  text-align:center !important;
+}
+/* Sin líneas verticales ni líneas entre filas de datos, como en el PDF. */
+.item1-original th + th,
+.item1-original td + td{
+  border-left:none !important;
+}
+.item1-original tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="tablas-pdf-restantes">
+/* PREGUNTA 5: sin líneas verticales ni divisiones entre filas de datos */
+.item5-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th,
+.item5-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 14px !important;
+  white-space:nowrap !important;
+}
+.item5-original thead th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th:first-child,
+.item5-original td:first-child{
+  text-align:left !important;
+}
+.item5-original th:not(:first-child),
+.item5-original td:not(:first-child){
+  text-align:center !important;
+}
+
+/* PREGUNTAS 2, 4, 11 y 46: el PDF sí muestra cuadrícula completa */
+.tabla-item2,
+.item4-original,
+.tabla-item11,
+.item46-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border:1.4px solid #111 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+}
+.tabla-item2 th, .tabla-item2 td,
+.item4-original th, .item4-original td,
+.tabla-item11 th, .tabla-item11 td,
+.item46-original th, .item46-original td{
+  border:1.4px solid #111 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding:6px 12px !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+}
+
+/* Primera columna de 4 y 11 a la izquierda como en el original */
+.item4-original th:first-child,
+.item4-original td:first-child,
+.tabla-item11 th:first-child,
+.tabla-item11 td:first-child{
+  text-align:left !important;
+}
+
+/* Primera columna de 46 centrada, como en el PDF */
+.item46-original th:first-child,
+.item46-original td:first-child{
+  text-align:center !important;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="q2-first-column-left">
+.tabla-item2 th:first-child,
+.tabla-item2 td:first-child{
+  text-align:left !important;
+}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="q36-option-graphs-style">
+.q36-option-graph{display:block;width:min(390px,100%);height:auto;margin:4px auto;}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="q37-bullets-style">
+.q37-bullets{margin:14px 0 4px 24px;line-height:1.9;}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+
+<style id="responsive-calculadoras">
+@media (max-width: 760px) {
+  /* CASIO: el contenedor exterior es el que se desplaza horizontalmente. */
+  #casio-mobile-scroll {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain;
+    padding-bottom: 14px !important;
+  }
+
+  /* El título permanece normal; solo la fila de calculadoras es ancha. */
+  #casio-mobile-scroll > .casio-mobile-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 390px) !important;
+    gap: 10px !important;
+    width: 1190px !important;
+    min-width: 1190px !important;
+    max-width: none !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div {
+    box-sizing: border-box !important;
+    width: 390px !important;
+    min-width: 390px !important;
+    max-width: 390px !important;
+    overflow: visible !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div > div:first-child {
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: 370px !important;
+    white-space: nowrap !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row img {
+    display: block !important;
+    width: auto !important;
+    max-width: 360px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* El desplazamiento usado en escritorio para la tercera imagen
+     se neutraliza en celular para que no invada otras zonas. */
+  #casio-mobile-scroll > .casio-mobile-row img[style*="translateY"] {
+    transform: none !important;
+  }
+
+  /* GENÉRICAS: se mantiene el desplazamiento horizontal aprobado. */
+  #calculadoras-genericas {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 12px !important;
+  }
+
+  #calculadoras-genericas > div:last-child {
+    justify-content: start !important;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Tercera Casio (NO RECOMENDADA): más grande y más arriba */
+  /* Tercera Casio en celular:
+     se sube el CONTENEDOR completo para evitar recortar la calculadora. */
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) > div:last-child {
+    margin-top: -78px !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) img {
+    width: 520px !important;
+    max-width: none !important;
+    height: auto !important;
+    position: relative !important;
+    left: 50% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Corrección óptica: centra el cuerpo de la calculadora, no el lienzo completo. */
+    transform: translateX(-36%) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style>
+
+<style>.seg{text-decoration:overline}.quad-symbol{display:inline-block;font-size:1.28em;line-height:.7;vertical-align:-.06em;margin-right:1px}.qfigure{width:100%!important;margin:18px auto!important;text-align:center!important}.qfigure img{display:block!important;max-width:100%!important;width:440px!important;height:auto!important;max-height:none!important;margin:0 auto!important;transform:none!important}.qtext{line-height:1.65}.choice{line-height:1.5}.context table{max-width:520px;margin:14px auto}.review-row{cursor:pointer}button:focus-visible{outline:3px solid #166cc0;outline-offset:3px}.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style><style>.qmeta{text-align:right}.qarea{font-size:14px;font-weight:700;line-height:1.4;color:var(--ink)}.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f5d99'/%3E%3Ctext x='7' y='24' font-size='24' fill='white'%3E7%3C/text%3E%3C/svg%3E"><style>.frac{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.15;font-size:.94em;white-space:nowrap;margin:0 .10em}.frac>span:first-child{border-bottom:1.4px solid currentColor;padding:0 .18em .05em}.frac>span:last-child{padding:.05em .18em 0}.inline-eq{display:inline-flex;align-items:center;gap:3px;white-space:nowrap;vertical-align:middle}.seg{text-decoration:overline;text-decoration-thickness:1.3px}.claims{margin:12px 0 14px 16px}.claims p{display:flex;gap:14px;align-items:start}.claims b{min-width:24px}.tiny-table{font-size:13px;width:auto;max-width:100%}.tiny-table th,.tiny-table td{padding:4px 7px;white-space:nowrap}.choice:has(table){overflow-x:auto}.tie-boxes{display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px;margin:20px 0}.tie-boxes>div{text-align:center;min-width:105px}.tie-boxes>div>div{border:1.5px solid #222;margin-top:8px;text-align:left;padding:12px;line-height:2.05}.qfigure{border:0;padding:5px}.qfigure img{max-height:560px}.context{line-height:1.55}.context table{max-width:480px}.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style><style>
+.area-results{margin:28px auto;text-align:left;max-width:880px}
+.area-results h3{text-align:center;margin:0 0 5px}
+.area-results > p{text-align:center;margin:0 0 18px;color:#475569}
+.area-chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
+.area-chart-card{border:1px solid #dce4eb;border-radius:14px;padding:16px;text-align:center;background:#fff}
+.area-chart-card h4{margin:0 0 12px;min-height:2.6em;font-size:16px;line-height:1.3}
+.area-pie{width:146px;height:146px;margin:0 auto 12px;border-radius:50%;background:conic-gradient(#16a34a 0 var(--correct-end),#ef4444 var(--correct-end) var(--wrong-end),#cbd5e1 var(--wrong-end) 100%);box-shadow:inset 0 0 0 1px rgba(15,23,42,.08)}
+.grade-status{font-weight:700;font-size:1.1rem;margin:8px 0 16px;color:#183f71}
+.area-rate{font-weight:700;font-size:24px;color:#166534}
+.area-count{margin:4px 0 10px;color:#475569;font-size:14px}
+.area-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 11px;font-size:12px;color:#334155}
+.area-legend span{white-space:nowrap}
+.area-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;background:var(--legend-color)}
+.original-statements p{margin:12px 0;padding-left:22px}.original-figure svg{display:block;width:100%;max-width:850px;margin:20px auto}.color-boxes{display:flex;justify-content:center;gap:35px;margin:20px 0;flex-wrap:wrap}.color-boxes p{margin:0 0 8px;text-align:center}.color-box{border:1.5px solid #111;padding:12px 16px;min-width:110px;line-height:1.5}</style></head><body>
+<header><div class="topbar"><div class="brand">Matemática Noveno · Convocatoria 01-2023</div><div class="meta"><span class="pill">Modo examen</span><span class="pill">Respondidas: <b id="countTop">0/55</b></span><span class="pill timer" id="timerTop">03:00:00</span></div></div></header>
+<main><section id="startView" class="card"><h1 class="hero">Matemática Noveno · Convocatoria 01-2023</h1>
+<div class="exam-registration" style="max-width:440px;margin:14px auto 18px;display:grid;gap:10px">
+  <label>Nombre <input id="studentFirstName" autocomplete="given-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <label>Apellidos <input id="studentLastName" autocomplete="family-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <p id="availabilityMessage" role="status" style="margin:0;text-align:center">Consultando disponibilidad de la prueba…</p>
+  <button id="retryAvailabilityBtn" type="button" style="display:none">Reintentar conexión</button>
+  <button class="primary" id="startBtn" disabled>Iniciar Prueba</button>
+</div>
+<div class="exam-subtitle">Elaborado por: Carlos Madrigal Gutiérrez</div>
+<div class="exam-intro">
+  <div class="instructions-title">Instrucciones:</div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Versión interactiva con las 55 preguntas.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Las representaciones gráficas necesarias aparecen directamente dentro de cada pregunta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>La prueba contiene 55 preguntas de selección única, cada una con cuatro opciones de respuesta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes moverte entre preguntas, devolverte o avanzar y responder en el momento que creas necesario, eso sí, si el tiempo se agota la prueba se cierra y no te dejará seguir respondiendo.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Es recomendable tener a la mano papel y lápiz para ir resolviendo los ejercicios de la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Dispones de 3 horas para responder la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes utilizar calculadora básica.</span></div>
+  
+
+<p class="sub"></p></div></section>
+<section id="examView" style="display:none"><div class="exam-layout"><div class="card"><div class="qhead"><div class="qnum" id="qnum"></div><div class="qmeta"><div class="qarea" id="qarea"></div><div class="status" id="qstatus"></div></div></div><div id="qcontext" class="context"></div><div id="qtext" class="qtext"></div><div id="qfigure" class="qfigure" style="display:none"><img id="qfigureimg" alt="Representación gráfica del ítem"></div><div id="qaftergraphic" class="qfigure" style="display:none"><img id="qaftergraphicimg" alt="Opciones gráficas del ítem"></div><div id="choices" class="choices"></div><div class="navbuttons"><button id="prevBtn">← Anterior</button><button id="nextBtn">Siguiente →</button></div></div><aside class="card side"><h3>Navegación</h3><div id="grid" class="grid"></div><p class="small" id="countSide">0 de 55 respondidos</p><button class="danger" id="finishBtn" style="width:100%;margin-top:8px">Finalizar examen</button></aside></div></section>
+<section id="resultView" class="card result"><h2>Resultado</h2><div class="score" id="scoreText">0/55</div><div id="percentText"></div><p id="gradeStatus" class="grade-status" aria-live="polite"></p><div class="result-grid"><div class="stat"><b id="correctStat">0</b><br>Correctas</div><div class="stat"><b id="wrongStat">0</b><br>Incorrectas</div><div class="stat"><b id="blankStat">0</b><br>Sin responder</div></div><section class="area-results" aria-labelledby="areaResultsTitle"><h3 id="areaResultsTitle">Resultados por área</h3><p>Porcentaje de respuestas correctas en cada área</p><div id="areaChartGrid" class="area-chart-grid"></div></section><p id="deliveryStatus" role="status"></p><button id="retryDeliveryBtn" style="display:none">Reintentar envío</button><button id="reviewBtn">Revisar respuestas</button> <button id="restartBtn">Hacer otro intento</button> <button type="button" id="menuBtn">Regresar al menú de exámenes</button><div id="review" class="review-list" style="display:none"></div></section><div id="finishConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px"><div role="alertdialog" aria-modal="true" aria-labelledby="finishTitle" aria-describedby="pendingMessage" style="width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;text-align:center"><h2 id="finishTitle">¿Finalizar el examen?</h2><p id="pendingMessage"></p><button type="button" id="cancelFinishBtn">Seguir respondiendo</button> <button type="button" class="danger" id="confirmFinishBtn">Sí, finalizar</button></div></div><div id="restartConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px;">
+<div role="alertdialog" aria-modal="true" aria-labelledby="restartConfirmTitle" aria-describedby="restartConfirmText" style="box-sizing:border-box;width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;box-shadow:0 18px 56px rgba(0,0,0,.28);text-align:center;">
+<h2 id="restartConfirmTitle" style="margin:0 0 12px;color:#173b70;">¿Reiniciar el examen?</h2>
+<p id="restartConfirmText" style="margin:0 0 22px;line-height:1.55;">Se borrarán tus respuestas y el tiempo transcurrido.</p>
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;"><button id="cancelRestartBtn" type="button">Cancelar</button><button id="confirmRestartBtn" class="danger" type="button">Sí, reiniciar</button></div>
+</div></div></main><script>
+const FIGURES={"7": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20500%20130%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke%3A%23888%3Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2245%22%20y1%3D%2265%22%20x2%3D%22445%22%20y2%3D%2265%22%20class%3D%22%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%22105%22%20y1%3D%2253%22%20x2%3D%22105%22%20y2%3D%2277%22%20class%3D%22%22%2F%3E%3Cline%20x1%3D%22235%22%20y1%3D%2253%22%20x2%3D%22235%22%20y2%3D%2277%22%20class%3D%22%22%2F%3E%3Cline%20x1%3D%22365%22%20y1%3D%2253%22%20x2%3D%22365%22%20y2%3D%2277%22%20class%3D%22%22%2F%3E%3Ctext%20x%3D%2297%22%20y%3D%22105%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22227%22%20y%3D%22105%22%3E6%3C%2Ftext%3E%3Ctext%20x%3D%22357%22%20y%3D%22105%22%3E7%3C%2Ftext%3E%3Ccircle%20cx%3D%22144%22%20cy%3D%2265%22%20r%3D%223.5%22%20class%3D%22dot%22%2F%3E%3Ctext%20x%3D%22135%22%20y%3D%2247%22%3EP%3C%2Ftext%3E%3C%2Fsvg%3E", "13": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20330%20310%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke%3A%23888%3Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M100%2045H235L100%20260Z%20M100%2063H118V45%22%20class%3D%22%22%2F%3E%3Ctext%20x%3D%2286%22%20y%3D%2236%22%3EF%3C%2Ftext%3E%3Ctext%20x%3D%22238%22%20y%3D%2236%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%2284%22%20y%3D%22286%22%3EG%3C%2Ftext%3E%3Ctext%20x%3D%22162%22%20y%3D%2236%22%3E1%3C%2Ftext%3E%3Ctext%20x%3D%2275%22%20y%3D%22156%22%3E2%3C%2Ftext%3E%3C%2Fsvg%3E", "15": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20225%20265%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke%3A%23888%3Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%22100%22%20y1%3D%22100%22%20x2%3D%22100%22%20y2%3D%22215%22%20class%3D%22%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2242%22%20y1%3D%22158%22%20x2%3D%22158%22%20y2%3D%22158%22%20class%3D%22%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Ctext%20x%3D%2291%22%20y%3D%2286%22%3EN%3C%2Ftext%3E%3Ctext%20x%3D%2291%22%20y%3D%22240%22%3ES%3C%2Ftext%3E%3Ctext%20x%3D%2213%22%20y%3D%22165%22%3EO%3C%2Ftext%3E%3Ctext%20x%3D%22170%22%20y%3D%22165%22%3EE%3C%2Ftext%3E%3Ctext%20x%3D%2227%22%20y%3D%2235%22%3EPuntos%20cardinales%3C%2Ftext%3E%3C%2Fsvg%3E", "16": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20450%20265%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke%3A%23888%3Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M60%2050H380V210H60Z%20M60%20210L380%2050%20M60%2066H76V50%20M364%2050V66H380%20M380%20194H364V210%20M60%20194H76V210%22%20class%3D%22%22%2F%3E%3Ctext%20x%3D%2243%22%20y%3D%2241%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22382%22%20y%3D%2242%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%22385%22%20y%3D%22232%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%2241%22%20y%3D%22232%22%3ED%3C%2Ftext%3E%3Ctext%20x%3D%22198%22%20y%3D%22242%22%3E92%3C%2Ftext%3E%3Ctext%20x%3D%22206%22%20y%3D%22120%22%3E115%3C%2Ftext%3E%3C%2Fsvg%3E", "20": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20410%20275%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke%3A%23888%3Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M90%2040V220H330Z%20M90%20203H107V220%20M90%2084Q119%2087%20133%2073%20M275%20220Q272%20198%20286%20187%22%20class%3D%22%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%22140%22%3E3%3C%2Ftext%3E%3Ctext%20x%3D%22191%22%20y%3D%22249%22%3E4%3C%2Ftext%3E%3Ctext%20x%3D%22219%22%20y%3D%22117%22%3E5%3C%2Ftext%3E%3Ctext%20x%3D%22111%22%20y%3D%2284%22%3E%CE%B2%3C%2Ftext%3E%3Ctext%20x%3D%22277%22%20y%3D%22215%22%3E%CE%B1%3C%2Ftext%3E%3C%2Fsvg%3E", "25": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20420%20290%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke%3A%23888%3Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cpath%20d%3D%22M70%20240L230%2050L360%20250Z%20M202%2083Q230%20117%20255%2086%20M317%20247Q319%20216%20333%20209%22%20class%3D%22%22%2F%3E%3Ctext%20x%3D%22223%22%20y%3D%2235%22%3EA%3C%2Ftext%3E%3Ctext%20x%3D%22362%22%20y%3D%22271%22%3EB%3C%2Ftext%3E%3Ctext%20x%3D%2248%22%20y%3D%22259%22%3EC%3C%2Ftext%3E%3Ctext%20x%3D%22214%22%20y%3D%22114%22%3E63%C2%B0%3C%2Ftext%3E%3Ctext%20x%3D%22306%22%20y%3D%22230%22%3E55%C2%B0%3C%2Ftext%3E%3Ctext%20x%3D%22125%22%20y%3D%22140%22%3E14%3C%2Ftext%3E%3C%2Fsvg%3E", "31": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20410%20325%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke%3A%23888%3Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2240%22%20y1%3D%22245%22%20x2%3D%22370%22%20y2%3D%22245%22%20class%3D%22%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2290%22%20y1%3D%22305%22%20x2%3D%2290%22%20y2%3D%2225%22%20class%3D%22%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M112%2041Q155%20213%20198%20213Q241%20213%20284%2041%22%20class%3D%22%22%2F%3E%3Cline%20x1%3D%2290%22%20y1%3D%22213%22%20x2%3D%22198%22%20y2%3D%22213%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%22198%22%20y1%3D%22213%22%20x2%3D%22198%22%20y2%3D%22245%22%20class%3D%22dash%22%2F%3E%3Ccircle%20cx%3D%22198%22%20cy%3D%22213%22%20r%3D%223.5%22%20class%3D%22dot%22%2F%3E%3Ctext%20x%3D%22207%22%20y%3D%22208%22%3EP%3C%2Ftext%3E%3Ctext%20x%3D%2264%22%20y%3D%22219%22%3Em%3C%2Ftext%3E%3Ctext%20x%3D%22191%22%20y%3D%22269%22%3En%3C%2Ftext%3E%3Ctext%20x%3D%22376%22%20y%3D%22251%22%3Ex%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%2220%22%3Ey%3C%2Ftext%3E%3Ctext%20x%3D%22296%22%20y%3D%22103%22%3Ef%3C%2Ftext%3E%3C%2Fsvg%3E", "32": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20410%20325%22%20role%3D%22img%22%3E%3Cstyle%3Etext%7Bfont%3A19px%20Arial%2Csans-serif%3Bfill%3A%23111%7Dpath%2Cline%2Cpolyline%2Cpolygon%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke%3A%23888%3Bstroke-dasharray%3A6%205%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D%3C%2Fstyle%3E%3Cdefs%3E%3Cmarker%20id%3D%22a%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%229%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M0%200L10%205L0%2010Z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22%2F%3E%3C%2Fmarker%3E%3C%2Fdefs%3E%3Cline%20x1%3D%2240%22%20y1%3D%22245%22%20x2%3D%22370%22%20y2%3D%22245%22%20class%3D%22%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cline%20x1%3D%2290%22%20y1%3D%22305%22%20x2%3D%2290%22%20y2%3D%2225%22%20class%3D%22%22%20marker-start%3D%22url%28%23a%29%22%20marker-end%3D%22url%28%23a%29%22%2F%3E%3Cpath%20d%3D%22M112%2041Q155%20213%20198%20213Q241%20213%20284%2041%22%20class%3D%22%22%2F%3E%3Cline%20x1%3D%2290%22%20y1%3D%22213%22%20x2%3D%22198%22%20y2%3D%22213%22%20class%3D%22dash%22%2F%3E%3Cline%20x1%3D%22198%22%20y1%3D%22213%22%20x2%3D%22198%22%20y2%3D%22245%22%20class%3D%22dash%22%2F%3E%3Ccircle%20cx%3D%22198%22%20cy%3D%22213%22%20r%3D%223.5%22%20class%3D%22dot%22%2F%3E%3Ctext%20x%3D%22207%22%20y%3D%22208%22%3EP%3C%2Ftext%3E%3Ctext%20x%3D%2264%22%20y%3D%22219%22%3Em%3C%2Ftext%3E%3Ctext%20x%3D%22191%22%20y%3D%22269%22%3En%3C%2Ftext%3E%3Ctext%20x%3D%22376%22%20y%3D%22251%22%3Ex%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%2220%22%3Ey%3C%2Ftext%3E%3Ctext%20x%3D%22296%22%20y%3D%22103%22%3Ef%3C%2Ftext%3E%3C%2Fsvg%3E"};
+const QUESTIONS=[{"n": 1, "stem": "¿Cuál de los siguientes números es irracional?", "opts": ["0", "\\(\\sqrt3\\)", "\\(\\sqrt[3]{-1}\\)", "\\(4^{1/2}\\)"], "answer": "B", "explanation": "\\(\\sqrt3\\) no puede expresarse como cociente de enteros. Los demás son 0, −1 y 2.", "context": "", "area": "Números"}, {"n": 2, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(\\sqrt[3]{-8}\\) pertenece al conjunto de los números racionales.</p><p>II. \\(\\frac12\\) pertenece al conjunto de los números irracionales.</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "C", "explanation": "\\(\\sqrt[3]{-8}=-2\\) es racional; \\(\\frac12\\) también es racional. Solo I es verdadera.", "context": "", "area": "Números"}, {"n": 3, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(-\\sqrt5<-\\sqrt{10}\\)</p><p>II. \\(\\sqrt[3]{26}<\\sqrt{10}\\)</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "D", "explanation": "\\(-\\sqrt5\\approx-2,236>-3,162\\approx-\\sqrt{10}\\). \\(\\sqrt[3]{26}\\approx2,962<3,162\\).", "context": "", "area": "Números"}, {"n": 4, "stem": "Sea \\(\\sqrt{-2+x}\\) un número con expansión decimal no periódica. ¿Cuál es un posible valor de «x»?", "opts": ["9", "11", "18", "27"], "answer": "A", "explanation": "Con x = 9 se obtiene √7, que es irracional. Las otras opciones producen √9, √16 y √25.", "context": "", "area": "Números"}, {"n": 5, "stem": "Sea \\(\\sqrt{7-x}\\) un número no real. ¿Cuál es un posible valor de «x»?", "opts": ["8", "7", "6", "5"], "answer": "A", "explanation": "Para x = 8, el radicando es −1; la raíz cuadrada no es real.", "context": "", "area": "Números"}, {"n": 6, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(\\sqrt[3]{-9}>\\sqrt[3]{-10}\\)</p><p>II. \\(\\pi\\sqrt5=3,14\\sqrt5\\)</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "C", "explanation": "La raíz cúbica es creciente y −9 > −10. π no es exactamente 3,14, por lo que la segunda igualdad es falsa.", "context": "", "area": "Números"}, {"n": 7, "stem": "De acuerdo con la representación anterior, un posible valor para «P» corresponde a", "opts": ["\\(\\sqrt{20}\\)", "\\(\\sqrt{22}\\)", "\\(\\sqrt{24}\\)", "\\(\\sqrt{28}\\)"], "answer": "D", "explanation": "P está entre 5 y 6. √28 ≈ 5,292; las otras raíces son menores que 5.", "context": "Considere la siguiente representación de una recta numérica:", "area": "Números"}, {"n": 8, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(2\\sqrt3+5\\sqrt3=7\\sqrt6\\)</p><p>II. \\(-\\sqrt{99}\\) se ubica entre −9 y −8.</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "B", "explanation": "\\(2\\sqrt3+5\\sqrt3=7\\sqrt3\\). Como \\(81<99<100\\), \\(-10<-\\sqrt{99}<-9\\).", "context": "", "area": "Números"}, {"n": 9, "stem": "¿Cuál de los siguientes números es la mejor aproximación de \\(\\sqrt[3]{-26}\\)?", "opts": ["3", "8", "−8", "−3"], "answer": "D", "explanation": "La raíz cúbica de −26 es aproximadamente −2,962, próxima a −3.", "context": "", "area": "Números"}, {"n": 10, "stem": "Un valor de «m» tal que \\(3^m\\cdot3^{-1/m}=\\sqrt[m]{27}\\) corresponde a", "opts": ["2", "3", "−2", "−3"], "answer": "A", "explanation": "\\(3^{m-1/m}=3^{3/m}\\), por lo que \\(m^2=4\\). El índice de una raíz es un entero positivo: \\(m=2\\).", "context": "", "area": "Números"}, {"n": 11, "stem": "¿Cuántos microgramos hay en 200 nanogramos?", "opts": ["2", "0,2", "2000", "0,002"], "answer": "B", "explanation": "\\(200\\cdot10^{-9}/10^{-6}=0,2\\) microgramos.", "context": "Prefijos: Micro \\((10^{-6})\\); Nano \\((10^{-9})\\).", "area": "Números"}, {"n": 12, "stem": "Ana tiene almacenados en el disco duro de su computadora 10 terabytes de música. Si desea trasladar esa música a dispositivos de almacenamiento portátil «llaves maya», cuya capacidad máxima de cada una es de 600 gigabytes, entonces, ¿cuántos dispositivos necesita como mínimo para almacenar la música?", "opts": ["6", "10", "17", "18"], "answer": "C", "explanation": "10 TB = 10 000 GB. 10 000 ÷ 600 ≈ 16,667; se necesitan 17 dispositivos.", "context": "Prefijos: Giga \\((10^9)\\); Tera \\((10^{12})\\).", "area": "Números"}, {"n": 13, "stem": "¿Cuál es la medida del \\(\\overline{EG}\\)?", "opts": ["3", "5", "\\(\\sqrt3\\)", "\\(\\sqrt5\\)"], "answer": "D", "explanation": "Por Pitágoras: \\(EG=\\sqrt{1^2+2^2}=\\sqrt5\\).", "context": "Considere los datos de la siguiente figura:", "area": "Geometría"}, {"n": 14, "stem": "Una torre de telecomunicaciones de 24 metros de alto está sujetada por un cable que va desde la cúspide hasta un punto ubicado en el suelo, a cierta distancia de su base (en el mismo plano de dicha base). Si la longitud del cable entre la cúspide y el suelo es de 25 metros, entonces, la distancia entre la base de la torre y el punto del suelo donde está sujeto el cable es de ____ metros.", "opts": ["6", "7", "12", "13"], "answer": "B", "explanation": "\\(d=\\sqrt{25^2-24^2}=\\sqrt{49}=7\\) metros.", "context": "", "area": "Geometría"}, {"n": 15, "stem": "Luis y Carlos son compañeros de trabajo en una fábrica. Si Luis vive 6 kilómetros al norte de la fábrica y Carlos 8 kilómetros al oeste de ella, entonces, la distancia entre ambas viviendas corresponde a ____ kilómetros.", "opts": ["7", "9", "10", "14"], "answer": "C", "explanation": "Los desplazamientos norte y oeste son perpendiculares: \\(d=\\sqrt{6^2+8^2}=10\\) kilómetros.", "context": "", "area": "Geometría"}, {"n": 16, "stem": "Si el terreno tiene un valor de ₡8000 el metro cuadrado, entonces, el valor del terreno corresponde a ₡________.", "opts": ["50 784 000", "63 480 000", "67 712 000", "84 640 000"], "answer": "A", "explanation": "La altura es \\(\\sqrt{115^2-92^2}=69\\) m. Área: \\(92\\cdot69=6348\\) m². Valor: \\(6348\\cdot8000=50\\,784\\,000\\) colones.", "context": "José tiene un terreno de forma rectangular cuya representación se muestra a continuación:", "area": "Geometría"}, {"n": 17, "stem": "Si la \\(m\\angle\\varphi=120°\\), entonces, la \\(m\\angle\\varphi\\), en radianes, corresponde a", "opts": ["\\(\\frac\\pi3\\)", "\\(\\frac\\pi4\\)", "\\(\\frac{2\\pi}3\\)", "\\(\\frac{2\\pi}5\\)"], "answer": "C", "explanation": "\\(120\\cdot\\frac\\pi{180}=\\frac{2\\pi}3\\).", "context": "", "area": "Geometría"}, {"n": 18, "stem": "Si la \\(m\\angle\\beta=\\frac\\pi5\\), entonces, la \\(m\\angle\\beta\\), en grados, corresponde a", "opts": ["20°", "36°", "40°", "72°"], "answer": "B", "explanation": "\\(\\frac\\pi5\\cdot\\frac{180°}\\pi=36°\\).", "context": "", "area": "Geometría"}, {"n": 19, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(\\tan(\\alpha)=\\tan(\\beta)\\)</p><p>II. \\(\\operatorname{sen}(\\alpha)=\\cos(\\beta)\\)</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "D", "explanation": "En un triángulo rectángulo escaleno los ángulos agudos son distintos y complementarios. Sus tangentes son diferentes, pero el seno de uno es el coseno del otro.", "context": "Considere las siguientes proposiciones referentes a un triángulo rectángulo escaleno (posee tres lados de diferentes dimensiones) cuyos ángulos agudos son α y β:", "area": "Geometría"}, {"n": 20, "stem": "De acuerdo con la información dada, \\(\\cos(\\beta)=\\) ________.", "opts": ["\\(\\frac35\\)", "\\(\\frac45\\)", "\\(\\frac34\\)", "\\(\\frac43\\)"], "answer": "A", "explanation": "Para β el cateto adyacente mide 3 y la hipotenusa 5: cos(β) = 3/5.", "context": "Considere la información sobre el siguiente triángulo:", "area": "Geometría"}, {"n": 21, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(\\tan(\\alpha)=\\tan(\\beta)\\)</p><p>II. \\(\\operatorname{sen}(\\beta)=\\cos(\\beta)\\)</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "Ambos ángulos agudos miden 45°. Sus tangentes coinciden; sen(45°) = cos(45°).", "context": "Considere las siguientes afirmaciones referidas a un triángulo rectángulo isósceles (posee dos lados congruentes) cuyos ángulos agudos son α y β:", "area": "Geometría"}, {"n": 22, "stem": "Sea el \\(\\triangle ABC\\), tal que \\(m\\angle A=90°\\) y \\(m\\angle B=35°\\). Si AB = 12, entonces, BC = ________.", "opts": ["6,88", "9,83", "14,65", "20,92"], "answer": "C", "explanation": "BC es la hipotenusa: \\(\\cos35°=12/BC\\). Así, \\(BC=12/\\cos35°\\approx14,65\\).", "context": "", "area": "Geometría"}, {"n": 23, "stem": "Juan observa, con un ángulo de elevación de 39°, la copa de un árbol a una distancia de 11 metros de la base de este. Si la estatura de Juan es 1,75 m, entonces, la altura aproximada del árbol es de ____ metros.", "opts": ["6,92", "7,05", "8,67", "10,66"], "answer": "D", "explanation": "\\(h=11\\tan39°+1,75\\approx10,66\\) metros.", "context": "", "area": "Geometría"}, {"n": 24, "stem": "Sea el \\(\\triangle ABC\\), tal que \\(m\\angle A=70°\\) y \\(m\\angle C=45°\\). Si AB = 20, entonces, AC = ________.", "opts": ["22,00", "25,00", "25,63", "28,28"], "answer": "C", "explanation": "\\(B=180°-70°-45°=65°\\). Por ley de senos: \\(AC=20\\operatorname{sen}65°/\\operatorname{sen}45°\\approx25,63\\).", "context": "", "area": "Geometría"}, {"n": 25, "stem": "De acuerdo con los datos, AB = ________.", "opts": ["11,46", "12,36", "13,99", "15,09"], "answer": "D", "explanation": "\\(C=180°-63°-55°=62°\\). \\(AB=14\\operatorname{sen}62°/\\operatorname{sen}55°\\approx15,09\\).", "context": "Considere el siguiente \\(\\triangle ABC\\):", "area": "Geometría"}, {"n": 26, "stem": "¿Cuál es el área lateral de un cubo cuya arista mide 12?", "opts": ["192", "288", "576", "864"], "answer": "C", "explanation": "El área lateral tiene cuatro caras: 4 × 12² = 576.", "context": "", "area": "Geometría"}, {"n": 27, "stem": "Una pirámide recta tiene base cuadrada y una altura de 8. Si el lado de la base es de 12, entonces, ¿cuál es la medida de la apotema de la pirámide?", "opts": ["6", "7", "8", "10"], "answer": "D", "explanation": "\\(a=\\sqrt{8^2+(12/2)^2}=\\sqrt{100}=10\\).", "context": "", "area": "Geometría"}, {"n": 28, "stem": "La altura de un prisma recto de base cuadrada es 16. Si el área de una de sus bases es 49, entonces, el área lateral del prisma corresponde a", "opts": ["392", "448", "664", "784"], "answer": "B", "explanation": "El lado de la base mide √49 = 7. El área lateral es perímetro × altura: (4 × 7) × 16 = 448.", "context": "", "area": "Geometría"}, {"n": 29, "stem": "La medida del lado de una pirámide recta de base triangular es 5. Si todas sus caras están formadas por triángulos equiláteros, entonces, su área total corresponde a", "opts": ["15", "25", "\\(25\\sqrt3\\)", "\\(50\\sqrt3\\)"], "answer": "C", "explanation": "Hay cuatro caras equiláteras de área \\(\\frac{5^2\\sqrt3}4\\); el área total es \\(25\\sqrt3\\).", "context": "", "area": "Geometría"}, {"n": 30, "stem": "La medida de la altura de una pirámide recta es 12. Si la base es un cuadrado cuya medida de uno de sus lados es 32, entonces, el área lateral de la pirámide corresponde a", "opts": ["480", "768", "1536", "1280"], "answer": "D", "explanation": "Apotema: \\(\\sqrt{12^2+16^2}=20\\). Área lateral: \\(\\frac{(4\\cdot32)20}2=1280\\).", "context": "", "area": "Geometría"}, {"n": 31, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(\\Delta<0\\)</p><p>II. La gráfica de f interseca el eje y.</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "El mínimo está sobre el eje x: no hay raíces reales y Δ < 0. Toda función cuadrática está definida en x = 0 y corta el eje y.", "context": "Considere la siguiente función cuadrática de la forma \\(f(x)=ax^2+bx+c\\), donde «P» corresponde al vértice:", "area": "Relaciones y Álgebra"}, {"n": 32, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(a<0\\)</p><p>II. El punto máximo de f corresponde a \\(P(n,m)\\).</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "B", "explanation": "La parábola abre hacia arriba, por lo que a > 0. P es un mínimo; no existe máximo.", "context": "Considere la siguiente función cuadrática de la forma \\(f(x)=ax^2+bx+c\\), donde «P» corresponde al vértice:", "area": "Relaciones y Álgebra"}, {"n": 33, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. f representa una función cuadrática.</p><p>II. h representa una función cuadrática.</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "D", "explanation": "Los valores corresponden a f(x) = 2x, lineal, y h(x) = x², cuadrática.", "context": "<p>Considere las siguientes representaciones de las funciones f y h:</p><table><tr><th>x</th><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>f(x)</th><td>0</td><td>2</td><td>4</td><td>6</td><td>8</td></tr></table><br><table><tr><th>x</th><td>−2</td><td>−1</td><td>0</td><td>1</td><td>2</td></tr><tr><th>h(x)</th><td>4</td><td>1</td><td>0</td><td>1</td><td>4</td></tr></table>", "area": "Relaciones y Álgebra"}, {"n": 34, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. El área «a» de un cuadrado en términos de su lado «x» está dada por \\(a(x)=x^2\\).</p><p>II. La longitud «c» de una circunferencia en términos de su radio «r» está dada por \\(c(r)=2r\\pi\\).</p><p>De ellas corresponden a funciones cuadráticas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "C", "explanation": "a(x) = x² tiene grado 2; c(r) = 2πr tiene grado 1.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 35, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. La altura del balcón es de 15 metros.</p><p>II. A los 2 segundos de haberse lanzado la piedra alcanza 20 metros de altura.</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "B", "explanation": "h(0) = 10, no 15. h(2) = −20 + 60 + 10 = 50, no 20.", "context": "Desde un balcón de un edificio se lanza una piedra hacia arriba. La altura h, en metros, que alcanza la piedra a los t segundos está modelada por la función \\(h(t)=-5t^2+30t+10\\) (suponga que el aire no influye con dicho lanzamiento).", "area": "Relaciones y Álgebra"}, {"n": 36, "stem": "La altura máxima que alcanza la piedra es de ____ metros.", "opts": ["25", "30", "40", "55"], "answer": "D", "explanation": "El vértice ocurre en t = −30/(2 × −5) = 3. h(3) = −45 + 90 + 10 = 55.", "context": "Desde un balcón de un edificio se lanza una piedra hacia arriba. La altura h, en metros, que alcanza la piedra a los t segundos está modelada por la función \\(h(t)=-5t^2+30t+10\\) (suponga que el aire no influye con dicho lanzamiento).", "area": "Relaciones y Álgebra"}, {"n": 37, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. Un factor de la expresión dada corresponde a \\(x^2y^{29}\\).</p><p>II. Un factor de la expresión dada corresponde a \\(1-xy\\).</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "\\(x^2y^{29}-x^3y^{30}=x^2y^{29}(1-xy)\\).", "context": "Con base en la expresión \\(x^2y^{29}-x^3y^{30}\\), considere las siguientes afirmaciones:", "area": "Relaciones y Álgebra"}, {"n": 38, "stem": "Si \\(x^2-6x+8\\) se expresa de la forma \\((x+h)^2+k\\), entonces, el valor de «k» corresponde a", "opts": ["1", "3", "−1", "−3"], "answer": "C", "explanation": "\\(x^2-6x+8=(x-3)^2-1\\). Así, k = −1.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 39, "stem": "El residuo que se obtiene al realizar \\((2x^2-5x+3)\\div(x+2)\\) corresponde a", "opts": ["15", "21", "−15", "−21"], "answer": "B", "explanation": "Por el teorema del residuo, se evalúa en −2: 2(−2)² − 5(−2) + 3 = 8 + 10 + 3 = 21.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 40, "stem": "Al simplificar completamente la expresión \\(\\frac{(x-y)(x+y)}{(x^2-y^2)(x^2+y^2)}\\), se obtiene como denominador", "opts": ["\\(x-y\\)", "\\(x+y\\)", "\\(x^2+y^2\\)", "\\((x-y)(x+y)\\)"], "answer": "C", "explanation": "Como \\(x^2-y^2=(x-y)(x+y)\\), se cancelan los factores comunes y resulta \\(1/(x^2+y^2)\\), para valores del dominio original.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 41, "stem": "Uno de los factores de la expresión \\(xy^2-y^2\\) corresponde a", "opts": ["\\(x-1\\)", "\\(x+1\\)", "\\(x-y\\)", "\\(y-1\\)"], "answer": "A", "explanation": "\\(xy^2-y^2=y^2(x-1)\\).", "context": "", "area": "Relaciones y Álgebra"}, {"n": 42, "stem": "Si se racionaliza el numerador de \\(\\frac{2+3\\sqrt x}{3-5\\sqrt x}\\), entonces, el numerador que resulta de dicho proceso corresponde a", "opts": ["\\(5x\\)", "\\(-2x\\)", "\\(2-3x\\)", "\\(4-9x\\)"], "answer": "D", "explanation": "Se multiplica por el conjugado del numerador: \\((2+3\\sqrt x)(2-3\\sqrt x)=4-9x\\).", "context": "", "area": "Relaciones y Álgebra"}, {"n": 43, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. La ecuación tiene dos raíces.</p><p>II. Una solución de la ecuación corresponde a −1.</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "\\(-2x(x+1)=0\\) tiene soluciones x = 0 y x = −1.", "context": "Considere las siguientes afirmaciones referidas a \\(-2x(x+1)=0\\):", "area": "Relaciones y Álgebra"}, {"n": 44, "stem": "La superficie de una cancha de fútbol sala es de 800 metros cuadrados. Si el ancho mide la mitad que el largo, entonces, ¿cuántos metros mide el ancho de esa cancha?", "opts": ["14", "20", "28", "41"], "answer": "B", "explanation": "Si el ancho es x, el largo es 2x. 2x² = 800; x² = 400; x = 20 metros.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 45, "stem": "¿Cuál es la longitud del radio de un círculo cuya área mide \\(25\\pi\\)?", "opts": ["5,00", "8,86", "10,00", "12,50"], "answer": "A", "explanation": "\\(\\pi r^2=25\\pi\\); r² = 25 y r = 5.", "context": "", "area": "Geometría"}, {"n": 46, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. \\(\\Delta>0\\)</p><p>II. 1 es solución de la ecuación.</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "D", "explanation": "Δ = (−2)² − 4(1)(1) = 0. Al sustituir x = 1: 1 − 2 + 1 = 0.", "context": "Considere las siguientes afirmaciones referidas a \\(x^2-2x+1=0\\):", "area": "Relaciones y Álgebra"}, {"n": 47, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. El diámetro de la rueda de una carreta.</p><p>II. Cantidad de personas que hay en un EBAIS esperando ser atendidas.</p><p>De ellas corresponde a una variable cuantitativa continua</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "C", "explanation": "El diámetro es una medida continua. La cantidad de personas es un conteo entero, discreto.", "context": "", "area": "Estadística y Probabilidad"}, {"n": 48, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. La velocidad de un automóvil.</p><p>II. Masa de un cuerpo en kilogramos.</p><p>De ellas corresponden a variables cuantitativas continuas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "Tanto la velocidad como la masa son medidas que pueden tomar valores dentro de un intervalo.", "context": "", "area": "Estadística y Probabilidad"}, {"n": 49, "stem": "¿Cuál de los datos del paciente anotados por Joel proviene de una variable cuantitativa discreta?", "opts": ["El sexo", "Los metros de talla", "La cantidad de cirugías", "Los kilogramos de masa"], "answer": "C", "explanation": "La cantidad de cirugías es un conteo: 0, 1, 2… El sexo es cualitativo; talla y masa son medidas continuas.", "context": "<p>Joel anota las siguientes características de un paciente en el expediente clínico:</p><ul><li>Edad: 48 años y 6 meses</li><li>Sexo: masculino</li><li>Talla: 1,75 m</li><li>Masa: 73,5 kg</li><li>Cirugías: 2</li></ul>", "area": "Estadística y Probabilidad"}, {"n": 50, "stem": "El porcentaje de estudiantes que dedican menos de una hora a la semana a la realización de alguna actividad física corresponde a", "opts": ["8", "10", "45", "53"], "answer": "B", "explanation": "Menos de 60 minutos: 3 + 5 = 8 estudiantes. (8/80) × 100 = 10%.", "context": "<p>Considere los minutos dedicados a la actividad física por un grupo de estudiantes durante la última semana:</p><table><tr><th>Minutos</th><th>Frecuencia absoluta</th></tr><tr><td>[0, 30[</td><td>3</td></tr><tr><td>[30, 60[</td><td>5</td></tr><tr><td>[60, 90[</td><td>45</td></tr><tr><td>[90, 120[</td><td>23</td></tr><tr><td>[120, 150]</td><td>4</td></tr><tr><th>Total</th><th>80</th></tr></table>", "area": "Estadística y Probabilidad"}, {"n": 51, "stem": "La frecuencia relativa de la clase [120, 150] corresponde a", "opts": ["4", "5", "0,04", "0,05"], "answer": "D", "explanation": "Frecuencia relativa: 4/80 = 0,05.", "context": "<p>Considere los minutos dedicados a la actividad física por un grupo de estudiantes durante la última semana:</p><table><tr><th>Minutos</th><th>Frecuencia absoluta</th></tr><tr><td>[0, 30[</td><td>3</td></tr><tr><td>[30, 60[</td><td>5</td></tr><tr><td>[60, 90[</td><td>45</td></tr><tr><td>[90, 120[</td><td>23</td></tr><tr><td>[120, 150]</td><td>4</td></tr><tr><th>Total</th><th>80</th></tr></table>", "area": "Estadística y Probabilidad"}, {"n": 52, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. Más del 50% de los estudiantes se ubican en la clase [60, 90[.</p><p>II. [0, 30[ es la clase que contiene menor cantidad de estudiantes.</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "45/80 = 56,25%, mayor que 50%. La frecuencia 3 es la menor de la tabla.", "context": "<p>Considere los minutos dedicados a la actividad física por un grupo de estudiantes durante la última semana:</p><table><tr><th>Minutos</th><th>Frecuencia absoluta</th></tr><tr><td>[0, 30[</td><td>3</td></tr><tr><td>[30, 60[</td><td>5</td></tr><tr><td>[60, 90[</td><td>45</td></tr><tr><td>[90, 120[</td><td>23</td></tr><tr><td>[120, 150]</td><td>4</td></tr><tr><th>Total</th><th>80</th></tr></table>", "area": "Estadística y Probabilidad"}, {"n": 53, "stem": "Si se elige al azar un estudiante de esa institución, entonces, ¿cuál es aproximadamente la probabilidad de que sea una mujer la que prefiera un canario como mascota?", "opts": ["\\(\\frac1{42}\\)", "\\(\\frac{17}{83}\\)", "\\(\\frac{17}{42}\\)", "\\(\\frac{23}{83}\\)"], "answer": "B", "explanation": "Entre los 83 estudiantes hay 17 mujeres que prefieren canario: 17/83.", "context": "<p>Considere una encuesta sobre la mascota preferida por los estudiantes de cierta institución. Se extrajo una muestra representativa compuesta por 41 hombres y 42 mujeres:</p><table><tr><th>Individuos / Mascotas</th><th>Perro</th><th>Gato</th><th>Canario</th><th>Total</th></tr><tr><td>Hombres</td><td>26</td><td>9</td><td>6</td><td>41</td></tr><tr><td>Mujeres</td><td>3</td><td>22</td><td>17</td><td>42</td></tr><tr><th>Total</th><td>29</td><td>31</td><td>23</td><td>83</td></tr></table>", "area": "Estadística y Probabilidad"}, {"n": 54, "stem": "Si se elige al azar un estudiante de esa institución, entonces, ¿cuál es la probabilidad aproximada de obtener un hombre que prefiera al gato como mascota?", "opts": ["\\(\\frac1{83}\\)", "\\(\\frac9{83}\\)", "\\(\\frac{31}{83}\\)", "\\(\\frac{41}{83}\\)"], "answer": "B", "explanation": "Entre los 83 estudiantes hay 9 hombres que prefieren gato: 9/83.", "context": "<p>Considere una encuesta sobre la mascota preferida por los estudiantes de cierta institución. Se extrajo una muestra representativa compuesta por 41 hombres y 42 mujeres:</p><table><tr><th>Individuos / Mascotas</th><th>Perro</th><th>Gato</th><th>Canario</th><th>Total</th></tr><tr><td>Hombres</td><td>26</td><td>9</td><td>6</td><td>41</td></tr><tr><td>Mujeres</td><td>3</td><td>22</td><td>17</td><td>42</td></tr><tr><th>Total</th><td>29</td><td>31</td><td>23</td><td>83</td></tr></table>", "area": "Estadística y Probabilidad"}, {"n": 55, "stem": "<p>Considere las siguientes afirmaciones:</p><p>I. La probabilidad de elegir al azar a una mujer de esa institución, sin importar la mascota que prefiera, corresponde aproximadamente a \\(\\frac{42}{83}\\).</p><p>II. La probabilidad de elegir al azar un estudiante de esa institución, sin importar el sexo, que prefiera un perro como mascota corresponde aproximadamente a \\(\\frac{29}{83}\\).</p><p>De ellas son verdaderas</p>", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "La muestra tiene 42 mujeres y 29 estudiantes que prefieren perro entre 83 estudiantes. Ambas afirmaciones son verdaderas.", "context": "<p>Considere una encuesta sobre la mascota preferida por los estudiantes de cierta institución. Se extrajo una muestra representativa compuesta por 41 hombres y 42 mujeres:</p><table><tr><th>Individuos / Mascotas</th><th>Perro</th><th>Gato</th><th>Canario</th><th>Total</th></tr><tr><td>Hombres</td><td>26</td><td>9</td><td>6</td><td>41</td></tr><tr><td>Mujeres</td><td>3</td><td>22</td><td>17</td><td>42</td></tr><tr><th>Total</th><td>29</td><td>31</td><td>23</td><td>83</td></tr></table>", "area": "Estadística y Probabilidad"}];
+const TOTAL=QUESTIONS.length,LIMIT=3*60*60;
+const SOLUTIONS={"1": "\\(\\sqrt3\\) no puede expresarse como cociente de enteros. Los demás son 0, −1 y 2.", "2": "\\(\\sqrt[3]{-8}=-2\\) es racional; \\(\\frac12\\) también es racional. Solo I es verdadera.", "3": "\\(-\\sqrt5\\approx-2,236>-3,162\\approx-\\sqrt{10}\\). \\(\\sqrt[3]{26}\\approx2,962<3,162\\).", "4": "Con x = 9 se obtiene √7, que es irracional. Las otras opciones producen √9, √16 y √25.", "5": "Para x = 8, el radicando es −1; la raíz cuadrada no es real.", "6": "La raíz cúbica es creciente y −9 > −10. π no es exactamente 3,14, por lo que la segunda igualdad es falsa.", "7": "P está entre 5 y 6. √28 ≈ 5,292; las otras raíces son menores que 5.", "8": "\\(2\\sqrt3+5\\sqrt3=7\\sqrt3\\). Como \\(81<99<100\\), \\(-10<-\\sqrt{99}<-9\\).", "9": "La raíz cúbica de −26 es aproximadamente −2,962, próxima a −3.", "10": "\\(3^{m-1/m}=3^{3/m}\\), por lo que \\(m^2=4\\). El índice de una raíz es un entero positivo: \\(m=2\\).", "11": "\\(200\\cdot10^{-9}/10^{-6}=0,2\\) microgramos.", "12": "10 TB = 10 000 GB. 10 000 ÷ 600 ≈ 16,667; se necesitan 17 dispositivos.", "13": "Por Pitágoras: \\(EG=\\sqrt{1^2+2^2}=\\sqrt5\\).", "14": "\\(d=\\sqrt{25^2-24^2}=\\sqrt{49}=7\\) metros.", "15": "Los desplazamientos norte y oeste son perpendiculares: \\(d=\\sqrt{6^2+8^2}=10\\) kilómetros.", "16": "La altura es \\(\\sqrt{115^2-92^2}=69\\) m. Área: \\(92\\cdot69=6348\\) m². Valor: \\(6348\\cdot8000=50\\,784\\,000\\) colones.", "17": "\\(120\\cdot\\frac\\pi{180}=\\frac{2\\pi}3\\).", "18": "\\(\\frac\\pi5\\cdot\\frac{180°}\\pi=36°\\).", "19": "En un triángulo rectángulo escaleno los ángulos agudos son distintos y complementarios. Sus tangentes son diferentes, pero el seno de uno es el coseno del otro.", "20": "Para β el cateto adyacente mide 3 y la hipotenusa 5: cos(β) = 3/5.", "21": "Ambos ángulos agudos miden 45°. Sus tangentes coinciden; sen(45°) = cos(45°).", "22": "BC es la hipotenusa: \\(\\cos35°=12/BC\\). Así, \\(BC=12/\\cos35°\\approx14,65\\).", "23": "\\(h=11\\tan39°+1,75\\approx10,66\\) metros.", "24": "\\(B=180°-70°-45°=65°\\). Por ley de senos: \\(AC=20\\operatorname{sen}65°/\\operatorname{sen}45°\\approx25,63\\).", "25": "\\(C=180°-63°-55°=62°\\). \\(AB=14\\operatorname{sen}62°/\\operatorname{sen}55°\\approx15,09\\).", "26": "El área lateral tiene cuatro caras: 4 × 12² = 576.", "27": "\\(a=\\sqrt{8^2+(12/2)^2}=\\sqrt{100}=10\\).", "28": "El lado de la base mide √49 = 7. El área lateral es perímetro × altura: (4 × 7) × 16 = 448.", "29": "Hay cuatro caras equiláteras de área \\(\\frac{5^2\\sqrt3}4\\); el área total es \\(25\\sqrt3\\).", "30": "Apotema: \\(\\sqrt{12^2+16^2}=20\\). Área lateral: \\(\\frac{(4\\cdot32)20}2=1280\\).", "31": "El mínimo está sobre el eje x: no hay raíces reales y Δ < 0. Toda función cuadrática está definida en x = 0 y corta el eje y.", "32": "La parábola abre hacia arriba, por lo que a > 0. P es un mínimo; no existe máximo.", "33": "Los valores corresponden a f(x) = 2x, lineal, y h(x) = x², cuadrática.", "34": "a(x) = x² tiene grado 2; c(r) = 2πr tiene grado 1.", "35": "h(0) = 10, no 15. h(2) = −20 + 60 + 10 = 50, no 20.", "36": "El vértice ocurre en t = −30/(2 × −5) = 3. h(3) = −45 + 90 + 10 = 55.", "37": "\\(x^2y^{29}-x^3y^{30}=x^2y^{29}(1-xy)\\).", "38": "\\(x^2-6x+8=(x-3)^2-1\\). Así, k = −1.", "39": "Por el teorema del residuo, se evalúa en −2: 2(−2)² − 5(−2) + 3 = 8 + 10 + 3 = 21.", "40": "Como \\(x^2-y^2=(x-y)(x+y)\\), se cancelan los factores comunes y resulta \\(1/(x^2+y^2)\\), para valores del dominio original.", "41": "\\(xy^2-y^2=y^2(x-1)\\).", "42": "Se multiplica por el conjugado del numerador: \\((2+3\\sqrt x)(2-3\\sqrt x)=4-9x\\).", "43": "\\(-2x(x+1)=0\\) tiene soluciones x = 0 y x = −1.", "44": "Si el ancho es x, el largo es 2x. 2x² = 800; x² = 400; x = 20 metros.", "45": "\\(\\pi r^2=25\\pi\\); r² = 25 y r = 5.", "46": "Δ = (−2)² − 4(1)(1) = 0. Al sustituir x = 1: 1 − 2 + 1 = 0.", "47": "El diámetro es una medida continua. La cantidad de personas es un conteo entero, discreto.", "48": "Tanto la velocidad como la masa son medidas que pueden tomar valores dentro de un intervalo.", "49": "La cantidad de cirugías es un conteo: 0, 1, 2… El sexo es cualitativo; talla y masa son medidas continuas.", "50": "Menos de 60 minutos: 3 + 5 = 8 estudiantes. (8/80) × 100 = 10%.", "51": "Frecuencia relativa: 4/80 = 0,05.", "52": "45/80 = 56,25%, mayor que 50%. La frecuencia 3 es la menor de la tabla.", "53": "Entre los 83 estudiantes hay 17 mujeres que prefieren canario: 17/83.", "54": "Entre los 83 estudiantes hay 9 hombres que prefieren gato: 9/83.", "55": "La muestra tiene 42 mujeres y 29 estudiantes que prefieren perro entre 83 estudiantes. Ambas afirmaciones son verdaderas."};
+// Se configura después de desplegar el servicio privado de recepción.
+const BACKEND_READY=false;
+const EXAM_KEY='ea_noveno_01_2023';
+const EXAM_API_URL='https://script.google.com/macros/s/AKfycbzTbcCEbXGaZgIHfiBo8MExOJ5o8wpPSTuvLgdaGHhRNzuwRCwPeyJy5xHXhy2P518HJQ/exec';
+const STORAGE_KEY='noveno012023_exam_v1';
+let current=0,answers=Array(TOTAL).fill(null),started=false,remaining=LIMIT,interval=null,reviewing=false,finished=false,timedOut=false;
+let student={firstName:'',lastName:''},attemptId='',ticket='',sessionId='',submitted=false,deliveryPending=false,examDeadline=0,availabilityOpen=false;
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify({answers,current,started,remaining,finished,timedOut,student,attemptId,ticket,sessionId,submitted,examDeadline,ts:Date.now()}));}
+function load(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(!x)return;answers=Array.isArray(x.answers)&&x.answers.length===TOTAL?x.answers:answers;current=Math.max(0,Math.min(TOTAL-1,Number(x.current)||0));started=!!x.started;finished=!!x.finished;timedOut=!!x.timedOut;remaining=typeof x.remaining==='number'?x.remaining:LIMIT;student=x.student||student;attemptId=x.attemptId||'';ticket=x.ticket||'';sessionId=x.sessionId||'';submitted=!!x.submitted;examDeadline=Number(x.examDeadline)||0;if(started&&!finished&&x.ts)remaining=Math.max(0,remaining-Math.floor((Date.now()-x.ts)/1000));if(examDeadline&&started&&!finished)remaining=Math.min(remaining,Math.max(0,Math.floor((examDeadline-Date.now())/1000)));}catch(e){}}
+function jsonp(op,extra={}){return new Promise((resolve,reject)=>{if(!EXAM_API_URL)return reject(new Error('La recepción de resultados no está configurada.'));const callback='examStatus_'+Math.random().toString(36).slice(2),script=document.createElement('script');let timer;const cleanup=()=>{clearTimeout(timer);delete window[callback];script.remove()};window[callback]=data=>{cleanup();resolve(data)};script.onerror=()=>{cleanup();reject(new Error('No se pudo consultar el horario.'))};timer=setTimeout(()=>{cleanup();reject(new Error('La consulta tardó demasiado.'))},60000);const u=new URL(EXAM_API_URL);u.searchParams.set('op',op);u.searchParams.set('exam',EXAM_KEY);u.searchParams.set('callback',callback);u.searchParams.set('_',Date.now());Object.entries(extra).forEach(([k,v])=>u.searchParams.set(k,v));script.src=u.toString();document.head.appendChild(script)})}
+let checkingAvailability=false;
+async function checkAvailability(){if(!BACKEND_READY){$('startBtn').disabled=true;$('availabilityMessage').textContent='Esta prueba aún no está habilitada.';$('retryAvailabilityBtn').style.display='none';return null}if(checkingAvailability)return null;checkingAvailability=true;availabilityOpen=false;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='none';try{for(let attempt=0;attempt<3;attempt++){try{$('availabilityMessage').textContent=attempt?`Reintentando conexión (${attempt+1}/3)…`:'Consultando disponibilidad de la prueba…';const status=await jsonp('status');availabilityOpen=!!status.open;$('availabilityMessage').textContent=status.open?`Prueba disponible. Horario de Costa Rica${status.endsAt?' · Cierra: '+status.endsAt:''}.`:(status.message||'La prueba está cerrada en este momento.');$('startBtn').disabled=!status.open;return status}catch(e){if(attempt===2)throw e;await new Promise(resolve=>setTimeout(resolve,800*(attempt+1)))}}}catch(e){availabilityOpen=false;$('availabilityMessage').textContent=e.message;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='inline-block';return null}finally{checkingAvailability=false}}
+function validName(s){return /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñÀ-ÿ' .-]{2,70}$/.test(s)}
+function uuid(){return crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>(Math.random()*16|0).toString(16))}
+function setDelivery(message,canRetry=false){$('deliveryStatus').textContent=message;$('deliveryStatus').hidden=!message;$('retryDeliveryBtn').style.display=canRetry?'inline-block':'none';$('retryDeliveryBtn').disabled=deliveryPending}
+function sendResults(){if(submitted||deliveryPending)return;deliveryPending=true;setDelivery('Enviando respuestas al registro privado…');if(!EXAM_API_URL||!ticket){deliveryPending=false;setDelivery('No se pudo enviar: falta configurar el registro privado.',false);return}const nonce=uuid(),frame=document.createElement('iframe'),form=document.createElement('form'),payload={attemptId,ticket,sessionId,firstName:student.firstName,lastName:student.lastName,answers,elapsedSeconds:LIMIT-remaining,timedOut};frame.name='exam_upload_'+nonce.replace(/-/g,'');frame.style.display='none';form.style.display='none';form.method='POST';form.action=EXAM_API_URL;form.target=frame.name;for(const [name,value] of Object.entries({exam:EXAM_KEY,nonce,payload:JSON.stringify(payload)})){const input=document.createElement('input');input.name=name;input.value=value;form.appendChild(input)}document.body.append(frame,form);let timer;const done=(message,retry)=>{clearTimeout(timer);window.removeEventListener('message',onMessage);form.remove();frame.remove();deliveryPending=false;if(!retry){submitted=true;save()}setDelivery(message,retry)};const onMessage=e=>{if(!/^https:\/\/(?:script\.google\.com|script\.googleusercontent\.com|[a-z0-9-]+[.-]script\.googleusercontent\.com)$/.test(e.origin)||e.data?.kind!=='educacion-abierta-exam-save'||e.data.nonce!==nonce)return;if(e.data.status==='ok'||e.data.status==='duplicate')done('',false);else if(e.data.message==='El intento caducó.'){jsonp('status').then(s=>{let c;try{c=JSON.parse(new TextDecoder('utf-8').decode(Uint8Array.from(atob(ticket.split('.')[0].replace(/-/g,'+').replace(/_/g,'/')),ch=>ch.charCodeAt(0))))}catch{}const reason=!c?'El comprobante no se pudo leer.':c.id!==attemptId?'El identificador del intento no coincide.':c.sesion!==s.sessionId?'Sesión del intento: '+String(c.sesion)+' · Sesión activa: '+String(s.sessionId)+'.':c.inicio<s.startsAtEpoch||c.inicio>s.endsAtEpoch?'El inicio del intento está fuera del horario.':s.serverNow-c.inicio>LIMIT*1000+120000?'Pasaron más de tres horas desde el inicio.':'El servidor rechazó un comprobante vigente; requiere revisar su implementación.';done(reason,true)}).catch(()=>done(e.data.message,true))}else done(e.data.message||'El registro no aceptó las respuestas.',true)};window.addEventListener('message',onMessage);timer=setTimeout(()=>done('No se pudo confirmar el envío. Pulsa «Reintentar envío».',true),90000);form.submit()}
+function fmt(s){s=Math.max(0,s);let h=Math.floor(s/3600),m=Math.floor(s%3600/60),ss=s%60;return[h,m,ss].map(v=>String(v).padStart(2,'0')).join(':')}
+function updateTimer(){$('timerTop').textContent=fmt(remaining);if(remaining<=0&&!finished){remaining=0;timedOut=true;clearInterval(interval);finish(true)}}
+function tick(){clearInterval(interval);if(finished)return;interval=setInterval(()=>{if(finished){clearInterval(interval);return}remaining=Math.max(0,Math.floor((examDeadline-Date.now())/1000));updateTimer();save()},1000)}
+function showExam(){started=true;$('startView').style.display='none';$('examView').style.display='block';render();updateTimer();if(!finished)tick();save()}
+async function start(){if(finished||started)return;const firstName=$('studentFirstName').value.trim().replace(/\s+/g,' '),lastName=$('studentLastName').value.trim().replace(/\s+/g,' ');if(!validName(firstName)||!validName(lastName)){$('availabilityMessage').textContent='Escribe tu nombre y tus apellidos antes de comenzar.';return}if(!availabilityOpen){await checkAvailability();if(!availabilityOpen)return}$('startBtn').disabled=true;$('availabilityMessage').textContent='Confirmando el horario…';try{const id=uuid(),response=await jsonp('start',{id});if(!response.open||!response.ticket)throw new Error(response.message||'La prueba ya no está disponible.');student={firstName,lastName};attemptId=id;ticket=response.ticket;sessionId=response.sessionId;examDeadline=Number(response.attemptEndsAtEpoch)||0;remaining=examDeadline?Math.max(0,Math.floor((examDeadline-Date.now())/1000)):LIMIT;if(remaining<=0)throw new Error('Terminó el horario de la prueba.');showExam()}catch(e){$('availabilityMessage').textContent=e.message;await checkAvailability()}}
+function showGrade(correct,total){const percent=100*correct/total;const passed=percent>=65;$('gradeStatus').textContent=`Nota: ${Math.round(percent)}/100 · ${passed?'Aprobado':'Reprobado'}`;$('gradeStatus').style.color=passed?'#166534':'#991b1b'}
+function renderAreaCharts(){
+  const groups=new Map();
+  QUESTIONS.forEach((q,i)=>{
+    // Los ítems sin clave de corrección no forman parte del porcentaje evaluable.
+    if(!q.answer)return;
+    const area=areaForItem(q.n);
+    if(!groups.has(area))groups.set(area,{correct:0,wrong:0,blank:0});
+    const group=groups.get(area);
+    if(q.answer==='*'||answers[i]===q.answer)group.correct++;
+    else if(!answers[i])group.blank++;
+    else group.wrong++;
+  });
+  const container=$('areaChartGrid');
+  container.replaceChildren();
+  for(const [area,{correct,wrong,blank}] of groups){
+    const total=correct+wrong+blank;
+    const percentage=100*correct/total;
+    const card=document.createElement('article');
+    card.className='area-chart-card';
+    const title=document.createElement('h4');title.textContent=area;
+    const pie=document.createElement('div');pie.className='area-pie';
+    pie.style.setProperty('--correct-end',percentage+'%');
+    pie.style.setProperty('--wrong-end',100*(correct+wrong)/total+'%');
+    pie.setAttribute('role','img');
+    pie.setAttribute('aria-label',`${area}: ${correct} correctas, ${wrong} incorrectas y ${blank} sin responder, de ${total} preguntas evaluables`);
+    const rate=document.createElement('div');rate.className='area-rate';rate.textContent=percentage.toFixed(0)+'% correctas';
+    const count=document.createElement('div');count.className='area-count';count.textContent=`${correct} de ${total} preguntas correctas`;
+    const legend=document.createElement('div');legend.className='area-legend';
+    for(const [label,value,color] of [['Correctas',correct,'#16a34a'],['Incorrectas',wrong,'#ef4444'],['Sin responder',blank,'#cbd5e1']]){
+      const item=document.createElement('span');
+      const swatch=document.createElement('i');swatch.style.setProperty('--legend-color',color);
+      item.append(swatch,`${label}: ${value}`);legend.append(item);
+    }
+    card.append(title,pie,rate,count,legend);container.append(card);
+  }
+}
+function areaForItem(n){return QUESTIONS[n-1].area}
+function render(){const q=QUESTIONS[current];$('qnum').textContent=`Ítem ${q.n} de ${TOTAL}`;$('qarea').textContent=`Área: ${areaForItem(q.n)}`;$('qstatus').textContent=answers[current]?`Respuesta: ${answers[current]}`:'Sin responder';$('qcontext').innerHTML=q.context||'';$('qcontext').style.display=q.context?'block':'none';const fig=FIGURES[q.n],fb=$('qfigure'),fi=$('qfigureimg');
+const figureBeforeStem=!!FIGURES[q.n];
+const afterFig=null;
+const afb=$('qaftergraphic'), afi=$('qaftergraphicimg');
+
+if(figureBeforeStem){
+  $('qtext').innerHTML='';
+}else{
+  $('qtext').innerHTML=q.stem;
+}
+if(fig){
+  fi.src=fig;
+  fb.style.display='block';
+}else{
+  fi.removeAttribute('src');
+  fb.style.display='none';
+}
+let afterText=document.getElementById('qafterfigure');
+if(!afterText){
+  afterText=document.createElement('div');
+  afterText.id='qafterfigure';
+  afterText.className='qtext';
+  fb.insertAdjacentElement('afterend',afterText);
+}
+if(figureBeforeStem){
+  afterText.innerHTML=q.stem;
+  afterText.style.display='block';
+}else{
+  afterText.innerHTML='';
+  afterText.style.display='none';
+}
+if(afterFig){
+  afi.src=afterFig;
+  afb.style.display='block';
+}else{
+  afi.removeAttribute('src');
+  afb.style.display='none';
+}
+const c=$('choices');c.innerHTML='';q.opts.forEach((txt,i)=>{const L='ABCD'[i],b=document.createElement('button');b.className='choice'+(answers[current]===L?' selected':'');b.innerHTML=`<span class="optletter">${L})</span>${txt}`;b.disabled=finished;if(finished){if(q.answer&&L===q.answer)b.classList.add('correct');else if(q.answer&&answers[current]===L)b.classList.add('wrong');}b.onclick=()=>{if(finished)return;answers[current]=L;save();render()};c.appendChild(b)});$('prevBtn').disabled=current===0;$('nextBtn').textContent=current===TOTAL-1?'Finalizar':'Siguiente →';$('finishBtn').textContent=finished?'Volver al resultado':'Finalizar examen';renderGrid();if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetClear&&MathJax.typesetClear([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);MathJax.typesetPromise([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);}}
+function renderGrid(){const g=$('grid');g.innerHTML='';let count=answers.filter(Boolean).length;QUESTIONS.forEach((q,i)=>{const b=document.createElement('button');b.className='qjump '+(answers[i]?'answered':'unanswered')+(i===current?' current':'');b.textContent=q.n;b.onclick=()=>{current=i;render();save()};g.appendChild(b)});$('countTop').textContent=`${count}/${TOTAL}`;$('countSide').textContent=`${count} de ${TOTAL} respondidos`}
+function finish(auto=false,confirmed=false){if(finished){$('examView').style.display='none';$('resultView').style.display='block';return}const pendientes=answers.filter(a=>!a).length;if(!auto&&!confirmed&&pendientes){$('pendingMessage').textContent=`Aún tienes ${pendientes} ítem(es) sin responder. ¿Deseas finalizar de todas formas?`;$('finishConfirm').style.display='flex';$('confirmFinishBtn').focus();return}$('finishConfirm').style.display='none';clearInterval(interval);if(auto)timedOut=true;remaining=Math.max(0,remaining);started=false;finished=true;save();$('examView').style.display='none';$('startView').style.display='none';$('resultView').style.display='block';showScore();sendResults();window.scrollTo({top:0,behavior:'smooth'})}
+function showScore(){let cor=0;answers.forEach((a,i)=>{if(QUESTIONS[i].answer&&a===QUESTIONS[i].answer)cor++});let graded=QUESTIONS.filter(q=>q.answer).length;let blank=answers.filter((x,i)=>!x&&QUESTIONS[i].answer).length,wrong=graded-cor-blank;$('scoreText').textContent=`${cor}/${graded}`;$('percentText').textContent=`${(cor/graded*100).toFixed(0)}% de respuestas correctas${timedOut?' · Tiempo agotado':''}`;showGrade(cor,graded);$('correctStat').textContent=cor;$('wrongStat').textContent=wrong;$('blankStat').textContent=blank;renderAreaCharts()}
+function review(){
+reviewing=!reviewing;
+const box=$('review');
+box.style.display=reviewing?'grid':'none';
+$('reviewBtn').textContent=reviewing?'Ocultar revisión':'Revisar respuestas';
+if(!reviewing)return;
+box.innerHTML='';
+QUESTIONS.forEach((q,i)=>{
+ const r=document.createElement('div');
+ r.className='review-row';
+ const ok=!!q.answer&&answers[i]===q.answer;
+ const sol=SOLUTIONS[String(q.n)]||'';
+ r.innerHTML=`<div><b>Ítem ${q.n}</b></div><div>Tu respuesta: <span class="${ok?'good':'bad'}">${answers[i]||'—'}</span></div><div>${q.answer?`Correcta: <span class="good">${q.answer}</span>`:"Sin opción correcta; no califica"}</div><div class="review-solution"><b>Solución:</b>${sol}</div>`;
+ r.onclick=()=>{current=i;$('resultView').style.display='none';$('examView').style.display='block';render()};
+ box.appendChild(r);
+});
+if(window.MathJax && MathJax.typesetPromise){
+  MathJax.typesetPromise([box]).catch(()=>{});
+}
+}
+function requestRestart(){$('restartConfirm').style.display='flex';$('cancelRestartBtn').focus()}
+function closeRestart(){$('restartConfirm').style.display='none';$('restartBtn').focus()}
+function restart(){clearInterval(interval);interval=null;localStorage.removeItem(STORAGE_KEY);answers=Array(TOTAL).fill(null);current=0;remaining=LIMIT;started=false;finished=false;timedOut=false;reviewing=false;student={firstName:'',lastName:''};attemptId='';ticket='';sessionId='';submitted=false;examDeadline=0;$('studentFirstName').value='';$('studentLastName').value='';$('finishConfirm').style.display='none';$('restartConfirm').style.display='none';$('review').style.display='none';$('reviewBtn').textContent='Revisar respuestas';$('examView').style.display='none';$('resultView').style.display='none';$('startView').style.display='block';renderGrid();updateTimer();checkAvailability()}
+if(new URLSearchParams(location.search).get('nuevo')==='1'){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}history.replaceState(null,'',location.pathname+location.hash)}
+$('startBtn').onclick=start;$('retryAvailabilityBtn').onclick=checkAvailability;$('finishBtn').onclick=()=>finish(false);$('cancelFinishBtn').onclick=()=>$('finishConfirm').style.display='none';$('confirmFinishBtn').onclick=()=>finish(false,true);$('finishConfirm').onclick=e=>{if(e.target===$('finishConfirm'))$('finishConfirm').style.display='none'};$('reviewBtn').onclick=review;$('retryDeliveryBtn').onclick=sendResults;$('menuBtn').onclick=()=>location.assign('https://profecharlie.github.io/Educacion-Secundaria/');$('restartBtn').onclick=requestRestart;$('cancelRestartBtn').onclick=closeRestart;$('confirmRestartBtn').onclick=restart;$('restartConfirm').onclick=e=>{if(e.target===$('restartConfirm'))closeRestart()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('finishConfirm').style.display==='flex')$('finishConfirm').style.display='none';if(e.key==='Escape'&&$('restartConfirm').style.display==='flex')closeRestart()});$('prevBtn').onclick=()=>{if(current>0){current--;render();save()}};$('nextBtn').onclick=()=>{if(current<TOTAL-1){current++;render();save()}else finish(false)};load();updateTimer();if(finished){$('startView').style.display='none';$('examView').style.display='none';$('resultView').style.display='block';showScore();setDelivery(submitted?'':'El envío quedó pendiente. Pulsa «Reintentar envío».',!submitted)}else if(started&&ticket&&attemptId){showExam()}else{started=false;checkAvailability()}
+if(document.modelContext?.registerTool){document.modelContext.registerTool({name:'read_exam_progress',description:'Consultar el progreso visible de la prueba sin revelar las respuestas correctas.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:()=>({total:TOTAL,current:current+1,answered:answers.filter(Boolean).length,remaining,finished})});}</script></body></html>
+
