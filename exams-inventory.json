@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-03",
+  "updatedAt": "2026-10-08",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -290,6 +290,22 @@
       "publication": "Conexión publicada en GitHub; receptor versión 10 y administrador versión 19 actualizados por el docente.",
       "validation": "60 preguntas, cuatro opciones originales, SVG y soluciones cotejados; resultados y variantes aceptadas verificados. Portada publicada verificada en navegador: número de ítems, temporizador, secciones 11-1/11-2 e inicio desactivado.",
       "notes": "Los enlaces originales de video se muestran en el solucionario. Se aceptan C/D en ítem 58 y B/C en ítem 60 por ambigüedad."
+    },
+    {
+      "path": "Setimo-Terraba-01-2022",
+      "title": "Sétimo Térraba 01-2022",
+      "category": "Educación Abierta",
+      "status": "publicada; pendiente de habilitación y registro",
+      "source": {
+        "id": "1uMHNKuTP1n4vzB-be5sQYOXrLj-3JNiR",
+        "url": "https://drive.google.com/file/d/1uMHNKuTP1n4vzB-be5sQYOXrLj-3JNiR/view?usp=drivesdk",
+        "filename": "01 2022.pdf"
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "backend": "pendiente de incorporación; inicio deshabilitado",
+      "notes": "Cuatro opciones originales. El ítem 9 no fija longitudes enteras ni mínimas, por lo que se excluye de la nota; se explica la solución prevista bajo la hipótesis de longitudes enteras.",
+      "validation": "55 ítems y soluciones transcritos; figuras SVG reconstruidas y cotejadas visualmente. Navegación, cuatro opciones, confirmación, resultados 54/54 y 0/54, gráficos por cuatro áreas, bloqueo de respuestas tras finalizar y reinicio comprobados con DOM simulado."
     }
   ],
   "notes": [
