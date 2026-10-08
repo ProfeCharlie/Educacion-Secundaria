@@ -295,7 +295,7 @@
       "path": "Setimo-Terraba-01-2022",
       "title": "Sétimo Térraba 01-2022",
       "category": "Educación Abierta",
-      "status": "publicada; pendiente de habilitación y registro",
+      "status": "publicada",
       "source": {
         "id": "1uMHNKuTP1n4vzB-be5sQYOXrLj-3JNiR",
         "url": "https://drive.google.com/file/d/1uMHNKuTP1n4vzB-be5sQYOXrLj-3JNiR/view?usp=drivesdk",
@@ -303,9 +303,10 @@
       },
       "items": 55,
       "evaluableItems": 54,
-      "backend": "pendiente de incorporación; inicio deshabilitado",
+      "backend": "integrado; sin secciones; control creado desactivado",
       "notes": "Cuatro opciones originales. El ítem 9 no fija longitudes enteras ni mínimas, por lo que se excluye de la nota; se explica la solución prevista bajo la hipótesis de longitudes enteras.",
-      "validation": "55 ítems y soluciones transcritos; figuras SVG reconstruidas y cotejadas visualmente. Navegación, cuatro opciones, confirmación, resultados 54/54 y 0/54, gráficos por cuatro áreas, bloqueo de respuestas tras finalizar y reinicio comprobados con DOM simulado."
+      "validation": "55 ítems y soluciones transcritos; figuras SVG reconstruidas y cotejadas visualmente. Navegación, cuatro opciones, confirmación, resultados 54/54 y 0/54, gráficos por cuatro áreas, bloqueo de respuestas tras finalizar y reinicio comprobados con DOM simulado.",
+      "publication": "Conexión publicada en GitHub; receptor versión 18 y administrador versión 27."
     }
   ],
   "notes": [
