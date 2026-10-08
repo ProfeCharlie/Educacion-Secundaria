@@ -324,6 +324,23 @@
       "notes": "Ítem 17 con asterisco en la clave, excluido de la nota. Se corrigen respuestas de los ítems 18 (B), 26 (C), 60 (B) según resolución y se explica cada discrepancia.",
       "validation": "60 preguntas, tres opciones, soluciones y 20 figuras SVG asociadas; figuras inspeccionadas; navegación, confirmación, resultados 59/59 y 0/59, tres áreas, bloqueo tras finalizar y reinicio comprobados en DOM simulado. Backend de resultados y exclusión de ítem 17 comprobados localmente.",
       "publication": "Publicado en GitHub; receptor versión 19 y administrador versión 28."
+    },
+    {
+      "path": "Bachillerato-Madurez-02-2025",
+      "title": "Bachillerato por Madurez 02-2025",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1iXfM_sgENHI8Zt8OOW3hiulSaBEg-XVl",
+        "url": "https://drive.google.com/file/d/1iXfM_sgENHI8Zt8OOW3hiulSaBEg-XVl/view",
+        "filename": "BxM 02 2025 Sin Marca.pdf"
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "backend": "integrado; sin secciones; control desactivado",
+      "notes": "Ítem 40 excluido de la nota por falta de regla explícita en el enunciado.",
+      "validation": "Archivo publicado accesible (HTTP 200); 60 preguntas con tres opciones; portada, temporizador 03:00:00 y estado desactivado verificados en navegador. Envío real pendiente.",
+      "publication": "Añadido al menú principal."
     }
   ],
   "notes": [
