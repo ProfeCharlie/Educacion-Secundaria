@@ -307,6 +307,23 @@
       "notes": "Cuatro opciones originales. El ítem 9 no fija longitudes enteras ni mínimas, por lo que se excluye de la nota; se explica la solución prevista bajo la hipótesis de longitudes enteras.",
       "validation": "55 ítems y soluciones transcritos; figuras SVG reconstruidas y cotejadas visualmente. Navegación, cuatro opciones, confirmación, resultados 54/54 y 0/54, gráficos por cuatro áreas, bloqueo de respuestas tras finalizar y reinicio comprobados con DOM simulado.",
       "publication": "Conexión publicada en GitHub; receptor versión 18 y administrador versión 27."
+    },
+    {
+      "path": "Bachillerato-Madurez-01-2025",
+      "title": "Bachillerato por Madurez 01-2025",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "19OoYY0XE67EVv4A6LlNZH6p-E6bxrbWO",
+        "url": "https://drive.google.com/file/d/19OoYY0XE67EVv4A6LlNZH6p-E6bxrbWO/view",
+        "filename": "BxM 01 2025 con Respuestas.pdf"
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "backend": "integrado; sin secciones; control creado desactivado",
+      "notes": "Ítem 17 con asterisco en la clave, excluido de la nota. Se corrigen respuestas de los ítems 18 (B), 26 (C), 60 (B) según resolución y se explica cada discrepancia.",
+      "validation": "60 preguntas, tres opciones, soluciones y 20 figuras SVG asociadas; figuras inspeccionadas; navegación, confirmación, resultados 59/59 y 0/59, tres áreas, bloqueo tras finalizar y reinicio comprobados en DOM simulado. Backend de resultados y exclusión de ítem 17 comprobados localmente.",
+      "publication": "Publicado en GitHub; receptor versión 19 y administrador versión 28."
     }
   ],
   "notes": [
