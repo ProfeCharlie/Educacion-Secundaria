@@ -341,6 +341,23 @@
       "notes": "Ítem 40 excluido de la nota por falta de regla explícita en el enunciado.",
       "validation": "Archivo publicado accesible (HTTP 200); 60 preguntas con tres opciones; portada, temporizador 03:00:00 y estado desactivado verificados en navegador. Envío real pendiente.",
       "publication": "Añadido al menú principal."
+    },
+    {
+      "path": "Bachillerato-Madurez-01-2024",
+      "title": "Bachillerato por Madurez 01-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1O8KugRWROLdyVaMZyZBr82cbVaX4Z9W5",
+        "url": "https://drive.google.com/file/d/1O8KugRWROLdyVaMZyZBr82cbVaX4Z9W5/view",
+        "filename": "BxM 01 2024.pdf"
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "Ítem 58 excluido por contradicción entre «no debe elegir» y «menor probabilidad».",
+      "validation": "60 preguntas y soluciones cotejadas con las 27 páginas; 20 figuras SVG revisadas; selección, navegación, confirmación, calificación 59/59 y 0/59, exclusión, bloqueo y reinicio verificados con DOM simulado. Archivo publicado coincide byte a byte con la versión validada.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
