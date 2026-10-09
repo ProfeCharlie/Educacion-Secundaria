@@ -375,6 +375,28 @@
       "notes": "Ítem 50 excluido: el diagrama garantiza temperaturas mayores o iguales a 26 °C, no estrictamente superiores.",
       "validation": "60 preguntas y soluciones cotejadas con las 27 páginas; 22 figuras SVG y una gráfica de opción revisadas; selección, navegación, confirmación, calificación 59/59 y 0/59, exclusión, blancos, bloqueo y reinicio verificados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-01-2023",
+      "title": "Bachillerato por Madurez 01-2023",
+      "category": "Educación Abierta",
+      "status": "publicada con fuente incompleta",
+      "source": {
+        "id": "1L10vQEu7nuzAWTgiwHxCHELDk5JXzmdU",
+        "filename": "BxM 01 2023 Con Soluciones.pdf",
+        "url": "https://drive.google.com/file/d/1L10vQEu7nuzAWTgiwHxCHELDk5JXzmdU/view",
+        "notes": "La copia omite la página 25 (ítem 46). La página de los ítems 59–60 lleva encabezado Matemáticas Específica. No incluye clave oficial ni soluciones; estas fueron elaboradas para la versión interactiva."
+      },
+      "items": 60,
+      "availableItems": 59,
+      "evaluableItems": 59,
+      "missingItems": [
+        46
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "La copia omite la página 25 (ítem 46). La página de los ítems 59–60 lleva encabezado Matemáticas Específica. No incluye clave oficial ni soluciones; estas fueron elaboradas para la versión interactiva.",
+      "validation": "59 preguntas con cuatro opciones, soluciones y 22 figuras SVG; selección, navegación, confirmación, notas 59/59 y 0/59, exclusión de 46, blancos, bloqueo y reinicio comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
