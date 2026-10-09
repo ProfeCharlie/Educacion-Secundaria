@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-08",
+  "updatedAt": "2026-10-09",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -357,6 +357,23 @@
       "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
       "notes": "Ítem 58 excluido por contradicción entre «no debe elegir» y «menor probabilidad».",
       "validation": "60 preguntas y soluciones cotejadas con las 27 páginas; 20 figuras SVG revisadas; selección, navegación, confirmación, calificación 59/59 y 0/59, exclusión, bloqueo y reinicio verificados con DOM simulado. Archivo publicado coincide byte a byte con la versión validada.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-02-2024",
+      "title": "Bachillerato por Madurez 02-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1W8f_HIrBRbUHiRw4lqo_niP5tUygJKaq",
+        "url": "https://drive.google.com/file/d/1W8f_HIrBRbUHiRw4lqo_niP5tUygJKaq/view",
+        "filename": "BxM 02 2024.pdf"
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "Ítem 50 excluido: el diagrama garantiza temperaturas mayores o iguales a 26 °C, no estrictamente superiores.",
+      "validation": "60 preguntas y soluciones cotejadas con las 27 páginas; 22 figuras SVG y una gráfica de opción revisadas; selección, navegación, confirmación, calificación 59/59 y 0/59, exclusión, blancos, bloqueo y reinicio verificados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
