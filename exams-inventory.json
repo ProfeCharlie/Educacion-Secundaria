@@ -497,6 +497,27 @@
       "notes": "Ítems 23 y 24 excluidos: la gráfica original tiene extremos abiertos que ninguna opción respeta.",
       "validation": "60 preguntas cotejadas con las 29 páginas; 24 figuras SVG asociadas reconstruidas y revisadas; selección, navegación, confirmación, notas 58/58 y 0/58, exclusiones, blancos, bloqueo y reinicio verificados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-01-2020-V2",
+      "title": "Bachillerato por Madurez 01-2020 · V2",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1sg-3cCjHRL5PVtvFPzeq6AAlJnjvxeeG",
+        "filename": "BxM 01 2020 V2 con respuestas.pdf",
+        "url": "https://drive.google.com/file/d/1sg-3cCjHRL5PVtvFPzeq6AAlJnjvxeeG/view?usp=drivesdk",
+        "notes": "29 páginas de preguntas y clave final. Convocatoria 01-2020 (2), código 07 2020. Ítem 19 excluido por orientación de plano insuficientemente definida; la clave prevé B bajo la condición de plano tangente a la generatriz. Ítem 55 corregido de C a A: ambas proposiciones son verdaderas."
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "excludedItems": [
+        19
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "29 páginas de preguntas y clave final. Convocatoria 01-2020 (2), código 07 2020. Ítem 19 excluido por orientación de plano insuficientemente definida; la clave prevé B bajo la condición de plano tangente a la generatriz. Ítem 55 corregido de C a A: ambas proposiciones son verdaderas.",
+      "validation": "60 preguntas cotejadas con las 29 páginas y clave final; 31 figuras SVG asociadas (15 únicas) reconstruidas y revisadas. 58 respuestas coinciden con la clave; 55 se corrige a A y 19 se excluye. Navegación, selección, confirmación, notas 59/59 y 0/59, blancos, bloqueo y reinicio comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
