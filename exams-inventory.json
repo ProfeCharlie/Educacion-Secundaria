@@ -433,6 +433,27 @@
       "notes": "Cuatro opciones por pregunta. Soluciones elaboradas para esta versión. El ítem 17 contiene una descripción contradictoria del sentido de giro; ninguna interpretación produce la figura propuesta.",
       "validation": "60 preguntas cotejadas con las 29 páginas; 25 figuras SVG asociadas y 4 opciones gráficas reconstruidas; selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio verificados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-02-2022",
+      "title": "Bachillerato por Madurez 02-2022",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1P5kdE2WWK-PtsKtGC9uaGwi7olVjikmF",
+        "filename": "BxM 02 2022 con soluciones.pdf",
+        "url": "https://drive.google.com/file/d/1P5kdE2WWK-PtsKtGC9uaGwi7olVjikmF/view?usp=drivesdk",
+        "notes": "28 páginas de preguntas y una página final de clave. Ítem 56 excluido por falta de una condición explícita. En el ítem 24 el original alterna E y B para el conjunto de llegada; se explica la interpretación de la clave."
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "excludedItems": [
+        56
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "Ítem 56 excluido de la nota: falta la condición P(A unión B) = 1 que supone la clave adjunta. Las 59 respuestas calificables coinciden con la clave del PDF.",
+      "validation": "60 preguntas cotejadas con las 28 páginas y la clave final; 19 figuras SVG asociadas y 4 opciones gráficas reconstruidas; selección, navegación, confirmación, notas 59/59 y 0/59, exclusión de 56, blancos, bloqueo y reinicio verificados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
