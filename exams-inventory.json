@@ -475,6 +475,28 @@
       "notes": "Ítem 3 excluido: QP al cuadrado es 5; todas las opciones del PDF utilizan 10. No se suministra clave oficial.",
       "validation": "60 preguntas cotejadas con las 29 páginas; 26 figuras SVG asociadas reconstruidas; selección, navegación, confirmación, notas 59/59 y 0/59, exclusión de 3, blancos, bloqueo y reinicio verificados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-02-2021",
+      "title": "Bachillerato por Madurez 02-2021",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1qUSNYmesUGnLPbwh_N0DE8iqny9H-8UC",
+        "filename": "BxM 02  2021.pdf",
+        "url": "https://drive.google.com/file/d/1qUSNYmesUGnLPbwh_N0DE8iqny9H-8UC/view?usp=drivesdk",
+        "notes": "29 páginas numeradas de 5 a 33, convocatoria 02-2021. No incluye clave; soluciones elaboradas mediante resolución de los ejercicios."
+      },
+      "items": 60,
+      "evaluableItems": 58,
+      "excludedItems": [
+        23,
+        24
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "Ítems 23 y 24 excluidos: la gráfica original tiene extremos abiertos que ninguna opción respeta.",
+      "validation": "60 preguntas cotejadas con las 29 páginas; 24 figuras SVG asociadas reconstruidas y revisadas; selección, navegación, confirmación, notas 58/58 y 0/58, exclusiones, blancos, bloqueo y reinicio verificados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
