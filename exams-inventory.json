@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-09",
+  "updatedAt": "2026-10-10",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -414,6 +414,24 @@
       "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
       "notes": "Variante triángulo. Cuatro opciones por pregunta. Soluciones elaboradas para esta versión.",
       "validation": "60 preguntas cotejadas con las 27 páginas; 25 figuras SVG asociadas; selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio verificados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-01-2022",
+      "title": "Bachillerato por Madurez 01-2022",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1aWICn01Bvwp8CRoB2UYOaUGaDd4AiHP7",
+        "filename": "BxM 01 2022.pdf",
+        "url": "https://drive.google.com/file/d/1aWICn01Bvwp8CRoB2UYOaUGaDd4AiHP7/view?usp=drivesdk",
+        "notes": "29 páginas, numeradas de 5 a 33. Soluciones elaboradas para la versión interactiva; sin clave oficial suministrada."
+      },
+      "items": 60,
+      "evaluableItems": 60,
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "Cuatro opciones por pregunta. Soluciones elaboradas para esta versión. El ítem 17 contiene una descripción contradictoria del sentido de giro; ninguna interpretación produce la figura propuesta.",
+      "validation": "60 preguntas cotejadas con las 29 páginas; 25 figuras SVG asociadas y 4 opciones gráficas reconstruidas; selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio verificados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
