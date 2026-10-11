@@ -622,6 +622,25 @@
       "notes": "29 páginas escaneadas, numeradas de 5 a 33. Convocatoria 01-2017, código 04 2017. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 50: interpretación de los cuartiles; se aclara el efecto de los empates en las edades.",
       "validation": "60 preguntas cotejadas con las 29 páginas escaneadas; 19 figuras SVG asociadas (13 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada. Selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-02-2017",
+      "title": "Bachillerato a Distancia 02-2017",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1Zvv7lUvbJ7cdSjIZfAGdxeQ7bSbKYxz_",
+        "filename": "BaD 02 2017.pdf",
+        "url": "https://drive.google.com/file/d/1Zvv7lUvbJ7cdSjIZfAGdxeQ7bSbKYxz_/view?usp=drivesdk",
+        "notes": "34 páginas: portada, instrucciones, 55 preguntas (páginas 5 a 31) y anexos. Bachillerato de Educación Diversificada a Distancia, convocatoria 02-2017. Sin clave oficial en la copia. Soluciones elaboradas mediante resolución de cada ejercicio. Ítems 46 y 49: interpretación de cuartiles; ítem 52: mayor posición relativa estandarizada, sin interpretarla como mayor rapidez."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "34 páginas: portada, instrucciones, 55 preguntas (páginas 5 a 31) y anexos. Bachillerato de Educación Diversificada a Distancia, convocatoria 02-2017. Sin clave oficial en la copia. Soluciones elaboradas mediante resolución de cada ejercicio. Ítems 46 y 49: interpretación de cuartiles; ítem 52: mayor posición relativa estandarizada, sin interpretarla como mayor rapidez.",
+      "validation": "55 preguntas cotejadas con las páginas 5 a 31 de la fuente de 34 páginas; 30 figuras SVG asociadas (15 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada. Selección, navegación, confirmación, notas 55/55 y 0/55, blancos, bloqueo y reinicio comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
