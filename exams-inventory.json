@@ -660,6 +660,25 @@
       "notes": "26 páginas: 25 de preguntas, numeradas 5 a 29, y una página final en blanco. Matemática n.º 1, Educación Diversificada a Distancia, convocatoria 01-2017, código 01 2017. Contiene 55 preguntas sin clave oficial. Soluciones elaboradas. Ítem 42: una mediana de 17 no garantiza una mayoría estricta de menores; respuesta B. Ítem 28: la composición requiere inclusión del ámbito en el dominio, no igualdad.",
       "validation": "55 preguntas cotejadas con las 25 páginas de preguntas; fuente de 26 páginas incluida última en blanco. 18 figuras SVG asociadas (10 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada; ítem 42 respondido B, pues no se deduce más del 50 % de menores. Selección, navegación, confirmación, notas 55/55 y 0/55, blancos, bloqueo y reinicio comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-03-2017",
+      "title": "Bachillerato a Distancia 03-2017",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1ytBL2LQXJw0BVhiSbL7y59S7aDXiKlF3",
+        "filename": "BaD 03 2017.pdf",
+        "url": "https://drive.google.com/file/d/1ytBL2LQXJw0BVhiSbL7y59S7aDXiKlF3/view?usp=drivesdk",
+        "notes": "29 páginas escaneadas, numeradas de 5 a 33. Bachillerato de Educación Diversificada a Distancia, convocatoria 03-2017, código 06 2017. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 12: AD=DC=3,61 dados y AE=BC≈4,12, perímetro 23,46; ítem 51: interpretación de cuartiles con aclaración sobre empates."
+      },
+      "items": 60,
+      "evaluableItems": 60,
+      "excludedItems": [],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "29 páginas escaneadas, numeradas de 5 a 33. Bachillerato de Educación Diversificada a Distancia, convocatoria 03-2017, código 06 2017. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 12: AD=DC=3,61 dados y AE=BC≈4,12, perímetro 23,46; ítem 51: interpretación de cuartiles con aclaración sobre empates.",
+      "validation": "60 preguntas cotejadas con las 29 páginas escaneadas. 26 figuras SVG asociadas (14 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada. Selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo, reinicio e identificación comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
