@@ -584,6 +584,25 @@
       "notes": "28 páginas escaneadas, numeradas de 5 a 32. Convocatoria 01-2018, código 04 2018. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 49: la mediana no garantiza una edad observada; ambas proposiciones son falsas (B).",
       "validation": "60 preguntas cotejadas con las 28 páginas escaneadas; 23 figuras SVG asociadas (13 únicas) y 8 opciones gráficas reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada. Selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-02-2017",
+      "title": "Bachillerato por Madurez 02-2017",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1OgDL09NDfLDKYDN_S3lWcoUDH2pfVzei",
+        "filename": "BxM 02 2017.pdf",
+        "url": "https://drive.google.com/file/d/1OgDL09NDfLDKYDN_S3lWcoUDH2pfVzei/view?usp=drivesdk",
+        "notes": "29 páginas escaneadas, numeradas de 5 a 33. Convocatoria 02-2017, código 05 2017. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 50: cuartiles por medianas de las mitades; ítem 59: 3 oncólogos hombres y 4 urólogas mujeres, probabilidad 7/27."
+      },
+      "items": 60,
+      "evaluableItems": 60,
+      "excludedItems": [],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "29 páginas escaneadas, numeradas de 5 a 33. Convocatoria 02-2017, código 05 2017. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 50: cuartiles por medianas de las mitades; ítem 59: 3 oncólogos hombres y 4 urólogas mujeres, probabilidad 7/27.",
+      "validation": "60 preguntas cotejadas con las 29 páginas escaneadas; 19 figuras SVG asociadas (12 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada. Selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
