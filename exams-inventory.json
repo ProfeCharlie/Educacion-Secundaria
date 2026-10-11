@@ -539,6 +539,32 @@
       "notes": "35 páginas: preguntas y clave final. Convocatoria 01-2020 (3), código 08 2020. Ítem 32 excluido: no hay escala vertical ni otro punto para determinar a < 1; la clave adjunta indica B. Ítem 54 corregido de B a D: A y D son disjuntos y solo la segunda proposición es verdadera. Ítem 48: se conserva el desliz tiempos del original y se interpreta según la tabla de kilómetros.",
       "validation": "60 preguntas cotejadas con las 35 páginas y clave final; 22 figuras SVG asociadas (10 únicas) reconstruidas y revisadas. 58 respuestas coinciden con la clave; 54 se corrige a D y 32 se excluye. Selección, navegación, confirmación, notas 59/59 y 0/59, blancos, bloqueo y reinicio comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-02-2019",
+      "title": "Bachillerato por Madurez 02-2019",
+      "category": "Educación Abierta",
+      "status": "publicada como práctica",
+      "source": {
+        "id": "1lGjRGKjVdmUmtgyFDW2gRmSP4jcGbwLN",
+        "filename": "BxM 02 2019.pdf",
+        "url": "https://drive.google.com/file/d/1lGjRGKjVdmUmtgyFDW2gRmSP4jcGbwLN/view?usp=drivesdk",
+        "notes": "24 páginas: 23 de preguntas y clave final. El documento se identifica como 2019_BxM_Suficiente_02_(NO_aplicada), código 05 2019; solucionario: NO APLICADO: FILTRADO. Se publica como práctica. Ítems 38 y 39 excluidos por ausencia de opción correcta (leche ₡300 e imagen n(3)=1). Ítem 51 corregido de A a C: una mediana de 80 puede ser el promedio de 79 y 81, sin observación de 80. Ítem 58 corregido de C a B: mayor probabilidad de rojo o blanco en bolsa #2."
+      },
+      "items": 60,
+      "evaluableItems": 58,
+      "excludedItems": [
+        38,
+        39
+      ],
+      "correctedItems": [
+        51,
+        58
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "24 páginas: 23 de preguntas y clave final. El documento se identifica como 2019_BxM_Suficiente_02_(NO_aplicada), código 05 2019; solucionario: NO APLICADO: FILTRADO. Se publica como práctica. Ítems 38 y 39 excluidos por ausencia de opción correcta (leche ₡300 e imagen n(3)=1). Ítem 51 corregido de A a C: una mediana de 80 puede ser el promedio de 79 y 81, sin observación de 80. Ítem 58 corregido de C a B: mayor probabilidad de rojo o blanco en bolsa #2.",
+      "validation": "60 preguntas cotejadas con las 24 páginas y la clave final; 24 figuras SVG asociadas (11 únicas) y 4 opciones gráficas reconstruidas y revisadas. 56 respuestas coinciden con la clave; 51 se corrige a C y 58 a B; 38 y 39 se excluyen. Selección, navegación, confirmación, notas 58/58 y 0/58, blancos, bloqueo y reinicio comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
