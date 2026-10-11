@@ -1,0 +1,812 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Matemática · Bachillerato por Madurez 01-2017</title><style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#17202a;--muted:#65707d;--line:#dbe1e7;--accent:#1f5d99;--ok:#1f7a4d;--bad:#b23a3a}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.topbar{max-width:1100px;margin:auto;padding:10px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{font-weight:800}.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fafbfc;font-size:14px}.timer{font-variant-numeric:tabular-nums;font-weight:800}
+main{max-width:1100px;margin:22px auto;padding:0 16px 40px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 18px #0000000b;padding:18px}#startView{text-align:center;padding:42px 24px}.hero{font-size:34px;margin:0 0 10px}.sub{color:var(--muted);max-width:760px;margin:0 auto 22px;line-height:1.5}
+button{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer;background:#e9eef3;color:var(--ink)}button.primary{background:var(--accent);color:#fff}button.danger{background:#7b1f1f;color:#fff}button:disabled{opacity:.45;cursor:not-allowed}.exam-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:18px}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.qnum{font-size:20px;font-weight:800}.status{color:var(--muted);font-size:14px}.qtext{font-size:18px;line-height:1.55}.context{margin:12px 0 16px;padding:12px;background:#f8fafc;border:1px solid var(--line);border-radius:10px}.context p{margin:.4em 0}.visual-note{color:var(--muted);font-size:14px}table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px}th,td{border:1px solid #cfd7df;padding:7px;text-align:left}.original-centered th,.original-centered td{text-align:center}th{background:#eef3f7}.choices{display:grid;gap:10px;margin-top:16px}.choice{text-align:left;font-size:16px;padding:13px;background:#f7f9fb;border:2px solid var(--line)}.choice.selected{border-color:var(--accent);background:#eaf2fb}.choice.correct{border-color:var(--ok);background:#eaf7ef}.choice.wrong{border-color:var(--bad);background:#fdecec}.optletter{display:inline-block;width:28px;font-weight:900}.navbuttons{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.side h3{margin-top:0}.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.qjump{padding:7px 0;border-radius:7px;font-size:12px}.qjump.current{outline:2px solid var(--accent)}.qjump.answered{background:#dff0e7}.qjump.unanswered{background:#eef1f4}.small{font-size:13px;color:var(--muted);line-height:1.4}.qfigure{margin:18px 0;text-align:center;background:#fff;border:1.5px solid #000;padding:14px;box-sizing:border-box}.qfigure img{display:block;max-width:100%;max-height:560px;width:auto;height:auto;margin:0 auto;background:#fff;object-fit:contain}.original{margin-top:16px}.original summary{cursor:pointer;color:var(--accent);font-weight:700}.original img{display:block;max-width:100%;max-height:70vh;margin:10px auto 0;border:1px solid var(--line);border-radius:8px}.result{display:none}.score{font-size:42px;font-weight:900}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.stat{padding:14px;border:1px solid var(--line);border-radius:10px;text-align:center}.review-list{display:grid;gap:8px;max-height:430px;overflow:auto;margin-top:14px}.review-row{display:grid;grid-template-columns:72px 1fr 1fr;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px}.good{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}.review-solution{grid-column:1/-1;padding:10px 12px;background:#f8fafc;border-left:4px solid var(--accent);border-radius:6px;line-height:1.45}.review-solution b{display:block;margin-bottom:4px}
+@media(max-width:800px){.exam-layout{grid-template-columns:1fr}.side{order:-1}.grid{grid-template-columns:repeat(10,1fr)}.hero{font-size:27px}.review-row{grid-template-columns:55px 1fr 1fr}.qtext{font-size:17px}}
+.item1-original th{text-align:center}.item1-original td:first-child{text-align:left}.item1-original td:nth-child(2){text-align:center}
+.item2-original th,.item2-original td{text-align:center}
+.item4-original th,.item4-original td{text-align:center}
+.item56-original th,.item56-original td{text-align:center}
+.item1112-original th{text-align:center}
+.item1112-original td:first-child{text-align:left}
+.item1112-original td:not(:first-child){text-align:center}
+.item46-original th,.item46-original td{text-align:center}
+
+.exam-subtitle{
+  margin-top:6px;
+  font-size:14px;
+  font-weight:600;
+  color:#0057B8;
+}
+
+
+.exam-intro{
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.55;
+}
+.exam-intro ul{
+  margin:0;
+  padding-left:22px;
+}
+.exam-intro li{
+  margin:5px 0;
+}
+.exam-encouragement{
+  margin-top:10px;
+  font-weight:700;
+  color:#0057B8;
+}
+
+
+.exam-intro ul{
+  list-style-position:outside;
+  padding-left:18px !important;
+  margin-left:0 !important;
+}
+.exam-intro li{
+  padding-left:0 !important;
+  margin-left:0 !important;
+}
+.exam-intro li::marker{
+  font-size:0.9em;
+}
+
+
+.exam-intro{margin-top:14px;font-size:14px;line-height:1.55}
+.exam-intro .intro-line{display:flex;align-items:flex-start;gap:6px;margin:5px 0}
+.exam-intro .intro-bullet{display:inline-block;flex:0 0 auto;font-weight:700;line-height:1.55}
+.exam-encouragement{margin-top:10px;font-weight:700;color:#0057B8}
+
+
+.exam-encouragement{
+  margin-top:12px !important;
+  font-size:17px !important;
+  font-weight:700 !important;
+  color:#7B2CBF !important;
+}
+
+
+.instructions-title{
+  font-weight:700;
+  margin-bottom:7px;
+}
+.exam-intro .intro-line{
+  display:flex;
+  align-items:flex-start;
+  gap:5px;
+  margin:5px 0;
+}
+.exam-intro .intro-bullet{
+  flex:0 0 auto;
+  font-weight:700;
+}
+
+
+.exam-intro,
+.exam-intro .instructions-title,
+.exam-intro .intro-line,
+.exam-intro .intro-line span{
+  text-align:left !important;
+}
+.exam-intro{
+  width:100%;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+
+.choice:disabled{cursor:not-allowed!important;opacity:.72}
+
+.exam-encouragement{
+  text-align:center !important;
+  width:100% !important;
+  display:block !important;
+}
+
+
+.exam-intro .intro-line{display:flex !important;align-items:flex-start !important;gap:5px !important;text-align:left !important;}
+.exam-intro .intro-bullet{display:inline-block !important;flex:0 0 auto !important;font-weight:700 !important;}
+.exam-encouragement{text-align:center !important;width:100% !important;display:block !important;}
+
+.calculator-approved-image{
+  width:100%;
+  margin:14px 0 18px;
+  text-align:center;
+}
+.calculator-approved-image img{
+  display:block;
+  width:100%;
+  max-width:1100px;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto;
+}
+
+
+.calculator-brand-title{
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  margin:14px 0 6px;
+  color:#1f2937;
+}
+
+
+.calculator-approved-image img{
+  display:block !important;
+  width:100% !important;
+  max-width:1200px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  margin:0 auto !important;
+}
+
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+<style>
+.tabla-item2 th:nth-child(n+2):nth-child(-n+5),
+.tabla-item2 td:nth-child(n+2):nth-child(-n+5){
+    text-align:center !important;
+    vertical-align:middle !important;
+}
+</style>
+
+
+<style>
+.tabla-item11 th, .tabla-item11 td{
+    border:1px solid #000;
+    padding:6px 8px;
+}
+.tabla-item11{
+    border-collapse:collapse;
+    margin:8px 0;
+}
+.tabla-item11 th{
+    text-align:center;
+}
+.tabla-item11 td:first-child{
+    text-align:left;
+}
+.tabla-item11 td:nth-child(n+2){
+    text-align:center;
+}
+</style>
+
+
+<style>
+/* Uniformar el texto acentuado de las fórmulas del ítem 11 */
+.formulas-item11 mjx-mtext,
+.formulas-item11 mjx-mtext *{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+</style>
+
+
+<style>
+/* Fracciones del ítem 11 con la misma tipografía del texto normal */
+.formulas-item11 .html-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    font-family:inherit !important;
+    font-size:inherit !important;
+    line-height:1.15;
+    margin:0 .18em;
+}
+.formulas-item11 .html-frac .frac-top,
+.formulas-item11 .html-frac .frac-bottom{
+    font-family:inherit !important;
+    font-size:inherit !important;
+    font-weight:inherit !important;
+    font-style:normal !important;
+    white-space:nowrap;
+}
+.formulas-item11 .html-frac .frac-top{
+    border-bottom:1.3px solid currentColor;
+    padding:0 .22em .10em;
+}
+.formulas-item11 .html-frac .frac-bottom{
+    padding:.10em .22em 0;
+}
+</style>
+
+
+<style id="q26-formula-style">
+.q26-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  width:100%;
+}
+.q26-copy{flex:1;min-width:0;}
+.q26-formula-box{
+  flex:0 0 auto;
+  width:168px;
+  height:66px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  color:#111;
+  white-space:nowrap;
+}
+.q26-left{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+}
+.q26-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+  font-family:Arial,Helvetica,sans-serif;
+  font-style:normal;
+}
+.q26-num{
+  display:block;
+  padding:0 5px 4px 5px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.q26-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+@media (max-width:700px){
+  .q26-top{align-items:flex-start;gap:14px;}
+  .q26-formula-box{width:160px;height:64px;}
+}
+</style>
+
+
+<style id="q26-after-style">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:12px;
+  margin-bottom:4px;
+}
+</style>
+
+
+<style id="q26-order-final">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+</style>
+
+
+<style id="q26-angle-svg-style">
+.q26-left{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+.q26-angle-symbol{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.q26-angle-symbol svg{display:block;}
+</style>
+
+
+<style id="plain-formula-boxes-after-q26">
+.formula-after-stem{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+.plain-formula-box{
+  min-width:145px;
+  min-height:64px;
+  padding:8px 16px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+  color:#111;
+}
+.plain-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+}
+.plain-num{
+  display:block;
+  padding:0 5px 4px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.plain-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+</style>
+
+<style id="q1-table-pdf-style">
+.q1-pdf-table{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.4px solid #222 !important;
+  border-bottom:1.4px solid #222 !important;
+}
+.q1-pdf-table th,
+.q1-pdf-table td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 18px !important;
+  white-space:nowrap !important;
+}
+.q1-pdf-table th:first-child,
+.q1-pdf-table td:first-child{
+  text-align:left !important;
+}
+.q1-pdf-table th:not(:first-child),
+.q1-pdf-table td:not(:first-child){
+  text-align:center !important;
+}
+.q1-pdf-table tr:first-child th,
+.q1-pdf-table tr:first-child td{
+  border-bottom:1.4px solid #222 !important;
+}
+/* En el PDF de la pregunta 1 NO hay líneas verticales
+   ni líneas horizontales entre las filas de datos. */
+.q1-pdf-table th + th,
+.q1-pdf-table th + td,
+.q1-pdf-table td + th,
+.q1-pdf-table td + td{
+  border-left:none !important;
+}
+.q1-pdf-table tr:not(:first-child) th,
+.q1-pdf-table tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+</style>
+
+
+<style id="item1-original-pdf-style">
+.item1-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th,
+.item1-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:7px 14px !important;
+  white-space:nowrap !important;
+}
+.item1-original tr:first-child th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th:first-child,
+.item1-original td:first-child{
+  text-align:left !important;
+}
+.item1-original th:nth-child(2),
+.item1-original td:nth-child(2){
+  text-align:center !important;
+}
+/* Sin líneas verticales ni líneas entre filas de datos, como en el PDF. */
+.item1-original th + th,
+.item1-original td + td{
+  border-left:none !important;
+}
+.item1-original tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+</style>
+
+
+<style id="tablas-pdf-restantes">
+/* PREGUNTA 5: sin líneas verticales ni divisiones entre filas de datos */
+.item5-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th,
+.item5-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 14px !important;
+  white-space:nowrap !important;
+}
+.item5-original thead th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th:first-child,
+.item5-original td:first-child{
+  text-align:left !important;
+}
+.item5-original th:not(:first-child),
+.item5-original td:not(:first-child){
+  text-align:center !important;
+}
+
+/* PREGUNTAS 2, 4, 11 y 46: el PDF sí muestra cuadrícula completa */
+.tabla-item2,
+.item4-original,
+.tabla-item11,
+.item46-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border:1.4px solid #111 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+}
+.tabla-item2 th, .tabla-item2 td,
+.item4-original th, .item4-original td,
+.tabla-item11 th, .tabla-item11 td,
+.item46-original th, .item46-original td{
+  border:1.4px solid #111 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding:6px 12px !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+}
+
+/* Primera columna de 4 y 11 a la izquierda como en el original */
+.item4-original th:first-child,
+.item4-original td:first-child,
+.tabla-item11 th:first-child,
+.tabla-item11 td:first-child{
+  text-align:left !important;
+}
+
+/* Primera columna de 46 centrada, como en el PDF */
+.item46-original th:first-child,
+.item46-original td:first-child{
+  text-align:center !important;
+}
+</style>
+
+
+<style id="q2-first-column-left">
+.tabla-item2 th:first-child,
+.tabla-item2 td:first-child{
+  text-align:left !important;
+}
+</style>
+
+
+<style id="q36-option-graphs-style">
+.q36-option-graph{display:block;width:min(390px,100%);height:auto;margin:4px auto;}
+</style>
+
+
+<style id="q37-bullets-style">
+.q37-bullets{margin:14px 0 4px 24px;line-height:1.9;}
+</style>
+
+
+<style id="responsive-calculadoras">
+@media (max-width: 760px) {
+  /* CASIO: el contenedor exterior es el que se desplaza horizontalmente. */
+  #casio-mobile-scroll {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain;
+    padding-bottom: 14px !important;
+  }
+
+  /* El título permanece normal; solo la fila de calculadoras es ancha. */
+  #casio-mobile-scroll > .casio-mobile-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 390px) !important;
+    gap: 10px !important;
+    width: 1190px !important;
+    min-width: 1190px !important;
+    max-width: none !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div {
+    box-sizing: border-box !important;
+    width: 390px !important;
+    min-width: 390px !important;
+    max-width: 390px !important;
+    overflow: visible !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div > div:first-child {
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: 370px !important;
+    white-space: nowrap !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row img {
+    display: block !important;
+    width: auto !important;
+    max-width: 360px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* El desplazamiento usado en escritorio para la tercera imagen
+     se neutraliza en celular para que no invada otras zonas. */
+  #casio-mobile-scroll > .casio-mobile-row img[style*="translateY"] {
+    transform: none !important;
+  }
+
+  /* GENÉRICAS: se mantiene el desplazamiento horizontal aprobado. */
+  #calculadoras-genericas {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 12px !important;
+  }
+
+  #calculadoras-genericas > div:last-child {
+    justify-content: start !important;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Tercera Casio (NO RECOMENDADA): más grande y más arriba */
+  /* Tercera Casio en celular:
+     se sube el CONTENEDOR completo para evitar recortar la calculadora. */
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) > div:last-child {
+    margin-top: -78px !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) img {
+    width: 520px !important;
+    max-width: none !important;
+    height: auto !important;
+    position: relative !important;
+    left: 50% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Corrección óptica: centra el cuerpo de la calculadora, no el lienzo completo. */
+    transform: translateX(-36%) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+</style>
+
+<style>.seg{text-decoration:overline}.quad-symbol{display:inline-block;font-size:1.28em;line-height:.7;vertical-align:-.06em;margin-right:1px}.qfigure{width:100%!important;margin:18px auto!important;text-align:center!important}.qfigure img{display:block!important;max-width:100%!important;width:440px!important;height:auto!important;max-height:none!important;margin:0 auto!important;transform:none!important}.qtext{line-height:1.65}.choice{line-height:1.5}.context table{max-width:520px;margin:14px auto}.review-row{cursor:pointer}button:focus-visible{outline:3px solid #166cc0;outline-offset:3px}</style><style>.qmeta{text-align:right}.qarea{font-size:14px;font-weight:700;line-height:1.4;color:var(--ink)}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f5d99'/%3E%3Ctext x='7' y='24' font-size='24' fill='white'%3EB%3C/text%3E%3C/svg%3E"><style>.frac{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.15;font-size:.94em;white-space:nowrap;margin:0 .10em}.frac>span:first-child{border-bottom:1.4px solid currentColor;padding:0 .18em .05em}.frac>span:last-child{padding:.05em .18em 0}.inline-eq{display:inline-flex;align-items:center;gap:3px;white-space:nowrap;vertical-align:middle}.seg{text-decoration:overline;text-decoration-thickness:1.3px}.claims{margin:12px 0 14px 16px}.claims p{display:flex;gap:14px;align-items:start}.claims b{min-width:24px}.tiny-table{font-size:13px;width:auto;max-width:100%}.tiny-table th,.tiny-table td{padding:4px 7px;white-space:nowrap}.choice:has(table){overflow-x:auto}.tie-boxes{display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px;margin:20px 0}.tie-boxes>div{text-align:center;min-width:105px}.tie-boxes>div>div{border:1.5px solid #222;margin-top:8px;text-align:left;padding:12px;line-height:2.05}.qfigure{border:0;padding:5px}.qfigure img{max-height:560px}.context{line-height:1.55}.context table{max-width:480px}</style><style>
+.area-results{margin:28px auto;text-align:left;max-width:880px}
+.area-results h3{text-align:center;margin:0 0 5px}
+.area-results > p{text-align:center;margin:0 0 18px;color:#475569}
+.area-chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
+.area-chart-card{border:1px solid #dce4eb;border-radius:14px;padding:16px;text-align:center;background:#fff}
+.area-chart-card h4{margin:0 0 12px;min-height:2.6em;font-size:16px;line-height:1.3}
+.area-pie{width:146px;height:146px;margin:0 auto 12px;border-radius:50%;background:conic-gradient(#16a34a 0 var(--correct-end),#ef4444 var(--correct-end) var(--wrong-end),#cbd5e1 var(--wrong-end) 100%);box-shadow:inset 0 0 0 1px rgba(15,23,42,.08)}
+.grade-status{font-weight:700;font-size:1.1rem;margin:8px 0 16px;color:#183f71}
+.area-rate{font-weight:700;font-size:24px;color:#166534}
+.area-count{margin:4px 0 10px;color:#475569;font-size:14px}
+.area-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 11px;font-size:12px;color:#334155}
+.area-legend span{white-space:nowrap}
+.area-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;background:var(--legend-color)}
+</style><style>.table-wrap{max-width:100%;overflow-x:auto}.table-wrap table{border-collapse:collapse;font-size:.95em}.table-wrap td,.table-wrap th{border:1px solid #94a3b8;padding:7px 10px;text-align:center}.table-wrap th{background:#eaf1fb}</style><style>.option-figure{display:block;width:270px;max-width:100%;height:auto;margin:10px auto;background:white}.table-wrap{overflow-x:auto}</style></head><body>
+<header><div class="topbar"><div class="brand">Matemática · Bachillerato por Madurez 01-2017</div><div class="meta"><span class="pill">Modo examen</span><span class="pill">Respondidas: <b id="countTop">0/60</b></span><span class="pill timer" id="timerTop">03:00:00</span></div></div></header>
+<main><section id="startView" class="card"><h1 class="hero">Matemática · Bachillerato por Madurez 01-2017</h1>
+<div class="exam-registration" style="max-width:440px;margin:14px auto 18px;display:grid;gap:10px">
+  <label>Nombre <input id="studentFirstName" autocomplete="given-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <label>Apellidos <input id="studentLastName" autocomplete="family-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <p id="availabilityMessage" role="status" style="margin:0;text-align:center">Consultando disponibilidad de la prueba…</p>
+  <button id="retryAvailabilityBtn" type="button" style="display:none">Reintentar conexión</button>
+  <button class="primary" id="startBtn" disabled>Iniciar Prueba</button>
+</div>
+<div class="exam-subtitle">Elaborado por: Carlos Madrigal Gutiérrez</div>
+<div class="exam-intro">
+  <div class="instructions-title">Instrucciones:</div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Versión interactiva con las 60 preguntas.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Las representaciones gráficas necesarias aparecen directamente dentro de cada pregunta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>La prueba contiene 60 preguntas de selección única, cada una con cuatro opciones de respuesta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes moverte entre preguntas, devolverte o avanzar y responder en el momento que creas necesario, eso sí, si el tiempo se agota la prueba se cierra y no te dejará seguir respondiendo.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Es recomendable tener a la mano papel y lápiz para ir resolviendo los ejercicios de la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Dispones de 3 horas para responder la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes utilizar calculadora básica.</span></div>
+  
+
+<p class="small">Fuente: convocatoria 01-2017, código 04 2017. La copia suministrada contiene las 60 preguntas y no incluye clave oficial. Las soluciones se elaboraron para esta versión. En el ítem 50 se explica la interpretación de los cuartiles utilizada en el enunciado.</p></div></section>
+<section id="examView" style="display:none"><div class="exam-layout"><div class="card"><div class="qhead"><div class="qnum" id="qnum"></div><div class="qmeta"><div class="qarea" id="qarea"></div><div class="status" id="qstatus"></div></div></div><div id="qcontext" class="context"></div><div id="qtext" class="qtext"></div><div id="qfigure" class="qfigure" style="display:none"><img id="qfigureimg" alt="Representación gráfica del ítem"></div><div id="qaftergraphic" class="qfigure" style="display:none"><img id="qaftergraphicimg" alt="Opciones gráficas del ítem"></div><div id="choices" class="choices"></div><div class="navbuttons"><button id="prevBtn">← Anterior</button><button id="nextBtn">Siguiente →</button></div></div><aside class="card side"><h3>Navegación</h3><div id="grid" class="grid"></div><p class="small" id="countSide">0 de 60 respondidos</p><button class="danger" id="finishBtn" style="width:100%;margin-top:8px">Finalizar examen</button></aside></div></section>
+<section id="resultView" class="card result"><h2>Resultado</h2><div class="score" id="scoreText">0/60</div><div id="percentText"></div><p id="gradeStatus" class="grade-status" aria-live="polite"></p><div class="result-grid"><div class="stat"><b id="correctStat">0</b><br>Correctas</div><div class="stat"><b id="wrongStat">0</b><br>Incorrectas</div><div class="stat"><b id="blankStat">0</b><br>Sin responder</div></div><section class="area-results" aria-labelledby="areaResultsTitle"><h3 id="areaResultsTitle">Resultados por área</h3><p>Porcentaje de respuestas correctas en cada área</p><div id="areaChartGrid" class="area-chart-grid"></div></section><p id="deliveryStatus" role="status"></p><button id="retryDeliveryBtn" style="display:none">Reintentar envío</button><button id="reviewBtn">Revisar respuestas</button> <button id="restartBtn">Hacer otro intento</button> <button type="button" id="menuBtn">Regresar al menú de exámenes</button><div id="review" class="review-list" style="display:none"></div></section><div id="finishConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px"><div role="alertdialog" aria-modal="true" aria-labelledby="finishTitle" aria-describedby="pendingMessage" style="width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;text-align:center"><h2 id="finishTitle">¿Finalizar el examen?</h2><p id="pendingMessage"></p><button type="button" id="cancelFinishBtn">Seguir respondiendo</button> <button type="button" class="danger" id="confirmFinishBtn">Sí, finalizar</button></div></div><div id="restartConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px;">
+<div role="alertdialog" aria-modal="true" aria-labelledby="restartConfirmTitle" aria-describedby="restartConfirmText" style="box-sizing:border-box;width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;box-shadow:0 18px 56px rgba(0,0,0,.28);text-align:center;">
+<h2 id="restartConfirmTitle" style="margin:0 0 12px;color:#173b70;">¿Reiniciar el examen?</h2>
+<p id="restartConfirmText" style="margin:0 0 22px;line-height:1.55;">Se borrarán tus respuestas y el tiempo transcurrido.</p>
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;"><button id="cancelRestartBtn" type="button">Cancelar</button><button id="confirmRestartBtn" class="danger" type="button">Sí, reiniciar</button></div>
+</div></div></main><script>
+const FIGURES={"14": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20570%20410%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%22109.86301369863014%22%20y1%3D%22347.05479452054794%22%20x2%3D%22109.86301369863014%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22109.86301369863014%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cline%20x1%3D%22156.43835616438355%22%20y1%3D%22347.05479452054794%22%20x2%3D%22156.43835616438355%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22156.43835616438355%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cline%20x1%3D%22203.013698630137%22%20y1%3D%22347.05479452054794%22%20x2%3D%22203.013698630137%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22203.013698630137%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cline%20x1%3D%22249.5890410958904%22%20y1%3D%22347.05479452054794%22%20x2%3D%22249.5890410958904%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22249.5890410958904%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cline%20x1%3D%22296.16438356164383%22%20y1%3D%22347.05479452054794%22%20x2%3D%22296.16438356164383%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22296.16438356164383%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Cline%20x1%3D%22342.7397260273973%22%20y1%3D%22347.05479452054794%22%20x2%3D%22342.7397260273973%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22342.7397260273973%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E6%3C/text%3E%3Cline%20x1%3D%22389.3150684931507%22%20y1%3D%22347.05479452054794%22%20x2%3D%22389.3150684931507%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22389.3150684931507%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E7%3C/text%3E%3Cline%20x1%3D%22435.8904109589041%22%20y1%3D%22347.05479452054794%22%20x2%3D%22435.8904109589041%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22435.8904109589041%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22291.16438356164383%22%20x2%3D%22501.09589041095893%22%20y2%3D%22291.16438356164383%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22296.16438356164383%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22244.5890410958904%22%20x2%3D%22501.09589041095893%22%20y2%3D%22244.5890410958904%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22249.5890410958904%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22198.01369863013696%22%20x2%3D%22501.09589041095893%22%20y2%3D%22198.01369863013696%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22203.01369863013696%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22151.43835616438355%22%20x2%3D%22501.09589041095893%22%20y2%3D%22151.43835616438355%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22156.43835616438355%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22104.86301369863014%22%20x2%3D%22501.09589041095893%22%20y2%3D%22104.86301369863014%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22109.86301369863014%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22337.73972602739724%22%20x2%3D%22529.0410958904109%22%20y2%3D%22337.73972602739724%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2263.28767123287671%22%20y1%3D%22375.0%22%20x2%3D%2263.28767123287671%22%20y2%3D%2235.0%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22544.0410958904109%22%20y%3D%22343.73972602739724%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%2263.28767123287671%22%20y%3D%2223.0%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cpolygon%20points%3D%22203.013698630137%2C291.16438356164383%20203.013698630137%2C104.86301369863014%20389.3150684931507%2C151.43835616438355%20389.3150684931507%2C244.5890410958904%22/%3E%3Cline%20x1%3D%22142.46575342465752%22%20y1%3D%22198.01369863013696%22%20x2%3D%22496.4383561643836%22%20y2%3D%22198.01369863013696%22%20marker-end%3D%22url%28%23arrow%29%22%20marker-start%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22491.78082191780817%22%20y%3D%22183.01369863013696%22%20text-anchor%3D%22middle%22%3E%E2%84%93%3C/text%3E%3Ccircle%20cx%3D%22203.013698630137%22%20cy%3D%22291.16438356164383%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22187.013698630137%22%20y%3D%22313.16438356164383%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22203.013698630137%22%20cy%3D%22198.01369863013696%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22187.013698630137%22%20y%3D%22188.01369863013696%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22203.013698630137%22%20cy%3D%22104.86301369863014%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22187.013698630137%22%20y%3D%2294.86301369863014%22%20text-anchor%3D%22middle%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22389.3150684931507%22%20cy%3D%22151.43835616438355%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22404.3150684931507%22%20y%3D%22141.43835616438355%22%20text-anchor%3D%22middle%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22389.3150684931507%22%20cy%3D%22198.01369863013696%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22404.3150684931507%22%20y%3D%22188.01369863013696%22%20text-anchor%3D%22middle%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22389.3150684931507%22%20cy%3D%22244.5890410958904%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22404.3150684931507%22%20y%3D%22266.58904109589037%22%20text-anchor%3D%22middle%22%3EF%3C/text%3E%3C/svg%3E", "15": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20570%20410%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%22109.86301369863014%22%20y1%3D%22347.05479452054794%22%20x2%3D%22109.86301369863014%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22109.86301369863014%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cline%20x1%3D%22156.43835616438355%22%20y1%3D%22347.05479452054794%22%20x2%3D%22156.43835616438355%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22156.43835616438355%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cline%20x1%3D%22203.013698630137%22%20y1%3D%22347.05479452054794%22%20x2%3D%22203.013698630137%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22203.013698630137%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cline%20x1%3D%22249.5890410958904%22%20y1%3D%22347.05479452054794%22%20x2%3D%22249.5890410958904%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22249.5890410958904%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cline%20x1%3D%22296.16438356164383%22%20y1%3D%22347.05479452054794%22%20x2%3D%22296.16438356164383%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22296.16438356164383%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Cline%20x1%3D%22342.7397260273973%22%20y1%3D%22347.05479452054794%22%20x2%3D%22342.7397260273973%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22342.7397260273973%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E6%3C/text%3E%3Cline%20x1%3D%22389.3150684931507%22%20y1%3D%22347.05479452054794%22%20x2%3D%22389.3150684931507%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22389.3150684931507%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E7%3C/text%3E%3Cline%20x1%3D%22435.8904109589041%22%20y1%3D%22347.05479452054794%22%20x2%3D%22435.8904109589041%22%20y2%3D%2262.945205479452056%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22435.8904109589041%22%20y%3D%22359.73972602739724%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22291.16438356164383%22%20x2%3D%22501.09589041095893%22%20y2%3D%22291.16438356164383%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22296.16438356164383%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22244.5890410958904%22%20x2%3D%22501.09589041095893%22%20y2%3D%22244.5890410958904%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22249.5890410958904%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22198.01369863013696%22%20x2%3D%22501.09589041095893%22%20y2%3D%22198.01369863013696%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22203.01369863013696%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22151.43835616438355%22%20x2%3D%22501.09589041095893%22%20y2%3D%22151.43835616438355%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22156.43835616438355%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cline%20x1%3D%2267.94520547945206%22%20y1%3D%22104.86301369863014%22%20x2%3D%22501.09589041095893%22%20y2%3D%22104.86301369863014%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2241.28767123287671%22%20y%3D%22109.86301369863014%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22337.73972602739724%22%20x2%3D%22529.0410958904109%22%20y2%3D%22337.73972602739724%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2263.28767123287671%22%20y1%3D%22375.0%22%20x2%3D%2263.28767123287671%22%20y2%3D%2235.0%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22544.0410958904109%22%20y%3D%22343.73972602739724%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%2263.28767123287671%22%20y%3D%2223.0%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cpolygon%20points%3D%22203.013698630137%2C291.16438356164383%20203.013698630137%2C104.86301369863014%20389.3150684931507%2C151.43835616438355%20389.3150684931507%2C244.5890410958904%22/%3E%3Cline%20x1%3D%22142.46575342465752%22%20y1%3D%22198.01369863013696%22%20x2%3D%22496.4383561643836%22%20y2%3D%22198.01369863013696%22%20marker-end%3D%22url%28%23arrow%29%22%20marker-start%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22491.78082191780817%22%20y%3D%22183.01369863013696%22%20text-anchor%3D%22middle%22%3E%E2%84%93%3C/text%3E%3Ccircle%20cx%3D%22203.013698630137%22%20cy%3D%22291.16438356164383%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22187.013698630137%22%20y%3D%22313.16438356164383%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22203.013698630137%22%20cy%3D%22198.01369863013696%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22187.013698630137%22%20y%3D%22188.01369863013696%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22203.013698630137%22%20cy%3D%22104.86301369863014%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22187.013698630137%22%20y%3D%2294.86301369863014%22%20text-anchor%3D%22middle%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22389.3150684931507%22%20cy%3D%22151.43835616438355%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22404.3150684931507%22%20y%3D%22141.43835616438355%22%20text-anchor%3D%22middle%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22389.3150684931507%22%20cy%3D%22198.01369863013696%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22404.3150684931507%22%20y%3D%22188.01369863013696%22%20text-anchor%3D%22middle%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22389.3150684931507%22%20cy%3D%22244.5890410958904%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22404.3150684931507%22%20y%3D%22266.58904109589037%22%20text-anchor%3D%22middle%22%3EF%3C/text%3E%3C/svg%3E", "36": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20460%20360%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22256.3253012048193%22%20x2%3D%22419.99999999999994%22%20y2%3D%22256.3253012048193%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22213.9759036144578%22%20y1%3D%22325.0%22%20x2%3D%22213.9759036144578%22%20y2%3D%2241.14457831325308%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22434.99999999999994%22%20y%3D%22262.3253012048193%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%22213.9759036144578%22%20y%3D%2229.144578313253078%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cpolyline%20points%3D%2269.75903614457829%2C323.4033132530121%2070.90361445783131%2C320.17131024096386%2072.0481927710843%2C316.9650602409639%2073.19277108433732%2C313.7845632530121%2074.33734939759034%2C310.6298192771084%2075.48192771084337%2C307.50082831325307%2076.62650602409636%2C304.3975903614458%2077.77108433734938%2C301.3201054216868%2078.91566265060237%2C298.26837349397596%2080.06024096385542%2C295.2423945783133%2081.20481927710841%2C292.2421686746988%2082.34939759036143%2C289.2676957831326%2083.49397590361443%2C286.3189759036145%2084.63855421686745%2C283.3960090361446%2085.78313253012047%2C280.4987951807229%2086.92771084337348%2C277.62733433734945%2088.07228915662648%2C274.7816265060241%2089.21686746987949%2C271.961671686747%2090.3614457831325%2C269.16746987951814%2091.50602409638553%2C266.39902108433733%2092.65060240963854%2C263.65632530120484%2093.79518072289154%2C260.93938253012055%2094.93975903614455%2C258.2481927710844%2096.08433734939756%2C255.58275602409645%2097.22891566265059%2C252.94307228915665%2098.3734939759036%2C250.3291415662651%2099.5180722891566%2C247.7409638554217%20100.66265060240961%2C245.17853915662656%20101.80722891566262%2C242.64186746987957%20102.95180722891564%2C240.13094879518076%20104.09638554216865%2C237.64578313253017%20105.24096385542167%2C235.18637048192775%20106.38554216867468%2C232.75271084337356%20107.53012048192768%2C230.34480421686752%20108.6746987951807%2C227.96265060240967%20109.81927710843371%2C225.60625000000005%20110.96385542168672%2C223.2756024096386%20112.10843373493972%2C220.97070783132537%20113.25301204819274%2C218.6915662650603%20114.39759036144576%2C216.43817771084338%20115.54216867469877%2C214.21054216867472%20116.68674698795178%2C212.00865963855426%20117.83132530120479%2C209.83253012048198%20118.97590361445779%2C207.6821536144579%20120.12048192771083%2C205.55753012048197%20121.26506024096383%2C203.45865963855425%20122.40963855421684%2C201.38554216867473%20123.55421686746985%2C199.3381777108434%20124.69879518072287%2C197.3165662650603%20125.84337349397588%2C195.32070783132536%20126.9879518072289%2C193.3506024096386%20128.1325301204819%2C191.40625000000006%20129.2771084337349%2C189.4876506024097%20130.42168674698792%2C187.59480421686752%20131.56626506024094%2C185.72771084337353%20132.71084337349396%2C183.88637048192777%20133.85542168674698%2C182.07078313253015%20134.99999999999997%2C180.2809487951808%20136.14457831325296%2C178.51686746987957%20137.28915662650599%2C176.77853915662655%20138.433734939759%2C175.06596385542173%20139.57831325301203%2C173.3791415662651%20140.72289156626505%2C171.71807228915668%20141.86746987951804%2C170.08275602409643%20143.01204819277103%2C168.47319277108437%20144.15662650602405%2C166.88938253012054%20145.30120481927707%2C165.33132530120486%20146.4457831325301%2C163.79902108433743%20147.59036144578312%2C162.2924698795181%20148.7349397590361%2C160.81167168674705%20149.87951807228913%2C159.35662650602413%20151.02409638554212%2C157.92733433734944%20152.16867469879514%2C156.52379518072294%20153.31325301204816%2C155.14600903614462%20154.45783132530119%2C153.79397590361452%20155.6024096385542%2C152.46769578313257%20156.7469879518072%2C151.16716867469884%20157.8915662650602%2C149.89239457831331%20159.0361445783132%2C148.64337349397596%20160.18072289156623%2C147.4201054216868%20161.32530120481925%2C146.22259036144584%20162.46987951807225%2C145.05082831325305%20163.61445783132527%2C143.9048192771085%20164.7590361445783%2C142.7845632530121%20165.90361445783128%2C141.69006024096393%20167.0481927710843%2C140.6213102409639%20168.19277108433732%2C139.5783132530121%20169.33734939759034%2C138.56106927710846%20170.48192771084334%2C137.56957831325306%20171.62650602409636%2C136.60384036144583%20172.77108433734935%2C135.6638554216868%20173.91566265060237%2C134.74962349397595%20175.0602409638554%2C133.86114457831331%20176.2048192771084%2C132.99841867469885%20177.3493975903614%2C132.1614457831326%20178.49397590361443%2C131.3502259036145%20179.63855421686742%2C130.5647590361446%20180.78313253012044%2C129.80504518072294%20181.92771084337346%2C129.07108433734945%20183.07228915662648%2C128.36287650602418%20184.21686746987947%2C127.68042168674705%20185.3614457831325%2C127.02371987951813%20186.50602409638552%2C126.3927710843374%20187.6506024096385%2C125.78757530120487%20188.79518072289153%2C125.20813253012054%20189.93975903614455%2C124.65444277108438%20191.08433734939754%2C124.12650602409644%20192.22891566265056%2C123.62432228915668%20193.37349397590359%2C123.14789156626512%20194.51807228915658%2C122.69721385542175%20195.6626506024096%2C122.27228915662656%20196.80722891566262%2C121.87311746987959%20197.95180722891564%2C121.49969879518076%20199.09638554216863%2C121.15203313253016%20200.24096385542165%2C120.83012048192776%20201.38554216867465%2C120.53396084337353%20202.53012048192767%2C120.26355421686753%20203.6746987951807%2C120.0189006024097%20204.8192771084337%2C119.80000000000004%20205.9638554216867%2C119.6068524096386%20207.10843373493972%2C119.43945783132534%20208.25301204819274%2C119.29781626506028%20209.39759036144574%2C119.18192771084344%20210.54216867469876%2C119.09179216867474%20211.68674698795178%2C119.02740963855427%20212.83132530120477%2C118.98878012048198%20213.9759036144578%2C118.97590361445788%20215.1204819277108%2C118.98878012048198%20216.2650602409638%2C119.02740963855427%20217.40963855421683%2C119.09179216867474%20218.55421686746985%2C119.18192771084344%20219.69879518072284%2C119.29781626506028%20220.84337349397586%2C119.43945783132534%20221.98795180722888%2C119.6068524096386%20223.13253012048187%2C119.80000000000004%20224.2771084337349%2C120.0189006024097%20225.42168674698792%2C120.26355421686753%20226.56626506024094%2C120.53396084337353%20227.71084337349393%2C120.83012048192776%20228.85542168674695%2C121.15203313253016%20229.99999999999994%2C121.49969879518076%20231.14457831325296%2C121.87311746987959%20232.28915662650599%2C122.27228915662656%20233.433734939759%2C122.69721385542175%20234.578313253012%2C123.14789156626512%20235.72289156626502%2C123.62432228915668%20236.86746987951804%2C124.12650602409644%20238.01204819277103%2C124.65444277108438%20239.15662650602405%2C125.20813253012054%20240.30120481927707%2C125.78757530120487%20241.44578313253007%2C126.3927710843374%20242.5903614457831%2C127.02371987951813%20243.7349397590361%2C127.68042168674705%20244.8795180722891%2C128.36287650602418%20246.02409638554212%2C129.07108433734945%20247.16867469879514%2C129.80504518072294%20248.31325301204816%2C130.5647590361446%20249.45783132530116%2C131.3502259036145%20250.60240963855418%2C132.1614457831326%20251.74698795180717%2C132.99841867469885%20252.8915662650602%2C133.86114457831331%20254.0361445783132%2C134.74962349397595%20255.18072289156623%2C135.6638554216868%20256.32530120481925%2C136.60384036144583%20257.4698795180722%2C137.56957831325306%20258.61445783132524%2C138.56106927710846%20259.75903614457826%2C139.5783132530121%20260.9036144578313%2C140.6213102409639%20262.0481927710843%2C141.69006024096393%20263.1927710843373%2C142.7845632530121%20264.3373493975903%2C143.9048192771085%20265.4819277108433%2C145.05082831325305%20266.62650602409633%2C146.22259036144584%20267.77108433734935%2C147.4201054216868%20268.91566265060237%2C148.64337349397596%20270.0602409638554%2C149.89239457831331%20271.2048192771084%2C151.16716867469884%20272.3493975903614%2C152.46769578313257%20273.4939759036144%2C153.79397590361452%20274.6385542168674%2C155.14600903614462%20275.78313253012044%2C156.52379518072294%20276.92771084337346%2C157.92733433734944%20278.0722891566264%2C159.35662650602413%20279.2168674698795%2C160.81167168674705%20280.36144578313247%2C162.2924698795181%20281.5060240963855%2C163.79902108433743%20282.6506024096385%2C165.33132530120486%20283.79518072289153%2C166.88938253012054%20284.93975903614455%2C168.47319277108437%20286.0843373493975%2C170.08275602409643%20287.22891566265054%2C171.71807228915668%20288.37349397590356%2C173.3791415662651%20289.5180722891566%2C175.06596385542173%20290.6626506024096%2C176.77853915662655%20291.8072289156626%2C178.51686746987957%20292.95180722891564%2C180.2809487951808%20294.0963855421686%2C182.07078313253015%20295.2409638554216%2C183.88637048192777%20296.38554216867465%2C185.72771084337353%20297.53012048192767%2C187.59480421686752%20298.6746987951807%2C189.4876506024097%20299.81927710843365%2C191.40625000000006%20300.9638554216867%2C193.3506024096386%20302.1084337349397%2C195.32070783132536%20303.2530120481927%2C197.3165662650603%20304.39759036144574%2C199.3381777108434%20305.54216867469876%2C201.38554216867473%20306.6867469879518%2C203.45865963855425%20307.83132530120474%2C205.55753012048197%20308.9759036144578%2C207.6821536144579%20310.1204819277108%2C209.83253012048198%20311.2650602409638%2C212.00865963855426%20312.4096385542168%2C214.21054216867472%20313.5542168674698%2C216.43817771084338%20314.69879518072287%2C218.6915662650603%20315.84337349397583%2C220.97070783132537%20316.98795180722885%2C223.2756024096386%20318.1325301204819%2C225.60625000000005%20319.2771084337349%2C227.96265060240967%20320.4216867469879%2C230.34480421686752%20321.5662650602409%2C232.75271084337356%20322.7108433734939%2C235.18637048192775%20323.8554216867469%2C237.64578313253017%20324.99999999999994%2C240.13094879518076%20326.14457831325296%2C242.64186746987957%20327.289156626506%2C245.17853915662656%20328.433734939759%2C247.7409638554217%20329.57831325301197%2C250.3291415662651%20330.722891566265%2C252.94307228915665%20331.867469879518%2C255.58275602409645%20333.01204819277103%2C258.2481927710844%20334.15662650602405%2C260.93938253012055%20335.301204819277%2C263.65632530120484%20336.44578313253004%2C266.39902108433733%20337.59036144578306%2C269.16746987951814%20338.7349397590361%2C271.961671686747%20339.8795180722891%2C274.7816265060241%20341.0240963855421%2C277.62733433734945%20342.16867469879514%2C280.4987951807229%20343.3132530120481%2C283.3960090361446%20344.4578313253012%2C286.3189759036145%20345.60240963855415%2C289.2676957831326%20346.74698795180717%2C292.2421686746988%20347.8915662650602%2C295.2423945783133%20349.0361445783132%2C298.26837349397596%20350.18072289156623%2C301.3201054216868%20351.3253012048192%2C304.3975903614458%20352.4698795180722%2C307.50082831325307%20353.61445783132524%2C310.6298192771084%20354.75903614457826%2C313.7845632530121%20355.9036144578313%2C316.9650602409639%20357.04819277108425%2C320.17131024096386%20358.1927710843373%2C323.4033132530121%22%20marker-start%3D%22url%28%23arrow%29%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22285.4939759036144%22%20y%3D%22123.13253012048199%22%20text-anchor%3D%22middle%22%3Ef%3C/text%3E%3C/svg%3E", "51": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20565%20330%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Ctext%20x%3D%2210%22%20y%3D%22111%22%3EGrupo%20A%3C/text%3E%3Cline%20x1%3D%22172%22%20y1%3D%22105%22%20x2%3D%22505%22%20y2%3D%22105%22/%3E%3Crect%20x%3D%22209%22%20y%3D%2283%22%20width%3D%22148%22%20height%3D%2244%22/%3E%3Crect%20class%3D%22boxfill%22%20x%3D%22209%22%20y%3D%2283%22%20width%3D%2274%22%20height%3D%2244%22/%3E%3Cline%20x1%3D%22283%22%20y1%3D%2283%22%20x2%3D%22283%22%20y2%3D%22127%22/%3E%3Ctext%20x%3D%22172%22%20y%3D%2250%22%20text-anchor%3D%22middle%22%3EM%C3%ADn.%3C/text%3E%3Ctext%20x%3D%22172%22%20y%3D%2272%22%20text-anchor%3D%22middle%22%3E16%3C/text%3E%3Ctext%20x%3D%22209%22%20y%3D%2250%22%20text-anchor%3D%22middle%22%3EQ1%3C/text%3E%3Ctext%20x%3D%22209%22%20y%3D%2272%22%20text-anchor%3D%22middle%22%3E17%3C/text%3E%3Ctext%20x%3D%22283%22%20y%3D%2250%22%20text-anchor%3D%22middle%22%3EMediana%3C/text%3E%3Ctext%20x%3D%22283%22%20y%3D%2272%22%20text-anchor%3D%22middle%22%3E19%3C/text%3E%3Ctext%20x%3D%22357%22%20y%3D%2250%22%20text-anchor%3D%22middle%22%3EQ3%3C/text%3E%3Ctext%20x%3D%22357%22%20y%3D%2272%22%20text-anchor%3D%22middle%22%3E21%3C/text%3E%3Ctext%20x%3D%22505%22%20y%3D%2250%22%20text-anchor%3D%22middle%22%3EM%C3%A1x.%3C/text%3E%3Ctext%20x%3D%22505%22%20y%3D%2272%22%20text-anchor%3D%22middle%22%3E25%3C/text%3E%3Cline%20x1%3D%22172%22%20y1%3D%2293%22%20x2%3D%22172%22%20y2%3D%22117%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%2293%22%20x2%3D%22505%22%20y2%3D%22117%22/%3E%3Ctext%20x%3D%2210%22%20y%3D%22271%22%3EGrupo%20B%3C/text%3E%3Cline%20x1%3D%22135%22%20y1%3D%22265%22%20x2%3D%22505%22%20y2%3D%22265%22/%3E%3Crect%20x%3D%22209%22%20y%3D%22243%22%20width%3D%22222%22%20height%3D%2244%22/%3E%3Crect%20class%3D%22boxfill%22%20x%3D%22209%22%20y%3D%22243%22%20width%3D%22148%22%20height%3D%2244%22/%3E%3Cline%20x1%3D%22357%22%20y1%3D%22243%22%20x2%3D%22357%22%20y2%3D%22287%22/%3E%3Ctext%20x%3D%22135%22%20y%3D%22210%22%20text-anchor%3D%22middle%22%3EM%C3%ADn.%3C/text%3E%3Ctext%20x%3D%22135%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%3E15%3C/text%3E%3Ctext%20x%3D%22209%22%20y%3D%22210%22%20text-anchor%3D%22middle%22%3EQ1%3C/text%3E%3Ctext%20x%3D%22209%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%3E17%3C/text%3E%3Ctext%20x%3D%22357%22%20y%3D%22210%22%20text-anchor%3D%22middle%22%3EMediana%3C/text%3E%3Ctext%20x%3D%22357%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%3E21%3C/text%3E%3Ctext%20x%3D%22431%22%20y%3D%22210%22%20text-anchor%3D%22middle%22%3EQ3%3C/text%3E%3Ctext%20x%3D%22431%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%3E23%3C/text%3E%3Ctext%20x%3D%22505%22%20y%3D%22210%22%20text-anchor%3D%22middle%22%3EM%C3%A1x.%3C/text%3E%3Ctext%20x%3D%22505%22%20y%3D%22232%22%20text-anchor%3D%22middle%22%3E25%3C/text%3E%3Cline%20x1%3D%22135%22%20y1%3D%22253%22%20x2%3D%22135%22%20y2%3D%22277%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22253%22%20x2%3D%22505%22%20y2%3D%22277%22/%3E%3C/svg%3E", "8": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20460%20470%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22133.4782608695652%22%20x2%3D%22420.00000000000006%22%20y2%3D%22133.4782608695652%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22205.21739130434784%22%20y1%3D%22435.0%22%20x2%3D%22205.21739130434784%22%20y2%3D%2259.13043478260866%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22435.00000000000006%22%20y%3D%22139.4782608695652%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%22205.21739130434784%22%20y%3D%2247.13043478260866%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Ccircle%20cx%3D%22246.5217391304348%22%20cy%3D%22257.39130434782606%22%20r%3D%22130.61581639825917%22/%3E%3Cline%20x1%3D%22205.21739130434784%22%20y1%3D%22257.39130434782606%22%20x2%3D%22246.5217391304348%22%20y2%3D%22257.39130434782606%22%20class%3D%22dash%22/%3E%3Cline%20x1%3D%22246.5217391304348%22%20y1%3D%22133.4782608695652%22%20x2%3D%22246.5217391304348%22%20y2%3D%22257.39130434782606%22%20class%3D%22dash%22/%3E%3Ccircle%20cx%3D%22246.5217391304348%22%20cy%3D%22257.39130434782606%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22264.5217391304348%22%20y%3D%22262.39130434782606%22%20text-anchor%3D%22middle%22%3EP%3C/text%3E%3Ctext%20x%3D%22180.21739130434784%22%20y%3D%22262.39130434782606%22%20text-anchor%3D%22middle%22%3E%E2%88%923%3C/text%3E%3Ctext%20x%3D%22246.5217391304348%22%20y%3D%22156.4782608695652%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Ccircle%20cx%3D%22205.21739130434784%22%20cy%3D%22133.4782608695652%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22188.21739130434784%22%20y%3D%22123.47826086956519%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ctext%20x%3D%22372.17391304347825%22%20y%3D%22187.17391304347825%22%20text-anchor%3D%22middle%22%3Ec%3C/text%3E%3C/svg%3E", "9": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20490%20480%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22413.15533980582524%22%20x2%3D%22449.99999999999994%22%20y2%3D%22413.15533980582524%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2271.84466019417475%22%20y1%3D%22445.0%22%20x2%3D%2271.84466019417475%22%20y2%3D%2235.00000000000006%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22464.99999999999994%22%20y%3D%22419.15533980582524%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%2271.84466019417475%22%20y%3D%2223.000000000000057%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cpolygon%20points%3D%22231.06796116504853%2C413.15533980582524%20231.06796116504853%2C253.93203883495147%20310.6796116504854%2C94.7087378640777%20390.2912621359223%2C413.15533980582524%22/%3E%3Ccircle%20cx%3D%22231.06796116504853%22%20cy%3D%22413.15533980582524%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22243.06796116504853%22%20y%3D%22401.15533980582524%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22231.06796116504853%22%20cy%3D%22253.93203883495147%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22243.06796116504853%22%20y%3D%22241.93203883495147%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22310.6796116504854%22%20cy%3D%2294.7087378640777%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22322.6796116504854%22%20y%3D%2282.7087378640777%22%20text-anchor%3D%22middle%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22390.2912621359223%22%20cy%3D%22413.15533980582524%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22402.2912621359223%22%20y%3D%22401.15533980582524%22%20text-anchor%3D%22middle%22%3ED%3C/text%3E%3Cline%20x1%3D%22231.06796116504853%22%20y1%3D%22413.15533980582524%22%20x2%3D%22231.06796116504853%22%20y2%3D%22253.93203883495147%22%20class%3D%22dash%22/%3E%3Cline%20x1%3D%2271.84466019417475%22%20y1%3D%22253.93203883495147%22%20x2%3D%22231.06796116504853%22%20y2%3D%22253.93203883495147%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2251.84466019417475%22%20y%3D%22258.93203883495147%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cline%20x1%3D%22310.6796116504854%22%20y1%3D%22413.15533980582524%22%20x2%3D%22310.6796116504854%22%20y2%3D%2294.7087378640777%22%20class%3D%22dash%22/%3E%3Cline%20x1%3D%2271.84466019417475%22%20y1%3D%2294.7087378640777%22%20x2%3D%22310.6796116504854%22%20y2%3D%2294.7087378640777%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2251.84466019417475%22%20y%3D%2299.7087378640777%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Ctext%20x%3D%22231.06796116504853%22%20y%3D%22438.15533980582524%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Ctext%20x%3D%22310.6796116504854%22%20y%3D%22438.15533980582524%22%20text-anchor%3D%22middle%22%3E6%3C/text%3E%3Ctext%20x%3D%22390.2912621359223%22%20y%3D%22438.15533980582524%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Ctext%20x%3D%2257.84466019417475%22%20y%3D%22436.15533980582524%22%20text-anchor%3D%22middle%22%3E0%3C/text%3E%3C/svg%3E", "13": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20480%20420%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2239.99999999999999%22%20y1%3D%22351.26506024096386%22%20x2%3D%22390.0%22%20y2%3D%22351.26506024096386%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2273.73493975903614%22%20y1%3D%22385.0%22%20x2%3D%2273.73493975903614%22%20y2%3D%2235.0%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22405.0%22%20y%3D%22357.26506024096386%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%2273.73493975903614%22%20y%3D%2223.0%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cpolygon%20points%3D%2273.73493975903614%2C351.26506024096386%20158.07228915662648%2C98.25301204819277%20326.7469879518072%2C351.26506024096386%22/%3E%3Cline%20x1%3D%2273.73493975903614%22%20y1%3D%2298.25301204819277%22%20x2%3D%22158.07228915662648%22%20y2%3D%2298.25301204819277%22%20class%3D%22dash%22/%3E%3Cline%20x1%3D%22158.07228915662648%22%20y1%3D%22351.26506024096386%22%20x2%3D%22158.07228915662648%22%20y2%3D%2298.25301204819277%22%20class%3D%22dash%22/%3E%3Ccircle%20cx%3D%2273.73493975903614%22%20cy%3D%22351.26506024096386%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%2255.73493975903614%22%20y%3D%22375.26506024096386%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22158.07228915662648%22%20cy%3D%2298.25301204819277%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22171.07228915662648%22%20y%3D%2286.25301204819277%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22326.7469879518072%22%20cy%3D%22351.26506024096386%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22338.7469879518072%22%20y%3D%22339.26506024096386%22%20text-anchor%3D%22middle%22%3EC%3C/text%3E%3Ctext%20x%3D%22158.07228915662648%22%20y%3D%22375.26506024096386%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Ctext%20x%3D%22326.7469879518072%22%20y%3D%22375.26506024096386%22%20text-anchor%3D%22middle%22%3E6%3C/text%3E%3Ctext%20x%3D%2253.73493975903614%22%20y%3D%22103.25301204819277%22%20text-anchor%3D%22middle%22%3E6%3C/text%3E%3C/svg%3E", "17": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20490%20430%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2264.65753424657535%22%20y1%3D%22365.41095890410963%22%20x2%3D%2264.65753424657535%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2264.65753424657535%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E%E2%88%921%3C/text%3E%3Cline%20x1%3D%22163.2876712328767%22%20y1%3D%22365.41095890410963%22%20x2%3D%22163.2876712328767%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22163.2876712328767%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cline%20x1%3D%22212.60273972602738%22%20y1%3D%22365.41095890410963%22%20x2%3D%22212.60273972602738%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22212.60273972602738%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cline%20x1%3D%22261.9178082191781%22%20y1%3D%22365.41095890410963%22%20x2%3D%22261.9178082191781%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22261.9178082191781%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cline%20x1%3D%22311.2328767123288%22%20y1%3D%22365.41095890410963%22%20x2%3D%22311.2328767123288%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22311.2328767123288%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cline%20x1%3D%22360.54794520547944%22%20y1%3D%22365.41095890410963%22%20x2%3D%22360.54794520547944%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22360.54794520547944%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22370.3424657534247%22%20x2%3D%22355.6164383561644%22%20y2%3D%22370.3424657534247%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22375.3424657534247%22%20text-anchor%3D%22middle%22%3E%E2%88%925%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22321.02739726027403%22%20x2%3D%22355.6164383561644%22%20y2%3D%22321.02739726027403%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22326.02739726027403%22%20text-anchor%3D%22middle%22%3E%E2%88%924%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22271.7123287671233%22%20x2%3D%22355.6164383561644%22%20y2%3D%22271.7123287671233%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22276.7123287671233%22%20text-anchor%3D%22middle%22%3E%E2%88%923%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22222.39726027397262%22%20x2%3D%22355.6164383561644%22%20y2%3D%22222.39726027397262%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22227.39726027397262%22%20text-anchor%3D%22middle%22%3E%E2%88%922%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22173.08219178082194%22%20x2%3D%22355.6164383561644%22%20y2%3D%22173.08219178082194%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22178.08219178082194%22%20text-anchor%3D%22middle%22%3E%E2%88%921%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%2274.45205479452059%22%20x2%3D%22355.6164383561644%22%20y2%3D%2274.45205479452059%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%2279.45205479452059%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22123.76712328767127%22%20x2%3D%22385.20547945205476%22%20y2%3D%22123.76712328767127%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22113.97260273972603%22%20y1%3D%22395.0%22%20x2%3D%22113.97260273972603%22%20y2%3D%2235.00000000000004%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22400.20547945205476%22%20y%3D%22129.76712328767127%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%22113.97260273972603%22%20y%3D%2223.000000000000043%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cpolygon%20points%3D%22163.2876712328767%2C222.39726027397262%20311.2328767123288%2C222.39726027397262%20261.9178082191781%2C321.02739726027403%22/%3E%3Ccircle%20cx%3D%22163.2876712328767%22%20cy%3D%22222.39726027397262%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22150.2876712328767%22%20y%3D%22210.39726027397262%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22311.2328767123288%22%20cy%3D%22222.39726027397262%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22326.2328767123288%22%20y%3D%22210.39726027397262%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22261.9178082191781%22%20cy%3D%22321.02739726027403%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22276.9178082191781%22%20y%3D%22343.02739726027403%22%20text-anchor%3D%22middle%22%3EC%3C/text%3E%3C/svg%3E", "18": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20490%20430%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2264.65753424657535%22%20y1%3D%22365.41095890410963%22%20x2%3D%2264.65753424657535%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2264.65753424657535%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E%E2%88%921%3C/text%3E%3Cline%20x1%3D%22163.2876712328767%22%20y1%3D%22365.41095890410963%22%20x2%3D%22163.2876712328767%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22163.2876712328767%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cline%20x1%3D%22212.60273972602738%22%20y1%3D%22365.41095890410963%22%20x2%3D%22212.60273972602738%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22212.60273972602738%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cline%20x1%3D%22261.9178082191781%22%20y1%3D%22365.41095890410963%22%20x2%3D%22261.9178082191781%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22261.9178082191781%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cline%20x1%3D%22311.2328767123288%22%20y1%3D%22365.41095890410963%22%20x2%3D%22311.2328767123288%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22311.2328767123288%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cline%20x1%3D%22360.54794520547944%22%20y1%3D%22365.41095890410963%22%20x2%3D%22360.54794520547944%22%20y2%3D%2264.58904109589044%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22360.54794520547944%22%20y%3D%22145.76712328767127%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22370.3424657534247%22%20x2%3D%22355.6164383561644%22%20y2%3D%22370.3424657534247%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22375.3424657534247%22%20text-anchor%3D%22middle%22%3E%E2%88%925%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22321.02739726027403%22%20x2%3D%22355.6164383561644%22%20y2%3D%22321.02739726027403%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22326.02739726027403%22%20text-anchor%3D%22middle%22%3E%E2%88%924%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22271.7123287671233%22%20x2%3D%22355.6164383561644%22%20y2%3D%22271.7123287671233%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22276.7123287671233%22%20text-anchor%3D%22middle%22%3E%E2%88%923%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22222.39726027397262%22%20x2%3D%22355.6164383561644%22%20y2%3D%22222.39726027397262%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22227.39726027397262%22%20text-anchor%3D%22middle%22%3E%E2%88%922%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%22173.08219178082194%22%20x2%3D%22355.6164383561644%22%20y2%3D%22173.08219178082194%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%22178.08219178082194%22%20text-anchor%3D%22middle%22%3E%E2%88%921%3C/text%3E%3Cline%20x1%3D%2269.58904109589042%22%20y1%3D%2274.45205479452059%22%20x2%3D%22355.6164383561644%22%20y2%3D%2274.45205479452059%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2291.97260273972603%22%20y%3D%2279.45205479452059%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22123.76712328767127%22%20x2%3D%22385.20547945205476%22%20y2%3D%22123.76712328767127%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22113.97260273972603%22%20y1%3D%22395.0%22%20x2%3D%22113.97260273972603%22%20y2%3D%2235.00000000000004%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22400.20547945205476%22%20y%3D%22129.76712328767127%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%22113.97260273972603%22%20y%3D%2223.000000000000043%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cpolygon%20points%3D%22163.2876712328767%2C222.39726027397262%20311.2328767123288%2C222.39726027397262%20261.9178082191781%2C321.02739726027403%22/%3E%3Ccircle%20cx%3D%22163.2876712328767%22%20cy%3D%22222.39726027397262%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22150.2876712328767%22%20y%3D%22210.39726027397262%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22311.2328767123288%22%20cy%3D%22222.39726027397262%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22326.2328767123288%22%20y%3D%22210.39726027397262%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22261.9178082191781%22%20cy%3D%22321.02739726027403%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%22276.9178082191781%22%20y%3D%22343.02739726027403%22%20text-anchor%3D%22middle%22%3EC%3C/text%3E%3C/svg%3E", "19": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20650%20370%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cpath%20d%3D%22M%2080%20280%20L%20215%2045%20L%20350%20280%22/%3E%3Cpath%20d%3D%22M%2080%20280%20A%20135%2055%200%200%200%20350%20280%22/%3E%3Cpath%20d%3D%22M%2080%20280%20A%20135%2055%200%200%201%20350%20280%22%20class%3D%22dash%22/%3E%3Cpath%20d%3D%22M%20161%20139%20A%2054%2020%200%200%200%20269%20139%22/%3E%3Cpath%20d%3D%22M%20161%20139%20A%2054%2020%200%200%201%20269%20139%22%20class%3D%22dash%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22215%22%20cy%3D%22280%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22215%22%20cy%3D%22159%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22215%22%20cy%3D%2245%22%20r%3D%224%22/%3E%3Ctext%20x%3D%22208%22%20y%3D%2232%22%3EB%3C/text%3E%3Ctext%20x%3D%2260%22%20y%3D%22286%22%3EA%3C/text%3E%3Ctext%20x%3D%22359%22%20y%3D%22286%22%3EC%3C/text%3E%3Ctext%20x%3D%22206%22%20y%3D%22266%22%3ED%3C/text%3E%3Ctext%20x%3D%22142%22%20y%3D%22145%22%3EG%3C/text%3E%3Ctext%20x%3D%22278%22%20y%3D%22145%22%3EE%3C/text%3E%3Ctext%20x%3D%22210%22%20y%3D%22184%22%3EK%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%2282%22%3EA%20%E2%88%92%20G%20%E2%88%92%20B%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%22119%22%3EA%20%E2%88%92%20D%20%E2%88%92%20C%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%22156%22%3EC%20%E2%88%92%20E%20%E2%88%92%20B%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%22214%22%3EG%2C%20K%2C%20E%3A%20puntos%20del%20cono%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%22260%22%3ED%3A%20centro%20de%20la%20base%3C/text%3E%3C/svg%3E", "20": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20650%20370%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cpath%20d%3D%22M%2080%20280%20L%20215%2045%20L%20350%20280%22/%3E%3Cpath%20d%3D%22M%2080%20280%20A%20135%2055%200%200%200%20350%20280%22/%3E%3Cpath%20d%3D%22M%2080%20280%20A%20135%2055%200%200%201%20350%20280%22%20class%3D%22dash%22/%3E%3Cpath%20d%3D%22M%20161%20139%20A%2054%2020%200%200%200%20269%20139%22/%3E%3Cpath%20d%3D%22M%20161%20139%20A%2054%2020%200%200%201%20269%20139%22%20class%3D%22dash%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22215%22%20cy%3D%22280%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22215%22%20cy%3D%22159%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22215%22%20cy%3D%2245%22%20r%3D%224%22/%3E%3Ctext%20x%3D%22208%22%20y%3D%2232%22%3EB%3C/text%3E%3Ctext%20x%3D%2260%22%20y%3D%22286%22%3EA%3C/text%3E%3Ctext%20x%3D%22359%22%20y%3D%22286%22%3EC%3C/text%3E%3Ctext%20x%3D%22206%22%20y%3D%22266%22%3ED%3C/text%3E%3Ctext%20x%3D%22142%22%20y%3D%22145%22%3EG%3C/text%3E%3Ctext%20x%3D%22278%22%20y%3D%22145%22%3EE%3C/text%3E%3Ctext%20x%3D%22210%22%20y%3D%22184%22%3EK%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%2282%22%3EA%20%E2%88%92%20G%20%E2%88%92%20B%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%22119%22%3EA%20%E2%88%92%20D%20%E2%88%92%20C%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%22156%22%3EC%20%E2%88%92%20E%20%E2%88%92%20B%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%22214%22%3EG%2C%20K%2C%20E%3A%20puntos%20del%20cono%3C/text%3E%3Ctext%20x%3D%22409%22%20y%3D%22260%22%3ED%3A%20centro%20de%20la%20base%3C/text%3E%3C/svg%3E", "21": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20650%20350%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cpath%20class%3D%22boxfill%22%20d%3D%22M%20150%2095%20L%20240%2045%20L%20240%20245%20L%20150%20295%20Z%22/%3E%3Cellipse%20cx%3D%22195%22%20cy%3D%2270%22%20rx%3D%22125%22%20ry%3D%2230%22/%3E%3Cpath%20d%3D%22M%2070%20270%20A%20125%2030%200%200%200%20320%20270%22/%3E%3Cpath%20d%3D%22M%2070%20270%20A%20125%2030%200%200%201%20320%20270%22%20class%3D%22dash%22/%3E%3Cline%20x1%3D%2270%22%20y1%3D%2270%22%20x2%3D%2270%22%20y2%3D%22270%22/%3E%3Cline%20x1%3D%22320%22%20y1%3D%2270%22%20x2%3D%22320%22%20y2%3D%22270%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22195%22%20cy%3D%2270%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22195%22%20cy%3D%22270%22%20r%3D%224%22/%3E%3Ctext%20x%3D%22177%22%20y%3D%2261%22%3EP%3C/text%3E%3Ctext%20x%3D%22325%22%20y%3D%2272%22%3EQ%3C/text%3E%3Ctext%20x%3D%22177%22%20y%3D%22289%22%3ER%3C/text%3E%3Ctext%20x%3D%22325%22%20y%3D%22277%22%3EM%3C/text%3E%3Ctext%20x%3D%22398%22%20y%3D%2285%22%3EPQ%20%3D%205%3B%20QM%20%3D%206%3C/text%3E%3Ctext%20x%3D%22398%22%20y%3D%22145%22%3EP%20y%20R%3A%20centros%20de%3C/text%3E%3Ctext%20x%3D%22398%22%20y%3D%22174%22%3Elas%20bases%20del%20cilindro%3C/text%3E%3C/svg%3E", "22": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20650%20370%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Ccircle%20cx%3D%22205%22%20cy%3D%22200%22%20r%3D%22140%22/%3E%3Cpath%20d%3D%22M%2074%20164%20A%20140%2027%2016%200%200%20331%20254%22/%3E%3Cpath%20class%3D%22dash%22%20d%3D%22M%2074%20164%20A%20140%2027%2016%200%201%20331%20254%22/%3E%3Cpath%20d%3D%22M%20210%2020%20L%20283%2045%20L%20378%20280%20L%20305%20255%20Z%22/%3E%3Cellipse%20class%3D%22boxfill%22%20cx%3D%22294%22%20cy%3D%22150%22%20rx%3D%2224%22%20ry%3D%2265%22%20transform%3D%22rotate%28-24%20294%20150%29%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22205%22%20cy%3D%22200%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22294%22%20cy%3D%22150%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22268%22%20cy%3D%2292%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22320%22%20cy%3D%22208%22%20r%3D%224%22/%3E%3Ctext%20x%3D%22183%22%20y%3D%22224%22%3EO%3C/text%3E%3Ctext%20x%3D%22285%22%20y%3D%22141%22%3EC%3C/text%3E%3Ctext%20x%3D%22259%22%20y%3D%2281%22%3EA%3C/text%3E%3Ctext%20x%3D%22325%22%20y%3D%22226%22%3EB%3C/text%3E%3Ctext%20x%3D%22239%22%20y%3D%2255%22%3E%CE%BB%3C/text%3E%3Ctext%20x%3D%22415%22%20y%3D%2282%22%3EA%20%E2%88%92%20C%20%E2%88%92%20B%3C/text%3E%3Ctext%20x%3D%22415%22%20y%3D%22119%22%3EOB%20%3D%205%3B%20AB%20%3D%208%3C/text%3E%3Ctext%20x%3D%22415%22%20y%3D%22173%22%3EO%3A%20centro%20de%20la%20esfera%3C/text%3E%3Ctext%20x%3D%22415%22%20y%3D%22219%22%3EC%3A%20centro%20de%20la%20secci%C3%B3n%3C/text%3E%3C/svg%3E", "23": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20650%20370%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Ccircle%20cx%3D%22205%22%20cy%3D%22200%22%20r%3D%22140%22/%3E%3Cpath%20d%3D%22M%2074%20164%20A%20140%2027%2016%200%200%20331%20254%22/%3E%3Cpath%20class%3D%22dash%22%20d%3D%22M%2074%20164%20A%20140%2027%2016%200%201%20331%20254%22/%3E%3Cpath%20d%3D%22M%20210%2020%20L%20283%2045%20L%20378%20280%20L%20305%20255%20Z%22/%3E%3Cellipse%20class%3D%22boxfill%22%20cx%3D%22294%22%20cy%3D%22150%22%20rx%3D%2224%22%20ry%3D%2265%22%20transform%3D%22rotate%28-24%20294%20150%29%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22205%22%20cy%3D%22200%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22294%22%20cy%3D%22150%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22268%22%20cy%3D%2292%22%20r%3D%224%22/%3E%3Ccircle%20class%3D%22dot%22%20cx%3D%22320%22%20cy%3D%22208%22%20r%3D%224%22/%3E%3Ctext%20x%3D%22183%22%20y%3D%22224%22%3EO%3C/text%3E%3Ctext%20x%3D%22285%22%20y%3D%22141%22%3EC%3C/text%3E%3Ctext%20x%3D%22259%22%20y%3D%2281%22%3EA%3C/text%3E%3Ctext%20x%3D%22325%22%20y%3D%22226%22%3EB%3C/text%3E%3Ctext%20x%3D%22239%22%20y%3D%2255%22%3E%CE%BB%3C/text%3E%3Ctext%20x%3D%22415%22%20y%3D%2282%22%3EA%20%E2%88%92%20C%20%E2%88%92%20B%3C/text%3E%3Ctext%20x%3D%22415%22%20y%3D%22119%22%3EOB%20%3D%205%3B%20AB%20%3D%208%3C/text%3E%3Ctext%20x%3D%22415%22%20y%3D%22173%22%3EO%3A%20centro%20de%20la%20esfera%3C/text%3E%3Ctext%20x%3D%22415%22%20y%3D%22219%22%3EC%3A%20centro%20de%20la%20secci%C3%B3n%3C/text%3E%3C/svg%3E", "28": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20520%20390%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22301.6666666666667%22%20x2%3D%22413.33333333333337%22%20y2%3D%22301.6666666666667%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2264.88888888888889%22%20y1%3D%22355.0%22%20x2%3D%2264.88888888888889%22%20y2%3D%2235.0%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22428.33333333333337%22%20y%3D%22307.6666666666667%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%2264.88888888888889%22%20y%3D%2223.0%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cline%20x1%3D%2264.88888888888889%22%20y1%3D%2288.33333333333334%22%20x2%3D%22207.11111111111111%22%20y2%3D%2288.33333333333334%22/%3E%3Cline%20x1%3D%22207.11111111111111%22%20y1%3D%2288.33333333333334%22%20x2%3D%22384.8888888888889%22%20y2%3D%22355.0%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%2264.88888888888889%22%20cy%3D%2288.33333333333334%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ccircle%20cx%3D%22207.11111111111111%22%20cy%3D%2288.33333333333334%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Cline%20x1%3D%22136.0%22%20y1%3D%22301.6666666666667%22%20x2%3D%22136.0%22%20y2%3D%2288.33333333333334%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22136.0%22%20y%3D%22324.6666666666667%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cline%20x1%3D%22207.11111111111111%22%20y1%3D%22301.6666666666667%22%20x2%3D%22207.11111111111111%22%20y2%3D%2288.33333333333334%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22207.11111111111111%22%20y%3D%22324.6666666666667%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Ctext%20x%3D%22349.33333333333337%22%20y%3D%22324.6666666666667%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Ctext%20x%3D%2244.888888888888886%22%20y%3D%2293.33333333333334%22%20text-anchor%3D%22middle%22%3E6%3C/text%3E%3Ctext%20x%3D%2250.888888888888886%22%20y%3D%22324.6666666666667%22%20text-anchor%3D%22middle%22%3E0%3C/text%3E%3Ctext%20x%3D%22294.22222222222223%22%20y%3D%22184.8888888888889%22%20text-anchor%3D%22middle%22%3Ef%3C/text%3E%3C/svg%3E", "32": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20400%20720%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Cstyle%3Etext%7Bfont-size%3A21px%7D%3C/style%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22258.2183908045977%22%20x2%3D%22360.00000000000006%22%20y2%3D%22258.2183908045977%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22150.34482758620692%22%20y1%3D%22295.0%22%20x2%3D%22150.34482758620692%22%20y2%3D%2237.52873563218384%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22375.00000000000006%22%20y%3D%22264.2183908045977%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%22150.34482758620692%22%20y%3D%2225.52873563218384%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cline%20x1%3D%2276.78160919540231%22%20y1%3D%22184.65517241379308%22%20x2%3D%22297.47126436781616%22%20y2%3D%22184.65517241379308%22/%3E%3Cline%20x1%3D%22150.34482758620692%22%20y1%3D%22111.09195402298846%22%20x2%3D%2291.49425287356323%22%20y2%3D%2252.2413793103448%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%2276.78160919540231%22%20cy%3D%22184.65517241379308%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ccircle%20cx%3D%22150.34482758620692%22%20cy%3D%22184.65517241379308%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ccircle%20cx%3D%22297.47126436781616%22%20cy%3D%22184.65517241379308%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ccircle%20cx%3D%22150.34482758620692%22%20cy%3D%22111.09195402298846%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Cline%20x1%3D%2276.78160919540231%22%20y1%3D%22258.2183908045977%22%20x2%3D%2276.78160919540231%22%20y2%3D%22184.65517241379308%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%2276.78160919540231%22%20y%3D%22282.2183908045977%22%20text-anchor%3D%22middle%22%3E%E2%88%922%3C/text%3E%3Cline%20x1%3D%22297.47126436781616%22%20y1%3D%22258.2183908045977%22%20x2%3D%22297.47126436781616%22%20y2%3D%22184.65517241379308%22%20class%3D%22dash%22/%3E%3Ctext%20x%3D%22297.47126436781616%22%20y%3D%22282.2183908045977%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Ctext%20x%3D%22165.34482758620692%22%20y%3D%22176.65517241379308%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Ctext%20x%3D%22165.34482758620692%22%20y%3D%22116.09195402298846%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Ctext%20x%3D%2254.71264367816093%22%20y%3D%2248.563218390804536%22%20text-anchor%3D%22middle%22%3EI.%3C/text%3E%3Cg%20transform%3D%22translate%280%20365%29%22%3E%3Cline%20x1%3D%2240.0%22%20y1%3D%22278.2183908045977%22%20x2%3D%22360.00000000000006%22%20y2%3D%22278.2183908045977%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22150.34482758620692%22%20y1%3D%22315.0%22%20x2%3D%22150.34482758620692%22%20y2%3D%2239.137931034482705%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22375.00000000000006%22%20y%3D%22284.2183908045977%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Ctext%20x%3D%22150.34482758620692%22%20y%3D%2227.137931034482705%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cpolyline%20points%3D%2276.78160919540231%2C278.2183908045977%20150.34482758620692%2C94.31034482758616%20284.59770114942535%2C317.94252873563215%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%2276.78160919540231%22%20cy%3D%22278.2183908045977%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ccircle%20cx%3D%22150.34482758620692%22%20cy%3D%2294.31034482758616%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ccircle%20cx%3D%22260.68965517241384%22%20cy%3D%22278.2183908045977%22%20r%3D%224%22%20class%3D%22dot%22/%3E%3Ctext%20x%3D%2276.78160919540231%22%20y%3D%22302.2183908045977%22%20text-anchor%3D%22middle%22%3E%E2%88%922%3C/text%3E%3Ctext%20x%3D%22260.68965517241384%22%20y%3D%22266.2183908045977%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Ctext%20x%3D%22132.34482758620692%22%20y%3D%2299.31034482758616%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Ctext%20x%3D%2254.71264367816093%22%20y%3D%2250.172413793103374%22%20text-anchor%3D%22middle%22%3EII.%3C/text%3E%3C/g%3E%3C/svg%3E", "54": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20400%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Ccircle%20cx%3D%22205%22%20cy%3D%22155%22%20r%3D%22100%22/%3E%3Ccircle%20cx%3D%22355%22%20cy%3D%22155%22%20r%3D%22100%22/%3E%3Ccircle%20cx%3D%22280%22%20cy%3D%22215%22%20r%3D%22127%22/%3E%3Ctext%20x%3D%22132%22%20y%3D%2240%22%3EF%C3%BAtbol%3C/text%3E%3Ctext%20x%3D%22331%22%20y%3D%2240%22%3EAtletismo%3C/text%3E%3Ctext%20x%3D%22231%22%20y%3D%22378%22%3EBaloncesto%3C/text%3E%3Ctext%20x%3D%22145%22%20y%3D%22140%22%3E26%3C/text%3E%3Ctext%20x%3D%22398%22%20y%3D%22145%22%3E6%3C/text%3E%3Ctext%20x%3D%22274%22%20y%3D%22310%22%3E20%3C/text%3E%3Ctext%20x%3D%22209%22%20y%3D%22217%22%3E10%3C/text%3E%3Ctext%20x%3D%22339%22%20y%3D%22217%22%3E12%3C/text%3E%3Ctext%20x%3D%22274%22%20y%3D%22171%22%3E4%3C/text%3E%3C/svg%3E", "55": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20400%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Ccircle%20cx%3D%22205%22%20cy%3D%22155%22%20r%3D%22100%22/%3E%3Ccircle%20cx%3D%22355%22%20cy%3D%22155%22%20r%3D%22100%22/%3E%3Ccircle%20cx%3D%22280%22%20cy%3D%22215%22%20r%3D%22127%22/%3E%3Ctext%20x%3D%22132%22%20y%3D%2240%22%3EF%C3%BAtbol%3C/text%3E%3Ctext%20x%3D%22331%22%20y%3D%2240%22%3EAtletismo%3C/text%3E%3Ctext%20x%3D%22231%22%20y%3D%22378%22%3EBaloncesto%3C/text%3E%3Ctext%20x%3D%22145%22%20y%3D%22140%22%3E26%3C/text%3E%3Ctext%20x%3D%22398%22%20y%3D%22145%22%3E6%3C/text%3E%3Ctext%20x%3D%22274%22%20y%3D%22310%22%3E20%3C/text%3E%3Ctext%20x%3D%22209%22%20y%3D%22217%22%3E10%3C/text%3E%3Ctext%20x%3D%22339%22%20y%3D%22217%22%3E12%3C/text%3E%3Ctext%20x%3D%22274%22%20y%3D%22171%22%3E4%3C/text%3E%3C/svg%3E", "56": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20400%22%3E%3Cstyle%3Etext%7Bfont%3A17px%20Arial%2Csans-serif%3Bfill%3A%23111%3Bstroke%3Awhite%3Bstroke-width%3A4%3Bpaint-order%3Astroke%7Dline%2Cpath%2Cpolyline%2Cpolygon%2Ccircle%2Cellipse%2Crect%7Bstroke%3A%23111%3Bstroke-width%3A2%3Bfill%3Anone%3Bstroke-linejoin%3Around%7D.dash%7Bstroke-dasharray%3A6%205%3Bstroke-width%3A1.4%7D.dot%7Bfill%3A%23111%3Bstroke%3Anone%7D.open%7Bfill%3Awhite%7D.boxfill%7Bfill%3A%23dce8f7%7D%3C/style%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20viewBox%3D%220%200%2010%2010%22%20refX%3D%228%22%20refY%3D%225%22%20markerWidth%3D%226%22%20markerHeight%3D%226%22%20orient%3D%22auto-start-reverse%22%3E%3Cpath%20d%3D%22M%200%200%20L%2010%205%20L%200%2010%20z%22%20style%3D%22fill%3A%23111%3Bstroke%3Anone%22/%3E%3C/marker%3E%3C/defs%3E%3Ccircle%20cx%3D%22205%22%20cy%3D%22155%22%20r%3D%22100%22/%3E%3Ccircle%20cx%3D%22355%22%20cy%3D%22155%22%20r%3D%22100%22/%3E%3Ccircle%20cx%3D%22280%22%20cy%3D%22215%22%20r%3D%22127%22/%3E%3Ctext%20x%3D%22132%22%20y%3D%2240%22%3EF%C3%BAtbol%3C/text%3E%3Ctext%20x%3D%22331%22%20y%3D%2240%22%3EAtletismo%3C/text%3E%3Ctext%20x%3D%22231%22%20y%3D%22378%22%3EBaloncesto%3C/text%3E%3Ctext%20x%3D%22145%22%20y%3D%22140%22%3E26%3C/text%3E%3Ctext%20x%3D%22398%22%20y%3D%22145%22%3E6%3C/text%3E%3Ctext%20x%3D%22274%22%20y%3D%22310%22%3E20%3C/text%3E%3Ctext%20x%3D%22209%22%20y%3D%22217%22%3E10%3C/text%3E%3Ctext%20x%3D%22339%22%20y%3D%22217%22%3E12%3C/text%3E%3Ctext%20x%3D%22274%22%20y%3D%22171%22%3E4%3C/text%3E%3C/svg%3E"};
+const QUESTIONS=[{"n": 1, "stem": "La longitud del radio de la circunferencia corresponde a", "opts": ["3", "4", "9", "16"], "answer": "B", "explanation": "El radio es √16=4.", "area": "Geometría", "context": "Considere la circunferencia dada por \\((x+5)^2+(y+3)^2=16\\)."}, {"n": 2, "stem": "Las coordenadas del centro de dicha circunferencia corresponden a", "opts": ["\\((5,3)\\)", "\\((3,5)\\)", "\\((-3,-5)\\)", "\\((-5,-3)\\)"], "answer": "D", "explanation": "En (x−h)²+(y−k)²=r², el centro es (h,k). Aquí el centro es (−5,−3).", "area": "Geometría", "context": "Considere la circunferencia dada por \\((x+5)^2+(y+3)^2=16\\)."}, {"n": 3, "stem": "Considere las siguientes proposiciones:<br>I. R\\((0,0)\\) es un punto ubicado en el exterior de la circunferencia.<br>II. P\\((-5,-5)\\) es un punto ubicado en el interior de la circunferencia.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "A", "explanation": "Para R, 5²+3²=34>16: es exterior. Para P, 0²+(−2)²=4<16: es interior. Ambas.", "area": "Geometría", "context": "Considere la circunferencia dada por \\((x+5)^2+(y+3)^2=16\\)."}, {"n": 4, "stem": "Considere las siguientes proposiciones:<br>I. La recta \\(y=-4\\) es tangente a la circunferencia.<br>II. La recta \\(y=4\\) es tangente a la circunferencia.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "C", "explanation": "El centro es (0,1) y el radio 5. La distancia a y=−4 es 5, así que es tangente; la distancia a y=4 es 3<5, así que es secante. Solo I.", "area": "Geometría", "context": "Considere la circunferencia \\(x^2+(y-1)^2=25\\)."}, {"n": 5, "stem": "Considere las siguientes proposiciones:<br>I. La recta \\(y=3\\) es exterior a la circunferencia.<br>II. La recta \\(y=x\\) es exterior a la circunferencia.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "C", "explanation": "El centro es el origen y el radio √8. La distancia a y=3 es 3>√8: exterior. La recta y=x pasa por el centro y es secante. Solo I.", "area": "Geometría", "context": "Considere la circunferencia \\(x^2+y^2=8\\)."}, {"n": 6, "stem": "Considere las siguientes proposiciones:<br>I. La recta \\(y=0\\) es secante a la circunferencia.<br>II. La recta \\(y=-2x\\) es secante a la circunferencia.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "A", "explanation": "Las dos rectas pasan por el centro (0,0) y cortan la circunferencia de radio 3 en dos puntos. Ambas.", "area": "Geometría", "context": "Considere la circunferencia \\(x^2+y^2=9\\)."}, {"n": 7, "stem": "La ecuación de una circunferencia está dada por \\(x^2+(y-3)^2=18\\). Si se traslada su centro 2 unidades a la derecha, paralelo al eje x, la ecuación obtenida corresponde a", "opts": ["\\(x^2+(y-5)^2=18\\)", "\\(x^2+(y-1)^2=18\\)", "\\((x+2)^2+(y-3)^2=18\\)", "\\((x-2)^2+(y-3)^2=18\\)"], "answer": "D", "explanation": "El centro (0,3) pasa a (2,3), sin cambiar el radio. La ecuación es (x−2)²+(y−3)²=18.", "area": "Geometría", "context": ""}, {"n": 8, "stem": "Si se traslada la circunferencia desplazando su centro 1 unidad a la izquierda, paralelo al eje x, y 2 unidades hacia arriba, paralelo al eje y, la ecuación obtenida corresponde a", "opts": ["\\(x^2+(y-1)^2=10\\)", "\\(x^2+(y+1)^2=10\\)", "\\((x-2)^2+(y+5)^2=10\\)", "\\((x+2)^2+(y+5)^2=10\\)"], "answer": "B", "explanation": "P(1,−3) pasa a (0,−1). Como A(0,0) pertenece a la circunferencia, r²=(0−1)²+(0+3)²=10. La nueva ecuación es x²+(y+1)²=10.", "area": "Geometría", "context": "Considere la gráfica de la circunferencia c. P es su centro y A es un punto de c."}, {"n": 9, "stem": "¿Cuál es el área del cuadrilátero ABCD?", "opts": ["16", "20", "24", "32"], "answer": "B", "explanation": "Dividimos por AC. El triángulo ADC tiene base AD=4 y altura 8, área 16. El triángulo ABC tiene base AB=4 y altura horizontal 2, área 4. Total=20.", "area": "Geometría", "context": "Considere el cuadrilátero ABCD representado en el sistema de coordenadas rectangulares."}, {"n": 10, "stem": "Considere un polígono regular cuyo ángulo externo mide \\(20^\\circ\\). Si la longitud de su lado es 4, su perímetro corresponde a", "opts": ["36", "40", "72", "80"], "answer": "C", "explanation": "Tiene 360/20=18 lados. Su perímetro es 18·4=72.", "area": "Geometría", "context": ""}, {"n": 11, "stem": "¿Cuál es el precio, en colones, de ese lote?", "opts": ["1 440 000", "2 880 000", "28 800 000", "72 000 000"], "answer": "C", "explanation": "Área=30·60=1800 m². Precio=1800·16 000=28 800 000 colones.", "area": "Geometría", "context": "En una urbanización, un lote rectangular mide 30 metros de ancho y 60 metros de largo. El precio por metro cuadrado es ₡16 000."}, {"n": 12, "stem": "Se desea cercar todo el perímetro del lote con una malla de 2,5 metros de altura. ¿Cuántos metros cuadrados de malla se necesitan?", "opts": ["225", "450", "555", "720"], "answer": "B", "explanation": "Perímetro=2(30+60)=180 m. Área de malla=180·2,5=450 m².", "area": "Geometría", "context": "En una urbanización, un lote rectangular mide 30 metros de ancho y 60 metros de largo. El precio por metro cuadrado es ₡16 000."}, {"n": 13, "stem": "¿Cuál es el perímetro del triángulo ABC?", "opts": ["\\(2\\sqrt{10}+12\\)", "\\(2\\sqrt{10}+14\\)", "\\(2\\sqrt{10}+2\\sqrt{13}+6\\)", "\\(2\\sqrt{10}+2\\sqrt{13}+8\\)"], "answer": "C", "explanation": "AB=2√10, BC=√((6−2)²+(0−6)²)=√52=2√13 y AC=6. El perímetro es 2√10+2√13+6.", "area": "Geometría", "context": "Considere el triángulo ABC de la figura, donde \\(AB=2\\sqrt{10}\\)."}, {"n": 14, "stem": "Considere las siguientes proposiciones:<br>I. B es homólogo con E.<br>II. A es homólogo con C.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "B y E están sobre el eje y permanecen fijos, por lo que B no es homólogo con E. A(3,1) se refleja en C(3,5). Solo II.", "area": "Geometría", "context": "La figura muestra el cuadrilátero ACDF, donde la recta \\(\\ell\\) es el eje de simetría."}, {"n": 15, "stem": "Considere las siguientes proposiciones:<br>I. \\(\\overline{BE}\\) es homólogo con \\(\\overline{AF}\\).<br>II. Los cuadriláteros ABEF y CBED son congruentes entre sí.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "BE queda fijo y AF se refleja en CD. La reflexión transforma ABEF en CBED y conserva longitudes y ángulos. Solo II.", "area": "Geometría", "context": "La figura muestra el cuadrilátero ACDF, donde la recta \\(\\ell\\) es el eje de simetría."}, {"n": 16, "stem": "Si se transforma el triángulo ABC de vértices A\\((2,3)\\), B\\((1,6)\\) y C\\((5,4)\\) mediante una homotecia centrada en el origen, de razón \\(k=2\\), ¿cuáles son las coordenadas del vértice homólogo con C?", "opts": ["\\((6,4)\\)", "\\((12,2)\\)", "\\((8,10)\\)", "\\((10,8)\\)"], "answer": "D", "explanation": "Multiplicamos ambas coordenadas de C por 2: C′=(2·5,2·4)=(10,8).", "area": "Geometría", "context": ""}, {"n": 17, "stem": "Al reflejar el triángulo ABC a través del eje de las abscisas, eje x, las coordenadas de uno de los nuevos vértices corresponden a", "opts": ["\\((4,2)\\)", "\\((2,4)\\)", "\\((4,-2)\\)", "\\((3,-4)\\)"], "answer": "A", "explanation": "La reflexión en el eje x transforma (x,y) en (x,−y). B(4,−2) pasa a (4,2); A pasa a (1,2) y C a (3,4).", "area": "Geometría", "context": "Considere la representación gráfica del triángulo ABC."}, {"n": 18, "stem": "Se realiza la traslación del triángulo ABC paralela al eje x en 3 unidades hacia la izquierda. ¿Cuáles son las coordenadas de uno de los nuevos vértices?", "opts": ["\\((0,-4)\\)", "\\((-2,1)\\)", "\\((-3,-2)\\)", "\\((-4,-2)\\)"], "answer": "A", "explanation": "La traslación transforma (x,y) en (x−3,y). C(3,−4) pasa a (0,−4); A pasa a (−2,−2) y B a (1,−2).", "area": "Geometría", "context": "Considere la representación gráfica del triángulo ABC."}, {"n": 19, "stem": "¿Cuál segmento representa la altura del cono que contiene los puntos A y C?", "opts": ["\\(\\overline{DE}\\)", "\\(\\overline{BC}\\)", "\\(\\overline{AC}\\)", "\\(\\overline{BD}\\)"], "answer": "D", "explanation": "La altura une perpendicularmente el vértice B con el centro D de la base: BD.", "area": "Geometría", "context": "Considere el cono circular recto de la figura. A−G−B, A−D−C y C−E−B. G, K y E son puntos del cono; D es el centro de su base."}, {"n": 20, "stem": "Si un plano paralelo a la base del cono contiene los puntos E, G y K, la sección plana producto de la intersección se denomina", "opts": ["Elipse.", "Parábola.", "Hipérbola.", "Circunferencia."], "answer": "D", "explanation": "Un corte paralelo a la base de un cono circular recto tiene borde circular: una circunferencia.", "area": "Geometría", "context": "Considere el cono circular recto de la figura. A−G−B, A−D−C y C−E−B. G, K y E son puntos del cono; D es el centro de su base."}, {"n": 21, "stem": "¿Cuál es el perímetro de la sección plana ilustrada?", "opts": ["22", "30", "32", "34"], "answer": "C", "explanation": "El plano que contiene los centros P y R produce una sección rectangular de ancho igual al diámetro 2·PQ=10 y altura QM=6. Perímetro=2(10+6)=32.", "area": "Geometría", "context": "La figura ilustra una sección plana producto de la intersección de un cilindro circular recto con el plano que contiene P y R. PQ=5 y QM=6. P y R son los centros de las bases."}, {"n": 22, "stem": "¿Cuál es la longitud de la sección plana?", "opts": ["\\(6\\pi\\)", "\\(8\\pi\\)", "\\(10\\pi\\)", "\\(16\\pi\\)"], "answer": "B", "explanation": "AB=8 es el diámetro del círculo de la sección. Su circunferencia mide π·8=8π.", "area": "Geometría", "context": "La figura ilustra una sección plana producto de la intersección del plano \\(\\lambda\\) con la superficie de una esfera. OB=5 y AB=8. A−C−B. O es el centro de la esfera; A, B y C están contenidos en el plano; C es el centro de la sección."}, {"n": 23, "stem": "¿Cuál es la distancia del centro de la esfera al centro de la sección plana dada?", "opts": ["3", "4", "5", "6"], "answer": "A", "explanation": "CB=AB/2=4 y OB=5. El triángulo OCB es rectángulo en C. OC=√(5²−4²)=3.", "area": "Geometría", "context": "La figura ilustra una sección plana producto de la intersección del plano \\(\\lambda\\) con la superficie de una esfera. OB=5 y AB=8. A−C−B. O es el centro de la esfera; A, B y C están contenidos en el plano; C es el centro de la sección."}, {"n": 24, "stem": "Si se define una nueva función con dominio \\(A\\cap B\\), ese dominio corresponde a", "opts": ["\\([3,6]\\)", "\\([1,6]\\)", "\\([1,7]\\)", "\\([2,7]\\)"], "answer": "A", "explanation": "Todos los números de [3,6] pertenecen también a [1,+∞[. La intersección es [3,6].", "area": "Relaciones y Álgebra", "context": "Considere \\(\\mathbb R\\) como conjunto universo y las funciones \\(m:A\\to E\\), con \\(A=[3,6]\\) y \\(E=[1,7]\\); y \\(p:B\\to C\\), con \\(B=[1,+\\infty[\\) y \\(C=[2,+\\infty[\\)."}, {"n": 25, "stem": "Si el ámbito de una nueva función corresponde a \\(E\\cup C\\), ese ámbito es", "opts": ["\\([1,7]\\)", "\\([2,7]\\)", "\\([1,+\\infty[\\)", "\\([2,+\\infty[\\)"], "answer": "C", "explanation": "Los intervalos [1,7] y [2,+∞[ se superponen y su unión es [1,+∞[.", "area": "Relaciones y Álgebra", "context": "Considere \\(\\mathbb R\\) como conjunto universo y las funciones \\(m:A\\to E\\), con \\(A=[3,6]\\) y \\(E=[1,7]\\); y \\(p:B\\to C\\), con \\(B=[1,+\\infty[\\) y \\(C=[2,+\\infty[\\)."}, {"n": 26, "stem": "Si el dominio de una nueva función es \\(A\\cup B\\), ese dominio corresponde a", "opts": ["\\([3,6]\\)", "\\([1,6]\\)", "\\([1,+\\infty[\\)", "\\([2,+\\infty[\\)"], "answer": "C", "explanation": "A está contenido en B. Su unión es B=[1,+∞[.", "area": "Relaciones y Álgebra", "context": "Considere \\(\\mathbb R\\) como conjunto universo y las funciones \\(m:A\\to E\\), con \\(A=[3,6]\\) y \\(E=[1,7]\\); y \\(p:B\\to C\\), con \\(B=[1,+\\infty[\\) y \\(C=[2,+\\infty[\\)."}, {"n": 27, "stem": "Si el ámbito de una nueva función corresponde al complemento de \\(E\\cap C\\), ese ámbito es", "opts": ["\\(]1,+\\infty[\\)", "\\(]7,+\\infty[\\)", "\\(]-\\infty,1]\\cup]1,7[\\)", "\\(]-\\infty,2[\\cup]7,+\\infty[\\)"], "answer": "D", "explanation": "E∩C=[2,7]. Su complemento en ℝ es ]−∞,2[∪]7,+∞[; los extremos 2 y 7 quedan excluidos.", "area": "Relaciones y Álgebra", "context": "Considere \\(\\mathbb R\\) como conjunto universo y las funciones \\(m:A\\to E\\), con \\(A=[3,6]\\) y \\(E=[1,7]\\); y \\(p:B\\to C\\), con \\(B=[1,+\\infty[\\) y \\(C=[2,+\\infty[\\)."}, {"n": 28, "stem": "De acuerdo con la gráfica, un intervalo del dominio de f donde f posee inversa corresponde a", "opts": ["\\([0,2]\\)", "\\([0,4]\\)", "\\([2,4]\\)", "\\([5,7]\\)"], "answer": "D", "explanation": "En [5,7], f es estrictamente decreciente y por tanto inyectiva. Los otros intervalos están sobre el segmento constante y repiten la ordenada 6.", "area": "Relaciones y Álgebra", "context": "Considere la gráfica de la función f."}, {"n": 29, "stem": "¿Cuál es el dominio de la inversa de f?", "opts": ["\\([0,+\\infty[\\)", "\\([1,+\\infty[\\)", "\\(]-\\infty,0]\\)", "\\(]-\\infty,1]\\)"], "answer": "D", "explanation": "El dominio de f⁻¹ es el ámbito de f. Como −√(x−1)≤0, el valor máximo es 1 y se alcanzan todos los menores: ]−∞,1].", "area": "Relaciones y Álgebra", "context": "Sea f una función que posee inversa, \\(f:[1,+\\infty[\\to P\\), dada por \\(f(x)=-\\sqrt{x-1}+1\\)."}, {"n": 30, "stem": "¿Cuál es el ámbito de la inversa de f?", "opts": ["\\([0,+\\infty[\\)", "\\([1,+\\infty[\\)", "\\(]-\\infty,0]\\)", "\\(]-\\infty,1]\\)"], "answer": "B", "explanation": "El ámbito de f⁻¹ es el dominio de f: [1,+∞[.", "area": "Relaciones y Álgebra", "context": "Sea f una función que posee inversa, \\(f:[1,+\\infty[\\to P\\), dada por \\(f(x)=-\\sqrt{x-1}+1\\)."}, {"n": 31, "stem": "Considere las siguientes proposiciones:<br>I. Es factible definir la composición \\((g\\circ f)(x)\\).<br>II. Es factible definir la composición \\((f\\circ g)(x)\\).<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "C", "explanation": "f toma los valores {1,2,5}, todos en el dominio de g, por lo que g∘f se define en todo el dominio de f. g toma {2,3,6}, que no está contenido en {0,1,2}; f∘g no se define en todo el dominio de g. Solo I.", "area": "Relaciones y Álgebra", "context": "Sean \\(f(x)=x^2+1\\), con dominio \\(\\{0,1,2\\}\\), y \\(g(x)=x+1\\), con dominio \\(\\{1,2,5\\}\\)."}, {"n": 32, "stem": "¿Cuál o cuáles de las gráficas de relaciones corresponden a la gráfica de una función?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "La relación I asigna dos ordenadas para algunas abscisas: las ramas horizontal y oblicua se superponen en x. II tiene una única ordenada para cada abscisa de su dominio. Solo II pasa la prueba de la recta vertical.", "area": "Relaciones y Álgebra", "context": "Considere las siguientes gráficas de relaciones."}, {"n": 33, "stem": "Considere las siguientes proposiciones:<br>I. \\(f(1200)>f(1500)\\).<br>II. Si \\(x<0\\), entonces \\(0<f(x)<1\\).<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "Como la base 5>1, f es creciente: f(1200)<f(1500). Para exponentes negativos, 5ˣ es positivo y menor que 1. Solo II.", "area": "Relaciones y Álgebra", "context": "Considere la función exponencial f dada por \\(f(x)=5^x\\)."}, {"n": 34, "stem": "Considere las siguientes proposiciones:<br>I. La gráfica de f interseca el eje x.<br>II. \\((2,25)\\) pertenece al gráfico de f.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "5ˣ siempre es positivo, por lo que no corta el eje x. f(2)=5²=25, así que (2,25) pertenece al gráfico. Solo II.", "area": "Relaciones y Álgebra", "context": "Considere la función exponencial f dada por \\(f(x)=5^x\\)."}, {"n": 35, "stem": "Considere las siguientes proposiciones:<br>I. La inversa de f está dada por \\(f^{-1}(x)=\\log_3(x)\\).<br>II. La gráfica de f interseca el eje de las ordenadas en \\((0,1)\\).<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "A", "explanation": "La inversa de y=3ˣ es log₃(x), y f(0)=3⁰=1. Ambas.", "area": "Relaciones y Álgebra", "context": "Considere la función exponencial \\(f:\\mathbb R\\to\\mathbb R^+\\), dada por \\(f(x)=3^x\\)."}, {"n": 36, "stem": "Considere las siguientes proposiciones:<br>I. \\(a<0\\).<br>II. \\(c>0\\).<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "A", "explanation": "La parábola abre hacia abajo, de modo que a<0. Su corte con el eje y está sobre el eje x, por lo que c=f(0)>0. Ambas.", "area": "Relaciones y Álgebra", "context": "Considere la gráfica de f dada por \\(f(x)=ax^2+bx+c\\), con \\(a\\ne0\\)."}, {"n": 37, "stem": "Si \\((3,4)\\) pertenece a la recta \\(y=mx-23\\), el valor de m corresponde a", "opts": ["3", "4", "7", "9"], "answer": "D", "explanation": "4=3m−23 ⇒3m=27 ⇒m=9.", "area": "Relaciones y Álgebra", "context": ""}, {"n": 38, "stem": "Considere las siguientes proposiciones:<br>I. \\(0<a<1\\).<br>II. \\(f(64)=6\\).<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "logₐ(16)=4 significa a⁴=16. La base válida es a=2>1. Entonces log₂(64)=6. Solo II.", "area": "Relaciones y Álgebra", "context": "Considere la función \\(f(x)=\\log_a(x)\\), donde \\((16,4)\\) es un elemento de su gráfico."}, {"n": 39, "stem": "¿Cuánto es el ingreso por la venta de 200 pares de zapatos?", "opts": ["1 600 000", "2 400 000", "4 000 000", "8 000 000"], "answer": "C", "explanation": "El ingreso es precio de venta por cantidad: 20 000·200=4 000 000 colones.", "area": "Relaciones y Álgebra", "context": "En una fábrica, producir un par de zapatos cuesta ₡8000 y cada par se vende en ₡20 000."}, {"n": 40, "stem": "Una función que modela el costo total c(x), en colones, relacionado con x pares de zapatos producidos corresponde a", "opts": ["\\(c(x)=8000x\\)", "\\(c(x)=12000x\\)", "\\(c(x)=20000x\\)", "\\(c(x)=28000x\\)"], "answer": "A", "explanation": "Cada par cuesta producir 8000 colones; el costo total de x pares es 8000x.", "area": "Relaciones y Álgebra", "context": "En una fábrica, producir un par de zapatos cuesta ₡8000 y cada par se vende en ₡20 000."}, {"n": 41, "stem": "Considere las siguientes proposiciones:<br>I. El estudio inició con 3 millones de bacterias.<br>II. Exactamente dos días después de iniciado el estudio hay 6 millones de esas bacterias.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "B", "explanation": "Al inicio, p(0)=3⁰=1 millón. A los dos días, p(2)=3²=9 millones. Ninguna.", "area": "Relaciones y Álgebra", "context": "La población de una bacteria está modelada por \\(p(x)=3^x\\), donde p es la cantidad de bacterias en millones y x los días desde el inicio del estudio."}, {"n": 42, "stem": "¿Cuánto pagó Alfredo, en colones, por un pantalón?", "opts": ["24 450", "27 040", "37 400", "42 000"], "answer": "D", "explanation": "Sean p y c los precios del pantalón y la corbata: p+3c=48 900 y 2p+c=86 300. Multiplicamos la segunda por 3 y restamos la primera: 5p=210 000, por lo que p=42 000.", "area": "Relaciones y Álgebra", "context": "Alfredo pagó ₡48 900 por un pantalón y 3 corbatas. Una semana después pagó ₡86 300 por 2 pantalones y una corbata. Todas las corbatas tienen el mismo precio y todos los pantalones el mismo precio; los precios no cambiaron."}, {"n": 43, "stem": "Considere las siguientes proposiciones:<br>I. A los 4 segundos después de estimular el nervio se registraron 18 impulsos.<br>II. La cantidad máxima de impulsos se registra a los 6 segundos de haber estimulado ese nervio.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "r(4)=−16+48−20=12, no 18. La parábola abre hacia abajo y su vértice tiene t=−12/(2·(−1))=6, dentro del intervalo. Solo II.", "area": "Relaciones y Álgebra", "context": "Un fisiólogo establece que \\(r(t)=-t^2+12t-20\\) modela la cantidad de impulsos emitidos a los t segundos desde que se estimula cierto nervio, \\(2<t\\le10\\)."}, {"n": 44, "stem": "¿Cuál es la máxima utilidad, en dólares, que puede obtener el fabricante?", "opts": ["95", "190", "18 050", "36 100"], "answer": "C", "explanation": "El máximo se alcanza en x=−190/(2·(−1/2))=190. u(190)=−190²/2+190·190=18 050 dólares.", "area": "Relaciones y Álgebra", "context": "La utilidad en dólares en función del precio de venta x está dada por \\(u(x)=-\\frac{x^2}{2}+190x\\)."}, {"n": 45, "stem": "La moda de las estaturas corresponde a", "opts": ["178 cm.", "183 cm.", "Un valor menor a 178 cm.", "Un valor mayor a 185 cm."], "answer": "D", "explanation": "La moda es la estatura más frecuente: 188 cm, que es mayor que 185 cm.", "area": "Estadística y Probabilidad", "context": "Las estaturas de jóvenes aspirantes a un equipo de fútbol tienen mediana 178 cm; la altura que más se repite es 188 cm."}, {"n": 46, "stem": "Considere las siguientes proposiciones:<br>I. La estatura mínima de los aspirantes es superior a 178 cm.<br>II. El 50 % de los aspirantes miden más de 188 cm.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "B", "explanation": "Una mediana de 178 no permite que el mínimo sea superior a 178. La moda 188 no determina que la mitad mida más de 188; además, la mediana ubica el centro de los datos en 178. Ninguna.", "area": "Estadística y Probabilidad", "context": "Las estaturas de jóvenes aspirantes a un equipo de fútbol tienen mediana 178 cm; la altura que más se repite es 188 cm."}, {"n": 47, "stem": "Considere las siguientes proposiciones:<br>I. Luis aprobó el curso.<br>II. Luis obtuvo una nota final superior a 65 e inferior a 73.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "C", "explanation": "Luis obtuvo 100·0,40+50·0,30+50·0,20+100·0,10=75. Aprobó, pero su nota no es inferior a 73. Solo I.", "area": "Estadística y Probabilidad", "context": "Un curso de inglés tiene cuatro componentes. Se aprueba con promedio ponderado mínimo 70, en escala de 1 a 100. La tabla muestra los porcentajes y las notas de tres estudiantes.<div class=\"table-wrap\"><table><thead><tr><th>Componente</th><th>Valor (%)</th><th>Ana</th><th>Juan</th><th>Luis</th></tr></thead><tbody><tr><td>Habla</td><td>40</td><td>50</td><td>100</td><td>100</td></tr><tr><td>Lectura</td><td>30</td><td>50</td><td>100</td><td>50</td></tr><tr><td>Escucha</td><td>20</td><td>100</td><td>50</td><td>50</td></tr><tr><td>Escritura</td><td>10</td><td>100</td><td>50</td><td>100</td></tr><tr><td>Total</td><td>100</td><td></td><td></td><td></td></tr></tbody></table></div>"}, {"n": 48, "stem": "Considere las siguientes proposiciones:<br>I. Ana aprobó el curso.<br>II. Juan aprobó el curso.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "Ana obtuvo 20+15+20+10=65: no aprobó. Juan obtuvo 40+30+10+5=85: aprobó. Solo II.", "area": "Estadística y Probabilidad", "context": "Un curso de inglés tiene cuatro componentes. Se aprueba con promedio ponderado mínimo 70, en escala de 1 a 100. La tabla muestra los porcentajes y las notas de tres estudiantes.<div class=\"table-wrap\"><table><thead><tr><th>Componente</th><th>Valor (%)</th><th>Ana</th><th>Juan</th><th>Luis</th></tr></thead><tbody><tr><td>Habla</td><td>40</td><td>50</td><td>100</td><td>100</td></tr><tr><td>Lectura</td><td>30</td><td>50</td><td>100</td><td>50</td></tr><tr><td>Escucha</td><td>20</td><td>100</td><td>50</td><td>50</td></tr><tr><td>Escritura</td><td>10</td><td>100</td><td>50</td><td>100</td></tr><tr><td>Total</td><td>100</td><td></td><td></td><td></td></tr></tbody></table></div>"}, {"n": 49, "stem": "El recorrido intercuartílico de las edades corresponde a", "opts": ["16", "20", "22", "26"], "answer": "A", "explanation": "El recorrido intercuartílico es Q₃−Q₁=36−20=16 años.", "area": "Estadística y Probabilidad", "context": "La tabla muestra datos de las edades, en años cumplidos, de un grupo de personas.<div class=\"table-wrap\"><table><thead><tr><th>Mínimo</th><th>Q₁</th><th>Q₂ (mediana)</th><th>Q₃</th><th>Máximo</th></tr></thead><tbody><tr><td>16</td><td>20</td><td>26</td><td>36</td><td>42</td></tr></tbody></table></div>"}, {"n": 50, "stem": "Considere las siguientes proposiciones:<br>I. El 25 % de las edades van desde 16 hasta 20 o menos años.<br>II. El 50 % de las edades van desde los 26 o más hasta los 42 años.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "A", "explanation": "Q₁=20 delimita el primer 25 % de los datos ordenados, desde el mínimo 16. La mediana 26 divide los datos en dos mitades; la mitad superior va de 26 a 42. Ambas, según la interpretación de los cuartiles utilizada en el ítem; con empates, los porcentajes de valores ≤20 o ≥26 pueden ser mayores.", "area": "Estadística y Probabilidad", "context": "La tabla muestra datos de las edades, en años cumplidos, de un grupo de personas.<div class=\"table-wrap\"><table><thead><tr><th>Mínimo</th><th>Q₁</th><th>Q₂ (mediana)</th><th>Q₃</th><th>Máximo</th></tr></thead><tbody><tr><td>16</td><td>20</td><td>26</td><td>36</td><td>42</td></tr></tbody></table></div>"}, {"n": 51, "stem": "Considere las siguientes proposiciones:<br>I. En el grupo B ninguna persona tiene más de 23 años.<br>II. En el grupo A hay al menos dos personas con una diferencia de 9 años en sus edades.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "El máximo del grupo B es 25, así que sí hay una persona mayor de 23. En A, el mínimo es 16 y el máximo 25: su diferencia es 9 años. Solo II.", "area": "Estadística y Probabilidad", "context": "Considere los diagramas de caja de las edades, en años cumplidos, de dos grupos de personas."}, {"n": 52, "stem": "La diferencia entre los coeficientes de variación de Matemáticas e Inglés corresponde aproximadamente a", "opts": ["3,83 %", "4,50 %", "6,22 %", "6,54 %"], "answer": "C", "explanation": "CV de Matemáticas=6/60·100=10 %. CV de Inglés=12/74·100≈16,22 %. La diferencia en magnitud es 6,22 puntos porcentuales.", "area": "Estadística y Probabilidad", "context": "La tabla contiene información de las calificaciones de dos asignaturas de un grupo de sétimo año y las notas de Ana y Luis.<div class=\"table-wrap\"><table><thead><tr><th>Asignatura</th><th>Media aritmética</th><th>Desviación estándar</th><th>Ana</th><th>Luis</th></tr></thead><tbody><tr><td>Inglés</td><td>74</td><td>12</td><td>70</td><td>62</td></tr><tr><td>Matemáticas</td><td>60</td><td>6</td><td>62</td><td>70</td></tr></tbody></table></div>"}, {"n": 53, "stem": "Considere las siguientes proposiciones:<br>I. En Matemáticas la posición relativa de Ana es 2.<br>II. Considerando las notas de Luis en las dos asignaturas, él obtuvo mejor posición relativa en Inglés.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "B", "explanation": "Ana en Matemáticas: z=(62−60)/6=1/3, no 2. Luis en Inglés: z=(62−74)/12=−1; en Matemáticas: z=(70−60)/6=5/3. Su posición relativa es mayor en Matemáticas. Ninguna.", "area": "Estadística y Probabilidad", "context": "La tabla contiene información de las calificaciones de dos asignaturas de un grupo de sétimo año y las notas de Ana y Luis.<div class=\"table-wrap\"><table><thead><tr><th>Asignatura</th><th>Media aritmética</th><th>Desviación estándar</th><th>Ana</th><th>Luis</th></tr></thead><tbody><tr><td>Inglés</td><td>74</td><td>12</td><td>70</td><td>62</td></tr><tr><td>Matemáticas</td><td>60</td><td>6</td><td>62</td><td>70</td></tr></tbody></table></div>"}, {"n": 54, "stem": "Si se elige una persona al azar, la probabilidad de que practique fútbol y baloncesto es", "opts": ["\\(\\frac{10}{78}\\)", "\\(\\frac{14}{78}\\)", "\\(\\frac{34}{78}\\)", "\\(\\frac{46}{78}\\)"], "answer": "B", "explanation": "La intersección fútbol∩baloncesto incluye las 10 personas de esos dos deportes y las 4 que practican los tres. Probabilidad=(10+4)/78=14/78.", "area": "Estadística y Probabilidad", "context": "El diagrama ilustra los gustos y preferencias de 78 personas por la práctica de fútbol, atletismo y baloncesto."}, {"n": 55, "stem": "Si se elige una persona al azar, la probabilidad de que practique al menos dos de esos deportes es", "opts": ["\\(\\frac{22}{78}\\)", "\\(\\frac{26}{78}\\)", "\\(\\frac{32}{78}\\)", "\\(\\frac{38}{78}\\)"], "answer": "B", "explanation": "Las regiones con dos o tres deportes suman 10+12+4=26. La intersección de solo fútbol y atletismo está vacía. Probabilidad=26/78.", "area": "Estadística y Probabilidad", "context": "El diagrama ilustra los gustos y preferencias de 78 personas por la práctica de fútbol, atletismo y baloncesto."}, {"n": 56, "stem": "Si se elige una persona al azar, la probabilidad de que practique solo atletismo o solo fútbol es", "opts": ["\\(\\frac4{78}\\)", "\\(\\frac{32}{78}\\)", "\\(\\frac{40}{78}\\)", "\\(\\frac{58}{78}\\)"], "answer": "B", "explanation": "Solo atletismo: 6. Solo fútbol: 26. Son regiones disjuntas: (6+26)/78=32/78.", "area": "Estadística y Probabilidad", "context": "El diagrama ilustra los gustos y preferencias de 78 personas por la práctica de fútbol, atletismo y baloncesto."}, {"n": 57, "stem": "Considere las siguientes proposiciones:<br>I. Al lanzar el dado una vez, la probabilidad de obtener un número diferente de cinco es igual a la probabilidad del complemento del evento «obtener el número cinco».<br>II. Al lanzar el dado una vez, la probabilidad de obtener un número par menor que seis es igual a la probabilidad de obtener el número cuatro.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "C", "explanation": "Diferente de cinco es exactamente el complemento de obtener cinco: ambos tienen probabilidad 5/6. Los pares menores que seis son 2 y 4, con probabilidad 2/6, mientras obtener cuatro tiene probabilidad 1/6. Solo I.", "area": "Estadística y Probabilidad", "context": "Considere un dado justo de seis caras, numeradas del 1 al 6 sin repetir ningún número."}, {"n": 58, "stem": "Si se elige una persona al azar, la probabilidad de que sea un hombre, sin importar su deporte favorito, o una mujer que prefiera béisbol es", "opts": ["\\(\\frac4{36}\\)", "\\(\\frac8{36}\\)", "\\(\\frac{24}{36}\\)", "\\(\\frac{32}{36}\\)"], "answer": "C", "explanation": "Hay 20 hombres y 16−12=4 mujeres que prefieren béisbol. Los grupos son disjuntos: (20+4)/36=24/36.", "area": "Estadística y Probabilidad", "context": "El deporte favorito de 20 hombres y 16 mujeres es el siguiente: 16 hombres prefieren fútbol y los demás béisbol; 12 mujeres prefieren fútbol y el resto béisbol."}, {"n": 59, "stem": "Si se elige una persona al azar, la probabilidad de que prefiera fútbol es", "opts": ["\\(\\frac{12}{36}\\)", "\\(\\frac{16}{36}\\)", "\\(\\frac{20}{36}\\)", "\\(\\frac{28}{36}\\)"], "answer": "D", "explanation": "Prefieren fútbol 16 hombres y 12 mujeres: 28 de las 36 personas. Probabilidad=28/36.", "area": "Estadística y Probabilidad", "context": "El deporte favorito de 20 hombres y 16 mujeres es el siguiente: 16 hombres prefieren fútbol y los demás béisbol; 12 mujeres prefieren fútbol y el resto béisbol."}, {"n": 60, "stem": "Considere las siguientes proposiciones:<br>I. La probabilidad de elegir una mujer que prefiera fútbol es cero.<br>II. La probabilidad de elegir un hombre o una mujer que prefiera fútbol o béisbol es uno.<br>¿Cuál o cuáles de ellas son verdaderas?", "opts": ["Ambas.", "Ninguna.", "Solo la I.", "Solo la II."], "answer": "D", "explanation": "Hay 12 mujeres que prefieren fútbol: probabilidad 12/36, distinta de cero. Todas las 36 personas pertenecen al evento descrito en II, por lo que su probabilidad es 1. Solo II.", "area": "Estadística y Probabilidad", "context": "El deporte favorito de 20 hombres y 16 mujeres es el siguiente: 16 hombres prefieren fútbol y los demás béisbol; 12 mujeres prefieren fútbol y el resto béisbol."}];
+const TOTAL=QUESTIONS.length,LIMIT=3*60*60;
+const SOLUTIONS={"1": "El radio es √16=4.", "2": "En (x−h)²+(y−k)²=r², el centro es (h,k). Aquí el centro es (−5,−3).", "3": "Para R, 5²+3²=34>16: es exterior. Para P, 0²+(−2)²=4<16: es interior. Ambas.", "4": "El centro es (0,1) y el radio 5. La distancia a y=−4 es 5, así que es tangente; la distancia a y=4 es 3<5, así que es secante. Solo I.", "5": "El centro es el origen y el radio √8. La distancia a y=3 es 3>√8: exterior. La recta y=x pasa por el centro y es secante. Solo I.", "6": "Las dos rectas pasan por el centro (0,0) y cortan la circunferencia de radio 3 en dos puntos. Ambas.", "7": "El centro (0,3) pasa a (2,3), sin cambiar el radio. La ecuación es (x−2)²+(y−3)²=18.", "8": "P(1,−3) pasa a (0,−1). Como A(0,0) pertenece a la circunferencia, r²=(0−1)²+(0+3)²=10. La nueva ecuación es x²+(y+1)²=10.", "9": "Dividimos por AC. El triángulo ADC tiene base AD=4 y altura 8, área 16. El triángulo ABC tiene base AB=4 y altura horizontal 2, área 4. Total=20.", "10": "Tiene 360/20=18 lados. Su perímetro es 18·4=72.", "11": "Área=30·60=1800 m². Precio=1800·16 000=28 800 000 colones.", "12": "Perímetro=2(30+60)=180 m. Área de malla=180·2,5=450 m².", "13": "AB=2√10, BC=√((6−2)²+(0−6)²)=√52=2√13 y AC=6. El perímetro es 2√10+2√13+6.", "14": "B y E están sobre el eje y permanecen fijos, por lo que B no es homólogo con E. A(3,1) se refleja en C(3,5). Solo II.", "15": "BE queda fijo y AF se refleja en CD. La reflexión transforma ABEF en CBED y conserva longitudes y ángulos. Solo II.", "16": "Multiplicamos ambas coordenadas de C por 2: C′=(2·5,2·4)=(10,8).", "17": "La reflexión en el eje x transforma (x,y) en (x,−y). B(4,−2) pasa a (4,2); A pasa a (1,2) y C a (3,4).", "18": "La traslación transforma (x,y) en (x−3,y). C(3,−4) pasa a (0,−4); A pasa a (−2,−2) y B a (1,−2).", "19": "La altura une perpendicularmente el vértice B con el centro D de la base: BD.", "20": "Un corte paralelo a la base de un cono circular recto tiene borde circular: una circunferencia.", "21": "El plano que contiene los centros P y R produce una sección rectangular de ancho igual al diámetro 2·PQ=10 y altura QM=6. Perímetro=2(10+6)=32.", "22": "AB=8 es el diámetro del círculo de la sección. Su circunferencia mide π·8=8π.", "23": "CB=AB/2=4 y OB=5. El triángulo OCB es rectángulo en C. OC=√(5²−4²)=3.", "24": "Todos los números de [3,6] pertenecen también a [1,+∞[. La intersección es [3,6].", "25": "Los intervalos [1,7] y [2,+∞[ se superponen y su unión es [1,+∞[.", "26": "A está contenido en B. Su unión es B=[1,+∞[.", "27": "E∩C=[2,7]. Su complemento en ℝ es ]−∞,2[∪]7,+∞[; los extremos 2 y 7 quedan excluidos.", "28": "En [5,7], f es estrictamente decreciente y por tanto inyectiva. Los otros intervalos están sobre el segmento constante y repiten la ordenada 6.", "29": "El dominio de f⁻¹ es el ámbito de f. Como −√(x−1)≤0, el valor máximo es 1 y se alcanzan todos los menores: ]−∞,1].", "30": "El ámbito de f⁻¹ es el dominio de f: [1,+∞[.", "31": "f toma los valores {1,2,5}, todos en el dominio de g, por lo que g∘f se define en todo el dominio de f. g toma {2,3,6}, que no está contenido en {0,1,2}; f∘g no se define en todo el dominio de g. Solo I.", "32": "La relación I asigna dos ordenadas para algunas abscisas: las ramas horizontal y oblicua se superponen en x. II tiene una única ordenada para cada abscisa de su dominio. Solo II pasa la prueba de la recta vertical.", "33": "Como la base 5>1, f es creciente: f(1200)<f(1500). Para exponentes negativos, 5ˣ es positivo y menor que 1. Solo II.", "34": "5ˣ siempre es positivo, por lo que no corta el eje x. f(2)=5²=25, así que (2,25) pertenece al gráfico. Solo II.", "35": "La inversa de y=3ˣ es log₃(x), y f(0)=3⁰=1. Ambas.", "36": "La parábola abre hacia abajo, de modo que a<0. Su corte con el eje y está sobre el eje x, por lo que c=f(0)>0. Ambas.", "37": "4=3m−23 ⇒3m=27 ⇒m=9.", "38": "logₐ(16)=4 significa a⁴=16. La base válida es a=2>1. Entonces log₂(64)=6. Solo II.", "39": "El ingreso es precio de venta por cantidad: 20 000·200=4 000 000 colones.", "40": "Cada par cuesta producir 8000 colones; el costo total de x pares es 8000x.", "41": "Al inicio, p(0)=3⁰=1 millón. A los dos días, p(2)=3²=9 millones. Ninguna.", "42": "Sean p y c los precios del pantalón y la corbata: p+3c=48 900 y 2p+c=86 300. Multiplicamos la segunda por 3 y restamos la primera: 5p=210 000, por lo que p=42 000.", "43": "r(4)=−16+48−20=12, no 18. La parábola abre hacia abajo y su vértice tiene t=−12/(2·(−1))=6, dentro del intervalo. Solo II.", "44": "El máximo se alcanza en x=−190/(2·(−1/2))=190. u(190)=−190²/2+190·190=18 050 dólares.", "45": "La moda es la estatura más frecuente: 188 cm, que es mayor que 185 cm.", "46": "Una mediana de 178 no permite que el mínimo sea superior a 178. La moda 188 no determina que la mitad mida más de 188; además, la mediana ubica el centro de los datos en 178. Ninguna.", "47": "Luis obtuvo 100·0,40+50·0,30+50·0,20+100·0,10=75. Aprobó, pero su nota no es inferior a 73. Solo I.", "48": "Ana obtuvo 20+15+20+10=65: no aprobó. Juan obtuvo 40+30+10+5=85: aprobó. Solo II.", "49": "El recorrido intercuartílico es Q₃−Q₁=36−20=16 años.", "50": "Q₁=20 delimita el primer 25 % de los datos ordenados, desde el mínimo 16. La mediana 26 divide los datos en dos mitades; la mitad superior va de 26 a 42. Ambas, según la interpretación de los cuartiles utilizada en el ítem; con empates, los porcentajes de valores ≤20 o ≥26 pueden ser mayores.", "51": "El máximo del grupo B es 25, así que sí hay una persona mayor de 23. En A, el mínimo es 16 y el máximo 25: su diferencia es 9 años. Solo II.", "52": "CV de Matemáticas=6/60·100=10 %. CV de Inglés=12/74·100≈16,22 %. La diferencia en magnitud es 6,22 puntos porcentuales.", "53": "Ana en Matemáticas: z=(62−60)/6=1/3, no 2. Luis en Inglés: z=(62−74)/12=−1; en Matemáticas: z=(70−60)/6=5/3. Su posición relativa es mayor en Matemáticas. Ninguna.", "54": "La intersección fútbol∩baloncesto incluye las 10 personas de esos dos deportes y las 4 que practican los tres. Probabilidad=(10+4)/78=14/78.", "55": "Las regiones con dos o tres deportes suman 10+12+4=26. La intersección de solo fútbol y atletismo está vacía. Probabilidad=26/78.", "56": "Solo atletismo: 6. Solo fútbol: 26. Son regiones disjuntas: (6+26)/78=32/78.", "57": "Diferente de cinco es exactamente el complemento de obtener cinco: ambos tienen probabilidad 5/6. Los pares menores que seis son 2 y 4, con probabilidad 2/6, mientras obtener cuatro tiene probabilidad 1/6. Solo I.", "58": "Hay 20 hombres y 16−12=4 mujeres que prefieren béisbol. Los grupos son disjuntos: (20+4)/36=24/36.", "59": "Prefieren fútbol 16 hombres y 12 mujeres: 28 de las 36 personas. Probabilidad=28/36.", "60": "Hay 12 mujeres que prefieren fútbol: probabilidad 12/36, distinta de cero. Todas las 36 personas pertenecen al evento descrito en II, por lo que su probabilidad es 1. Solo II."};
+// Se configura después de desplegar el servicio privado de recepción.
+const BACKEND_READY=false;
+const EXAM_KEY='ea_bxm_02_2017';
+const EXAM_API_URL='https://script.google.com/macros/s/AKfycbzTbcCEbXGaZgIHfiBo8MExOJ5o8wpPSTuvLgdaGHhRNzuwRCwPeyJy5xHXhy2P518HJQ/exec';
+const STORAGE_KEY='bxm012017_exam_v1';
+let current=0,answers=Array(TOTAL).fill(null),started=false,remaining=LIMIT,interval=null,reviewing=false,finished=false,timedOut=false;
+let student={firstName:'',lastName:''},attemptId='',ticket='',sessionId='',submitted=false,deliveryPending=false,examDeadline=0,availabilityOpen=false;
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify({answers,current,started,remaining,finished,timedOut,student,attemptId,ticket,sessionId,submitted,examDeadline,ts:Date.now()}));}
+function load(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(!x)return;answers=Array.isArray(x.answers)&&x.answers.length===TOTAL?x.answers:answers;current=Math.max(0,Math.min(TOTAL-1,Number(x.current)||0));started=!!x.started;finished=!!x.finished;timedOut=!!x.timedOut;remaining=typeof x.remaining==='number'?x.remaining:LIMIT;student=x.student||student;attemptId=x.attemptId||'';ticket=x.ticket||'';sessionId=x.sessionId||'';submitted=!!x.submitted;examDeadline=Number(x.examDeadline)||0;if(started&&!finished&&x.ts)remaining=Math.max(0,remaining-Math.floor((Date.now()-x.ts)/1000));if(examDeadline&&started&&!finished)remaining=Math.min(remaining,Math.max(0,Math.floor((examDeadline-Date.now())/1000)));}catch(e){}}
+function jsonp(op,extra={}){return new Promise((resolve,reject)=>{if(!EXAM_API_URL)return reject(new Error('La recepción de resultados no está configurada.'));const callback='examStatus_'+Math.random().toString(36).slice(2),script=document.createElement('script');let timer;const cleanup=()=>{clearTimeout(timer);delete window[callback];script.remove()};window[callback]=data=>{cleanup();resolve(data)};script.onerror=()=>{cleanup();reject(new Error('No se pudo consultar el horario.'))};timer=setTimeout(()=>{cleanup();reject(new Error('La consulta tardó demasiado.'))},12000);const u=new URL(EXAM_API_URL);u.searchParams.set('op',op);u.searchParams.set('exam',EXAM_KEY);u.searchParams.set('callback',callback);u.searchParams.set('_',Date.now());Object.entries(extra).forEach(([k,v])=>u.searchParams.set(k,v));script.src=u.toString();document.head.appendChild(script)})}
+let checkingAvailability=false;
+async function checkAvailability(){if(!BACKEND_READY){$('startBtn').disabled=true;$('availabilityMessage').textContent='Esta prueba aún no está habilitada.';$('retryAvailabilityBtn').style.display='none';return null}if(checkingAvailability)return null;checkingAvailability=true;availabilityOpen=false;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='none';try{for(let attempt=0;attempt<3;attempt++){try{$('availabilityMessage').textContent=attempt?`Reintentando conexión (${attempt+1}/3)…`:'Consultando disponibilidad de la prueba…';const status=await jsonp('status');availabilityOpen=!!status.open;$('availabilityMessage').textContent=status.open?`Prueba disponible. Horario de Costa Rica${status.endsAt?' · Cierra: '+status.endsAt:''}.`:(status.message||'La prueba está cerrada en este momento.');$('startBtn').disabled=!status.open;return status}catch(e){if(attempt===2)throw e;await new Promise(resolve=>setTimeout(resolve,800*(attempt+1)))}}}catch(e){availabilityOpen=false;$('availabilityMessage').textContent=e.message;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='inline-block';return null}finally{checkingAvailability=false}}
+function validName(s){return /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñÀ-ÿ' .-]{2,70}$/.test(s)}
+function uuid(){return crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>(Math.random()*16|0).toString(16))}
+function setDelivery(message,canRetry=false){$('deliveryStatus').textContent=message;$('deliveryStatus').hidden=!message;$('retryDeliveryBtn').style.display=canRetry?'inline-block':'none';$('retryDeliveryBtn').disabled=deliveryPending}
+function sendResults(){if(submitted||deliveryPending)return;deliveryPending=true;setDelivery('Enviando respuestas al registro privado…');if(!EXAM_API_URL||!ticket){deliveryPending=false;setDelivery('No se pudo enviar: falta configurar el registro privado.',false);return}const nonce=uuid(),frame=document.createElement('iframe'),form=document.createElement('form'),payload={attemptId,ticket,sessionId,firstName:student.firstName,lastName:student.lastName,answers,elapsedSeconds:LIMIT-remaining,timedOut};frame.name='exam_upload_'+nonce.replace(/-/g,'');frame.style.display='none';form.style.display='none';form.method='POST';form.action=EXAM_API_URL;form.target=frame.name;for(const [name,value] of Object.entries({exam:EXAM_KEY,nonce,payload:JSON.stringify(payload)})){const input=document.createElement('input');input.name=name;input.value=value;form.appendChild(input)}document.body.append(frame,form);let timer;const done=(message,retry)=>{clearTimeout(timer);window.removeEventListener('message',onMessage);form.remove();frame.remove();deliveryPending=false;if(!retry){submitted=true;save()}setDelivery(message,retry)};const onMessage=e=>{if(!/^https:\/\/(?:script\.google\.com|script\.googleusercontent\.com|[a-z0-9-]+[.-]script\.googleusercontent\.com)$/.test(e.origin)||e.data?.kind!=='educacion-abierta-exam-save'||e.data.nonce!==nonce)return;if(e.data.status==='ok'||e.data.status==='duplicate')done('',false);else if(e.data.message==='El intento caducó.'){jsonp('status').then(s=>{let c;try{c=JSON.parse(new TextDecoder('utf-8').decode(Uint8Array.from(atob(ticket.split('.')[0].replace(/-/g,'+').replace(/_/g,'/')),ch=>ch.charCodeAt(0))))}catch{}const reason=!c?'El comprobante no se pudo leer.':c.id!==attemptId?'El identificador del intento no coincide.':c.sesion!==s.sessionId?'Sesión del intento: '+String(c.sesion)+' · Sesión activa: '+String(s.sessionId)+'.':c.inicio<s.startsAtEpoch||c.inicio>s.endsAtEpoch?'El inicio del intento está fuera del horario.':s.serverNow-c.inicio>LIMIT*1000+120000?'Pasaron más de tres horas desde el inicio.':'El servidor rechazó un comprobante vigente; requiere revisar su implementación.';done(reason,true)}).catch(()=>done(e.data.message,true))}else done(e.data.message||'El registro no aceptó las respuestas.',true)};window.addEventListener('message',onMessage);timer=setTimeout(()=>done('No se pudo confirmar el envío. Pulsa «Reintentar envío».',true),20000);form.submit()}
+function fmt(s){s=Math.max(0,s);let h=Math.floor(s/3600),m=Math.floor(s%3600/60),ss=s%60;return[h,m,ss].map(v=>String(v).padStart(2,'0')).join(':')}
+function updateTimer(){$('timerTop').textContent=fmt(remaining);if(remaining<=0&&!finished){remaining=0;timedOut=true;clearInterval(interval);finish(true)}}
+function tick(){clearInterval(interval);if(finished)return;interval=setInterval(()=>{if(finished){clearInterval(interval);return}remaining=Math.max(0,Math.floor((examDeadline-Date.now())/1000));updateTimer();save()},1000)}
+function showExam(){started=true;$('startView').style.display='none';$('examView').style.display='block';render();updateTimer();if(!finished)tick();save()}
+async function start(){if(finished||started)return;const firstName=$('studentFirstName').value.trim().replace(/\s+/g,' '),lastName=$('studentLastName').value.trim().replace(/\s+/g,' ');if(!validName(firstName)||!validName(lastName)){$('availabilityMessage').textContent='Escribe tu nombre y tus apellidos antes de comenzar.';return}if(!availabilityOpen){await checkAvailability();if(!availabilityOpen)return}$('startBtn').disabled=true;$('availabilityMessage').textContent='Confirmando el horario…';try{const id=uuid(),response=await jsonp('start',{id});if(!response.open||!response.ticket)throw new Error(response.message||'La prueba ya no está disponible.');student={firstName,lastName};attemptId=id;ticket=response.ticket;sessionId=response.sessionId;examDeadline=Number(response.attemptEndsAtEpoch)||0;remaining=examDeadline?Math.max(0,Math.floor((examDeadline-Date.now())/1000)):LIMIT;if(remaining<=0)throw new Error('Terminó el horario de la prueba.');showExam()}catch(e){$('availabilityMessage').textContent=e.message;await checkAvailability()}}
+function showGrade(correct,total){const percent=100*correct/total;const passed=percent>=65;$('gradeStatus').textContent=`Nota: ${Math.round(percent)}/100 · ${passed?'Aprobado':'Reprobado'}`;$('gradeStatus').style.color=passed?'#166534':'#991b1b'}
+function renderAreaCharts(){
+  const groups=new Map();
+  QUESTIONS.forEach((q,i)=>{
+    // Los ítems sin clave de corrección no forman parte del porcentaje evaluable.
+    if(!q.answer)return;
+    const area=areaForItem(q.n);
+    if(!groups.has(area))groups.set(area,{correct:0,wrong:0,blank:0});
+    const group=groups.get(area);
+    if(q.answer==='*'||answers[i]===q.answer)group.correct++;
+    else if(!answers[i])group.blank++;
+    else group.wrong++;
+  });
+  const container=$('areaChartGrid');
+  container.replaceChildren();
+  for(const [area,{correct,wrong,blank}] of groups){
+    const total=correct+wrong+blank;
+    const percentage=100*correct/total;
+    const card=document.createElement('article');
+    card.className='area-chart-card';
+    const title=document.createElement('h4');title.textContent=area;
+    const pie=document.createElement('div');pie.className='area-pie';
+    pie.style.setProperty('--correct-end',percentage+'%');
+    pie.style.setProperty('--wrong-end',100*(correct+wrong)/total+'%');
+    pie.setAttribute('role','img');
+    pie.setAttribute('aria-label',`${area}: ${correct} correctas, ${wrong} incorrectas y ${blank} sin responder, de ${total} preguntas evaluables`);
+    const rate=document.createElement('div');rate.className='area-rate';rate.textContent=percentage.toFixed(0)+'% correctas';
+    const count=document.createElement('div');count.className='area-count';count.textContent=`${correct} de ${total} preguntas correctas`;
+    const legend=document.createElement('div');legend.className='area-legend';
+    for(const [label,value,color] of [['Correctas',correct,'#16a34a'],['Incorrectas',wrong,'#ef4444'],['Sin responder',blank,'#cbd5e1']]){
+      const item=document.createElement('span');
+      const swatch=document.createElement('i');swatch.style.setProperty('--legend-color',color);
+      item.append(swatch,`${label}: ${value}`);legend.append(item);
+    }
+    card.append(title,pie,rate,count,legend);container.append(card);
+  }
+}
+function areaForItem(n){return QUESTIONS[n-1].area}
+function render(){const q=QUESTIONS[current];$('qnum').textContent=`Ítem ${q.n} de ${TOTAL}`;$('qarea').textContent=`Área: ${areaForItem(q.n)}`;$('qstatus').textContent=answers[current]?`Respuesta: ${answers[current]}`:'Sin responder';$('qcontext').innerHTML=q.context||'';$('qcontext').style.display=q.context?'block':'none';const fig=FIGURES[q.n],fb=$('qfigure'),fi=$('qfigureimg');
+const figureBeforeStem=!!FIGURES[q.n];
+const afterFig=null;
+const afb=$('qaftergraphic'), afi=$('qaftergraphicimg');
+
+if(figureBeforeStem){
+  $('qtext').innerHTML='';
+}else{
+  $('qtext').innerHTML=q.stem;
+}
+if(fig){
+  fi.src=fig;
+  fb.style.display='block';
+}else{
+  fi.removeAttribute('src');
+  fb.style.display='none';
+}
+let afterText=document.getElementById('qafterfigure');
+if(!afterText){
+  afterText=document.createElement('div');
+  afterText.id='qafterfigure';
+  afterText.className='qtext';
+  fb.insertAdjacentElement('afterend',afterText);
+}
+if(figureBeforeStem){
+  afterText.innerHTML=q.stem;
+  afterText.style.display='block';
+}else{
+  afterText.innerHTML='';
+  afterText.style.display='none';
+}
+if(afterFig){
+  afi.src=afterFig;
+  afb.style.display='block';
+}else{
+  afi.removeAttribute('src');
+  afb.style.display='none';
+}
+const c=$('choices');c.innerHTML='';q.opts.forEach((txt,i)=>{const L='ABCD'[i],b=document.createElement('button');b.className='choice'+(answers[current]===L?' selected':'');b.innerHTML=`<span class="optletter">${L})</span>${txt}`;b.disabled=finished;if(finished){if(q.answer&&L===q.answer)b.classList.add('correct');else if(q.answer&&answers[current]===L)b.classList.add('wrong');}b.onclick=()=>{if(finished)return;answers[current]=L;save();render()};c.appendChild(b)});$('prevBtn').disabled=current===0;$('nextBtn').textContent=current===TOTAL-1?'Finalizar':'Siguiente →';$('finishBtn').textContent=finished?'Volver al resultado':'Finalizar examen';renderGrid();if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetClear&&MathJax.typesetClear([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);MathJax.typesetPromise([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);}}
+function renderGrid(){const g=$('grid');g.innerHTML='';let count=answers.filter(Boolean).length;QUESTIONS.forEach((q,i)=>{const b=document.createElement('button');b.className='qjump '+(answers[i]?'answered':'unanswered')+(i===current?' current':'');b.textContent=q.n;b.onclick=()=>{current=i;render();save()};g.appendChild(b)});$('countTop').textContent=`${count}/${TOTAL}`;$('countSide').textContent=`${count} de ${TOTAL} respondidos`}
+function finish(auto=false,confirmed=false){if(finished){$('examView').style.display='none';$('resultView').style.display='block';return}const pendientes=answers.filter(a=>!a).length;if(!auto&&!confirmed&&pendientes){$('pendingMessage').textContent=`Aún tienes ${pendientes} ítem(es) sin responder. ¿Deseas finalizar de todas formas?`;$('finishConfirm').style.display='flex';$('confirmFinishBtn').focus();return}$('finishConfirm').style.display='none';clearInterval(interval);if(auto)timedOut=true;remaining=Math.max(0,remaining);started=false;finished=true;save();$('examView').style.display='none';$('startView').style.display='none';$('resultView').style.display='block';showScore();sendResults();window.scrollTo({top:0,behavior:'smooth'})}
+function showScore(){let cor=0;answers.forEach((a,i)=>{if(QUESTIONS[i].answer&&a===QUESTIONS[i].answer)cor++});let graded=QUESTIONS.filter(q=>q.answer).length;let blank=answers.filter((x,i)=>!x&&QUESTIONS[i].answer).length,wrong=graded-cor-blank;$('scoreText').textContent=`${cor}/${graded}`;$('percentText').textContent=`${(cor/graded*100).toFixed(0)}% de respuestas correctas${timedOut?' · Tiempo agotado':''}`;showGrade(cor,graded);$('correctStat').textContent=cor;$('wrongStat').textContent=wrong;$('blankStat').textContent=blank;renderAreaCharts()}
+function review(){
+reviewing=!reviewing;
+const box=$('review');
+box.style.display=reviewing?'grid':'none';
+$('reviewBtn').textContent=reviewing?'Ocultar revisión':'Revisar respuestas';
+if(!reviewing)return;
+box.innerHTML='';
+QUESTIONS.forEach((q,i)=>{
+ const r=document.createElement('div');
+ r.className='review-row';
+ const ok=!!q.answer&&answers[i]===q.answer;
+ const sol=SOLUTIONS[String(q.n)]||'';
+ r.innerHTML=`<div><b>Ítem ${q.n}</b></div><div>Tu respuesta: <span class="${ok?'good':'bad'}">${answers[i]||'—'}</span></div><div>${q.answer?`Correcta: <span class="good">${q.answer}</span>`:"Sin opción correcta; no califica"}</div><div class="review-solution"><b>Solución:</b>${sol}</div>`;
+ r.onclick=()=>{current=i;$('resultView').style.display='none';$('examView').style.display='block';render()};
+ box.appendChild(r);
+});
+if(window.MathJax && MathJax.typesetPromise){
+  MathJax.typesetPromise([box]).catch(()=>{});
+}
+}
+function requestRestart(){$('restartConfirm').style.display='flex';$('cancelRestartBtn').focus()}
+function closeRestart(){$('restartConfirm').style.display='none';$('restartBtn').focus()}
+function restart(){clearInterval(interval);interval=null;localStorage.removeItem(STORAGE_KEY);answers=Array(TOTAL).fill(null);current=0;remaining=LIMIT;started=false;finished=false;timedOut=false;reviewing=false;student={firstName:'',lastName:''};attemptId='';ticket='';sessionId='';submitted=false;examDeadline=0;$('studentFirstName').value='';$('studentLastName').value='';$('finishConfirm').style.display='none';$('restartConfirm').style.display='none';$('review').style.display='none';$('reviewBtn').textContent='Revisar respuestas';$('examView').style.display='none';$('resultView').style.display='none';$('startView').style.display='block';renderGrid();updateTimer();checkAvailability()}
+if(new URLSearchParams(location.search).get('nuevo')==='1'){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}history.replaceState(null,'',location.pathname+location.hash)}
+$('startBtn').onclick=start;$('retryAvailabilityBtn').onclick=checkAvailability;$('finishBtn').onclick=()=>finish(false);$('cancelFinishBtn').onclick=()=>$('finishConfirm').style.display='none';$('confirmFinishBtn').onclick=()=>finish(false,true);$('finishConfirm').onclick=e=>{if(e.target===$('finishConfirm'))$('finishConfirm').style.display='none'};$('reviewBtn').onclick=review;$('retryDeliveryBtn').onclick=sendResults;$('menuBtn').onclick=()=>location.assign('https://profecharlie.github.io/Educacion-Secundaria/');$('restartBtn').onclick=requestRestart;$('cancelRestartBtn').onclick=closeRestart;$('confirmRestartBtn').onclick=restart;$('restartConfirm').onclick=e=>{if(e.target===$('restartConfirm'))closeRestart()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('finishConfirm').style.display==='flex')$('finishConfirm').style.display='none';if(e.key==='Escape'&&$('restartConfirm').style.display==='flex')closeRestart()});$('prevBtn').onclick=()=>{if(current>0){current--;render();save()}};$('nextBtn').onclick=()=>{if(current<TOTAL-1){current++;render();save()}else finish(false)};load();updateTimer();if(finished){$('startView').style.display='none';$('examView').style.display='none';$('resultView').style.display='block';showScore();setDelivery(submitted?'':'El envío quedó pendiente. Pulsa «Reintentar envío».',!submitted)}else if(started&&ticket&&attemptId){showExam()}else{started=false;checkAvailability()}
+if(document.modelContext?.registerTool){document.modelContext.registerTool({name:'read_exam_progress',description:'Consultar el progreso visible de la prueba sin revelar las respuestas correctas.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:()=>({total:TOTAL,current:current+1,answered:answers.filter(Boolean).length,remaining,finished})});}</script></body></html>
