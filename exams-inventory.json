@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-10",
+  "updatedAt": "2026-10-11",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -517,6 +517,27 @@
       "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
       "notes": "29 páginas de preguntas y clave final. Convocatoria 01-2020 (2), código 07 2020. Ítem 19 excluido por orientación de plano insuficientemente definida; la clave prevé B bajo la condición de plano tangente a la generatriz. Ítem 55 corregido de C a A: ambas proposiciones son verdaderas.",
       "validation": "60 preguntas cotejadas con las 29 páginas y clave final; 31 figuras SVG asociadas (15 únicas) reconstruidas y revisadas. 58 respuestas coinciden con la clave; 55 se corrige a A y 19 se excluye. Navegación, selección, confirmación, notas 59/59 y 0/59, blancos, bloqueo y reinicio comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-01-2020-V3",
+      "title": "Bachillerato por Madurez 01-2020 · V3",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1-6y-zsXNjmBiQehx7W7DUDXMTG7MHuHX",
+        "filename": "BxM 01 2020 V3 con respuestas.pdf",
+        "url": "https://drive.google.com/file/d/1-6y-zsXNjmBiQehx7W7DUDXMTG7MHuHX/view?usp=drivesdk",
+        "notes": "35 páginas: preguntas y clave final. Convocatoria 01-2020 (3), código 08 2020. Ítem 32 excluido: no hay escala vertical ni otro punto para determinar a < 1; la clave adjunta indica B. Ítem 54 corregido de B a D: A y D son disjuntos y solo la segunda proposición es verdadera. Ítem 48: se conserva el desliz tiempos del original y se interpreta según la tabla de kilómetros."
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "excludedItems": [
+        32
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "35 páginas: preguntas y clave final. Convocatoria 01-2020 (3), código 08 2020. Ítem 32 excluido: no hay escala vertical ni otro punto para determinar a < 1; la clave adjunta indica B. Ítem 54 corregido de B a D: A y D son disjuntos y solo la segunda proposición es verdadera. Ítem 48: se conserva el desliz tiempos del original y se interpreta según la tabla de kilómetros.",
+      "validation": "60 preguntas cotejadas con las 35 páginas y clave final; 22 figuras SVG asociadas (10 únicas) reconstruidas y revisadas. 58 respuestas coinciden con la clave; 54 se corrige a D y 32 se excluye. Selección, navegación, confirmación, notas 59/59 y 0/59, blancos, bloqueo y reinicio comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
