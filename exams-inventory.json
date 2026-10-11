@@ -565,6 +565,25 @@
       "notes": "24 páginas: 23 de preguntas y clave final. El documento se identifica como 2019_BxM_Suficiente_02_(NO_aplicada), código 05 2019; solucionario: NO APLICADO: FILTRADO. Se publica como práctica. Ítems 38 y 39 excluidos por ausencia de opción correcta (leche ₡300 e imagen n(3)=1). Ítem 51 corregido de A a C: una mediana de 80 puede ser el promedio de 79 y 81, sin observación de 80. Ítem 58 corregido de C a B: mayor probabilidad de rojo o blanco en bolsa #2.",
       "validation": "60 preguntas cotejadas con las 24 páginas y la clave final; 24 figuras SVG asociadas (11 únicas) y 4 opciones gráficas reconstruidas y revisadas. 56 respuestas coinciden con la clave; 51 se corrige a C y 58 a B; 38 y 39 se excluyen. Selección, navegación, confirmación, notas 58/58 y 0/58, blancos, bloqueo y reinicio comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-01-2018",
+      "title": "Bachillerato por Madurez 01-2018",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1_VqHlA1XVpPfNo70qUACzPDJMGqe2Jyy",
+        "filename": "BxM 01 2018.pdf",
+        "url": "https://drive.google.com/file/d/1_VqHlA1XVpPfNo70qUACzPDJMGqe2Jyy/view?usp=drivesdk",
+        "notes": "28 páginas escaneadas, numeradas de 5 a 32. Convocatoria 01-2018, código 04 2018. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 49: la mediana no garantiza una edad observada; ambas proposiciones son falsas (B)."
+      },
+      "items": 60,
+      "evaluableItems": 60,
+      "excludedItems": [],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "28 páginas escaneadas, numeradas de 5 a 32. Convocatoria 01-2018, código 04 2018. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 49: la mediana no garantiza una edad observada; ambas proposiciones son falsas (B).",
+      "validation": "60 preguntas cotejadas con las 28 páginas escaneadas; 23 figuras SVG asociadas (13 únicas) y 8 opciones gráficas reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada. Selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
