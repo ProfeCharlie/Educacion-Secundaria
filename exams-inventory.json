@@ -700,6 +700,28 @@
       "notes": "29 páginas escaneadas, numeradas de 5 a 33. Convocatoria 00-2017, código 03 2017. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 27 excluido: las opciones A y C son intervalos contenidos en el complemento de C=[4,+∞[.",
       "validation": "60 preguntas cotejadas con las 29 páginas escaneadas. 21 figuras SVG asociadas (14 únicas) reconstruidas y revisadas. Ítem 27 excluido por dos opciones válidas. Soluciones elaboradas sin clave oficial. Selección, navegación, confirmación, notas 59/59 y 0/59, blancos, bloqueo, reinicio e identificación comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-Comprensiva-03-2017",
+      "title": "Bachillerato a Distancia · Comprensiva 03-2017",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1kS-Z5vKwb_oL3zKVv9euB_rSpabkNVxp",
+        "filename": "Comprensiva BaD 03 2017.pdf",
+        "url": "https://drive.google.com/file/d/1kS-Z5vKwb_oL3zKVv9euB_rSpabkNVxp/view?usp=drivesdk",
+        "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Comprensiva, convocatoria 03-2017, código 07 2017; distinta de BaD 03-2017, código 06 2017. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 31 excluido por ambigüedad entre composición sobre dominio completo y dominio restringido. Ítem 53 excluido por el alcance de la afirmación de que toda comparación solo tiene sentido mediante variabilidad relativa."
+      },
+      "items": 60,
+      "evaluableItems": 58,
+      "excludedItems": [
+        31,
+        53
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Comprensiva, convocatoria 03-2017, código 07 2017; distinta de BaD 03-2017, código 06 2017. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 31 excluido por ambigüedad entre composición sobre dominio completo y dominio restringido. Ítem 53 excluido por el alcance de la afirmación de que toda comparación solo tiene sentido mediante variabilidad relativa.",
+      "validation": "60 preguntas cotejadas con las 29 páginas escaneadas. 23 figuras SVG asociadas (14 únicas) reconstruidas y revisadas. Ítems 31 y 53 excluidos por ambigüedad de interpretación. Soluciones elaboradas sin clave oficial. Selección, navegación, confirmación, notas 58/58 y 0/58, exclusiones, blancos, bloqueo, reinicio e identificación comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
