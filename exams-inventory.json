@@ -743,6 +743,28 @@
       "notes": "27 páginas escaneadas, numeradas de 5 a 31. Convocatoria 00-2018, código 03 2018. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 51 excluido: los diagramas de caja no determinan porcentajes exactos ni la comparación estricta de reprobados, especialmente con empates.",
       "validation": "60 preguntas cotejadas con las 27 páginas escaneadas. 20 figuras SVG asociadas (12 únicas) reconstruidas y revisadas. Ítem 51 excluido por insuficiencia de información para porcentajes exactos. Soluciones elaboradas sin clave oficial. Selección, navegación, confirmación, notas 59/59 y 0/59, exclusión, blancos, bloqueo, reinicio e identificación comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-01-2018",
+      "title": "Bachillerato a Distancia 01-2018",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1VXbyh9XOFGaSqg5sledQT8zhzhx1RhPl",
+        "filename": "BaD 01 2018.pdf",
+        "url": "https://drive.google.com/file/d/1VXbyh9XOFGaSqg5sledQT8zhzhx1RhPl/view?usp=drivesdk",
+        "notes": "26 páginas escaneadas: 25 numeradas de 5 a 29 y una final en blanco. Matemática n.º 1, convocatoria 01-2018, código 01 2018. 55 preguntas sin clave oficial. Ítems 7 y 28 excluidos por ambigüedad de incidencia perpendicular y dominio de composición. Ítem 19: aproximación π=3,14 de las opciones."
+      },
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        7,
+        28
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "26 páginas escaneadas: 25 numeradas de 5 a 29 y una final en blanco. Matemática n.º 1, convocatoria 01-2018, código 01 2018. 55 preguntas sin clave oficial. Ítems 7 y 28 excluidos por ambigüedad de incidencia perpendicular y dominio de composición. Ítem 19: aproximación π=3,14 de las opciones.",
+      "validation": "55 preguntas cotejadas con la fuente. 23 figuras SVG asociadas (13 únicas) reconstruidas y revisadas. Ítems 7 y 28 excluidos por ambigüedad. Selección, navegación, confirmación, notas 53/53 y 0/53, exclusiones, blancos, bloqueo, reinicio e identidad comprobados con DOM simulado.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
