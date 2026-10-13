@@ -765,6 +765,28 @@
       "notes": "26 páginas escaneadas: 25 numeradas de 5 a 29 y una final en blanco. Matemática n.º 1, convocatoria 01-2018, código 01 2018. 55 preguntas sin clave oficial. Ítems 7 y 28 excluidos por ambigüedad de incidencia perpendicular y dominio de composición. Ítem 19: aproximación π=3,14 de las opciones.",
       "validation": "55 preguntas cotejadas con la fuente. 23 figuras SVG asociadas (13 únicas) reconstruidas y revisadas. Ítems 7 y 28 excluidos por ambigüedad. Selección, navegación, confirmación, notas 53/53 y 0/53, exclusiones, blancos, bloqueo, reinicio e identidad comprobados con DOM simulado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-Comprensiva-03-2018",
+      "title": "Bachillerato a Distancia · Comprensiva 03-2018",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "18zbOHGZKFoEMpxrOPEhOshRictrv-6SS",
+        "filename": "Comprensiva BaD 03 2018.pdf",
+        "url": "https://drive.google.com/file/d/18zbOHGZKFoEMpxrOPEhOshRictrv-6SS/view?usp=drivesdk",
+        "notes": "15 páginas escaneadas con dos páginas impresas por imagen, numeradas de 5 a 33. Matemáticas Comprensiva, convocatoria 03-2018, código 07 2018; Matemáticas Comprensiva. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 17 excluido por admitir varias transformaciones sin fijar correspondencias. Ítem 51 excluido porque un cuartil o mediana no garantiza una nota observada exactamente igual a su valor."
+      },
+      "items": 60,
+      "evaluableItems": 58,
+      "excludedItems": [
+        17,
+        51
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "15 páginas escaneadas con dos páginas impresas por imagen, numeradas de 5 a 33. Matemáticas Comprensiva, convocatoria 03-2018, código 07 2018; Matemáticas Comprensiva. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 17 excluido por admitir varias transformaciones sin fijar correspondencias. Ítem 51 excluido porque un cuartil o mediana no garantiza una nota observada exactamente igual a su valor.",
+      "validation": "60 preguntas cotejadas con la fuente; 22 asociaciones SVG, 14 figuras únicas reconstruidas y revisadas. Selección, navegación, confirmación, notas 58/58 y 0/58, exclusiones, blancos, bloqueo, reinicio e identidad verificados.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
   "notes": [
