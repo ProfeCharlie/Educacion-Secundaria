@@ -868,6 +868,37 @@
       "notes": "28 páginas escaneadas, numeradas de 5 a 32; convocatoria 02-2019. Copia de 55 preguntas sin clave oficial. Soluciones elaboradas. Ítems 10 y 51 excluidos por altura no identificable y variabilidad absoluta/relativa no especificada. Ítem 13: altura CG del cono superior. Los cuartiles y medianas no se suponen necesariamente datos observados.",
       "validation": "55 preguntas cotejadas con las 28 páginas; 14 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 53/53 y 0/53, blancos, exclusiones 10/51, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de integrar en Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-01-2019",
+      "title": "Bachillerato por Madurez 01-2019",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "filename": "BxM 01 2019.pdf",
+        "notes": "29 páginas escaneadas numeradas de 5 a 33. Convocatoria 01-2019, código 04 2019. 60 preguntas sin clave oficial; soluciones elaboradas. Ítem 30 excluido por ambigüedad de dominio en composición; ítem 45: media estimada con marcas de clase. Ítem 50: no se conocen tamaños de las secciones. Ítem 23: dominio máximo compatible con llegada {0}."
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "excludedItems": [
+        30
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "29 páginas escaneadas numeradas de 5 a 33. Convocatoria 01-2019, código 04 2019. 60 preguntas sin clave oficial; soluciones elaboradas. Ítem 30 excluido por ambigüedad de dominio en composición; ítem 45: media estimada con marcas de clase. Ítem 50: no se conocen tamaños de las secciones. Ítem 23: dominio máximo compatible con llegada {0}.",
+      "validation": "60 preguntas cotejadas con las 29 páginas; 15 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 59/59 y 0/59, blancos, exclusión 30, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de integrar en Apps Script."
+    },
+    {
+      "path": "Bachillerato-Madurez-02-2019-Triangulo",
+      "title": "Bachillerato por Madurez 02-2019 · Triángulo",
+      "category": "Educación Abierta",
+      "status": "pendiente",
+      "source": {
+        "filename": "BxM 02 2019 Triángulo.pdf",
+        "notes": "Fuente de 33 páginas. Encabezado convocatoria 02-2019 Δ, código 06 2019. Distinta de la versión código 05 2019 no aplicada ya publicada como práctica; primeras preguntas comparadas. Pendiente transcripción, soluciones y figuras."
+      },
+      "items": 60,
+      "notes": "Variante distinta confirmada; pendiente programación."
     }
   ],
   "notes": [
@@ -877,4 +908,3 @@
     "La agrupación 2026-T01 debe compararse con su variante mejorado antes de transcribir."
   ]
 }
-
