@@ -926,6 +926,27 @@
       "notes": "Ítem30 excluido por ambigüedad del dominio de composición. Ítem23 toma dominio máximo compatible con llegada {0};45 media estimada;47 cuartiles por medianas de las mitades;51 compara recorrido y distingue cantidad de aprobados de proporción.",
       "validation": "60 preguntas cotejadas con las29 páginas;15 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 59/59 y 0/59, blancos, exclusión30, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Envío real pendiente.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de Apps Script."
+    },
+    {
+      "path": "Setimo-Terraba-01-2024",
+      "title": "Sétimo Térraba 01-2024",
+      "status": "publicada",
+      "items": 53,
+      "evaluableItems": 52,
+      "missingItems": [
+        15,
+        16
+      ],
+      "excludedItems": [
+        17
+      ],
+      "source": {
+        "filename": "01 2024.pdf",
+        "notes": "18 páginas; faltan 15 y 16; ítem 17 sin opción correcta para la expresión visible. Sin clave oficial; soluciones elaboradas."
+      },
+      "backend": "pendiente de integrar; inicio desactivado",
+      "validation": "53 preguntas, tres opciones; ocho figuras SVG revisadas; navegación, temporizador, calificación 52/52 y 0/52, blancos, revisión bloqueada, reinicio y numeración original comprobados con DOM local.",
+      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
     }
   ],
   "notes": [
@@ -935,4 +956,3 @@
     "La agrupación 2026-T01 debe compararse con su variante mejorado antes de transcribir."
   ]
 }
-
