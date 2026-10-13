@@ -828,6 +828,26 @@
       "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Bachillerato de Educación Diversificada a Distancia, convocatoria 03-2019, código 07 2019. 60 preguntas sin clave oficial. Soluciones elaboradas. Ítems 17 y 18 excluidos por ambigüedad de transformaciones/correspondencias; ítem 34 interpreta mínimo como punto mínimo; ítem 50 distingue cuartiles y medianas de notas observadas.",
       "validation": "60 preguntas cotejadas con las 29 páginas de la fuente; 28 asociaciones SVG, 14 figuras únicas reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 17/18, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación en navegador ni envío real.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de integrar en Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-00-2019",
+      "title": "Bachillerato a Distancia 00-2019",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "filename": "BaD 00 2019.pdf",
+        "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Bachillerato de Educación Diversificada a Distancia, convocatoria 00-2019, código 03 2019. 60 preguntas sin clave oficial. Soluciones elaboradas. Ítems 28 y 53 excluidos por ambigüedad de dominio de composición y de mejor posición relativa en tiempos de carrera. Ítem 45: media estimada mediante marcas de clase."
+      },
+      "items": 60,
+      "evaluableItems": 58,
+      "excludedItems": [
+        28,
+        53
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Bachillerato de Educación Diversificada a Distancia, convocatoria 00-2019, código 03 2019. 60 preguntas sin clave oficial. Soluciones elaboradas. Ítems 28 y 53 excluidos por ambigüedad de dominio de composición y de mejor posición relativa en tiempos de carrera. Ítem 45: media estimada mediante marcas de clase.",
+      "validation": "60 preguntas cotejadas con las 29 páginas; 13 figuras de contexto distintas y 4 opciones gráficas reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 28/53, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de integrar en Apps Script."
     }
   ],
   "notes": [
