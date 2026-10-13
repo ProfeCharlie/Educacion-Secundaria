@@ -947,6 +947,23 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "validation": "53 preguntas, tres opciones; ocho figuras SVG revisadas; navegación, temporizador, calificación 52/52 y 0/52, blancos, revisión bloqueada, reinicio y numeración original comprobados con DOM local.",
       "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+    },
+    {
+      "path": "Setimo-Terraba-02-2022",
+      "title": "Sétimo Térraba 02-2022",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        39
+      ],
+      "source": {
+        "filename": "02 2022.pdf",
+        "notes": "24 páginas con 55 ítems completos; sin clave oficial. Ítem 39 excluido por ángulo incompatible con longitudes; ítem 40 usa longitudes. Soluciones elaboradas."
+      },
+      "backend": "pendiente de integrar; inicio desactivado",
+      "validation": "55 ítems, cuatro opciones y diez figuras SVG cotejadas; navegación, temporizador, confirmación, calificación 54/54 y 0/54, blancos, revisión bloqueada y reinicio comprobados con DOM local.",
+      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
     }
   ],
   "notes": [
