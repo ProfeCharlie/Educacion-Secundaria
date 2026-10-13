@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-12",
+  "updatedAt": "2026-10-13",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -786,6 +786,27 @@
       "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
       "notes": "15 páginas escaneadas con dos páginas impresas por imagen, numeradas de 5 a 33. Matemáticas Comprensiva, convocatoria 03-2018, código 07 2018; Matemáticas Comprensiva. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 17 excluido por admitir varias transformaciones sin fijar correspondencias. Ítem 51 excluido porque un cuartil o mediana no garantiza una nota observada exactamente igual a su valor.",
       "validation": "60 preguntas cotejadas con la fuente; 22 asociaciones SVG, 14 figuras únicas reconstruidas y revisadas. Selección, navegación, confirmación, notas 58/58 y 0/58, exclusiones, blancos, bloqueo, reinicio e identidad verificados.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-01-2019",
+      "title": "Bachillerato a Distancia 01-2019",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "id": "1mnJI7iHgCKLOWsUpviUyVZyb6we07u8I",
+        "filename": "BaD 01 2019.pdf",
+        "url": "https://drive.google.com/file/d/1mnJI7iHgCKLOWsUpviUyVZyb6we07u8I/view?usp=drivesdk",
+        "notes": "28 páginas escaneadas, numeradas de 5 a 32. Matemática n.º 1 Específica, convocatoria 01-2019, código 01 2019. 55 preguntas sin clave oficial. Ítem 29 excluido por ambigüedad del dominio de composición. Ítem 41 resuelto con contraejemplo a la suficiencia de igualdad de las medidas centrales. Ítem 45: media estimada con marcas de clase."
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        29
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "28 páginas escaneadas, numeradas de 5 a 32. Matemática n.º 1 Específica, convocatoria 01-2019, código 01 2019. 55 preguntas sin clave oficial. Ítem 29 excluido por ambigüedad del dominio de composición. Ítem 41 resuelto con contraejemplo a la suficiencia de igualdad de las medidas centrales. Ítem 45: media estimada con marcas de clase.",
+      "validation": "55 preguntas cotejadas con la fuente; 18 asociaciones SVG, 10 figuras únicas reconstruidas y revisadas. Selección, navegación, confirmación, notas 54/54 y 0/54, exclusión 29, blancos, bloqueo, reinicio e identidad verificados. Contraejemplo del ítem 41 comprobado.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
     }
   ],
