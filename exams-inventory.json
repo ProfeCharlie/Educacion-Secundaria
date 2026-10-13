@@ -892,13 +892,21 @@
       "path": "Bachillerato-Madurez-02-2019-Triangulo",
       "title": "Bachillerato por Madurez 02-2019 · Triángulo",
       "category": "Educación Abierta",
-      "status": "pendiente",
+      "status": "publicada",
       "source": {
         "filename": "BxM 02 2019 Triángulo.pdf",
-        "notes": "Fuente de 33 páginas. Encabezado convocatoria 02-2019 Δ, código 06 2019. Distinta de la versión código 05 2019 no aplicada ya publicada como práctica; primeras preguntas comparadas. Pendiente transcripción, soluciones y figuras."
+        "notes": "Variante triángulo código 06 2019, distinta del código 05 2019 no aplicado. Ítems 19 y 27 excluidos por orientación del corte del cono y dominio de composición. Ítem 37 usa e≈2,72; ítem 43 media estimada con marcas de clase."
       },
       "items": 60,
-      "notes": "Variante distinta confirmada; pendiente programación."
+      "notes": "Variante triángulo código 06 2019, distinta del código 05 2019 no aplicado. Ítems 19 y 27 excluidos por orientación del corte del cono y dominio de composición. Ítem 37 usa e≈2,72; ítem 43 media estimada con marcas de clase.",
+      "evaluableItems": 58,
+      "excludedItems": [
+        19,
+        27
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "validation": "60 preguntas cotejadas con las 33 páginas. 11 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 19/27, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Envío real pendiente.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de Apps Script."
     }
   ],
   "notes": [
@@ -908,3 +916,4 @@
     "La agrupación 2026-T01 debe compararse con su variante mejorado antes de transcribir."
   ]
 }
+
