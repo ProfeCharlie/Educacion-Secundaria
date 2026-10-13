@@ -848,6 +848,26 @@
       "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Bachillerato de Educación Diversificada a Distancia, convocatoria 00-2019, código 03 2019. 60 preguntas sin clave oficial. Soluciones elaboradas. Ítems 28 y 53 excluidos por ambigüedad de dominio de composición y de mejor posición relativa en tiempos de carrera. Ítem 45: media estimada mediante marcas de clase.",
       "validation": "60 preguntas cotejadas con las 29 páginas; 13 figuras de contexto distintas y 4 opciones gráficas reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 28/53, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real.",
       "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de integrar en Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-02-2019",
+      "title": "Bachillerato a Distancia 02-2019",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "filename": "BaD 02 2019.pdf",
+        "notes": "28 páginas escaneadas, numeradas de 5 a 32; convocatoria 02-2019. Copia de 55 preguntas sin clave oficial. Soluciones elaboradas. Ítems 10 y 51 excluidos por altura no identificable y variabilidad absoluta/relativa no especificada. Ítem 13: altura CG del cono superior. Los cuartiles y medianas no se suponen necesariamente datos observados."
+      },
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        10,
+        51
+      ],
+      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "notes": "28 páginas escaneadas, numeradas de 5 a 32; convocatoria 02-2019. Copia de 55 preguntas sin clave oficial. Soluciones elaboradas. Ítems 10 y 51 excluidos por altura no identificable y variabilidad absoluta/relativa no especificada. Ítem 13: altura CG del cono superior. Los cuartiles y medianas no se suponen necesariamente datos observados.",
+      "validation": "55 preguntas cotejadas con las 28 páginas; 14 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 53/53 y 0/53, blancos, exclusiones 10/51, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real.",
+      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de integrar en Apps Script."
     }
   ],
   "notes": [
@@ -857,3 +877,4 @@
     "La agrupación 2026-T01 debe compararse con su variante mejorado antes de transcribir."
   ]
 }
+
