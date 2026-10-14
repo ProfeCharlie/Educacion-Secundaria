@@ -1124,6 +1124,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página,configuración y acceso en el menú publicados en GitHub.",
       "validation": "55 preguntas disponibles,53 evaluables,siete figuras SVG y soluciones elaboradas. Navegación,respuestas,confirmación,calificación 53/53 y 0/53,blancos,exclusiones23 y42,revisión bloqueada,reinicio y temporizador verificados con DOM local."
+    },
+    {
+      "path": "Setimo-Terraba-02-2020",
+      "title": "Sétimo Térraba 02-2020",
+      "status": "publicada",
+      "source": {
+        "filename": "02 2020.pdf",
+        "notes": "27 páginas; páginas numeradas 16 y 19 duplicadas. Encabezado interno convocatoria 01-2020 (2). Sin clave oficial; soluciones elaboradas."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Publicado en GitHub Pages; añadido al menú. Inicio desactivado hasta integrar Apps Script.",
+      "validation": "55 ítems, 4 opciones, 10 figuras SVG y soluciones cotejados con el PDF. Navegación, respuestas, confirmación, calificación 55/55 y 0/55, blancos, revisión bloqueada, reinicio y temporizador comprobados con DOM local. Página pública y menú verificados en navegador."
     }
   ],
   "notes": [
