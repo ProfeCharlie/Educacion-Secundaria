@@ -1024,6 +1024,23 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "validation": "55 ítems con cuatro opciones; nueve figuras SVG cotejadas; navegación,temporizador,confirmación,55/55 y0/55,blancos,revisión bloqueada y reinicio comprobados con DOM local.",
       "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+    },
+    {
+      "path": "Setimo-Terraba-02-2021",
+      "title": "Sétimo Térraba 02-2021",
+      "status": "publicada",
+      "source": {
+        "filename": "02 2021.pdf",
+        "notes": "27 páginas escaneadas numeradas de 5 a 31. El ítem 18 da 15, resultado ausente entre sus opciones."
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        18
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú publicados en GitHub.",
+      "validation": "55 ítems, 54 evaluables; diez figuras SVG y soluciones elaboradas. Navegación, respuestas, confirmación, calificación 54/54 y 0/54, blancos, exclusión 18, revisión bloqueada, reinicio y temporizador verificados con DOM local."
     }
   ],
   "notes": [
