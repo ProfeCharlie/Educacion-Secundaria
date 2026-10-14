@@ -1074,6 +1074,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú publicados en GitHub.",
       "validation": "55 preguntas disponibles, 53 evaluables, siete figuras SVG y soluciones elaboradas. Navegación, respuestas, confirmación, calificación 53/53 y 0/53, blancos, exclusiones 27 y 50, revisión bloqueada, reinicio y temporizador verificados con DOM local."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2021",
+      "title": "Noveno Zapandí 01-2021",
+      "status": "publicada",
+      "source": {
+        "filename": "01 2021.pdf",
+        "notes": "24 páginas: 23 de preguntas numeradas de 5 a 27 y tabla trigonométrica anexa. Sin clave oficial; soluciones elaboradas. En el ítem 10 se usa índice natural positivo del radical."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú publicados en GitHub.",
+      "validation": "55 preguntas evaluables, cinco figuras SVG, tabla trigonométrica y soluciones elaboradas. Navegación, respuestas, confirmación, calificación 55/55 y 0/55, blancos, revisión bloqueada, reinicio y temporizador verificados con DOM local."
     }
   ],
   "notes": [
