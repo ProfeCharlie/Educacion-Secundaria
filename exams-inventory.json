@@ -1009,6 +1009,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "validation": "54 preguntas, cuatro opciones salvo tres en2;once figuras SVG cotejadas. Numeración,navegación,temporizador,confirmación,51/51 y0/51,blancos,revisión bloqueada y reinicio comprobados con DOM local.",
       "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+    },
+    {
+      "path": "Setimo-Terraba-01-2021",
+      "title": "Sétimo Térraba 01-2021",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "source": {
+        "filename": "01 2021.pdf",
+        "notes": "28 páginas numeradas de5 a32;55 ítems completos. Sin clave oficial;soluciones elaboradas. En27 adyacente se usa como consecutivo;37 usa ángulo150° yBC=5,5 redondeado;38 usa longitudes dadas."
+      },
+      "backend": "pendiente de integrar; inicio desactivado",
+      "validation": "55 ítems con cuatro opciones; nueve figuras SVG cotejadas; navegación,temporizador,confirmación,55/55 y0/55,blancos,revisión bloqueada y reinicio comprobados con DOM local.",
+      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
     }
   ],
   "notes": [
