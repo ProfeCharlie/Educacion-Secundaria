@@ -1056,6 +1056,24 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú publicados en GitHub.",
       "validation": "55 preguntas evaluables, cinco figuras SVG y soluciones elaboradas. Navegación, respuestas, confirmación, calificación 55/55 y 0/55, blancos, revisión bloqueada, reinicio y temporizador verificados con DOM local."
+    },
+    {
+      "path": "Octavo-Ujarras-02-2021",
+      "title": "Octavo Ujarrás 02-2021",
+      "status": "publicada",
+      "source": {
+        "filename": "02 2021.pdf",
+        "notes": "28 páginas escaneadas numeradas de 5 a 32. Sin clave oficial; soluciones elaboradas. Ítem 27 sin tabla correcta; ítem 50 confunde resultado favorable y probabilidad. Ambos excluidos de la nota."
+      },
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        27,
+        50
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú publicados en GitHub.",
+      "validation": "55 preguntas disponibles, 53 evaluables, siete figuras SVG y soluciones elaboradas. Navegación, respuestas, confirmación, calificación 53/53 y 0/53, blancos, exclusiones 27 y 50, revisión bloqueada, reinicio y temporizador verificados con DOM local."
     }
   ],
   "notes": [
