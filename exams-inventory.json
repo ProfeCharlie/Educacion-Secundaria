@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-13",
+  "updatedAt": "2026-10-14",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -983,6 +983,31 @@
       },
       "backend": "pendiente de integrar; inicio desactivado",
       "validation": "54 preguntas, cuatro opciones y nueve figuras SVG cotejadas; navegación, numeración con salto de 1 a 3, temporizador, confirmación, calificación 53/53 y 0/53, blancos, revisión bloqueada y reinicio comprobados con DOM local.",
+      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+    },
+    {
+      "path": "Noveno-Zapandi-02-2022",
+      "title": "Noveno Zapandí 02-2022",
+      "status": "publicada",
+      "items": 54,
+      "evaluableItems": 51,
+      "missingItems": [
+        3
+      ],
+      "incompleteItems": [
+        2
+      ],
+      "excludedItems": [
+        2,
+        37,
+        48
+      ],
+      "source": {
+        "filename": "02 2022.pdf",
+        "notes": "24 páginas incluida tabla trigonométrica. Ítem 3 ausente;2 sin opción D. 37 admite factores xy y1+x;48 ambiguo por registro monetario. Sin clave oficial;soluciones elaboradas. Índice natural positivo en10;pirámides rectas en26 y27."
+      },
+      "backend": "pendiente de integrar; inicio desactivado",
+      "validation": "54 preguntas, cuatro opciones salvo tres en2;once figuras SVG cotejadas. Numeración,navegación,temporizador,confirmación,51/51 y0/51,blancos,revisión bloqueada y reinicio comprobados con DOM local.",
       "publication": "HTML y configuración publicados en GitHub; añadido al menú."
     }
   ],
