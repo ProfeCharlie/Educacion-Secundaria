@@ -1106,6 +1106,24 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú publicados en GitHub.",
       "validation": "55 preguntas disponibles,54 evaluables,quince figuras SVG,tabla trigonométrica y soluciones elaboradas. Navegación,respuestas,confirmación,calificación 54/54 y 0/54,blancos,exclusión42,revisión bloqueada,reinicio y temporizador verificados con DOM local."
+    },
+    {
+      "path": "Setimo-Terraba-01-2020",
+      "title": "Sétimo Térraba 01-2020",
+      "status": "publicada",
+      "source": {
+        "filename": "01 2020.pdf",
+        "notes": "23 páginas numeradas de 5 a 27. Sin clave oficial; soluciones elaboradas. Ítem23 sin símbolos legibles que distingan las opciones;ítem42 sin letra D legible. Ambos excluidos de la nota."
+      },
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        23,
+        42
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página,configuración y acceso en el menú publicados en GitHub.",
+      "validation": "55 preguntas disponibles,53 evaluables,siete figuras SVG y soluciones elaboradas. Navegación,respuestas,confirmación,calificación 53/53 y 0/53,blancos,exclusiones23 y42,revisión bloqueada,reinicio y temporizador verificados con DOM local."
     }
   ],
   "notes": [
