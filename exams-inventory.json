@@ -1139,6 +1139,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Publicado en GitHub Pages; añadido al menú. Inicio desactivado hasta integrar Apps Script.",
       "validation": "55 ítems, 4 opciones, 10 figuras SVG y soluciones cotejados con el PDF. Navegación, respuestas, confirmación, calificación 55/55 y 0/55, blancos, revisión bloqueada, reinicio y temporizador comprobados con DOM local. Página pública y menú verificados en navegador."
+    },
+    {
+      "path": "Octavo-Ujarras-01-2020",
+      "title": "Octavo Ujarrás 01-2020",
+      "status": "publicada",
+      "source": {
+        "filename": "01 2020.pdf",
+        "notes": "32 páginas numeradas de5 a36;55 preguntas evaluables. Sin clave oficial;soluciones elaboradas. Figura24–25 con D duplicada;ítem46 con B y C repetidas;ítem50 interpreta probable como posible."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página,configuración y acceso en el menú publicados en GitHub Pages.",
+      "validation": "55 ítems,4 opciones,ocho figuras SVG y soluciones cotejados con el PDF. Navegación,respuestas,confirmación,calificación 55/55 y 0/55,blancos,revisión bloqueada,reinicio y temporizador verificados con DOM local. Página pública y menú verificados en navegador."
     }
   ],
   "notes": [
