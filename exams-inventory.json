@@ -964,6 +964,26 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "validation": "55 ítems, cuatro opciones y diez figuras SVG cotejadas; navegación, temporizador, confirmación, calificación 54/54 y 0/54, blancos, revisión bloqueada y reinicio comprobados con DOM local.",
       "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+    },
+    {
+      "path": "Octavo-Ujarras-02-2022",
+      "title": "Octavo Ujarrás 02-2022",
+      "status": "publicada",
+      "items": 54,
+      "evaluableItems": 53,
+      "incompleteItems": [
+        2
+      ],
+      "excludedItems": [
+        5
+      ],
+      "source": {
+        "filename": "02 2022.pdf",
+        "notes": "27 páginas; ítem 2 solo tiene afirmación I, sin II ni opciones. Ítem 5 excluido: diferencia0,60 sin opción correcta. Numeración original preservada. Sin clave oficial; soluciones elaboradas."
+      },
+      "backend": "pendiente de integrar; inicio desactivado",
+      "validation": "54 preguntas, cuatro opciones y nueve figuras SVG cotejadas; navegación, numeración con salto de 1 a 3, temporizador, confirmación, calificación 53/53 y 0/53, blancos, revisión bloqueada y reinicio comprobados con DOM local.",
+      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
     }
   ],
   "notes": [
