@@ -1171,6 +1171,23 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página y configuración publicadas en GitHub; acceso desde el menú público verificado.",
       "validation": "55 ítems con cuatro opciones, ocho figuras SVG y soluciones elaboradas. Comprobaciones locales: calificación 55/55, respuestas en blanco, confirmación al finalizar, revisión bloqueada y cierre por tiempo. Portada pública y acceso desde el menú verificados."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2020",
+      "title": "Noveno Zapandí 01-2020",
+      "status": "publicada",
+      "source": {
+        "filename": "Zapandí 01 2020.pdf",
+        "notes": "23 páginas numeradas 5–27. Ítem 39 sin opción correcta. Sin clave oficial; soluciones elaboradas."
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        39
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú publicados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones, cuatro figuras SVG y soluciones elaboradas. DOM local:54/54,0/54,blancos,confirmación,revisión bloqueada,reinicio,navegación y temporizador comprobados. Figuras renderizadas e inspeccionadas."
     }
   ],
   "notes": [
