@@ -1188,6 +1188,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú publicados en GitHub.",
       "validation": "55 preguntas con cuatro opciones, cuatro figuras SVG y soluciones elaboradas. DOM local:54/54,0/54,blancos,confirmación,revisión bloqueada,reinicio,navegación y temporizador comprobados. Figuras renderizadas e inspeccionadas."
+    },
+    {
+      "path": "Noveno-Zapandi-02-2020",
+      "title": "Noveno Zapandí 02-2020",
+      "status": "publicada",
+      "source": {
+        "filename": "Zapandí 02 2020.pdf",
+        "notes": "Encabezado:01-2020 (2). Se conserva 02-2020 según el nombre del archivo. 26 páginas; incluye tabla trigonométrica. Ítems7–8 interpretados según ubicación aproximada de los puntos. Sin clave oficial; soluciones elaboradas."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas, cuatro opciones, ocho figuras SVG y soluciones elaboradas. Tabla trigonométrica disponible. Comprobaciones locales:55/55,0/55,blancos,confirmación,navegación,revisión bloqueada,reinicio ytemporizador."
     }
   ],
   "notes": [
