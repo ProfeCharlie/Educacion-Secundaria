@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-14",
+  "updatedAt": "2026-10-15",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -1154,6 +1154,23 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página,configuración y acceso en el menú publicados en GitHub Pages.",
       "validation": "55 ítems,4 opciones,ocho figuras SVG y soluciones cotejados con el PDF. Navegación,respuestas,confirmación,calificación 55/55 y 0/55,blancos,revisión bloqueada,reinicio y temporizador verificados con DOM local. Página pública y menú verificados en navegador."
+    },
+    {
+      "path": "Octavo-Ujarras-02-2020",
+      "title": "Octavo Ujarrás 02-2020",
+      "status": "publicada",
+      "source": {
+        "id": "1IruZD4mICQaHpFhvR59wd3J2mM0muh35",
+        "url": "https://drive.google.com/file/d/1IruZD4mICQaHpFhvR59wd3J2mM0muh35/view",
+        "filename": "01 2020(2).pdf",
+        "notes": "El encabezado identifica 02-2020. Copia de 32 páginas numeradas 5–36. Sin clave oficial; soluciones elaboradas. En el ítem 49 se interpreta probable como posible."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página y configuración publicadas en GitHub; acceso desde el menú público verificado.",
+      "validation": "55 ítems con cuatro opciones, ocho figuras SVG y soluciones elaboradas. Comprobaciones locales: calificación 55/55, respuestas en blanco, confirmación al finalizar, revisión bloqueada y cierre por tiempo. Portada pública y acceso desde el menú verificados."
     }
   ],
   "notes": [
