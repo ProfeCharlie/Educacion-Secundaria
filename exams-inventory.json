@@ -1203,6 +1203,24 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas, cuatro opciones, ocho figuras SVG y soluciones elaboradas. Tabla trigonométrica disponible. Comprobaciones locales:55/55,0/55,blancos,confirmación,navegación,revisión bloqueada,reinicio ytemporizador."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2019",
+      "title": "Noveno Zapandí 01-2019",
+      "status": "publicada",
+      "source": {
+        "filename": "Zapandí 01 2019.pdf",
+        "notes": "27 páginas, incluida portada y clave final. Ítem 25 corregido de C a A: 21/tan(52°)=16,41 m. Ítems 9 y 10 interpretados según ubicación aproximada de las marcas. Soluciones elaboradas y cotejadas con la clave adjunta."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "correctedItems": [
+        25
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones. 15 figuras SVG únicas, asociadas a 16 ítems, renderizadas e inspeccionadas. Comprobaciones locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
