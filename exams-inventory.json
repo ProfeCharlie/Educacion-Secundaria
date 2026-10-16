@@ -1269,6 +1269,23 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones, ocho figuras SVG renderizadas e inspeccionadas y tabla trigonométrica. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2017",
+      "title": "Noveno Zapandí 01-2017",
+      "status": "publicada",
+      "source": {
+        "filename": "Zapandí 01 2017.pdf",
+        "notes": "24 páginas numeradas de 5 a 28, incluida tabla trigonométrica. Sin clave adjunta; soluciones elaboradas. Ítem 34 excluido por no indicar los signos de x y n. Se conserva notación de almacenamiento en 11 y clasificación usual del ingreso en 49."
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        34
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones, 54 evaluables. Diez figuras SVG únicas, asociadas a doce ítems, incluida la lámina con las cuatro opciones gráficas de 33. Tabla trigonométrica. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
