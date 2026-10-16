@@ -1319,6 +1319,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones, 53 evaluables y soluciones elaboradas. Once figuras SVG reconstruidas, renderizadas e inspeccionadas; tablas y cuestionario transcritos y tabla trigonométrica. Pruebas locales: 53/53, 0/53, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Octavo-Ujarras-02-2019",
+      "title": "Octavo Ujarrás 02-2019",
+      "status": "publicada",
+      "source": {
+        "filename": "02 2019.pdf",
+        "notes": "Archivo «02 2019.pdf»: 28 páginas numeradas de 5 a 32, con 55 preguntas completas. Sin clave adjunta; soluciones elaboradas. En 27 se cuentan once depósitos mensuales posteriores a enero. En 48 se interpreta «probable» como posible, no seguro, conforme al uso del enunciado."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones elaboradas. Seis figuras SVG únicas asociadas a diez ítems, renderizadas e inspeccionadas; tablas transcritas. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
