@@ -1301,6 +1301,24 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones elaboradas. Nueve figuras SVG únicas asociadas a doce ítems, renderizadas e inspeccionadas, y tabla trigonométrica. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2016",
+      "title": "Noveno Zapandí 01-2016 · Específica",
+      "status": "publicada",
+      "source": {
+        "filename": "Zapandí 01 2016.pdf",
+        "notes": "Archivo «Zapandí 01 2016.pdf»: 34 páginas, con portada que identifica la prueba como Específica, 55 preguntas y tabla trigonométrica. Sin clave adjunta; soluciones elaboradas. 53 ítems evaluables. Se excluye 54 porque ninguna opción equivale a 30%, y 55 por no distinguir probabilidad teórica y frecuencia observada. En 18 se conserva la unidad cm de las opciones originales y se explica que el seno es adimensional."
+      },
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        54,
+        55
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones, 53 evaluables y soluciones elaboradas. Once figuras SVG reconstruidas, renderizadas e inspeccionadas; tablas y cuestionario transcritos y tabla trigonométrica. Pruebas locales: 53/53, 0/53, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
