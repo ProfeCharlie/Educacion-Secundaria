@@ -1254,6 +1254,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones; seis figuras SVG redibujadas, renderizadas e inspeccionadas y tabla trigonométrica. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Noveno-Zapandi-02-2017",
+      "title": "Noveno Zapandí 02-2017",
+      "status": "publicada",
+      "source": {
+        "filename": "Zapandí 02 2017.pdf",
+        "notes": "24 páginas numeradas de 5 a 28, incluida tabla trigonométrica. Sin clave adjunta; soluciones elaboradas. Ítem 23 usa los ángulos y AC=12 con AB=10 redondeado. En 28 y 29 se interpreta pirámide recta regular y prisma recto. En 52 el último intervalo incluye 28, así que I no se puede asegurar."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones, ocho figuras SVG renderizadas e inspeccionadas y tabla trigonométrica. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
