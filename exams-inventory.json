@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-15",
+  "updatedAt": "2026-10-16",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -1239,6 +1239,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones cotejadas con la clave. Nueve figuras SVG únicas asociadas a diez ítems y tabla trigonométrica. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2018",
+      "title": "Noveno Zapandí 01-2018",
+      "status": "publicada",
+      "source": {
+        "filename": "Zapandí 01 2018.pdf",
+        "notes": "24 páginas numeradas de 5 a 28, incluida tabla trigonométrica. Sin clave adjunta; soluciones elaboradas. Ítem 23 conserva 27,00 como aproximación tabulada. En 47 se sigue la clasificación usual de la prueba para el ingreso monetario."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones; seis figuras SVG redibujadas, renderizadas e inspeccionadas y tabla trigonométrica. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
