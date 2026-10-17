@@ -1334,6 +1334,24 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones elaboradas. Seis figuras SVG únicas asociadas a diez ítems, renderizadas e inspeccionadas; tablas transcritas. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Octavo-Ujarras-01-2019",
+      "title": "Octavo Ujarrás 01-2019",
+      "status": "publicada",
+      "source": {
+        "filename": "Ujarrás 01 2019 con respuestas.pdf",
+        "notes": "Archivo «Ujarrás 01 2019 con respuestas.pdf»: 27 páginas, incluida portada, 55 preguntas y clave final. 53 respuestas evaluables coinciden con la clave adjunta. Se excluye 17 por el orden inconsistente de correspondencia de los triángulos y 25 por no precisar si la base rectangular puede ser cuadrada. Soluciones elaboradas. En 51, «probable» se interpreta como posible, no seguro."
+      },
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        17,
+        25
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones; 53 respuestas evaluables coinciden con la clave adjunta. Seis figuras SVG únicas asociadas a diez ítems, renderizadas e inspeccionadas. Pruebas locales: 53/53, 0/53, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
