@@ -1369,6 +1369,23 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones; 54 respuestas evaluables coinciden con la clave adjunta. Seis figuras SVG únicas asociadas a diez ítems, renderizadas e inspeccionadas. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Octavo-Ujarras-01-2018",
+      "title": "Octavo Ujarrás 01-2018",
+      "status": "publicada",
+      "source": {
+        "filename": "Ujarrás 01 2018.pdf",
+        "notes": "Archivo «Ujarrás 01 2018.pdf»: 28 páginas, 55 preguntas; no incluye clave de respuestas. Respuestas y soluciones elaboradas y verificadas matemáticamente. 54 ítems evaluables. Se excluye 55 por el dato imposible de 850 plantas eliminadas por cada 100 del herbicida A; se conserva el dato original. El ítem 54 solo utiliza el herbicida E. En 27 se usa «lineal» en el sentido de primer grado del examen."
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        55
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones; respuestas y soluciones elaboradas sin clave adjunta. Siete figuras SVG únicas asociadas a nueve ítems, renderizadas e inspeccionadas. Cálculos de fracciones, álgebra, estadística y proporciones verificados. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
