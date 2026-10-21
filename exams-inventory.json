@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-10-20",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -1420,6 +1420,24 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones; respuestas y soluciones elaboradas sin clave adjunta. Seis figuras SVG únicas asociadas a trece ítems, renderizadas e inspeccionadas. Fracciones, proporciones, geometría y frecuencias verificadas. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Octavo-Ujarras-02-2016",
+      "title": "Octavo Ujarrás 02-2016",
+      "status": "publicada",
+      "source": {
+        "filename": "Ujarras 02 2016.pdf",
+        "url": "https://drive.google.com/file/d/1LySYnZs-zwwe4m4xtl32Vtf_mHj1hbLP/view",
+        "notes": "Archivo «Ujarras 02 2016.pdf»: 35 páginas y 55 preguntas; no incluye clave. Respuestas y soluciones elaboradas y verificadas matemáticamente. 54 ítems evaluables. Se excluye 55 porque «menos probable» no especifica con qué evento se compara. En 8 se conserva la barra del decimal periódico; en 48 se explica la terminología del original y en 52 «probable» se interpreta como posible."
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        55
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones elaboradas; original sin clave. Ocho figuras SVG únicas asociadas a doce ítems, renderizadas e inspeccionadas. Fracciones, proporciones, ecuaciones y probabilidades verificadas. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
