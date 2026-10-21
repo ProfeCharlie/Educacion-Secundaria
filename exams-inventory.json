@@ -1438,6 +1438,22 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones elaboradas; original sin clave. Ocho figuras SVG únicas asociadas a doce ítems, renderizadas e inspeccionadas. Fracciones, proporciones, ecuaciones y probabilidades verificadas. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Octavo-Ujarras-01-2016",
+      "title": "Octavo Ujarrás 01-2016 · Específica",
+      "status": "publicada",
+      "source": {
+        "filename": "Ujarras 01 2016.pdf",
+        "url": "https://drive.google.com/file/d/1pH_Iw_NctWuosD1Qa-xRie87hUP38vZH/view",
+        "notes": "Archivo «Ujarras 01 2016.pdf»: 31 páginas escaneadas; prueba específica con 55 preguntas y sin clave adjunta. Transcripción manual, respuestas y soluciones elaboradas y verificadas matemáticamente. 55 ítems evaluables. Se conservan los datos históricos de 4–5. En 25 se distingue la sección rectangular de su dibujo en perspectiva; en 41 se supone a distinto de cero y en 50 se clasifica el evento por su posibilidad."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones elaboradas; original escaneado sin clave. Doce figuras SVG únicas asociadas a catorce ítems, renderizadas e inspeccionadas. Fracciones, semejanza, ecuaciones, media y probabilidades verificadas. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
