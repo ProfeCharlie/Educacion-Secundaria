@@ -1469,6 +1469,23 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página,configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones cotejadas con la clave adjunta. Diez figuras SVG reconstruidas e inspeccionadas. Pruebas locales:55/55,0/55,blancos,confirmación,navegación,revisión bloqueada,reinicio y temporizador."
+    },
+    {
+      "path": "Setimo-Terraba-01-2019",
+      "title": "Sétimo Térraba 01-2019",
+      "status": "publicada",
+      "source": {
+        "filename": "01 2019 con respuestas.pdf",
+        "notes": "26 páginas,con portada,55 preguntas y clave final. Las54 respuestas evaluables coinciden con la clave adjunta. Ítem55 excluido:media exacta14,2 sin opción exacta ni indicación de redondeo;la clave indicaB(14)."
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        55
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página,configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones;54 evaluables cotejadas con la clave adjunta. Once figuras SVG reconstruidas e inspeccionadas. Pruebas locales:54/54,0/54,blancos,exclusión55,confirmación,navegación,revisión bloqueada,reinicio y temporizador."
     }
   ],
   "notes": [
