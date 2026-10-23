@@ -1,0 +1,814 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Matemática · Sétimo Térraba 02-2019</title><style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#17202a;--muted:#65707d;--line:#dbe1e7;--accent:#1f5d99;--ok:#1f7a4d;--bad:#b23a3a}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.topbar{max-width:1100px;margin:auto;padding:10px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{font-weight:800}.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fafbfc;font-size:14px}.timer{font-variant-numeric:tabular-nums;font-weight:800}
+main{max-width:1100px;margin:22px auto;padding:0 16px 40px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 18px #0000000b;padding:18px}#startView{text-align:center;padding:42px 24px}.hero{font-size:34px;margin:0 0 10px}.sub{color:var(--muted);max-width:760px;margin:0 auto 22px;line-height:1.5}
+button{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer;background:#e9eef3;color:var(--ink)}button.primary{background:var(--accent);color:#fff}button.danger{background:#7b1f1f;color:#fff}button:disabled{opacity:.45;cursor:not-allowed}.exam-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:18px}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.qnum{font-size:20px;font-weight:800}.status{color:var(--muted);font-size:14px}.qtext{font-size:18px;line-height:1.55}.context{margin:12px 0 16px;padding:12px;background:#f8fafc;border:1px solid var(--line);border-radius:10px}.context p{margin:.4em 0}.visual-note{color:var(--muted);font-size:14px}table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px}th,td{border:1px solid #cfd7df;padding:7px;text-align:left}.original-centered th,.original-centered td{text-align:center}th{background:#eef3f7}.choices{display:grid;gap:10px;margin-top:16px}.choice{text-align:left;font-size:16px;padding:13px;background:#f7f9fb;border:2px solid var(--line)}.choice.selected{border-color:var(--accent);background:#eaf2fb}.choice.correct{border-color:var(--ok);background:#eaf7ef}.choice.wrong{border-color:var(--bad);background:#fdecec}.optletter{display:inline-block;width:28px;font-weight:900}.navbuttons{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.side h3{margin-top:0}.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.qjump{padding:7px 0;border-radius:7px;font-size:12px}.qjump.current{outline:2px solid var(--accent)}.qjump.answered{background:#dff0e7}.qjump.unanswered{background:#eef1f4}.small{font-size:13px;color:var(--muted);line-height:1.4}.qfigure{margin:18px 0;text-align:center;background:#fff;border:1.5px solid #000;padding:14px;box-sizing:border-box}.qfigure img{display:block;max-width:100%;max-height:560px;width:auto;height:auto;margin:0 auto;background:#fff;object-fit:contain}.original{margin-top:16px}.original summary{cursor:pointer;color:var(--accent);font-weight:700}.original img{display:block;max-width:100%;max-height:70vh;margin:10px auto 0;border:1px solid var(--line);border-radius:8px}.result{display:none}.score{font-size:42px;font-weight:900}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.stat{padding:14px;border:1px solid var(--line);border-radius:10px;text-align:center}.review-list{display:grid;gap:8px;max-height:430px;overflow:auto;margin-top:14px}.review-row{display:grid;grid-template-columns:72px 1fr 1fr;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px}.good{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}.review-solution{grid-column:1/-1;padding:10px 12px;background:#f8fafc;border-left:4px solid var(--accent);border-radius:6px;line-height:1.45}.review-solution b{display:block;margin-bottom:4px}
+@media(max-width:800px){.exam-layout{grid-template-columns:1fr}.side{order:-1}.grid{grid-template-columns:repeat(10,1fr)}.hero{font-size:27px}.review-row{grid-template-columns:55px 1fr 1fr}.qtext{font-size:17px}}
+.item1-original th{text-align:center}.item1-original td:first-child{text-align:left}.item1-original td:nth-child(2){text-align:center}
+.item2-original th,.item2-original td{text-align:center}
+.item4-original th,.item4-original td{text-align:center}
+.item56-original th,.item56-original td{text-align:center}
+.item1112-original th{text-align:center}
+.item1112-original td:first-child{text-align:left}
+.item1112-original td:not(:first-child){text-align:center}
+.item46-original th,.item46-original td{text-align:center}
+
+.exam-subtitle{
+  margin-top:6px;
+  font-size:14px;
+  font-weight:600;
+  color:#0057B8;
+}
+
+
+.exam-intro{
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.55;
+}
+.exam-intro ul{
+  margin:0;
+  padding-left:22px;
+}
+.exam-intro li{
+  margin:5px 0;
+}
+.exam-encouragement{
+  margin-top:10px;
+  font-weight:700;
+  color:#0057B8;
+}
+
+
+.exam-intro ul{
+  list-style-position:outside;
+  padding-left:18px !important;
+  margin-left:0 !important;
+}
+.exam-intro li{
+  padding-left:0 !important;
+  margin-left:0 !important;
+}
+.exam-intro li::marker{
+  font-size:0.9em;
+}
+
+
+.exam-intro{margin-top:14px;font-size:14px;line-height:1.55}
+.exam-intro .intro-line{display:flex;align-items:flex-start;gap:6px;margin:5px 0}
+.exam-intro .intro-bullet{display:inline-block;flex:0 0 auto;font-weight:700;line-height:1.55}
+.exam-encouragement{margin-top:10px;font-weight:700;color:#0057B8}
+
+
+.exam-encouragement{
+  margin-top:12px !important;
+  font-size:17px !important;
+  font-weight:700 !important;
+  color:#7B2CBF !important;
+}
+
+
+.instructions-title{
+  font-weight:700;
+  margin-bottom:7px;
+}
+.exam-intro .intro-line{
+  display:flex;
+  align-items:flex-start;
+  gap:5px;
+  margin:5px 0;
+}
+.exam-intro .intro-bullet{
+  flex:0 0 auto;
+  font-weight:700;
+}
+
+
+.exam-intro,
+.exam-intro .instructions-title,
+.exam-intro .intro-line,
+.exam-intro .intro-line span{
+  text-align:left !important;
+}
+.exam-intro{
+  width:100%;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+
+.choice:disabled{cursor:not-allowed!important;opacity:.72}
+
+.exam-encouragement{
+  text-align:center !important;
+  width:100% !important;
+  display:block !important;
+}
+
+
+.exam-intro .intro-line{display:flex !important;align-items:flex-start !important;gap:5px !important;text-align:left !important;}
+.exam-intro .intro-bullet{display:inline-block !important;flex:0 0 auto !important;font-weight:700 !important;}
+.exam-encouragement{text-align:center !important;width:100% !important;display:block !important;}
+
+.calculator-approved-image{
+  width:100%;
+  margin:14px 0 18px;
+  text-align:center;
+}
+.calculator-approved-image img{
+  display:block;
+  width:100%;
+  max-width:1100px;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto;
+}
+
+
+.calculator-brand-title{
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  margin:14px 0 6px;
+  color:#1f2937;
+}
+
+
+.calculator-approved-image img{
+  display:block !important;
+  width:100% !important;
+  max-width:1200px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  margin:0 auto !important;
+}
+
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+<style>
+.tabla-item2 th:nth-child(n+2):nth-child(-n+5),
+.tabla-item2 td:nth-child(n+2):nth-child(-n+5){
+    text-align:center !important;
+    vertical-align:middle !important;
+}
+</style>
+
+
+<style>
+.tabla-item11 th, .tabla-item11 td{
+    border:1px solid #000;
+    padding:6px 8px;
+}
+.tabla-item11{
+    border-collapse:collapse;
+    margin:8px 0;
+}
+.tabla-item11 th{
+    text-align:center;
+}
+.tabla-item11 td:first-child{
+    text-align:left;
+}
+.tabla-item11 td:nth-child(n+2){
+    text-align:center;
+}
+</style>
+
+
+<style>
+/* Uniformar el texto acentuado de las fórmulas del ítem 11 */
+.formulas-item11 mjx-mtext,
+.formulas-item11 mjx-mtext *{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+</style>
+
+
+<style>
+/* Fracciones del ítem 11 con la misma tipografía del texto normal */
+.formulas-item11 .html-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    font-family:inherit !important;
+    font-size:inherit !important;
+    line-height:1.15;
+    margin:0 .18em;
+}
+.formulas-item11 .html-frac .frac-top,
+.formulas-item11 .html-frac .frac-bottom{
+    font-family:inherit !important;
+    font-size:inherit !important;
+    font-weight:inherit !important;
+    font-style:normal !important;
+    white-space:nowrap;
+}
+.formulas-item11 .html-frac .frac-top{
+    border-bottom:1.3px solid currentColor;
+    padding:0 .22em .10em;
+}
+.formulas-item11 .html-frac .frac-bottom{
+    padding:.10em .22em 0;
+}
+</style>
+
+
+<style id="q26-formula-style">
+.q26-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  width:100%;
+}
+.q26-copy{flex:1;min-width:0;}
+.q26-formula-box{
+  flex:0 0 auto;
+  width:168px;
+  height:66px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  color:#111;
+  white-space:nowrap;
+}
+.q26-left{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+}
+.q26-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+  font-family:Arial,Helvetica,sans-serif;
+  font-style:normal;
+}
+.q26-num{
+  display:block;
+  padding:0 5px 4px 5px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.q26-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+@media (max-width:700px){
+  .q26-top{align-items:flex-start;gap:14px;}
+  .q26-formula-box{width:160px;height:64px;}
+}
+</style>
+
+
+<style id="q26-after-style">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:12px;
+  margin-bottom:4px;
+}
+</style>
+
+
+<style id="q26-order-final">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+</style>
+
+
+<style id="q26-angle-svg-style">
+.q26-left{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+.q26-angle-symbol{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.q26-angle-symbol svg{display:block;}
+</style>
+
+
+<style id="plain-formula-boxes-after-q26">
+.formula-after-stem{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+.plain-formula-box{
+  min-width:145px;
+  min-height:64px;
+  padding:8px 16px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+  color:#111;
+}
+.plain-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+}
+.plain-num{
+  display:block;
+  padding:0 5px 4px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.plain-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+</style>
+
+<style id="q1-table-pdf-style">
+.q1-pdf-table{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.4px solid #222 !important;
+  border-bottom:1.4px solid #222 !important;
+}
+.q1-pdf-table th,
+.q1-pdf-table td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 18px !important;
+  white-space:nowrap !important;
+}
+.q1-pdf-table th:first-child,
+.q1-pdf-table td:first-child{
+  text-align:left !important;
+}
+.q1-pdf-table th:not(:first-child),
+.q1-pdf-table td:not(:first-child){
+  text-align:center !important;
+}
+.q1-pdf-table tr:first-child th,
+.q1-pdf-table tr:first-child td{
+  border-bottom:1.4px solid #222 !important;
+}
+/* En el PDF de la pregunta 1 NO hay líneas verticales
+   ni líneas horizontales entre las filas de datos. */
+.q1-pdf-table th + th,
+.q1-pdf-table th + td,
+.q1-pdf-table td + th,
+.q1-pdf-table td + td{
+  border-left:none !important;
+}
+.q1-pdf-table tr:not(:first-child) th,
+.q1-pdf-table tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+</style>
+
+
+<style id="item1-original-pdf-style">
+.item1-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th,
+.item1-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:7px 14px !important;
+  white-space:nowrap !important;
+}
+.item1-original tr:first-child th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th:first-child,
+.item1-original td:first-child{
+  text-align:left !important;
+}
+.item1-original th:nth-child(2),
+.item1-original td:nth-child(2){
+  text-align:center !important;
+}
+/* Sin líneas verticales ni líneas entre filas de datos, como en el PDF. */
+.item1-original th + th,
+.item1-original td + td{
+  border-left:none !important;
+}
+.item1-original tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+</style>
+
+
+<style id="tablas-pdf-restantes">
+/* PREGUNTA 5: sin líneas verticales ni divisiones entre filas de datos */
+.item5-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th,
+.item5-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 14px !important;
+  white-space:nowrap !important;
+}
+.item5-original thead th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th:first-child,
+.item5-original td:first-child{
+  text-align:left !important;
+}
+.item5-original th:not(:first-child),
+.item5-original td:not(:first-child){
+  text-align:center !important;
+}
+
+/* PREGUNTAS 2, 4, 11 y 46: el PDF sí muestra cuadrícula completa */
+.tabla-item2,
+.item4-original,
+.tabla-item11,
+.item46-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border:1.4px solid #111 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+}
+.tabla-item2 th, .tabla-item2 td,
+.item4-original th, .item4-original td,
+.tabla-item11 th, .tabla-item11 td,
+.item46-original th, .item46-original td{
+  border:1.4px solid #111 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding:6px 12px !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+}
+
+/* Primera columna de 4 y 11 a la izquierda como en el original */
+.item4-original th:first-child,
+.item4-original td:first-child,
+.tabla-item11 th:first-child,
+.tabla-item11 td:first-child{
+  text-align:left !important;
+}
+
+/* Primera columna de 46 centrada, como en el PDF */
+.item46-original th:first-child,
+.item46-original td:first-child{
+  text-align:center !important;
+}
+</style>
+
+
+<style id="q2-first-column-left">
+.tabla-item2 th:first-child,
+.tabla-item2 td:first-child{
+  text-align:left !important;
+}
+</style>
+
+
+<style id="q36-option-graphs-style">
+.q36-option-graph{display:block;width:min(390px,100%);height:auto;margin:4px auto;}
+</style>
+
+
+<style id="q37-bullets-style">
+.q37-bullets{margin:14px 0 4px 24px;line-height:1.9;}
+</style>
+
+
+<style id="responsive-calculadoras">
+@media (max-width: 760px) {
+  /* CASIO: el contenedor exterior es el que se desplaza horizontalmente. */
+  #casio-mobile-scroll {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain;
+    padding-bottom: 14px !important;
+  }
+
+  /* El título permanece normal; solo la fila de calculadoras es ancha. */
+  #casio-mobile-scroll > .casio-mobile-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 390px) !important;
+    gap: 10px !important;
+    width: 1190px !important;
+    min-width: 1190px !important;
+    max-width: none !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div {
+    box-sizing: border-box !important;
+    width: 390px !important;
+    min-width: 390px !important;
+    max-width: 390px !important;
+    overflow: visible !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div > div:first-child {
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: 370px !important;
+    white-space: nowrap !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row img {
+    display: block !important;
+    width: auto !important;
+    max-width: 360px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* El desplazamiento usado en escritorio para la tercera imagen
+     se neutraliza en celular para que no invada otras zonas. */
+  #casio-mobile-scroll > .casio-mobile-row img[style*="translateY"] {
+    transform: none !important;
+  }
+
+  /* GENÉRICAS: se mantiene el desplazamiento horizontal aprobado. */
+  #calculadoras-genericas {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 12px !important;
+  }
+
+  #calculadoras-genericas > div:last-child {
+    justify-content: start !important;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Tercera Casio (NO RECOMENDADA): más grande y más arriba */
+  /* Tercera Casio en celular:
+     se sube el CONTENEDOR completo para evitar recortar la calculadora. */
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) > div:last-child {
+    margin-top: -78px !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) img {
+    width: 520px !important;
+    max-width: none !important;
+    height: auto !important;
+    position: relative !important;
+    left: 50% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Corrección óptica: centra el cuerpo de la calculadora, no el lienzo completo. */
+    transform: translateX(-36%) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+</style>
+
+<style>.seg{text-decoration:overline}.quad-symbol{display:inline-block;font-size:1.28em;line-height:.7;vertical-align:-.06em;margin-right:1px}.qfigure{width:100%!important;margin:18px auto!important;text-align:center!important}.qfigure img{display:block!important;max-width:100%!important;width:440px!important;height:auto!important;max-height:none!important;margin:0 auto!important;transform:none!important}.qtext{line-height:1.65}.choice{line-height:1.5}.context table{max-width:520px;margin:14px auto}.review-row{cursor:pointer}button:focus-visible{outline:3px solid #166cc0;outline-offset:3px}</style><style>.qmeta{text-align:right}.qarea{font-size:14px;font-weight:700;line-height:1.4;color:var(--ink)}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f5d99'/%3E%3Ctext x='7' y='24' font-size='24' fill='white'%3EB%3C/text%3E%3C/svg%3E"><style>.frac{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.15;font-size:.94em;white-space:nowrap;margin:0 .10em}.frac>span:first-child{border-bottom:1.4px solid currentColor;padding:0 .18em .05em}.frac>span:last-child{padding:.05em .18em 0}.inline-eq{display:inline-flex;align-items:center;gap:3px;white-space:nowrap;vertical-align:middle}.seg{text-decoration:overline;text-decoration-thickness:1.3px}.claims{margin:12px 0 14px 16px}.claims p{display:flex;gap:14px;align-items:start}.claims b{min-width:24px}.tiny-table{font-size:13px;width:auto;max-width:100%}.tiny-table th,.tiny-table td{padding:4px 7px;white-space:nowrap}.choice:has(table){overflow-x:auto}.tie-boxes{display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px;margin:20px 0}.tie-boxes>div{text-align:center;min-width:105px}.tie-boxes>div>div{border:1.5px solid #222;margin-top:8px;text-align:left;padding:12px;line-height:2.05}.qfigure{border:0;padding:5px}.qfigure img{max-height:560px}.context{line-height:1.55}.context table{max-width:480px}</style><style>
+.area-results{margin:28px auto;text-align:left;max-width:880px}
+.area-results h3{text-align:center;margin:0 0 5px}
+.area-results > p{text-align:center;margin:0 0 18px;color:#475569}
+.area-chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
+.area-chart-card{border:1px solid #dce4eb;border-radius:14px;padding:16px;text-align:center;background:#fff}
+.area-chart-card h4{margin:0 0 12px;min-height:2.6em;font-size:16px;line-height:1.3}
+.area-pie{width:146px;height:146px;margin:0 auto 12px;border-radius:50%;background:conic-gradient(#16a34a 0 var(--correct-end),#ef4444 var(--correct-end) var(--wrong-end),#cbd5e1 var(--wrong-end) 100%);box-shadow:inset 0 0 0 1px rgba(15,23,42,.08)}
+.grade-status{font-weight:700;font-size:1.1rem;margin:8px 0 16px;color:#183f71}
+.area-rate{font-weight:700;font-size:24px;color:#166534}
+.area-count{margin:4px 0 10px;color:#475569;font-size:14px}
+.area-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 11px;font-size:12px;color:#334155}
+.area-legend span{white-space:nowrap}
+.area-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;background:var(--legend-color)}
+</style><style>.table-wrap{max-width:100%;overflow-x:auto}.table-wrap table{border-collapse:collapse;font-size:.95em}.table-wrap td,.table-wrap th{border:1px solid #94a3b8;padding:7px 10px;text-align:center}.table-wrap th{background:#eaf1fb}</style><style>.option-figure{display:block;width:270px;max-width:100%;height:auto;margin:10px auto;background:white}.table-wrap{overflow-x:auto}</style></head><body>
+<header><div class="topbar"><div class="brand">Matemática · Sétimo Térraba 02-2019</div><div class="meta"><span class="pill">Modo examen</span><span class="pill">Respondidas: <b id="countTop">0/55</b></span><span class="pill timer" id="timerTop">03:00:00</span></div></div></header>
+<main><section id="startView" class="card"><h1 class="hero">Matemática · Sétimo Térraba 02-2019</h1>
+<div class="exam-registration" style="max-width:440px;margin:14px auto 18px;display:grid;gap:10px">
+  <label>Nombre <input id="studentFirstName" autocomplete="given-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <label>Apellidos <input id="studentLastName" autocomplete="family-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <p id="availabilityMessage" role="status" style="margin:0;text-align:center">Consultando disponibilidad de la prueba…</p>
+  <button id="retryAvailabilityBtn" type="button" style="display:none">Reintentar conexión</button>
+  <button class="primary" id="startBtn" disabled>Iniciar Prueba</button>
+</div>
+<div class="exam-subtitle">Elaborado por: Carlos Madrigal Gutiérrez</div>
+<div class="exam-intro">
+  <div class="instructions-title">Instrucciones:</div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Versión interactiva con las 55 preguntas.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Las representaciones gráficas necesarias aparecen directamente dentro de cada pregunta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>La prueba contiene 55 preguntas de selección única, cada una con cuatro opciones de respuesta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes moverte entre preguntas, devolverte o avanzar y responder en el momento que creas necesario, eso sí, si el tiempo se agota la prueba se cierra y no te dejará seguir respondiendo.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Es recomendable tener a la mano papel y lápiz para ir resolviendo los ejercicios de la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Dispones de 3 horas para responder la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes utilizar calculadora básica.</span></div>
+  
+
+<p class="small">Fuente: Matemáticas Térraba (Sétimo) 01-2019. Archivo de 26 páginas con 55 preguntas y clave final. Las 54 respuestas evaluables coinciden con la clave adjunta; soluciones elaboradas y figuras reconstruidas. Ítem 55 excluido de la nota: la media exacta es 14,2; la clave indica 14, pero el enunciado no pide redondear.</p></div></section>
+<section id="examView" style="display:none"><div class="exam-layout"><div class="card"><div class="qhead"><div class="qnum" id="qnum"></div><div class="qmeta"><div class="qarea" id="qarea"></div><div class="status" id="qstatus"></div></div></div><div id="qcontext" class="context"></div><div id="qtext" class="qtext"></div><div id="qfigure" class="qfigure" style="display:none"><img id="qfigureimg" alt="Representación gráfica del ítem"></div><div id="qaftergraphic" class="qfigure" style="display:none"><img id="qaftergraphicimg" alt="Opciones gráficas del ítem"></div><div id="choices" class="choices"></div><div class="navbuttons"><button id="prevBtn">← Anterior</button><button id="nextBtn">Siguiente →</button></div></div><aside class="card side"><h3>Navegación</h3><div id="grid" class="grid"></div><p class="small" id="countSide">0 de 55 respondidos</p><button class="danger" id="finishBtn" style="width:100%;margin-top:8px">Finalizar examen</button></aside></div></section>
+<section id="resultView" class="card result"><h2>Resultado</h2><div class="score" id="scoreText">0/55</div><div id="percentText"></div><p id="gradeStatus" class="grade-status" aria-live="polite"></p><div class="result-grid"><div class="stat"><b id="correctStat">0</b><br>Correctas</div><div class="stat"><b id="wrongStat">0</b><br>Incorrectas</div><div class="stat"><b id="blankStat">0</b><br>Sin responder</div></div><section class="area-results" aria-labelledby="areaResultsTitle"><h3 id="areaResultsTitle">Resultados por área</h3><p>Porcentaje de respuestas correctas en cada área</p><div id="areaChartGrid" class="area-chart-grid"></div></section><p id="deliveryStatus" role="status"></p><button id="retryDeliveryBtn" style="display:none">Reintentar envío</button><button id="reviewBtn">Revisar respuestas</button> <button id="restartBtn">Hacer otro intento</button> <button type="button" id="menuBtn">Regresar al menú de exámenes</button><div id="review" class="review-list" style="display:none"></div></section><div id="finishConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px"><div role="alertdialog" aria-modal="true" aria-labelledby="finishTitle" aria-describedby="pendingMessage" style="width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;text-align:center"><h2 id="finishTitle">¿Finalizar el examen?</h2><p id="pendingMessage"></p><button type="button" id="cancelFinishBtn">Seguir respondiendo</button> <button type="button" class="danger" id="confirmFinishBtn">Sí, finalizar</button></div></div><div id="restartConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px;">
+<div role="alertdialog" aria-modal="true" aria-labelledby="restartConfirmTitle" aria-describedby="restartConfirmText" style="box-sizing:border-box;width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;box-shadow:0 18px 56px rgba(0,0,0,.28);text-align:center;">
+<h2 id="restartConfirmTitle" style="margin:0 0 12px;color:#173b70;">¿Reiniciar el examen?</h2>
+<p id="restartConfirmText" style="margin:0 0 22px;line-height:1.55;">Se borrarán tus respuestas y el tiempo transcurrido.</p>
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;"><button id="cancelRestartBtn" type="button">Cancelar</button><button id="confirmRestartBtn" class="danger" type="button">Sí, reiniciar</button></div>
+</div></div></main><script>
+const FIGURES={"21": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20570%20395%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%22110%22%20y1%3D%2230%22%20x2%3D%22110%22%20y2%3D%22340%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22110%22%20y1%3D%22340%22%20x2%3D%22110%22%20y2%3D%2230%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22100%22%20x2%3D%22505%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22100%22%20x2%3D%2245%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22105%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%86%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C85%20125%2C85%20125%2C100%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22190%22%20x2%3D%22505%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22190%22%20x2%3D%2245%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22195%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%85%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C175%20125%2C175%20125%2C190%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22290%22%20x2%3D%22505%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22290%22%20x2%3D%2245%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22295%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%84%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C275%20125%2C275%20125%2C290%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%2270%22%20x2%3D%22490%22%20y2%3D%22305%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22490%22%20y1%3D%22305%22%20x2%3D%2245%22%20y2%3D%2270%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22165%22%20y1%3D%2235%22%20x2%3D%22405%22%20y2%3D%22355%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22405%22%20y1%3D%22355%22%20x2%3D%22165%22%20y2%3D%2235%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22104%22%20y%3D%2221%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%81%3C/text%3E%3Ctext%20x%3D%2230%22%20y%3D%2260%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%82%3C/text%3E%3Ctext%20x%3D%22169%22%20y%3D%2225%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%83%3C/text%3E%3Ccircle%20cx%3D%22213.75%22%20cy%3D%22100%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22224.75%22%20y%3D%2289%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22161.67%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22271%22%20y%3D%22150.67%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ccircle%20cx%3D%22341.25%22%20cy%3D%22270%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22352.25%22%20y%3D%22259%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22100%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22122%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22190%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22212%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22225.79%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22247.79%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3C/svg%3E", "22": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20570%20395%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%22110%22%20y1%3D%2230%22%20x2%3D%22110%22%20y2%3D%22340%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22110%22%20y1%3D%22340%22%20x2%3D%22110%22%20y2%3D%2230%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22100%22%20x2%3D%22505%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22100%22%20x2%3D%2245%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22105%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%86%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C85%20125%2C85%20125%2C100%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22190%22%20x2%3D%22505%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22190%22%20x2%3D%2245%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22195%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%85%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C175%20125%2C175%20125%2C190%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22290%22%20x2%3D%22505%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22290%22%20x2%3D%2245%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22295%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%84%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C275%20125%2C275%20125%2C290%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%2270%22%20x2%3D%22490%22%20y2%3D%22305%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22490%22%20y1%3D%22305%22%20x2%3D%2245%22%20y2%3D%2270%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22165%22%20y1%3D%2235%22%20x2%3D%22405%22%20y2%3D%22355%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22405%22%20y1%3D%22355%22%20x2%3D%22165%22%20y2%3D%2235%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22104%22%20y%3D%2221%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%81%3C/text%3E%3Ctext%20x%3D%2230%22%20y%3D%2260%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%82%3C/text%3E%3Ctext%20x%3D%22169%22%20y%3D%2225%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%83%3C/text%3E%3Ccircle%20cx%3D%22213.75%22%20cy%3D%22100%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22224.75%22%20y%3D%2289%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22161.67%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22271%22%20y%3D%22150.67%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ccircle%20cx%3D%22341.25%22%20cy%3D%22270%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22352.25%22%20y%3D%22259%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22100%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22122%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22190%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22212%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22225.79%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22247.79%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3C/svg%3E", "23": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20570%20395%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%22110%22%20y1%3D%2230%22%20x2%3D%22110%22%20y2%3D%22340%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22110%22%20y1%3D%22340%22%20x2%3D%22110%22%20y2%3D%2230%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22100%22%20x2%3D%22505%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22100%22%20x2%3D%2245%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22105%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%86%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C85%20125%2C85%20125%2C100%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22190%22%20x2%3D%22505%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22190%22%20x2%3D%2245%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22195%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%85%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C175%20125%2C175%20125%2C190%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%22290%22%20x2%3D%22505%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22505%22%20y1%3D%22290%22%20x2%3D%2245%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22515%22%20y%3D%22295%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%84%3C/text%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22110%2C275%20125%2C275%20125%2C290%22/%3E%3Cline%20x1%3D%2245%22%20y1%3D%2270%22%20x2%3D%22490%22%20y2%3D%22305%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22490%22%20y1%3D%22305%22%20x2%3D%2245%22%20y2%3D%2270%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22165%22%20y1%3D%2235%22%20x2%3D%22405%22%20y2%3D%22355%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22405%22%20y1%3D%22355%22%20x2%3D%22165%22%20y2%3D%2235%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ctext%20x%3D%22104%22%20y%3D%2221%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%81%3C/text%3E%3Ctext%20x%3D%2230%22%20y%3D%2260%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%82%3C/text%3E%3Ctext%20x%3D%22169%22%20y%3D%2225%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E%E2%84%93%E2%82%83%3C/text%3E%3Ccircle%20cx%3D%22213.75%22%20cy%3D%22100%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22224.75%22%20y%3D%2289%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22260%22%20cy%3D%22161.67%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22271%22%20y%3D%22150.67%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ccircle%20cx%3D%22341.25%22%20cy%3D%22270%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22352.25%22%20y%3D%22259%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22100%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22122%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22190%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22212%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22340%22%20cy%3D%22225.79%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22351%22%20y%3D%22247.79%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3C/svg%3E", "24": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20390%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2255%22%20y1%3D%22205%22%20x2%3D%22510%22%20y2%3D%22205%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22510%22%20y1%3D%22205%22%20x2%3D%2255%22%20y2%3D%22205%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22280%22%20y1%3D%2250%22%20x2%3D%22280%22%20y2%3D%22355%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22280%22%20y1%3D%22355%22%20x2%3D%22280%22%20y2%3D%2250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22125%22%20y1%3D%22350.31%22%20x2%3D%22445%22%20y2%3D%2250.31%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22445%22%20y1%3D%2250.31%22%20x2%3D%22125%22%20y2%3D%22350.31%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22263%2C205%20263%2C188%20280%2C188%22/%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%22205%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22105%22%20y%3D%22193%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22280%22%20cy%3D%22205%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22290%22%20y%3D%22229%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22470%22%20cy%3D%22205%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22480%22%20y%3D%22229%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22175%22%20cy%3D%22303.44%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22185%22%20y%3D%22327.44%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22410%22%20cy%3D%2283.13%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22420%22%20y%3D%22103.13%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22280%22%20cy%3D%2295%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22290%22%20y%3D%2283%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3C/svg%3E", "25": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20380%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cpolygon%20points%3D%22340%2C130%20415%2C60%20415%2C250%20340%2C320%22%20fill%3D%22%23999%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%22150%22%20y1%3D%22130%22%20x2%3D%22340%22%20y2%3D%22130%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22340%22%20y1%3D%22130%22%20x2%3D%22415%22%20y2%3D%2260%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22415%22%20y1%3D%2260%22%20x2%3D%22225%22%20y2%3D%2260%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22225%22%20y1%3D%2260%22%20x2%3D%22150%22%20y2%3D%22130%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22150%22%20y1%3D%22130%22%20x2%3D%22150%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22340%22%20y1%3D%22130%22%20x2%3D%22340%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22415%22%20y1%3D%2260%22%20x2%3D%22415%22%20y2%3D%22250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22225%22%20y1%3D%2260%22%20x2%3D%22225%22%20y2%3D%22250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22150%22%20y1%3D%22320%22%20x2%3D%22340%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22340%22%20y1%3D%22320%22%20x2%3D%22415%22%20y2%3D%22250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22415%22%20y1%3D%22250%22%20x2%3D%22225%22%20y2%3D%22250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22225%22%20y1%3D%22250%22%20x2%3D%22150%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Ctext%20x%3D%22128%22%20y%3D%22344%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ctext%20x%3D%22350%22%20y%3D%22344%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ctext%20x%3D%22318%22%20y%3D%22118%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ctext%20x%3D%22128%22%20y%3D%22118%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ctext%20x%3D%22235%22%20y%3D%22240%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ctext%20x%3D%22425%22%20y%3D%22274%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ctext%20x%3D%22425%22%20y%3D%2248%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EG%3C/text%3E%3Ctext%20x%3D%22203%22%20y%3D%2248%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EH%3C/text%3E%3C/svg%3E", "26": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20380%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cpolygon%20points%3D%22340%2C130%20415%2C60%20415%2C250%20340%2C320%22%20fill%3D%22%23999%22%20stroke%3D%22none%22/%3E%3Cline%20x1%3D%22150%22%20y1%3D%22130%22%20x2%3D%22340%22%20y2%3D%22130%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22340%22%20y1%3D%22130%22%20x2%3D%22415%22%20y2%3D%2260%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22415%22%20y1%3D%2260%22%20x2%3D%22225%22%20y2%3D%2260%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22225%22%20y1%3D%2260%22%20x2%3D%22150%22%20y2%3D%22130%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22150%22%20y1%3D%22130%22%20x2%3D%22150%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22340%22%20y1%3D%22130%22%20x2%3D%22340%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22415%22%20y1%3D%2260%22%20x2%3D%22415%22%20y2%3D%22250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22225%22%20y1%3D%2260%22%20x2%3D%22225%22%20y2%3D%22250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22150%22%20y1%3D%22320%22%20x2%3D%22340%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22340%22%20y1%3D%22320%22%20x2%3D%22415%22%20y2%3D%22250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22415%22%20y1%3D%22250%22%20x2%3D%22225%22%20y2%3D%22250%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22225%22%20y1%3D%22250%22%20x2%3D%22150%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Ctext%20x%3D%22128%22%20y%3D%22344%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ctext%20x%3D%22350%22%20y%3D%22344%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ctext%20x%3D%22318%22%20y%3D%22118%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ctext%20x%3D%22128%22%20y%3D%22118%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ctext%20x%3D%22235%22%20y%3D%22240%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ctext%20x%3D%22425%22%20y%3D%22274%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ctext%20x%3D%22425%22%20y%3D%2248%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EG%3C/text%3E%3Ctext%20x%3D%22203%22%20y%3D%2248%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EH%3C/text%3E%3C/svg%3E", "27": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20380%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2255%22%20y1%3D%22290%22%20x2%3D%22515%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22515%22%20y1%3D%22290%22%20x2%3D%2255%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2290%22%20y1%3D%22320%22%20x2%3D%22370%22%20y2%3D%2240%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22370%22%20y1%3D%2240%22%20x2%3D%2290%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22170%22%20y1%3D%2240%22%20x2%3D%22470%22%20y2%3D%22340%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22470%22%20y1%3D%22340%22%20x2%3D%22170%22%20y2%3D%2240%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22290%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22128%22%20y%3D%22314%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22270%22%20cy%3D%22140%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22240%22%20y%3D%22148%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22420%22%20cy%3D%22290%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22395%22%20y%3D%22313%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22215%22%20cy%3D%2285%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22188%22%20y%3D%2297%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22325%22%20cy%3D%2285%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22333%22%20y%3D%2273%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22490%22%20cy%3D%22290%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22498%22%20y%3D%22314%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ccircle%20cx%3D%22447%22%20cy%3D%22317%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22462%22%20y%3D%22322%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EG%3C/text%3E%3C/svg%3E", "28": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20380%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2255%22%20y1%3D%22290%22%20x2%3D%22515%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22515%22%20y1%3D%22290%22%20x2%3D%2255%22%20y2%3D%22290%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2290%22%20y1%3D%22320%22%20x2%3D%22370%22%20y2%3D%2240%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22370%22%20y1%3D%2240%22%20x2%3D%2290%22%20y2%3D%22320%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22170%22%20y1%3D%2240%22%20x2%3D%22470%22%20y2%3D%22340%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22470%22%20y1%3D%22340%22%20x2%3D%22170%22%20y2%3D%2240%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%22290%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22128%22%20y%3D%22314%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22270%22%20cy%3D%22140%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22240%22%20y%3D%22148%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22420%22%20cy%3D%22290%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22395%22%20y%3D%22313%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22215%22%20cy%3D%2285%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22188%22%20y%3D%2297%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22325%22%20cy%3D%2285%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22333%22%20y%3D%2273%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22490%22%20cy%3D%22290%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22498%22%20y%3D%22314%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ccircle%20cx%3D%22447%22%20cy%3D%22317%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22462%22%20y%3D%22322%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EG%3C/text%3E%3C/svg%3E", "29": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20395%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2255%22%20y1%3D%22190%22%20x2%3D%22390%22%20y2%3D%2270%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22390%22%20y1%3D%2270%22%20x2%3D%2255%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22100%22%20y1%3D%22335%22%20x2%3D%22515%22%20y2%3D%22186.34%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22515%22%20y1%3D%22186.34%22%20x2%3D%22100%22%20y2%3D%22335%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2290%22%20y1%3D%22100%22%20x2%3D%22485%22%20y2%3D%22235.43%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22485%22%20y1%3D%22235.43%22%20x2%3D%2290%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%22115%22%20cy%3D%22108.57%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22107%22%20y%3D%2295.57%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22145%22%20cy%3D%22157.76%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22137%22%20y%3D%22181.76%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22200.49273962793805%22%20cy%3D%22137.88319623061597%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22192.49273962793805%22%20y%3D%22124.88319623061597%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22330%22%20cy%3D%2291.49%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22322%22%20y%3D%2278.49%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22235%22%20cy%3D%22286.64%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22227%22%20y%3D%22310.64%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22430.3133271332514%22%20cy%3D%22216.6787934009252%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22422.3133271332514%22%20y%3D%22240.6787934009252%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EH%3C/text%3E%3Ccircle%20cx%3D%22480%22%20cy%3D%22198.88%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22472%22%20y%3D%22185.88%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ccircle%20cx%3D%22473%22%20cy%3D%22231.31%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22465%22%20y%3D%22255.31%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EG%3C/text%3E%3C/svg%3E", "30": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20395%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2255%22%20y1%3D%22190%22%20x2%3D%22390%22%20y2%3D%2270%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22390%22%20y1%3D%2270%22%20x2%3D%2255%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22100%22%20y1%3D%22335%22%20x2%3D%22515%22%20y2%3D%22186.34%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22515%22%20y1%3D%22186.34%22%20x2%3D%22100%22%20y2%3D%22335%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2290%22%20y1%3D%22100%22%20x2%3D%22485%22%20y2%3D%22235.43%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22485%22%20y1%3D%22235.43%22%20x2%3D%2290%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%22115%22%20cy%3D%22108.57%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22107%22%20y%3D%2295.57%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22145%22%20cy%3D%22157.76%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22137%22%20y%3D%22181.76%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22200.49273962793805%22%20cy%3D%22137.88319623061597%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22192.49273962793805%22%20y%3D%22124.88319623061597%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22330%22%20cy%3D%2291.49%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22322%22%20y%3D%2278.49%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22235%22%20cy%3D%22286.64%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22227%22%20y%3D%22310.64%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22430.3133271332514%22%20cy%3D%22216.6787934009252%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22422.3133271332514%22%20y%3D%22240.6787934009252%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EH%3C/text%3E%3Ccircle%20cx%3D%22480%22%20cy%3D%22198.88%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22472%22%20y%3D%22185.88%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ccircle%20cx%3D%22473%22%20cy%3D%22231.31%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22465%22%20y%3D%22255.31%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EG%3C/text%3E%3C/svg%3E", "31": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20395%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2255%22%20y1%3D%22190%22%20x2%3D%22390%22%20y2%3D%2270%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22390%22%20y1%3D%2270%22%20x2%3D%2255%22%20y2%3D%22190%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22100%22%20y1%3D%22335%22%20x2%3D%22515%22%20y2%3D%22186.34%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22515%22%20y1%3D%22186.34%22%20x2%3D%22100%22%20y2%3D%22335%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%2290%22%20y1%3D%22100%22%20x2%3D%22485%22%20y2%3D%22235.43%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22485%22%20y1%3D%22235.43%22%20x2%3D%2290%22%20y2%3D%22100%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%22115%22%20cy%3D%22108.57%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22107%22%20y%3D%2295.57%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22145%22%20cy%3D%22157.76%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22137%22%20y%3D%22181.76%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22200.49273962793805%22%20cy%3D%22137.88319623061597%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22192.49273962793805%22%20y%3D%22124.88319623061597%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22330%22%20cy%3D%2291.49%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22322%22%20y%3D%2278.49%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22235%22%20cy%3D%22286.64%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22227%22%20y%3D%22310.64%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22430.3133271332514%22%20cy%3D%22216.6787934009252%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22422.3133271332514%22%20y%3D%22240.6787934009252%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EH%3C/text%3E%3Ccircle%20cx%3D%22480%22%20cy%3D%22198.88%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22472%22%20y%3D%22185.88%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ccircle%20cx%3D%22473%22%20cy%3D%22231.31%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22465%22%20y%3D%22255.31%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EG%3C/text%3E%3C/svg%3E", "34": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20370%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2255%22%20y1%3D%22300%22%20x2%3D%22515%22%20y2%3D%22300%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22515%22%20y1%3D%22300%22%20x2%3D%2255%22%20y2%3D%22300%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22210%22%20y1%3D%22300%22%20x2%3D%22160%22%20y2%3D%22130%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22355%22%20y1%3D%22300%22%20x2%3D%2295%22%20y2%3D%2273.33%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%2282%22%20y%3D%22325%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22210%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22197%22%20y%3D%22325%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22355%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22342%22%20y%3D%22325%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22470%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22457%22%20y%3D%22325%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%22130%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22147%22%20y%3D%22118%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%2295.13%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22107%22%20y%3D%2283.13%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3C/svg%3E", "35": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20370%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%2255%22%20y1%3D%22300%22%20x2%3D%22515%22%20y2%3D%22300%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22515%22%20y1%3D%22300%22%20x2%3D%2255%22%20y2%3D%22300%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22210%22%20y1%3D%22300%22%20x2%3D%22160%22%20y2%3D%22130%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22355%22%20y1%3D%22300%22%20x2%3D%2295%22%20y2%3D%2273.33%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Ccircle%20cx%3D%2295%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%2282%22%20y%3D%22325%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ccircle%20cx%3D%22210%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22197%22%20y%3D%22325%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22355%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22342%22%20y%3D%22325%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22470%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22457%22%20y%3D%22325%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22160%22%20cy%3D%22130%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22147%22%20y%3D%22118%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22120%22%20cy%3D%2295.13%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22107%22%20y%3D%2283.13%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3C/svg%3E", "36": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20360%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22140%2C70%20140%2C290%20440%2C290%20140%2C70%22/%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22140%2C272%20158%2C272%20158%2C290%22/%3E%3Ctext%20x%3D%22151%22%20y%3D%22122%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2222%22%20fill%3D%22%23111%22%3E%CE%B8%3C/text%3E%3Ctext%20x%3D%22393%22%20y%3D%22278%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2222%22%20fill%3D%22%23111%22%3E%CE%BB%3C/text%3E%3C/svg%3E", "37": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20370%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22135%2C300%20135%2C100%20330%2C130%20430%2C300%20135%2C300%22/%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22135%2C283%20152%2C283%20152%2C300%22/%3E%3Ctext%20x%3D%22148%22%20y%3D%22138%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E80%C2%B0%3C/text%3E%3Ctext%20x%3D%22367%22%20y%3D%22282%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E48%C2%B0%3C/text%3E%3Ccircle%20cx%3D%22135%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22113%22%20y%3D%22324%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22135%22%20cy%3D%22100%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22113%22%20y%3D%2288%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22330%22%20cy%3D%22130%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22340%22%20y%3D%22118%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22430%22%20cy%3D%22300%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22440%22%20y%3D%22324%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3C/svg%3E", "40": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20380%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22150%2C110%2070%2C310%20470%2C310%20470%2C110%20150%2C110%22/%3E%3Cline%20x1%3D%22150%22%20y1%3D%22110%22%20x2%3D%22150%22%20y2%3D%22310%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cline%20x1%3D%22278%22%20y1%3D%22110%22%20x2%3D%22470%22%20y2%3D%22310%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22150%2C127%20167%2C127%20167%2C110%22/%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22150%2C293%20167%2C293%20167%2C310%22/%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22453%2C110%20453%2C127%20470%2C127%22/%3E%3Ctext%20x%3D%22143%22%20y%3D%2298%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ctext%20x%3D%22271%22%20y%3D%2298%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ctext%20x%3D%22463%22%20y%3D%2298%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ctext%20x%3D%22463%22%20y%3D%22334%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3Ctext%20x%3D%22143%22%20y%3D%22334%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EE%3C/text%3E%3Ctext%20x%3D%2263%22%20y%3D%22334%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EF%3C/text%3E%3Ctext%20x%3D%22206%22%20y%3D%2299%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E4%3C/text%3E%3Ctext%20x%3D%22365%22%20y%3D%2299%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E6%3C/text%3E%3Ctext%20x%3D%22488%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E5%3C/text%3E%3Ctext%20x%3D%22105%22%20y%3D%22338%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3E2%3C/text%3E%3C/svg%3E", "41": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20370%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%22154%22%20y1%3D%22291%22%20x2%3D%22154%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22202%22%20y1%3D%22291%22%20x2%3D%22202%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22250%22%20y1%3D%22291%22%20x2%3D%22250%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22298%22%20y1%3D%22291%22%20x2%3D%22298%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22346%22%20y1%3D%22291%22%20x2%3D%22346%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22394%22%20y1%3D%22291%22%20x2%3D%22394%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22442%22%20y1%3D%22291%22%20x2%3D%22442%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%22291%22%20x2%3D%22442%22%20y2%3D%22291%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%22243%22%20x2%3D%22442%22%20y2%3D%22243%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%22195%22%20x2%3D%22442%22%20y2%3D%22195%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%22147%22%20x2%3D%22442%22%20y2%3D%22147%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%2299%22%20x2%3D%22442%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22125.19999999999999%22%20y1%3D%22195%22%20x2%3D%22473.20000000000005%22%20y2%3D%22195%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22250%22%20y1%3D%22319.8%22%20x2%3D%22250%22%20y2%3D%2265.39999999999998%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22154%2C99%20442%2C99%20442%2C291%20154%2C291%20154%2C99%22/%3E%3Ctext%20x%3D%22482.79999999999995%22%20y%3D%22199.8%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3Ex%3C/text%3E%3Ctext%20x%3D%22245.2%22%20y%3D%2255.80000000000001%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3Ey%3C/text%3E%3Ctext%20x%3D%22147%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E-2%3C/text%3E%3Ctext%20x%3D%22195%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E-1%3C/text%3E%3Ctext%20x%3D%22291%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E1%3C/text%3E%3Ctext%20x%3D%22339%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E2%3C/text%3E%3Ctext%20x%3D%22387%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E3%3C/text%3E%3Ctext%20x%3D%22435%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E4%3C/text%3E%3Ctext%20x%3D%22224%22%20y%3D%22297%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E-2%3C/text%3E%3Ctext%20x%3D%22224%22%20y%3D%22249%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E-1%3C/text%3E%3Ctext%20x%3D%22224%22%20y%3D%22153%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E1%3C/text%3E%3Ctext%20x%3D%22224%22%20y%3D%22105%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E2%3C/text%3E%3Ccircle%20cx%3D%22154%22%20cy%3D%2299%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22131%22%20y%3D%2289%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22442%22%20cy%3D%2299%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22450%22%20y%3D%2289%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22442%22%20cy%3D%22291%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22450%22%20y%3D%22315%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22154%22%20cy%3D%22291%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22131%22%20y%3D%22315%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3C/svg%3E", "42": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20370%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Cline%20x1%3D%22154%22%20y1%3D%22291%22%20x2%3D%22154%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22202%22%20y1%3D%22291%22%20x2%3D%22202%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22250%22%20y1%3D%22291%22%20x2%3D%22250%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22298%22%20y1%3D%22291%22%20x2%3D%22298%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22346%22%20y1%3D%22291%22%20x2%3D%22346%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22394%22%20y1%3D%22291%22%20x2%3D%22394%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22442%22%20y1%3D%22291%22%20x2%3D%22442%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%22291%22%20x2%3D%22442%22%20y2%3D%22291%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%22243%22%20x2%3D%22442%22%20y2%3D%22243%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%22195%22%20x2%3D%22442%22%20y2%3D%22195%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%22147%22%20x2%3D%22442%22%20y2%3D%22147%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22154%22%20y1%3D%2299%22%20x2%3D%22442%22%20y2%3D%2299%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20stroke-dasharray%3D%225%205%22/%3E%3Cline%20x1%3D%22125.19999999999999%22%20y1%3D%22195%22%20x2%3D%22473.20000000000005%22%20y2%3D%22195%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cline%20x1%3D%22250%22%20y1%3D%22319.8%22%20x2%3D%22250%22%20y2%3D%2265.39999999999998%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20marker-end%3D%22url%28%23arrow%29%22/%3E%3Cpolyline%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22%20points%3D%22154%2C99%20442%2C99%20442%2C291%20154%2C291%20154%2C99%22/%3E%3Ctext%20x%3D%22482.79999999999995%22%20y%3D%22199.8%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3Ex%3C/text%3E%3Ctext%20x%3D%22245.2%22%20y%3D%2255.80000000000001%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3Ey%3C/text%3E%3Ctext%20x%3D%22147%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E-2%3C/text%3E%3Ctext%20x%3D%22195%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E-1%3C/text%3E%3Ctext%20x%3D%22291%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E1%3C/text%3E%3Ctext%20x%3D%22339%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E2%3C/text%3E%3Ctext%20x%3D%22387%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E3%3C/text%3E%3Ctext%20x%3D%22435%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E4%3C/text%3E%3Ctext%20x%3D%22224%22%20y%3D%22297%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E-2%3C/text%3E%3Ctext%20x%3D%22224%22%20y%3D%22249%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E-1%3C/text%3E%3Ctext%20x%3D%22224%22%20y%3D%22153%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E1%3C/text%3E%3Ctext%20x%3D%22224%22%20y%3D%22105%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E2%3C/text%3E%3Ccircle%20cx%3D%22154%22%20cy%3D%2299%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22131%22%20y%3D%2289%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22442%22%20cy%3D%2299%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22450%22%20y%3D%2289%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22442%22%20cy%3D%22291%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22450%22%20y%3D%22315%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22154%22%20cy%3D%22291%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22131%22%20y%3D%22315%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2218%22%20fill%3D%22%23111%22%3ED%3C/text%3E%3C/svg%3E", "48": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20580%20375%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Ctext%20x%3D%22202%22%20y%3D%2230%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23111%22%3EDeporte%20favorito%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22315%22%20x2%3D%22540%22%20y2%3D%22315%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22320%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E0%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22281%22%20x2%3D%22540%22%20y2%3D%22281%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22286%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E2%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22247%22%20x2%3D%22540%22%20y2%3D%22247%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22252%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E4%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22213%22%20x2%3D%22540%22%20y2%3D%22213%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E6%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22179%22%20x2%3D%22540%22%20y2%3D%22179%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22184%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E8%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22145%22%20x2%3D%22540%22%20y2%3D%22145%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22150%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E10%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22111%22%20x2%3D%22540%22%20y2%3D%22111%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22116%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E12%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%2277%22%20x2%3D%22540%22%20y2%3D%2277%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%2282%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E14%3C/text%3E%3Crect%20x%3D%2290%22%20y%3D%22179%22%20width%3D%2236%22%20height%3D%22136%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%2278%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3EAjedrez%3C/text%3E%3Crect%20x%3D%22185%22%20y%3D%22213%22%20width%3D%2236%22%20height%3D%22102%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%22173%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3ENataci%C3%B3n%3C/text%3E%3Crect%20x%3D%22280%22%20y%3D%22145%22%20width%3D%2236%22%20height%3D%22170%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%22268%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3EF%C3%BAtbol%3C/text%3E%3Crect%20x%3D%22375%22%20y%3D%22179%22%20width%3D%2236%22%20height%3D%22136%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%22363%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3EAtletismo%3C/text%3E%3Crect%20x%3D%22470%22%20y%3D%22111%22%20width%3D%2236%22%20height%3D%22204%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%22458%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3EVoleibol%3C/text%3E%3C/svg%3E", "49": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20580%20375%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cdefs%3E%3Cmarker%20id%3D%22arrow%22%20markerWidth%3D%227%22%20markerHeight%3D%227%22%20refX%3D%226%22%20refY%3D%223%22%20orient%3D%22auto%22%3E%3Cpath%20d%3D%22M0%2C0%20L6%2C3%20L0%2C6%20Z%22%20fill%3D%22%23111%22/%3E%3C/marker%3E%3C/defs%3E%3Ctext%20x%3D%22202%22%20y%3D%2230%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2221%22%20fill%3D%22%23111%22%3EDeporte%20favorito%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22315%22%20x2%3D%22540%22%20y2%3D%22315%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22320%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E0%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22281%22%20x2%3D%22540%22%20y2%3D%22281%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22286%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E2%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22247%22%20x2%3D%22540%22%20y2%3D%22247%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22252%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E4%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22213%22%20x2%3D%22540%22%20y2%3D%22213%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22218%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E6%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22179%22%20x2%3D%22540%22%20y2%3D%22179%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22184%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E8%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22145%22%20x2%3D%22540%22%20y2%3D%22145%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22150%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E10%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%22111%22%20x2%3D%22540%22%20y2%3D%22111%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%22116%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E12%3C/text%3E%3Cline%20x1%3D%2265%22%20y1%3D%2277%22%20x2%3D%22540%22%20y2%3D%2277%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%2236%22%20y%3D%2282%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3E14%3C/text%3E%3Crect%20x%3D%2290%22%20y%3D%22179%22%20width%3D%2236%22%20height%3D%22136%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%2278%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3EAjedrez%3C/text%3E%3Crect%20x%3D%22185%22%20y%3D%22213%22%20width%3D%2236%22%20height%3D%22102%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%22173%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3ENataci%C3%B3n%3C/text%3E%3Crect%20x%3D%22280%22%20y%3D%22145%22%20width%3D%2236%22%20height%3D%22170%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%22268%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3EF%C3%BAtbol%3C/text%3E%3Crect%20x%3D%22375%22%20y%3D%22179%22%20width%3D%2236%22%20height%3D%22136%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%22363%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3EAtletismo%3C/text%3E%3Crect%20x%3D%22470%22%20y%3D%22111%22%20width%3D%2236%22%20height%3D%22204%22%20fill%3D%22%23333%22/%3E%3Ctext%20x%3D%22458%22%20y%3D%22342%22%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2215%22%20fill%3D%22%23111%22%3EVoleibol%3C/text%3E%3C/svg%3E"};
+const QUESTIONS=[{"n": 1, "text": "Considere las siguientes afirmaciones:", "stem": "Considere las siguientes afirmaciones:<div class=\"claims\"><p><b>I.</b> \\(3^3=9\\)</p><p><b>II.</b> \\(4^2=16\\)</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "D", "explanation": "3³=27, no9. 4²=16.", "context": "", "area": "Números"}, {"n": 2, "text": "El resultado de \\(6\\cdot3+9\\div3\\) corresponde a", "stem": "El resultado de \\(6\\cdot3+9\\div3\\) corresponde a", "opts": ["9", "21", "24", "36"], "answer": "B", "explanation": "18+3=21; primero se realizan multiplicación y división.", "context": "", "area": "Números"}, {"n": 3, "text": "Considere las siguientes expresiones:", "stem": "Considere las siguientes expresiones:<div class=\"claims\"><p><b>I.</b> \\((4-3)^2=1\\)</p><p><b>II.</b> \\(1+2\\cdot3=9\\)</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "C", "explanation": "(4−3)²=1. 1+2×3=7, no9.", "context": "", "area": "Números"}, {"n": 4, "text": "¿Cuál opción contiene un número divisible por 10?", "stem": "¿Cuál opción contiene un número divisible por 10?", "opts": ["100", "101", "102", "103"], "answer": "A", "explanation": "Los múltiplos de10 terminan en0;100 cumple.", "context": "", "area": "Números"}, {"n": 5, "text": "Considere las siguientes proposiciones:", "stem": "Considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> El número 30 es divisible por 3 y 5.</p><p><b>II.</b> Todo número terminado en cero o en número par es divisible por 2.</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "30=3×10=5×6. Todo entero cuya última cifra es0,2,4,6 u8 es divisible por2.", "context": "", "area": "Números"}, {"n": 6, "text": "La descomposición del número 24 en factores primos corresponde a", "stem": "La descomposición del número 24 en factores primos corresponde a", "opts": ["\\(3\\cdot8\\)", "\\(2\\cdot3\\cdot4\\)", "\\(2\\cdot2\\cdot6\\)", "\\(2\\cdot2\\cdot2\\cdot3\\)"], "answer": "D", "explanation": "24=2³×3;2 y3 son primos. Las otras descomposiciones incluyen factores compuestos.", "context": "", "area": "Números"}, {"n": 7, "text": "Considere las siguientes proposiciones:", "stem": "Considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> 19 y 23 corresponden a números primos.</p><p><b>II.</b> 9 y 15 corresponden a números compuestos.</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "19 y23 solo tienen divisores positivos1 y ellos mismos. 9=3² y15=3×5 son compuestos.", "context": "", "area": "Números"}, {"n": 8, "text": "Esta semana Víctor y Karen cuidan el jardín de la escuela. Luego, él lo cuidará cada 6 semanas y ella cada 4. ¿Cada cuántas semanas ellos vuelven a coincidir en el cuido del jardín?", "stem": "Esta semana Víctor y Karen cuidan el jardín de la escuela. Luego, él lo cuidará cada 6 semanas y ella cada 4. ¿Cada cuántas semanas ellos vuelven a coincidir en el cuido del jardín?", "opts": ["4", "6", "10", "12"], "answer": "D", "explanation": "mcm(6,4)=12 semanas.", "context": "", "area": "Números"}, {"n": 9, "text": "Juan posee 12 monedas de ₡500, 18 de ₡100 y 24 de ₡50. Él desea conformar la mayor cantidad posible de sobres con igual cantidad de monedas e igual cantidad de dinero. ¿Cuánto dinero (en colones) debe haber en cada sobre?", "stem": "Juan posee 12 monedas de ₡500, 18 de ₡100 y 24 de ₡50. Él desea conformar la mayor cantidad posible de sobres con igual cantidad de monedas e igual cantidad de dinero. ¿Cuánto dinero (en colones) debe haber en cada sobre?", "opts": ["1500", "3000", "3900", "4500"], "answer": "A", "explanation": "Se forman6 sobres: cada uno con2 monedas de500,3 de100 y4 de50. El dinero por sobre es1000+300+200=1500 colones.", "context": "", "area": "Números"}, {"n": 10, "text": "Considere las siguientes proposiciones:", "stem": "Considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> La temperatura más baja registrada en el volcán Irazú fue de 3 °C bajo cero.</p><p><b>II.</b> En Heredia durante el verano la temperatura llega a alcanzar los 30 °C como máximo.</p></div>¿Cuál o cuáles de ellas representan una situación que se puede describir empleando un número entero negativo?", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "C", "explanation": "3°C bajo cero se representa con−3. Alcanzar30°C es una temperatura positiva.", "context": "", "area": "Números"}, {"n": 11, "text": "La temperatura más alta se registró en la ciudad", "stem": "La temperatura más alta se registró en la ciudad", "opts": ["M", "N", "V", "P"], "answer": "B", "explanation": "0 es mayor que−1,−3 y−4; corresponde a N.", "context": "A continuación, se muestran las temperaturas promedio de 4 ciudades diferentes ubicadas en los Andes:<div class=\"table-wrap\"><table><tr><td>Ciudad</td><td>Temperatura promedio °C</td></tr><tr><td>M</td><td>−1</td></tr><tr><td>N</td><td>0</td></tr><tr><td>V</td><td>−3</td></tr><tr><td>P</td><td>−4</td></tr></table></div>", "area": "Números"}, {"n": 12, "text": "La temperatura más baja se registró en la ciudad", "stem": "La temperatura más baja se registró en la ciudad", "opts": ["M", "N", "V", "P"], "answer": "D", "explanation": "−4 es la menor temperatura; corresponde a P.", "context": "A continuación, se muestran las temperaturas promedio de 4 ciudades diferentes ubicadas en los Andes:<div class=\"table-wrap\"><table><tr><td>Ciudad</td><td>Temperatura promedio °C</td></tr><tr><td>M</td><td>−1</td></tr><tr><td>N</td><td>0</td></tr><tr><td>V</td><td>−3</td></tr><tr><td>P</td><td>−4</td></tr></table></div>", "area": "Números"}, {"n": 13, "text": "Considere las siguientes proposiciones:", "stem": "Considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> \\(|-3|=-3\\)</p><p><b>II.</b> El opuesto de 12 es −12.</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "D", "explanation": "|−3|=3, no−3. El opuesto de12 es−12.", "context": "", "area": "Números"}, {"n": 14, "text": "Considere las siguientes proposiciones:", "stem": "Considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> \\(3^2=9\\)</p><p><b>II.</b> \\(\\sqrt{36}=6\\)</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "3²=9 y la raíz cuadrada principal de36 es6.", "context": "", "area": "Números"}, {"n": 15, "text": "Considere las siguientes proposiciones:", "stem": "Considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> \\(5^2=2^5\\)</p><p><b>II.</b> \\(-3^2=(-3)^2\\)</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "B", "explanation": "5²=25 y2⁵=32, no son iguales. −3²=−9 mientras que(−3)²=9.", "context": "", "area": "Números"}, {"n": 16, "text": "Una expresión equivalente a \\(5^3\\cdot5^4\\div5^2\\) corresponde a", "stem": "Una expresión equivalente a \\(5^3\\cdot5^4\\div5^2\\) corresponde a", "opts": ["\\(5^5\\)", "\\(5^6\\)", "\\(5^9\\)", "\\(5^{10}\\)"], "answer": "A", "explanation": "Con la misma base se suman exponentes al multiplicar y se restan al dividir:5³⁺⁴⁻²=5⁵.", "context": "", "area": "Números"}, {"n": 17, "text": "El resultado de \\(3^2-3(3-1)\\) corresponde a", "stem": "El resultado de \\(3^2-3(3-1)\\) corresponde a", "opts": ["0", "3", "6", "15"], "answer": "B", "explanation": "9−3×2=3.", "context": "", "area": "Números"}, {"n": 18, "text": "El resultado de \\((-4+2\\cdot3)+2^3\\) corresponde a", "stem": "El resultado de \\((-4+2\\cdot3)+2^3\\) corresponde a", "opts": ["2", "9", "10", "14"], "answer": "C", "explanation": "−4+6+8=10.", "context": "", "area": "Números"}, {"n": 19, "text": "Un submarino se encontraba a 79 m bajo el nivel del mar. Si el submarino ascendió 12 m, entonces, ¿a qué profundidad, en metros, se encuentra después del ascenso?", "stem": "Un submarino se encontraba a 79 m bajo el nivel del mar. Si el submarino ascendió 12 m, entonces, ¿a qué profundidad, en metros, se encuentra después del ascenso?", "opts": ["67", "91", "−67", "−91"], "answer": "C", "explanation": "La posición respecto al nivel del mar es−79+12=−67 m:67 m bajo el nivel del mar.", "context": "", "area": "Números"}, {"n": 20, "text": "Para ir a un concierto, un grupo de amigos compró entradas y entre todos pagaron ₡72 000, cada entrada valía ₡9000. Si cada uno compró su entrada y, además, el día del concierto, dos de los amigos no pudieron asistir, entonces, ¿cuántos de ellos asistieron al concierto?", "stem": "Para ir a un concierto, un grupo de amigos compró entradas y entre todos pagaron ₡72 000, cada entrada valía ₡9000. Si cada uno compró su entrada y, además, el día del concierto, dos de los amigos no pudieron asistir, entonces, ¿cuántos de ellos asistieron al concierto?", "opts": ["2", "4", "6", "10"], "answer": "C", "explanation": "72 000/9000=8 entradas; asistieron8−2=6 amigos.", "context": "", "area": "Números"}, {"n": 21, "text": "Con certeza los puntos ___, ___ y ___ son colineales.", "stem": "Con certeza los puntos ___, ___ y ___ son colineales.", "opts": ["A, B y C", "B, C y D", "C, D y E", "A, F y E"], "answer": "D", "explanation": "A,F,E pertenecen a la recta ℓ₃. Que B,C,D,E parezcan alineados en el dibujo no garantiza esa relación, pues no se indica una recta que los contenga.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 22, "text": "Una recta paralela con \\(\\ell_5\\) corresponde a", "stem": "Una recta paralela con \\(\\ell_5\\) corresponde a", "opts": ["\\(\\ell_1\\)", "\\(\\ell_2\\)", "\\(\\ell_3\\)", "\\(\\ell_4\\)"], "answer": "D", "explanation": "ℓ₄ yℓ₅ son perpendiculares a ℓ₁; por ello son paralelas.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 23, "text": "Dos rectas perpendiculares entre sí corresponden a", "stem": "Dos rectas perpendiculares entre sí corresponden a", "opts": ["\\(\\ell_1\\text{ y }\\ell_6\\)", "\\(\\ell_2\\text{ y }\\ell_3\\)", "\\(\\ell_2\\text{ y }\\ell_5\\)", "\\(\\ell_4\\text{ y }\\ell_6\\)"], "answer": "A", "explanation": "La marca de ángulo recto indica ℓ₁⊥ℓ₆.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 24, "text": "Con base a la información dada considere las siguientes proposiciones:", "stem": "Con base a la información dada considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> \\(\\overline{AB}\\) es un segmento de \\(\\overleftrightarrow{AC}\\).</p><p><b>II.</b> E, B, C son puntos <u>no</u> colineales.</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "A", "explanation": "AB es un segmento de la recta AC. E no pertenece a la recta horizontal BC, así que E,B,C no son colineales.", "context": "Considere la siguiente información:", "area": "Geometría"}, {"n": 25, "text": "Considere las siguientes proposiciones:", "stem": "Considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> \\(\\overline{HC}\\) es una arista del cubo.</p><p><b>II.</b> \\(\\overleftrightarrow{AD}\\) y \\(\\overleftrightarrow{EF}\\) son rectas perpendiculares entre sí.</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "B", "explanation": "HC es una diagonal de la cara superior, no una arista. AD y EF no se cortan: son rectas alabeadas, por lo que no son perpendiculares.", "context": "Considere la siguiente figura referida a un cubo:", "area": "Geometría"}, {"n": 26, "text": "Considere las siguientes proposiciones:", "stem": "Considere las siguientes proposiciones:<div class=\"claims\"><p><b>I.</b> Los planos EHGF y ABCD son paralelos entre sí.</p><p><b>II.</b> Los planos BFCG y EACG son perpendiculares entre sí.</p></div>De ellas son verdaderas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "C", "explanation": "EHGF y ABCD son caras opuestas y paralelas. BFCG es una cara lateral y EACG es un plano diagonal; forman45°, no90°.", "context": "Considere la siguiente figura referida a un cubo:", "area": "Geometría"}, {"n": 27, "text": "El ángulo opuesto por el vértice con respecto al \\(\\angle DBE\\) corresponde a", "stem": "El ángulo opuesto por el vértice con respecto al \\(\\angle DBE\\) corresponde a", "opts": ["\\(\\angle CBE\\)", "\\(\\angle DBA\\)", "\\(\\angle ABC\\)", "\\(\\angle ACB\\)"], "answer": "C", "explanation": "BA y BE son rayos opuestos; BC y BD también. El ángulo opuesto a DBE es ABC.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 28, "text": "Un ángulo suplementario con \\(\\angle FCG\\) corresponde a", "stem": "Un ángulo suplementario con \\(\\angle FCG\\) corresponde a", "opts": ["\\(\\angle FCB\\)", "\\(\\angle BCA\\)", "\\(\\angle BAC\\)", "\\(\\angle EBC\\)"], "answer": "A", "explanation": "FCB y FCG comparten CF, mientras que CB y CG son rayos opuestos. Sus medidas suman180°.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 29, "text": "Un ángulo adyacente con el \\(\\angle ACB\\) corresponde a", "stem": "Un ángulo adyacente con el \\(\\angle ACB\\) corresponde a", "opts": ["\\(\\angle ECH\\)", "\\(\\angle BCH\\)", "\\(\\angle BDH\\)", "\\(\\angle CHE\\)"], "answer": "B", "explanation": "BCH comparte CB con ACB, y CA y CH son rayos opuestos.", "context": "Considere la siguiente figura, donde \\(\\overleftrightarrow{BE}\\parallel\\overleftrightarrow{DF}\\):", "area": "Geometría"}, {"n": 30, "text": "El \\(\\angle DHG\\) forma un par lineal con", "stem": "El \\(\\angle DHG\\) forma un par lineal con", "opts": ["\\(\\angle ACE\\)", "\\(\\angle HCE\\)", "\\(\\angle CHF\\)", "\\(\\angle GHF\\)"], "answer": "D", "explanation": "DHG y GHF comparten HG y los rayos HD y HF son opuestos.", "context": "Considere la siguiente figura, donde \\(\\overleftrightarrow{BE}\\parallel\\overleftrightarrow{DF}\\):", "area": "Geometría"}, {"n": 31, "text": "El ángulo opuesto por el vértice con el \\(\\angle ACE\\) corresponde a", "stem": "El ángulo opuesto por el vértice con el \\(\\angle ACE\\) corresponde a", "opts": ["\\(\\angle ECH\\)", "\\(\\angle BCH\\)", "\\(\\angle BCA\\)", "\\(\\angle ACH\\)"], "answer": "B", "explanation": "CB es opuesto a CE y CH es opuesto a CA. El ángulo buscado es BCH.", "context": "Considere la siguiente figura, donde \\(\\overleftrightarrow{BE}\\parallel\\overleftrightarrow{DF}\\):", "area": "Geometría"}, {"n": 32, "text": "Una pareja de ángulos congruentes y complementarios entre sí corresponde a", "stem": "Una pareja de ángulos congruentes y complementarios entre sí corresponde a", "opts": ["30° y 60°", "45° y 45°", "90° y 90°", "45° y 135°"], "answer": "B", "explanation": "Deben ser iguales y sumar90°. Cada uno mide45°.", "context": "", "area": "Geometría"}, {"n": 33, "text": "Si las medidas de dos lados de un triángulo son 3 y 7, entonces, la medida del tercer lado puede ser", "stem": "Si las medidas de dos lados de un triángulo son 3 y 7, entonces, la medida del tercer lado puede ser", "opts": ["2", "4", "6", "10"], "answer": "C", "explanation": "La desigualdad triangular exige7−3<x<7+3, es decir4<x<10. Solo6 cumple.", "context": "", "area": "Geometría"}, {"n": 34, "text": "Si la \\(m\\angle BAC=110^\\circ\\) y la \\(m\\angle ACB=38^\\circ\\), entonces, la \\(m\\angle CBA\\) corresponde a", "stem": "Si la \\(m\\angle BAC=110^\\circ\\) y la \\(m\\angle ACB=38^\\circ\\), entonces, la \\(m\\angle CBA\\) corresponde a", "opts": ["20°", "32°", "36°", "38°"], "answer": "B", "explanation": "180°−110°−38°=32°.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 35, "text": "Si la \\(m\\angle BAC=109^\\circ\\) y la \\(m\\angle ABC=34^\\circ\\), entonces, la \\(m\\angle BCD\\) corresponde a", "stem": "Si la \\(m\\angle BAC=109^\\circ\\) y la \\(m\\angle ABC=34^\\circ\\), entonces, la \\(m\\angle BCD\\) corresponde a", "opts": ["143°", "144°", "145°", "146°"], "answer": "A", "explanation": "El ángulo exterior BCD es igual a la suma de los dos interiores no adyacentes:109°+34°=143°.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 36, "text": "Si la medida del \\(\\angle\\lambda=40^\\circ\\), entonces, ¿cuál es la medida del \\(\\angle\\theta\\)?", "stem": "Si la medida del \\(\\angle\\lambda=40^\\circ\\), entonces, ¿cuál es la medida del \\(\\angle\\theta\\)?", "opts": ["40°", "50°", "60°", "65°"], "answer": "B", "explanation": "Los dos ángulos agudos de un triángulo rectángulo suman90°; θ=90°−40°=50°.", "context": "Considere el siguiente triángulo:", "area": "Geometría"}, {"n": 37, "text": "¿Cuál es la medida del \\(\\angle BCD\\)?", "stem": "¿Cuál es la medida del \\(\\angle BCD\\)?", "opts": ["128°", "138°", "142°", "170°"], "answer": "C", "explanation": "Los ángulos internos suman360°:360°−90°−80°−48°=142°.", "context": "Considere la siguiente información referida al cuadrilátero BADC:", "area": "Geometría"}, {"n": 38, "text": "Si la suma de las medidas de tres ángulos internos de un cuadrilátero convexo es 252°, entonces, la medida del cuarto ángulo interno corresponde a", "stem": "Si la suma de las medidas de tres ángulos internos de un cuadrilátero convexo es 252°, entonces, la medida del cuarto ángulo interno corresponde a", "opts": ["72°", "84°", "96°", "108°"], "answer": "D", "explanation": "360°−252°=108°.", "context": "", "area": "Geometría"}, {"n": 39, "text": "Si la medida de un ángulo interno de un rombo es 68°, entonces, la suma de las medidas de los otros tres ángulos internos corresponde a", "stem": "Si la medida de un ángulo interno de un rombo es 68°, entonces, la suma de las medidas de los otros tres ángulos internos corresponde a", "opts": ["224°", "248°", "272°", "292°"], "answer": "D", "explanation": "Un rombo es un cuadrilátero; sus ángulos internos suman360°. Los otros tres suman360°−68°=292°.", "context": "", "area": "Geometría"}, {"n": 40, "text": "¿Cuál es el área del cuadrilátero AFDC?", "stem": "¿Cuál es el área del cuadrilátero AFDC?", "opts": ["45", "50", "55", "60"], "answer": "C", "explanation": "El rectángulo AECD tiene base4+6=10 y altura5:área50. El triángulo AFE tiene base2 y altura5:área5. Total55.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 41, "text": "Las coordenadas del punto medio del segmento \\(\\overline{AC}\\) corresponden a", "stem": "Las coordenadas del punto medio del segmento \\(\\overline{AC}\\) corresponden a", "opts": ["(0, 1)", "(1, 0)", "(0, −1)", "(−1, 0)"], "answer": "B", "explanation": "A=(−2,2), C=(4,−2). Punto medio=((−2+4)/2,(2−2)/2)=(1,0).", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 42, "text": "Las coordenadas de un punto ubicado en el interior del cuadrilátero ADCB corresponden a", "stem": "Las coordenadas de un punto ubicado en el interior del cuadrilátero ADCB corresponden a", "opts": ["(0, 0)", "(1, 3)", "(−1, 4)", "(−2, 3)"], "answer": "A", "explanation": "El interior cumple−2<x<4 y−2<y<2; (0,0) satisface ambas condiciones.", "context": "Considere la siguiente figura:", "area": "Geometría"}, {"n": 43, "text": "Según el patrón de la siguiente sucesión: …32, 64, 128, X, 512…, ¿cuál es el valor de X?", "stem": "Según el patrón de la siguiente sucesión: …32, 64, 128, X, 512…, ¿cuál es el valor de X?", "opts": ["192", "224", "256", "320"], "answer": "C", "explanation": "Cada término es el doble del anterior:128×2=256.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 44, "text": "Si se programa por 7 horas, entonces, ¿cuántas toneladas de basura desintegrará el robot?", "stem": "Si se programa por 7 horas, entonces, ¿cuántas toneladas de basura desintegrará el robot?", "opts": ["40", "42", "58", "65"], "answer": "B", "explanation": "Las diferencias son4,5,6,7,8; la siguiente es9. Así33+9=42 toneladas.", "context": "Un robot desintegra cierta cantidad de basura según las horas que se programe. La siguiente tabla muestra la cantidad de toneladas de basura que desintegra el robot por hora programada:<div class=\"table-wrap\"><table><tr><td>Horas</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td></tr><tr><td>Toneladas</td><td>3</td><td>7</td><td>12</td><td>18</td><td>25</td><td>33</td></tr></table></div>", "area": "Relaciones y Álgebra"}, {"n": 45, "text": "Considere las siguientes situaciones:", "stem": "Considere las siguientes situaciones:<div class=\"claims\"><p><b>I.</b> Si 12 latas de refrescos cuestan ₡96, entonces, ¿cuánto costarán 5 latas?</p><p><b>II.</b> Si 6 obreros necesitan 15 días para hacer un trabajo, entonces, ¿cuántos días necesitarán 10 obreros para hacer el mismo trabajo?</p></div>¿Cuál o cuáles de las anteriores situaciones representan una relación de proporcionalidad inversa?", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "D", "explanation": "El costo de las latas es proporcional directamente a su cantidad. Para un mismo trabajo, al aumentar los obreros disminuyen los días; solo II es inversa.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 46, "text": "Si 5 kg de arroz se compran con ₡4750, entonces, ¿cuántos kilogramos de ese mismo arroz se podrán comprar con ₡7600?", "stem": "Si 5 kg de arroz se compran con ₡4750, entonces, ¿cuántos kilogramos de ese mismo arroz se podrán comprar con ₡7600?", "opts": ["6", "7", "8", "13"], "answer": "C", "explanation": "El kilogramo cuesta4750/5=950 colones. Con7600 se compran7600/950=8 kg.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 47, "text": "Si 15 mecánicos realizan una revisión completa a un carro en 60 segundos, entonces, ¿cuántos segundos tardarían 5 mecánicos en realizar dicha revisión?", "stem": "Si 15 mecánicos realizan una revisión completa a un carro en 60 segundos, entonces, ¿cuántos segundos tardarían 5 mecánicos en realizar dicha revisión?", "opts": ["75", "80", "180", "300"], "answer": "C", "explanation": "Proporcionalidad inversa:15×60/5=180 segundos, suponiendo igual rendimiento.", "context": "", "area": "Relaciones y Álgebra"}, {"n": 48, "text": "De los estudiantes consultados, ¿a cuántos les gusta el atletismo?", "stem": "De los estudiantes consultados, ¿a cuántos les gusta el atletismo?", "opts": ["2", "4", "6", "8"], "answer": "D", "explanation": "La barra de atletismo tiene altura8.", "context": "En un colegio, se consulta a los estudiantes por su deporte favorito. El siguiente gráfico muestra la respuesta de los estudiantes:", "area": "Estadística"}, {"n": 49, "text": "¿Cuál es el deporte de mayor preferencia entre los consultados?", "stem": "¿Cuál es el deporte de mayor preferencia entre los consultados?", "opts": ["Fútbol", "Ajedrez", "Voleibol", "Natación"], "answer": "C", "explanation": "Voleibol presenta la barra más alta, con12 estudiantes.", "context": "En un colegio, se consulta a los estudiantes por su deporte favorito. El siguiente gráfico muestra la respuesta de los estudiantes:", "area": "Estadística"}, {"n": 50, "text": "Según la información dada, la cantidad de estudiantes escogidos al azar hace referencia al concepto denominado", "stem": "Según la información dada, la cantidad de estudiantes escogidos al azar hace referencia al concepto denominado", "opts": ["muestra.", "población.", "unidad estadística.", "variable de estudio."], "answer": "A", "explanation": "Los300 escogidos son una parte de la población de1300; constituyen la muestra.", "context": "En una escuela de 1300 estudiantes se decide aplicar una encuesta para conocer el nivel socioeconómico de sus estudiantes. Para eso se escogió 300 estudiantes al azar.", "area": "Estadística"}, {"n": 51, "text": "Considere la siguiente información:", "stem": "Considere la siguiente información:<div class=\"claims\"><p><b>I.</b> Color de un automóvil.</p><p><b>II.</b> Cantidad de gasolina en litros.</p></div>De ellas representan variables cualitativas", "opts": ["ambas.", "ninguna.", "solo la I.", "solo la II."], "answer": "C", "explanation": "Color es una categoría y es cualitativa. La cantidad de gasolina se mide numéricamente y es cuantitativa.", "context": "", "area": "Estadística"}, {"n": 52, "text": "Según la información dada “deporte favorito de los estudiantes” representa el concepto denominado", "stem": "Según la información dada “deporte favorito de los estudiantes” representa el concepto denominado", "opts": ["muestra.", "población.", "unidad estadística.", "variable de estudio."], "answer": "D", "explanation": "El deporte favorito es la característica consultada a cada estudiante:la variable de estudio.", "context": "En un colegio de 2000 estudiantes se desea conocer el deporte favorito de ellos. Para esto escogen al azar 400 estudiantes de los diferentes niveles del colegio.", "area": "Estadística"}, {"n": 53, "text": "El recorrido de los datos sobre las edades corresponde a", "stem": "El recorrido de los datos sobre las edades corresponde a", "opts": ["1", "2", "3", "4"], "answer": "C", "explanation": "Recorrido=edad máxima−edad mínima=16−13=3 años.", "context": "Se le preguntó a un grupo de 10 jóvenes por sus edades en años cumplidos. A continuación, el resumen de la información extraída:<div class=\"table-wrap\"><table><tr><td>Edad</td><td>Frecuencia absoluta</td></tr><tr><td>13</td><td>4</td></tr><tr><td>14</td><td>2</td></tr><tr><td>15</td><td>2</td></tr><tr><td>16</td><td>2</td></tr><tr><td>Total</td><td>10</td></tr></table></div>", "area": "Estadística"}, {"n": 54, "text": "El dato que representa la moda sobre las edades corresponde a ___ años.", "stem": "El dato que representa la moda sobre las edades corresponde a ___ años.", "opts": ["2", "4", "13", "14"], "answer": "C", "explanation": "La edad13 tiene la frecuencia más alta:4 jóvenes. La moda es13, no su frecuencia4.", "context": "Se le preguntó a un grupo de 10 jóvenes por sus edades en años cumplidos. A continuación, el resumen de la información extraída:<div class=\"table-wrap\"><table><tr><td>Edad</td><td>Frecuencia absoluta</td></tr><tr><td>13</td><td>4</td></tr><tr><td>14</td><td>2</td></tr><tr><td>15</td><td>2</td></tr><tr><td>16</td><td>2</td></tr><tr><td>Total</td><td>10</td></tr></table></div>", "area": "Estadística"}, {"n": 55, "text": "La edad promedio (media aritmética) de los estudiantes corresponde a ___ años.", "stem": "La edad promedio (media aritmética) de los estudiantes corresponde a ___ años.", "opts": ["13", "14", "15", "16"], "answer": null, "explanation": "Ítem excluido de la nota. La media exacta es(13×4+14×2+15×2+16×2)/10=142/10=14,2 años. La clave adjunta marca B(14), que sería el redondeo al entero más cercano; el enunciado no pide redondear y ninguna opción contiene14,2.", "context": "Se le preguntó a un grupo de 10 jóvenes por sus edades en años cumplidos. A continuación, el resumen de la información extraída:<div class=\"table-wrap\"><table><tr><td>Edad</td><td>Frecuencia absoluta</td></tr><tr><td>13</td><td>4</td></tr><tr><td>14</td><td>2</td></tr><tr><td>15</td><td>2</td></tr><tr><td>16</td><td>2</td></tr><tr><td>Total</td><td>10</td></tr></table></div>", "area": "Estadística", "excluded": true}];
+const TOTAL=QUESTIONS.length,LIMIT=3*60*60;
+const SOLUTIONS={"1": "3³=27, no9. 4²=16.", "2": "18+3=21; primero se realizan multiplicación y división.", "3": "(4−3)²=1. 1+2×3=7, no9.", "4": "Los múltiplos de10 terminan en0;100 cumple.", "5": "30=3×10=5×6. Todo entero cuya última cifra es0,2,4,6 u8 es divisible por2.", "6": "24=2³×3;2 y3 son primos. Las otras descomposiciones incluyen factores compuestos.", "7": "19 y23 solo tienen divisores positivos1 y ellos mismos. 9=3² y15=3×5 son compuestos.", "8": "mcm(6,4)=12 semanas.", "9": "Se forman6 sobres: cada uno con2 monedas de500,3 de100 y4 de50. El dinero por sobre es1000+300+200=1500 colones.", "10": "3°C bajo cero se representa con−3. Alcanzar30°C es una temperatura positiva.", "11": "0 es mayor que−1,−3 y−4; corresponde a N.", "12": "−4 es la menor temperatura; corresponde a P.", "13": "|−3|=3, no−3. El opuesto de12 es−12.", "14": "3²=9 y la raíz cuadrada principal de36 es6.", "15": "5²=25 y2⁵=32, no son iguales. −3²=−9 mientras que(−3)²=9.", "16": "Con la misma base se suman exponentes al multiplicar y se restan al dividir:5³⁺⁴⁻²=5⁵.", "17": "9−3×2=3.", "18": "−4+6+8=10.", "19": "La posición respecto al nivel del mar es−79+12=−67 m:67 m bajo el nivel del mar.", "20": "72 000/9000=8 entradas; asistieron8−2=6 amigos.", "21": "A,F,E pertenecen a la recta ℓ₃. Que B,C,D,E parezcan alineados en el dibujo no garantiza esa relación, pues no se indica una recta que los contenga.", "22": "ℓ₄ yℓ₅ son perpendiculares a ℓ₁; por ello son paralelas.", "23": "La marca de ángulo recto indica ℓ₁⊥ℓ₆.", "24": "AB es un segmento de la recta AC. E no pertenece a la recta horizontal BC, así que E,B,C no son colineales.", "25": "HC es una diagonal de la cara superior, no una arista. AD y EF no se cortan: son rectas alabeadas, por lo que no son perpendiculares.", "26": "EHGF y ABCD son caras opuestas y paralelas. BFCG es una cara lateral y EACG es un plano diagonal; forman45°, no90°.", "27": "BA y BE son rayos opuestos; BC y BD también. El ángulo opuesto a DBE es ABC.", "28": "FCB y FCG comparten CF, mientras que CB y CG son rayos opuestos. Sus medidas suman180°.", "29": "BCH comparte CB con ACB, y CA y CH son rayos opuestos.", "30": "DHG y GHF comparten HG y los rayos HD y HF son opuestos.", "31": "CB es opuesto a CE y CH es opuesto a CA. El ángulo buscado es BCH.", "32": "Deben ser iguales y sumar90°. Cada uno mide45°.", "33": "La desigualdad triangular exige7−3<x<7+3, es decir4<x<10. Solo6 cumple.", "34": "180°−110°−38°=32°.", "35": "El ángulo exterior BCD es igual a la suma de los dos interiores no adyacentes:109°+34°=143°.", "36": "Los dos ángulos agudos de un triángulo rectángulo suman90°; θ=90°−40°=50°.", "37": "Los ángulos internos suman360°:360°−90°−80°−48°=142°.", "38": "360°−252°=108°.", "39": "Un rombo es un cuadrilátero; sus ángulos internos suman360°. Los otros tres suman360°−68°=292°.", "40": "El rectángulo AECD tiene base4+6=10 y altura5:área50. El triángulo AFE tiene base2 y altura5:área5. Total55.", "41": "A=(−2,2), C=(4,−2). Punto medio=((−2+4)/2,(2−2)/2)=(1,0).", "42": "El interior cumple−2<x<4 y−2<y<2; (0,0) satisface ambas condiciones.", "43": "Cada término es el doble del anterior:128×2=256.", "44": "Las diferencias son4,5,6,7,8; la siguiente es9. Así33+9=42 toneladas.", "45": "El costo de las latas es proporcional directamente a su cantidad. Para un mismo trabajo, al aumentar los obreros disminuyen los días; solo II es inversa.", "46": "El kilogramo cuesta4750/5=950 colones. Con7600 se compran7600/950=8 kg.", "47": "Proporcionalidad inversa:15×60/5=180 segundos, suponiendo igual rendimiento.", "48": "La barra de atletismo tiene altura8.", "49": "Voleibol presenta la barra más alta, con12 estudiantes.", "50": "Los300 escogidos son una parte de la población de1300; constituyen la muestra.", "51": "Color es una categoría y es cualitativa. La cantidad de gasolina se mide numéricamente y es cuantitativa.", "52": "El deporte favorito es la característica consultada a cada estudiante:la variable de estudio.", "53": "Recorrido=edad máxima−edad mínima=16−13=3 años.", "54": "La edad13 tiene la frecuencia más alta:4 jóvenes. La moda es13, no su frecuencia4.", "55": "Ítem excluido de la nota. La media exacta es(13×4+14×2+15×2+16×2)/10=142/10=14,2 años. La clave adjunta marca B(14), que sería el redondeo al entero más cercano; el enunciado no pide redondear y ninguna opción contiene14,2."};
+// Se configura después de desplegar el servicio privado de recepción.
+const BACKEND_READY=false;
+const EXAM_KEY='ea_setimo_02_2019';
+const EXAM_API_URL='https://script.google.com/macros/s/AKfycbzTbcCEbXGaZgIHfiBo8MExOJ5o8wpPSTuvLgdaGHhRNzuwRCwPeyJy5xHXhy2P518HJQ/exec';
+const STORAGE_KEY='setimo022019_exam_v1';
+let current=0,answers=Array(TOTAL).fill(null),started=false,remaining=LIMIT,interval=null,reviewing=false,finished=false,timedOut=false;
+let student={firstName:'',lastName:''},attemptId='',ticket='',sessionId='',submitted=false,deliveryPending=false,examDeadline=0,availabilityOpen=false;
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify({answers,current,started,remaining,finished,timedOut,student,attemptId,ticket,sessionId,submitted,examDeadline,ts:Date.now()}));}
+function load(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(!x)return;answers=Array.isArray(x.answers)&&x.answers.length===TOTAL?x.answers:answers;current=Math.max(0,Math.min(TOTAL-1,Number(x.current)||0));started=!!x.started;finished=!!x.finished;timedOut=!!x.timedOut;remaining=typeof x.remaining==='number'?x.remaining:LIMIT;student=x.student||student;attemptId=x.attemptId||'';ticket=x.ticket||'';sessionId=x.sessionId||'';submitted=!!x.submitted;examDeadline=Number(x.examDeadline)||0;if(started&&!finished&&x.ts)remaining=Math.max(0,remaining-Math.floor((Date.now()-x.ts)/1000));if(examDeadline&&started&&!finished)remaining=Math.min(remaining,Math.max(0,Math.floor((examDeadline-Date.now())/1000)));}catch(e){}}
+function jsonp(op,extra={}){return new Promise((resolve,reject)=>{if(!EXAM_API_URL)return reject(new Error('La recepción de resultados no está configurada.'));const callback='examStatus_'+Math.random().toString(36).slice(2),script=document.createElement('script');let timer;const cleanup=()=>{clearTimeout(timer);delete window[callback];script.remove()};window[callback]=data=>{cleanup();resolve(data)};script.onerror=()=>{cleanup();reject(new Error('No se pudo consultar el horario.'))};timer=setTimeout(()=>{cleanup();reject(new Error('La consulta tardó demasiado.'))},12000);const u=new URL(EXAM_API_URL);u.searchParams.set('op',op);u.searchParams.set('exam',EXAM_KEY);u.searchParams.set('callback',callback);u.searchParams.set('_',Date.now());Object.entries(extra).forEach(([k,v])=>u.searchParams.set(k,v));script.src=u.toString();document.head.appendChild(script)})}
+let checkingAvailability=false;
+async function checkAvailability(){if(!BACKEND_READY){$('startBtn').disabled=true;$('availabilityMessage').textContent='Esta prueba aún no está habilitada.';$('retryAvailabilityBtn').style.display='none';return null}if(checkingAvailability)return null;checkingAvailability=true;availabilityOpen=false;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='none';try{for(let attempt=0;attempt<3;attempt++){try{$('availabilityMessage').textContent=attempt?`Reintentando conexión (${attempt+1}/3)…`:'Consultando disponibilidad de la prueba…';const status=await jsonp('status');availabilityOpen=!!status.open;$('availabilityMessage').textContent=status.open?`Prueba disponible. Horario de Costa Rica${status.endsAt?' · Cierra: '+status.endsAt:''}.`:(status.message||'La prueba está cerrada en este momento.');$('startBtn').disabled=!status.open;return status}catch(e){if(attempt===2)throw e;await new Promise(resolve=>setTimeout(resolve,800*(attempt+1)))}}}catch(e){availabilityOpen=false;$('availabilityMessage').textContent=e.message;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='inline-block';return null}finally{checkingAvailability=false}}
+function validName(s){return /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñÀ-ÿ' .-]{2,70}$/.test(s)}
+function uuid(){return crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>(Math.random()*16|0).toString(16))}
+function setDelivery(message,canRetry=false){$('deliveryStatus').textContent=message;$('deliveryStatus').hidden=!message;$('retryDeliveryBtn').style.display=canRetry?'inline-block':'none';$('retryDeliveryBtn').disabled=deliveryPending}
+function sendResults(){if(submitted||deliveryPending)return;deliveryPending=true;setDelivery('Enviando respuestas al registro privado…');if(!EXAM_API_URL||!ticket){deliveryPending=false;setDelivery('No se pudo enviar: falta configurar el registro privado.',false);return}const nonce=uuid(),frame=document.createElement('iframe'),form=document.createElement('form'),payload={attemptId,ticket,sessionId,firstName:student.firstName,lastName:student.lastName,answers,elapsedSeconds:LIMIT-remaining,timedOut};frame.name='exam_upload_'+nonce.replace(/-/g,'');frame.style.display='none';form.style.display='none';form.method='POST';form.action=EXAM_API_URL;form.target=frame.name;for(const [name,value] of Object.entries({exam:EXAM_KEY,nonce,payload:JSON.stringify(payload)})){const input=document.createElement('input');input.name=name;input.value=value;form.appendChild(input)}document.body.append(frame,form);let timer;const done=(message,retry)=>{clearTimeout(timer);window.removeEventListener('message',onMessage);form.remove();frame.remove();deliveryPending=false;if(!retry){submitted=true;save()}setDelivery(message,retry)};const onMessage=e=>{if(!/^https:\/\/(?:script\.google\.com|script\.googleusercontent\.com|[a-z0-9-]+[.-]script\.googleusercontent\.com)$/.test(e.origin)||e.data?.kind!=='educacion-abierta-exam-save'||e.data.nonce!==nonce)return;if(e.data.status==='ok'||e.data.status==='duplicate')done('',false);else if(e.data.message==='El intento caducó.'){jsonp('status').then(s=>{let c;try{c=JSON.parse(new TextDecoder('utf-8').decode(Uint8Array.from(atob(ticket.split('.')[0].replace(/-/g,'+').replace(/_/g,'/')),ch=>ch.charCodeAt(0))))}catch{}const reason=!c?'El comprobante no se pudo leer.':c.id!==attemptId?'El identificador del intento no coincide.':c.sesion!==s.sessionId?'Sesión del intento: '+String(c.sesion)+' · Sesión activa: '+String(s.sessionId)+'.':c.inicio<s.startsAtEpoch||c.inicio>s.endsAtEpoch?'El inicio del intento está fuera del horario.':s.serverNow-c.inicio>LIMIT*1000+120000?'Pasaron más de tres horas desde el inicio.':'El servidor rechazó un comprobante vigente; requiere revisar su implementación.';done(reason,true)}).catch(()=>done(e.data.message,true))}else done(e.data.message||'El registro no aceptó las respuestas.',true)};window.addEventListener('message',onMessage);timer=setTimeout(()=>done('No se pudo confirmar el envío. Pulsa «Reintentar envío».',true),20000);form.submit()}
+function fmt(s){s=Math.max(0,s);let h=Math.floor(s/3600),m=Math.floor(s%3600/60),ss=s%60;return[h,m,ss].map(v=>String(v).padStart(2,'0')).join(':')}
+function updateTimer(){$('timerTop').textContent=fmt(remaining);if(remaining<=0&&!finished){remaining=0;timedOut=true;clearInterval(interval);finish(true)}}
+function tick(){clearInterval(interval);if(finished)return;interval=setInterval(()=>{if(finished){clearInterval(interval);return}remaining=Math.max(0,Math.floor((examDeadline-Date.now())/1000));updateTimer();save()},1000)}
+function showExam(){started=true;$('startView').style.display='none';$('examView').style.display='block';render();updateTimer();if(!finished)tick();save()}
+async function start(){if(finished||started)return;const firstName=$('studentFirstName').value.trim().replace(/\s+/g,' '),lastName=$('studentLastName').value.trim().replace(/\s+/g,' ');if(!validName(firstName)||!validName(lastName)){$('availabilityMessage').textContent='Escribe tu nombre y tus apellidos antes de comenzar.';return}if(!availabilityOpen){await checkAvailability();if(!availabilityOpen)return}$('startBtn').disabled=true;$('availabilityMessage').textContent='Confirmando el horario…';try{const id=uuid(),response=await jsonp('start',{id});if(!response.open||!response.ticket)throw new Error(response.message||'La prueba ya no está disponible.');student={firstName,lastName};attemptId=id;ticket=response.ticket;sessionId=response.sessionId;examDeadline=Number(response.attemptEndsAtEpoch)||0;remaining=examDeadline?Math.max(0,Math.floor((examDeadline-Date.now())/1000)):LIMIT;if(remaining<=0)throw new Error('Terminó el horario de la prueba.');showExam()}catch(e){$('availabilityMessage').textContent=e.message;await checkAvailability()}}
+function showGrade(correct,total){const percent=100*correct/total;const passed=percent>=65;$('gradeStatus').textContent=`Nota: ${Math.round(percent)}/100 · ${passed?'Aprobado':'Reprobado'}`;$('gradeStatus').style.color=passed?'#166534':'#991b1b'}
+function renderAreaCharts(){
+  const groups=new Map();
+  QUESTIONS.forEach((q,i)=>{
+    // Los ítems sin clave de corrección no forman parte del porcentaje evaluable.
+    if(!q.answer)return;
+    const area=areaForItem(q.n);
+    if(!groups.has(area))groups.set(area,{correct:0,wrong:0,blank:0});
+    const group=groups.get(area);
+    if(q.answer==='*'||answers[i]===q.answer)group.correct++;
+    else if(!answers[i])group.blank++;
+    else group.wrong++;
+  });
+  const container=$('areaChartGrid');
+  container.replaceChildren();
+  for(const [area,{correct,wrong,blank}] of groups){
+    const total=correct+wrong+blank;
+    const percentage=100*correct/total;
+    const card=document.createElement('article');
+    card.className='area-chart-card';
+    const title=document.createElement('h4');title.textContent=area;
+    const pie=document.createElement('div');pie.className='area-pie';
+    pie.style.setProperty('--correct-end',percentage+'%');
+    pie.style.setProperty('--wrong-end',100*(correct+wrong)/total+'%');
+    pie.setAttribute('role','img');
+    pie.setAttribute('aria-label',`${area}: ${correct} correctas, ${wrong} incorrectas y ${blank} sin responder, de ${total} preguntas evaluables`);
+    const rate=document.createElement('div');rate.className='area-rate';rate.textContent=percentage.toFixed(0)+'% correctas';
+    const count=document.createElement('div');count.className='area-count';count.textContent=`${correct} de ${total} preguntas correctas`;
+    const legend=document.createElement('div');legend.className='area-legend';
+    for(const [label,value,color] of [['Correctas',correct,'#16a34a'],['Incorrectas',wrong,'#ef4444'],['Sin responder',blank,'#cbd5e1']]){
+      const item=document.createElement('span');
+      const swatch=document.createElement('i');swatch.style.setProperty('--legend-color',color);
+      item.append(swatch,`${label}: ${value}`);legend.append(item);
+    }
+    card.append(title,pie,rate,count,legend);container.append(card);
+  }
+}
+function areaForItem(n){return QUESTIONS[n-1].area}
+function render(){const q=QUESTIONS[current];$('qnum').textContent=`Ítem ${q.n} de ${TOTAL}`;$('qarea').textContent=`Área: ${areaForItem(q.n)}`;$('qstatus').textContent=answers[current]?`Respuesta: ${answers[current]}`:'Sin responder';$('qcontext').innerHTML=q.context||'';$('qcontext').style.display=q.context?'block':'none';const fig=FIGURES[q.n],fb=$('qfigure'),fi=$('qfigureimg');
+const figureBeforeStem=!!FIGURES[q.n];
+const afterFig=null;
+const afb=$('qaftergraphic'), afi=$('qaftergraphicimg');
+
+if(figureBeforeStem){
+  $('qtext').innerHTML='';
+}else{
+  $('qtext').innerHTML=q.stem;
+}
+if(fig){
+  fi.src=fig;
+  fb.style.display='block';
+}else{
+  fi.removeAttribute('src');
+  fb.style.display='none';
+}
+let afterText=document.getElementById('qafterfigure');
+if(!afterText){
+  afterText=document.createElement('div');
+  afterText.id='qafterfigure';
+  afterText.className='qtext';
+  fb.insertAdjacentElement('afterend',afterText);
+}
+if(figureBeforeStem){
+  afterText.innerHTML=q.stem;
+  afterText.style.display='block';
+}else{
+  afterText.innerHTML='';
+  afterText.style.display='none';
+}
+if(afterFig){
+  afi.src=afterFig;
+  afb.style.display='block';
+}else{
+  afi.removeAttribute('src');
+  afb.style.display='none';
+}
+const c=$('choices');c.innerHTML='';q.opts.forEach((txt,i)=>{const L='ABCD'[i],b=document.createElement('button');b.className='choice'+(answers[current]===L?' selected':'');b.innerHTML=`<span class="optletter">${L})</span>${txt}`;b.disabled=finished;if(finished){if(q.answer&&L===q.answer)b.classList.add('correct');else if(q.answer&&answers[current]===L)b.classList.add('wrong');}b.onclick=()=>{if(finished)return;answers[current]=L;save();render()};c.appendChild(b)});$('prevBtn').disabled=current===0;$('nextBtn').textContent=current===TOTAL-1?'Finalizar':'Siguiente →';$('finishBtn').textContent=finished?'Volver al resultado':'Finalizar examen';renderGrid();if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetClear&&MathJax.typesetClear([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);MathJax.typesetPromise([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);}}
+function renderGrid(){const g=$('grid');g.innerHTML='';let count=answers.filter(Boolean).length;QUESTIONS.forEach((q,i)=>{const b=document.createElement('button');b.className='qjump '+(answers[i]?'answered':'unanswered')+(i===current?' current':'');b.textContent=q.n;b.onclick=()=>{current=i;render();save()};g.appendChild(b)});$('countTop').textContent=`${count}/${TOTAL}`;$('countSide').textContent=`${count} de ${TOTAL} respondidos`}
+function finish(auto=false,confirmed=false){if(finished){$('examView').style.display='none';$('resultView').style.display='block';return}const pendientes=answers.filter(a=>!a).length;if(!auto&&!confirmed&&pendientes){$('pendingMessage').textContent=`Aún tienes ${pendientes} ítem(es) sin responder. ¿Deseas finalizar de todas formas?`;$('finishConfirm').style.display='flex';$('confirmFinishBtn').focus();return}$('finishConfirm').style.display='none';clearInterval(interval);if(auto)timedOut=true;remaining=Math.max(0,remaining);started=false;finished=true;save();$('examView').style.display='none';$('startView').style.display='none';$('resultView').style.display='block';showScore();sendResults();window.scrollTo({top:0,behavior:'smooth'})}
+function showScore(){let cor=0;answers.forEach((a,i)=>{if(QUESTIONS[i].answer&&a===QUESTIONS[i].answer)cor++});let graded=QUESTIONS.filter(q=>q.answer).length;let blank=answers.filter((x,i)=>!x&&QUESTIONS[i].answer).length,wrong=graded-cor-blank;$('scoreText').textContent=`${cor}/${graded}`;$('percentText').textContent=`${(cor/graded*100).toFixed(0)}% de respuestas correctas${timedOut?' · Tiempo agotado':''}`;showGrade(cor,graded);$('correctStat').textContent=cor;$('wrongStat').textContent=wrong;$('blankStat').textContent=blank;renderAreaCharts()}
+function review(){
+reviewing=!reviewing;
+const box=$('review');
+box.style.display=reviewing?'grid':'none';
+$('reviewBtn').textContent=reviewing?'Ocultar revisión':'Revisar respuestas';
+if(!reviewing)return;
+box.innerHTML='';
+QUESTIONS.forEach((q,i)=>{
+ const r=document.createElement('div');
+ r.className='review-row';
+ const ok=!!q.answer&&answers[i]===q.answer;
+ const sol=SOLUTIONS[String(q.n)]||'';
+ r.innerHTML=`<div><b>Ítem ${q.n}</b></div><div>Tu respuesta: <span class="${ok?'good':'bad'}">${answers[i]||'—'}</span></div><div>${q.answer?`Correcta: <span class="good">${q.answer}</span>`:"Ítem excluido; no califica"}</div><div class="review-solution"><b>Solución:</b>${sol}</div>`;
+ r.onclick=()=>{current=i;$('resultView').style.display='none';$('examView').style.display='block';render()};
+ box.appendChild(r);
+});
+if(window.MathJax && MathJax.typesetPromise){
+  MathJax.typesetPromise([box]).catch(()=>{});
+}
+}
+function requestRestart(){$('restartConfirm').style.display='flex';$('cancelRestartBtn').focus()}
+function closeRestart(){$('restartConfirm').style.display='none';$('restartBtn').focus()}
+function restart(){clearInterval(interval);interval=null;localStorage.removeItem(STORAGE_KEY);answers=Array(TOTAL).fill(null);current=0;remaining=LIMIT;started=false;finished=false;timedOut=false;reviewing=false;student={firstName:'',lastName:''};attemptId='';ticket='';sessionId='';submitted=false;examDeadline=0;$('studentFirstName').value='';$('studentLastName').value='';$('finishConfirm').style.display='none';$('restartConfirm').style.display='none';$('review').style.display='none';$('reviewBtn').textContent='Revisar respuestas';$('examView').style.display='none';$('resultView').style.display='none';$('startView').style.display='block';renderGrid();updateTimer();checkAvailability()}
+if(new URLSearchParams(location.search).get('nuevo')==='1'){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}history.replaceState(null,'',location.pathname+location.hash)}
+$('startBtn').onclick=start;$('retryAvailabilityBtn').onclick=checkAvailability;$('finishBtn').onclick=()=>finish(false);$('cancelFinishBtn').onclick=()=>$('finishConfirm').style.display='none';$('confirmFinishBtn').onclick=()=>finish(false,true);$('finishConfirm').onclick=e=>{if(e.target===$('finishConfirm'))$('finishConfirm').style.display='none'};$('reviewBtn').onclick=review;$('retryDeliveryBtn').onclick=sendResults;$('menuBtn').onclick=()=>location.assign('https://profecharlie.github.io/Educacion-Secundaria/');$('restartBtn').onclick=requestRestart;$('cancelRestartBtn').onclick=closeRestart;$('confirmRestartBtn').onclick=restart;$('restartConfirm').onclick=e=>{if(e.target===$('restartConfirm'))closeRestart()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('finishConfirm').style.display==='flex')$('finishConfirm').style.display='none';if(e.key==='Escape'&&$('restartConfirm').style.display==='flex')closeRestart()});$('prevBtn').onclick=()=>{if(current>0){current--;render();save()}};$('nextBtn').onclick=()=>{if(current<TOTAL-1){current++;render();save()}else finish(false)};load();updateTimer();if(finished){$('startView').style.display='none';$('examView').style.display='none';$('resultView').style.display='block';showScore();setDelivery(submitted?'':'El envío quedó pendiente. Pulsa «Reintentar envío».',!submitted)}else if(started&&ticket&&attemptId){showExam()}else{started=false;checkAvailability()}
+if(document.modelContext?.registerTool){document.modelContext.registerTool({name:'read_exam_progress',description:'Consultar el progreso visible de la prueba sin revelar las respuestas correctas.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:()=>({total:TOTAL,current:current+1,answered:answers.filter(Boolean).length,remaining,finished})});}</script></body></html>
+
+
