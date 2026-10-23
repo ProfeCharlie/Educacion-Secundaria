@@ -1486,6 +1486,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página,configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones;54 evaluables cotejadas con la clave adjunta. Once figuras SVG reconstruidas e inspeccionadas. Pruebas locales:54/54,0/54,blancos,exclusión55,confirmación,navegación,revisión bloqueada,reinicio y temporizador."
+    },
+    {
+      "path": "Setimo-Terraba-02-2018",
+      "title": "Sétimo Térraba 02-2018",
+      "status": "publicada",
+      "source": {
+        "filename": "02 2018 con respuestas.pdf",
+        "notes": "29 páginas con portada,55 preguntas y clave final. Las55 respuestas coinciden con la clave adjunta. Soluciones elaboradas;en21 se usa la perpendicularidad marcada,en24 se conserva el círculo abierto del símboloD y en52 la afirmaciónII se refiere a los encuestados."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página,configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones cotejadas con la clave adjunta. Nueve figuras SVG reconstruidas e inspeccionadas. Pruebas locales:55/55,0/55,blancos,confirmación,navegación,revisión bloqueada,reinicio,temporizador e identificadores coherentes."
     }
   ],
   "notes": [
