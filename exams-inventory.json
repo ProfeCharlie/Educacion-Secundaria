@@ -1518,6 +1518,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones matemáticas; 54 evaluables. Sin clave adjunta. Ítem 9 excluido: resultado 7 sin opción correcta. Once figuras SVG reconstruidas e inspeccionadas. Pruebas locales: 54/54, 0/54, blancos, exclusión 9, confirmación, navegación, revisión bloqueada, reinicio, temporizador e identificadores coherentes."
+    },
+    {
+      "path": "Setimo-Terraba-02-2017",
+      "title": "Sétimo Térraba 02-2017",
+      "status": "publicada",
+      "source": {
+        "filename": "02 2017.pdf",
+        "notes": "25 páginas:24 con55 preguntas y una última página en blanco;sin clave adjunta. Respuestas resueltas matemáticamente. Once figuras reconstruidas. En26 se distingue perpendicularidad de rectas alabeadas;en45I el tamaño corresponde al área de cada pieza."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones matemáticas. Sin clave adjunta. Once figuras SVG reconstruidas e inspeccionadas. En26 se distingue perpendicularidad de rectas alabeadas; en45I se interpreta tamaño como área. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio, temporizador e identificadores coherentes."
     }
   ],
   "notes": [
