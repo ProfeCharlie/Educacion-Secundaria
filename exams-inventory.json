@@ -1501,6 +1501,23 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página,configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones cotejadas con la clave adjunta. Nueve figuras SVG reconstruidas e inspeccionadas. Pruebas locales:55/55,0/55,blancos,confirmación,navegación,revisión bloqueada,reinicio,temporizador e identificadores coherentes."
+    },
+    {
+      "path": "Setimo-Terraba-01-2018",
+      "title": "Sétimo Térraba 01-2018",
+      "status": "publicada",
+      "source": {
+        "filename": "01 2018.pdf",
+        "notes": "22 páginas con55 preguntas;sin clave adjunta. Respuestas resueltas y verificadas matemáticamente. Se excluye9:el resultado es7 sobrinos deJoel,ausente de las opciones. En45I,cantidad de caramelos se interpreta por niño. En55,151/32=4,71875≈4,7,opciónD(4,70). Once figuras reconstruidas."
+      },
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        9
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones matemáticas; 54 evaluables. Sin clave adjunta. Ítem 9 excluido: resultado 7 sin opción correcta. Once figuras SVG reconstruidas e inspeccionadas. Pruebas locales: 54/54, 0/54, blancos, exclusión 9, confirmación, navegación, revisión bloqueada, reinicio, temporizador e identificadores coherentes."
     }
   ],
   "notes": [
