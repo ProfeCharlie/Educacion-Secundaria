@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-20",
+  "updatedAt": "2026-10-23",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -1454,6 +1454,21 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones elaboradas; original escaneado sin clave. Doce figuras SVG únicas asociadas a catorce ítems, renderizadas e inspeccionadas. Fracciones, semejanza, ecuaciones, media y probabilidades verificadas. Pruebas locales: 55/55, 0/55, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Setimo-Terraba-02-2019",
+      "title": "Sétimo Térraba 02-2019",
+      "status": "publicada",
+      "source": {
+        "filename": "02 2019 con respuestas.pdf",
+        "notes": "31 páginas con portada,55 preguntas y clave final. Las55 respuestas coinciden con la clave adjunta. Soluciones elaboradas;en48 y49 se aplican las condiciones de cada enunciado."
+      },
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página,configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones cotejadas con la clave adjunta. Diez figuras SVG reconstruidas e inspeccionadas. Pruebas locales:55/55,0/55,blancos,confirmación,navegación,revisión bloqueada,reinicio y temporizador."
     }
   ],
   "notes": [
