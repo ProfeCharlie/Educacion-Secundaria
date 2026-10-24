@@ -1551,6 +1551,25 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones matemáticas;53 evaluables. Sin clave adjunta. Ítems9 y24 excluidos por varias opciones válidas. Nueve figuras SVG reconstruidas e inspeccionadas. Pruebas locales:53/53,0/53,blancos,exclusiones9/24,confirmación,navegación,revisión bloqueada,reinicio,temporizador e identificadores coherentes."
+    },
+    {
+      "path": "Setimo-Terraba-02-2016",
+      "title": "Sétimo Térraba 02-2016",
+      "status": "publicada",
+      "source": {
+        "filename": "02 2016.pdf",
+        "notes": "31 páginas con55 preguntas;sin clave adjunta. Respuestas resueltas matemáticamente. Ítems9,41,43 excluidos:9 confunde mayor cantidad con mayor longitud de los pedazos;41 solicita punto medio pero ofrece longitudes;43 no exige todos los impares consecutivos y admite las cuatro opciones. En21 se conserva el símbolo de semirrecta con origen abierto. Doce figuras reconstruidas."
+      },
+      "items": 55,
+      "evaluableItems": 52,
+      "excludedItems": [
+        9,
+        41,
+        43
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 preguntas con cuatro opciones y soluciones matemáticas;52 evaluables. Sin clave adjunta. Ítems9,41,43 excluidos por redacción ambigua u opciones inválidas. Doce figuras SVG reconstruidas e inspeccionadas. Pruebas locales:52/52,0/52,blancos,exclusiones9/41/43,confirmación,navegación,revisión bloqueada,reinicio,temporizador e identificadores coherentes."
     }
   ],
   "notes": [
