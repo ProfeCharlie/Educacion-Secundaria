@@ -1585,6 +1585,24 @@
       "backend": "pendiente de integrar; inicio desactivado",
       "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
       "validation": "55 preguntas con cuatro opciones y soluciones matemáticas. Sin clave adjunta. Trece figuras principales SVG y cuatro rectas numéricas en opciones. En49 gráfico reconstruido con valores aproximados del original. Pruebas locales:55/55,0/55,blancos,confirmación,navegación,revisión bloqueada,reinicio,temporizador e identificadores coherentes."
+    },
+    {
+      "path": "Bachillerato-Distancia-Practica-01-2026",
+      "title": "Bachillerato a Distancia · Práctica 1-2026",
+      "status": "publicada como práctica",
+      "source": {
+        "filename": "EDAD-1-PRACTICA.pdf",
+        "notes": "Práctica oficial EDAD Prueba 1,2026,Convenio MEP–ICER. 31 páginas con 55 ítems,anexos y clave. 53 ítems evaluables cotejados con la clave. Se excluyen 20(C yD son funciones) y 44(asimetría positiva no determina el orden de media ymediana). En 42 se estima la media con marcas de clase. En 49–50 se conservan los cuatro grupos de la tabla pese al texto que dice tres. Figuras recortadas del original, sin soluciones."
+      },
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        20,
+        44
+      ],
+      "backend": "pendiente de integrar; inicio desactivado",
+      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
+      "validation": "55 ítems con cuatro opciones;53 evaluables cotejados con la clave. Ítems20 y44 sin puntuación por varias respuestas posibles. Quince figuras del original recortadas e inspeccionadas. Pruebas locales:53/53,0/53,blancos,exclusiones,navegación,confirmación,revisión bloqueada,reinicio,temporizador e identidad."
     }
   ],
   "notes": [
