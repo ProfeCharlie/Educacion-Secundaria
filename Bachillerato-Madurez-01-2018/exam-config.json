@@ -138,5 +138,6 @@
     "url": "https://drive.google.com/file/d/1_VqHlA1XVpPfNo70qUACzPDJMGqe2Jyy/view?usp=drivesdk",
     "notes": "28 páginas escaneadas, numeradas de 5 a 32. Convocatoria 01-2018, código 04 2018. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 49: la mediana no garantiza una edad observada; ambas proposiciones son falsas (B)."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
