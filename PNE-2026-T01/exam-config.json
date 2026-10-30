@@ -138,7 +138,7 @@
     "url": "https://docs.google.com/document/d/1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb/edit",
     "notes": "Nota sobre esta versión de práctica: la fuente está incompleta. Se reconstruyó la opción D de la pregunta 48 («Función lineal») y las opciones B, C y D de la pregunta 57 («Ninguna», «Solo la I» y «Solo la II»). Estas opciones fueron elaboradas para esta práctica y no se presentan como transcripción del examen original. El solucionario fue revisado matemáticamente y puede diferir de las respuestas marcadas en la fuente."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
+  "backendStatus": "integrado en receptor v23 y administrador v35; control desactivado",
   "reconstructedOptions": {
     "48": [
       "D"
@@ -149,5 +149,6 @@
       "D"
     ]
   },
-  "backend": "pendiente de integrar en Apps Script; inicio desactivado"
+  "backend": "registro privado conectado; acceso controlado desde el administrador",
+  "backendReady": true
 }
