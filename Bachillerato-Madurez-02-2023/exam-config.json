@@ -138,5 +138,6 @@
     "url": "https://drive.google.com/file/d/1pHvuZph5MNiZd5CX3_tEeyi4QfFQav2K/view",
     "notes": "Variante triángulo. 27 páginas de preguntas y una página final en blanco. Soluciones elaboradas para la versión interactiva; sin clave oficial suministrada."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
