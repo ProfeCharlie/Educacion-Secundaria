@@ -129,5 +129,6 @@
     "url": "https://drive.google.com/file/d/1Zvv7lUvbJ7cdSjIZfAGdxeQ7bSbKYxz_/view?usp=drivesdk",
     "notes": "34 páginas: portada, instrucciones, 55 preguntas (páginas 5 a 31) y anexos. Bachillerato de Educación Diversificada a Distancia, convocatoria 02-2017. Sin clave oficial en la copia. Soluciones elaboradas mediante resolución de cada ejercicio. Ítems 46 y 49: interpretación de cuartiles; ítem 52: mayor posición relativa estandarizada, sin interpretarla como mayor rapidez."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
