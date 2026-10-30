@@ -141,5 +141,6 @@
     "url": "https://drive.google.com/file/d/1qUSNYmesUGnLPbwh_N0DE8iqny9H-8UC/view?usp=drivesdk",
     "notes": "29 páginas numeradas de 5 a 33. Sin clave adjunta. Encabezado Convocatoria 02-2021 y código 04 2021. Ítems 23 y 24 excluidos: extremos abiertos de la gráfica ausentes en todas las opciones. En el ítem 17 la proposición I invierte el sentido de la transformación; se conserva y se explica como falsa. El original alterna Lucía y Ligia en el ítem 37; se usa otra compradora sin cambiar datos."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
