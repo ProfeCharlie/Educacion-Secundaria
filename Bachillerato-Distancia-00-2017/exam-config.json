@@ -141,5 +141,6 @@
     "url": "https://drive.google.com/file/d/17IDSIEbf1wfgbzYC8ipcO9uU52uX54gP/view?usp=drivesdk",
     "notes": "29 páginas escaneadas, numeradas de 5 a 33. Convocatoria 00-2017, código 03 2017. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 27 excluido: las opciones A y C son intervalos contenidos en el complemento de C=[4,+∞[."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
