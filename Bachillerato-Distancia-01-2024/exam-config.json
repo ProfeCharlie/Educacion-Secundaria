@@ -132,5 +132,7 @@
     "url": "https://drive.google.com/file/d/1-79rx2CzBtqMTL7hIoH7zn53nNpeXPWC/view",
     "notes": "22 páginas escaneadas, 55 ítems de tres opciones, sin clave adjunta. 21: ámbito correcto [−16,0[ ausente en opciones. 22: confunde codominio con ámbito sin asumir sobreyectividad. 36: el máximo es $1 000 000, ausente en opciones. 45: media estimada mediante marcas de clase."
   },
-  "backendStatus": "pendiente de integrar; inicio desactivado"
+  "backendStatus": "integrado en receptor v23 y administrador v35; control desactivado",
+  "backend": "registro privado conectado; acceso controlado desde el administrador",
+  "backendReady": true
 }
