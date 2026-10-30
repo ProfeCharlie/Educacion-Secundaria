@@ -1,0 +1,814 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Matemática · Bachillerato a Distancia · 01-2024</title><style>
+:root{--bg:#f4f6f8;--card:#fff;--ink:#17202a;--muted:#65707d;--line:#dbe1e7;--accent:#1f5d99;--ok:#1f7a4d;--bad:#b23a3a}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+header{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line)}.topbar{max-width:1100px;margin:auto;padding:10px 16px;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}.brand{font-weight:800}.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.pill{padding:7px 10px;border:1px solid var(--line);border-radius:999px;background:#fafbfc;font-size:14px}.timer{font-variant-numeric:tabular-nums;font-weight:800}
+main{max-width:1100px;margin:22px auto;padding:0 16px 40px}.card{background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 18px #0000000b;padding:18px}#startView{text-align:center;padding:42px 24px}.hero{font-size:34px;margin:0 0 10px}.sub{color:var(--muted);max-width:760px;margin:0 auto 22px;line-height:1.5}
+button{border:0;border-radius:10px;padding:11px 16px;font-weight:700;cursor:pointer;background:#e9eef3;color:var(--ink)}button.primary{background:var(--accent);color:#fff}button.danger{background:#7b1f1f;color:#fff}button:disabled{opacity:.45;cursor:not-allowed}.exam-layout{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:18px}.qhead{display:flex;justify-content:space-between;gap:12px;align-items:center;margin-bottom:14px}.qnum{font-size:20px;font-weight:800}.status{color:var(--muted);font-size:14px}.qtext{font-size:18px;line-height:1.55}.context{margin:12px 0 16px;padding:12px;background:#f8fafc;border:1px solid var(--line);border-radius:10px}.context p{margin:.4em 0}.visual-note{color:var(--muted);font-size:14px}table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px}th,td{border:1px solid #cfd7df;padding:7px;text-align:left}.original-centered th,.original-centered td{text-align:center}th{background:#eef3f7}.choices{display:grid;gap:10px;margin-top:16px}.choice{text-align:left;font-size:16px;padding:13px;background:#f7f9fb;border:2px solid var(--line)}.choice.selected{border-color:var(--accent);background:#eaf2fb}.choice.correct{border-color:var(--ok);background:#eaf7ef}.choice.wrong{border-color:var(--bad);background:#fdecec}.optletter{display:inline-block;width:28px;font-weight:900}.navbuttons{display:flex;justify-content:space-between;gap:10px;margin-top:16px}.side h3{margin-top:0}.grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}.qjump{padding:7px 0;border-radius:7px;font-size:12px}.qjump.current{outline:2px solid var(--accent)}.qjump.answered{background:#dff0e7}.qjump.unanswered{background:#eef1f4}.small{font-size:13px;color:var(--muted);line-height:1.4}.qfigure{margin:18px 0;text-align:center;background:#fff;border:1.5px solid #000;padding:14px;box-sizing:border-box}.qfigure img{display:block;max-width:100%;max-height:560px;width:auto;height:auto;margin:0 auto;background:#fff;object-fit:contain}.original{margin-top:16px}.original summary{cursor:pointer;color:var(--accent);font-weight:700}.original img{display:block;max-width:100%;max-height:70vh;margin:10px auto 0;border:1px solid var(--line);border-radius:8px}.result{display:none}.score{font-size:42px;font-weight:900}.result-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:16px 0}.stat{padding:14px;border:1px solid var(--line);border-radius:10px;text-align:center}.review-list{display:grid;gap:8px;max-height:430px;overflow:auto;margin-top:14px}.review-row{display:grid;grid-template-columns:72px 1fr 1fr;gap:10px;padding:9px 10px;border:1px solid var(--line);border-radius:8px;font-size:14px}.good{color:var(--ok);font-weight:700}.bad{color:var(--bad);font-weight:700}.review-solution{grid-column:1/-1;padding:10px 12px;background:#f8fafc;border-left:4px solid var(--accent);border-radius:6px;line-height:1.45}.review-solution b{display:block;margin-bottom:4px}
+@media(max-width:800px){.exam-layout{grid-template-columns:1fr}.side{order:-1}.grid{grid-template-columns:repeat(10,1fr)}.hero{font-size:27px}.review-row{grid-template-columns:55px 1fr 1fr}.qtext{font-size:17px}}
+.item1-original th{text-align:center}.item1-original td:first-child{text-align:left}.item1-original td:nth-child(2){text-align:center}
+.item2-original th,.item2-original td{text-align:center}
+.item4-original th,.item4-original td{text-align:center}
+.item56-original th,.item56-original td{text-align:center}
+.item1112-original th{text-align:center}
+.item1112-original td:first-child{text-align:left}
+.item1112-original td:not(:first-child){text-align:center}
+.item46-original th,.item46-original td{text-align:center}
+
+.exam-subtitle{
+  margin-top:6px;
+  font-size:14px;
+  font-weight:600;
+  color:#0057B8;
+}
+
+
+.exam-intro{
+  margin-top:14px;
+  font-size:14px;
+  line-height:1.55;
+}
+.exam-intro ul{
+  margin:0;
+  padding-left:22px;
+}
+.exam-intro li{
+  margin:5px 0;
+}
+.exam-encouragement{
+  margin-top:10px;
+  font-weight:700;
+  color:#0057B8;
+}
+
+
+.exam-intro ul{
+  list-style-position:outside;
+  padding-left:18px !important;
+  margin-left:0 !important;
+}
+.exam-intro li{
+  padding-left:0 !important;
+  margin-left:0 !important;
+}
+.exam-intro li::marker{
+  font-size:0.9em;
+}
+
+
+.exam-intro{margin-top:14px;font-size:14px;line-height:1.55}
+.exam-intro .intro-line{display:flex;align-items:flex-start;gap:6px;margin:5px 0}
+.exam-intro .intro-bullet{display:inline-block;flex:0 0 auto;font-weight:700;line-height:1.55}
+.exam-encouragement{margin-top:10px;font-weight:700;color:#0057B8}
+
+
+.exam-encouragement{
+  margin-top:12px !important;
+  font-size:17px !important;
+  font-weight:700 !important;
+  color:#7B2CBF !important;
+}
+
+
+.instructions-title{
+  font-weight:700;
+  margin-bottom:7px;
+}
+.exam-intro .intro-line{
+  display:flex;
+  align-items:flex-start;
+  gap:5px;
+  margin:5px 0;
+}
+.exam-intro .intro-bullet{
+  flex:0 0 auto;
+  font-weight:700;
+}
+
+
+.exam-intro,
+.exam-intro .instructions-title,
+.exam-intro .intro-line,
+.exam-intro .intro-line span{
+  text-align:left !important;
+}
+.exam-intro{
+  width:100%;
+  margin-left:0 !important;
+  margin-right:0 !important;
+}
+
+
+.choice:disabled{cursor:not-allowed!important;opacity:.72}
+
+.exam-encouragement{
+  text-align:center !important;
+  width:100% !important;
+  display:block !important;
+}
+
+
+.exam-intro .intro-line{display:flex !important;align-items:flex-start !important;gap:5px !important;text-align:left !important;}
+.exam-intro .intro-bullet{display:inline-block !important;flex:0 0 auto !important;font-weight:700 !important;}
+.exam-encouragement{text-align:center !important;width:100% !important;display:block !important;}
+
+.calculator-approved-image{
+  width:100%;
+  margin:14px 0 18px;
+  text-align:center;
+}
+.calculator-approved-image img{
+  display:block;
+  width:100%;
+  max-width:1100px;
+  height:auto;
+  object-fit:contain;
+  margin:0 auto;
+}
+
+
+.calculator-brand-title{
+  text-align:center;
+  font-size:20px;
+  font-weight:700;
+  margin:14px 0 6px;
+  color:#1f2937;
+}
+
+
+.calculator-approved-image img{
+  display:block !important;
+  width:100% !important;
+  max-width:1200px !important;
+  height:auto !important;
+  object-fit:contain !important;
+  margin:0 auto !important;
+}
+
+</style>
+<script>
+window.MathJax = {
+  tex: { inlineMath: [['\\(','\\)'], ['$', '$']] },
+  svg: { fontCache: 'global' }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+
+<style>
+.tabla-item2 th:nth-child(n+2):nth-child(-n+5),
+.tabla-item2 td:nth-child(n+2):nth-child(-n+5){
+    text-align:center !important;
+    vertical-align:middle !important;
+}
+</style>
+
+
+<style>
+.tabla-item11 th, .tabla-item11 td{
+    border:1px solid #000;
+    padding:6px 8px;
+}
+.tabla-item11{
+    border-collapse:collapse;
+    margin:8px 0;
+}
+.tabla-item11 th{
+    text-align:center;
+}
+.tabla-item11 td:first-child{
+    text-align:left;
+}
+.tabla-item11 td:nth-child(n+2){
+    text-align:center;
+}
+</style>
+
+
+<style>
+/* Uniformar el texto acentuado de las fórmulas del ítem 11 */
+.formulas-item11 mjx-mtext,
+.formulas-item11 mjx-mtext *{
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1em !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+}
+</style>
+
+
+<style>
+/* Fracciones del ítem 11 con la misma tipografía del texto normal */
+.formulas-item11 .html-frac{
+    display:inline-flex;
+    flex-direction:column;
+    vertical-align:middle;
+    text-align:center;
+    font-family:inherit !important;
+    font-size:inherit !important;
+    line-height:1.15;
+    margin:0 .18em;
+}
+.formulas-item11 .html-frac .frac-top,
+.formulas-item11 .html-frac .frac-bottom{
+    font-family:inherit !important;
+    font-size:inherit !important;
+    font-weight:inherit !important;
+    font-style:normal !important;
+    white-space:nowrap;
+}
+.formulas-item11 .html-frac .frac-top{
+    border-bottom:1.3px solid currentColor;
+    padding:0 .22em .10em;
+}
+.formulas-item11 .html-frac .frac-bottom{
+    padding:.10em .22em 0;
+}
+</style>
+
+
+<style id="q26-formula-style">
+.q26-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:28px;
+  width:100%;
+}
+.q26-copy{flex:1;min-width:0;}
+.q26-formula-box{
+  flex:0 0 auto;
+  width:168px;
+  height:66px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  color:#111;
+  white-space:nowrap;
+}
+.q26-left{
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+}
+.q26-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+  font-family:Arial,Helvetica,sans-serif;
+  font-style:normal;
+}
+.q26-num{
+  display:block;
+  padding:0 5px 4px 5px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.q26-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+@media (max-width:700px){
+  .q26-top{align-items:flex-start;gap:14px;}
+  .q26-formula-box{width:160px;height:64px;}
+}
+</style>
+
+
+<style id="q26-after-style">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:12px;
+  margin-bottom:4px;
+}
+</style>
+
+
+<style id="q26-order-final">
+.q26-formula-after{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+</style>
+
+
+<style id="q26-angle-svg-style">
+.q26-left{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+}
+.q26-angle-symbol{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  line-height:1;
+}
+.q26-angle-symbol svg{display:block;}
+</style>
+
+
+<style id="plain-formula-boxes-after-q26">
+.formula-after-stem{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:14px;
+  margin-bottom:18px;
+}
+.plain-formula-box{
+  min-width:145px;
+  min-height:64px;
+  padding:8px 16px;
+  border:1.5px solid #111;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  box-sizing:border-box;
+  font-family:Arial,Helvetica,sans-serif;
+  font-size:16px;
+  font-style:normal;
+  color:#111;
+}
+.plain-frac{
+  display:inline-flex;
+  flex-direction:column;
+  align-items:stretch;
+  justify-content:center;
+  line-height:1.05;
+}
+.plain-num{
+  display:block;
+  padding:0 5px 4px;
+  border-bottom:1.5px solid #111;
+  text-align:center;
+}
+.plain-den{
+  display:block;
+  padding-top:4px;
+  text-align:center;
+}
+</style>
+
+<style id="q1-table-pdf-style">
+.q1-pdf-table{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.4px solid #222 !important;
+  border-bottom:1.4px solid #222 !important;
+}
+.q1-pdf-table th,
+.q1-pdf-table td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 18px !important;
+  white-space:nowrap !important;
+}
+.q1-pdf-table th:first-child,
+.q1-pdf-table td:first-child{
+  text-align:left !important;
+}
+.q1-pdf-table th:not(:first-child),
+.q1-pdf-table td:not(:first-child){
+  text-align:center !important;
+}
+.q1-pdf-table tr:first-child th,
+.q1-pdf-table tr:first-child td{
+  border-bottom:1.4px solid #222 !important;
+}
+/* En el PDF de la pregunta 1 NO hay líneas verticales
+   ni líneas horizontales entre las filas de datos. */
+.q1-pdf-table th + th,
+.q1-pdf-table th + td,
+.q1-pdf-table td + th,
+.q1-pdf-table td + td{
+  border-left:none !important;
+}
+.q1-pdf-table tr:not(:first-child) th,
+.q1-pdf-table tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+</style>
+
+
+<style id="item1-original-pdf-style">
+.item1-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th,
+.item1-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:7px 14px !important;
+  white-space:nowrap !important;
+}
+.item1-original tr:first-child th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item1-original th:first-child,
+.item1-original td:first-child{
+  text-align:left !important;
+}
+.item1-original th:nth-child(2),
+.item1-original td:nth-child(2){
+  text-align:center !important;
+}
+/* Sin líneas verticales ni líneas entre filas de datos, como en el PDF. */
+.item1-original th + th,
+.item1-original td + td{
+  border-left:none !important;
+}
+.item1-original tr:not(:first-child) td{
+  border-top:none !important;
+  border-bottom:none !important;
+}
+</style>
+
+
+<style id="tablas-pdf-restantes">
+/* PREGUNTA 5: sin líneas verticales ni divisiones entre filas de datos */
+.item5-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border-top:1.5px solid #111 !important;
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th,
+.item5-original td{
+  border:none !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  padding:6px 14px !important;
+  white-space:nowrap !important;
+}
+.item5-original thead th{
+  border-bottom:1.5px solid #111 !important;
+}
+.item5-original th:first-child,
+.item5-original td:first-child{
+  text-align:left !important;
+}
+.item5-original th:not(:first-child),
+.item5-original td:not(:first-child){
+  text-align:center !important;
+}
+
+/* PREGUNTAS 2, 4, 11 y 46: el PDF sí muestra cuadrícula completa */
+.tabla-item2,
+.item4-original,
+.tabla-item11,
+.item46-original{
+  border-collapse:collapse !important;
+  border-spacing:0 !important;
+  width:auto !important;
+  margin:14px auto !important;
+  border:1.4px solid #111 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  background:transparent !important;
+}
+.tabla-item2 th, .tabla-item2 td,
+.item4-original th, .item4-original td,
+.tabla-item11 th, .tabla-item11 td,
+.item46-original th, .item46-original td{
+  border:1.4px solid #111 !important;
+  background:transparent !important;
+  box-shadow:none !important;
+  border-radius:0 !important;
+  padding:6px 12px !important;
+  text-align:center !important;
+  white-space:nowrap !important;
+}
+
+/* Primera columna de 4 y 11 a la izquierda como en el original */
+.item4-original th:first-child,
+.item4-original td:first-child,
+.tabla-item11 th:first-child,
+.tabla-item11 td:first-child{
+  text-align:left !important;
+}
+
+/* Primera columna de 46 centrada, como en el PDF */
+.item46-original th:first-child,
+.item46-original td:first-child{
+  text-align:center !important;
+}
+</style>
+
+
+<style id="q2-first-column-left">
+.tabla-item2 th:first-child,
+.tabla-item2 td:first-child{
+  text-align:left !important;
+}
+</style>
+
+
+<style id="q36-option-graphs-style">
+.q36-option-graph{display:block;width:min(390px,100%);height:auto;margin:4px auto;}
+</style>
+
+
+<style id="q37-bullets-style">
+.q37-bullets{margin:14px 0 4px 24px;line-height:1.9;}
+</style>
+
+
+<style id="responsive-calculadoras">
+@media (max-width: 760px) {
+  /* CASIO: el contenedor exterior es el que se desplaza horizontalmente. */
+  #casio-mobile-scroll {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    overflow-y: visible !important;
+    -webkit-overflow-scrolling: touch !important;
+    overscroll-behavior-x: contain;
+    padding-bottom: 14px !important;
+  }
+
+  /* El título permanece normal; solo la fila de calculadoras es ancha. */
+  #casio-mobile-scroll > .casio-mobile-row {
+    display: grid !important;
+    grid-template-columns: repeat(3, 390px) !important;
+    gap: 10px !important;
+    width: 1190px !important;
+    min-width: 1190px !important;
+    max-width: none !important;
+    justify-content: start !important;
+    align-items: start !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div {
+    box-sizing: border-box !important;
+    width: 390px !important;
+    min-width: 390px !important;
+    max-width: 390px !important;
+    overflow: visible !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div > div:first-child {
+    box-sizing: border-box !important;
+    width: auto !important;
+    max-width: 370px !important;
+    white-space: nowrap !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row img {
+    display: block !important;
+    width: auto !important;
+    max-width: 360px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* El desplazamiento usado en escritorio para la tercera imagen
+     se neutraliza en celular para que no invada otras zonas. */
+  #casio-mobile-scroll > .casio-mobile-row img[style*="translateY"] {
+    transform: none !important;
+  }
+
+  /* GENÉRICAS: se mantiene el desplazamiento horizontal aprobado. */
+  #calculadoras-genericas {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 12px !important;
+  }
+
+  #calculadoras-genericas > div:last-child {
+    justify-content: start !important;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Tercera Casio (NO RECOMENDADA): más grande y más arriba */
+  /* Tercera Casio en celular:
+     se sube el CONTENEDOR completo para evitar recortar la calculadora. */
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) > div:last-child {
+    margin-top: -78px !important;
+    overflow: hidden !important;
+    justify-content: center !important;
+    align-items: flex-end !important;
+  }
+
+  #casio-mobile-scroll > .casio-mobile-row > div:nth-child(3) img {
+    width: 520px !important;
+    max-width: none !important;
+    height: auto !important;
+    position: relative !important;
+    left: 50% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Corrección óptica: centra el cuerpo de la calculadora, no el lienzo completo. */
+    transform: translateX(-36%) !important;
+    box-sizing: border-box !important;
+  }
+}
+
+</style>
+
+<style>.seg{text-decoration:overline}.quad-symbol{display:inline-block;font-size:1.28em;line-height:.7;vertical-align:-.06em;margin-right:1px}.qfigure{width:100%!important;margin:18px auto!important;text-align:center!important}.qfigure img{display:block!important;max-width:100%!important;width:440px!important;height:auto!important;max-height:none!important;margin:0 auto!important;transform:none!important}.qtext{line-height:1.65}.choice{line-height:1.5}.context table{max-width:520px;margin:14px auto}.review-row{cursor:pointer}button:focus-visible{outline:3px solid #166cc0;outline-offset:3px}</style><style>.qmeta{text-align:right}.qarea{font-size:14px;font-weight:700;line-height:1.4;color:var(--ink)}</style><link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f5d99'/%3E%3Ctext x='7' y='24' font-size='24' fill='white'%3EB%3C/text%3E%3C/svg%3E"><style>.frac{display:inline-flex;vertical-align:middle;flex-direction:column;text-align:center;line-height:1.15;font-size:.94em;white-space:nowrap;margin:0 .10em}.frac>span:first-child{border-bottom:1.4px solid currentColor;padding:0 .18em .05em}.frac>span:last-child{padding:.05em .18em 0}.inline-eq{display:inline-flex;align-items:center;gap:3px;white-space:nowrap;vertical-align:middle}.seg{text-decoration:overline;text-decoration-thickness:1.3px}.claims{margin:12px 0 14px 16px}.claims p{display:flex;gap:14px;align-items:start}.claims b{min-width:24px}.tiny-table{font-size:13px;width:auto;max-width:100%}.tiny-table th,.tiny-table td{padding:4px 7px;white-space:nowrap}.choice:has(table){overflow-x:auto}.tie-boxes{display:flex;justify-content:space-around;flex-wrap:wrap;gap:16px;margin:20px 0}.tie-boxes>div{text-align:center;min-width:105px}.tie-boxes>div>div{border:1.5px solid #222;margin-top:8px;text-align:left;padding:12px;line-height:2.05}.qfigure{border:0;padding:5px}.qfigure img{max-height:560px}.context{line-height:1.55}.context table{max-width:480px}</style><style>
+.area-results{margin:28px auto;text-align:left;max-width:880px}
+.area-results h3{text-align:center;margin:0 0 5px}
+.area-results > p{text-align:center;margin:0 0 18px;color:#475569}
+.area-chart-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:14px}
+.area-chart-card{border:1px solid #dce4eb;border-radius:14px;padding:16px;text-align:center;background:#fff}
+.area-chart-card h4{margin:0 0 12px;min-height:2.6em;font-size:16px;line-height:1.3}
+.area-pie{width:146px;height:146px;margin:0 auto 12px;border-radius:50%;background:conic-gradient(#16a34a 0 var(--correct-end),#ef4444 var(--correct-end) var(--wrong-end),#cbd5e1 var(--wrong-end) 100%);box-shadow:inset 0 0 0 1px rgba(15,23,42,.08)}
+.grade-status{font-weight:700;font-size:1.1rem;margin:8px 0 16px;color:#183f71}
+.area-rate{font-weight:700;font-size:24px;color:#166534}
+.area-count{margin:4px 0 10px;color:#475569;font-size:14px}
+.area-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 11px;font-size:12px;color:#334155}
+.area-legend span{white-space:nowrap}
+.area-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;background:var(--legend-color)}
+</style><style>.table-wrap{max-width:100%;overflow-x:auto}.table-wrap table{border-collapse:collapse;font-size:.95em}.table-wrap td,.table-wrap th{border:1px solid #94a3b8;padding:7px 10px;text-align:center}.table-wrap th{background:#eaf1fb}</style><style>.option-figure{display:block;width:270px;max-width:100%;height:auto;margin:10px auto;background:white}.table-wrap{overflow-x:auto}</style><style>.option-figure{display:block;width:290px;max-width:100%;height:auto;margin:5px auto}.context table{font-size:14px}.context{overflow-x:auto}</style></head><body>
+<header><div class="topbar"><div class="brand">Matemática · Bachillerato a Distancia · 01-2024</div><div class="meta"><span class="pill">Modo examen</span><span class="pill">Respondidas: <b id="countTop">0/55</b></span><span class="pill timer" id="timerTop">03:00:00</span></div></div></header>
+<main><section id="startView" class="card"><h1 class="hero">Matemática · Bachillerato a Distancia · 01-2024</h1>
+<div class="exam-registration" style="max-width:440px;margin:14px auto 18px;display:grid;gap:10px">
+  <label>Nombre <input id="studentFirstName" autocomplete="given-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <label>Apellidos <input id="studentLastName" autocomplete="family-name" maxlength="70" required style="width:100%;padding:12px;border:1px solid #bec9d8;border-radius:8px"></label>
+  <p id="availabilityMessage" role="status" style="margin:0;text-align:center">Consultando disponibilidad de la prueba…</p>
+  <button id="retryAvailabilityBtn" type="button" style="display:none">Reintentar conexión</button>
+  <button class="primary" id="startBtn" disabled>Iniciar Prueba</button>
+</div>
+<div class="exam-subtitle">Prof: Carlos Madrigal G.</div>
+<div class="exam-intro">
+  <div class="instructions-title">Instrucciones:</div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Bachillerato a Distancia 01-2024: 55 preguntas, 52 evaluables; ítems 21, 22 y 36 sin puntuación.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Las representaciones gráficas necesarias aparecen directamente dentro de cada pregunta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>La prueba contiene 55 preguntas de selección única, cada una con tres opciones de respuesta.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes moverte entre preguntas, devolverte o avanzar y responder en el momento que creas necesario, eso sí, si el tiempo se agota la prueba se cierra y no te dejará seguir respondiendo.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Es recomendable tener a la mano papel y lápiz para ir resolviendo los ejercicios de la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Dispones de 3 horas para responder la prueba.</span></div>
+  <div class="intro-line"><span class="intro-bullet">•</span><span>Puedes utilizar calculadora básica.</span></div>
+  
+
+<div class="intro-line"><span class="intro-bullet">•</span><span>Cuando se requiera, usa 3,14 como aproximación de π y 2,72 como aproximación de e. Las ecuaciones se resuelven en ℝ y la variancia es poblacional. Los dibujos no necesariamente están a escala.</span></div><p class="small">Fuente: 01 2024.pdf, Educación Diversificada a Distancia, convocatoria 01-2024. Copia escaneada de 22 páginas sin clave adjunta. Respuestas y soluciones elaboradas matemáticamente. Se conservan sin puntuación los ítems 21, 22 y 36 por opciones incorrectas o información insuficiente. En 45 se estima la media con marcas de clase. Gráficos reconstruidos en SVG.</p></div></section>
+<section id="examView" style="display:none"><div class="exam-layout"><div class="card"><div class="qhead"><div class="qnum" id="qnum"></div><div class="qmeta"><div class="qarea" id="qarea"></div><div class="status" id="qstatus"></div></div></div><div id="qcontext" class="context"></div><div id="qtext" class="qtext"></div><div id="qfigure" class="qfigure" style="display:none"><img id="qfigureimg" alt="Representación gráfica del ítem"></div><div id="qaftergraphic" class="qfigure" style="display:none"><img id="qaftergraphicimg" alt="Opciones gráficas del ítem"></div><div id="choices" class="choices"></div><div class="navbuttons"><button id="prevBtn">← Anterior</button><button id="nextBtn">Siguiente →</button></div></div><aside class="card side"><h3>Navegación</h3><div id="grid" class="grid"></div><p class="small" id="countSide">0 de 55 respondidos</p><button class="danger" id="finishBtn" style="width:100%;margin-top:8px">Finalizar examen</button></aside></div></section>
+<section id="resultView" class="card result"><h2>Resultado</h2><div class="score" id="scoreText">0/52</div><div id="percentText"></div><p id="gradeStatus" class="grade-status" aria-live="polite"></p><div class="result-grid"><div class="stat"><b id="correctStat">0</b><br>Correctas</div><div class="stat"><b id="wrongStat">0</b><br>Incorrectas</div><div class="stat"><b id="blankStat">0</b><br>Sin responder</div></div><section class="area-results" aria-labelledby="areaResultsTitle"><h3 id="areaResultsTitle">Resultados por área</h3><p>Porcentaje de respuestas correctas en cada área</p><div id="areaChartGrid" class="area-chart-grid"></div></section><p id="deliveryStatus" role="status"></p><button id="retryDeliveryBtn" style="display:none">Reintentar envío</button><button id="reviewBtn">Revisar respuestas</button> <button id="restartBtn">Hacer otro intento</button> <button type="button" id="menuBtn">Regresar al menú de exámenes</button><div id="review" class="review-list" style="display:none"></div></section><div id="finishConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px"><div role="alertdialog" aria-modal="true" aria-labelledby="finishTitle" aria-describedby="pendingMessage" style="width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;text-align:center"><h2 id="finishTitle">¿Finalizar el examen?</h2><p id="pendingMessage"></p><button type="button" id="cancelFinishBtn">Seguir respondiendo</button> <button type="button" class="danger" id="confirmFinishBtn">Sí, finalizar</button></div></div><div id="restartConfirm" role="presentation" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(15,23,42,.58);align-items:center;justify-content:center;padding:20px;">
+<div role="alertdialog" aria-modal="true" aria-labelledby="restartConfirmTitle" aria-describedby="restartConfirmText" style="box-sizing:border-box;width:min(100%,440px);padding:24px;background:#fff;border-radius:16px;box-shadow:0 18px 56px rgba(0,0,0,.28);text-align:center;">
+<h2 id="restartConfirmTitle" style="margin:0 0 12px;color:#173b70;">¿Reiniciar el examen?</h2>
+<p id="restartConfirmText" style="margin:0 0 22px;line-height:1.55;">Se borrarán tus respuestas y el tiempo transcurrido.</p>
+<div style="display:flex;justify-content:center;gap:12px;flex-wrap:wrap;"><button id="cancelRestartBtn" type="button">Cancelar</button><button id="confirmRestartBtn" class="danger" type="button">Sí, reiniciar</button></div>
+</div></div></main><script>
+const FIGURES={"2": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M107.5%2C30%20L107.5%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.5%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E-2%3C/text%3E%3Cpath%20d%3D%22M143.125%2C30%20L143.125%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22143.125%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E-1%3C/text%3E%3Cpath%20d%3D%22M178.75%2C30%20L178.75%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Cpath%20d%3D%22M214.375%2C30%20L214.375%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22214.375%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cpath%20d%3D%22M250.0%2C30%20L250.0%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22250.0%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cpath%20d%3D%22M285.625%2C30%20L285.625%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22285.625%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cpath%20d%3D%22M321.25%2C30%20L321.25%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22321.25%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cpath%20d%3D%22M356.875%2C30%20L356.875%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22356.875%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Cpath%20d%3D%22M392.5%2C30%20L392.5%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22392.5%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E6%3C/text%3E%3Cpath%20d%3D%22M107.5%2C315.0%20L392.5%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.75%22%20y%3D%22320.0%22%20text-anchor%3D%22middle%22%3E-5%3C/text%3E%3Cpath%20d%3D%22M107.5%2C279.375%20L392.5%2C279.375%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.75%22%20y%3D%22284.375%22%20text-anchor%3D%22middle%22%3E-4%3C/text%3E%3Cpath%20d%3D%22M107.5%2C243.75%20L392.5%2C243.75%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.75%22%20y%3D%22248.75%22%20text-anchor%3D%22middle%22%3E-3%3C/text%3E%3Cpath%20d%3D%22M107.5%2C208.125%20L392.5%2C208.125%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.75%22%20y%3D%22213.125%22%20text-anchor%3D%22middle%22%3E-2%3C/text%3E%3Cpath%20d%3D%22M107.5%2C172.5%20L392.5%2C172.5%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.75%22%20y%3D%22177.5%22%20text-anchor%3D%22middle%22%3E-1%3C/text%3E%3Cpath%20d%3D%22M107.5%2C136.875%20L392.5%2C136.875%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Cpath%20d%3D%22M107.5%2C101.25%20L392.5%2C101.25%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.75%22%20y%3D%22106.25%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cpath%20d%3D%22M107.5%2C65.625%20L392.5%2C65.625%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.75%22%20y%3D%2270.625%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cpath%20d%3D%22M107.5%2C30.0%20L392.5%2C30.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.75%22%20y%3D%2235.0%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cpath%20d%3D%22M107.5%2C136.875%20L392.5%2C136.875%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M384.5%2C132.875%20L392.5%2C136.875%20L384.5%2C140.875%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22409.5%22%20y%3D%22141.875%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M178.75%2C315.0%20L178.75%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M174.75%2C38%20L178.75%2C30%20L182.75%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22178.75%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22107.5%22%20y%3D%2230%22%20width%3D%22285.0%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22356.88%2C172.50%20356.79%2C168.30%20356.55%2C164.11%20356.13%2C159.94%20355.56%2C155.78%20354.82%2C151.65%20353.92%2C147.55%20352.86%2C143.49%20351.64%2C139.47%20350.27%2C135.51%20348.74%2C131.60%20347.06%2C127.76%20345.23%2C123.98%20343.25%2C120.28%20341.13%2C116.66%20338.86%2C113.12%20336.46%2C109.68%20333.93%2C106.33%20331.27%2C103.09%20328.48%2C99.95%20325.57%2C96.93%20322.55%2C94.02%20319.41%2C91.23%20316.17%2C88.57%20312.82%2C86.04%20309.38%2C83.64%20305.84%2C81.37%20302.22%2C79.25%20298.52%2C77.27%20294.74%2C75.44%20290.90%2C73.76%20286.99%2C72.23%20283.03%2C70.86%20279.01%2C69.64%20274.95%2C68.58%20270.85%2C67.68%20266.72%2C66.94%20262.56%2C66.37%20258.39%2C65.95%20254.20%2C65.71%20250.00%2C65.62%20245.80%2C65.71%20241.61%2C65.95%20237.44%2C66.37%20233.28%2C66.94%20229.15%2C67.68%20225.05%2C68.58%20220.99%2C69.64%20216.97%2C70.86%20213.01%2C72.23%20209.10%2C73.76%20205.26%2C75.44%20201.48%2C77.27%20197.78%2C79.25%20194.16%2C81.37%20190.62%2C83.64%20187.18%2C86.04%20183.83%2C88.57%20180.59%2C91.23%20177.45%2C94.02%20174.43%2C96.93%20171.52%2C99.95%20168.73%2C103.09%20166.07%2C106.33%20163.54%2C109.68%20161.14%2C113.12%20158.87%2C116.66%20156.75%2C120.28%20154.77%2C123.98%20152.94%2C127.76%20151.26%2C131.60%20149.73%2C135.51%20148.36%2C139.47%20147.14%2C143.49%20146.08%2C147.55%20145.18%2C151.65%20144.44%2C155.78%20143.87%2C159.94%20143.45%2C164.11%20143.21%2C168.30%20143.12%2C172.50%20143.21%2C176.70%20143.45%2C180.89%20143.87%2C185.06%20144.44%2C189.22%20145.18%2C193.35%20146.08%2C197.45%20147.14%2C201.51%20148.36%2C205.53%20149.73%2C209.49%20151.26%2C213.40%20152.94%2C217.24%20154.77%2C221.02%20156.75%2C224.72%20158.87%2C228.34%20161.14%2C231.88%20163.54%2C235.32%20166.07%2C238.67%20168.73%2C241.91%20171.52%2C245.05%20174.43%2C248.07%20177.45%2C250.98%20180.59%2C253.77%20183.83%2C256.43%20187.18%2C258.96%20190.62%2C261.36%20194.16%2C263.63%20197.78%2C265.75%20201.48%2C267.73%20205.26%2C269.56%20209.10%2C271.24%20213.01%2C272.77%20216.97%2C274.14%20220.99%2C275.36%20225.05%2C276.42%20229.15%2C277.32%20233.28%2C278.06%20237.44%2C278.63%20241.61%2C279.05%20245.80%2C279.29%20250.00%2C279.38%20254.20%2C279.29%20258.39%2C279.05%20262.56%2C278.63%20266.72%2C278.06%20270.85%2C277.32%20274.95%2C276.42%20279.01%2C275.36%20283.03%2C274.14%20286.99%2C272.77%20290.90%2C271.24%20294.74%2C269.56%20298.52%2C267.73%20302.22%2C265.75%20305.84%2C263.63%20309.38%2C261.36%20312.82%2C258.96%20316.17%2C256.43%20319.41%2C253.77%20322.55%2C250.98%20325.57%2C248.07%20328.48%2C245.05%20331.27%2C241.91%20333.93%2C238.67%20336.46%2C235.32%20338.86%2C231.88%20341.13%2C228.34%20343.25%2C224.72%20345.23%2C221.02%20347.06%2C217.24%20348.74%2C213.40%20350.27%2C209.49%20351.64%2C205.53%20352.86%2C201.51%20353.92%2C197.45%20354.82%2C193.35%20355.56%2C189.22%20356.13%2C185.06%20356.55%2C180.89%20356.79%2C176.70%20356.88%2C172.50%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22250.0%22%20cy%3D%22172.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22260.0%22%20y%3D%22160.5%22%20text-anchor%3D%22middle%22%3EM%3C/text%3E%3C/g%3E%3C/svg%3E", "6": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M60.0%2C70.71428571428572%20L440.0%2C70.71428571428572%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M432.0%2C66.71428571428572%20L440.0%2C70.71428571428572%20L432.0%2C74.71428571428572%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22457.0%22%20y%3D%2275.71428571428572%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M304.28571428571433%2C315.0%20L304.28571428571433%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M300.28571428571433%2C38%20L304.28571428571433%2C30%20L308.28571428571433%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22304.28571428571433%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%2260.0%22%20y%3D%2230%22%20width%3D%22380.0%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22304.29%2C179.29%20304.20%2C175.02%20303.95%2C170.77%20303.53%2C166.52%20302.95%2C162.30%20302.20%2C158.10%20301.29%2C153.94%20300.21%2C149.82%20298.97%2C145.74%20297.58%2C141.71%20296.02%2C137.74%20294.31%2C133.83%20292.45%2C130.00%20290.44%2C126.24%20288.29%2C122.56%20285.99%2C118.97%20283.55%2C115.47%20280.98%2C112.07%20278.27%2C108.77%20275.44%2C105.59%20272.49%2C102.51%20269.41%2C99.56%20266.23%2C96.73%20262.93%2C94.02%20259.53%2C91.45%20256.03%2C89.01%20252.44%2C86.71%20248.76%2C84.56%20245.00%2C82.55%20241.17%2C80.69%20237.26%2C78.98%20233.29%2C77.42%20229.26%2C76.03%20225.18%2C74.79%20221.06%2C73.71%20216.90%2C72.80%20212.70%2C72.05%20208.48%2C71.47%20204.23%2C71.05%20199.98%2C70.80%20195.71%2C70.71%20191.45%2C70.80%20187.20%2C71.05%20182.95%2C71.47%20178.73%2C72.05%20174.53%2C72.80%20170.37%2C73.71%20166.24%2C74.79%20162.16%2C76.03%20158.14%2C77.42%20154.17%2C78.98%20150.26%2C80.69%20146.42%2C82.55%20142.66%2C84.56%20138.99%2C86.71%20135.40%2C89.01%20131.90%2C91.45%20128.50%2C94.02%20125.20%2C96.73%20122.02%2C99.56%20118.94%2C102.51%20115.99%2C105.59%20113.16%2C108.77%20110.45%2C112.07%20107.88%2C115.47%20105.44%2C118.97%20103.14%2C122.56%20100.99%2C126.24%2098.98%2C130.00%2097.12%2C133.83%2095.41%2C137.74%2093.85%2C141.71%2092.46%2C145.74%2091.22%2C149.82%2090.14%2C153.94%2089.23%2C158.10%2088.48%2C162.30%2087.90%2C166.52%2087.48%2C170.77%2087.23%2C175.02%2087.14%2C179.29%2087.23%2C183.55%2087.48%2C187.80%2087.90%2C192.05%2088.48%2C196.27%2089.23%2C200.47%2090.14%2C204.63%2091.22%2C208.76%2092.46%2C212.84%2093.85%2C216.86%2095.41%2C220.83%2097.12%2C224.74%2098.98%2C228.58%20100.99%2C232.34%20103.14%2C236.01%20105.44%2C239.60%20107.88%2C243.10%20110.45%2C246.50%20113.16%2C249.80%20115.99%2C252.98%20118.94%2C256.06%20122.02%2C259.01%20125.20%2C261.84%20128.50%2C264.55%20131.90%2C267.12%20135.40%2C269.56%20138.99%2C271.86%20142.66%2C274.01%20146.42%2C276.02%20150.26%2C277.88%20154.17%2C279.59%20158.14%2C281.15%20162.16%2C282.54%20166.24%2C283.78%20170.37%2C284.86%20174.53%2C285.77%20178.73%2C286.52%20182.95%2C287.10%20187.20%2C287.52%20191.45%2C287.77%20195.71%2C287.86%20199.98%2C287.77%20204.23%2C287.52%20208.48%2C287.10%20212.70%2C286.52%20216.90%2C285.77%20221.06%2C284.86%20225.18%2C283.78%20229.26%2C282.54%20233.29%2C281.15%20237.26%2C279.59%20241.17%2C277.88%20245.00%2C276.02%20248.76%2C274.01%20252.44%2C271.86%20256.03%2C269.56%20259.53%2C267.12%20262.93%2C264.55%20266.23%2C261.84%20269.41%2C259.01%20272.49%2C256.06%20275.44%2C252.98%20278.27%2C249.80%20280.98%2C246.50%20283.55%2C243.10%20285.99%2C239.60%20288.29%2C236.01%20290.44%2C232.34%20292.45%2C228.58%20294.31%2C224.74%20296.02%2C220.83%20297.58%2C216.86%20298.97%2C212.84%20300.21%2C208.76%20301.29%2C204.63%20302.20%2C200.47%20302.95%2C196.27%20303.53%2C192.05%20303.95%2C187.80%20304.20%2C183.55%20304.29%2C179.29%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22195.71428571428572%22%20cy%3D%22179.2857142857143%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22205.71428571428572%22%20y%3D%22167.2857142857143%22%20text-anchor%3D%22middle%22%3EO%3C/text%3E%3Ccircle%20cx%3D%22195.71428571428572%22%20cy%3D%2270.71428571428572%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22205.71428571428572%22%20y%3D%2258.71428571428572%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22399.2857142857143%22%20cy%3D%2270.71428571428572%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22409.2857142857143%22%20y%3D%2258.71428571428572%22%20text-anchor%3D%22middle%22%3EM%3C/text%3E%3Ccircle%20cx%3D%22195.71428571428572%22%20cy%3D%22287.85714285714283%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22205.71428571428572%22%20y%3D%22275.85714285714283%22%20text-anchor%3D%22middle%22%3E%E2%88%9216%3C/text%3E%3C/g%3E%3C/svg%3E", "7": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M89.6875%2C30%20L89.6875%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%2289.6875%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E-1%3C/text%3E%3Cpath%20d%3D%22M125.3125%2C30%20L125.3125%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Cpath%20d%3D%22M160.9375%2C30%20L160.9375%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22160.9375%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cpath%20d%3D%22M196.5625%2C30%20L196.5625%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22196.5625%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cpath%20d%3D%22M232.1875%2C30%20L232.1875%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22232.1875%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cpath%20d%3D%22M267.8125%2C30%20L267.8125%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22267.8125%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E4%3C/text%3E%3Cpath%20d%3D%22M303.4375%2C30%20L303.4375%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22303.4375%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Cpath%20d%3D%22M339.0625%2C30%20L339.0625%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22339.0625%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E6%3C/text%3E%3Cpath%20d%3D%22M374.6875%2C30%20L374.6875%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22374.6875%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E7%3C/text%3E%3Cpath%20d%3D%22M410.3125%2C30%20L410.3125%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22410.3125%22%20y%3D%22158.875%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C315.0%20L410.3125%2C315.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.3125%22%20y%3D%22320.0%22%20text-anchor%3D%22middle%22%3E-5%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C279.375%20L410.3125%2C279.375%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.3125%22%20y%3D%22284.375%22%20text-anchor%3D%22middle%22%3E-4%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C243.75%20L410.3125%2C243.75%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.3125%22%20y%3D%22248.75%22%20text-anchor%3D%22middle%22%3E-3%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C208.125%20L410.3125%2C208.125%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.3125%22%20y%3D%22213.125%22%20text-anchor%3D%22middle%22%3E-2%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C172.5%20L410.3125%2C172.5%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.3125%22%20y%3D%22177.5%22%20text-anchor%3D%22middle%22%3E-1%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C136.875%20L410.3125%2C136.875%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Cpath%20d%3D%22M89.6875%2C101.25%20L410.3125%2C101.25%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.3125%22%20y%3D%22106.25%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C65.625%20L410.3125%2C65.625%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.3125%22%20y%3D%2270.625%22%20text-anchor%3D%22middle%22%3E2%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C30.0%20L410.3125%2C30.0%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%22107.3125%22%20y%3D%2235.0%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C136.875%20L410.3125%2C136.875%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M402.3125%2C132.875%20L410.3125%2C136.875%20L402.3125%2C140.875%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22427.3125%22%20y%3D%22141.875%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M125.3125%2C315.0%20L125.3125%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M121.3125%2C38%20L125.3125%2C30%20L129.3125%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22125.3125%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%2289.6875%22%20y%3D%2230%22%20width%3D%22320.625%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22339.06%2C172.50%20338.98%2C168.30%20338.73%2C164.11%20338.32%2C159.94%20337.75%2C155.78%20337.01%2C151.65%20336.11%2C147.55%20335.05%2C143.49%20333.83%2C139.47%20332.46%2C135.51%20330.93%2C131.60%20329.25%2C127.76%20327.41%2C123.98%20325.44%2C120.28%20323.31%2C116.66%20321.05%2C113.12%20318.65%2C109.68%20316.12%2C106.33%20313.46%2C103.09%20310.67%2C99.95%20307.76%2C96.93%20304.73%2C94.02%20301.60%2C91.23%20298.35%2C88.57%20295.01%2C86.04%20291.56%2C83.64%20288.03%2C81.37%20284.41%2C79.25%20280.71%2C77.27%20276.93%2C75.44%20273.09%2C73.76%20269.18%2C72.23%20265.21%2C70.86%20261.20%2C69.64%20257.14%2C68.58%20253.04%2C67.68%20248.91%2C66.94%20244.75%2C66.37%20240.57%2C65.95%20236.38%2C65.71%20232.19%2C65.62%20227.99%2C65.71%20223.80%2C65.95%20219.63%2C66.37%20215.47%2C66.94%20211.34%2C67.68%20207.24%2C68.58%20203.18%2C69.64%20199.16%2C70.86%20195.20%2C72.23%20191.29%2C73.76%20187.44%2C75.44%20183.67%2C77.27%20179.97%2C79.25%20176.35%2C81.37%20172.81%2C83.64%20169.37%2C86.04%20166.02%2C88.57%20162.78%2C91.23%20159.64%2C94.02%20156.62%2C96.93%20153.71%2C99.95%20150.92%2C103.09%20148.26%2C106.33%20145.72%2C109.68%20143.32%2C113.12%20141.06%2C116.66%20138.94%2C120.28%20136.96%2C123.98%20135.13%2C127.76%20133.45%2C131.60%20131.92%2C135.51%20130.54%2C139.47%20129.33%2C143.49%20128.27%2C147.55%20127.37%2C151.65%20126.63%2C155.78%20126.05%2C159.94%20125.64%2C164.11%20125.39%2C168.30%20125.31%2C172.50%20125.39%2C176.70%20125.64%2C180.89%20126.05%2C185.06%20126.63%2C189.22%20127.37%2C193.35%20128.27%2C197.45%20129.33%2C201.51%20130.54%2C205.53%20131.92%2C209.49%20133.45%2C213.40%20135.13%2C217.24%20136.96%2C221.02%20138.94%2C224.72%20141.06%2C228.34%20143.32%2C231.88%20145.72%2C235.32%20148.26%2C238.67%20150.92%2C241.91%20153.71%2C245.05%20156.62%2C248.07%20159.64%2C250.98%20162.78%2C253.77%20166.02%2C256.43%20169.37%2C258.96%20172.81%2C261.36%20176.35%2C263.63%20179.97%2C265.75%20183.67%2C267.73%20187.44%2C269.56%20191.29%2C271.24%20195.20%2C272.77%20199.16%2C274.14%20203.18%2C275.36%20207.24%2C276.42%20211.34%2C277.32%20215.47%2C278.06%20219.63%2C278.63%20223.80%2C279.05%20227.99%2C279.29%20232.19%2C279.38%20236.38%2C279.29%20240.57%2C279.05%20244.75%2C278.63%20248.91%2C278.06%20253.04%2C277.32%20257.14%2C276.42%20261.20%2C275.36%20265.21%2C274.14%20269.18%2C272.77%20273.09%2C271.24%20276.93%2C269.56%20280.71%2C267.73%20284.41%2C265.75%20288.03%2C263.63%20291.56%2C261.36%20295.01%2C258.96%20298.35%2C256.43%20301.60%2C253.77%20304.73%2C250.98%20307.76%2C248.07%20310.67%2C245.05%20313.46%2C241.91%20316.12%2C238.67%20318.65%2C235.32%20321.05%2C231.88%20323.31%2C228.34%20325.44%2C224.72%20327.41%2C221.02%20329.25%2C217.24%20330.93%2C213.40%20332.46%2C209.49%20333.83%2C205.53%20335.05%2C201.51%20336.11%2C197.45%20337.01%2C193.35%20337.75%2C189.22%20338.32%2C185.06%20338.73%2C180.89%20338.98%2C176.70%20339.06%2C172.50%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3Cpolyline%20points%3D%22172.90%2C83.57%20291.47%2C261.43%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3Cpolyline%20points%3D%22278.50%2C270.07%20392.50%2C194.07%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22232.1875%22%20cy%3D%22172.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22242.1875%22%20y%3D%22160.5%22%20text-anchor%3D%22middle%22%3EM%3C/text%3E%3Ccircle%20cx%3D%22291.4710834715714%22%20cy%3D%22261.42537520735704%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22301.4710834715714%22%20y%3D%22249.42537520735704%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22172.90391652842865%22%20cy%3D%2283.57462479264296%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22182.90391652842865%22%20y%3D%2271.57462479264296%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22296.3125%22%20cy%3D%2287.0%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22306.3125%22%20y%3D%2275.0%22%20text-anchor%3D%22middle%22%3EH%3C/text%3E%3C/g%3E%3C/svg%3E", "8": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M54.0625%2C279.375%20L445.9375%2C279.375%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M437.9375%2C275.375%20L445.9375%2C279.375%20L437.9375%2C283.375%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22462.9375%22%20y%3D%22284.375%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M89.6875%2C315.0%20L89.6875%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M85.6875%2C38%20L89.6875%2C30%20L93.6875%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%2289.6875%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%2254.0625%22%20y%3D%2230%22%20width%3D%22391.875%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22374.69%2C172.50%20374.61%2C168.30%20374.36%2C164.11%20373.95%2C159.94%20373.37%2C155.78%20372.63%2C151.65%20371.73%2C147.55%20370.67%2C143.49%20369.46%2C139.47%20368.08%2C135.51%20366.55%2C131.60%20364.87%2C127.76%20363.04%2C123.98%20361.06%2C120.28%20358.94%2C116.66%20356.68%2C113.12%20354.28%2C109.68%20351.74%2C106.33%20349.08%2C103.09%20346.29%2C99.95%20343.38%2C96.93%20340.36%2C94.02%20337.22%2C91.23%20333.98%2C88.57%20330.63%2C86.04%20327.19%2C83.64%20323.65%2C81.37%20320.03%2C79.25%20316.33%2C77.27%20312.56%2C75.44%20308.71%2C73.76%20304.80%2C72.23%20300.84%2C70.86%20296.82%2C69.64%20292.76%2C68.58%20288.66%2C67.68%20284.53%2C66.94%20280.37%2C66.37%20276.20%2C65.95%20272.01%2C65.71%20267.81%2C65.62%20263.62%2C65.71%20259.43%2C65.95%20255.25%2C66.37%20251.09%2C66.94%20246.96%2C67.68%20242.86%2C68.58%20238.80%2C69.64%20234.79%2C70.86%20230.82%2C72.23%20226.91%2C73.76%20223.07%2C75.44%20219.29%2C77.27%20215.59%2C79.25%20211.97%2C81.37%20208.44%2C83.64%20204.99%2C86.04%20201.65%2C88.57%20198.40%2C91.23%20195.27%2C94.02%20192.24%2C96.93%20189.33%2C99.95%20186.54%2C103.09%20183.88%2C106.33%20181.35%2C109.68%20178.95%2C113.12%20176.69%2C116.66%20174.56%2C120.28%20172.59%2C123.98%20170.75%2C127.76%20169.07%2C131.60%20167.54%2C135.51%20166.17%2C139.47%20164.95%2C143.49%20163.89%2C147.55%20162.99%2C151.65%20162.25%2C155.78%20161.68%2C159.94%20161.27%2C164.11%20161.02%2C168.30%20160.94%2C172.50%20161.02%2C176.70%20161.27%2C180.89%20161.68%2C185.06%20162.25%2C189.22%20162.99%2C193.35%20163.89%2C197.45%20164.95%2C201.51%20166.17%2C205.53%20167.54%2C209.49%20169.07%2C213.40%20170.75%2C217.24%20172.59%2C221.02%20174.56%2C224.72%20176.69%2C228.34%20178.95%2C231.88%20181.35%2C235.32%20183.88%2C238.67%20186.54%2C241.91%20189.33%2C245.05%20192.24%2C248.07%20195.27%2C250.98%20198.40%2C253.77%20201.65%2C256.43%20204.99%2C258.96%20208.44%2C261.36%20211.97%2C263.63%20215.59%2C265.75%20219.29%2C267.73%20223.07%2C269.56%20226.91%2C271.24%20230.82%2C272.77%20234.79%2C274.14%20238.80%2C275.36%20242.86%2C276.42%20246.96%2C277.32%20251.09%2C278.06%20255.25%2C278.63%20259.43%2C279.05%20263.62%2C279.29%20267.81%2C279.38%20272.01%2C279.29%20276.20%2C279.05%20280.37%2C278.63%20284.53%2C278.06%20288.66%2C277.32%20292.76%2C276.42%20296.82%2C275.36%20300.84%2C274.14%20304.80%2C272.77%20308.71%2C271.24%20312.56%2C269.56%20316.33%2C267.73%20320.03%2C265.75%20323.65%2C263.63%20327.19%2C261.36%20330.63%2C258.96%20333.98%2C256.43%20337.22%2C253.77%20340.36%2C250.98%20343.38%2C248.07%20346.29%2C245.05%20349.08%2C241.91%20351.74%2C238.67%20354.28%2C235.32%20356.68%2C231.88%20358.94%2C228.34%20361.06%2C224.72%20363.04%2C221.02%20364.87%2C217.24%20366.55%2C213.40%20368.08%2C209.49%20369.46%2C205.53%20370.67%2C201.51%20371.73%2C197.45%20372.63%2C193.35%20373.37%2C189.22%20373.95%2C185.06%20374.36%2C180.89%20374.61%2C176.70%20374.69%2C172.50%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22267.8125%22%20cy%3D%22172.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22277.8125%22%20y%3D%22160.5%22%20text-anchor%3D%22middle%22%3EP%3C/text%3E%3Ccircle%20cx%3D%22267.8125%22%20cy%3D%22279.375%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22277.8125%22%20y%3D%22267.375%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Ccircle%20cx%3D%2289.6875%22%20cy%3D%22172.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%2299.6875%22%20y%3D%22160.5%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3C/g%3E%3C/svg%3E", "13": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M140.3846153846154%2C293.0769230769231%20L359.61538461538464%2C293.0769230769231%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M351.61538461538464%2C289.0769230769231%20L359.61538461538464%2C293.0769230769231%20L351.61538461538464%2C297.0769230769231%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22376.61538461538464%22%20y%3D%22298.0769230769231%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M250.0%2C315.0%20L250.0%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M246.0%2C38%20L250.0%2C30%20L254.0%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22250.0%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22140.3846153846154%22%20y%3D%2230%22%20width%3D%22219.23076923076925%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22184.23%2C161.54%20250.00%2C293.08%20315.77%2C293.08%20315.77%2C73.85%20250.00%2C161.54%20184.23%2C161.54%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22184.23076923076923%22%20cy%3D%22161.53846153846155%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22194.23076923076923%22%20y%3D%22149.53846153846155%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22250.0%22%20cy%3D%22293.0769230769231%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22260.0%22%20y%3D%22281.0769230769231%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22315.76923076923083%22%20cy%3D%22293.0769230769231%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22325.76923076923083%22%20y%3D%22281.0769230769231%22%20text-anchor%3D%22middle%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22315.76923076923083%22%20cy%3D%2273.84615384615384%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22325.76923076923083%22%20y%3D%2261.84615384615384%22%20text-anchor%3D%22middle%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22250.0%22%20cy%3D%22161.53846153846155%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22260.0%22%20y%3D%22149.53846153846155%22%20text-anchor%3D%22middle%22%3EE%3C/text%3E%3C/g%3E%3C/svg%3E", "14": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M140.3846153846154%2C293.0769230769231%20L359.61538461538464%2C293.0769230769231%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M351.61538461538464%2C289.0769230769231%20L359.61538461538464%2C293.0769230769231%20L351.61538461538464%2C297.0769230769231%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22376.61538461538464%22%20y%3D%22298.0769230769231%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M250.0%2C315.0%20L250.0%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M246.0%2C38%20L250.0%2C30%20L254.0%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22250.0%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22140.3846153846154%22%20y%3D%2230%22%20width%3D%22219.23076923076925%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22184.23%2C161.54%20250.00%2C293.08%20315.77%2C293.08%20315.77%2C73.85%20250.00%2C161.54%20184.23%2C161.54%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22184.23076923076923%22%20cy%3D%22161.53846153846155%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22194.23076923076923%22%20y%3D%22149.53846153846155%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3Ccircle%20cx%3D%22250.0%22%20cy%3D%22293.0769230769231%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22260.0%22%20y%3D%22281.0769230769231%22%20text-anchor%3D%22middle%22%3EB%3C/text%3E%3Ccircle%20cx%3D%22315.76923076923083%22%20cy%3D%22293.0769230769231%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22325.76923076923083%22%20y%3D%22281.0769230769231%22%20text-anchor%3D%22middle%22%3EC%3C/text%3E%3Ccircle%20cx%3D%22315.76923076923083%22%20cy%3D%2273.84615384615384%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22325.76923076923083%22%20y%3D%2261.84615384615384%22%20text-anchor%3D%22middle%22%3ED%3C/text%3E%3Ccircle%20cx%3D%22250.0%22%20cy%3D%22161.53846153846155%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22260.0%22%20y%3D%22149.53846153846155%22%20text-anchor%3D%22middle%22%3EE%3C/text%3E%3C/g%3E%3C/svg%3E", "15": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20340%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22185%22%20r%3D%22105%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cellipse%20cx%3D%22180%22%20cy%3D%22122%22%20rx%3D%2284%22%20ry%3D%2218%22%20fill%3D%22%23eef2f7%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cpath%20d%3D%22M96%2C122%20L264%2C122%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M180%2C122%20L180%2C185%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%2282%22%20y%3D%22124%22%20text-anchor%3D%22middle%22%3EK%3C/text%3E%3Ctext%20x%3D%22280%22%20y%3D%22124%22%20text-anchor%3D%22middle%22%3EP%3C/text%3E%3Ctext%20x%3D%22180%22%20y%3D%22110%22%20text-anchor%3D%22middle%22%3EO%3C/text%3E%3Ctext%20x%3D%22180%22%20y%3D%22208%22%20text-anchor%3D%22middle%22%3EE%3C/text%3E%3Ctext%20x%3D%22400%22%20y%3D%22120%22%20text-anchor%3D%22middle%22%3EK%20%E2%80%93%20O%20%E2%80%93%20P%3C/text%3E%3Ctext%20x%3D%22400%22%20y%3D%22155%22%20text-anchor%3D%22middle%22%3EE%3A%20centro%20de%20la%20esfera%3C/text%3E%3Ctext%20x%3D%22400%22%20y%3D%22185%22%20text-anchor%3D%22middle%22%3EO%3A%20centro%20del%20corte%3C/text%3E%3C/g%3E%3C/svg%3E", "16": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20560%20340%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Ccircle%20cx%3D%22180%22%20cy%3D%22185%22%20r%3D%22105%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cellipse%20cx%3D%22180%22%20cy%3D%22122%22%20rx%3D%2284%22%20ry%3D%2218%22%20fill%3D%22%23eef2f7%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cpath%20d%3D%22M96%2C122%20L264%2C122%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M180%2C122%20L180%2C185%22%20fill%3D%22none%22%20stroke%3D%22%23b7c4d3%22%20stroke-width%3D%221%22%20stroke-dasharray%3D%224%205%22/%3E%3Ctext%20x%3D%2282%22%20y%3D%22124%22%20text-anchor%3D%22middle%22%3EK%3C/text%3E%3Ctext%20x%3D%22280%22%20y%3D%22124%22%20text-anchor%3D%22middle%22%3EP%3C/text%3E%3Ctext%20x%3D%22180%22%20y%3D%22110%22%20text-anchor%3D%22middle%22%3EO%3C/text%3E%3Ctext%20x%3D%22180%22%20y%3D%22208%22%20text-anchor%3D%22middle%22%3EE%3C/text%3E%3Ctext%20x%3D%22400%22%20y%3D%22120%22%20text-anchor%3D%22middle%22%3EK%20%E2%80%93%20O%20%E2%80%93%20P%3C/text%3E%3Ctext%20x%3D%22400%22%20y%3D%22155%22%20text-anchor%3D%22middle%22%3EE%3A%20centro%20de%20la%20esfera%3C/text%3E%3Ctext%20x%3D%22400%22%20y%3D%22185%22%20text-anchor%3D%22middle%22%3EO%3A%20centro%20del%20corte%3C/text%3E%3C/g%3E%3C/svg%3E", "24": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M89.6875%2C172.5%20L410.3125%2C172.5%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M402.3125%2C168.5%20L410.3125%2C172.5%20L402.3125%2C176.5%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22427.3125%22%20y%3D%22177.5%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M232.1875%2C315.0%20L232.1875%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M228.1875%2C38%20L232.1875%2C30%20L236.1875%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22232.1875%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%2289.6875%22%20y%3D%2230%22%20width%3D%22320.625%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22107.50%2C74.53%20232.19%2C136.88%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3Cpolyline%20points%3D%22339.06%2C172.50%20392.50%2C279.38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22160.9375%22%20cy%3D%22101.25%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22170.9375%22%20y%3D%2289.25%22%20text-anchor%3D%22middle%22%3E%28%E2%88%922%2C2%29%3C/text%3E%3Ccircle%20cx%3D%22232.1875%22%20cy%3D%22136.875%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22242.1875%22%20y%3D%22124.875%22%20text-anchor%3D%22middle%22%3E1%3C/text%3E%3Ccircle%20cx%3D%22339.0625%22%20cy%3D%22172.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22349.0625%22%20y%3D%22160.5%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Ccircle%20cx%3D%22374.6875%22%20cy%3D%22243.75%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22384.6875%22%20y%3D%22231.75%22%20text-anchor%3D%22middle%22%3E%284%2C%E2%88%922%29%3C/text%3E%3C/g%3E%3C/svg%3E", "27": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M131.25%2C172.5%20L368.75%2C172.5%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M360.75%2C168.5%20L368.75%2C172.5%20L360.75%2C176.5%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22385.75%22%20y%3D%22177.5%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M273.75%2C315.0%20L273.75%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M269.75%2C38%20L273.75%2C30%20L277.75%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22273.75%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22131.25%22%20y%3D%2230%22%20width%3D%22237.5%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22155.00%2C30.00%20273.75%2C267.50%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22226.25%22%20cy%3D%22172.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22236.25%22%20y%3D%22160.5%22%20text-anchor%3D%22middle%22%3E%E2%88%921%3C/text%3E%3Ccircle%20cx%3D%22273.75%22%20cy%3D%22267.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22283.75%22%20y%3D%22255.5%22%20text-anchor%3D%22middle%22%3E%E2%88%922%3C/text%3E%3C/g%3E%3C/svg%3E", "28": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M107.5%2C156.66666666666666%20L392.5%2C156.66666666666666%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M384.5%2C152.66666666666666%20L392.5%2C156.66666666666666%20L384.5%2C160.66666666666666%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22409.5%22%20y%3D%22161.66666666666666%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M234.16666666666666%2C315.0%20L234.16666666666666%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M230.16666666666666%2C38%20L234.16666666666666%2C30%20L238.16666666666666%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22234.16666666666666%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22107.5%22%20y%3D%2230%22%20width%3D%22285.0%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22139.17%2C61.67%20202.50%2C251.67%20297.50%2C251.67%20360.83%2C283.33%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22139.16666666666666%22%20cy%3D%2261.666666666666686%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22149.16666666666666%22%20y%3D%2249.666666666666686%22%20text-anchor%3D%22middle%22%3E%28%E2%88%923%2C3%29%3C/text%3E%3Ccircle%20cx%3D%22202.5%22%20cy%3D%22251.66666666666669%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22212.5%22%20y%3D%22239.66666666666669%22%20text-anchor%3D%22middle%22%3E%28%E2%88%921%2C%E2%88%923%29%3C/text%3E%3Ccircle%20cx%3D%22297.5%22%20cy%3D%22251.66666666666669%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22307.5%22%20y%3D%22239.66666666666669%22%20text-anchor%3D%22middle%22%3E%282%2C%E2%88%923%29%3C/text%3E%3Ccircle%20cx%3D%22360.8333333333333%22%20cy%3D%22283.3333333333333%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22370.8333333333333%22%20y%3D%22271.3333333333333%22%20text-anchor%3D%22middle%22%3E%284%2C%E2%88%924%29%3C/text%3E%3C/g%3E%3C/svg%3E", "29": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M107.5%2C156.66666666666666%20L392.5%2C156.66666666666666%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M384.5%2C152.66666666666666%20L392.5%2C156.66666666666666%20L384.5%2C160.66666666666666%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22409.5%22%20y%3D%22161.66666666666666%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M234.16666666666666%2C315.0%20L234.16666666666666%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M230.16666666666666%2C38%20L234.16666666666666%2C30%20L238.16666666666666%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22234.16666666666666%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22107.5%22%20y%3D%2230%22%20width%3D%22285.0%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22139.17%2C61.67%20202.50%2C251.67%20297.50%2C251.67%20360.83%2C283.33%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22139.16666666666666%22%20cy%3D%2261.666666666666686%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22149.16666666666666%22%20y%3D%2249.666666666666686%22%20text-anchor%3D%22middle%22%3E%28%E2%88%923%2C3%29%3C/text%3E%3Ccircle%20cx%3D%22202.5%22%20cy%3D%22251.66666666666669%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22212.5%22%20y%3D%22239.66666666666669%22%20text-anchor%3D%22middle%22%3E%28%E2%88%921%2C%E2%88%923%29%3C/text%3E%3Ccircle%20cx%3D%22297.5%22%20cy%3D%22251.66666666666669%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22307.5%22%20y%3D%22239.66666666666669%22%20text-anchor%3D%22middle%22%3E%282%2C%E2%88%923%29%3C/text%3E%3Ccircle%20cx%3D%22360.8333333333333%22%20cy%3D%22283.3333333333333%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22370.8333333333333%22%20y%3D%22271.3333333333333%22%20text-anchor%3D%22middle%22%3E%284%2C%E2%88%924%29%3C/text%3E%3C/g%3E%3C/svg%3E", "32": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M107.5%2C233.57142857142856%20L392.5%2C233.57142857142856%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M384.5%2C229.57142857142856%20L392.5%2C233.57142857142856%20L384.5%2C237.57142857142856%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22409.5%22%20y%3D%22238.57142857142856%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M188.92857142857144%2C315.0%20L188.92857142857144%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M184.92857142857144%2C38%20L188.92857142857144%2C30%20L192.92857142857144%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22188.92857142857144%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22107.5%22%20y%3D%2230%22%20width%3D%22285.0%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22148.21%2C70.71%20351.79%2C274.29%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22188.92857142857144%22%20cy%3D%22111.42857142857142%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22198.92857142857144%22%20y%3D%2299.42857142857142%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3Ccircle%20cx%3D%22311.07142857142856%22%20cy%3D%22233.57142857142856%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22321.07142857142856%22%20y%3D%22221.57142857142856%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3C/g%3E%3C/svg%3E", "35": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M136.0%2C172.5%20L364.0%2C172.5%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M356.0%2C168.5%20L364.0%2C172.5%20L356.0%2C176.5%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22381.0%22%20y%3D%22177.5%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M221.5%2C315.0%20L221.5%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M217.5%2C38%20L221.5%2C30%20L225.5%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22221.5%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22136.0%22%20y%3D%2230%22%20width%3D%22228.0%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22136.00%2C-169.50%20136.71%2C-163.82%20137.42%2C-158.17%20138.14%2C-152.56%20138.85%2C-146.99%20139.56%2C-141.45%20140.28%2C-135.94%20140.99%2C-130.47%20141.70%2C-125.04%20142.41%2C-119.64%20143.12%2C-114.28%20143.84%2C-108.96%20144.55%2C-103.67%20145.26%2C-98.41%20145.97%2C-93.19%20146.69%2C-88.01%20147.40%2C-82.86%20148.11%2C-77.75%20148.83%2C-72.67%20149.54%2C-67.63%20150.25%2C-62.62%20150.96%2C-57.66%20151.67%2C-52.72%20152.39%2C-47.82%20153.10%2C-42.96%20153.81%2C-38.13%20154.53%2C-33.34%20155.24%2C-28.59%20155.95%2C-23.86%20156.66%2C-19.18%20157.38%2C-14.53%20158.09%2C-9.92%20158.80%2C-5.34%20159.51%2C-0.80%20160.22%2C3.71%20160.94%2C8.18%20161.65%2C12.62%20162.36%2C17.01%20163.08%2C21.38%20163.79%2C25.71%20164.50%2C30.00%20165.21%2C34.26%20165.93%2C38.48%20166.64%2C42.66%20167.35%2C46.81%20168.06%2C50.93%20168.78%2C55.01%20169.49%2C59.05%20170.20%2C63.06%20170.91%2C67.03%20171.62%2C70.97%20172.34%2C74.87%20173.05%2C78.74%20173.76%2C82.56%20174.47%2C86.36%20175.19%2C90.12%20175.90%2C93.84%20176.61%2C97.53%20177.32%2C101.18%20178.04%2C104.79%20178.75%2C108.38%20179.46%2C111.92%20180.18%2C115.43%20180.89%2C118.90%20181.60%2C122.34%20182.31%2C125.74%20183.03%2C129.11%20183.74%2C132.44%20184.45%2C135.74%20185.16%2C138.99%20185.88%2C142.22%20186.59%2C145.41%20187.30%2C148.56%20188.01%2C151.68%20188.72%2C154.76%20189.44%2C157.80%20190.15%2C160.82%20190.86%2C163.79%20191.57%2C166.73%20192.29%2C169.63%20193.00%2C172.50%20193.71%2C175.33%20194.43%2C178.13%20195.14%2C180.89%20195.85%2C183.62%20196.56%2C186.30%20197.28%2C188.96%20197.99%2C191.58%20198.70%2C194.16%20199.41%2C196.71%20200.12%2C199.22%20200.84%2C201.69%20201.55%2C204.14%20202.26%2C206.54%20202.98%2C208.91%20203.69%2C211.24%20204.40%2C213.54%20205.11%2C215.80%20205.82%2C218.03%20206.54%2C220.22%20207.25%2C222.38%20207.96%2C224.49%20208.68%2C226.58%20209.39%2C228.63%20210.10%2C230.64%20210.81%2C232.62%20211.53%2C234.56%20212.24%2C236.46%20212.95%2C238.34%20213.66%2C240.17%20214.38%2C241.97%20215.09%2C243.73%20215.80%2C245.46%20216.51%2C247.15%20217.23%2C248.81%20217.94%2C250.43%20218.65%2C252.02%20219.36%2C253.56%20220.07%2C255.08%20220.79%2C256.56%20221.50%2C258.00%20222.21%2C259.41%20222.93%2C260.78%20223.64%2C262.11%20224.35%2C263.42%20225.06%2C264.68%20225.78%2C265.91%20226.49%2C267.10%20227.20%2C268.26%20227.91%2C269.38%20228.62%2C270.47%20229.34%2C271.52%20230.05%2C272.54%20230.76%2C273.51%20231.48%2C274.46%20232.19%2C275.37%20232.90%2C276.24%20233.61%2C277.08%20234.32%2C277.88%20235.04%2C278.64%20235.75%2C279.38%20236.46%2C280.07%20237.18%2C280.73%20237.89%2C281.35%20238.60%2C281.94%20239.31%2C282.49%20240.03%2C283.01%20240.74%2C283.49%20241.45%2C283.94%20242.16%2C284.34%20242.88%2C284.72%20243.59%2C285.06%20244.30%2C285.36%20245.01%2C285.63%20245.73%2C285.86%20246.44%2C286.05%20247.15%2C286.22%20247.86%2C286.34%20248.57%2C286.43%20249.29%2C286.48%20250.00%2C286.50%20250.71%2C286.48%20251.43%2C286.43%20252.14%2C286.34%20252.85%2C286.21%20253.56%2C286.05%20254.28%2C285.86%20254.99%2C285.63%20255.70%2C285.36%20256.41%2C285.06%20257.12%2C284.72%20257.84%2C284.34%20258.55%2C283.94%20259.26%2C283.49%20259.98%2C283.01%20260.69%2C282.49%20261.40%2C281.94%20262.11%2C281.35%20262.82%2C280.73%20263.54%2C280.07%20264.25%2C279.38%20264.96%2C278.64%20265.67%2C277.88%20266.39%2C277.08%20267.10%2C276.24%20267.81%2C275.37%20268.52%2C274.46%20269.24%2C273.51%20269.95%2C272.53%20270.66%2C271.52%20271.38%2C270.47%20272.09%2C269.38%20272.80%2C268.26%20273.51%2C267.10%20274.23%2C265.91%20274.94%2C264.68%20275.65%2C263.41%20276.36%2C262.11%20277.08%2C260.78%20277.79%2C259.41%20278.50%2C258.00%20279.21%2C256.56%20279.93%2C255.08%20280.64%2C253.56%20281.35%2C252.01%20282.06%2C250.43%20282.77%2C248.81%20283.49%2C247.15%20284.20%2C245.46%20284.91%2C243.73%20285.62%2C241.97%20286.34%2C240.17%20287.05%2C238.33%20287.76%2C236.46%20288.48%2C234.56%20289.19%2C232.62%20289.90%2C230.64%20290.61%2C228.63%20291.33%2C226.58%20292.04%2C224.49%20292.75%2C222.38%20293.46%2C220.22%20294.18%2C218.03%20294.89%2C215.80%20295.60%2C213.54%20296.31%2C211.24%20297.02%2C208.91%20297.74%2C206.54%20298.45%2C204.13%20299.16%2C201.69%20299.88%2C199.22%20300.59%2C196.71%20301.30%2C194.16%20302.01%2C191.58%20302.73%2C188.96%20303.44%2C186.30%20304.15%2C183.61%20304.86%2C180.89%20305.58%2C178.13%20306.29%2C175.33%20307.00%2C172.50%20307.71%2C169.63%20308.43%2C166.73%20309.14%2C163.79%20309.85%2C160.81%20310.56%2C157.80%20311.27%2C154.76%20311.99%2C151.68%20312.70%2C148.56%20313.41%2C145.41%20314.12%2C142.22%20314.84%2C138.99%20315.55%2C135.73%20316.26%2C132.44%20316.98%2C129.11%20317.69%2C125.74%20318.40%2C122.34%20319.11%2C118.90%20319.83%2C115.43%20320.54%2C111.92%20321.25%2C108.38%20321.96%2C104.79%20322.68%2C101.18%20323.39%2C97.53%20324.10%2C93.84%20324.81%2C90.12%20325.52%2C86.36%20326.24%2C82.56%20326.95%2C78.73%20327.66%2C74.87%20328.38%2C70.97%20329.09%2C67.03%20329.80%2C63.06%20330.51%2C59.05%20331.23%2C55.01%20331.94%2C50.93%20332.65%2C46.81%20333.36%2C42.66%20334.08%2C38.48%20334.79%2C34.26%20335.50%2C30.00%20336.21%2C25.71%20336.93%2C21.38%20337.64%2C17.01%20338.35%2C12.61%20339.06%2C8.18%20339.77%2C3.71%20340.49%2C-0.80%20341.20%2C-5.34%20341.91%2C-9.92%20342.62%2C-14.53%20343.34%2C-19.18%20344.05%2C-23.87%20344.76%2C-28.59%20345.48%2C-33.34%20346.19%2C-38.13%20346.90%2C-42.96%20347.61%2C-47.82%20348.33%2C-52.72%20349.04%2C-57.66%20349.75%2C-62.62%20350.46%2C-67.63%20351.18%2C-72.67%20351.89%2C-77.75%20352.60%2C-82.86%20353.31%2C-88.01%20354.02%2C-93.19%20354.74%2C-98.41%20355.45%2C-103.67%20356.16%2C-108.96%20356.88%2C-114.28%20357.59%2C-119.64%20358.30%2C-125.04%20359.01%2C-130.47%20359.73%2C-135.94%20360.44%2C-141.45%20361.15%2C-146.99%20361.86%2C-152.56%20362.58%2C-158.17%20363.29%2C-163.82%20364.00%2C-169.50%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3Ccircle%20cx%3D%22193.0%22%20cy%3D%22172.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22203.0%22%20y%3D%22160.5%22%20text-anchor%3D%22middle%22%3E%E2%88%921%3C/text%3E%3Ccircle%20cx%3D%22307.0%22%20cy%3D%22172.5%22%20r%3D%223.4%22%20fill%3D%22%23111%22/%3E%3Ctext%20x%3D%22317.0%22%20y%3D%22160.5%22%20text-anchor%3D%22middle%22%3E3%3C/text%3E%3C/g%3E%3C/svg%3E", "54": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20580%20300%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cellipse%20cx%3D%22140%22%20cy%3D%22170%22%20rx%3D%22100%22%20ry%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cellipse%20cx%3D%22290%22%20cy%3D%22170%22%20rx%3D%22100%22%20ry%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cellipse%20cx%3D%22440%22%20cy%3D%22170%22%20rx%3D%22100%22%20ry%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%22140%22%20y%3D%22102%22%20text-anchor%3D%22middle%22%3E%C3%81rabe%3C/text%3E%3Ctext%20x%3D%22290%22%20y%3D%22102%22%20text-anchor%3D%22middle%22%3EIngl%C3%A9s%3C/text%3E%3Ctext%20x%3D%22440%22%20y%3D%22102%22%20text-anchor%3D%22middle%22%3EFranc%C3%A9s%3C/text%3E%3Ctext%20x%3D%22130%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Ctext%20x%3D%22215%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Ctext%20x%3D%22290%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E12%3C/text%3E%3Ctext%20x%3D%22365%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Ctext%20x%3D%22450%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E10%3C/text%3E%3C/g%3E%3C/svg%3E", "55": "data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20580%20300%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cellipse%20cx%3D%22140%22%20cy%3D%22170%22%20rx%3D%22100%22%20ry%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cellipse%20cx%3D%22290%22%20cy%3D%22170%22%20rx%3D%22100%22%20ry%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Cellipse%20cx%3D%22440%22%20cy%3D%22170%22%20rx%3D%22100%22%20ry%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222%22/%3E%3Ctext%20x%3D%22140%22%20y%3D%22102%22%20text-anchor%3D%22middle%22%3E%C3%81rabe%3C/text%3E%3Ctext%20x%3D%22290%22%20y%3D%22102%22%20text-anchor%3D%22middle%22%3EIngl%C3%A9s%3C/text%3E%3Ctext%20x%3D%22440%22%20y%3D%22102%22%20text-anchor%3D%22middle%22%3EFranc%C3%A9s%3C/text%3E%3Ctext%20x%3D%22130%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Ctext%20x%3D%22215%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E5%3C/text%3E%3Ctext%20x%3D%22290%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E12%3C/text%3E%3Ctext%20x%3D%22365%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E8%3C/text%3E%3Ctext%20x%3D%22450%22%20y%3D%22176%22%20text-anchor%3D%22middle%22%3E10%3C/text%3E%3C/g%3E%3C/svg%3E"};
+const QUESTIONS=[{"n": 1, "text": "La ecuación de la circunferencia de centro (2,3) y radio 4 corresponde a", "stem": "La ecuación de la circunferencia de centro (2,3) y radio 4 corresponde a", "opts": ["\\((x-2)^2+(y-3)^2=8\\)", "\\((x+4)^2+(y+3)^2=16\\)", "\\((x-2)^2+(y-3)^2=16\\)"], "answer": "C", "context": ""}, {"n": 2, "text": "La gráfica ilustra una circunferencia de centro M y radio 3. ¿Cuál es su ecuación?", "stem": "La gráfica ilustra una circunferencia de centro M y radio 3. ¿Cuál es su ecuación?", "opts": ["\\((x-2)^2+(y+1)^2=3\\)", "\\((x-2)^2+(y+1)^2=9\\)", "\\((x+2)^2+(y-1)^2=9\\)"], "answer": "B", "context": ""}, {"n": 3, "text": "Un punto ubicado en el interior de la circunferencia x²+(y−1)²=2 corresponde a", "stem": "Un punto ubicado en el interior de la circunferencia x²+(y−1)²=2 corresponde a", "opts": ["(0,0)", "(1,0)", "(0,−1)"], "answer": "A", "context": ""}, {"n": 4, "text": "Una recta secante a la circunferencia (x+1)²+y²=4 corresponde a", "stem": "Una recta secante a la circunferencia (x+1)²+y²=4 corresponde a", "opts": ["x = 0", "x = 1", "x = 2"], "answer": "A", "context": ""}, {"n": 5, "text": "Una recta exterior a la circunferencia x²+(y+1)²=1 corresponde a", "stem": "Una recta exterior a la circunferencia x²+(y+1)²=1 corresponde a", "opts": ["y = 0", "y = −1", "y = −3"], "answer": "C", "context": ""}, {"n": 6, "text": "La circunferencia es tangente a ambos ejes; su punto inferior tiene ordenada −16 y M=(7,0). ¿Cuál es la distancia desde el centro O hasta M?", "stem": "La circunferencia es tangente a ambos ejes; su punto inferior tiene ordenada −16 y M=(7,0). ¿Cuál es la distancia desde el centro O hasta M?", "opts": ["15", "17", "23"], "answer": "B", "context": ""}, {"n": 7, "text": "Con certeza, r es perpendicular a la recta que contiene los puntos", "stem": "Con certeza, r es perpendicular a la recta que contiene los puntos", "opts": ["B y M", "M y H", "A y H"], "answer": "A", "context": "La circunferencia tiene centro M=(3,−1). A–M–B están alineados y A es el único punto común entre la recta r y la circunferencia."}, {"n": 8, "text": "Se traslada la circunferencia de centro P ocho unidades hacia abajo. La ecuación de la circunferencia obtenida corresponde a", "stem": "Se traslada la circunferencia de centro P ocho unidades hacia abajo. La ecuación de la circunferencia obtenida corresponde a", "opts": ["\\((x-3)^2+(y-3)^2=9\\)", "\\((x-5)^2+(y+5)^2=9\\)", "\\((x+5)^2+(y-5)^2=9\\)"], "answer": "B", "context": ""}, {"n": 9, "text": "La circunferencia (x+3)²+(y+3)²=4 se traslada seis unidades a la derecha y dos hacia arriba. La ecuación resultante corresponde a", "stem": "La circunferencia (x+3)²+(y+3)²=4 se traslada seis unidades a la derecha y dos hacia arriba. La ecuación resultante corresponde a", "opts": ["\\((x+9)^2+(y-1)^2=4\\)", "\\((x+9)^2+(y+5)^2=4\\)", "\\((x-3)^2+(y+1)^2=4\\)"], "answer": "C", "context": ""}, {"n": 10, "text": "Desde un vértice de un polígono regular se trazan cinco diagonales. Si su lado mide 6, su perímetro corresponde a", "stem": "Desde un vértice de un polígono regular se trazan cinco diagonales. Si su lado mide 6, su perímetro corresponde a", "opts": ["30", "48", "40"], "answer": "B", "context": ""}, {"n": 11, "text": "De las afirmaciones dadas, son verdaderas", "stem": "De las afirmaciones dadas, son verdaderas", "opts": ["todas", "solo la I y la II", "solo la II y la III"], "answer": "A", "context": "Un polígono regular tiene radio 2√2 y cada ángulo externo mide 90°. Considere: I. Su área es 16. II. Su perímetro es 16. III. Cada ángulo central mide 90°."}, {"n": 12, "text": "Un polígono regular tiene apotema 2√3 y cada ángulo interno mide 120°. Su área corresponde a", "stem": "Un polígono regular tiene apotema 2√3 y cada ángulo interno mide 120°. Su área corresponde a", "opts": ["\\(18\\sqrt3\\)", "\\(20\\sqrt3\\)", "\\(24\\sqrt3\\)"], "answer": "C", "context": ""}, {"n": 13, "text": "¿Cuál es el perímetro del polígono EBCD?", "stem": "¿Cuál es el perímetro del polígono EBCD?", "opts": ["19", "22", "24"], "answer": "C", "context": "Polígono ABCDE con A=(−3,6), B=(0,0), C=(3,0), D=(3,10) y E=(0,6)."}, {"n": 14, "text": "¿Cuál es el área del polígono ABCDE?", "stem": "¿Cuál es el área del polígono ABCDE?", "opts": ["22", "33", "30"], "answer": "B", "context": "Polígono ABCDE con A=(−3,6), B=(0,0), C=(3,0), D=(3,10) y E=(0,6)."}, {"n": 15, "text": "Un radio de la esfera corresponde al segmento", "stem": "Un radio de la esfera corresponde al segmento", "opts": ["KE", "EO", "PK"], "answer": "A", "context": "Una esfera se corta con un plano. E es su centro, O el centro de la sección plana, K y P están sobre la esfera y K–O–P están alineados."}, {"n": 16, "text": "Si EP=5 y OE=4, ¿cuál es la longitud de la sección plana?", "stem": "Si EP=5 y OE=4, ¿cuál es la longitud de la sección plana?", "opts": ["\\(3\\pi\\)", "\\(6\\pi\\)", "\\(10\\pi\\)"], "answer": "B", "context": "Una esfera se corta con un plano. E es su centro, O el centro de la sección plana, K y P están sobre la esfera y K–O–P están alineados."}, {"n": 17, "text": "Un cilindro circular recto se corta con un plano que no es perpendicular ni paralelo a sus bases y no corta ninguna de ellas. ¿Qué sección plana se forma?", "stem": "Un cilindro circular recto se corta con un plano que no es perpendicular ni paralelo a sus bases y no corta ninguna de ellas. ¿Qué sección plana se forma?", "opts": ["elipse", "parábola", "hipérbola"], "answer": "A", "context": ""}, {"n": 18, "text": "Un cilindro circular recto se corta con un plano paralelo a sus bases. ¿Qué sección plana se forma?", "stem": "Un cilindro circular recto se corta con un plano paralelo a sus bases. ¿Qué sección plana se forma?", "opts": ["parábola", "hipérbola", "circunferencia"], "answer": "C", "context": ""}, {"n": 19, "text": "Un cilindro circular recto de hielo tiene radio 8 cm y altura 12 cm. Se corta con un plano perpendicular a sus bases que pasa por el centro. El área del corte es ____ cm².", "stem": "Un cilindro circular recto de hielo tiene radio 8 cm y altura 12 cm. Se corta con un plano perpendicular a sus bases que pasa por el centro. El área del corte es ____ cm².", "opts": ["48", "96", "192"], "answer": "C", "context": ""}, {"n": 20, "text": "Sea \\(f:D\\to\\{0\\},\\quad f(x)=\\frac{2x+2}{x-x^2}\\). ¿Cuál opción es correcta?", "stem": "Sea \\(f:D\\to\\{0\\},\\quad f(x)=\\frac{2x+2}{x-x^2}\\). ¿Cuál opción es correcta?", "opts": ["\\(1\\in D\\)", "\\(\\{-1\\}\\subset D\\)", "\\(D=\\{0,2\\}\\)"], "answer": "B", "context": ""}, {"n": 21, "text": "Sea f: ]−4,4[ → B, f(x)=x²−16. ¿Cuál es el ámbito de f?", "stem": "Sea f: ]−4,4[ → B, f(x)=x²−16. ¿Cuál es el ámbito de f?", "opts": ["\\(\\{y\\in\\mathbb R:-16\\le y\\le0\\}\\)", "\\(\\{y\\in\\mathbb R:-4\\le y\\le4\\}\\)", "\\(\\{y\\in\\mathbb R:y=0\\}\\)"], "answer": null, "context": ""}, {"n": 22, "text": "Sean g:A→B y h:B→Aᶜ, con universo ℝ, A=[1,10] y B=[6,20]. El ámbito de h corresponde a", "stem": "Sean g:A→B y h:B→Aᶜ, con universo ℝ, A=[1,10] y B=[6,20]. El ámbito de h corresponde a", "opts": ["[1,10]", "]−∞,1[ ∪ ]10,+∞[", "]−∞,6[ ∪ ]20,+∞["], "answer": null, "context": ""}, {"n": 23, "text": "El dominio de h es la intersección del ámbito de g con el dominio de f. Dicho dominio corresponde a", "stem": "El dominio de h es la intersección del ámbito de g con el dominio de f. Dicho dominio corresponde a", "opts": ["{0}", "[−3,2]", "[−6,0]"], "answer": "C", "context": "Sean f:[−6,2]→B, f(x)=1−x, y g:[−3,3]→D, g(x)=x²−9."}, {"n": 24, "text": "La gráfica muestra dos semirrectas, con extremos incluidos en (0,1) y (3,0). ¿Cuál es el complemento del dominio de f en ℝ?", "stem": "La gráfica muestra dos semirrectas, con extremos incluidos en (0,1) y (3,0). ¿Cuál es el complemento del dominio de f en ℝ?", "opts": ["]0,3[", "]0,1[", "]−∞,0[ ∪ ]1,+∞["], "answer": "A", "context": ""}, {"n": 25, "text": "En estas relaciones, x es la variable independiente y y la dependiente. ¿Cuál corresponde a una función?", "stem": "En estas relaciones, x es la variable independiente y y la dependiente. ¿Cuál corresponde a una función?", "opts": ["<img class=\"option-figure\" alt=\"Relación A: curva con forma de S vertical\" src=\"data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20500%20360%22%20role%3D%22img%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22white%22/%3E%3Cg%20font-family%3D%22Arial%2Csans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23111%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpath%20d%3D%22M131.25%2C220.0%20L368.75%2C220.0%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M360.75%2C216.0%20L368.75%2C220.0%20L360.75%2C224.0%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22385.75%22%20y%3D%22225.0%22%20text-anchor%3D%22middle%22%3Ex%3C/text%3E%3Cpath%20d%3D%22M226.25%2C315.0%20L226.25%2C30%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%221.8%22/%3E%3Cpath%20d%3D%22M222.25%2C38%20L226.25%2C30%20L230.25%2C38%22%20fill%3D%22none%22%20stroke%3D%22%23111%22/%3E%3Ctext%20x%3D%22226.25%22%20y%3D%2218%22%20text-anchor%3D%22middle%22%3Ey%3C/text%3E%3Cdefs%3E%3CclipPath%20id%3D%22clip%22%3E%3Crect%20x%3D%22131.25%22%20y%3D%2230%22%20width%3D%22237.5%22%20height%3D%22285.0%22/%3E%3C/clipPath%3E%3C/defs%3E%3Cg%20clip-path%3D%22url%28%23clip%29%22%3E%3Cpolyline%20points%3D%22170.11%2C315.00%20170.01%2C313.10%20169.98%2C311.20%20169.99%2C309.30%20170.06%2C307.40%20170.18%2C305.50%20170.36%2C303.60%20170.60%2C301.70%20170.89%2C299.80%20171.24%2C297.90%20171.64%2C296.00%20172.10%2C294.10%20172.62%2C292.20%20173.20%2C290.30%20173.83%2C288.40%20174.52%2C286.50%20175.26%2C284.60%20176.06%2C282.70%20176.92%2C280.80%20177.83%2C278.90%20178.80%2C277.00%20179.81%2C275.10%20180.88%2C273.20%20182.01%2C271.30%20183.18%2C269.40%20184.40%2C267.50%20185.67%2C265.60%20186.98%2C263.70%20188.34%2C261.80%20189.75%2C259.90%20191.19%2C258.00%20192.68%2C256.10%20194.21%2C254.20%20195.77%2C252.30%20197.37%2C250.40%20199.01%2C248.50%20200.68%2C246.60%20202.37%2C244.70%20204.10%2C242.80%20205.85%2C240.90%20207.63%2C239.00%20209.43%2C237.10%20211.24%2C235.20%20213.08%2C233.30%20214.93%2C231.40%20216.80%2C229.50%20218.67%2C227.60%20220.56%2C225.70%20222.45%2C223.80%20224.35%2C221.90%20226.25%2C220.00%20228.15%2C218.10%20230.05%2C216.20%20231.94%2C214.30%20233.83%2C212.40%20235.70%2C210.50%20237.57%2C208.60%20239.42%2C206.70%20241.26%2C204.80%20243.07%2C202.90%20244.87%2C201.00%20246.65%2C199.10%20248.40%2C197.20%20250.13%2C195.30%20251.82%2C193.40%20253.49%2C191.50%20255.13%2C189.60%20256.73%2C187.70%20258.29%2C185.80%20259.82%2C183.90%20261.31%2C182.00%20262.75%2C180.10%20264.16%2C178.20%20265.52%2C176.30%20266.83%2C174.40%20268.10%2C172.50%20269.32%2C170.60%20270.49%2C168.70%20271.62%2C166.80%20272.69%2C164.90%20273.70%2C163.00%20274.67%2C161.10%20275.58%2C159.20%20276.44%2C157.30%20277.24%2C155.40%20277.98%2C153.50%20278.67%2C151.60%20279.30%2C149.70%20279.88%2C147.80%20280.40%2C145.90%20280.86%2C144.00%20281.26%2C142.10%20281.61%2C140.20%20281.90%2C138.30%20282.14%2C136.40%20282.32%2C134.50%20282.44%2C132.60%20282.51%2C130.70%20282.52%2C128.80%20282.49%2C126.90%20282.39%2C125.00%20282.25%2C123.10%20282.06%2C121.20%20281.81%2C119.30%20281.52%2C117.40%20281.18%2C115.50%20280.79%2C113.60%20280.36%2C111.70%20279.89%2C109.80%20279.37%2C107.90%20278.81%2C106.00%20278.22%2C104.10%20277.59%2C102.20%20276.92%2C100.30%20276.22%2C98.40%20275.49%2C96.50%20274.73%2C94.60%20273.94%2C92.70%20273.13%2C90.80%20272.29%2C88.90%20271.43%2C87.00%20270.56%2C85.10%20269.66%2C83.20%20268.75%2C81.30%20267.83%2C79.40%20266.90%2C77.50%20265.96%2C75.60%20265.02%2C73.70%20264.07%2C71.80%20263.12%2C69.90%20262.17%2C68.00%20261.22%2C66.10%20260.28%2C64.20%20259.35%2C62.30%20258.43%2C60.40%20257.52%2C58.50%20256.63%2C56.60%20255.75%2C54.70%20254.89%2C52.80%20254.05%2C50.90%20253.24%2C49.00%20252.45%2C47.10%20251.68%2C45.20%20250.95%2C43.30%20250.25%2C41.40%20249.58%2C39.50%20248.94%2C37.60%20248.35%2C35.70%20247.79%2C33.80%20247.27%2C31.90%20246.79%2C30.00%22%20fill%3D%22none%22%20stroke%3D%22%23111%22%20stroke-width%3D%222.6%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\">", "<table><thead><tr><th>x</th><th>1</th><th>2</th><th>3</th><th>4</th></tr></thead><tbody><tr><td>y</td><td>0</td><td>0</td><td>0</td><td>0</td></tr></tbody></table>", "Sean A=[−5,5] y B={0}. T es la relación de A en B determinada por T={(x,y): y=x²−25}."], "answer": "B", "context": ""}, {"n": 26, "text": "De estas relaciones, corresponden a una función", "stem": "De estas relaciones, corresponden a una función", "opts": ["ninguna", "solo la I", "solo la II"], "answer": "A", "context": "I. D=[−3,3], E={0}; J es la relación de D en E con regla y=x²−9. II. A={0,1}, B={−2,−1}; T es la relación de A en B con regla y=x−1."}, {"n": 27, "text": "Considere la gráfica de f. ¿Cuál opción es correcta?", "stem": "Considere la gráfica de f. ¿Cuál opción es correcta?", "opts": ["f(−2)=0", "f es creciente", "(−1,0) pertenece al gráfico de f."], "answer": "C", "context": ""}, {"n": 28, "text": "El valor de (f ∘ m)(−1) corresponde a", "stem": "El valor de (f ∘ m)(−1) corresponde a", "opts": ["1", "−1", "−3"], "answer": "C", "context": "Además de la gráfica de f, considere r:[−2,2]→B, r(x)=x²−4; h:[−4,0]→A, h(x)=x+2; m:[−5,2]→C, m(x)=x+2."}, {"n": 29, "text": "¿Cuál opción es correcta?", "stem": "¿Cuál opción es correcta?", "opts": ["(r ∘ h)(x)=x²", "Es factible efectuar (h ∘ r)(x).", "Es factible efectuar (m ∘ f)(x)."], "answer": "B", "context": "Además de la gráfica de f, considere r:[−2,2]→B, r(x)=x²−4; h:[−4,0]→A, h(x)=x+2; m:[−5,2]→C, m(x)=x+2."}, {"n": 30, "text": "Una función lineal f tiene pendiente −2 y su gráfica pasa por (3,1). Interseca el eje y en", "stem": "Una función lineal f tiene pendiente −2 y su gráfica pasa por (3,1). Interseca el eje y en", "opts": ["(0,7)", "(0,5)", "(0,−6)"], "answer": "A", "context": ""}, {"n": 31, "text": "¿Cuál es la intersección de f(x)=−6+2x con el eje x?", "stem": "¿Cuál es la intersección de f(x)=−6+2x con el eje x?", "opts": ["(3,0)", "(2,0)", "(−6,0)"], "answer": "A", "context": ""}, {"n": 32, "text": "El criterio de la función de la gráfica es f(x)=", "stem": "El criterio de la función de la gráfica es f(x)=", "opts": ["x+3", "−x+3", "−3x+3"], "answer": "B", "context": ""}, {"n": 33, "text": "Sea f(x)=−x²+x. Si el punto (3,−k) pertenece a su gráfica, el valor de k es", "stem": "Sea f(x)=−x²+x. Si el punto (3,−k) pertenece a su gráfica, el valor de k es", "opts": ["−6", "2", "6"], "answer": "C", "context": ""}, {"n": 34, "text": "De estas afirmaciones, son verdaderas", "stem": "De estas afirmaciones, son verdaderas", "opts": ["solo la III", "ninguna", "solo la I y la II"], "answer": "B", "context": "Para f(x)=x²+2x−2, considere: I. f presenta un único cero. II. Su eje de simetría es x=1. III. Su gráfica interseca el eje y en (0,2)."}, {"n": 35, "text": "De estas afirmaciones, son verdaderas", "stem": "De estas afirmaciones, son verdaderas", "opts": ["solo la I", "solo la I y la II", "solo la II y la III"], "answer": "C", "context": "Se representa una función cuadrática. Considere: I. Δ<0. II. f es negativa en ]−1,3[. III. El eje de simetría es x=1."}, {"n": 36, "text": "La utilidad semanal, en miles de dólares, es U(x)=−10x²+200x. ¿Cuál es la utilidad máxima semanal, en dólares?", "stem": "La utilidad semanal, en miles de dólares, es U(x)=−10x²+200x. ¿Cuál es la utilidad máxima semanal, en dólares?", "opts": ["100 000", "200 000", "400 000"], "answer": null, "context": ""}, {"n": 37, "text": "Un niño, en un tejado de 5 m de altura, lanza una bola hacia arriba. Su altura a los x segundos es h(x)=−x²+4x+5. ¿Cuántos segundos tarda en alcanzar la altura máxima?", "stem": "Un niño, en un tejado de 5 m de altura, lanza una bola hacia arriba. Su altura a los x segundos es h(x)=−x²+4x+5. ¿Cuántos segundos tarda en alcanzar la altura máxima?", "opts": ["2", "4", "5"], "answer": "A", "context": ""}, {"n": 38, "text": "Una empresa de gorras tiene costos fijos mensuales de ₡100 000. Cada gorra cuesta ₡3000 confeccionarla. El costo mensual total para x gorras es c(x)=", "stem": "Una empresa de gorras tiene costos fijos mensuales de ₡100 000. Cada gorra cuesta ₡3000 confeccionarla. El costo mensual total para x gorras es c(x)=", "opts": ["103 000x", "3000x+100 000", "100 000x+3000"], "answer": "B", "context": ""}, {"n": 39, "text": "Los costos mensuales, en miles de dólares, son c(x)=x²−12x+150. El menor costo mensual, en dólares, es", "stem": "Los costos mensuales, en miles de dólares, son c(x)=x²−12x+150. El menor costo mensual, en dólares, es", "opts": ["138 000", "150 000", "114 000"], "answer": "C", "context": ""}, {"n": 40, "text": "David pagó ₡5500 por empastar dos folletos con resorte y dos cosidos. Tania pagó ₡5750 por uno con resorte y tres cosidos. Los precios son fijos. Un empaste con resorte cuesta ₡", "stem": "David pagó ₡5500 por empastar dos folletos con resorte y dos cosidos. Tania pagó ₡5750 por uno con resorte y tres cosidos. Los precios son fijos. Un empaste con resorte cuesta ₡", "opts": ["1916", "2750", "1250"], "answer": "C", "context": ""}, {"n": 41, "text": "De estas afirmaciones, son verdaderas", "stem": "De estas afirmaciones, son verdaderas", "opts": ["todas", "solo la I", "solo la II y la III"], "answer": "A", "context": "Horas semanales de estudio de ruso de 13 estudiantes: 20, 16, 12, 16, 22, 30, 20, 22, 34, 29, 30, 31, 30. I. Un estudiante estudia 22 horas más que el que menos estudia. II. En promedio dedican 24 horas. III. La moda es 30 horas."}, {"n": 42, "text": "Con base en las masas de los estudiantes de tres secciones, ¿cuál opción es correcta?", "stem": "Con base en las masas de los estudiantes de tres secciones, ¿cuál opción es correcta?", "opts": ["Al menos el 50 % de las masas de A son mayores o iguales que 53 kg y menores o iguales que 59 kg.", "Al menos el 75 % de las masas de C son mayores o iguales que 55 kg.", "Con certeza, en B hay al menos un estudiante con masa de 65 kg."], "answer": "B", "context": "<table><thead><tr><th>Sección</th><th>Mín</th><th>Q₁</th><th>Me</th><th>Q₃</th><th>Máx</th><th>Media</th></tr></thead><tbody><tr><td>A</td><td>47</td><td>53</td><td>59</td><td>65</td><td>71</td><td>59</td></tr><tr><td>B</td><td>48</td><td>54</td><td>65</td><td>68</td><td>71</td><td>56</td></tr><tr><td>C</td><td>49</td><td>55</td><td>59</td><td>67</td><td>74</td><td>64</td></tr></tbody></table>"}, {"n": 43, "text": "¿Cuál opción es correcta?", "stem": "¿Cuál opción es correcta?", "opts": ["La distribución de C presenta asimetría negativa.", "La distribución de B presenta asimetría positiva.", "La distribución de A tiende a ser simétrica."], "answer": "C", "context": "<table><thead><tr><th>Sección</th><th>Mín</th><th>Q₁</th><th>Me</th><th>Q₃</th><th>Máx</th><th>Media</th></tr></thead><tbody><tr><td>A</td><td>47</td><td>53</td><td>59</td><td>65</td><td>71</td><td>59</td></tr><tr><td>B</td><td>48</td><td>54</td><td>65</td><td>68</td><td>71</td><td>56</td></tr><tr><td>C</td><td>49</td><td>55</td><td>59</td><td>67</td><td>74</td><td>64</td></tr></tbody></table>"}, {"n": 44, "text": "Con base en la información, es correcto afirmar que", "stem": "Con base en la información, es correcto afirmar que", "opts": ["ambos reprobaron", "solo Mireya aprobó", "ambos obtuvieron la misma nota final"], "answer": "B", "context": "El curso se aprueba con nota ≥70, sin redondeo.<table><thead><tr><th>Rubro</th><th>Peso (%)</th><th>Mireya</th><th>Víctor</th></tr></thead><tbody><tr><td>Prueba escrita</td><td>40</td><td>85</td><td>70</td></tr><tr><td>Prueba de ejecución</td><td>30</td><td>50</td><td>85</td></tr><tr><td>Prueba oral</td><td>30</td><td>70</td><td>50</td></tr></tbody></table>"}, {"n": 45, "text": "¿Cuál es el promedio de tiempo, en minutos, de traslado a la universidad?", "stem": "¿Cuál es el promedio de tiempo, en minutos, de traslado a la universidad?", "opts": ["58,80", "48,80", "68,80"], "answer": "A", "context": "<table><thead><tr><th>Tiempo de traslado (min)</th><th>Estudiantes</th></tr></thead><tbody><tr><td>[20,40[</td><td>22</td></tr><tr><td>[40,60[</td><td>20</td></tr><tr><td>[60,80[</td><td>50</td></tr><tr><td>[80,100]</td><td>8</td></tr></tbody></table>"}, {"n": 46, "text": "Para obtener la mayor probabilidad de extraer una mujer (sin considerar IMC) o un hombre con IMC alto, se debe elegir el grupo", "stem": "Para obtener la mayor probabilidad de extraer una mujer (sin considerar IMC) o un hombre con IMC alto, se debe elegir el grupo", "opts": ["F", "E", "G"], "answer": "A", "context": "Índices de masa corporal (IMC) de tres grupos de undécimo.<table><thead><tr><th>Grupo</th><th>Normal H</th><th>Normal M</th><th>Alto H</th><th>Alto M</th><th>Bajo H</th><th>Bajo M</th><th>Total</th></tr></thead><tbody><tr><td>E</td><td>5</td><td>7</td><td>4</td><td>2</td><td>2</td><td>5</td><td>25</td></tr><tr><td>F</td><td>4</td><td>5</td><td>7</td><td>4</td><td>4</td><td>5</td><td>29</td></tr><tr><td>G</td><td>5</td><td>6</td><td>7</td><td>3</td><td>5</td><td>4</td><td>30</td></tr></tbody></table>"}, {"n": 47, "text": "Para obtener la menor probabilidad de extraer una persona con IMC normal o una mujer (sin considerar su IMC), se debe elegir el grupo", "stem": "Para obtener la menor probabilidad de extraer una persona con IMC normal o una mujer (sin considerar su IMC), se debe elegir el grupo", "opts": ["F", "G", "E"], "answer": "B", "context": "Índices de masa corporal (IMC) de tres grupos de undécimo.<table><thead><tr><th>Grupo</th><th>Normal H</th><th>Normal M</th><th>Alto H</th><th>Alto M</th><th>Bajo H</th><th>Bajo M</th><th>Total</th></tr></thead><tbody><tr><td>E</td><td>5</td><td>7</td><td>4</td><td>2</td><td>2</td><td>5</td><td>25</td></tr><tr><td>F</td><td>4</td><td>5</td><td>7</td><td>4</td><td>4</td><td>5</td><td>29</td></tr><tr><td>G</td><td>5</td><td>6</td><td>7</td><td>3</td><td>5</td><td>4</td><td>30</td></tr></tbody></table>"}, {"n": 48, "text": "Para obtener la menor probabilidad de extraer una persona con IMC normal y mujer, se debe elegir el grupo", "stem": "Para obtener la menor probabilidad de extraer una persona con IMC normal y mujer, se debe elegir el grupo", "opts": ["F", "E", "G"], "answer": "A", "context": "Índices de masa corporal (IMC) de tres grupos de undécimo.<table><thead><tr><th>Grupo</th><th>Normal H</th><th>Normal M</th><th>Alto H</th><th>Alto M</th><th>Bajo H</th><th>Bajo M</th><th>Total</th></tr></thead><tbody><tr><td>E</td><td>5</td><td>7</td><td>4</td><td>2</td><td>2</td><td>5</td><td>25</td></tr><tr><td>F</td><td>4</td><td>5</td><td>7</td><td>4</td><td>4</td><td>5</td><td>29</td></tr><tr><td>G</td><td>5</td><td>6</td><td>7</td><td>3</td><td>5</td><td>4</td><td>30</td></tr></tbody></table>"}, {"n": 49, "text": "¿Cuál afirmación es correcta?", "stem": "¿Cuál afirmación es correcta?", "opts": ["\\(P(A\\cap E)=1\\)", "\\(P(A\\cap E)=0\\)", "\\(P(A\\cup E)=P(A)+P(E)-P(A\\cap E)\\)"], "answer": "C", "context": "Espacio muestral M={3,5,6,7,9,10,12}. A: número par; B: impar; C: primo; D: divisible por 3; E: divisible por 5."}, {"n": 50, "text": "¿Cuál afirmación es correcta?", "stem": "¿Cuál afirmación es correcta?", "opts": ["\\(B^c=\\{3,5,7,9\\}\\)", "\\(P(B^c)=1-P(B)\\)", "\\(P(B\\cup C)=P(B)+P(C)\\)"], "answer": "B", "context": "Espacio muestral M={3,5,6,7,9,10,12}. A: número par; B: impar; C: primo; D: divisible por 3; E: divisible por 5."}, {"n": 51, "text": "¿Cuál afirmación es correcta?", "stem": "¿Cuál afirmación es correcta?", "opts": ["\\(P(A\\cup B)=1\\)", "\\(P(A\\cap B)=1\\)", "\\(P(A\\cup B)=0\\)"], "answer": "A", "context": "Espacio muestral M={3,5,6,7,9,10,12}. A: número par; B: impar; C: primo; D: divisible por 3; E: divisible por 5."}, {"n": 52, "text": "Al elegir al azar una persona por cada categoría, ¿en cuál hay mayor probabilidad de que prefiera italiano o mostaza?", "stem": "Al elegir al azar una persona por cada categoría, ¿en cuál hay mayor probabilidad de que prefiera italiano o mostaza?", "opts": ["Adultos", "Jóvenes", "Adolescentes"], "answer": "A", "context": "<table><thead><tr><th>Categoría</th><th>Italiano</th><th>Barbacoa</th><th>Mostaza</th><th>Total</th></tr></thead><tbody><tr><td>Adolescentes</td><td>3</td><td>5</td><td>9</td><td>17</td></tr><tr><td>Jóvenes</td><td>8</td><td>7</td><td>6</td><td>21</td></tr><tr><td>Adultos</td><td>12</td><td>6</td><td>9</td><td>27</td></tr></tbody></table>"}, {"n": 53, "text": "Al elegir al azar una persona por cada categoría, ¿en cuál hay menor probabilidad de que prefiera barbacoa o mostaza?", "stem": "Al elegir al azar una persona por cada categoría, ¿en cuál hay menor probabilidad de que prefiera barbacoa o mostaza?", "opts": ["Adolescentes", "Jóvenes", "Adultos"], "answer": "C", "context": "<table><thead><tr><th>Categoría</th><th>Italiano</th><th>Barbacoa</th><th>Mostaza</th><th>Total</th></tr></thead><tbody><tr><td>Adolescentes</td><td>3</td><td>5</td><td>9</td><td>17</td></tr><tr><td>Jóvenes</td><td>8</td><td>7</td><td>6</td><td>21</td></tr><tr><td>Adultos</td><td>12</td><td>6</td><td>9</td><td>27</td></tr></tbody></table>"}, {"n": 54, "text": "Se selecciona una persona al azar en un intento. ¿Cuál es la probabilidad de que domine los tres idiomas?", "stem": "Se selecciona una persona al azar en un intento. ¿Cuál es la probabilidad de que domine los tres idiomas?", "opts": ["1", "0", "\\(\\frac{30}{43}\\)"], "answer": "B", "context": "El diagrama representa un grupo de personas y los idiomas que dominan. Cada número indica la cantidad de personas de esa región."}, {"n": 55, "text": "Se selecciona una persona al azar en un intento. ¿Cuál es la probabilidad de que domine árabe e inglés?", "stem": "Se selecciona una persona al azar en un intento. ¿Cuál es la probabilidad de que domine árabe e inglés?", "opts": ["\\(\\frac5{43}\\)", "\\(\\frac{20}{43}\\)", "\\(\\frac{33}{43}\\)"], "answer": "A", "context": "El diagrama representa un grupo de personas y los idiomas que dominan. Cada número indica la cantidad de personas de esa región."}];
+const TOTAL=QUESTIONS.length,LIMIT=3*60*60;
+const SOLUTIONS={"1": "La ecuación es (x−h)²+(y−k)²=r². Al sustituir centro (2,3) y radio 4 se obtiene (x−2)²+(y−3)²=16.", "2": "El centro es M(2,−1) y r²=9; por tanto (x−2)²+(y+1)²=9.", "3": "En (0,0), x²+(y−1)²=1<2. En (1,0) vale 2 (sobre la circunferencia), y en (0,−1) vale 4 (exterior).", "4": "El centro es (−1,0) y el radio 2. La distancia del centro a x=0 es 1<2, por lo que la recta corta la circunferencia en dos puntos.", "5": "El centro es (0,−1) y el radio 1. La recta y=−3 está a distancia 2>1 del centro.", "6": "El radio es 8 y el centro O=(−8,−8). OM=√((7+8)²+(0+8)²)=√289=17.", "7": "Una tangente es perpendicular al radio en su punto de tangencia. La recta BM coincide con la recta AM.", "8": "El centro pasa de (5,3) a (5,−5) y el radio sigue siendo 3.", "9": "El centro original (−3,−3) se transforma en (3,−1). El radio sigue siendo 2.", "10": "Desde un vértice se trazan n−3 diagonales: n−3=5 implica n=8. Su perímetro es 8·6=48.", "11": "360°/90°=4 lados: es un cuadrado. Su diagonal es 4√2 y su lado 4; por tanto área 16 y perímetro 16. El ángulo central también es 90°.", "12": "El polígono es un hexágono regular. Su lado es 2a·tan30°=4 y su perímetro 24. Área=Pa/2=24√3.", "13": "EB=6, BC=3, CD=10 y DE=√(3²+4²)=5. Perímetro=6+3+10+5=24.", "14": "El trapecio EBCD tiene área (6+10)·3/2=24. El triángulo ABE tiene área 3·6/2=9. Total: 33.", "15": "Un radio une el centro E con un punto de la superficie, como K.", "16": "En el triángulo rectángulo EOP, OP=√(5²−4²)=3. La circunferencia del corte mide 2π·3=6π.", "17": "El corte oblicuo que atraviesa la superficie lateral y no las bases produce una elipse.", "18": "Un corte paralelo a las bases es una circunferencia.", "19": "La sección axial es un rectángulo de base 2r=16 y altura 12; su área es 16·12=192 cm².", "20": "El denominador no puede ser cero: x≠0,1. Si el codominio es {0}, el valor admisible es x=−1, que anula el numerador. En el dominio máximo compatible D={−1}; se interpreta ⊂ con la convención de inclusión del material.", "21": "Ítem sin puntuación: el ámbito correcto es [−16,0[. El mínimo −16 se alcanza en x=0, pero 0 solo se obtendría con x=±4, excluidos del dominio. Ninguna opción coincide. Se conserva el original.", "22": "Ítem sin puntuación: el enunciado determina el codominio Aᶜ=]−∞,1[∪]10,+∞[, que es la opción B, pero no determina el ámbito (imagen) de h sin su regla o una condición de sobreyectividad. No se asumen ambos conceptos equivalentes.", "23": "El ámbito de g es [−9,0]. Su intersección con [−6,2] es [−6,0].", "24": "El dominio es ]−∞,0]∪[3,+∞[. Su complemento es ]0,3[.", "25": "En B cada x de {1,2,3,4} tiene una única imagen, 0. En A una recta vertical corta la curva más de una vez. En C la regla solo produce valores en B para x=±5 y deja sin imagen a los demás elementos de A.", "26": "I no da imagen en E={0} a los puntos interiores de D; por ejemplo x=0 daría −9. En II, x=1 daría 0, que no pertenece a B. Ninguna es función con los conjuntos indicados.", "27": "La semirrecta pasa por (−1,0) y (0,−2). Tiene pendiente negativa, por lo que es decreciente.", "28": "m(−1)=1 y, en el segmento horizontal, f(1)=−3.", "29": "El ámbito de r es [−4,0], contenido en el dominio de h, así que h∘r está definida en todo el dominio de r. r∘h da (x+2)²−4, y f alcanza 3, fuera del dominio [−5,2] de m.", "30": "En y=−2x+b, 1=−6+b implica b=7.", "31": "Al hacer y=0: −6+2x=0 implica x=3.", "32": "La recta corta los ejes en (0,3) y (3,0), por lo que su pendiente es −1 y su ordenada en el origen es 3.", "33": "f(3)=−9+3=−6. Como −k=−6, entonces k=6.", "34": "El discriminante es 12>0: hay dos ceros. El eje es x=−1 y la intersección con y es (0,−2). Las tres son falsas.", "35": "Dos cortes distintos con x implican Δ>0. La parábola abre hacia arriba y es negativa entre sus ceros −1 y 3; su eje pasa por el punto medio x=1.", "36": "Ítem sin puntuación: el vértice se alcanza en x=10 y U(10)=1000 miles de dólares, es decir, $1 000 000. Ninguna opción coincide con los datos y unidades del enunciado.", "37": "La abscisa del vértice es −b/(2a)=−4/(−2)=2 segundos.", "38": "Al costo fijo de ₡100 000 se suma el costo variable de ₡3000 por cada gorra.", "39": "El mínimo está en x=6. c(6)=36−72+150=114 miles de dólares, es decir $114 000.", "40": "Sea r el precio con resorte y c el cosido: 2r+2c=5500 y r+3c=5750. De r+c=2750 se obtiene c=1500 y r=1250.", "41": "El máximo menos el mínimo es 34−12=22. La suma es 312 y 312/13=24. El valor más frecuente es 30, que aparece tres veces.", "42": "En C, Q₁=55; según la interpretación de cuartiles del material, al menos el 75 % de los datos son ≥55. En A, [53,59] va de Q₁ a la mediana y representa aproximadamente un cuarto. La mediana 65 no garantiza una observación igual a 65.", "43": "En A, media y mediana son 59 y los cuantiles son equidistantes: 59−53=65−59=6; 59−47=71−59=12. Esto apoya la tendencia a simetría expresada por la opción C, sin probar una simetría exacta. Las medias de B y C tampoco apoyan las direcciones de sesgo indicadas en A y B.", "44": "Mireya: 0,4·85+0,3·50+0,3·70=70. Víctor: 0,4·70+0,3·85+0,3·50=68,5. Solo Mireya alcanza 70.", "45": "Con datos agrupados se estima la media usando marcas de clase 30,50,70,90. La suma ponderada es 5880 para 100 estudiantes: 58,80 min. El promedio exacto individual no se recupera de la tabla.", "46": "Son eventos disjuntos: E=(14+4)/25=0,72; F=(14+7)/29≈0,72414; G=(13+7)/30≈0,66667. La mayor es F.", "47": "Por inclusión-exclusión: E=(12+14−7)/25=19/25=0,76; F=(9+14−5)/29=18/29≈0,62069; G=(11+13−6)/30=18/30=0,60. La menor es G.", "48": "E=7/25=0,28; F=5/29≈0,17241; G=6/30=0,20. La menor es F.", "49": "La tercera opción es la fórmula general de probabilidad de una unión. A∩E={10} no es vacío ni todo M.", "50": "La probabilidad de un complemento es 1 menos la del evento. Bᶜ={6,10,12}. C={3,5,7} está contenido en B, así que no se pueden sumar sin restar la intersección.", "51": "Todo elemento de M es par o impar: A∪B=M. Su probabilidad es 1 y A∩B es vacío.", "52": "Adultos:21/27≈0,77778; jóvenes:14/21≈0,66667; adolescentes:12/17≈0,70588. La mayor es adultos.", "53": "Adolescentes:14/17≈0,82353; jóvenes:13/21≈0,61905; adultos:15/27≈0,55556. La menor es adultos.", "54": "No hay región de intersección de los tres conjuntos. El evento es vacío y su probabilidad es 0.", "55": "El total es 8+5+12+8+10=43 personas. Cinco dominan árabe e inglés: probabilidad 5/43."};
+// Se configura después de desplegar el servicio privado de recepción.
+const BACKEND_READY=false;
+const EXAM_KEY='ea_distancia_01_2024';
+const EXAM_API_URL='https://script.google.com/macros/s/AKfycbzTbcCEbXGaZgIHfiBo8MExOJ5o8wpPSTuvLgdaGHhRNzuwRCwPeyJy5xHXhy2P518HJQ/exec';
+const STORAGE_KEY='distancia012024_exam_v1';
+let current=0,answers=Array(TOTAL).fill(null),started=false,remaining=LIMIT,interval=null,reviewing=false,finished=false,timedOut=false;
+let student={firstName:'',lastName:''},attemptId='',ticket='',sessionId='',submitted=false,deliveryPending=false,examDeadline=0,availabilityOpen=false;
+const $=id=>document.getElementById(id);
+function save(){localStorage.setItem(STORAGE_KEY,JSON.stringify({answers,current,started,remaining,finished,timedOut,student,attemptId,ticket,sessionId,submitted,examDeadline,ts:Date.now()}));}
+function load(){try{const x=JSON.parse(localStorage.getItem(STORAGE_KEY)||'null');if(!x)return;answers=Array.isArray(x.answers)&&x.answers.length===TOTAL?x.answers:answers;current=Math.max(0,Math.min(TOTAL-1,Number(x.current)||0));started=!!x.started;finished=!!x.finished;timedOut=!!x.timedOut;remaining=typeof x.remaining==='number'?x.remaining:LIMIT;student=x.student||student;attemptId=x.attemptId||'';ticket=x.ticket||'';sessionId=x.sessionId||'';submitted=!!x.submitted;examDeadline=Number(x.examDeadline)||0;if(started&&!finished&&x.ts)remaining=Math.max(0,remaining-Math.floor((Date.now()-x.ts)/1000));if(examDeadline&&started&&!finished)remaining=Math.min(remaining,Math.max(0,Math.floor((examDeadline-Date.now())/1000)));}catch(e){}}
+function jsonp(op,extra={}){return new Promise((resolve,reject)=>{if(!EXAM_API_URL)return reject(new Error('La recepción de resultados no está configurada.'));const callback='examStatus_'+Math.random().toString(36).slice(2),script=document.createElement('script');let timer;const cleanup=()=>{clearTimeout(timer);delete window[callback];script.remove()};window[callback]=data=>{cleanup();resolve(data)};script.onerror=()=>{cleanup();reject(new Error('No se pudo consultar el horario.'))};timer=setTimeout(()=>{cleanup();reject(new Error('La consulta tardó demasiado.'))},12000);const u=new URL(EXAM_API_URL);u.searchParams.set('op',op);u.searchParams.set('exam',EXAM_KEY);u.searchParams.set('callback',callback);u.searchParams.set('_',Date.now());Object.entries(extra).forEach(([k,v])=>u.searchParams.set(k,v));script.src=u.toString();document.head.appendChild(script)})}
+let checkingAvailability=false;
+async function checkAvailability(){if(!BACKEND_READY){$('startBtn').disabled=true;$('availabilityMessage').textContent='Esta prueba aún no está habilitada.';$('retryAvailabilityBtn').style.display='none';return null}if(checkingAvailability)return null;checkingAvailability=true;availabilityOpen=false;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='none';try{for(let attempt=0;attempt<3;attempt++){try{$('availabilityMessage').textContent=attempt?`Reintentando conexión (${attempt+1}/3)…`:'Consultando disponibilidad de la prueba…';const status=await jsonp('status');availabilityOpen=!!status.open;$('availabilityMessage').textContent=status.open?`Prueba disponible. Horario de Costa Rica${status.endsAt?' · Cierra: '+status.endsAt:''}.`:(status.message||'La prueba está cerrada en este momento.');$('startBtn').disabled=!status.open;return status}catch(e){if(attempt===2)throw e;await new Promise(resolve=>setTimeout(resolve,800*(attempt+1)))}}}catch(e){availabilityOpen=false;$('availabilityMessage').textContent=e.message;$('startBtn').disabled=true;$('retryAvailabilityBtn').style.display='inline-block';return null}finally{checkingAvailability=false}}
+function validName(s){return /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñÀ-ÿ' .-]{2,70}$/.test(s)}
+function uuid(){return crypto.randomUUID?crypto.randomUUID():'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g,c=>(Math.random()*16|0).toString(16))}
+function setDelivery(message,canRetry=false){$('deliveryStatus').textContent=message;$('deliveryStatus').hidden=!message;$('retryDeliveryBtn').style.display=canRetry?'inline-block':'none';$('retryDeliveryBtn').disabled=deliveryPending}
+function sendResults(){if(submitted||deliveryPending)return;deliveryPending=true;setDelivery('Enviando respuestas al registro privado…');if(!EXAM_API_URL||!ticket){deliveryPending=false;setDelivery('No se pudo enviar: falta configurar el registro privado.',false);return}const nonce=uuid(),frame=document.createElement('iframe'),form=document.createElement('form'),payload={attemptId,ticket,sessionId,firstName:student.firstName,lastName:student.lastName,answers,elapsedSeconds:LIMIT-remaining,timedOut};frame.name='exam_upload_'+nonce.replace(/-/g,'');frame.style.display='none';form.style.display='none';form.method='POST';form.action=EXAM_API_URL;form.target=frame.name;for(const [name,value] of Object.entries({exam:EXAM_KEY,nonce,payload:JSON.stringify(payload)})){const input=document.createElement('input');input.name=name;input.value=value;form.appendChild(input)}document.body.append(frame,form);let timer;const done=(message,retry)=>{clearTimeout(timer);window.removeEventListener('message',onMessage);form.remove();frame.remove();deliveryPending=false;if(!retry){submitted=true;save()}setDelivery(message,retry)};const onMessage=e=>{if(!/^https:\/\/(?:script\.google\.com|script\.googleusercontent\.com|[a-z0-9-]+[.-]script\.googleusercontent\.com)$/.test(e.origin)||e.data?.kind!=='educacion-abierta-exam-save'||e.data.nonce!==nonce)return;if(e.data.status==='ok'||e.data.status==='duplicate')done('',false);else if(e.data.message==='El intento caducó.'){jsonp('status').then(s=>{let c;try{c=JSON.parse(new TextDecoder('utf-8').decode(Uint8Array.from(atob(ticket.split('.')[0].replace(/-/g,'+').replace(/_/g,'/')),ch=>ch.charCodeAt(0))))}catch{}const reason=!c?'El comprobante no se pudo leer.':c.id!==attemptId?'El identificador del intento no coincide.':c.sesion!==s.sessionId?'Sesión del intento: '+String(c.sesion)+' · Sesión activa: '+String(s.sessionId)+'.':c.inicio<s.startsAtEpoch||c.inicio>s.endsAtEpoch?'El inicio del intento está fuera del horario.':s.serverNow-c.inicio>LIMIT*1000+120000?'Pasaron más de tres horas desde el inicio.':'El servidor rechazó un comprobante vigente; requiere revisar su implementación.';done(reason,true)}).catch(()=>done(e.data.message,true))}else done(e.data.message||'El registro no aceptó las respuestas.',true)};window.addEventListener('message',onMessage);timer=setTimeout(()=>done('No se pudo confirmar el envío. Pulsa «Reintentar envío».',true),20000);form.submit()}
+function fmt(s){s=Math.max(0,s);let h=Math.floor(s/3600),m=Math.floor(s%3600/60),ss=s%60;return[h,m,ss].map(v=>String(v).padStart(2,'0')).join(':')}
+function updateTimer(){$('timerTop').textContent=fmt(remaining);if(remaining<=0&&!finished){remaining=0;timedOut=true;clearInterval(interval);finish(true)}}
+function tick(){clearInterval(interval);if(finished)return;interval=setInterval(()=>{if(finished){clearInterval(interval);return}remaining=Math.max(0,Math.floor((examDeadline-Date.now())/1000));updateTimer();save()},1000)}
+function showExam(){started=true;$('startView').style.display='none';$('examView').style.display='block';render();updateTimer();if(!finished)tick();save()}
+async function start(){if(finished||started)return;const firstName=$('studentFirstName').value.trim().replace(/\s+/g,' '),lastName=$('studentLastName').value.trim().replace(/\s+/g,' ');if(!validName(firstName)||!validName(lastName)){$('availabilityMessage').textContent='Escribe tu nombre y tus apellidos antes de comenzar.';return}if(!availabilityOpen){await checkAvailability();if(!availabilityOpen)return}$('startBtn').disabled=true;$('availabilityMessage').textContent='Confirmando el horario…';try{const id=uuid(),response=await jsonp('start',{id});if(!response.open||!response.ticket)throw new Error(response.message||'La prueba ya no está disponible.');student={firstName,lastName};attemptId=id;ticket=response.ticket;sessionId=response.sessionId;examDeadline=Number(response.attemptEndsAtEpoch)||0;remaining=examDeadline?Math.max(0,Math.floor((examDeadline-Date.now())/1000)):LIMIT;if(remaining<=0)throw new Error('Terminó el horario de la prueba.');showExam()}catch(e){$('availabilityMessage').textContent=e.message;await checkAvailability()}}
+function showGrade(correct,total){const percent=100*correct/total;const passed=percent>=65;$('gradeStatus').textContent=`Nota: ${Math.round(percent)}/100 · ${passed?'Aprobado':'Reprobado'}`;$('gradeStatus').style.color=passed?'#166534':'#991b1b'}
+function renderAreaCharts(){
+  const groups=new Map();
+  QUESTIONS.forEach((q,i)=>{
+    // Los ítems sin clave de corrección no forman parte del porcentaje evaluable.
+    if(!q.answer)return;
+    const area=areaForItem(q.n);
+    if(!groups.has(area))groups.set(area,{correct:0,wrong:0,blank:0});
+    const group=groups.get(area);
+    if(q.answer==='*'||answers[i]===q.answer)group.correct++;
+    else if(!answers[i])group.blank++;
+    else group.wrong++;
+  });
+  const container=$('areaChartGrid');
+  container.replaceChildren();
+  for(const [area,{correct,wrong,blank}] of groups){
+    const total=correct+wrong+blank;
+    const percentage=100*correct/total;
+    const card=document.createElement('article');
+    card.className='area-chart-card';
+    const title=document.createElement('h4');title.textContent=area;
+    const pie=document.createElement('div');pie.className='area-pie';
+    pie.style.setProperty('--correct-end',percentage+'%');
+    pie.style.setProperty('--wrong-end',100*(correct+wrong)/total+'%');
+    pie.setAttribute('role','img');
+    pie.setAttribute('aria-label',`${area}: ${correct} correctas, ${wrong} incorrectas y ${blank} sin responder, de ${total} preguntas evaluables`);
+    const rate=document.createElement('div');rate.className='area-rate';rate.textContent=percentage.toFixed(0)+'% correctas';
+    const count=document.createElement('div');count.className='area-count';count.textContent=`${correct} de ${total} preguntas correctas`;
+    const legend=document.createElement('div');legend.className='area-legend';
+    for(const [label,value,color] of [['Correctas',correct,'#16a34a'],['Incorrectas',wrong,'#ef4444'],['Sin responder',blank,'#cbd5e1']]){
+      const item=document.createElement('span');
+      const swatch=document.createElement('i');swatch.style.setProperty('--legend-color',color);
+      item.append(swatch,`${label}: ${value}`);legend.append(item);
+    }
+    card.append(title,pie,rate,count,legend);container.append(card);
+  }
+}
+function areaForItem(n){return n<=19?'Geometría':n<=40?'Relaciones y Álgebra':'Estadística y Probabilidad'}
+function render(){const q=QUESTIONS[current];$('qnum').textContent=`Ítem ${q.n} de ${TOTAL}`;$('qarea').textContent=`Área: ${areaForItem(q.n)}`;$('qstatus').textContent=answers[current]?`Respuesta: ${answers[current]}`:'Sin responder';$('qcontext').innerHTML=q.context||'';$('qcontext').style.display=q.context?'block':'none';const fig=FIGURES[q.n],fb=$('qfigure'),fi=$('qfigureimg');
+const figureBeforeStem=!!FIGURES[q.n];
+const afterFig=null;
+const afb=$('qaftergraphic'), afi=$('qaftergraphicimg');
+
+if(figureBeforeStem){
+  $('qtext').innerHTML='';
+}else{
+  $('qtext').innerHTML=q.stem;
+}
+if(fig){
+  fi.src=fig;
+  fb.style.display='block';
+}else{
+  fi.removeAttribute('src');
+  fb.style.display='none';
+}
+let afterText=document.getElementById('qafterfigure');
+if(!afterText){
+  afterText=document.createElement('div');
+  afterText.id='qafterfigure';
+  afterText.className='qtext';
+  fb.insertAdjacentElement('afterend',afterText);
+}
+if(figureBeforeStem){
+  afterText.innerHTML=q.stem;
+  afterText.style.display='block';
+}else{
+  afterText.innerHTML='';
+  afterText.style.display='none';
+}
+if(afterFig){
+  afi.src=afterFig;
+  afb.style.display='block';
+}else{
+  afi.removeAttribute('src');
+  afb.style.display='none';
+}
+const c=$('choices');c.innerHTML='';q.opts.forEach((txt,i)=>{const L='ABCD'[i],b=document.createElement('button');b.className='choice'+(answers[current]===L?' selected':'');b.innerHTML=`<span class="optletter">${L})</span>${txt}`;b.disabled=finished;if(finished){if(q.answer&&L===q.answer)b.classList.add('correct');else if(q.answer&&answers[current]===L)b.classList.add('wrong');}b.onclick=()=>{if(finished)return;answers[current]=L;save();render()};c.appendChild(b)});$('prevBtn').disabled=current===0;$('nextBtn').textContent=current===TOTAL-1?'Finalizar':'Siguiente →';$('finishBtn').textContent=finished?'Volver al resultado':'Finalizar examen';renderGrid();if(window.MathJax&&MathJax.typesetPromise){MathJax.typesetClear&&MathJax.typesetClear([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);MathJax.typesetPromise([$('qcontext'),$('qtext'),$('qafterfigure'),$('choices')]);}}
+function renderGrid(){const g=$('grid');g.innerHTML='';let count=answers.filter(Boolean).length;QUESTIONS.forEach((q,i)=>{const b=document.createElement('button');b.className='qjump '+(answers[i]?'answered':'unanswered')+(i===current?' current':'');b.textContent=q.n;b.onclick=()=>{current=i;render();save()};g.appendChild(b)});$('countTop').textContent=`${count}/${TOTAL}`;$('countSide').textContent=`${count} de ${TOTAL} respondidos`}
+function finish(auto=false,confirmed=false){if(finished){$('examView').style.display='none';$('resultView').style.display='block';return}const pendientes=answers.filter(a=>!a).length;if(!auto&&!confirmed&&pendientes){$('pendingMessage').textContent=`Aún tienes ${pendientes} ítem(es) sin responder. ¿Deseas finalizar de todas formas?`;$('finishConfirm').style.display='flex';$('confirmFinishBtn').focus();return}$('finishConfirm').style.display='none';clearInterval(interval);if(auto)timedOut=true;remaining=Math.max(0,remaining);started=false;finished=true;save();$('examView').style.display='none';$('startView').style.display='none';$('resultView').style.display='block';showScore();sendResults();window.scrollTo({top:0,behavior:'smooth'})}
+function showScore(){let cor=0;answers.forEach((a,i)=>{if(QUESTIONS[i].answer&&a===QUESTIONS[i].answer)cor++});let graded=QUESTIONS.filter(q=>q.answer).length;let blank=answers.filter((x,i)=>!x&&QUESTIONS[i].answer).length,wrong=graded-cor-blank;$('scoreText').textContent=`${cor}/${graded}`;$('percentText').textContent=`${(cor/graded*100).toFixed(0)}% de respuestas correctas${timedOut?' · Tiempo agotado':''}`;showGrade(cor,graded);$('correctStat').textContent=cor;$('wrongStat').textContent=wrong;$('blankStat').textContent=blank;renderAreaCharts()}
+function review(){
+reviewing=!reviewing;
+const box=$('review');
+box.style.display=reviewing?'grid':'none';
+$('reviewBtn').textContent=reviewing?'Ocultar revisión':'Revisar respuestas';
+if(!reviewing)return;
+box.innerHTML='';
+QUESTIONS.forEach((q,i)=>{
+ const r=document.createElement('div');
+ r.className='review-row';
+ const ok=!!q.answer&&answers[i]===q.answer;
+ const sol=SOLUTIONS[String(q.n)]||'';
+ r.innerHTML=`<div><b>Ítem ${q.n}</b></div><div>Tu respuesta: <span class="${ok?'good':'bad'}">${answers[i]||'—'}</span></div><div>${q.answer?`Correcta: <span class="good">${q.answer}</span>`:"Ítem excluido; no califica"}</div><div class="review-solution"><b>Solución:</b>${sol}</div>`;
+ r.onclick=()=>{current=i;$('resultView').style.display='none';$('examView').style.display='block';render()};
+ box.appendChild(r);
+});
+if(window.MathJax && MathJax.typesetPromise){
+  MathJax.typesetPromise([box]).catch(()=>{});
+}
+}
+function requestRestart(){$('restartConfirm').style.display='flex';$('cancelRestartBtn').focus()}
+function closeRestart(){$('restartConfirm').style.display='none';$('restartBtn').focus()}
+function restart(){clearInterval(interval);interval=null;localStorage.removeItem(STORAGE_KEY);answers=Array(TOTAL).fill(null);current=0;remaining=LIMIT;started=false;finished=false;timedOut=false;reviewing=false;student={firstName:'',lastName:''};attemptId='';ticket='';sessionId='';submitted=false;examDeadline=0;$('studentFirstName').value='';$('studentLastName').value='';$('finishConfirm').style.display='none';$('restartConfirm').style.display='none';$('review').style.display='none';$('reviewBtn').textContent='Revisar respuestas';$('examView').style.display='none';$('resultView').style.display='none';$('startView').style.display='block';renderGrid();updateTimer();checkAvailability()}
+if(new URLSearchParams(location.search).get('nuevo')==='1'){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}history.replaceState(null,'',location.pathname+location.hash)}
+$('startBtn').onclick=start;$('retryAvailabilityBtn').onclick=checkAvailability;$('finishBtn').onclick=()=>finish(false);$('cancelFinishBtn').onclick=()=>$('finishConfirm').style.display='none';$('confirmFinishBtn').onclick=()=>finish(false,true);$('finishConfirm').onclick=e=>{if(e.target===$('finishConfirm'))$('finishConfirm').style.display='none'};$('reviewBtn').onclick=review;$('retryDeliveryBtn').onclick=sendResults;$('menuBtn').onclick=()=>location.assign('https://profecharlie.github.io/Educacion-Secundaria/');$('restartBtn').onclick=requestRestart;$('cancelRestartBtn').onclick=closeRestart;$('confirmRestartBtn').onclick=restart;$('restartConfirm').onclick=e=>{if(e.target===$('restartConfirm'))closeRestart()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('finishConfirm').style.display==='flex')$('finishConfirm').style.display='none';if(e.key==='Escape'&&$('restartConfirm').style.display==='flex')closeRestart()});$('prevBtn').onclick=()=>{if(current>0){current--;render();save()}};$('nextBtn').onclick=()=>{if(current<TOTAL-1){current++;render();save()}else finish(false)};load();updateTimer();if(finished){$('startView').style.display='none';$('examView').style.display='none';$('resultView').style.display='block';showScore();setDelivery(submitted?'':'El envío quedó pendiente. Pulsa «Reintentar envío».',!submitted)}else if(started&&ticket&&attemptId){showExam()}else{started=false;checkAvailability()}
+if(document.modelContext?.registerTool){document.modelContext.registerTool({name:'read_exam_progress',description:'Consultar el progreso visible de la prueba sin revelar las respuestas correctas.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:()=>({total:TOTAL,current:current+1,answered:answers.filter(Boolean).length,remaining,finished})});}</script></body></html>
+
+
