@@ -139,5 +139,6 @@
     "filename": "BaD Comprensiva 03 2019.pdf",
     "notes": "29 páginas escaneadas numeradas de 5 a 33. Matemáticas Comprensiva, convocatoria 03-2019, código 08 2019; distinta de la específica código 07 2019. 60 preguntas sin clave oficial; soluciones elaboradas. Ítem 30 excluido por dominio de composición ambiguo. Ítem 23: dominio máximo compatible con llegada {0}. Ítem 45: media estimada. Ítem 47: cuartiles por medianas de las mitades. Ítem 51: número de aprobados no determinado; dispersión comparada por recorrido."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
