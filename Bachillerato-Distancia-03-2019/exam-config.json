@@ -140,5 +140,6 @@
     "filename": "BaD 03 2019.pdf",
     "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Bachillerato de Educación Diversificada a Distancia, convocatoria 03-2019, código 07 2019. 60 preguntas sin clave oficial. Soluciones elaboradas. Ítems 17 y 18 excluidos por ambigüedad de transformaciones/correspondencias; ítem 34 interpreta mínimo como punto mínimo; ítem 50 distingue cuartiles y medianas de notas observadas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
