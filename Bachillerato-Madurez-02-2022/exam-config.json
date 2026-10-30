@@ -140,5 +140,6 @@
     "url": "https://drive.google.com/file/d/1P5kdE2WWK-PtsKtGC9uaGwi7olVjikmF/view?usp=drivesdk",
     "notes": "28 páginas de preguntas y una página final de clave. Ítem 56 excluido por falta de una condición explícita. En el ítem 24 el original alterna E y B para el conjunto de llegada; se explica la interpretación de la clave."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
