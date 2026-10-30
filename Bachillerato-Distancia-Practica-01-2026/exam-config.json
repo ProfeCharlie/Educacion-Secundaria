@@ -130,5 +130,6 @@
     "filename": "EDAD-1-PRACTICA.pdf",
     "notes": "Práctica oficial EDAD Prueba 1,2026,Convenio MEP–ICER. 31 páginas con 55 ítems,anexos y clave. 53 ítems evaluables cotejados con la clave. Se excluyen 20(C yD son funciones) y 44(asimetría positiva no determina el orden de media ymediana). En 42 se estima la media con marcas de clase. En 49–50 se conservan los cuatro grupos de la tabla pese al texto que dice tres. Figuras recortadas del original, sin soluciones."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
