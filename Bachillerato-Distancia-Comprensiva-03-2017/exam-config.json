@@ -142,5 +142,6 @@
     "url": "https://drive.google.com/file/d/1kS-Z5vKwb_oL3zKVv9euB_rSpabkNVxp/view?usp=drivesdk",
     "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Comprensiva, convocatoria 03-2017, código 07 2017; distinta de BaD 03-2017, código 06 2017. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 31 excluido por ambigüedad entre composición sobre dominio completo y dominio restringido. Ítem 53 excluido por el alcance de la afirmación de que toda comparación solo tiene sentido mediante variabilidad relativa."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
