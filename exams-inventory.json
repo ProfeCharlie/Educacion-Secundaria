@@ -223,13 +223,29 @@
     {
       "path": "PNE-2026-T01",
       "title": "Técnica 01-2026",
-      "status": "pendiente",
+      "status": "publicada como práctica; pendiente de integración de resultados",
       "source": {
         "id": "1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb",
         "url": "https://docs.google.com/document/d/1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb/edit?usp=drivesdk&ouid=115905229313042507911&rtpof=true&sd=true",
         "filename": "2026-T01 Prueba Nacional Estandarizada_Tecnicos_Ordinaria_Matemáticas.docx"
       },
-      "notes": "Fuente original: capturas recortadas. Ítem 48 solo muestra opciones A/B/C; ítem 57 solo muestra opción A. La versión mejorado incluye reconstrucciones; se requiere confirmar las opciones faltantes antes de publicarla."
+      "notes": "Nota sobre esta versión de práctica: la fuente está incompleta. Se reconstruyó la opción D de la pregunta 48 («Función lineal») y las opciones B, C y D de la pregunta 57 («Ninguna», «Solo la I» y «Solo la II»). Estas opciones fueron elaboradas para esta práctica y no se presentan como transcripción del examen original. El solucionario fue revisado matemáticamente y puede diferir de las respuestas marcadas en la fuente.",
+      "items": 60,
+      "evaluableItems": 60,
+      "excludedItems": [],
+      "reconstructedOptions": {
+        "48": [
+          "D"
+        ],
+        "57": [
+          "B",
+          "C",
+          "D"
+        ]
+      },
+      "backend": "pendiente de integrar en Apps Script; inicio desactivado",
+      "validation": "60 preguntas y cuatro opciones; solucionario revisado matemáticamente sin adoptar respuestas marcadas. 43 representaciones SVG. DOM simulado: 60 renders,60/60,0/60,blancos,confirmación,revisión bloqueada,reinicio y temporizador. Inicio desactivado hasta integrar registro privado.",
+      "publication": "Versión de práctica con reconstrucción autorizada de opciones en 48 y57 y nota al inicio. Página,configuración y acceso en menú publicados el30-10-2026."
     },
     {
       "path": "PNE-2026-Sumativa-Nocturna-I-Semestre",
