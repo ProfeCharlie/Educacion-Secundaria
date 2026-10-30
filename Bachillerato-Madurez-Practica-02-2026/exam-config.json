@@ -141,5 +141,7 @@
     "url": "https://drive.google.com/file/d/1_htWLqi3Dp6jME6bIooVDw3FClL8SUPI/view",
     "notes": "33 páginas;60 preguntas y clave.58 evaluables.51 y52 excluidos por certeza no demostrada y varias respuestas válidas.4:exponente omitido corregido.49:estimación por marcas de clase.12 y13:curvas ilustrativas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor v23 y administrador v35; control desactivado",
+  "backend": "registro privado conectado; acceso controlado desde el administrador",
+  "backendReady": true
 }
