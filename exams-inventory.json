@@ -653,10 +653,10 @@
       "items": 55,
       "evaluableItems": 55,
       "excludedItems": [],
-      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "34 páginas: portada, instrucciones, 55 preguntas (páginas 5 a 31) y anexos. Bachillerato de Educación Diversificada a Distancia, convocatoria 02-2017. Sin clave oficial en la copia. Soluciones elaboradas mediante resolución de cada ejercicio. Ítems 46 y 49: interpretación de cuartiles; ítem 52: mayor posición relativa estandarizada, sin interpretarla como mayor rapidez.",
-      "validation": "55 preguntas cotejadas con las páginas 5 a 31 de la fuente de 34 páginas; 30 figuras SVG asociadas (15 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada. Selección, navegación, confirmación, notas 55/55 y 0/55, blancos, bloqueo y reinicio comprobados con DOM simulado.",
-      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+      "validation": "55 preguntas cotejadas con las páginas 5 a 31 de la fuente de 34 páginas; 30 figuras SVG asociadas (15 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada. Selección, navegación, confirmación, notas 55/55 y 0/55, blancos, bloqueo y reinicio comprobados con DOM simulado. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Bachillerato-Distancia-01-2017",
@@ -672,10 +672,10 @@
       "items": 55,
       "evaluableItems": 55,
       "excludedItems": [],
-      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "26 páginas: 25 de preguntas, numeradas 5 a 29, y una página final en blanco. Matemática n.º 1, Educación Diversificada a Distancia, convocatoria 01-2017, código 01 2017. Contiene 55 preguntas sin clave oficial. Soluciones elaboradas. Ítem 42: una mediana de 17 no garantiza una mayoría estricta de menores; respuesta B. Ítem 28: la composición requiere inclusión del ámbito en el dominio, no igualdad.",
-      "validation": "55 preguntas cotejadas con las 25 páginas de preguntas; fuente de 26 páginas incluida última en blanco. 18 figuras SVG asociadas (10 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada; ítem 42 respondido B, pues no se deduce más del 50 % de menores. Selección, navegación, confirmación, notas 55/55 y 0/55, blancos, bloqueo y reinicio comprobados con DOM simulado.",
-      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+      "validation": "55 preguntas cotejadas con las 25 páginas de preguntas; fuente de 26 páginas incluida última en blanco. 18 figuras SVG asociadas (10 únicas) reconstruidas y revisadas. Soluciones elaboradas sin clave oficial suministrada; ítem 42 respondido B, pues no se deduce más del 50 % de menores. Selección, navegación, confirmación, notas 55/55 y 0/55, blancos, bloqueo y reinicio comprobados con DOM simulado. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Bachillerato-Distancia-03-2017",
@@ -712,10 +712,10 @@
       "excludedItems": [
         27
       ],
-      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "29 páginas escaneadas, numeradas de 5 a 33. Convocatoria 00-2017, código 03 2017. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 27 excluido: las opciones A y C son intervalos contenidos en el complemento de C=[4,+∞[.",
-      "validation": "60 preguntas cotejadas con las 29 páginas escaneadas. 21 figuras SVG asociadas (14 únicas) reconstruidas y revisadas. Ítem 27 excluido por dos opciones válidas. Soluciones elaboradas sin clave oficial. Selección, navegación, confirmación, notas 59/59 y 0/59, blancos, bloqueo, reinicio e identificación comprobados con DOM simulado.",
-      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+      "validation": "60 preguntas cotejadas con las 29 páginas escaneadas. 21 figuras SVG asociadas (14 únicas) reconstruidas y revisadas. Ítem 27 excluido por dos opciones válidas. Soluciones elaboradas sin clave oficial. Selección, navegación, confirmación, notas 59/59 y 0/59, blancos, bloqueo, reinicio e identificación comprobados con DOM simulado. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Bachillerato-Distancia-Comprensiva-03-2017",
