@@ -138,5 +138,6 @@
     "url": "https://drive.google.com/file/d/1Z14piPY3Bhe7miB5NhOtuEQBM6mgVeEm/view?usp=drivesdk",
     "notes": "29 páginas escaneadas, numeradas de 5 a 33. Convocatoria 01-2017, código 04 2017. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 50: interpretación de los cuartiles; se aclara el efecto de los empates en las edades."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
