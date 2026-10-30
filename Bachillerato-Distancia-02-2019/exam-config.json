@@ -130,5 +130,6 @@
     "filename": "BaD 02 2019.pdf",
     "notes": "28 páginas escaneadas, numeradas de 5 a 32; convocatoria 02-2019. Copia de 55 preguntas sin clave oficial. Soluciones elaboradas. Ítems 10 y 51 excluidos por altura no identificable y variabilidad absoluta/relativa no especificada. Ítem 13: altura CG del cono superior. Los cuartiles y medianas no se suponen necesariamente datos observados."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
