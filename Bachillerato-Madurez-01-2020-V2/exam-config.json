@@ -140,5 +140,6 @@
     "url": "https://drive.google.com/file/d/1sg-3cCjHRL5PVtvFPzeq6AAlJnjvxeeG/view?usp=drivesdk",
     "notes": "29 páginas de preguntas y clave final. Convocatoria 01-2020 (2), código 07 2020. Ítem 19 excluido por orientación de plano insuficientemente definida; la clave prevé B bajo la condición de plano tangente a la generatriz. Ítem 55 corregido de C a A: ambas proposiciones son verdaderas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
