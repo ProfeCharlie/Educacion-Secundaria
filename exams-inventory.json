@@ -223,7 +223,7 @@
     {
       "path": "PNE-2026-T01",
       "title": "Técnica 01-2026",
-      "status": "publicada como práctica; pendiente de integración de resultados",
+      "status": "publicada como práctica",
       "source": {
         "id": "1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb",
         "url": "https://docs.google.com/document/d/1TWWb2A52nXRyKFQ7OiO3BDiJM2wvZvzb/edit?usp=drivesdk&ouid=115905229313042507911&rtpof=true&sd=true",
@@ -243,9 +243,9 @@
           "D"
         ]
       },
-      "backend": "pendiente de integrar en Apps Script; inicio desactivado",
-      "validation": "60 preguntas y cuatro opciones; solucionario revisado matemáticamente sin adoptar respuestas marcadas. 43 representaciones SVG. DOM simulado: 60 renders,60/60,0/60,blancos,confirmación,revisión bloqueada,reinicio y temporizador. Inicio desactivado hasta integrar registro privado.",
-      "publication": "Versión de práctica con reconstrucción autorizada de opciones en 48 y57 y nota al inicio. Página,configuración y acceso en menú publicados el30-10-2026."
+      "backend": "integrado en receptor v23 y administrador v35; hojas privadas creadas sin secciones; desactivada",
+      "validation": "60 preguntas y cuatro opciones; solucionario revisado matemáticamente sin adoptar respuestas marcadas. 43 representaciones SVG. DOM simulado: 60 renders,60/60,0/60,blancos,confirmación,revisión bloqueada,reinicio y temporizador. Inicio desactivado hasta integrar registro privado. Integración: claves cotejadas, 14 hojas creadas y estructura y estado desactivado de las siete pruebas comprobados en Apps Script.",
+      "publication": "Página y configuración publicadas; registro privado conectado el 30-10-2026. La activación se controla desde el administrador."
     },
     {
       "path": "PNE-2026-Sumativa-Nocturna-I-Semestre",
@@ -1640,7 +1640,7 @@
     {
       "path": "Bachillerato-Madurez-Practica-02-2026",
       "title": "Bachillerato por Madurez · Práctica 02-2026",
-      "status": "publicada; pendiente de integración de resultados",
+      "status": "publicada como práctica",
       "source": {
         "filename": "Practica-BxM-Matematicas-02-2026.pdf",
         "url": "https://drive.google.com/file/d/1_htWLqi3Dp6jME6bIooVDw3FClL8SUPI/view",
@@ -1652,14 +1652,14 @@
         51,
         52
       ],
-      "backend": "pendiente de integrar; requiere acceso a Apps Script",
-      "publication": "Página y configuración publicadas en GitHub el 30-10-2026 y acceso añadido al menú. Inicio desactivado hasta integrar el registro privado.",
-      "validation": "60 preguntas transcritas y soluciones matemáticas.58 respuestas evaluables cotejadas con la clave extraída del PDF.51 y52 excluidos.4 corrige un exponente omitido.49 usa marcas de clase.15 figuras principales únicas,20 asignaciones y12 opciones gráficas reconstruidas en SVG; inspección visual. DOM local:60 renders,58/58,0/58,blancos,confirmación,revisión bloqueada,reinicio y temporizador. Sin navegador disponible para la prueba móvil."
+      "backend": "integrado en receptor v23 y administrador v35; hojas privadas creadas sin secciones; desactivada",
+      "publication": "Página y configuración publicadas; registro privado conectado el 30-10-2026. La activación se controla desde el administrador.",
+      "validation": "60 preguntas transcritas y soluciones matemáticas.58 respuestas evaluables cotejadas con la clave extraída del PDF.51 y52 excluidos.4 corrige un exponente omitido.49 usa marcas de clase.15 figuras principales únicas,20 asignaciones y12 opciones gráficas reconstruidas en SVG; inspección visual. DOM local:60 renders,58/58,0/58,blancos,confirmación,revisión bloqueada,reinicio y temporizador. Sin navegador disponible para la prueba móvil. Integración: claves cotejadas, 14 hojas creadas y estructura y estado desactivado de las siete pruebas comprobados en Apps Script."
     },
     {
       "path": "Bachillerato-Madurez-Practica-01-2026",
       "title": "Bachillerato por Madurez · Práctica 01-2026",
-      "status": "publicada; pendiente de integración de resultados",
+      "status": "publicada como práctica",
       "source": {
         "filename": "BXM-PRACTICA.pdf",
         "url": "https://drive.google.com/file/d/1g270Zwt4Mci_s4-V-tLeMN05TlwDLjp4/view",
@@ -1674,14 +1674,14 @@
         45,
         49
       ],
-      "backend": "pendiente de integrar; requiere acceso a Apps Script",
-      "publication": "Página y configuración publicadas en GitHub el 30-10-2026 y acceso añadido al menú. Inicio desactivado hasta integrar el registro privado.",
-      "validation": "60 preguntas con4 opciones;55 evaluables coinciden con la clave del PDF. Gráficos SVG inspeccionados visualmente. DOM:60 renders,55/55,0/55,blancos,confirmación,revisión bloqueada,reinicio ytemporizador. Pendiente navegador móvil yregistro privado."
+      "backend": "integrado en receptor v23 y administrador v35; hojas privadas creadas sin secciones; desactivada",
+      "publication": "Página y configuración publicadas; registro privado conectado el 30-10-2026. La activación se controla desde el administrador.",
+      "validation": "60 preguntas con4 opciones;55 evaluables coinciden con la clave del PDF. Gráficos SVG inspeccionados visualmente. DOM:60 renders,55/55,0/55,blancos,confirmación,revisión bloqueada,reinicio ytemporizador. Pendiente navegador móvil yregistro privado. Integración: claves cotejadas, 14 hojas creadas y estructura y estado desactivado de las siete pruebas comprobados en Apps Script."
     },
     {
       "path": "Bachillerato-Distancia-01-2025",
       "title": "Bachillerato a Distancia · 01-2025",
-      "status": "publicada; pendiente de integración de resultados",
+      "status": "publicada",
       "source": {
         "filename": "01 2025 EDAD.pdf",
         "url": "https://drive.google.com/file/d/1aTvo6ffCTMZhCK4I5AhSS9zG42h3i-Tv/view",
@@ -1692,15 +1692,15 @@
       "excludedItems": [
         43
       ],
-      "backend": "pendiente de integrar; requiere acceso a Apps Script",
-      "publication": "Página y configuración publicadas en GitHub el 30-10-2026 y acceso añadido al menú. Inicio desactivado hasta integrar el registro privado.",
-      "validation": "55 preguntas de tres opciones transcritas desde 24 páginas escaneadas. Soluciones matemáticas elaboradas, sin clave adjunta. 25 asignaciones de figuras principales y 6 opciones gráficas en SVG inspeccionadas. 43 excluido;44 con media estimada. DOM:55 renders,54/54,0/54,blancos,confirmación,revisión bloqueada,reinicio,temporizador e inicio desactivado. Cálculos aritméticos y probabilidades contrastados independientemente. Pendiente navegador móvil e integración de resultados. Se corrigió el divisor de minutos del temporizador de 55 a 60 el 27-10-2026."
+      "backend": "integrado en receptor v23 y administrador v35; hojas privadas creadas sin secciones; desactivada",
+      "publication": "Página y configuración publicadas; registro privado conectado el 30-10-2026. La activación se controla desde el administrador.",
+      "validation": "55 preguntas de tres opciones transcritas desde 24 páginas escaneadas. Soluciones matemáticas elaboradas, sin clave adjunta. 25 asignaciones de figuras principales y 6 opciones gráficas en SVG inspeccionadas. 43 excluido;44 con media estimada. DOM:55 renders,54/54,0/54,blancos,confirmación,revisión bloqueada,reinicio,temporizador e inicio desactivado. Cálculos aritméticos y probabilidades contrastados independientemente. Pendiente navegador móvil e integración de resultados. Se corrigió el divisor de minutos del temporizador de 55 a 60 el 27-10-2026. Integración: claves cotejadas, 14 hojas creadas y estructura y estado desactivado de las siete pruebas comprobados en Apps Script."
     },
     {
       "path": "Bachillerato-Distancia-02-2025",
       "title": "Bachillerato a Distancia · Prueba 2 · Junio 2025",
       "category": "Educación Abierta",
-      "status": "publicada; pendiente de integración de resultados",
+      "status": "publicada",
       "source": {
         "filename": "02  2025 EDAD junio.pdf",
         "url": "https://drive.google.com/file/d/1X2cD9q0N6NO8rVZXjwGxkfc77kNVxnhz/view",
@@ -1709,15 +1709,15 @@
       "items": 55,
       "evaluableItems": 55,
       "excludedItems": [],
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Página y configuración publicadas en GitHub el 30-10-2026 y acceso añadido al menú. Inicio desactivado hasta integrar el registro privado.",
-      "validation": "55 preguntas, tres opciones, 55 soluciones matemáticas sin clave oficial. 25 asignaciones de figuras SVG, 16 figuras principales únicas y tres opciones gráficas. Pruebas DOM simuladas: 55 renders, 55/55, 0/55, 55 blancos, confirmación, revisión bloqueada, reinicio y temporizador. No se pudo instalar navegador; pendiente verificación móvil real y registro privado."
+      "backend": "integrado en receptor v23 y administrador v35; hojas privadas creadas sin secciones; desactivada",
+      "publication": "Página y configuración publicadas; registro privado conectado el 30-10-2026. La activación se controla desde el administrador.",
+      "validation": "55 preguntas, tres opciones, 55 soluciones matemáticas sin clave oficial. 25 asignaciones de figuras SVG, 16 figuras principales únicas y tres opciones gráficas. Pruebas DOM simuladas: 55 renders, 55/55, 0/55, 55 blancos, confirmación, revisión bloqueada, reinicio y temporizador. No se pudo instalar navegador; pendiente verificación móvil real y registro privado. Integración: claves cotejadas, 14 hojas creadas y estructura y estado desactivado de las siete pruebas comprobados en Apps Script."
     },
     {
       "path": "Bachillerato-Distancia-01-2024",
       "title": "Bachillerato a Distancia · 01-2024",
       "category": "Educación Abierta",
-      "status": "publicada; pendiente de integración de resultados",
+      "status": "publicada",
       "source": {
         "filename": "01 2024.pdf",
         "url": "https://drive.google.com/file/d/1-79rx2CzBtqMTL7hIoH7zn53nNpeXPWC/view",
@@ -1730,15 +1730,15 @@
         22,
         36
       ],
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Página y configuración publicadas en GitHub el 30-10-2026 y acceso añadido al menú. Inicio desactivado hasta integrar el registro privado.",
-      "validation": "55 preguntas y soluciones, tres opciones, 52 evaluables sin clave oficial. 12 figuras principales únicas, 16 asignaciones y una opción gráfica reconstruidas en SVG. Revisión visual mediante render. DOM simulado: 55 renders, 52/52, 0/52, blancos, exclusiones, confirmación, revisión bloqueada, reinicio y temporizador. Pendientes navegador real y registro privado."
+      "backend": "integrado en receptor v23 y administrador v35; hojas privadas creadas sin secciones; desactivada",
+      "publication": "Página y configuración publicadas; registro privado conectado el 30-10-2026. La activación se controla desde el administrador.",
+      "validation": "55 preguntas y soluciones, tres opciones, 52 evaluables sin clave oficial. 12 figuras principales únicas, 16 asignaciones y una opción gráfica reconstruidas en SVG. Revisión visual mediante render. DOM simulado: 55 renders, 52/52, 0/52, blancos, exclusiones, confirmación, revisión bloqueada, reinicio y temporizador. Pendientes navegador real y registro privado. Integración: claves cotejadas, 14 hojas creadas y estructura y estado desactivado de las siete pruebas comprobados en Apps Script."
     },
     {
       "path": "Bachillerato-Distancia-02-2024",
       "title": "Bachillerato a Distancia · 02-2024",
       "category": "Educación Abierta",
-      "status": "publicada; pendiente de integración de resultados",
+      "status": "publicada",
       "source": {
         "filename": "02 2024.pdf",
         "url": "https://drive.google.com/file/d/1KXOcLarSv7mFzGayN1wHsODSWI2A4Odq/view",
@@ -1750,9 +1750,9 @@
         40,
         46
       ],
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Página y configuración publicadas en GitHub el 30-10-2026 y acceso añadido al menú. Inicio desactivado hasta integrar el registro privado.",
-      "validation": "55 preguntas y soluciones, 53 evaluables y tres opciones. 13 figuras principales únicas, 24 asignaciones y seis opciones gráficas SVG, inspeccionadas visualmente. DOM simulado: 55 renders, 53/53, 0/53, blancos, exclusiones, confirmación, bloqueo de revisión, reinicio y temporizador. Cálculos independientes contrastados. Pendientes navegador real, registro privado y envío real."
+      "backend": "integrado en receptor v23 y administrador v35; hojas privadas creadas sin secciones; desactivada",
+      "publication": "Página y configuración publicadas; registro privado conectado el 30-10-2026. La activación se controla desde el administrador.",
+      "validation": "55 preguntas y soluciones, 53 evaluables y tres opciones. 13 figuras principales únicas, 24 asignaciones y seis opciones gráficas SVG, inspeccionadas visualmente. DOM simulado: 55 renders, 53/53, 0/53, blancos, exclusiones, confirmación, bloqueo de revisión, reinicio y temporizador. Cálculos independientes contrastados. Pendientes navegador real, registro privado y envío real. Integración: claves cotejadas, 14 hojas creadas y estructura y estado desactivado de las siete pruebas comprobados en Apps Script."
     }
   ],
   "notes": [
