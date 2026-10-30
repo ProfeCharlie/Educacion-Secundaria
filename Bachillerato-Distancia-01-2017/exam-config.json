@@ -129,5 +129,6 @@
     "url": "https://drive.google.com/file/d/12t031h-jVuuoF0ilYdnn2v7vtgZyaKZ8/view?usp=drivesdk",
     "notes": "26 páginas: 25 de preguntas, numeradas 5 a 29, y una página final en blanco. Matemática n.º 1, Educación Diversificada a Distancia, convocatoria 01-2017, código 01 2017. Contiene 55 preguntas sin clave oficial. Soluciones elaboradas. Ítem 42: una mediana de 17 no garantiza una mayoría estricta de menores; respuesta B. Ítem 28: la composición requiere inclusión del ámbito en el dominio, no igualdad."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
