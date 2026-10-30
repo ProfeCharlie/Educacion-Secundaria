@@ -140,5 +140,6 @@
     "url": "https://drive.google.com/file/d/1llRe-YqhI87l32-BhnQnkeBBDpnQ-1S2/view?usp=drivesdk",
     "notes": "29 páginas, numeradas de 5 a 33. No incluye clave. Se conserva la convocatoria 01-2021 del encabezado, aunque también figura el código 03 2021. Ítem 3 excluido: ninguna opción contiene la ecuación correcta. Soluciones obtenidas mediante resolución de cada ejercicio."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
