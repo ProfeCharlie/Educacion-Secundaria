@@ -144,5 +144,6 @@
     "url": "https://drive.google.com/file/d/1L10vQEu7nuzAWTgiwHxCHELDk5JXzmdU/view",
     "notes": "La copia omite la página 25 (ítem 46). La página de los ítems 59–60 lleva encabezado Matemáticas Específica. No incluye clave oficial ni soluciones; estas fueron elaboradas para la versión interactiva."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
