@@ -128,5 +128,7 @@
     "url": "https://drive.google.com/file/d/1X2cD9q0N6NO8rVZXjwGxkfc77kNVxnhz/view",
     "notes": "24 páginas escaneadas. El rótulo externo dice 02 2025 Junio; el encabezado institucional identifica Prueba 2, Convocatoria (01-2025). Sin clave adjunta. Soluciones matemáticas elaboradas. Ítems 43,44,48,49,51 interpretados según las medidas y cuartiles mostrados."
   },
-  "backendStatus": "pendiente de integrar; inicio desactivado"
+  "backendStatus": "integrado en receptor v23 y administrador v35; control desactivado",
+  "backend": "registro privado conectado; acceso controlado desde el administrador",
+  "backendReady": true
 }
