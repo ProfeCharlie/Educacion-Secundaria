@@ -132,5 +132,6 @@
     "url": "https://drive.google.com/file/d/1VXbyh9XOFGaSqg5sledQT8zhzhx1RhPl/view?usp=drivesdk",
     "notes": "26 páginas escaneadas: 25 numeradas de 5 a 29 y una final en blanco. Matemática n.º 1, convocatoria 01-2018, código 01 2018. 55 preguntas sin clave oficial. Ítems 7 y 28 excluidos por ambigüedad de incidencia perpendicular y dominio de composición. Ítem 19: aproximación π=3,14 de las opciones."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
