@@ -139,5 +139,6 @@
     "filename": "BxM 01 2019.pdf",
     "notes": "29 páginas escaneadas numeradas de 5 a 33. Convocatoria 01-2019, código 04 2019. 60 preguntas sin clave oficial; soluciones elaboradas. Ítem 30 excluido por ambigüedad de dominio en composición; ítem 45: media estimada con marcas de clase. Ítem 50: no se conocen tamaños de las secciones. Ítem 23: dominio máximo compatible con llegada {0}."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
