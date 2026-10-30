@@ -141,5 +141,6 @@
     "url": "https://drive.google.com/file/d/1lGjRGKjVdmUmtgyFDW2gRmSP4jcGbwLN/view?usp=drivesdk",
     "notes": "24 páginas: 23 de preguntas y clave final. El documento se identifica como 2019_BxM_Suficiente_02_(NO_aplicada), código 05 2019; solucionario: NO APLICADO: FILTRADO. Se publica como práctica. Ítems 38 y 39 excluidos por ausencia de opción correcta (leche ₡300 e imagen n(3)=1). Ítem 51 corregido de A a C: una mediana de 80 puede ser el promedio de 79 y 81, sin observación de 80. Ítem 58 corregido de C a B: mayor probabilidad de rojo o blanco en bolsa #2."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
