@@ -445,10 +445,10 @@
       },
       "items": 60,
       "evaluableItems": 60,
-      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "Cuatro opciones por pregunta. Soluciones elaboradas para esta versión. El ítem 17 contiene una descripción contradictoria del sentido de giro; ninguna interpretación produce la figura propuesta.",
-      "validation": "60 preguntas cotejadas con las 29 páginas; 25 figuras SVG asociadas y 4 opciones gráficas reconstruidas; selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio verificados con DOM simulado.",
-      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+      "validation": "60 preguntas cotejadas con las 29 páginas; 25 figuras SVG asociadas y 4 opciones gráficas reconstruidas; selección, navegación, confirmación, notas 60/60 y 0/60, blancos, bloqueo y reinicio verificados con DOM simulado. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Bachillerato-Madurez-02-2022",
@@ -466,10 +466,10 @@
       "excludedItems": [
         56
       ],
-      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "Ítem 56 excluido de la nota: falta la condición P(A unión B) = 1 que supone la clave adjunta. Las 59 respuestas calificables coinciden con la clave del PDF.",
-      "validation": "60 preguntas cotejadas con las 28 páginas y la clave final; 19 figuras SVG asociadas y 4 opciones gráficas reconstruidas; selección, navegación, confirmación, notas 59/59 y 0/59, exclusión de 56, blancos, bloqueo y reinicio verificados con DOM simulado.",
-      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+      "validation": "60 preguntas cotejadas con las 28 páginas y la clave final; 19 figuras SVG asociadas y 4 opciones gráficas reconstruidas; selección, navegación, confirmación, notas 59/59 y 0/59, exclusión de 56, blancos, bloqueo y reinicio verificados con DOM simulado. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Bachillerato-Madurez-01-2021",
@@ -487,10 +487,10 @@
       "excludedItems": [
         3
       ],
-      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "Ítem 3 excluido: QP al cuadrado es 5; todas las opciones del PDF utilizan 10. No se suministra clave oficial.",
-      "validation": "60 preguntas cotejadas con las 29 páginas; 26 figuras SVG asociadas reconstruidas; selección, navegación, confirmación, notas 59/59 y 0/59, exclusión de 3, blancos, bloqueo y reinicio verificados con DOM simulado.",
-      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+      "validation": "60 preguntas cotejadas con las 29 páginas; 26 figuras SVG asociadas reconstruidas; selección, navegación, confirmación, notas 59/59 y 0/59, exclusión de 3, blancos, bloqueo y reinicio verificados con DOM simulado. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Bachillerato-Madurez-02-2021",
@@ -509,10 +509,10 @@
         23,
         24
       ],
-      "backend": "pendiente de integrar en Apps Script; sin secciones; inicio desactivado",
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "Ítems 23 y 24 excluidos: la gráfica original tiene extremos abiertos que ninguna opción respeta.",
-      "validation": "60 preguntas cotejadas con las 29 páginas; 24 figuras SVG asociadas reconstruidas y revisadas; selección, navegación, confirmación, notas 58/58 y 0/58, exclusiones, blancos, bloqueo y reinicio verificados con DOM simulado.",
-      "publication": "Publicado en GitHub y añadido al menú; conexión de resultados pendiente de acceso a Apps Script."
+      "validation": "60 preguntas cotejadas con las 29 páginas; 24 figuras SVG asociadas reconstruidas y revisadas; selección, navegación, confirmación, notas 58/58 y 0/58, exclusiones, blancos, bloqueo y reinicio verificados con DOM simulado. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Bachillerato-Madurez-01-2020-V2",
