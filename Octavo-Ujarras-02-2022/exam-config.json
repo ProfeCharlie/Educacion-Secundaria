@@ -187,5 +187,6 @@
     "filename": "02 2022.pdf",
     "notes": "27 páginas escaneadas numeradas de 5 a 31. Ítem 2 incompleto: solo aparece afirmación I (3/5>2/3); faltan II y opciones. Se omite conservando numeración original. 54 preguntas disponibles; ítem 5 excluido porque 1,85−1¼=0,60 no está entre las opciones. 53 evaluables. Sin clave oficial; soluciones elaboradas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
