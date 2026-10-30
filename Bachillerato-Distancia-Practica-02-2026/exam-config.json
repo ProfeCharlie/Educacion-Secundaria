@@ -129,5 +129,6 @@
     "filename": "EDAD-2-PRACTICA.pdf",
     "notes": "Práctica EDAD Prueba 2, 2026, Convenio MEP–ICER. 33 páginas con 55 ítems, anexos y clave. 54 ítems evaluables cotejados con la clave. Ítem 18 sin puntuación: B y C son restricciones inyectivas. En 53 se conserva el enunciado y se aclara que la variabilidad se refiere a los finalistas de la tabla. En 12 se conserva la mención impropia de vértice en un cilindro y se explica en la solución. Catorce figuras SVG reconstruidas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
