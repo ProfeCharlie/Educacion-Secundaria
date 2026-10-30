@@ -138,5 +138,6 @@
     "filename": "BxM 01 2024.pdf",
     "url": "https://drive.google.com/file/d/1O8KugRWROLdyVaMZyZBr82cbVaX4Z9W5/view"
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
