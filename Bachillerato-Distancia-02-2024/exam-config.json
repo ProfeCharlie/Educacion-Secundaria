@@ -131,5 +131,7 @@
     "url": "https://drive.google.com/file/d/1KXOcLarSv7mFzGayN1wHsODSWI2A4Odq/view",
     "notes": "24 páginas escaneadas, 55 preguntas, tres opciones, sin clave adjunta. 40: m no determinado sin modelo adicional. 46: criterio ambiguo; con media±σ son no aptos A y C. 34: se conserva g(t)=x₀^(−2t), aunque g(0)=1 contradice la descripción de x₀ como cantidad inicial."
   },
-  "backendStatus": "pendiente de integrar; inicio desactivado"
+  "backendStatus": "integrado en receptor v23 y administrador v35; control desactivado",
+  "backend": "registro privado conectado; acceso controlado desde el administrador",
+  "backendReady": true
 }
