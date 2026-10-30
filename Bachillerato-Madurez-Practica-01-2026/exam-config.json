@@ -144,5 +144,7 @@
     "url": "https://drive.google.com/file/d/1g270Zwt4Mci_s4-V-tLeMN05TlwDLjp4/view",
     "notes": "Práctica2026 de37 páginas con60 preguntas y clave. No indica convocatoria;el nombre01-2026 distingue esta fuente de la práctica02-2026. Ítems25,32,40,45 y49 excluidos.43 usa media estimada. El original identifica por error el criterio de r como h;se corrige la letra."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor v23 y administrador v35; control desactivado",
+  "backend": "registro privado conectado; acceso controlado desde el administrador",
+  "backendReady": true
 }
