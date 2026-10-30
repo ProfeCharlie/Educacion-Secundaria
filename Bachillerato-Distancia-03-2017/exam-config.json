@@ -139,5 +139,6 @@
     "url": "https://drive.google.com/file/d/1ytBL2LQXJw0BVhiSbL7y59S7aDXiKlF3/view?usp=drivesdk",
     "notes": "29 páginas escaneadas, numeradas de 5 a 33. Bachillerato de Educación Diversificada a Distancia, convocatoria 03-2017, código 06 2017. Contiene las 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución de cada ejercicio. Ítem 12: AD=DC=3,61 dados y AE=BC≈4,12, perímetro 23,46; ítem 51: interpretación de cuartiles con aclaración sobre empates."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
