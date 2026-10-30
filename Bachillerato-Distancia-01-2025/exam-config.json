@@ -130,5 +130,7 @@
     "url": "https://drive.google.com/file/d/1aTvo6ffCTMZhCK4I5AhSS9zG42h3i-Tv/view",
     "notes": "24 páginas escaneadas;55 preguntas de tres opciones,encabezado01 2025 Junio. No incluye portada,instrucciones ni clave adjunta. Soluciones elaboradas matemáticamente.43 excluido:asimetría yresumen no determinan una media única.44:media estimada por marcas de clase."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor v23 y administrador v35; control desactivado",
+  "backend": "registro privado conectado; acceso controlado desde el administrador",
+  "backendReady": true
 }
