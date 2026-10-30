@@ -185,5 +185,6 @@
     "filename": "01 2024.pdf",
     "notes": "Copia escaneada de 18 páginas. No contiene los ítems 15 y 16; se conserva la numeración original. Ítem 17 excluido: la expresión visible da 12, resultado ausente de las tres opciones. 53 preguntas disponibles y 52 evaluables. No hay clave oficial; soluciones elaboradas. Ítem 45 supone distancia fija; ítem 49 interpreta cada niña como unidad estadística."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
