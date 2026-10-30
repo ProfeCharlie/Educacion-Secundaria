@@ -142,5 +142,6 @@
     "url": "https://drive.google.com/file/d/18zbOHGZKFoEMpxrOPEhOshRictrv-6SS/view?usp=drivesdk",
     "notes": "15 páginas escaneadas con dos páginas impresas por imagen, numeradas de 5 a 33. Matemáticas Comprensiva, convocatoria 03-2018, código 07 2018; Matemáticas Comprensiva. 60 preguntas sin clave oficial. Soluciones elaboradas mediante resolución individual. Ítem 17 excluido por admitir varias transformaciones sin fijar correspondencias. Ítem 51 excluido porque un cuartil o mediana no garantiza una nota observada exactamente igual a su valor."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
