@@ -129,5 +129,6 @@
     "filename": "02 2022.pdf",
     "notes": "24 páginas escaneadas, numeradas de 5 a 28. 55 preguntas completas; sin clave oficial, soluciones elaboradas. Ítem 39 excluido: el ángulo de 30° es incompatible con AB=BC=4 y AD=10. Ítem 40 usa solo longitudes y marcas rectas (área 28). Ítem 7 interpreta paquetes de igual composición."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
