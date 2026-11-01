@@ -960,9 +960,9 @@
         "filename": "01 2024.pdf",
         "notes": "18 páginas; faltan 15 y 16; ítem 17 sin opción correcta para la expresión visible. Sin clave oficial; soluciones elaboradas."
       },
-      "backend": "pendiente de integrar; inicio desactivado",
-      "validation": "53 preguntas, tres opciones; ocho figuras SVG revisadas; navegación, temporizador, calificación 52/52 y 0/52, blancos, revisión bloqueada, reinicio y numeración original comprobados con DOM local.",
-      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "validation": "53 preguntas, tres opciones; ocho figuras SVG revisadas; navegación, temporizador, calificación 52/52 y 0/52, blancos, revisión bloqueada, reinicio y numeración original comprobados con DOM local. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Setimo-Terraba-02-2022",
@@ -977,9 +977,9 @@
         "filename": "02 2022.pdf",
         "notes": "24 páginas con 55 ítems completos; sin clave oficial. Ítem 39 excluido por ángulo incompatible con longitudes; ítem 40 usa longitudes. Soluciones elaboradas."
       },
-      "backend": "pendiente de integrar; inicio desactivado",
-      "validation": "55 ítems, cuatro opciones y diez figuras SVG cotejadas; navegación, temporizador, confirmación, calificación 54/54 y 0/54, blancos, revisión bloqueada y reinicio comprobados con DOM local.",
-      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "validation": "55 ítems, cuatro opciones y diez figuras SVG cotejadas; navegación, temporizador, confirmación, calificación 54/54 y 0/54, blancos, revisión bloqueada y reinicio comprobados con DOM local. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Octavo-Ujarras-02-2022",
@@ -997,9 +997,9 @@
         "filename": "02 2022.pdf",
         "notes": "27 páginas; ítem 2 solo tiene afirmación I, sin II ni opciones. Ítem 5 excluido: diferencia0,60 sin opción correcta. Numeración original preservada. Sin clave oficial; soluciones elaboradas."
       },
-      "backend": "pendiente de integrar; inicio desactivado",
-      "validation": "54 preguntas, cuatro opciones y nueve figuras SVG cotejadas; navegación, numeración con salto de 1 a 3, temporizador, confirmación, calificación 53/53 y 0/53, blancos, revisión bloqueada y reinicio comprobados con DOM local.",
-      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "validation": "54 preguntas, cuatro opciones y nueve figuras SVG cotejadas; navegación, numeración con salto de 1 a 3, temporizador, confirmación, calificación 53/53 y 0/53, blancos, revisión bloqueada y reinicio comprobados con DOM local. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Noveno-Zapandi-02-2022",
@@ -1022,9 +1022,9 @@
         "filename": "02 2022.pdf",
         "notes": "24 páginas incluida tabla trigonométrica. Ítem 3 ausente;2 sin opción D. 37 admite factores xy y1+x;48 ambiguo por registro monetario. Sin clave oficial;soluciones elaboradas. Índice natural positivo en10;pirámides rectas en26 y27."
       },
-      "backend": "pendiente de integrar; inicio desactivado",
-      "validation": "54 preguntas, cuatro opciones salvo tres en2;once figuras SVG cotejadas. Numeración,navegación,temporizador,confirmación,51/51 y0/51,blancos,revisión bloqueada y reinicio comprobados con DOM local.",
-      "publication": "HTML y configuración publicados en GitHub; añadido al menú."
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "validation": "54 preguntas, cuatro opciones salvo tres en2;once figuras SVG cotejadas. Numeración,navegación,temporizador,confirmación,51/51 y0/51,blancos,revisión bloqueada y reinicio comprobados con DOM local. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
       "path": "Setimo-Terraba-01-2021",
