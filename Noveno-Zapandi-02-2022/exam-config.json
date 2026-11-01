@@ -195,5 +195,6 @@
     "filename": "02 2022.pdf",
     "notes": "24 páginas: 23 de preguntas (5 a 27) y tabla trigonométrica anexa. Ítem 3 ausente. Ítem 2 conserva solo opciones A,B,C y se excluye por falta de D. Ítems 37 y48 excluidos por ambigüedad sobre precio continuo/discreto. 54 preguntas disponibles,51 evaluables. Sin clave oficial; soluciones elaboradas. Ítem 10 usa índice natural positivo del radical;26 y27 asumen pirámides rectas;37 excluido porque xy y1+x son factores válidos."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
