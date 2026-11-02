@@ -127,5 +127,6 @@
     "filename": "01 2021.pdf",
     "notes": "28 páginas escaneadas numeradas de5 a32;55 preguntas completas y evaluables. Sin clave oficial;soluciones elaboradas. En27 se usa adyacente como consecutivo según el ítem. En37 se usa el ángulo150°;BC=5,5 se interpreta como longitud redondeada a una decimal;38 usa las longitudes dadas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
