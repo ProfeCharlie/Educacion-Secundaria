@@ -127,5 +127,6 @@
     "filename": "Zapandí 02 2020.pdf",
     "notes": "26 páginas. Encabezado:01-2020 (2). Nombre publicado02-2020 según el archivo fuente. Ítems7–8 interpretados por ubicación aproximada de puntos. Incluye tabla trigonométrica al final. Sin clave oficial;soluciones elaboradas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
