@@ -127,8 +127,9 @@
     "filename": "Zapandí 02 2018.pdf",
     "notes": "Archivo «Zapandí 02 2018.pdf»: 26 páginas, incluida portada, tabla trigonométrica y clave final. 55 preguntas evaluables. Se corrige el ítem 42 de A a C (10 cm). En 22 y 23 se conserva el redondeo obtenido con la tabla adjunta; en 47 se sigue la clasificación de la prueba para el monto monetario. Soluciones elaboradas y cotejadas con la clave adjunta."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
   "correctedItems": [
     42
-  ]
+  ],
+  "backendReady": true
 }
