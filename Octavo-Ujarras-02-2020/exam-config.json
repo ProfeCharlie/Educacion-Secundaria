@@ -129,5 +129,6 @@
     "filename": "01 2020(2).pdf",
     "notes": "Encabezado 02 2020;32 páginas numeradas5–36. Sin clave oficial;soluciones elaboradas. Ítem49 interpreta probable como posible."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
