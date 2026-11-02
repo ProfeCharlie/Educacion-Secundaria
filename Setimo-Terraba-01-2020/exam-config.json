@@ -130,5 +130,6 @@
     "filename": "01 2020.pdf",
     "notes": "23 páginas numeradas de 5 a 27;55 preguntas disponibles,53 evaluables. Sin clave oficial;soluciones elaboradas. Ítem23 excluido porque no se distinguen los símbolos de segmento y recta en las opciones. Ítem42 excluido porque la letra D no es legible;con D=(1,6) el punto medio de CD sería (3,5)."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
