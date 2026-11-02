@@ -127,8 +127,9 @@
     "filename": "Zapandí 01 2019.pdf",
     "notes": "Archivo «Zapandí 01 2019.pdf»: 27 páginas, incluida portada y clave final. 55 preguntas evaluables. Se corrige el ítem 25 de C a A (16,41 m). Los ítems 9 y 10 se interpretan según la ubicación aproximada de las marcas de la recta. Soluciones elaboradas y cotejadas con la clave adjunta."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
   "correctedItems": [
     25
-  ]
+  ],
+  "backendReady": true
 }
