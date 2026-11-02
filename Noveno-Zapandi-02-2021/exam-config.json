@@ -129,5 +129,6 @@
     "filename": "02 2021.pdf",
     "notes": "26 páginas: 25 de preguntas numeradas de 5 a 29 y tabla trigonométrica anexa. 55 preguntas disponibles,54 evaluables. Sin clave oficial; soluciones elaboradas. Ítem 42 excluido: la opción C supone x>0, condición no indicada. En 9 se usa índice natural positivo;22 conserva 22,08 como aproximación de la fuente."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
