@@ -129,5 +129,6 @@
     "filename": "02 2021.pdf",
     "notes": "27 páginas escaneadas numeradas de5 a31;55 preguntas completas. Ítem18 excluido:5(3²−5)−(2+3)=15, ausente de opciones1,4,5,8. 54 evaluables. Sin clave oficial;soluciones elaboradas. Ítem8 supone paquetes de igual composición;49 síntomas registrados cualitativamente;50 identifica cada paciente consultado como unidad estadística."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
