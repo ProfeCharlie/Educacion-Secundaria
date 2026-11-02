@@ -127,5 +127,6 @@
     "filename": "01 2021.pdf",
     "notes": "28 páginas escaneadas numeradas de 5 a 32; 55 preguntas completas y evaluables. Sin clave oficial; soluciones elaboradas. En el ítem 49 se interpreta probable como posible, según las opciones del original."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
