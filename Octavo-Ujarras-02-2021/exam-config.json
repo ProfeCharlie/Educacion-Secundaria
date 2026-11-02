@@ -130,5 +130,6 @@
     "filename": "02 2021.pdf",
     "notes": "28 páginas escaneadas numeradas de 5 a 32; 55 preguntas disponibles, 53 evaluables. Sin clave oficial; soluciones elaboradas. Ítem 27 excluido porque ninguna tabla coincide con y=5x−50; la opción B tiene 50 positivo para x=0. Ítem 50 excluido por confundir el resultado favorable con su probabilidad. En 49 probable se interpreta como posible."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
