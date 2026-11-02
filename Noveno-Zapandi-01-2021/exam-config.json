@@ -127,5 +127,6 @@
     "filename": "01 2021.pdf",
     "notes": "24 páginas: 23 de preguntas numeradas de 5 a 27 y tabla trigonométrica anexa. 55 preguntas completas y evaluables. Sin clave oficial; soluciones elaboradas. En el ítem 10 se usa índice natural positivo del radical. Tabla de consulta con valores recalculados a cuatro decimales."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
