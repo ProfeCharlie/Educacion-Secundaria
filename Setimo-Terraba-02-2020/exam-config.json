@@ -127,5 +127,6 @@
     "filename": "02 2020.pdf",
     "notes": "27 páginas con duplicados de las páginas numeradas 16 y 19; 55 preguntas disponibles y evaluables. Archivo 02 2020.pdf; el encabezado interno dice convocatoria 01-2020 (2). Sin clave oficial; soluciones elaboradas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
