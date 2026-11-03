@@ -127,6 +127,7 @@
     "filename": "Zapandí 01 2018.pdf",
     "notes": "Archivo «Zapandí 01 2018.pdf»: 24 páginas numeradas de 5 a 28, incluida tabla trigonométrica. 55 preguntas evaluables. Sin clave adjunta; soluciones elaboradas. En el ítem 23 se conserva 27,00, aproximación obtenida con la tabla; en 47 se sigue la clasificación usual de la prueba para el ingreso monetario."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
-  "correctedItems": []
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "correctedItems": [],
+  "backendReady": true
 }
