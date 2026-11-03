@@ -130,6 +130,7 @@
     "filename": "Zapandí 01 2016.pdf",
     "notes": "Archivo «Zapandí 01 2016.pdf»: 34 páginas, con portada que identifica la prueba como Específica, 55 preguntas y tabla trigonométrica. Sin clave adjunta; soluciones elaboradas. 53 ítems evaluables. Se excluye 54 porque ninguna opción equivale a 30%, y 55 por no distinguir probabilidad teórica y frecuencia observada. En 18 se conserva la unidad cm de las opciones originales y se explica que el seno es adimensional."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
-  "correctedItems": []
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "correctedItems": [],
+  "backendReady": true
 }
