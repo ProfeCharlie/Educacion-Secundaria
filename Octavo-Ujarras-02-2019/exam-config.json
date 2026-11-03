@@ -127,6 +127,7 @@
     "filename": "02 2019.pdf",
     "notes": "Archivo «02 2019.pdf»: 28 páginas numeradas de 5 a 32, con 55 preguntas completas. Sin clave adjunta; soluciones elaboradas. En 27 se cuentan once depósitos mensuales posteriores a enero. En 48 se interpreta «probable» como posible, no seguro, conforme al uso del enunciado."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
-  "correctedItems": []
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "correctedItems": [],
+  "backendReady": true
 }
