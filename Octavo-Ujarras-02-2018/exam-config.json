@@ -129,7 +129,7 @@
     "filename": "Ujarrás 02 2018 con respuestas.pdf",
     "notes": "Archivo «Ujarrás 02 2018 con respuestas.pdf»: 30 páginas, incluida portada, 55 preguntas y clave final. Las 54 respuestas evaluables coinciden con la clave adjunta. Se excluye 52 por la ambigüedad entre «más probable» y «seguro». En 19, el criterio se evalúa con los datos proporcionados directamente. Soluciones elaboradas; figuras reconstruidas. En 51 se supone que las monedas son equilibradas e independientes."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
   "sourceAnswers": [
     "D",
     "A",
@@ -187,5 +187,6 @@
     "B",
     "A"
   ],
-  "correctedItems": []
+  "correctedItems": [],
+  "backendReady": true
 }
