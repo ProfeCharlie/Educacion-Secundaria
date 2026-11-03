@@ -129,6 +129,7 @@
     "filename": "Zapandí 01 2017.pdf",
     "notes": "Archivo «Zapandí 01 2017.pdf»: 24 páginas numeradas de 5 a 28, incluida tabla trigonométrica. 55 preguntas disponibles; 54 evaluables. Ítem 34 excluido por no especificar los signos de x y n en la racionalización. Sin clave adjunta; soluciones elaboradas. Se conserva la notación de almacenamiento del original en 11 y la clasificación usual del ingreso monetario en 49."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
-  "correctedItems": []
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "correctedItems": [],
+  "backendReady": true
 }
