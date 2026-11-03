@@ -127,6 +127,7 @@
     "filename": "Zapandí 02 2016.pdf",
     "notes": "Archivo «Zapandí 02 2016.pdf»: 34 páginas; 55 preguntas completas y tabla trigonométrica. Sin clave adjunta; soluciones elaboradas. En 25, el cálculo da aproximadamente 7,61 m y se elige la opción más cercana del original, 7,60 m. En 22 se interpreta la distancia horizontal al faro y en 48 se conserva la clasificación usual del precio como variable continua. En 55 las probabilidades se redondean al centésimo."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
-  "correctedItems": []
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "correctedItems": [],
+  "backendReady": true
 }
