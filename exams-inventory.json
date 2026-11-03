@@ -1365,9 +1365,9 @@
         17,
         25
       ],
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
-      "validation": "55 preguntas con cuatro opciones; 53 respuestas evaluables coinciden con la clave adjunta. Seis figuras SVG únicas asociadas a diez ítems, renderizadas e inspeccionadas. Pruebas locales: 53/53, 0/53, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado.",
+      "validation": "55 preguntas con cuatro opciones; 53 respuestas evaluables coinciden con la clave adjunta. Seis figuras SVG únicas asociadas a diez ítems, renderizadas e inspeccionadas. Pruebas locales: 53/53, 0/53, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado."
     },
     {
       "path": "Octavo-Ujarras-02-2018",
@@ -1382,9 +1382,9 @@
       "excludedItems": [
         52
       ],
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
-      "validation": "55 preguntas con cuatro opciones; 54 respuestas evaluables coinciden con la clave adjunta. Seis figuras SVG únicas asociadas a diez ítems, renderizadas e inspeccionadas. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado.",
+      "validation": "55 preguntas con cuatro opciones; 54 respuestas evaluables coinciden con la clave adjunta. Seis figuras SVG únicas asociadas a diez ítems, renderizadas e inspeccionadas. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado."
     },
     {
       "path": "Octavo-Ujarras-01-2018",
@@ -1399,9 +1399,9 @@
       "excludedItems": [
         55
       ],
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
-      "validation": "55 preguntas con cuatro opciones; respuestas y soluciones elaboradas sin clave adjunta. Siete figuras SVG únicas asociadas a nueve ítems, renderizadas e inspeccionadas. Cálculos de fracciones, álgebra, estadística y proporciones verificados. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado.",
+      "validation": "55 preguntas con cuatro opciones; respuestas y soluciones elaboradas sin clave adjunta. Siete figuras SVG únicas asociadas a nueve ítems, renderizadas e inspeccionadas. Cálculos de fracciones, álgebra, estadística y proporciones verificados. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado."
     },
     {
       "path": "Octavo-Ujarras-02-2017",
@@ -1416,9 +1416,9 @@
       "excludedItems": [
         41
       ],
-      "backend": "pendiente de integrar; inicio desactivado",
-      "publication": "Página, configuración y acceso en el menú guardados en GitHub.",
-      "validation": "55 preguntas con cuatro opciones; respuestas y soluciones elaboradas sin clave adjunta. Cinco figuras SVG únicas asociadas a ocho ítems, renderizadas e inspeccionadas. Cálculos de fracciones, ecuaciones, estadística, probabilidades y semejanza verificados. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador."
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado.",
+      "validation": "55 preguntas con cuatro opciones; respuestas y soluciones elaboradas sin clave adjunta. Cinco figuras SVG únicas asociadas a ocho ítems, renderizadas e inspeccionadas. Cálculos de fracciones, ecuaciones, estadística, probabilidades y semejanza verificados. Pruebas locales: 54/54, 0/54, blancos, confirmación, navegación, revisión bloqueada, reinicio y temporizador. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado."
     },
     {
       "path": "Octavo-Ujarras-01-2017",
