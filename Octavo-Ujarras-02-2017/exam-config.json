@@ -129,6 +129,7 @@
     "filename": "Ujarrás 02 2017.pdf",
     "notes": "Archivo «Ujarrás 02 2017.pdf»: 25 páginas, 55 preguntas; no incluye clave. Respuestas y soluciones elaboradas y verificadas matemáticamente. 54 ítems evaluables. Se excluye 41 porque no indica los kilogramos comprados de cada producto. Se conserva el enunciado. En 1 y 3 se respeta la barra del decimal periódico; en 29 se reducen términos semejantes antes de clasificar."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
-  "correctedItems": []
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "correctedItems": [],
+  "backendReady": true
 }
