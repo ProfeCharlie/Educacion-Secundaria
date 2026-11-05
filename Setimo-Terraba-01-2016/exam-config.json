@@ -127,5 +127,6 @@
     "filename": "01 2016.pdf",
     "notes": "30 páginas:portada,28 páginas con55 preguntas y tabla de multiplicar final;sin clave adjunta. Respuestas resueltas matemáticamente. Se conserva denominaciónEspecífica. Trece figuras principales y cuatro rectas numéricas en opciones delítem12. En49 gráfico reconstruido con valores aproximados leídos del original;sin atribuir precisión de datos no rotulados."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
