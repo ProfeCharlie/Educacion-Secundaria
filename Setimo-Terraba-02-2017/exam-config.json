@@ -127,5 +127,6 @@
     "filename": "02 2017.pdf",
     "notes": "25 páginas:24 con55 preguntas y una última página en blanco;sin clave adjunta. Respuestas resueltas matemáticamente. Once figuras reconstruidas. En26 se distingue perpendicularidad de rectas alabeadas;en45I el tamaño corresponde al área de cada pieza."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
