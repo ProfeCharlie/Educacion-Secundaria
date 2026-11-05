@@ -357,7 +357,7 @@
       "evaluableItems": 59,
       "backend": "integrado; sin secciones; control desactivado",
       "notes": "Ítem 40 excluido de la nota por falta de regla explícita en el enunciado.",
-      "validation": "Archivo publicado accesible (HTTP 200); 60 preguntas con tres opciones; portada, temporizador 03:00:00 y estado desactivado verificados en navegador. Envío real pendiente.",
+      "validation": "Archivo publicado accesible (HTTP 200); 60 preguntas con tres opciones; portada, temporizador 03:00:00 y estado desactivado verificados en navegador. Envío real pendiente. El 05-11-2026 se comprobó desde el catálogo público que el servicio de disponibilidad respondió que la prueba estaba desactivada y que el botón de inicio quedó deshabilitado.",
       "publication": "Añadido al menú principal."
     },
     {
@@ -845,7 +845,7 @@
       ],
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Bachillerato de Educación Diversificada a Distancia, convocatoria 03-2019, código 07 2019. 60 preguntas sin clave oficial. Soluciones elaboradas. Ítems 17 y 18 excluidos por ambigüedad de transformaciones/correspondencias; ítem 34 interpreta mínimo como punto mínimo; ítem 50 distingue cuartiles y medianas de notas observadas.",
-      "validation": "60 preguntas cotejadas con las 29 páginas de la fuente; 28 asociaciones SVG, 14 figuras únicas reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 17/18, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación en navegador ni envío real. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "validation": "60 preguntas cotejadas con las 29 páginas de la fuente; 28 asociaciones SVG, 14 figuras únicas reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 17/18, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. El flujo de respuesta en navegador y el envío real siguen pendientes. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado. El 05-11-2026 se comprobó desde el catálogo público que el servicio de disponibilidad respondió que la prueba estaba desactivada y que el botón de inicio quedó deshabilitado.",
       "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
@@ -865,7 +865,7 @@
       ],
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "29 páginas escaneadas, numeradas de 5 a 33. Matemáticas Bachillerato de Educación Diversificada a Distancia, convocatoria 00-2019, código 03 2019. 60 preguntas sin clave oficial. Soluciones elaboradas. Ítems 28 y 53 excluidos por ambigüedad de dominio de composición y de mejor posición relativa en tiempos de carrera. Ítem 45: media estimada mediante marcas de clase.",
-      "validation": "60 preguntas cotejadas con las 29 páginas; 13 figuras de contexto distintas y 4 opciones gráficas reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 28/53, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "validation": "60 preguntas cotejadas con las 29 páginas; 13 figuras de contexto distintas y 4 opciones gráficas reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 28/53, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado. El 05-11-2026 se comprobó desde el catálogo público que el servicio de disponibilidad respondió que la prueba estaba desactivada y que el botón de inicio quedó deshabilitado.",
       "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
@@ -885,7 +885,7 @@
       ],
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "28 páginas escaneadas, numeradas de 5 a 32; convocatoria 02-2019. Copia de 55 preguntas sin clave oficial. Soluciones elaboradas. Ítems 10 y 51 excluidos por altura no identificable y variabilidad absoluta/relativa no especificada. Ítem 13: altura CG del cono superior. Los cuartiles y medianas no se suponen necesariamente datos observados.",
-      "validation": "55 preguntas cotejadas con las 28 páginas; 14 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 53/53 y 0/53, blancos, exclusiones 10/51, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "validation": "55 preguntas cotejadas con las 28 páginas; 14 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 53/53 y 0/53, blancos, exclusiones 10/51, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado. El 05-11-2026 se comprobó desde el catálogo público que el servicio de disponibilidad respondió que la prueba estaba desactivada y que el botón de inicio quedó deshabilitado.",
       "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
@@ -904,7 +904,7 @@
       ],
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "29 páginas escaneadas numeradas de 5 a 33. Convocatoria 01-2019, código 04 2019. 60 preguntas sin clave oficial; soluciones elaboradas. Ítem 30 excluido por ambigüedad de dominio en composición; ítem 45: media estimada con marcas de clase. Ítem 50: no se conocen tamaños de las secciones. Ítem 23: dominio máximo compatible con llegada {0}.",
-      "validation": "60 preguntas cotejadas con las 29 páginas; 15 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 59/59 y 0/59, blancos, exclusión 30, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "validation": "60 preguntas cotejadas con las 29 páginas; 15 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 59/59 y 0/59, blancos, exclusión 30, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Sin verificación del envío real. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado. El 05-11-2026 se comprobó desde el catálogo público que el servicio de disponibilidad respondió que la prueba estaba desactivada y que el botón de inicio quedó deshabilitado.",
       "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
@@ -924,7 +924,7 @@
         27
       ],
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
-      "validation": "60 preguntas cotejadas con las 33 páginas. 11 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 19/27, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Envío real pendiente. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "validation": "60 preguntas cotejadas con las 33 páginas. 11 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 58/58 y 0/58, blancos, exclusiones 19/27, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Envío real pendiente. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado. El 05-11-2026 se comprobó desde el catálogo público que el servicio de disponibilidad respondió que la prueba estaba desactivada y que el botón de inicio quedó deshabilitado.",
       "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
@@ -943,7 +943,7 @@
       ],
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "notes": "Ítem30 excluido por ambigüedad del dominio de composición. Ítem23 toma dominio máximo compatible con llegada {0};45 media estimada;47 cuartiles por medianas de las mitades;51 compara recorrido y distingue cantidad de aprobados de proporción.",
-      "validation": "60 preguntas cotejadas con las29 páginas;15 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 59/59 y 0/59, blancos, exclusión30, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Envío real pendiente. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
+      "validation": "60 preguntas cotejadas con las29 páginas;15 figuras de contexto reconstruidas y revisadas. Selección, navegación, confirmación, 59/59 y 0/59, blancos, exclusión30, bloqueo de revisión, reinicio, temporizador e inicio desactivado comprobados con DOM simulado. Envío real pendiente. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado. El 05-11-2026 se comprobó desde el catálogo público que el servicio de disponibilidad respondió que la prueba estaba desactivada y que el botón de inicio quedó deshabilitado.",
       "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
     },
     {
