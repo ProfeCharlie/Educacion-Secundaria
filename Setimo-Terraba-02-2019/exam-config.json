@@ -127,5 +127,6 @@
     "filename": "02 2019 con respuestas.pdf",
     "notes": "31 páginas:portada,preguntas numeradas de5 a33 y clave final. 55 preguntas completas;las respuestas coinciden con la clave adjunta. Soluciones elaboradas y figuras reconstruidas. En26 las rectas AC y DF son alabeadas;en50 la unidad es cada tortuga. En48 y49 se usan las condiciones hipotéticas del enunciado, sin asignar porcentajes no rotulados a los sectores del gráfico."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
