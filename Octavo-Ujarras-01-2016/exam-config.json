@@ -128,6 +128,7 @@
     "url": "https://drive.google.com/file/d/1pH_Iw_NctWuosD1Qa-xRie87hUP38vZH/view",
     "notes": "Archivo «Ujarras 01 2016.pdf»: 31 páginas escaneadas; prueba específica con 55 preguntas y sin clave adjunta. Transcripción manual, respuestas y soluciones elaboradas y verificadas matemáticamente. 55 ítems evaluables. Se conservan los datos históricos de 4–5. En 25 se distingue la sección rectangular de su dibujo en perspectiva; en 41 se supone a distinto de cero y en 50 se clasifica el evento por su posibilidad."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
-  "correctedItems": []
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "correctedItems": [],
+  "backendReady": true
 }
