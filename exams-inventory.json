@@ -1903,6 +1903,227 @@
       "backend": "calificación local en el navegador",
       "notes": "El ítem 2 conserva la afirmación I de la copia disponible. La afirmación II y las opciones fueron elaboradas para esta práctica. El ítem 5 se conserva y queda fuera de la nota.",
       "validation": "55 ítems con cuatro opciones. Se preservaron las 54 preguntas de la versión original y la exclusión del ítem 5."
+    },
+    {
+      "path": "Setimo-Terraba-01-2023",
+      "title": "Matemática Sétimo · Convocatoria 01-2023",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        9
+      ],
+      "backend": "inicio bloqueado por configuración de la página",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Setimo-Terraba-02-2023",
+      "title": "Matemática Sétimo · Convocatoria 02-2023",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Setimo-Terraba-02-2024",
+      "title": "Matemática Sétimo · Convocatoria 02-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        8
+      ],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 3,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Setimo-Terraba-01-2025",
+      "title": "Matemática Sétimo · Convocatoria 01-2025",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 3,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Octavo-Ujarras-01-2022",
+      "title": "Matemática Octavo · Convocatoria 01-2022",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "inicio bloqueado por configuración de la página",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Octavo-Ujarras-01-2023",
+      "title": "Matemática Octavo · Convocatoria 01-2023",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "inicio bloqueado por configuración de la página",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Octavo-Ujarras-02-2023",
+      "title": "Matemática Octavo · Convocatoria 02-2023",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Octavo-Ujarras-01-2024",
+      "title": "Matemática Octavo · Convocatoria 01-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        48
+      ],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 3,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Octavo-Ujarras-02-2024",
+      "title": "Matemática Octavo · Convocatoria 02-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 3,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2022",
+      "title": "Matemática Noveno · Convocatoria 01-2022",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        29,
+        33
+      ],
+      "backend": "inicio bloqueado por configuración de la página",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2023",
+      "title": "Matemática Noveno · Convocatoria 01-2023",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "inicio bloqueado por configuración de la página",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Noveno-Zapandi-02-2023",
+      "title": "Matemática Noveno · Convocatoria 02-2023",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2024",
+      "title": "Matemática Noveno · Convocatoria 01-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        31
+      ],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 3,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Noveno-Zapandi-02-2024",
+      "title": "Matemática Noveno · Convocatoria 02-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 3,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Noveno-Zapandi-01-2025",
+      "title": "Matemática Noveno · Convocatoria 01-2025",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        19
+      ],
+      "backend": "cliente configurado para consultar el registro privado",
+      "optionsPerItem": 3,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
+    },
+    {
+      "path": "Noveno-01-2026",
+      "title": "Matemática Noveno · Convocatoria 01-2026",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "items": 55,
+      "evaluableItems": 55,
+      "excludedItems": [],
+      "backend": "conexión al registro pendiente de verificar",
+      "optionsPerItem": 4,
+      "validation": "Se verificaron en el HTML publicado en el repositorio la numeración continua, la cantidad de opciones y los ítems evaluables. Envío real al registro privado pendiente de verificar.",
+      "publication": "Enlazada desde el catálogo público."
     }
   ],
   "notes": [
