@@ -130,5 +130,6 @@
     "filename": "01 2017.pdf",
     "notes": "23 páginas con55 preguntas;sin clave adjunta. Respuestas resueltas matemáticamente. Ítems9 y24 excluidos por varias opciones válidas:9 permite3 o6 galletas de fresa por paquete;24 ofrece cuatro rectas concurrentes enS. Nueve figuras reconstruidas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
