@@ -131,5 +131,6 @@
     "filename": "02 2016.pdf",
     "notes": "31 páginas con55 preguntas;sin clave adjunta. Respuestas resueltas matemáticamente. Ítems9,41,43 excluidos:9 confunde mayor cantidad con mayor longitud de los pedazos;41 solicita punto medio pero ofrece longitudes;43 no exige todos los impares consecutivos y admite las cuatro opciones. En21 se conserva el símbolo de semirrecta con origen abierto. Doce figuras reconstruidas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
