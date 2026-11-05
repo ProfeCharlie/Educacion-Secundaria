@@ -1,6 +1,6 @@
 {
   "folder": "https://drive.google.com/drive/folders/1HUKbSELuJvXiRuQAenzWGQujpUhJuCVo",
-  "updatedAt": "2026-10-30",
+  "updatedAt": "2026-11-04",
   "exams": [
     {
       "path": "PNE-2023-D01",
@@ -1753,6 +1753,25 @@
       "backend": "integrado en receptor v23 y administrador v35; hojas privadas creadas sin secciones; desactivada",
       "publication": "Página y configuración publicadas; registro privado conectado el 30-10-2026. La activación se controla desde el administrador.",
       "validation": "55 preguntas y soluciones, 53 evaluables y tres opciones. 13 figuras principales únicas, 24 asignaciones y seis opciones gráficas SVG, inspeccionadas visualmente. DOM simulado: 55 renders, 53/53, 0/53, blancos, exclusiones, confirmación, bloqueo de revisión, reinicio y temporizador. Cálculos independientes contrastados. Pendientes navegador real, registro privado y envío real. Integración: claves cotejadas, 14 hojas creadas y estructura y estado desactivado de las siete pruebas comprobados en Apps Script."
+    },
+    {
+      "path": "Bachillerato-Distancia-03-2024",
+      "title": "Bachillerato a Distancia · 03-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "filename": "05 2024.pdf",
+        "url": "https://drive.google.com/file/d/1INq7pX2lF9RFkVoXOuHgDWRfRGR1qQvj/view?usp=drivesdk",
+        "notes": "Fuente: archivo «05 2024.pdf»; su encabezado identifica Bachillerato de Educación Diversificada a Distancia, Convocatoria 03-2024. Son 26 páginas, con 60 preguntas y una página final en blanco, sin clave adjunta. Soluciones elaboradas matemáticamente y figuras reconstruidas. Ítem 44 excluido de la nota porque los resúmenes no determinan con certeza la asimetría. En 37 se aplica la fórmula anual impresa, pese a que la fuente la llama continua; en 41 se usan los patrones elementales previstos por las tablas. En 46, 47 y 51 la variabilidad se interpreta mediante recorrido y recorrido intercuartílico."
+      },
+      "items": 60,
+      "evaluableItems": 59,
+      "excludedItems": [
+        44
+      ],
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "publication": "Publicado en GitHub Pages y añadido al menú; registro privado conectado.",
+      "validation": "60 preguntas de tres opciones y 60 soluciones elaboradas matemáticamente, sin clave adjunta. 14 figuras principales únicas y una figura de opción reconstruidas en SVG e inspeccionadas. 59 evaluables: 44 excluido. DOM simulado: 60 pantallas, 59/59, 0/59, blancos, confirmación, revisión bloqueada, reinicio y temporizador."
     }
   ],
   "notes": [
@@ -1769,20 +1788,30 @@
     },
     {
       "folder": "https://drive.google.com/drive/folders/1xzgvACu-iRZeX5j_UZRxdKS968WnU__U",
-      "decision": "Preparadas las fuentes 01 2024.pdf y 02 2024.pdf. Las restantes requieren comprobar encabezados y duplicados antes de asignarles convocatoria.",
-      "unreviewedSources": [
+      "decision": "Cuatro encabezados revisados. Dos fuentes alternativas de Madurez ya publicadas; Distancia 03-2024 publicada. Falta preparar Prueba 1 de Distancia, convocatoria 02-2024, rótulo DIC.",
+      "reviewedSources": [
         {
           "id": "1xzvU242WwAhxpFO96PVsKsM0bgOS6rpN",
-          "filename": "03 2024.pdf"
+          "filename": "03 2024.pdf",
+          "decision": "Fuente alternativa de Bachillerato-Madurez-01-2024: encabezado Convocatoria 01-2024; coinciden preguntas iniciales y finales con la versión publicada. No crear un examen duplicado."
         },
         {
           "id": "18AEsoYxJeQp_AUCxw6HTjQ8F5DCJcoWz",
-          "filename": "04 2024.pdf"
+          "filename": "04 2024.pdf",
+          "decision": "Fuente alternativa de Bachillerato-Madurez-02-2024: encabezado Convocatoria 02-2024; coinciden preguntas iniciales y finales con la versión publicada. No crear un examen duplicado."
         },
         {
           "id": "1INq7pX2lF9RFkVoXOuHgDWRfRGR1qQvj",
-          "filename": "05 2024.pdf"
+          "filename": "05 2024.pdf",
+          "decision": "Prueba distinta: Bachillerato a Distancia, Convocatoria 03-2024, 60 preguntas. Publicada como Bachillerato-Distancia-03-2024; el rótulo externo 05 2024 no es la convocatoria."
         },
+        {
+          "id": "1LZ0YovrLVa5yUcEkWs2QSI0D4RbbPBtQ",
+          "filename": "01 2024 DIC.pdf",
+          "decision": "Prueba distinta: Educación Diversificada a Distancia, Prueba 1, Convocatoria 02-2024. Rótulo externo 01 2024 DIC. 24 páginas, 55 preguntas y página final en blanco. Pendiente de transcribir y publicar; no confundir con la Prueba 2 de 2024 ya publicada."
+        }
+      ],
+      "pendingPreparation": [
         {
           "id": "1LZ0YovrLVa5yUcEkWs2QSI0D4RbbPBtQ",
           "filename": "01 2024 DIC.pdf"
