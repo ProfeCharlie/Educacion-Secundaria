@@ -129,5 +129,6 @@
     "filename": "01 2019 con respuestas.pdf",
     "notes": "26 páginas:portada,24 páginas con55 preguntas y clave final. Las54 respuestas evaluables coinciden con la clave adjunta. Se excluye55:la media exacta es14,2,pero las opciones solo incluyen14 y no se pide redondear;la clave marcaB. En21 se considera la colinealidad garantizada por las rectas indicadas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
