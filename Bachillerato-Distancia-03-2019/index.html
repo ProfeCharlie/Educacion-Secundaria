@@ -648,7 +648,17 @@ window.MathJax = {
 .area-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 11px;font-size:12px;color:#334155}
 .area-legend span{white-space:nowrap}
 .area-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;background:var(--legend-color)}
-</style><style>.table-wrap{max-width:100%;overflow-x:auto}.table-wrap table{border-collapse:collapse;font-size:.95em}.table-wrap td,.table-wrap th{border:1px solid #94a3b8;padding:7px 10px;text-align:center}.table-wrap th{background:#eaf1fb}</style><style>.option-figure{display:block;width:270px;max-width:100%;height:auto;margin:10px auto;background:white}.table-wrap{overflow-x:auto}</style></head><body>
+</style><style>.table-wrap{max-width:100%;overflow-x:auto}.table-wrap table{border-collapse:collapse;font-size:.95em}.table-wrap td,.table-wrap th{border:1px solid #94a3b8;padding:7px 10px;text-align:center}.table-wrap th{background:#eaf1fb}</style><style>.option-figure{display:block;width:270px;max-width:100%;height:auto;margin:10px auto;background:white}.table-wrap{overflow-x:auto}</style><style id="narrow-screen-layout-fix">
+@media(max-width:600px){
+ .exam-layout > *{min-width:0}
+ .qhead{flex-wrap:wrap}
+ .qhead > *{min-width:0;max-width:100%}
+ #choices{grid-template-columns:minmax(0,1fr)}
+ #choices .choice{min-width:0;overflow-wrap:anywhere;overflow-x:auto}
+ .qtext{min-width:0;overflow-x:auto}
+ .context{min-width:0;max-width:100%;box-sizing:border-box;overflow-x:auto}
+}
+</style></head><body>
 <header><div class="topbar"><div class="brand">Matemática · Bachillerato a Distancia 03-2019</div><div class="meta"><span class="pill">Modo examen</span><span class="pill">Respondidas: <b id="countTop">0/60</b></span><span class="pill timer" id="timerTop">03:00:00</span></div></div></header>
 <main><section id="startView" class="card"><h1 class="hero">Matemática · Bachillerato a Distancia 03-2019</h1>
 <div class="exam-registration" style="max-width:440px;margin:14px auto 18px;display:grid;gap:10px">
