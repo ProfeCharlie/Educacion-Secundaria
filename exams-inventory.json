@@ -1003,7 +1003,8 @@
       },
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "validation": "54 preguntas, cuatro opciones y nueve figuras SVG cotejadas; navegación, numeración con salto de 1 a 3, temporizador, confirmación, calificación 53/53 y 0/53, blancos, revisión bloqueada y reinicio comprobados con DOM local. Integración verificada: clave, exclusiones, estructura de resultados y control desactivado.",
-      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado."
+      "publication": "Publicado en GitHub y añadido al menú; registro privado de resultados conectado.",
+      "completedPracticePath": "Octavo-Ujarras-02-2022-Practica-Completada"
     },
     {
       "path": "Noveno-Zapandi-02-2022",
@@ -1884,6 +1885,24 @@
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "publication": "Versión de práctica completada publicada, con registro privado independiente y nota visible al inicio.",
       "validation": "Numeración completa y preguntas originales conservadas. Preguntas añadidas y opciones elaboradas identificadas explícitamente. Calificación, navegación, revisión, exclusiones y temporizador comprobados."
+    },
+    {
+      "path": "Octavo-Ujarras-02-2022-Practica-Completada",
+      "title": "Octavo Ujarrás 02-2022 · Práctica completada",
+      "status": "publicada como práctica",
+      "category": "Educación Abierta",
+      "items": 55,
+      "evaluableItems": 54,
+      "excludedItems": [
+        5
+      ],
+      "createdForPracticeItems": [
+        2
+      ],
+      "originalExamPath": "Octavo-Ujarras-02-2022",
+      "backend": "calificación local en el navegador",
+      "notes": "El ítem 2 conserva la afirmación I de la copia disponible. La afirmación II y las opciones fueron elaboradas para esta práctica. El ítem 5 se conserva y queda fuera de la nota.",
+      "validation": "55 ítems con cuatro opciones. Se preservaron las 54 preguntas de la versión original y la exclusión del ítem 5."
     }
   ],
   "notes": [
