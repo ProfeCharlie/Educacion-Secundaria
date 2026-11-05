@@ -127,5 +127,6 @@
     "filename": "02 2018 con respuestas.pdf",
     "notes": "29 páginas con portada,55 preguntas y clave final. Las55 respuestas coinciden con la clave adjunta. Soluciones elaboradas y nueve figuras reconstruidas. En21 se usa la perpendicularidad marcada;en24 se conserva el símbolo con círculo abierto deD;en52 la afirmaciónII se interpreta referida a la muestra de35 encuestados."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
