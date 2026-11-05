@@ -1772,6 +1772,26 @@
       "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
       "publication": "Publicado en GitHub Pages y añadido al menú; registro privado conectado.",
       "validation": "60 preguntas de tres opciones y 60 soluciones elaboradas matemáticamente, sin clave adjunta. 14 figuras principales únicas y una figura de opción reconstruidas en SVG e inspeccionadas. 59 evaluables: 44 excluido. DOM simulado: 60 pantallas, 59/59, 0/59, blancos, confirmación, revisión bloqueada, reinicio y temporizador."
+    },
+    {
+      "path": "Bachillerato-Distancia-Prueba-1-02-2024",
+      "title": "Bachillerato a Distancia · Prueba 1 · Convocatoria 02-2024",
+      "category": "Educación Abierta",
+      "status": "publicada",
+      "source": {
+        "filename": "01 2024 DIC.pdf",
+        "url": "https://drive.google.com/file/d/1LZ0YovrLVa5yUcEkWs2QSI0D4RbbPBtQ/view?usp=drivesdk",
+        "notes": "Fuente: archivo «01 2024 DIC.pdf». El encabezado institucional identifica Educación Diversificada a Distancia, Prueba 1, Convocatoria 02-2024; se conserva esa denominación para distinguirla de la Prueba 2. Contiene 24 páginas, 55 preguntas y una página final en blanco; no trae clave adjunta. Soluciones elaboradas matemáticamente y figuras reconstruidas. Ítems 25 y 41 excluidos de la nota: el ámbito no determina el codominio ni el dominio, y las relaciones entre media, mediana y moda no garantizan asimetría o simetría. En 19 se interpreta el hexágono inscrito como regular; en 29 se consideran las composiciones en todo el dominio dado; en 45 las medias se estiman con marcas de clase; en 53 se interpreta «persona soltera, sin importar sexo»."
+      },
+      "items": 55,
+      "evaluableItems": 53,
+      "excludedItems": [
+        25,
+        41
+      ],
+      "backend": "integrado en receptor y administrador; sin secciones; control desactivado",
+      "publication": "Publicado en GitHub Pages y añadido al menú; registro privado conectado.",
+      "validation": "55 preguntas de tres opciones y soluciones matemáticas, sin clave adjunta. Once figuras principales únicas y una figura de opción en SVG. Ítems 25 y 41 excluidos. Aclaraciones en 19,29,45,53. DOM: 55 pantallas, 53/53, 0/53, blancos, confirmación, revisión bloqueada, reinicio y temporizador. Contraejemplos del ítem 41 y cálculos comprobados independientemente."
     }
   ],
   "notes": [
@@ -1788,7 +1808,7 @@
     },
     {
       "folder": "https://drive.google.com/drive/folders/1xzgvACu-iRZeX5j_UZRxdKS968WnU__U",
-      "decision": "Cuatro encabezados revisados. Dos fuentes alternativas de Madurez ya publicadas; Distancia 03-2024 publicada. Falta preparar Prueba 1 de Distancia, convocatoria 02-2024, rótulo DIC.",
+      "decision": "Cuatro fuentes identificadas: dos alternativas de Madurez ya publicadas y dos pruebas distintas de Distancia ya publicadas y conectadas. No quedan fuentes pendientes de preparar en esta carpeta.",
       "reviewedSources": [
         {
           "id": "1xzvU242WwAhxpFO96PVsKsM0bgOS6rpN",
@@ -1808,13 +1828,7 @@
         {
           "id": "1LZ0YovrLVa5yUcEkWs2QSI0D4RbbPBtQ",
           "filename": "01 2024 DIC.pdf",
-          "decision": "Prueba distinta: Educación Diversificada a Distancia, Prueba 1, Convocatoria 02-2024. Rótulo externo 01 2024 DIC. 24 páginas, 55 preguntas y página final en blanco. Pendiente de transcribir y publicar; no confundir con la Prueba 2 de 2024 ya publicada."
-        }
-      ],
-      "pendingPreparation": [
-        {
-          "id": "1LZ0YovrLVa5yUcEkWs2QSI0D4RbbPBtQ",
-          "filename": "01 2024 DIC.pdf"
+          "decision": "Prueba distinta de EDAD, Prueba 1, Convocatoria 02-2024. Archivo rotulado 01 2024 DIC. Publicada como Bachillerato-Distancia-Prueba-1-02-2024; 55 preguntas y 53 evaluables, exclusiones 25 y 41."
         }
       ]
     }
