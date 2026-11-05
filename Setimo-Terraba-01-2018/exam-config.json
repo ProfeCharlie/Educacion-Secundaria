@@ -129,5 +129,6 @@
     "filename": "01 2018.pdf",
     "notes": "22 páginas con55 preguntas;sin clave adjunta. Respuestas resueltas y verificadas matemáticamente. Se excluye9:el resultado es7 sobrinos deJoel,ausente de las opciones. En45I,cantidad de caramelos se interpreta por niño. En55,151/32=4,71875≈4,7,opciónD(4,70). Once figuras reconstruidas."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script"
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "backendReady": true
 }
