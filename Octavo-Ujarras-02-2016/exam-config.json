@@ -130,6 +130,7 @@
     "url": "https://drive.google.com/file/d/1LySYnZs-zwwe4m4xtl32Vtf_mHj1hbLP/view",
     "notes": "Archivo «Ujarras 02 2016.pdf»: 35 páginas y 55 preguntas; no incluye clave. Respuestas y soluciones elaboradas y verificadas matemáticamente. 54 ítems evaluables. Se excluye 55 porque «menos probable» no especifica con qué evento se compara. En 8 se conserva la barra del decimal periódico; en 48 se explica la terminología del original y en 52 «probable» se interpreta como posible."
   },
-  "backendStatus": "pendiente de integrar; requiere acceso a Apps Script",
-  "correctedItems": []
+  "backendStatus": "integrado en receptor y administrador; control desactivado",
+  "correctedItems": [],
+  "backendReady": true
 }
