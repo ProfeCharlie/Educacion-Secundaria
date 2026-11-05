@@ -648,7 +648,16 @@ window.MathJax = {
 .area-legend{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 11px;font-size:12px;color:#334155}
 .area-legend span{white-space:nowrap}
 .area-legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px;background:var(--legend-color)}
-</style><style>.table-wrap{max-width:100%;overflow-x:auto}.table-wrap table{border-collapse:collapse;font-size:.95em}.table-wrap td,.table-wrap th{border:1px solid #94a3b8;padding:7px 10px;text-align:center}.table-wrap th{background:#eaf1fb}</style><style>.option-figure{display:block;width:270px;max-width:100%;height:auto;margin:10px auto;background:white}.table-wrap{overflow-x:auto}</style><style>.option-figure{display:block;width:290px;max-width:100%;height:auto;margin:5px auto}.context table{font-size:14px}.context{overflow-x:auto}</style></head><body>
+</style><style>.table-wrap{max-width:100%;overflow-x:auto}.table-wrap table{border-collapse:collapse;font-size:.95em}.table-wrap td,.table-wrap th{border:1px solid #94a3b8;padding:7px 10px;text-align:center}.table-wrap th{background:#eaf1fb}</style><style>.option-figure{display:block;width:270px;max-width:100%;height:auto;margin:10px auto;background:white}.table-wrap{overflow-x:auto}</style><style>.option-figure{display:block;width:290px;max-width:100%;height:auto;margin:5px auto}.context table{font-size:14px}.context{overflow-x:auto}</style><style id="narrow-screen-layout-fix">
+@media(max-width:600px){
+ .exam-layout > *{min-width:0}
+ .qhead{flex-wrap:wrap}
+ .qhead > *{min-width:0;max-width:100%}
+ #choices{grid-template-columns:minmax(0,1fr)}
+ #choices .choice{min-width:0;overflow-wrap:anywhere;overflow-x:auto}
+ .context{min-width:0;max-width:100%;box-sizing:border-box;overflow-x:auto}
+}
+</style></head><body>
 <header><div class="topbar"><div class="brand">Matemática · Bachillerato a Distancia · 01-2024</div><div class="meta"><span class="pill">Modo examen</span><span class="pill">Respondidas: <b id="countTop">0/55</b></span><span class="pill timer" id="timerTop">03:00:00</span></div></div></header>
 <main><section id="startView" class="card"><h1 class="hero">Matemática · Bachillerato a Distancia · 01-2024</h1>
 <div class="exam-registration" style="max-width:440px;margin:14px auto 18px;display:grid;gap:10px">
@@ -810,5 +819,6 @@ function restart(){clearInterval(interval);interval=null;localStorage.removeItem
 if(new URLSearchParams(location.search).get('nuevo')==='1'){try{localStorage.removeItem(STORAGE_KEY)}catch(e){}history.replaceState(null,'',location.pathname+location.hash)}
 $('startBtn').onclick=start;$('retryAvailabilityBtn').onclick=checkAvailability;$('finishBtn').onclick=()=>finish(false);$('cancelFinishBtn').onclick=()=>$('finishConfirm').style.display='none';$('confirmFinishBtn').onclick=()=>finish(false,true);$('finishConfirm').onclick=e=>{if(e.target===$('finishConfirm'))$('finishConfirm').style.display='none'};$('reviewBtn').onclick=review;$('retryDeliveryBtn').onclick=sendResults;$('menuBtn').onclick=()=>location.assign('https://profecharlie.github.io/Educacion-Secundaria/');$('restartBtn').onclick=requestRestart;$('cancelRestartBtn').onclick=closeRestart;$('confirmRestartBtn').onclick=restart;$('restartConfirm').onclick=e=>{if(e.target===$('restartConfirm'))closeRestart()};document.addEventListener('keydown',e=>{if(e.key==='Escape'&&$('finishConfirm').style.display==='flex')$('finishConfirm').style.display='none';if(e.key==='Escape'&&$('restartConfirm').style.display==='flex')closeRestart()});$('prevBtn').onclick=()=>{if(current>0){current--;render();save()}};$('nextBtn').onclick=()=>{if(current<TOTAL-1){current++;render();save()}else finish(false)};load();updateTimer();if(finished){$('startView').style.display='none';$('examView').style.display='none';$('resultView').style.display='block';showScore();setDelivery(submitted?'':'El envío quedó pendiente. Pulsa «Reintentar envío».',!submitted)}else if(started&&ticket&&attemptId){showExam()}else{started=false;checkAvailability()}
 if(document.modelContext?.registerTool){document.modelContext.registerTool({name:'read_exam_progress',description:'Consultar el progreso visible de la prueba sin revelar las respuestas correctas.',inputSchema:{type:'object',properties:{},additionalProperties:false},annotations:{readOnlyHint:true},execute:()=>({total:TOTAL,current:current+1,answered:answers.filter(Boolean).length,remaining,finished})});}</script></body></html>
+
 
 
