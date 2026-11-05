@@ -12,9 +12,9 @@
         "filename": "2023-D01 Prueba Nacional Estandarizada_Diurna_Ordinaria_Matemáticas.pdf"
       },
       "items": 35,
-      "backend": "integrado, secciones 11-1 y 11-2 desactivadas",
+      "backend": "integrado, secciones 11-1 y 11-2",
       "publication": "Publicado en GitHub; receptor versión 9 y administrador versión 18 integrados; añadido al menú.",
-      "validation": "35 ítems y 3 opciones; figuras SVG cotejadas; inicio/navegación/temporizador/confirmación/resultados/reinicio comprobados con DOM local. Falta prueba en navegador y envío real."
+      "validation": "35 ítems y 3 opciones; figuras SVG cotejadas; inicio/navegación/temporizador/confirmación/resultados/reinicio comprobados con DOM local. Chromium a 390 px: los 35 ítems se mostraron con tres opciones y sin desplazamiento horizontal de la página. En una copia aislada se comprobó inicio, navegación, cancelación y confirmación de cierre, puntaje 1/35 con 34 en blanco, solucionario y reinicio. En el sitio público respondieron las consultas de disponibilidad de 11-1 y 11-2. Sigue pendiente verificar una entrega real al registro privado."
     },
     {
       "path": "PNE-2023-D03",
