@@ -26,7 +26,7 @@
     .modalidad-opciones button:focus-visible{outline:3px solid #ffbb59;outline-offset:2px}
     .modalidad-ayuda{margin:12px 0 0;color:#536782}
     .group{margin:26px 0 36px;min-width:0}.group h2{font-size:1.45rem;margin:0 0 15px}.group h3.subheading{font-size:1.1rem;margin:0 0 14px;color:#385675}.level+.level{margin-top:25px}.coming{margin:0;color:#657990;font-size:.92rem}.open-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.open-grid .card{padding:21px}
-    .grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px;margin:0 0 22px}.grades button{font:inherit;font-weight:700;color:#285274;background:#e8f1fa;border:1px solid #cddfed;padding:10px 9px;border-radius:9px;cursor:pointer}.grades button[aria-pressed="true"]{background:#145991;border-color:#145991;color:#fff}.grades button:focus-visible{outline:3px solid #ffbb59;outline-offset:2px}.grade-panel{margin-bottom:28px}
+    .grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px;margin:0 0 22px}.grades button{font:inherit;font-weight:700;color:#285274;background:#e8f1fa;border:1px solid #cddfed;padding:10px 9px;border-radius:9px;cursor:pointer}.grades button[aria-expanded="true"]{background:#145991;border-color:#145991;color:#fff}.grades button:focus-visible{outline:3px solid #ffbb59;outline-offset:2px}.grade-panel{margin-bottom:28px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:18px}
     .card{background:#fff;border:1px solid #dbe5f0;border-radius:16px;padding:25px;box-shadow:0 3px 16px #1734540a;display:flex;flex-direction:column;min-height:240px}
     .card:hover{border-color:#94b8da;box-shadow:0 8px 25px #17345416}.tag{font-size:.77rem;font-weight:750;letter-spacing:.05em;color:#13588d;background:#eaf4ff;border-radius:99px;padding:7px 11px;align-self:flex-start}
@@ -79,11 +79,11 @@
       </section>
       <section class="group" id="pruebas-abierta" aria-labelledby="abierta"><h2 id="abierta">Educación Abierta</h2>
         <div class="grades" role="group" aria-label="Elegir nivel">
-          <button type="button" aria-pressed="false" aria-controls="nivel-setimo" data-grade="setimo">Sétimo</button>
-          <button type="button" aria-pressed="true" aria-controls="nivel-octavo" data-grade="octavo">Octavo</button>
-          <button type="button" aria-pressed="false" aria-controls="nivel-noveno" data-grade="noveno">Noveno</button>
-          <button type="button" aria-pressed="false" aria-controls="nivel-bachillerato" data-grade="bachillerato">Bachillerato por Madurez</button>
-<button type="button" aria-pressed="false" aria-controls="nivel-distancia" data-grade="distancia">Bachillerato a Distancia</button>
+          <button type="button" aria-expanded="false" aria-controls="nivel-setimo" data-grade="setimo">Sétimo</button>
+          <button type="button" aria-expanded="true" aria-controls="nivel-octavo" data-grade="octavo">Octavo</button>
+          <button type="button" aria-expanded="false" aria-controls="nivel-noveno" data-grade="noveno">Noveno</button>
+          <button type="button" aria-expanded="false" aria-controls="nivel-bachillerato" data-grade="bachillerato">Bachillerato por Madurez</button>
+<button type="button" aria-expanded="false" aria-controls="nivel-distancia" data-grade="distancia">Bachillerato a Distancia</button>
         </div>
         <div class="grade-panel" id="nivel-setimo" hidden>
           <div class="grid"><article class="card"><span class="tag">PRÁCTICA COMPLETADA</span><h3>Sétimo Térraba 01-2024 · Práctica completada</h3><p>55 preguntas · 54 evaluables · Preguntas elaboradas identificadas al inicio</p><a href="./Setimo-Terraba-01-2024-Practica-Completada/?nuevo=1">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
@@ -201,7 +201,7 @@
     const niveles = [...document.querySelectorAll('.grades button')];
     const panelDe = boton => document.getElementById(boton.getAttribute('aria-controls'));
     let modalidadActiva;
-    let nivelActivo = niveles.find(boton => boton.getAttribute('aria-pressed') === 'true');
+    let nivelActivo = niveles.find(boton => boton.getAttribute('aria-expanded') === 'true');
 
     function filtrarPruebas() {
       const consulta = buscar.value.trim().toLocaleLowerCase('es');
@@ -215,9 +215,9 @@
       }
 
       niveles.forEach(boton => {
-        boton.setAttribute('aria-pressed', String(boton === nivelActivo));
         const panel = panelDe(boton);
         panel.hidden = consulta ? !panel.querySelector('.card:not([hidden])') : boton !== nivelActivo;
+        boton.setAttribute('aria-expanded', String(!panel.hidden));
       });
       sinResultados.hidden = !consulta || coincidencias > 0;
     }
@@ -243,7 +243,7 @@
       mostrarModalidad();
     }));
     niveles.forEach(boton => boton.addEventListener('click', () => {
-      nivelActivo = boton;
+      nivelActivo = boton === nivelActivo ? undefined : boton;
       buscar.value = '';
       filtrarPruebas();
     }));
