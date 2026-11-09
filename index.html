@@ -17,26 +17,41 @@
     .intro p{margin:0;color:#536782;line-height:1.55}.intro p+p{margin-top:12px}.intro a{color:#145991;overflow-wrap:anywhere}
     .tools{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin:30px 0 16px}
     .tools h2{margin:0;font-size:1.45rem}.tools input{font:inherit;width:min(100%,310px);padding:12px 14px;border:1px solid #bdcddd;border-radius:10px;background:#fff;color:#162b46}
-    .categories{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:28px}.group{margin:26px 0 36px;min-width:0}.group h2{font-size:1.45rem;margin:0 0 15px}.group h3.subheading{font-size:1.1rem;margin:0 0 14px;color:#385675}.level+.level{margin-top:25px}.coming{margin:0;color:#657990;font-size:.92rem}.open-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.open-grid .card{padding:21px}
-    .grades{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin:0 0 22px}.grades button{font:inherit;font-weight:700;color:#285274;background:#e8f1fa;border:1px solid #cddfed;padding:10px 9px;border-radius:9px;cursor:pointer}.grades button[aria-pressed="true"]{background:#145991;border-color:#145991;color:#fff}.grades button:focus-visible{outline:3px solid #ffbb59;outline-offset:2px}.grade-panel{margin-bottom:28px}
+    .modalidades{margin:30px 0 16px}
+    .modalidades h2{margin:0 0 12px;font-size:1.45rem}
+    .modalidad-opciones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .modalidad-opciones button{font:inherit;font-weight:750;min-height:54px;padding:12px 16px;color:#145991;background:#fff;border:1px solid #94b8da;border-radius:12px;cursor:pointer}
+    .modalidad-opciones button:hover{background:#eaf4ff}
+    .modalidad-opciones button[aria-pressed="true"]{background:#145991;border-color:#145991;color:#fff}
+    .modalidad-opciones button:focus-visible{outline:3px solid #ffbb59;outline-offset:2px}
+    .modalidad-ayuda{margin:12px 0 0;color:#536782}
+    .group{margin:26px 0 36px;min-width:0}.group h2{font-size:1.45rem;margin:0 0 15px}.group h3.subheading{font-size:1.1rem;margin:0 0 14px;color:#385675}.level+.level{margin-top:25px}.coming{margin:0;color:#657990;font-size:.92rem}.open-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.open-grid .card{padding:21px}
+    .grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:9px;margin:0 0 22px}.grades button{font:inherit;font-weight:700;color:#285274;background:#e8f1fa;border:1px solid #cddfed;padding:10px 9px;border-radius:9px;cursor:pointer}.grades button[aria-pressed="true"]{background:#145991;border-color:#145991;color:#fff}.grades button:focus-visible{outline:3px solid #ffbb59;outline-offset:2px}.grade-panel{margin-bottom:28px}
     .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,310px),1fr));gap:18px}
     .card{background:#fff;border:1px solid #dbe5f0;border-radius:16px;padding:25px;box-shadow:0 3px 16px #1734540a;display:flex;flex-direction:column;min-height:240px}
     .card:hover{border-color:#94b8da;box-shadow:0 8px 25px #17345416}.tag{font-size:.77rem;font-weight:750;letter-spacing:.05em;color:#13588d;background:#eaf4ff;border-radius:99px;padding:7px 11px;align-self:flex-start}
     .card h3{font-size:1.3rem;margin:20px 0 8px}.card p{margin:0 0 22px;color:#5c6d80;line-height:1.5}
     .card a{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:#145991;color:#fff;font-weight:700;border-radius:10px;padding:12px 16px;min-height:46px}
     .card a:hover,.card a:focus-visible{background:#0d426f}.empty{padding:20px;color:#536782}footer{text-align:center;color:#5c6d80;padding:18px 24px 38px}
-    @media(max-width:820px){.categories{grid-template-columns:1fr;gap:0}}
     @media(max-width:600px){.open-grid,.grades{grid-template-columns:repeat(2,minmax(0,1fr))}}
-    @media(max-width:520px){header{padding-bottom:50px}.intro{padding:21px}.tools input{width:100%}.header-top{align-items:flex-start}.admin-link{font-size:.85rem;padding:9px}}
+    @media(max-width:520px){.modalidad-opciones{grid-template-columns:1fr}header{padding-bottom:50px}.intro{padding:21px}.tools input{width:100%}.header-top{align-items:flex-start}.admin-link{font-size:.85rem;padding:9px}}
   </style>
 </head>
 <body>
   <header><div class="wrap"><div class="header-top"><div class="brand">Matemática · Elaborado por: Carlos Madrigal Gutiérrez</div><a class="admin-link" href="./resultados/">Administrador</a></div><h1>Exámenes en línea</h1><p>Educación Secundaria</p></div></header>
   <main>
     <section class="intro"><p>En este sitio encontrarás las pruebas aplicadas en los diferentes sistemas de educación pública de Costa Rica.</p><p>Si tienes alguna prueba que aún no está en el sitio, puedes enviarla a nuestro contacto: <a href="mailto:carlos.madrigal.gutierrez@mep.go.cr">carlos.madrigal.gutierrez@mep.go.cr</a>. Luego la publicaremos aquí.</p><p>El sitio se actualiza constantemente con las nuevas pruebas que se van aplicando.</p></section>
-    <div class="tools"><h2>Pruebas disponibles</h2><input id="buscar" type="search" aria-label="Buscar examen" placeholder="Buscar examen…"></div>
+    <section id="modalidades" class="modalidades" aria-labelledby="elegir-modalidad" hidden>
+      <h2 id="elegir-modalidad">Pruebas disponibles</h2>
+      <div class="modalidad-opciones" role="group" aria-label="Elegir modalidad">
+        <button type="button" data-modalidad="secundaria-academica" aria-controls="pruebas-academica" aria-pressed="false">Secundaria Académica</button>
+        <button type="button" data-modalidad="educacion-abierta" aria-controls="pruebas-abierta" aria-pressed="false">Educación Abierta</button>
+      </div>
+      <p id="modalidad-ayuda" class="modalidad-ayuda">Selecciona una modalidad para ver sus pruebas.</p>
+    </section>
+    <div class="tools" id="herramientas" hidden><input id="buscar" type="search" aria-label="Buscar examen en la modalidad seleccionada" placeholder="Buscar examen en esta modalidad…"></div>
     <div class="categories">
-      <section class="group" aria-labelledby="academica"><h2 id="academica">Secundaria Académica</h2>
+      <section class="group" id="pruebas-academica" aria-labelledby="academica"><h2 id="academica">Secundaria Académica</h2>
         <div class="grid">
           <article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba Nacional Estandarizada · Técnica 01-2026</h3><p>Versión de práctica · 60 ítems · Opciones reconstruidas en 48 y 57</p><a href="./PNE-2026-T01/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article>
           <article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba Nacional Estandarizada · Diurna 01-2023</h3><p>Diurna ordinaria · 35 ítems</p><a href="./PNE-2023-D01/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article>
@@ -62,7 +77,7 @@
           <article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba Nacional Estandarizada · Sumativa nocturna · I semestre 2026</h3><p>Nocturna IPEC · CINDEA · CONED · 60 ítems</p><a href="./PNE-2026-Sumativa-Nocturna-I-Semestre/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article>
         </div>
       </section>
-      <section class="group" aria-labelledby="abierta"><h2 id="abierta">Educación Abierta</h2>
+      <section class="group" id="pruebas-abierta" aria-labelledby="abierta"><h2 id="abierta">Educación Abierta</h2>
         <div class="grades" role="group" aria-label="Elegir nivel">
           <button type="button" aria-pressed="false" aria-controls="nivel-setimo" data-grade="setimo">Sétimo</button>
           <button type="button" aria-pressed="true" aria-controls="nivel-octavo" data-grade="octavo">Octavo</button>
@@ -174,30 +189,65 @@
 <div class="grade-panel" id="nivel-distancia" hidden><div class="grid open-grid"><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 1 · Convocatoria 02-2024</h3><p>Bachillerato a Distancia · Fuente rotulada DIC · 55 preguntas · 53 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-Prueba-1-02-2024/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Bachillerato a Distancia · 03-2024</h3><p>60 preguntas · 59 evaluables · Soluciones elaboradas · Aclaraciones al inicio</p><a href="./Bachillerato-Distancia-03-2024/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 02-2024</h3><p>Bachillerato a Distancia · 55 preguntas · 53 evaluables · Soluciones y gráficos SVG</p><a href="./Bachillerato-Distancia-02-2024/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 01-2024</h3><p>Bachillerato a Distancia · 55 preguntas · 52 evaluables · Soluciones y gráficos SVG</p><a href="./Bachillerato-Distancia-01-2024/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 2 · Junio 2025</h3><p>Bachillerato a Distancia · 55 preguntas evaluables · Soluciones y figuras SVG</p><a href="./Bachillerato-Distancia-02-2025/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 01-2025</h3><p>Bachillerato a Distancia · 55 preguntas · 54 evaluables · Soluciones y gráficos</p><a href="./Bachillerato-Distancia-01-2025/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Práctica EDAD 2-2026</h3><p>Bachillerato a Distancia · 55 preguntas · 54 evaluables · Soluciones y figuras SVG</p><a href="./Bachillerato-Distancia-Practica-02-2026/?nuevo=1">Entrar a la práctica <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Práctica EDAD 1-2026</h3><p>Bachillerato a Distancia · 55 preguntas · 53 evaluables · Soluciones cotejadas con la clave</p><a href="./Bachillerato-Distancia-Practica-01-2026/?nuevo=1">Entrar a la práctica <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba comprensiva 03-2019</h3><p>Bachillerato a Distancia · Comprensiva · 60 ítems · 59 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-Comprensiva-03-2019/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 02-2019</h3><p>Bachillerato a Distancia · 55 ítems · 53 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-02-2019/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 00-2019</h3><p>Bachillerato a Distancia · 60 ítems · 58 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-00-2019/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 03-2019</h3><p>Bachillerato a Distancia · 60 ítems · 58 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-03-2019/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 01-2019</h3><p>Bachillerato a Distancia · 55 ítems · 54 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-01-2019/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba comprensiva 03-2018</h3><p>Bachillerato a Distancia · Comprensiva · 60 ítems · 58 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-Comprensiva-03-2018/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 01-2018</h3><p>Bachillerato a Distancia · 55 ítems · 53 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-01-2018/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 00-2018</h3><p>Bachillerato a Distancia · 60 ítems · 59 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-00-2018/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba comprensiva 03-2017</h3><p>Bachillerato a Distancia · Comprensiva · 60 ítems · 58 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-Comprensiva-03-2017/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 00-2017</h3><p>Bachillerato a Distancia · 60 ítems · 59 evaluables · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-00-2017/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 03-2017</h3><p>Bachillerato a Distancia · 60 ítems · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-03-2017/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 01-2017</h3><p>Bachillerato a Distancia · 55 ítems · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-01-2017/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article><article class="card"><span class="tag">MATEMÁTICA</span><h3>Prueba 02-2017</h3><p>Bachillerato a Distancia · 55 ítems · Soluciones elaboradas</p><a href="./Bachillerato-Distancia-02-2017/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article></div></div>
       </section>
     </div>
-    <p id="sin-resultados" class="empty" hidden>No se encontraron exámenes con ese nombre.</p>
+    <p id="sin-resultados" class="empty" role="status" hidden>No se encontraron exámenes con ese nombre.</p>
   </main>
   <footer>Educación Secundaria · Matemática</footer>
   <script>
-    const buscar=document.getElementById('buscar');
-    const tarjetas=[...document.querySelectorAll('.group .card')];
-    const niveles=[...document.querySelectorAll('.grades button')];
-    let nivelActivo='octavo';
-    function mostrarNivel(nivel){
-      nivelActivo=nivel;
-      niveles.forEach(b=>{const activo=b.dataset.grade===nivel;b.setAttribute('aria-pressed',String(activo));document.getElementById(b.getAttribute('aria-controls')).hidden=!activo});
-    }
-    niveles.forEach(b=>b.addEventListener('click',()=>{buscar.value='';buscar.dispatchEvent(new Event('input'));mostrarNivel(b.dataset.grade)}));
-    buscar.addEventListener('input',()=>{
-      const q=buscar.value.trim().toLocaleLowerCase('es');
-      let visibles=0;
-      tarjetas.forEach(t=>{const mostrar=t.textContent.toLocaleLowerCase('es').includes(q);t.hidden=!mostrar;if(mostrar)visibles++});
-      if(q){
-        const coincidencias=niveles.filter(b=>[...document.getElementById(b.getAttribute('aria-controls')).querySelectorAll('.card')].some(t=>!t.hidden));
-        if(coincidencias.length&&!coincidencias.some(b=>b.dataset.grade===nivelActivo))mostrarNivel(coincidencias[0].dataset.grade);
+    const buscar = document.getElementById('buscar');
+    const herramientas = document.getElementById('herramientas');
+    const ayuda = document.getElementById('modalidad-ayuda');
+    const sinResultados = document.getElementById('sin-resultados');
+    const modalidades = [...document.querySelectorAll('[data-modalidad]')];
+    const niveles = [...document.querySelectorAll('.grades button')];
+    const panelDe = boton => document.getElementById(boton.getAttribute('aria-controls'));
+    let modalidadActiva;
+    let nivelActivo = niveles.find(boton => boton.getAttribute('aria-pressed') === 'true');
+
+    function filtrarPruebas() {
+      const consulta = buscar.value.trim().toLocaleLowerCase('es');
+      let coincidencias = 0;
+
+      if (modalidadActiva) {
+        panelDe(modalidadActiva).querySelectorAll('.card').forEach(tarjeta => {
+          tarjeta.hidden = !tarjeta.textContent.toLocaleLowerCase('es').includes(consulta);
+          if (!tarjeta.hidden) coincidencias++;
+        });
       }
-      document.querySelectorAll('.group').forEach(g=>{g.hidden=!!q&&![...g.querySelectorAll('.card')].some(t=>!t.hidden)});
-      document.getElementById('sin-resultados').hidden=visibles!==0;
-    });
+
+      niveles.forEach(boton => {
+        boton.setAttribute('aria-pressed', String(boton === nivelActivo));
+        const panel = panelDe(boton);
+        panel.hidden = consulta ? !panel.querySelector('.card:not([hidden])') : boton !== nivelActivo;
+      });
+      sinResultados.hidden = !consulta || coincidencias > 0;
+    }
+
+    function mostrarModalidad() {
+      const hash = window.location.hash.slice(1);
+      modalidadActiva = modalidades.find(boton => boton.dataset.modalidad === hash);
+      modalidades.forEach(boton => {
+        const activa = boton === modalidadActiva;
+        boton.setAttribute('aria-pressed', String(activa));
+        panelDe(boton).hidden = !activa;
+      });
+      herramientas.hidden = !modalidadActiva;
+      ayuda.hidden = !!modalidadActiva;
+      buscar.value = '';
+      filtrarPruebas();
+    }
+
+    modalidades.forEach(boton => boton.addEventListener('click', () => {
+      window.location.hash = boton.dataset.modalidad;
+    }));
+    niveles.forEach(boton => boton.addEventListener('click', () => {
+      nivelActivo = boton;
+      buscar.value = '';
+      filtrarPruebas();
+    }));
+    buscar.addEventListener('input', filtrarPruebas);
+    window.addEventListener('hashchange', mostrarModalidad);
+    document.getElementById('modalidades').hidden = false;
+    mostrarModalidad();
   </script>
 </body>
 </html>
