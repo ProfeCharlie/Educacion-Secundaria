@@ -142,8 +142,9 @@
           </div>
         </div>
         <div class="grade-panel" id="nivel-noveno" hidden>
+          <div class="grid">
 <article class="card"><span class="tag">MATEMÁTICA</span><h3>Noveno Zapandí 01-2019</h3><p>Educación Abierta · 55 preguntas evaluables · Soluciones revisadas</p><a href="./Noveno-Zapandi-01-2019/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article>
-          <div class="grid"><article class="card"><span class="tag">PRÁCTICA COMPLETADA</span><h3>Noveno Zapandí 02-2022 · Práctica completada</h3><p>55 preguntas · 53 evaluables · Preguntas elaboradas identificadas al inicio</p><a href="./Noveno-Zapandi-02-2022-Practica-Completada/?nuevo=1">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
+<article class="card"><span class="tag">PRÁCTICA COMPLETADA</span><h3>Noveno Zapandí 02-2022 · Práctica completada</h3><p>55 preguntas · 53 evaluables · Preguntas elaboradas identificadas al inicio</p><a href="./Noveno-Zapandi-02-2022-Practica-Completada/?nuevo=1">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
 <article class="card"><span class="tag">MATEMÁTICA</span><h3>Noveno Zapandí 01-2016 · Específica</h3><p>Educación Abierta · 55 preguntas · 53 evaluables · Soluciones y tabla trigonométrica</p><a href="./Noveno-Zapandi-01-2016/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article>
 <article class="card"><span class="tag">MATEMÁTICA</span><h3>Noveno Zapandí 02-2016</h3><p>Educación Abierta · 55 preguntas evaluables · Soluciones y tabla trigonométrica</p><a href="./Noveno-Zapandi-02-2016/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article>
 <article class="card"><span class="tag">MATEMÁTICA</span><h3>Noveno Zapandí 01-2017</h3><p>Educación Abierta · 55 preguntas · 54 evaluables · Soluciones y tabla trigonométrica</p><a href="./Noveno-Zapandi-01-2017/?nuevo=1">Entrar al examen <span aria-hidden="true">→</span></a></article>
@@ -202,6 +203,22 @@
     const panelDe = boton => document.getElementById(boton.getAttribute('aria-controls'));
     let modalidadActiva;
     let nivelActivo = niveles.find(boton => boton.getAttribute('aria-expanded') === 'true');
+
+    function ordenDePrueba(tarjeta) {
+      const titulo = tarjeta.querySelector('h3')?.textContent ?? '';
+      const ruta = tarjeta.querySelector('a')?.getAttribute('href') ?? '';
+      const fecha = titulo.match(/\b(?:(\d{1,2})\s*[-–]\s*)?(20\d{2})\b/);
+      const fechaEnRuta = ruta.match(/[-/](\d{1,2})-(20\d{2})\b/);
+      const anio = Number(fecha?.[2] ?? fechaEnRuta?.[2] ?? 0);
+      const convocatoria = Number(fecha?.[1] ?? fechaEnRuta?.[1] ?? 0);
+      return anio * 100 + convocatoria;
+    }
+
+    document.querySelectorAll('.categories .grid').forEach(lista => {
+      const pruebas = [...lista.querySelectorAll(':scope > .card')];
+      pruebas.sort((a, b) => ordenDePrueba(b) - ordenDePrueba(a));
+      lista.append(...pruebas);
+    });
 
     function filtrarPruebas() {
       const consulta = buscar.value.trim().toLocaleLowerCase('es');
