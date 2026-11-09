@@ -22,7 +22,7 @@
     .modalidad-opciones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
     .modalidad-opciones button{font:inherit;font-weight:750;min-height:54px;padding:12px 16px;color:#145991;background:#fff;border:1px solid #94b8da;border-radius:12px;cursor:pointer}
     .modalidad-opciones button:hover{background:#eaf4ff}
-    .modalidad-opciones button[aria-pressed="true"]{background:#145991;border-color:#145991;color:#fff}
+    .modalidad-opciones button[aria-expanded="true"]{background:#145991;border-color:#145991;color:#fff}
     .modalidad-opciones button:focus-visible{outline:3px solid #ffbb59;outline-offset:2px}
     .modalidad-ayuda{margin:12px 0 0;color:#536782}
     .group{margin:26px 0 36px;min-width:0}.group h2{font-size:1.45rem;margin:0 0 15px}.group h3.subheading{font-size:1.1rem;margin:0 0 14px;color:#385675}.level+.level{margin-top:25px}.coming{margin:0;color:#657990;font-size:.92rem}.open-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.open-grid .card{padding:21px}
@@ -44,10 +44,10 @@
     <section id="modalidades" class="modalidades" aria-labelledby="elegir-modalidad" hidden>
       <h2 id="elegir-modalidad">Pruebas disponibles</h2>
       <div class="modalidad-opciones" role="group" aria-label="Elegir modalidad">
-        <button type="button" data-modalidad="secundaria-academica" aria-controls="pruebas-academica" aria-pressed="false">Secundaria Académica</button>
-        <button type="button" data-modalidad="educacion-abierta" aria-controls="pruebas-abierta" aria-pressed="false">Educación Abierta</button>
+        <button type="button" data-modalidad="secundaria-academica" aria-controls="pruebas-academica" aria-expanded="false">Secundaria Académica</button>
+        <button type="button" data-modalidad="educacion-abierta" aria-controls="pruebas-abierta" aria-expanded="false">Educación Abierta</button>
       </div>
-      <p id="modalidad-ayuda" class="modalidad-ayuda">Selecciona una modalidad para ver sus pruebas.</p>
+      <p id="modalidad-ayuda" class="modalidad-ayuda">Toca una modalidad para ver sus pruebas. Vuelve a tocarla para ocultarlas.</p>
     </section>
     <div class="tools" id="herramientas" hidden><input id="buscar" type="search" aria-label="Buscar examen en la modalidad seleccionada" placeholder="Buscar examen en esta modalidad…"></div>
     <div class="categories">
@@ -227,7 +227,7 @@
       modalidadActiva = modalidades.find(boton => boton.dataset.modalidad === hash);
       modalidades.forEach(boton => {
         const activa = boton === modalidadActiva;
-        boton.setAttribute('aria-pressed', String(activa));
+        boton.setAttribute('aria-expanded', String(activa));
         panelDe(boton).hidden = !activa;
       });
       herramientas.hidden = !modalidadActiva;
@@ -237,7 +237,10 @@
     }
 
     modalidades.forEach(boton => boton.addEventListener('click', () => {
-      window.location.hash = boton.dataset.modalidad;
+      const url = new URL(window.location.href);
+      url.hash = boton === modalidadActiva ? '' : boton.dataset.modalidad;
+      window.history.pushState(null, '', url);
+      mostrarModalidad();
     }));
     niveles.forEach(boton => boton.addEventListener('click', () => {
       nivelActivo = boton;
