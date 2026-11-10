@@ -35,10 +35,13 @@
     .card a:hover,.card a:focus-visible{background:#0d426f}.empty{padding:20px;color:#536782}footer{text-align:center;color:#5c6d80;padding:18px 24px 38px}
     @media(max-width:600px){.open-grid,.grades{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:520px){.modalidad-opciones{grid-template-columns:1fr}header{padding-bottom:50px}.intro{padding:21px}.tools input{width:100%}.header-top{align-items:flex-start}.admin-link{font-size:.85rem;padding:9px}}
+    .admin-link.profile-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#ffcf70;color:#102f59;border:2px solid #ffcf70;box-shadow:0 4px 14px #071e3733;min-height:48px;white-space:normal;text-align:center}
+    .admin-link.profile-link:hover,.admin-link.profile-link:focus-visible{background:#ffe1a2;border-color:#ffe1a2;transform:translateY(-1px)}
+    @media(max-width:520px){.header-top{flex-direction:column;align-items:stretch}.header-actions{justify-content:flex-start}.admin-link.profile-link{flex:1}}
   </style>
 </head>
 <body>
-  <header><div class="wrap"><div class="header-top"><div class="brand">Matemática · <span class="credit">Elaborado por: Prof. Carlos Madrigal Gutiérrez</span></div><nav class="header-actions" aria-label="Enlaces principales"><a class="admin-link" href="./conoce-al-profe.html">Conoce a este Profe</a><a class="admin-link" href="./resultados/">Administrador</a></nav></div><h1>Exámenes en línea</h1><p>Educación Secundaria</p></div></header>
+  <header><div class="wrap"><div class="header-top"><div class="brand">Matemática · <span class="credit">Elaborado por: Prof. Carlos Madrigal Gutiérrez</span></div><nav class="header-actions" aria-label="Enlaces principales"><a class="admin-link profile-link" href="./conoce-al-profe.html">Haz clic aquí para conocerme <span aria-hidden="true">→</span></a><a class="admin-link" href="./resultados/">Administrador</a></nav></div><h1>Exámenes en línea</h1><p>Educación Secundaria</p></div></header>
   <main>
     <section class="intro"><p>En este sitio encontrarás las pruebas aplicadas en los diferentes sistemas de educación pública de Costa Rica.</p><p>Si tienes alguna prueba que aún no está en el sitio, puedes enviarla a nuestro contacto: <a href="mailto:carlos.madrigal.gutierrez@mep.go.cr">carlos.madrigal.gutierrez@mep.go.cr</a>. Luego la publicaremos aquí.</p><p>El sitio se actualiza constantemente con las nuevas pruebas que se van aplicando.</p></section>
     <section id="modalidades" class="modalidades" aria-labelledby="elegir-modalidad" hidden>
@@ -274,6 +277,7 @@
   </script>
 </body>
 </html>
+
 
 
 
