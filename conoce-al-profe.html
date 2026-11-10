@@ -19,7 +19,7 @@
     header p{color:#dcecff;font-size:1.15rem;line-height:1.6;margin:0}
     main{max-width:1080px;margin:-28px auto 50px;padding:0 24px}
     .presentation{display:flex;align-items:center;gap:24px;background:#fff;border-radius:18px;padding:32px;box-shadow:0 8px 30px #17345414}
-    .avatar{display:grid;place-items:center;width:110px;height:110px;flex-shrink:0;border-radius:50%;background:#eaf4ff;color:#145991;font-size:2.5rem;font-weight:800}
+    .profile-photo{margin:0;flex:0 0 230px;max-width:100%}.profile-photo a{display:block;border-radius:14px;overflow:hidden;background:#eaf4ff}.profile-photo img{display:block;width:100%;height:auto}.profile-photo figcaption{margin-top:8px;text-align:center;font-size:.8rem;color:#536782}
     .eyebrow{font-size:.8rem;font-weight:750;letter-spacing:.07em;text-transform:uppercase;color:#145991;margin:0 0 8px}
     h2{font-size:clamp(1.45rem,3vw,2rem);margin:0 0 12px;line-height:1.25}
     p{line-height:1.7;color:#536782;margin:0}p+p{margin-top:12px}
@@ -29,7 +29,7 @@
     .contact{margin-top:24px;padding:28px;background:#e8f1fa;border-radius:16px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
     .contact h2{font-size:1.3rem}.contact p{max-width:590px}
     footer{text-align:center;color:#5c6d80;padding:18px 24px 38px}
-    @media(max-width:620px){.sections{grid-template-columns:1fr}.presentation{align-items:flex-start;flex-direction:column;padding:24px}.avatar{width:84px;height:84px;font-size:2rem}.section,.contact{padding:24px}nav{align-items:flex-start}}
+    @media(max-width:620px){.sections{grid-template-columns:1fr}.presentation{align-items:flex-start;flex-direction:column;padding:24px}.profile-photo{flex:none;width:min(100%,280px);align-self:center}.section,.contact{padding:24px}nav{align-items:flex-start}}
   </style>
 </head>
 <body>
@@ -40,9 +40,9 @@
   </div></header>
   <main>
     <section class="presentation" aria-labelledby="nombre-profe">
-      <div class="avatar" aria-hidden="true">CM</div>
+      <figure class="profile-photo"><a href="./profe-charlie-graduacion.jpg" target="_blank" rel="noopener" aria-label="Ver fotografía completa del Profe Charlie"><img src="./profe-charlie-graduacion.jpg" alt="Prof. Carlos Madrigal Gutiérrez con su título frente al mural de la Universidad de Costa Rica" width="691" height="1536" fetchpriority="high"></a><figcaption>Universidad de Costa Rica · Ver foto completa</figcaption></figure>
       <div><p class="eyebrow">Docente de Matemática</p><h2 id="nombre-profe">Prof. Carlos Madrigal Gutiérrez</h2>
-      <!-- Presentación: aquí se puede ampliar la biografía y sustituir las iniciales por una fotografía. -->
+      <!-- Presentación del profesor. -->
       <p>Soy el Profe Charlie. Te doy la bienvenida a este espacio de práctica de Matemática para Educación Secundaria y Educación Abierta en Costa Rica.</p></div>
     </section>
     <div class="sections">
@@ -68,5 +68,6 @@
   <footer>Educación Secundaria · Matemática</footer>
 </body>
 </html>
+
 
 
