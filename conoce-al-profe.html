@@ -19,7 +19,11 @@
     header p{color:#dcecff;font-size:1.15rem;line-height:1.6;margin:0}
     main{max-width:1080px;margin:-28px auto 50px;padding:0 24px}
     .presentation{display:flex;align-items:center;gap:24px;background:#fff;border-radius:18px;padding:32px;box-shadow:0 8px 30px #17345414}
-    .photo-section{margin-top:24px;padding:42px 28px 30px;background:#e5edef;border-radius:18px;overflow:hidden}.profile-photo{margin:0 auto;width:min(100%,260px);position:relative;isolation:isolate}.profile-photo::before{content:"";position:absolute;z-index:-1;inset:5% -5% 12%;background:#fff;border-radius:65% 35% 58% 42% / 43% 52% 48% 57%;transform:rotate(-9deg)}.profile-photo a{display:block;background:transparent}.original-cutout{display:block;width:100%;height:auto}.profile-photo figcaption{margin-top:8px;text-align:center;font-size:.8rem;color:#536782}
+    .photo-section { margin-top: 28px; padding: clamp(18px, 4vw, 36px); background: #f2f6fa; border-radius: 18px; }
+    .profile-photo { margin: 0 auto; width: min(100%, 360px); }
+    .profile-photo a { display: block; padding: 7px; background: #fff; border: 3px solid #25476b; border-radius: 14px; box-shadow: 0 8px 22px #17345420; }
+    .profile-photo img { display: block; width: 100%; height: auto; border-radius: 4px; }
+    .profile-photo figcaption { margin-top: 12px; text-align: center; font-size: .85rem; color: #536782; }
     .eyebrow{font-size:.8rem;font-weight:750;letter-spacing:.07em;text-transform:uppercase;color:#145991;margin:0 0 8px}
     h2{font-size:clamp(1.45rem,3vw,2rem);margin:0 0 12px;line-height:1.25}
     p{line-height:1.7;color:#536782;margin:0}p+p{margin-top:12px}
@@ -29,7 +33,7 @@
     .contact{margin-top:24px;padding:28px;background:#e8f1fa;border-radius:16px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
     .contact h2{font-size:1.3rem}.contact p{max-width:590px}
     footer{text-align:center;color:#5c6d80;padding:18px 24px 38px}
-    @media(max-width:620px){.sections{grid-template-columns:1fr}.presentation{align-items:flex-start;flex-direction:column;padding:24px}.profile-photo{width:min(100%,220px)}.section,.contact{padding:24px}nav{align-items:flex-start}}
+    @media(max-width:620px){.sections{grid-template-columns:1fr}.presentation{align-items:flex-start;flex-direction:column;padding:24px}.section,.contact{padding:24px}nav{align-items:flex-start}}
   </style>
 </head>
 <body>
@@ -63,10 +67,19 @@
       </section>
     </div>
     <section class="contact" aria-labelledby="contacto"><div><h2 id="contacto">¿Necesitas ayuda en Matemáticas?</h2><p>Puedes contactarme al 8719-6318 para consultar sobre tutorías.</p></div><a class="button" href="https://wa.me/50687196318">Contactar por WhatsApp</a></section>
+    <section class="photo-section" aria-label="Fotografía del Profe Charlie">
+      <figure class="profile-photo">
+        <a href="./profe-charlie-foto-enmarcada.jpg" aria-label="Ver fotografía completa del Profe Charlie">
+          <img src="./profe-charlie-foto-enmarcada.jpg" alt="Carlos Madrigal Gutiérrez con su diploma frente al mural de la Universidad de Costa Rica" width="828" height="1536" loading="lazy">
+        </a>
+        <figcaption>Universidad de Costa Rica</figcaption>
+      </figure>
+    </section>
   </main>
   <footer>Educación Secundaria · Matemática</footer>
 </body>
 </html>
+
 
 
 
