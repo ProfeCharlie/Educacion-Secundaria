@@ -19,7 +19,7 @@
     .tools h2{margin:0;font-size:1.45rem}.tools input{font:inherit;width:min(100%,310px);padding:12px 14px;border:1px solid #bdcddd;border-radius:10px;background:#fff;color:#162b46}
     .modalidades{margin:30px 0 16px}
     .modalidades h2{margin:0 0 12px;font-size:1.45rem}
-    .modalidad-opciones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+    .modalidad-opciones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
     .modalidad-opciones button{font:inherit;font-weight:750;min-height:54px;padding:12px 16px;color:#145991;background:#fff;border:1px solid #94b8da;border-radius:12px;cursor:pointer}
     .modalidad-opciones button:hover{background:#eaf4ff}
     .modalidad-opciones button[aria-expanded="true"]{background:#145991;border-color:#145991;color:#fff}
@@ -33,6 +33,7 @@
     .card h3{font-size:1.3rem;margin:20px 0 8px}.card p{margin:0 0 22px;color:#5c6d80;line-height:1.5}
     .card a{margin-top:auto;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;background:#145991;color:#fff;font-weight:700;border-radius:10px;padding:12px 16px;min-height:46px}
     .card a:hover,.card a:focus-visible{background:#0d426f}.empty{padding:20px;color:#536782}footer{text-align:center;color:#5c6d80;padding:18px 24px 38px}
+    @media(max-width:760px){.modalidad-opciones{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:600px){.open-grid,.grades{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:520px){.modalidad-opciones{grid-template-columns:1fr}header{padding-bottom:50px}.intro{padding:21px}.tools input{width:100%}.header-top{align-items:flex-start}.admin-link{font-size:.85rem;padding:9px}}
     .admin-link.profile-link{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#ffcf70;color:#102f59;border:2px solid #ffcf70;box-shadow:0 4px 14px #071e3733;min-height:48px;white-space:normal;text-align:center}
@@ -50,6 +51,7 @@
         <button type="button" data-modalidad="secundaria-academica" aria-controls="pruebas-academica" aria-expanded="false">Secundaria Académica</button>
         <button type="button" data-modalidad="educacion-abierta" aria-controls="pruebas-abierta" aria-expanded="false">Educación Abierta</button>
         <button type="button" data-modalidad="olimpiadas" aria-controls="pruebas-olimpiadas" aria-expanded="false">Olimpiadas de Matemática</button>
+        <button type="button" data-modalidad="bachillerato-internacional" aria-controls="pruebas-bachillerato-internacional" aria-expanded="false">Bachillerato Internacional</button>
       </div>
       <p id="modalidad-ayuda" class="modalidad-ayuda">Toca una modalidad para ver sus pruebas. Vuelve a tocarla para ocultarlas.</p>
     </section>
@@ -195,6 +197,10 @@
       </section>
       <section class="group" id="pruebas-olimpiadas" aria-labelledby="olimpiadas-titulo" hidden>
         <h2 id="olimpiadas-titulo">Olimpiadas de Matemática</h2>
+        <p class="coming">Aún no hay pruebas publicadas en esta sección.</p>
+      </section>
+      <section class="group" id="pruebas-bachillerato-internacional" aria-labelledby="bachillerato-internacional-titulo" hidden>
+        <h2 id="bachillerato-internacional-titulo">Bachillerato Internacional</h2>
         <p class="coming">Aún no hay pruebas publicadas en esta sección.</p>
       </section>
     </div>
