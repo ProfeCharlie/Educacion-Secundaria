@@ -197,10 +197,25 @@
       </section>
       <section class="group" id="pruebas-olimpiadas" aria-labelledby="olimpiadas-titulo" hidden>
         <h2 id="olimpiadas-titulo">Olimpiadas de Matemática</h2>
-        <div class="grid">
-          <article class="card"><span class="tag">OLCOMA</span><h3>OLCOMA 2025 · Nivel I</h3><p>Sétimo · I Eliminatoria Nacional · 20 preguntas · 3 horas</p><a href="./olcoma-2025.html?nivel=I">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
-          <article class="card"><span class="tag">OLCOMA</span><h3>OLCOMA 2025 · Nivel II</h3><p>Octavo y Noveno · I Eliminatoria Nacional · 20 preguntas · 3 horas</p><a href="./olcoma-2025.html?nivel=II">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
-          <article class="card"><span class="tag">OLCOMA</span><h3>OLCOMA 2025 · Nivel III</h3><p>Décimo, Undécimo y Duodécimo · I Eliminatoria Nacional · 20 preguntas · 3 horas</p><a href="./olcoma-2025.html?nivel=III">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
+        <div class="grades" role="group" aria-label="Niveles de Olimpiadas de Matemática">
+          <button type="button" aria-expanded="false" aria-controls="nivel-olcoma-i" data-grade="olcoma-i">I Nivel</button>
+          <button type="button" aria-expanded="false" aria-controls="nivel-olcoma-ii" data-grade="olcoma-ii">II Nivel</button>
+          <button type="button" aria-expanded="false" aria-controls="nivel-olcoma-iii" data-grade="olcoma-iii">III Nivel</button>
+        </div>
+        <div class="grade-panel" id="nivel-olcoma-i" hidden>
+          <div class="grid">
+            <article class="card"><span class="tag">OLCOMA</span><h3>OLCOMA 2025 · Nivel I</h3><p>Sétimo · I Eliminatoria Nacional · 20 preguntas · 3 horas</p><a href="./olcoma-2025.html?nivel=I">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
+          </div>
+        </div>
+        <div class="grade-panel" id="nivel-olcoma-ii" hidden>
+          <div class="grid">
+            <article class="card"><span class="tag">OLCOMA</span><h3>OLCOMA 2025 · Nivel II</h3><p>Octavo y Noveno · I Eliminatoria Nacional · 20 preguntas · 3 horas</p><a href="./olcoma-2025.html?nivel=II">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
+          </div>
+        </div>
+        <div class="grade-panel" id="nivel-olcoma-iii" hidden>
+          <div class="grid">
+            <article class="card"><span class="tag">OLCOMA</span><h3>OLCOMA 2025 · Nivel III</h3><p>Décimo, Undécimo y Duodécimo · I Eliminatoria Nacional · 20 preguntas · 3 horas</p><a href="./olcoma-2025.html?nivel=III">Entrar a la práctica <span aria-hidden="true">→</span></a></article>
+          </div>
         </div>
       </section>
       <section class="group" id="pruebas-bachillerato-internacional" aria-labelledby="bachillerato-internacional-titulo" hidden>
@@ -223,7 +238,10 @@
     const niveles = [...document.querySelectorAll('.grades button')];
     const panelDe = boton => document.getElementById(boton.getAttribute('aria-controls'));
     let modalidadActiva;
-    let nivelActivo = niveles.find(boton => boton.getAttribute('aria-expanded') === 'true');
+    const nivelesActivos = new Map(
+      niveles.filter(boton => boton.getAttribute('aria-expanded') === 'true')
+        .map(boton => [boton.closest('.group'), boton])
+    );
 
     function ordenDePrueba(tarjeta) {
       const titulo = tarjeta.querySelector('h3')?.textContent ?? '';
@@ -254,7 +272,7 @@
 
       niveles.forEach(boton => {
         const panel = panelDe(boton);
-        panel.hidden = consulta ? !panel.querySelector('.card:not([hidden])') : boton !== nivelActivo;
+        panel.hidden = consulta ? !panel.querySelector('.card:not([hidden])') : boton !== nivelesActivos.get(boton.closest('.group'));
         boton.setAttribute('aria-expanded', String(!panel.hidden));
       });
       sinResultados.hidden = !consulta || coincidencias > 0;
@@ -281,7 +299,9 @@
       mostrarModalidad();
     }));
     niveles.forEach(boton => boton.addEventListener('click', () => {
-      nivelActivo = boton === nivelActivo ? undefined : boton;
+      const grupo = boton.closest('.group');
+      if (nivelesActivos.get(grupo) === boton) nivelesActivos.delete(grupo);
+      else nivelesActivos.set(grupo, boton);
       buscar.value = '';
       filtrarPruebas();
     }));
