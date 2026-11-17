@@ -19,7 +19,7 @@
     .tools h2{margin:0;font-size:1.45rem}.tools input{font:inherit;width:min(100%,310px);padding:12px 14px;border:1px solid #bdcddd;border-radius:10px;background:#fff;color:#162b46}
     .modalidades{margin:30px 0 16px}
     .modalidades h2{margin:0 0 12px;font-size:1.45rem}
-    .modalidad-opciones{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+    .modalidad-opciones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
     .modalidad-opciones button{font:inherit;font-weight:750;min-height:54px;padding:12px 16px;color:#145991;background:#fff;border:1px solid #94b8da;border-radius:12px;cursor:pointer}
     .modalidad-opciones button:hover{background:#eaf4ff}
     .modalidad-opciones button[aria-expanded="true"]{background:#145991;border-color:#145991;color:#fff}
@@ -53,6 +53,8 @@
         <button type="button" data-modalidad="olimpiadas" aria-controls="pruebas-olimpiadas" aria-expanded="false">Olimpiadas de Matemática</button>
         <button type="button" data-modalidad="bachillerato-internacional" aria-controls="pruebas-bachillerato-internacional" aria-expanded="false">Bachillerato Internacional</button>
         <button type="button" data-modalidad="antorcha" aria-controls="pruebas-antorcha" aria-expanded="false">Antorcha</button>
+        <button type="button" data-modalidad="admision-universidades-publicas" aria-controls="pruebas-admision-universidades-publicas" aria-expanded="false">Admisión a Universidades Públicas</button>
+        <button type="button" data-modalidad="matem" aria-controls="pruebas-matem" aria-expanded="false">MATEM</button>
       </div>
       <p id="modalidad-ayuda" class="modalidad-ayuda">Toca una modalidad para ver sus pruebas. Vuelve a tocarla para ocultarlas.</p>
     </section>
@@ -252,6 +254,14 @@
       </section>
       <section class="group" id="pruebas-antorcha" aria-labelledby="antorcha-titulo" hidden>
         <h2 id="antorcha-titulo">Antorcha</h2>
+        <p class="coming">Aún no hay pruebas publicadas en esta sección.</p>
+      </section>
+      <section class="group" id="pruebas-admision-universidades-publicas" aria-labelledby="admision-universidades-publicas-titulo" hidden>
+        <h2 id="admision-universidades-publicas-titulo">Admisión a Universidades Públicas</h2>
+        <p class="coming">Aún no hay pruebas publicadas en esta sección.</p>
+      </section>
+      <section class="group" id="pruebas-matem" aria-labelledby="matem-titulo" hidden>
+        <h2 id="matem-titulo">MATEM</h2>
         <p class="coming">Aún no hay pruebas publicadas en esta sección.</p>
       </section>
     </div>
