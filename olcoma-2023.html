@@ -105,7 +105,9 @@ const duration = 3 * 60 * 60 * 1000;
 function read() {
   try {
     const saved = JSON.parse(localStorage.getItem(storageKey));
-    if (Number.isFinite(saved?.deadline) && saved.answers?.length === items.length) return saved;
+    // Only resume an unfinished attempt with time remaining.
+    if (!saved || saved.finished || !Number.isFinite(saved.deadline) || saved.deadline <= Date.now()) return null;
+    if (Array.isArray(saved.answers) && saved.answers.length === items.length) return saved;
   } catch {}
   return null;
 }
@@ -270,8 +272,10 @@ get('confirm').addEventListener('close', () => {
   if (get('confirm').returnValue === 'finish' && !attempt.finished) finish(Date.now() >= attempt.deadline);
   get('confirm').returnValue = '';
 });
-if (attempt?.finished) finish(attempt.expired);
-else if (attempt) begin();
+if (attempt) begin();
+window.addEventListener('pageshow', event => {
+  if (event.persisted && attempt && !read()) location.reload();
+});
 </script>
 </body>
 </html>
