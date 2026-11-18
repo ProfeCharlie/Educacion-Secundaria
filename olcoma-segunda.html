@@ -64,7 +64,6 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 <p class="sub" id="level-title"></p>
 <div class="intro-actions">
 <button class="primary" id="start">Iniciar Prueba</button>
-<a class="menu-link" id="booklet" target="_blank" rel="noopener">Abrir cuadernillo oficial (PDF)</a>
 </div>
 <div class="exam-intro"><strong>Instrucciones</strong>
 <ul>
@@ -667,7 +666,6 @@ document.title = title;
 document.getElementById('exam-title').textContent = title;
 document.getElementById('exam-brand').textContent = 'Matemática · ' + title;
 document.getElementById('excluded-note').hidden = selectionCount === gradedCount;
-document.getElementById('booklet').href = booklet;
 document.getElementById('solutions').href = solutions;
 document.getElementById('countTop').textContent = '0/' + items.length;
 document.querySelectorAll('.item-count').forEach(node => { node.textContent = items.length; });

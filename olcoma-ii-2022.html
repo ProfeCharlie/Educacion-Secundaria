@@ -64,7 +64,6 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 <p class="sub" id="level-title"></p>
 <div class="intro-actions">
 <button class="primary" id="start">Iniciar Prueba</button>
-<a class="menu-link" id="booklet" target="_blank" rel="noopener">Abrir cuadernillo oficial (PDF)</a>
 </div>
 <div class="exam-intro"><strong>Instrucciones</strong>
 <ul>
@@ -103,7 +102,6 @@ const requested = new URLSearchParams(location.search).get('nivel');
 const level = ['I', 'II', 'III'].includes(requested) ? requested : 'I';
 const {items, booklet, solutions} = exams[level];
 const multipleChoiceCount = items.filter(item => item.answer !== null).length;
-document.getElementById('booklet').href = booklet;
 document.getElementById('solutions').href = solutions;
 document.getElementById('countTop').textContent = '0/' + items.length;
 document.querySelectorAll('.item-count').forEach(node => { node.textContent = items.length; });
