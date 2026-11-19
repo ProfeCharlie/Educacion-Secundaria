@@ -68,7 +68,8 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 <div class="exam-intro"><strong>Instrucciones</strong>
 <ul>
 <li>Dispones de 3 horas para responder <span class="item-count"></span> preguntas.</li>
-<li>Lee los enunciados y las figuras en el cuadernillo oficial. La hoja califica la selección única. Puedes comparar tus respuestas de desarrollo con el solucionario al finalizar.</li>
+<li id="booklet-instructions">Lee los enunciados y las figuras en el cuadernillo oficial. La hoja califica la selección única. Puedes comparar tus respuestas de desarrollo con el solucionario al finalizar.</li>
+<li id="inline-instructions" hidden>Marca una opción en selección única y escribe tu procedimiento en desarrollo. Al finalizar podrás consultar la calificación y las soluciones.</li>
 <li>Puedes avanzar, retroceder o ir directamente a una pregunta. Al agotarse el tiempo, la prueba finaliza automáticamente.</li>
 <li>Trabaja de forma individual y sin calculadora. Ten a mano papel y lápiz.</li>
 <li>Los dibujos no necesariamente están a escala.</li>
@@ -1651,6 +1652,148 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
         }
       ]
     }
+  },
+  "2012": {
+    "I": {
+      "solutions": "https://olcoma.ac.cr/media/attachments/2022/08/02/ii-eliminatoria_nivel-a_preguntas-y-respuestas_2012.pdf",
+      "items": [
+        {
+          "stem": "<p>En el triángulo ABC, D y E son los puntos medios de AC y BC. Se sabe que ∠BAC = 70°, ∠ACB = 50° y ∠DBE = 27°. ¿Cuánto mide ∠ADB?</p><figure class=\"qfigure\"><svg role=\"img\" aria-label=\"Triángulo ABC. D está en AC, E en BC. El segmento DE es paralelo a AB y D se une con B.\" viewBox=\"0 0 270 210\" width=\"270\" height=\"210\"><path d=\"M36 175L106 25L226 175Z M71 100H166 M71 100L226 175\" fill=\"none\" stroke=\"#243c55\" stroke-width=\"2\" stroke-linejoin=\"round\"/><text x=\"22\" y=\"190\" fill=\"#17202a\" font-size=\"15\">A</text><text x=\"228\" y=\"190\" fill=\"#17202a\" font-size=\"15\">B</text><text x=\"94\" y=\"19\" fill=\"#17202a\" font-size=\"15\">C</text><text x=\"58\" y=\"99\" fill=\"#17202a\" font-size=\"15\">D</text><text x=\"173\" y=\"106\" fill=\"#17202a\" font-size=\"15\">E</text></svg></figure>",
+          "answer": "a",
+          "options": [
+            "77°",
+            "80°",
+            "90°",
+            "103°"
+          ]
+        },
+        {
+          "stem": "<p>La primera persona miente los sábados, domingos y lunes. La segunda miente los martes, miércoles y jueves. Cada una dice la verdad los demás días. Cierto día, ambas aseguran que al día siguiente mentirán. ¿Qué día de la semana es el siguiente?</p>",
+          "answer": "b",
+          "options": [
+            "Lunes",
+            "Martes",
+            "Miércoles",
+            "Sábado"
+          ]
+        },
+        {
+          "stem": "<p>El rectángulo ABCD cumple BC = 2·AB. Sobre el lado BC se construye el triángulo equilátero BCE, con E ubicado como en la figura. Sea M el punto medio de CE. ¿Cuál es la medida de ∠EMD?</p><figure class=\"qfigure\"><svg role=\"img\" aria-label=\"Rectángulo ABCD con el triángulo equilátero BCE sobre la base BC. M es el punto medio de CE.\" viewBox=\"0 0 270 210\" width=\"270\" height=\"210\"><path d=\"M43 91H223V181H43Z M43 181L133 25L223 181 M178 103L223 91\" fill=\"none\" stroke=\"#243c55\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M175 103a3 3 0 1 0 6 0a3 3 0 1 0 -6 0\" fill=\"#243c55\" stroke=\"#243c55\" stroke-width=\"2\" stroke-linejoin=\"round\"/><text x=\"29\" y=\"88\" fill=\"#17202a\" font-size=\"15\">A</text><text x=\"29\" y=\"183\" fill=\"#17202a\" font-size=\"15\">B</text><text x=\"226\" y=\"183\" fill=\"#17202a\" font-size=\"15\">C</text><text x=\"226\" y=\"88\" fill=\"#17202a\" font-size=\"15\">D</text><text x=\"132\" y=\"17\" fill=\"#17202a\" font-size=\"15\">E</text><text x=\"169\" y=\"114\" fill=\"#17202a\" font-size=\"15\">M</text></svg></figure>",
+          "answer": "c",
+          "options": [
+            "95°",
+            "100°",
+            "105°",
+            "120°"
+          ]
+        },
+        {
+          "stem": "<p>Calcula la suma de las cifras decimales de 10<sup>2012</sup> − 2012.</p>",
+          "answer": "c",
+          "options": [
+            "18 086",
+            "18 095",
+            "18 104",
+            "18 113"
+          ]
+        },
+        {
+          "stem": "<p>Las letras de la cuadrícula representan números naturales. Todas las filas, columnas y diagonales tienen la misma suma. ¿Cuánto vale c + d + e?</p><table class=\"original-centered\"><caption>Cuadrícula del problema</caption><tbody><tr><td>a</td><td>71</td><td>b</td></tr><tr><td>c</td><td>d</td><td>e</td></tr><tr><td>64</td><td>f</td><td>53</td></tr></tbody></table>",
+          "answer": "d",
+          "options": [
+            "100",
+            "128",
+            "137",
+            "138"
+          ]
+        },
+        {
+          "stem": "<p>Sobre el lado AC de un triángulo ABC, BE es la altura y BD es la mediana. La mediatriz de AC pasa por D y corta a AB en F. Los puntos aparecen en el orden A, D, E, C sobre la base y A, F, B sobre AB. Si ∠DFB = 127° y ∠DBE = 26°, calcula ∠DBA.</p><figure class=\"qfigure\"><svg role=\"img\" aria-label=\"Triángulo ABC con A, D, E y C sobre la base, en ese orden. F se ubica en AB y la recta FD es paralela a BE.\" viewBox=\"0 0 270 210\" width=\"270\" height=\"210\"><path d=\"M20 175L194 44L240 175Z M130 58V185 M194 44V175 M130 175L194 44 M130 163H142V175 M182 175V163H194\" fill=\"none\" stroke=\"#243c55\" stroke-width=\"2\" stroke-linejoin=\"round\"/><text x=\"9\" y=\"190\" fill=\"#17202a\" font-size=\"15\">A</text><text x=\"194\" y=\"38\" fill=\"#17202a\" font-size=\"15\">B</text><text x=\"242\" y=\"190\" fill=\"#17202a\" font-size=\"15\">C</text><text x=\"125\" y=\"196\" fill=\"#17202a\" font-size=\"15\">D</text><text x=\"190\" y=\"196\" fill=\"#17202a\" font-size=\"15\">E</text><text x=\"114\" y=\"85\" fill=\"#17202a\" font-size=\"15\">F</text></svg></figure>",
+          "answer": "b",
+          "options": [
+            "26°",
+            "27°",
+            "53°",
+            "64°"
+          ]
+        },
+        {
+          "stem": "<p>Una sucesión comienza con <span class=\"fraction\"><span>2</span><span>5</span></span>, <span class=\"fraction\"><span>1</span><span>8</span></span>, <span class=\"fraction\"><span>4</span><span>13</span></span>, <span class=\"fraction\"><span>3</span><span>20</span></span>, <span class=\"fraction\"><span>r</span><span>29</span></span>, <span class=\"fraction\"><span>z</span><span>w</span></span>. Al continuar los patrones del numerador y del denominador, ¿qué par de valores resulta correcto?</p>",
+          "answer": "a",
+          "options": [
+            "r = 6 y w = 40",
+            "r = 6 y z = 7",
+            "w = 40 y z = 7",
+            "z = 5 y w = 42"
+          ]
+        },
+        {
+          "stem": "<p>Suma las estaturas de todos los estudiantes de un grupo. Añade a esa suma lo que le falta a cada estudiante de menos de 2 m para alcanzar 2 m y réstale lo que le sobra a cada estudiante que supera esa altura. Si el resultado es 120 m, ¿cuántos estudiantes hay?</p>",
+          "answer": "c",
+          "options": [
+            "74",
+            "68",
+            "60",
+            "50"
+          ]
+        },
+        {
+          "stem": "<p>Sea p un primo. Si 3p tiene exactamente p divisores positivos, ¿qué expresión equivale a 3p?</p>",
+          "answer": "c",
+          "options": [
+            "2p + 1",
+            "p + 3",
+            "p<sup>2</sup>",
+            "p<sup>3</sup>"
+          ]
+        },
+        {
+          "stem": "<p>La masa de un libro es igual a la mitad de su propia masa más 0,5 kg. ¿Cuál es su masa?</p>",
+          "answer": "b",
+          "options": [
+            "0,5 kg",
+            "1 kg",
+            "1,5 kg",
+            "2 kg"
+          ]
+        },
+        {
+          "stem": "<p>Para enteros a, b y c, con a distinto de cero, ¿cuál de estas afirmaciones es siempre verdadera?</p>",
+          "answer": "d",
+          "options": [
+            "Si a divide a bc, entonces divide tanto a b como a c.",
+            "Si a divide a bc, entonces divide al menos a uno de b y c.",
+            "Si a divide a b + c, entonces divide al menos a uno de b y c.",
+            "Si a divide tanto a b como a c, también divide a b + c."
+          ]
+        },
+        {
+          "stem": "<p>Las reservas de un campamento alcanzan para alimentar a 160 personas durante 35 días. Con la misma ración diaria por persona, ¿para cuántos días alcanzan si hay 400 personas?</p>",
+          "answer": "c",
+          "options": [
+            "8",
+            "12",
+            "14",
+            "18"
+          ]
+        },
+        {
+          "stem": "<p>En una prueba de puntería hay 12 botellas, cuatro de cada color. Alejandro, Beatriz y Carlos acertaron a cuatro botellas cada uno, al menos una de cada color. En total emplearon 61 intentos. La tabla indica cuántos intentos necesitó cada persona por botella acertada. Determina cuántas botellas de cada color acertó cada persona y justifica tu respuesta.</p><table class=\"original-centered\"><caption>Intentos por cada acierto</caption><thead><tr><th scope=\"col\">Persona</th><th scope=\"col\">Roja</th><th scope=\"col\">Verde</th><th scope=\"col\">Azul</th></tr></thead><tbody><tr><th scope=\"row\">Alejandro</th><td>4</td><td>8</td><td>4</td></tr><tr><th scope=\"row\">Beatriz</th><td>4</td><td>2</td><td>3</td></tr><tr><th scope=\"row\">Carlos</th><td>4</td><td>4</td><td>8</td></tr></tbody></table>",
+          "answer": null,
+          "explanation": "Alejandro acertó a 1 roja, 2 verdes y 1 azul. Beatriz acertó a 2 rojas, 1 verde y 1 azul. Carlos acertó a 1 roja, 1 verde y 2 azules. Como 61 es impar, Beatriz acertó una sola azul. Tras descontar esos tres intentos, el resto exige que su número de verdes sea impar al evaluar módulo 4. Así, repitió color rojo y empleó 13 intentos. Los otros dos emplearon 48. De sus ocho aciertos, cuatro costaron ocho intentos, por lo que Alejandro repitió verde y Carlos repitió azul."
+        },
+        {
+          "stem": "<p>En el rectángulo ABCD, E es el punto medio de BC, H el de BE, F el de AB, J el de AD, I el de DC y K el de IJ. ¿Qué fracción del área del rectángulo cubren juntas las dos regiones sombreadas?</p><figure class=\"qfigure\"><svg role=\"img\" aria-label=\"Rectángulo ABCD con B abajo a la izquierda. H y E están en BC, F en AB, J en AD, I en DC y K en JI. Las regiones sombreadas son FHE y EKI.\" viewBox=\"0 0 270 210\" width=\"270\" height=\"210\"><path d=\"M27 30H247V175H27Z M137 30L247 102.5\" fill=\"none\" stroke=\"#243c55\" stroke-width=\"2\" stroke-linejoin=\"round\"/><path d=\"M27 102.5L82 175H137Z M137 175L192 66.25L247 102.5Z\" fill=\"#bdd3ed\" stroke=\"#243c55\" stroke-width=\"2\" stroke-linejoin=\"round\"/><text x=\"13\" y=\"25\" fill=\"#17202a\" font-size=\"15\">A</text><text x=\"135\" y=\"25\" fill=\"#17202a\" font-size=\"15\">J</text><text x=\"253\" y=\"25\" fill=\"#17202a\" font-size=\"15\">D</text><text x=\"12\" y=\"105\" fill=\"#17202a\" font-size=\"15\">F</text><text x=\"200\" y=\"61\" fill=\"#17202a\" font-size=\"15\">K</text><text x=\"254\" y=\"105\" fill=\"#17202a\" font-size=\"15\">I</text><text x=\"13\" y=\"183\" fill=\"#17202a\" font-size=\"15\">B</text><text x=\"72\" y=\"192\" fill=\"#17202a\" font-size=\"15\">H</text><text x=\"134\" y=\"192\" fill=\"#17202a\" font-size=\"15\">E</text><text x=\"254\" y=\"183\" fill=\"#17202a\" font-size=\"15\">C</text></svg></figure>",
+          "answer": null,
+          "explanation": "Las dos regiones ocupan en conjunto 3/16 del rectángulo. Si la base y la altura valen 1, FHE tiene base 1/4 y altura 1/2, así que aporta 1/16. Con B = (0,0), C = (1,0) y A = (0,1), se obtiene E = (1/2,0), I = (1,1/2), K = (3/4,3/4). El determinante de los vectores EI y EK tiene valor absoluto 1/4, por lo que el área de EKI es 1/8."
+        },
+        {
+          "stem": "<p>Considera los números de cuatro cifras que se forman al repetir un bloque de dos cifras, como 4343. Entre los que tienen la menor cantidad de divisores positivos, encuentra el mayor y justifica tu respuesta.</p>",
+          "answer": null,
+          "explanation": "El mayor es 9797. Cada número tiene la forma 101 · n, donde n tiene dos cifras. Como 101 es primo y n es menor que 101, el producto tiene el mínimo de cuatro divisores cuando n también es primo. El mayor primo de dos cifras es 97."
+        }
+      ]
+    }
   }
 }</script>
 <script src="./olcoma-resultados.js"></script>
@@ -1658,10 +1801,14 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 const exams = JSON.parse(document.getElementById('data').textContent);
 const params = new URLSearchParams(location.search);
 const requestedYear = params.get('anio');
-const year = Object.hasOwn(exams, requestedYear) ? requestedYear : '2020';
 const requestedLevel = params.get('nivel');
 const level = ['I', 'II', 'III'].includes(requestedLevel) ? requestedLevel : 'I';
+const year = Object.hasOwn(exams, requestedYear) && Object.hasOwn(exams[requestedYear], level)
+  ? requestedYear
+  : '2020';
 const {items, booklet, solutions} = exams[year][level];
+document.getElementById('booklet-instructions').hidden = !booklet;
+document.getElementById('inline-instructions').hidden = Boolean(booklet);
 const selectionCount = items.filter(item => item.answer !== null).length;
 const developmentCount = items.length - selectionCount;
 const gradedCount = items.filter(item => item.answer !== null && item.answer !== '-').length;
@@ -1721,13 +1868,17 @@ function show(index, focus = true) {
   const stem = document.createElement('div');
   stem.className = 'qtext';
   const development = item.answer === null;
-  const original = document.createElement('a');
-  original.className = 'question-link';
-  original.href = booklet + '#page=' + item.page;
-  original.target = '_blank';
-  original.rel = 'noopener';
-  original.textContent = 'Ver enunciado y figuras (PDF, página ' + item.page + ')';
-  stem.append(original);
+  if (item.stem) {
+    stem.innerHTML = item.stem;
+  } else {
+    const original = document.createElement('a');
+    original.className = 'question-link';
+    original.href = booklet + '#page=' + item.page;
+    original.target = '_blank';
+    original.rel = 'noopener';
+    original.textContent = 'Ver enunciado y figuras (PDF, página ' + item.page + ')';
+    stem.append(original);
+  }
   if (item.note) {
     const note = document.createElement('p');
     note.className = 'small';
@@ -1736,7 +1887,7 @@ function show(index, focus = true) {
   }
   const field = document.createElement('fieldset');
   const legend = document.createElement('legend');
-  legend.textContent = development ? 'Escribe tu procedimiento' : 'Selecciona la letra que marcaste en el cuadernillo';
+  legend.textContent = development ? 'Escribe tu procedimiento' : item.options ? 'Selecciona una opción' : 'Selecciona la letra que marcaste en el cuadernillo';
   field.append(legend);
   function record(value) {
     if (Date.now() >= attempt.deadline) return tick();
@@ -1767,6 +1918,11 @@ function show(index, focus = true) {
       letter.className = 'optletter';
       letter.textContent = option.toUpperCase();
       label.append(input, letter);
+      if (item.options) {
+        const description = document.createElement('span');
+        description.innerHTML = item.options[option.charCodeAt(0) - 97];
+        label.append(description);
+      }
       choices.append(label);
     }
     field.append(choices);
@@ -1800,7 +1956,7 @@ function finish(expired) {
   const review = get('review');
   review.replaceChildren();
   get('review-details').open = false;
-  items.forEach(({answer}, index) => {
+  items.forEach(({answer, explanation, options}, index) => {
     const entered = attempt.answers[index];
     const row = document.createElement('div');
     row.className = 'review-row';
@@ -1811,6 +1967,12 @@ function finish(expired) {
       response.className = 'development-answer';
       response.textContent = entered.trim() || 'Sin responder';
       row.append(title, response);
+      if (explanation) {
+        const worked = document.createElement('p');
+        worked.className = 'review-solution';
+        worked.textContent = explanation;
+        row.append(worked);
+      }
       review.append(row);
       return;
     }
@@ -1829,6 +1991,11 @@ function finish(expired) {
     response.textContent = entered ? 'Tu respuesta: ' + entered.toUpperCase() : 'Sin responder';
     const solution = document.createElement('span');
     solution.textContent = 'Correcta: ' + answer.toUpperCase();
+    if (options) {
+      const option = document.createElement('span');
+      option.innerHTML = options[answer.charCodeAt(0) - 97];
+      solution.append(' · ', option);
+    }
     row.append(title, response, solution);
     review.append(row);
   });
@@ -1877,3 +2044,4 @@ window.addEventListener('pageshow', event => {
 </script>
 </body>
 </html>
+
