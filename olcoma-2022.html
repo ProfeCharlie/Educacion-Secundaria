@@ -58,7 +58,6 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 <section class="card" id="startView">
 <h1 class="hero">OLCOMA 2022 · I Eliminatoria Nacional</h1>
 <p class="sub" id="level-title"></p>
-<label style="display:block;margin:0 auto 14px">Código de participante (opcional)<br><input id="participant-code" type="text" maxlength="24" autocomplete="off" spellcheck="false" style="max-width:100%;padding:8px"></label>
 <button class="primary" id="start">Iniciar Prueba</button>
 <div class="exam-intro"><strong>Instrucciones</strong>
 <ul>
@@ -250,14 +249,7 @@ function finish(expired) {
 }
 function begin() {
   if (!attempt) {
-    const code = get('participant-code').value.trim().toUpperCase();
-    if (code && !/^[A-Z0-9][A-Z0-9_-]{0,23}$/.test(code)) {
-      get('participant-code').setCustomValidity('Usa de 1 a 24 letras de la A a la Z, números, guiones o guiones bajos.');
-      get('participant-code').reportValidity();
-      return;
-    }
-    get('participant-code').setCustomValidity('');
-    attempt = {deadline: Date.now() + duration, answers: items.map(() => ''), participant: code};
+    attempt = {deadline: Date.now() + duration, answers: items.map(() => '')};
     save();
   }
   get('startView').hidden = true;

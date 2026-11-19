@@ -65,7 +65,7 @@
       exam,
       nonce: attempt.resultId,
       payload: JSON.stringify({
-        code: attempt.participant || '',
+        code: '',
         answers,
         elapsed: Math.round(Math.max(0, Math.min(duration, duration - (attempt.deadline - Date.now()))) / 1000)
       })
