@@ -62,6 +62,7 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 <section class="card" id="startView">
 <h1 class="hero" id="exam-title">OLCOMA · II Eliminatoria Nacional</h1>
 <p class="sub" id="level-title"></p>
+<label style="display:block;margin:0 auto 14px">Código de participante (opcional)<br><input id="participant-code" type="text" maxlength="24" autocomplete="off" spellcheck="false" style="max-width:100%;padding:8px"></label>
 <div class="intro-actions">
 <button class="primary" id="start">Iniciar Prueba</button>
 </div>
@@ -89,6 +90,7 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 <section class="card" id="results" hidden>
 <h2 tabindex="-1" id="result-title">Resultado</h2>
 <div class="score" id="score"></div><div id="percent"></div>
+<p id="olcoma-save-status" class="small" role="status"></p><button id="olcoma-save-retry" type="button" hidden>Reintentar registro</button>
 <div class="result-grid"><div class="stat"><b id="correct"></b><br>Correctas</div><div class="stat"><b id="incorrect"></b><br>Incorrectas</div><div class="stat"><b id="blank"></b><br>Sin responder</div></div>
 <p class="small">La calificación corresponde a selección única. Revisa tus respuestas de desarrollo junto al solucionario oficial.</p><p><a class="menu-link" id="solutions" target="_blank" rel="noopener">Abrir solucionario oficial (PDF)</a></p>
 <details id="review-details"><summary>Revisar respuestas</summary><div id="review" class="review-list"></div></details>
@@ -650,6 +652,7 @@ dialog form{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
     }
   }
 }</script>
+<script src="./olcoma-resultados.js"></script>
 <script>
 const exams = JSON.parse(document.getElementById('data').textContent);
 const params = new URLSearchParams(location.search);
@@ -829,10 +832,20 @@ function finish(expired) {
   get('blank').textContent = gradedCount - correct - incorrect;
   get('countTop').textContent = attempt.answers.filter(value => value.trim()).length + '/' + items.length;
   get('result-title').focus();
+  if (window.olcomaResultados) {
+    window.olcomaResultados.registrar('olcoma_2_' + year + '_' + level.toLowerCase(), items, attempt, duration, save);
+  }
 }
 function begin() {
   if (!attempt) {
-    attempt = {deadline: Date.now() + duration, answers: items.map(() => '')};
+    const code = get('participant-code').value.trim().toUpperCase();
+    if (code && !/^[A-Z0-9][A-Z0-9_-]{0,23}$/.test(code)) {
+      get('participant-code').setCustomValidity('Usa de 1 a 24 letras de la A a la Z, números, guiones o guiones bajos.');
+      get('participant-code').reportValidity();
+      return;
+    }
+    get('participant-code').setCustomValidity('');
+    attempt = {deadline: Date.now() + duration, answers: items.map(() => ''), participant: code};
     save();
   }
   get('startView').hidden = true;
